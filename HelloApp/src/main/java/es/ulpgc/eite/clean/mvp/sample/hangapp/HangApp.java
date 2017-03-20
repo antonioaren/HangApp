@@ -49,6 +49,8 @@ public interface HangApp {
     void showText();
     void setText(String txt);
     void setLabel(String txt);
+
+      void setLabelSearch(String txt);
   }
 
   /**

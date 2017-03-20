@@ -15,7 +15,8 @@ public class HangAppView
     implements HangApp.PresenterToView {
 
   private Toolbar toolbar;
-  private Button button;
+  private Button buttonSearch;
+  private Button buttonAdd;
   private TextView text;
 
   @Override
@@ -23,13 +24,20 @@ public class HangAppView
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_hangapp);
 
-    text = (TextView) findViewById(R.id.text);
+    text = (TextView) findViewById(R.id.textView);
 
     toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
-    button = (Button) findViewById(R.id.button);
-    button.setOnClickListener(new View.OnClickListener() {
+    buttonSearch = (Button) findViewById(R.id.button);
+    buttonSearch.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        getPresenter().onButtonClicked();
+      }
+    });
+    buttonAdd = (Button) findViewById(R.id.buttonAdd);
+    buttonAdd.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
         getPresenter().onButtonClicked();
@@ -102,6 +110,11 @@ public class HangAppView
 
   @Override
   public void setLabel(String txt) {
-    button.setText(txt);
+    
+  }
+
+  @Override
+  public void setLabelSearch(String txt) {
+    buttonSearch.setText(txt);
   }
 }
