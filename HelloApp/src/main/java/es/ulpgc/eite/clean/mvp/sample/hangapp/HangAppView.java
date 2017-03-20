@@ -21,7 +21,7 @@ public class HangAppView
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_dummy);
+    setContentView(R.layout.activity_hangapp);
 
     text = (TextView) findViewById(R.id.text);
 
