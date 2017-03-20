@@ -110,7 +110,7 @@ public class HangAppView
 
   @Override
   public void setLabel(String txt) {
-    
+
   }
 
   @Override

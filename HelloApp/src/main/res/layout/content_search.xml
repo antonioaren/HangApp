@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="189dp"
+        />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_weight="0.04"
+        android:background="#ffffff"
+        android:backgroundTint="@android:color/background_light"
+        android:text="Select your party :"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textLocation"
+            android:layout_width="98dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/holo_blue_bright"
+            android:backgroundTint="@android:color/holo_blue_bright"
+            android:text="By Location:" />
+
+        <EditText
+            android:id="@+id/editTextLocation"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="digit your location here" />
+
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="@android:color/holo_blue_bright"
+        android:backgroundTint="@android:color/holo_blue_bright" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_weight="0.06"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textCategories"
+            android:layout_width="98dp"
+            android:layout_height="match_parent"
+            android:background="#66ff40d2"
+            android:text="By Category :" />
+
+        <ListView
+            android:id="@+id/listCategories"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_weight="0.05" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textDate"
+            android:layout_width="98dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/background_light"
+            android:backgroundTint="#22c835"
+            android:text="By Date :" />
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="35dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/buttonSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="#c4ff00"
+            android:text="Search" />
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>
