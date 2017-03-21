@@ -58,4 +58,6 @@ public class HangAppModel extends GenericModel<HangApp.ModelToPresenter>
   public String getLabel() {
     return HangAppLabel;
   }
+
+  //Nueva rama para modificaciones mias.
 }

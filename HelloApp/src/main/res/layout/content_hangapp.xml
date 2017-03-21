@@ -8,15 +8,12 @@
     android:weightSum="1">
 
     <TextView
-        android:id="@+id/TituloApp"
+        android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:text="HANGAPP"
-        android:textAlignment="center"
-        android:textColorLink="@color/colorAccent"
-        android:textSize="55dp" />
+        android:layout_height="100dp"
+        android:layout_weight="0.07"
+        android:text="Texto Principal"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <ImageView
         android:id="@+id/imageView"
