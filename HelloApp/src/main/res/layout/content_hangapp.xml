@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_weight="0.07"
-        android:text="Wellcome to the PartyApp.Search the nearest party in your location and how many people are participating "
+        android:text="Texto Principal"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <ImageView

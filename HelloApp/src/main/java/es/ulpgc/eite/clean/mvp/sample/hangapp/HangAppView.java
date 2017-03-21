@@ -29,7 +29,7 @@ public class HangAppView
     toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
-    buttonSearch = (Button) findViewById(R.id.button);
+    buttonSearch = (Button) findViewById(R.id.buttonSearch);
     buttonSearch.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
