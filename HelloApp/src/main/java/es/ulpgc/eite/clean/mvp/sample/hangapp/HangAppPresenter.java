@@ -9,14 +9,13 @@ import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 
-public class HangAppPresenter extends GenericPresenter
-    <HangApp.PresenterToView, HangApp.PresenterToModel, HangApp.ModelToPresenter, HangAppModel>
-    implements HangApp.ViewToPresenter, HangApp.ModelToPresenter, HangApp.DummyTo, HangApp.ToDummy {
+  public class HangAppPresenter extends GenericPresenter
+          <HangApp.PresenterToView, HangApp.PresenterToModel, HangApp.ModelToPresenter, HangAppModel>
+          implements HangApp.ViewToPresenter, HangApp.ModelToPresenter, HangApp.DummyTo, HangApp.ToDummy {
 
-
-  private boolean toolbarVisible;
-  private boolean buttonClicked;
-  private boolean textVisible;
+    private boolean toolbarVisible;
+   private boolean buttonClicked;
+   private boolean textVisible;
 
   /**
    * Operation called during VIEW creation in {@link GenericActivity#onResume(Class, Object)}
@@ -89,6 +88,11 @@ public class HangAppPresenter extends GenericPresenter
 
   ///////////////////////////////////////////////////////////////////////////////////
   // View To Presenter /////////////////////////////////////////////////////////////
+
+  @Override
+  public void onButtonClicked() {
+
+  }
 
   @Override
   public void onButtonSearchClicked() {
