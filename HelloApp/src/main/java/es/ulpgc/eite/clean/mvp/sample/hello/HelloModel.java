@@ -24,6 +24,7 @@ public class HelloModel extends GenericModel<Hello.ModelToPresenter>
     sayHelloBtnLabel = "Say Hello";
     helloMsgText = "Hello World!";
     goToByeBtnLabel = "Go To Bye";
+
   }
 
   /**

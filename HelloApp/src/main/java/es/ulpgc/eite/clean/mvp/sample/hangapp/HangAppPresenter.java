@@ -91,8 +91,8 @@ public class HangAppPresenter extends GenericPresenter
   // View To Presenter /////////////////////////////////////////////////////////////
 
   @Override
-  public void onButtonClicked() {
-    Log.d(TAG, "calling onSayHelloBtnClicked()");
+  public void onButtonSearchClicked() {
+    Log.d(TAG, "calling onButtonSearchClicked()");
     if(isViewRunning()) {
       getModel().onChangeMsgByBtnClicked();
       getView().setText(getModel().getText());

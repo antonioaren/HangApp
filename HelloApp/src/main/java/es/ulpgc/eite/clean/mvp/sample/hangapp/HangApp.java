@@ -37,6 +37,8 @@ public interface HangApp {
    */
   interface ViewToPresenter extends Presenter<PresenterToView> {
     void onButtonClicked();
+
+    void onButtonSearchClicked();
   }
 
   /**
