@@ -2,6 +2,8 @@ package es.ulpgc.eite.clean.mvp.sample.search;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -24,7 +26,9 @@ private ImageView imageSearch;
     EditText editTextLocation;
     TextView categories;
     ListView listCategories;
-
+    TextView textDate;
+    CalendarView calendar;
+    Button buttonSearch;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +43,9 @@ private ImageView imageSearch;
          String[]categories= new String[]{"Cines","Culturales","Conciertos","Discotecas","Verbenas"};
         ArrayAdapter<String> adaptader = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, categories);
         listCategories.setAdapter(adaptader);
+        textDate=(TextView)findViewById(R.id.textDate);
+        calendar=(CalendarView)findViewById(R.id.calendarView);
+        buttonSearch=(Button)findViewById(R.id.buttonSearch);
     }
 
 
