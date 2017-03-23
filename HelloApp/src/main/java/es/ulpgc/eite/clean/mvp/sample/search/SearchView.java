@@ -1,6 +1,14 @@
 package es.ulpgc.eite.clean.mvp.sample.search;
 
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
+
 import es.ulpgc.eite.clean.mvp.GenericActivity;
+import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangApp;
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppPresenter;
 
@@ -10,7 +18,29 @@ import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppPresenter;
 
 public class SearchView  extends GenericActivity<HangApp.PresenterToView, HangApp.ViewToPresenter, HangAppPresenter>
         implements HangApp.PresenterToView  {
-private ImageView im
+private ImageView imageSearch;
+    TextView text;
+    TextView textLocation;
+    EditText editTextLocation;
+    TextView categories;
+    ListView listCategories;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_hangapp);
+
+        imageSearch=(ImageView)findViewById(R.id.imageViewSearch);
+        text= (TextView)findViewById(R.id.textView);
+       textLocation=(TextView)findViewById(R.id.textLocation);
+        editTextLocation=(EditText)findViewById(R.id.editTextLocation);
+        categories=(TextView)findViewById(R.id.textCategories);
+        listCategories=(ListView)findViewById(R.id.listCategories);
+         String[]categories= new String[]{"Cines","Culturales","Conciertos","Discotecas","Verbenas"};
+        ArrayAdapter<String> adaptader = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, categories);
+        listCategories.setAdapter(adaptader);
+    }
+
 
     @Override
     public void finishScreen() {
@@ -47,7 +77,7 @@ private ImageView im
 
     }
 
-    private
+
 
 
 }
