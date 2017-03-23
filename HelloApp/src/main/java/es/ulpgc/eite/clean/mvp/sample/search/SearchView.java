@@ -1,6 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.search;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CalendarView;
@@ -32,7 +33,7 @@ private ImageView imageSearch;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hangapp);
+        setContentView(R.layout.activity_search);
 
         imageSearch=(ImageView)findViewById(R.id.imageViewSearch);
         text= (TextView)findViewById(R.id.textView);
@@ -46,6 +47,12 @@ private ImageView imageSearch;
         textDate=(TextView)findViewById(R.id.textDate);
         calendar=(CalendarView)findViewById(R.id.calendarView);
         buttonSearch=(Button)findViewById(R.id.buttonSearch);
+        buttonSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 
 
