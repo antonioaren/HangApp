@@ -1,6 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.hangapp;
 
 import android.content.Context;
+import android.os.Bundle;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
@@ -60,6 +61,8 @@ interface toAdd{
    * Required VIEW methods available to PRESENTER
    */
   interface PresenterToView extends ContextView {
+    void onCreate(Bundle savedInstanceState);
+
     void finishScreen();
     void hideToolbar();
     void hideText();

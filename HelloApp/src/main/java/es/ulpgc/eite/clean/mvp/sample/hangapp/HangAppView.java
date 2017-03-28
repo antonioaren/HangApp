@@ -20,7 +20,7 @@ public class HangAppView
   private TextView text;
 
   @Override
-  protected void onCreate(Bundle savedInstanceState) {
+  public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_hangapp);
 
@@ -29,7 +29,7 @@ public class HangAppView
     toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
-    buttonSearch = (Button) findViewById(R.id.buttonSearch);
+    buttonSearch = (Button) findViewById(android.R.id.buttonSearch);
     buttonSearch.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
@@ -49,7 +49,7 @@ public class HangAppView
    * Method that initialized MVP objects
    * {@link super#onResume(Class, Object)} should always be called
    */
-  @SuppressLint("MissingSuperCall")
+
   @Override
   protected void onResume() {
     super.onResume(HangAppPresenter.class, this);
@@ -59,7 +59,7 @@ public class HangAppView
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {
     // Inflate the menu; this adds items to the action bar if it is present.
-    getMenuInflater().inflate(R.menu.menu_dummy, menu);
+    getMenuInflater().inflate(es.ulpgc.eite.clean.mvp.sample.hangapp.R.menu.menu_dummy, menu);
     return true;
   }
 
@@ -71,7 +71,7 @@ public class HangAppView
     int id = item.getItemId();
 
     //noinspection SimplifiableIfStatement
-    if (id == R.id.action_settings) {
+    if (id == es.ulpgc.eite.clean.mvp.sample.hangapp.R.id.action_settings) {
       return true;
     }
 
