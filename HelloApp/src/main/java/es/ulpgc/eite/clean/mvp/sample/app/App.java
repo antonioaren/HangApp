@@ -81,7 +81,68 @@ public class App extends Application implements Mediator, Navigator {
     }
 
   }
+//----------------------Metodos para nuestra app-----------------------------------------------------------
 
+public void onCreateHome() {
+  super.onCreate();
+  toSearchState = new SearchState();
+  toSearchState.textVisibility = false;
+
+
+  toHangAppState = new HangAppState();
+}
+
+  @Override
+  public void startingSearchScreen(HangApp.ToDummy presenter){
+    if(toSearchState != null) {
+      presenter.setTextVisibility(toSearchState.textVisibility);
+
+    }
+    presenter.onScreenStarted();
+  }
+
+  @Override
+  public void startingHelloScreen(Hello.ToHello presenter){
+    if(toHelloState != null) {
+      presenter.setToolbarVisibility(toHelloState.toolbarVisibility);
+      //presenter.setTextVisibility(toHelloState.textVisibility);
+    }
+    presenter.onScreenStarted();
+  }
+
+
+  ///////////////////////////////////////////////////////////////////////////////////
+  // Navigator /////////////////////////////////////////////////////////////////////
+
+
+  @Override
+  public void goToNextScreen(HangApp.DummyTo presenter) {
+    dummyToState = new DummyState();
+    dummyToState.toolbarVisibility = presenter.isToolbarVisible();
+    dummyToState.textVisibility = presenter.isTextVisible();
+
+    Context view = presenter.getManagedContext();
+    if (view != null) {
+      view.startActivity(new Intent(view, HangAppView.class));
+      presenter.destroyView();
+    }
+
+  }
+
+
+  @Override
+  public void goToByeScreen(Hello.HelloToBye presenter) {
+    helloToByeState = new ByeState();
+    helloToByeState.toolbarVisibility = presenter.isToolbarVisible();
+    //helloToByeState.textVisibility = presenter.isTextVisible();
+
+    Context view = presenter.getManagedContext();
+    if (view != null) {
+      view.startActivity(new Intent(view, HangAppView.class));
+      //presenter.destroyView();
+    }
+
+  }
   ///////////////////////////////////////////////////////////////////////////////////
   // State /////////////////////////////////////////////////////////////////////////
 
@@ -100,13 +161,15 @@ public class App extends Application implements Mediator, Navigator {
     //boolean textVisibility;
   }
 private class HangAppState{
+   boolean textVisibility;
 
   }
 private class SearchState{
+  boolean textVisibility;
 
 }
 private class AddState{
-  
+  boolean textVisibility;
 }
 
 }
