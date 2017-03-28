@@ -13,21 +13,24 @@ import es.ulpgc.eite.clean.mvp.Presenter;
 public interface Search {
     interface SearchToHangApp {
 
-        boolean isToolbarVisible();
+        boolean isTextVisible();
 
         Context getManagedContext();
     }
 
     interface ToSearch {
         void onScreenStarted();
-        void setToolbarVisibility(boolean visible);
+
+
+
         void setTextVisibility(boolean visible);
     }
 
     interface SearchTo {
         Context getManagedContext();
+
         void destroyView();
-        boolean isToolbarVisible();
+
         boolean isTextVisible();
     }
 
@@ -38,8 +41,8 @@ public interface Search {
      * Methods offered to VIEW to communicate with PRESENTER
      */
     interface ViewToPresenter extends Presenter<Search.PresenterToView> {
-        void onSayHelloBtnClicked();
-        void onGoToByeBtnClicked();
+        void onSearchBtnClicked();
+
         //void onStartingView();
     }
 
@@ -48,9 +51,13 @@ public interface Search {
      */
     interface PresenterToView extends ContextView {
         void finishScreen();
+
         void hideToolbar();
+
         void hideHelloMsg();
+
         void showHelloMsg();
+
         void setHelloMsg(String txt);
 
         void setSearchBtnLabel(String txt);
@@ -62,20 +69,18 @@ public interface Search {
      * Methods offered to MODEL to communicate with PRESENTER
      */
     interface PresenterToModel extends Model<Search.ModelToPresenter> {
-        void onChangeMsgByBtnClicked();
-        String getHelloMsg();
+
 
         String getSearchBtnLabel();
 
-        String getAddBtnLabel();
+
+        /**
+         * Required PRESENTER methods available to MODEL
+         */
+
+
     }
 
-    /**
-     * Required PRESENTER methods available to MODEL
-     */
-    interface ModelToPresenter {
-
+    public interface ModelToPresenter {
     }
-
-
 }
