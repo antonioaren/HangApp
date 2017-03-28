@@ -19,8 +19,8 @@ import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppPresenter;
  * Created by eleonora on 23/03/2017.
  */
 
-public class SearchView  extends GenericActivity<HangApp.PresenterToView, HangApp.ViewToPresenter, HangAppPresenter>
-        implements HangApp.PresenterToView  {
+public class SearchView  extends GenericActivity<Search.PresenterToView, Search.ViewToPresenter, SearchPresenter>
+        implements Search.PresenterToView  {
 private ImageView imageSearch;
     TextView text;
     TextView textLocation;
