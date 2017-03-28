@@ -52,17 +52,13 @@ public interface Search {
     interface PresenterToView extends ContextView {
         void finishScreen();
 
-        void hideToolbar();
 
-        void hideHelloMsg();
 
-        void showHelloMsg();
 
-        void setHelloMsg(String txt);
 
         void setSearchBtnLabel(String txt);
 
-        void setAddBtnLabel(String txt);
+
     }
 
     /**

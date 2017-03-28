@@ -71,7 +71,7 @@ public interface Add {
 
     String gePublishBtnLabel();
 
-   
+
   }
 
   /**
