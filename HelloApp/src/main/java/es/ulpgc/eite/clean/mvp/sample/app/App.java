@@ -14,6 +14,8 @@ public class App extends Application implements Mediator, Navigator {
   private DummyState toDummyState, dummyToState;
   private HelloState toHelloState;
   private ByeState helloToByeState;
+  private HangAppState toHangAppState,hangAppToSearch,hangApptoAdd;
+  private SearchState toSearchState, searchToSate;
 
   @Override
   public void onCreate() {
@@ -97,6 +99,14 @@ public class App extends Application implements Mediator, Navigator {
     boolean toolbarVisibility;
     //boolean textVisibility;
   }
+private class HangAppState{
 
+  }
+private class SearchState{
+
+}
+private class AddState{
+  
+}
 
 }
