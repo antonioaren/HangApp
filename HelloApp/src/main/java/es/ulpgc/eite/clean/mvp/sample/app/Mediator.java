@@ -6,7 +6,9 @@ import es.ulpgc.eite.clean.mvp.sample.hello.Hello;
 public interface Mediator {
   void startingDummyScreen(HangApp.ToDummy presenter);
 
-  void startingSearchScreen(HangApp.ToDummy presenter);
+  void startingSearchScreen(HangApp.toSearch presenter);
 
   void startingHelloScreen(Hello.ToHello presenter);
+
+  void startingAddScreen(HangApp.toAdd presenter);
 }

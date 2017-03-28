@@ -14,8 +14,9 @@ public class App extends Application implements Mediator, Navigator {
   private DummyState toDummyState, dummyToState;
   private HelloState toHelloState;
   private ByeState helloToByeState;
-  private HangAppState toHangAppState,hangAppToSearch,hangApptoAdd;
+  private HangAppState toHangAppState;
   private SearchState toSearchState, searchToSate;
+  private AddState toAddState,addToState;
 
   @Override
   public void onCreate() {
@@ -93,7 +94,7 @@ public void onCreateHome() {
 }
 
   @Override
-  public void startingSearchScreen(HangApp.ToDummy presenter){
+  public void startingSearchScreen(HangApp.toSearch presenter){
     if(toSearchState != null) {
       presenter.setTextVisibility(toSearchState.textVisibility);
 
@@ -102,9 +103,10 @@ public void onCreateHome() {
   }
 
   @Override
-  public void startingHelloScreen(Hello.ToHello presenter){
-    if(toHelloState != null) {
-      presenter.setToolbarVisibility(toHelloState.toolbarVisibility);
+  public void startingAddScreen(HangApp.toAdd presenter){
+    if(toAddState != null) {
+      presenter.setTextVisibility(toAddState.textVisibility);
+      presenter.setSelectorsVisibility(toAddState.selectorsVisibility);
       //presenter.setTextVisibility(toHelloState.textVisibility);
     }
     presenter.onScreenStarted();
@@ -170,6 +172,7 @@ private class SearchState{
 }
 private class AddState{
   boolean textVisibility;
+  boolean selectorsVisibility;
 }
 
 }

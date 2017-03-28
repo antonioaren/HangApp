@@ -28,10 +28,25 @@ public interface HangApp {
     boolean isToolbarVisible();
     boolean isTextVisible();
   }
+  interface toHangApp{
+    void onScreenStarted();
 
+    void setTextVisibility(boolean visible);
+  }
+  interface toSearch{
+
+    void setTextVisibility(boolean textVisibility);
+
+    void onScreenStarted();
+  }
   ///////////////////////////////////////////////////////////////////////////////////
   // Screen ////////////////////////////////////////////////////////////////////////
+interface toAdd{
+    void onScreenStarted();
 
+    void setTextVisibility(boolean visible);
+    void setSelectorsVisibility(boolean visible);
+  }
   /**
    * Methods offered to VIEW to communicate with PRESENTER
    */
