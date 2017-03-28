@@ -7,6 +7,7 @@ import android.content.Intent;
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangApp;
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppView;
 import es.ulpgc.eite.clean.mvp.sample.hello.Hello;
+import es.ulpgc.eite.clean.mvp.sample.search.SearchView;
 
 
 public class App extends Application implements Mediator, Navigator {
@@ -15,7 +16,7 @@ public class App extends Application implements Mediator, Navigator {
   private HelloState toHelloState;
   private ByeState helloToByeState;
   private HangAppState toHangAppState;
-  private SearchState toSearchState, searchToSate;
+  private SearchState toSearchState, searchToState;
   private AddState toAddState,addToState;
 
   @Override
@@ -118,14 +119,14 @@ public void onCreateHome() {
 
 
   @Override
-  public void goToNextScreen(HangApp.DummyTo presenter) {
-    dummyToState = new DummyState();
-    dummyToState.toolbarVisibility = presenter.isToolbarVisible();
-    dummyToState.textVisibility = presenter.isTextVisible();
+  public void goToSearchScreen(HangApp.SearchTo presenter) {
+    searchToState = new SearchState();
+
+    searchToState.textVisibility = presenter.isTextVisible();
 
     Context view = presenter.getManagedContext();
     if (view != null) {
-      view.startActivity(new Intent(view, HangAppView.class));
+      view.startActivity(new Intent(view, SearchView.class));
       presenter.destroyView();
     }
 
@@ -133,9 +134,9 @@ public void onCreateHome() {
 
 
   @Override
-  public void goToByeScreen(Hello.HelloToBye presenter) {
-    helloToByeState = new ByeState();
-    helloToByeState.toolbarVisibility = presenter.isToolbarVisible();
+  public void goToAddScreen(HangApp.HangAppToAdd presenter) {
+   addToState = new AddState();
+    helloToByeState.toolbarVisibility = presenter.isTextVisible();
     //helloToByeState.textVisibility = presenter.isTextVisible();
 
     Context view = presenter.getManagedContext();

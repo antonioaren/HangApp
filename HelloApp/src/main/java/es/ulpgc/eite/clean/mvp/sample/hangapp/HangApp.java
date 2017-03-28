@@ -85,4 +85,21 @@ interface toAdd{
   interface ModelToPresenter {
 
   }
+
+  public interface SearchTo {
+    Context getManagedContext();
+    void destroyView();
+
+    boolean isTextVisible();
+
+  }
+
+  public interface HangAppToAdd {
+    Context getManagedContext();
+    void destroyView();
+
+    boolean isTextVisible();
+
+
+  }
 }
