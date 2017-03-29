@@ -9,6 +9,7 @@ import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
+import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 import es.ulpgc.eite.clean.mvp.sample.search.SearchView;
 
 public class HangAppPresenter extends GenericPresenter
@@ -113,7 +114,8 @@ public class HangAppPresenter extends GenericPresenter
 
       @Override
       public void onButtonAddClicked() {
-
+        Navigator app = (Navigator) getView().getApplication();
+        app.goToAddScreen((HangApp.HangAppToAdd) this);
       }
 
 

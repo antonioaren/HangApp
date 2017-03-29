@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangApp;
+import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppPresenter;
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppView;
 import es.ulpgc.eite.clean.mvp.sample.hello.Hello;
 import es.ulpgc.eite.clean.mvp.sample.search.SearchView;
@@ -112,9 +113,16 @@ public void onCreateHome() {
     }
     presenter.onScreenStarted();
   }
+
+  @Override
+  public void startingMainScreen(HangAppPresenter hangAppPresenter) {
+
+  }
+
+
   @Override
   public void startingMainScreen(HangApp.ToHangApp presenter){
-    if(toAddState != null) {
+    if(toHangAppState != null) {
       presenter.setTextVisibility(toHangAppState.textVisibility);
       presenter.setImageVisibility(toHangAppState.imageVisibility);
       //presenter.setTextVisibility(toHelloState.textVisibility);
