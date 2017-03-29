@@ -25,7 +25,7 @@
 
     <include
         layout="@layout/content_hangapp"
-        android:layout_width="394dp" />
+        />
 
 
 </android.support.design.widget.CoordinatorLayout>

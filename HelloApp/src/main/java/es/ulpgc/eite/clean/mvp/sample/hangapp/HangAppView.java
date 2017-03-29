@@ -1,6 +1,5 @@
 package es.ulpgc.eite.clean.mvp.sample.hangapp;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;

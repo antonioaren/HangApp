@@ -12,8 +12,6 @@ import android.widget.TextView;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
-import es.ulpgc.eite.clean.mvp.sample.hangapp.HangApp;
-import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppPresenter;
 
 /**
  * Created by eleonora on 23/03/2017.

@@ -9,10 +9,9 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
-import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangApp;
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppPresenter;
-
+import es.ulpgc.eite.clean.mvp.sample.R;
 /**
  * Created by eleonora on 23/03/2017.
  */
@@ -32,7 +31,7 @@ public class AddPartyView extends GenericActivity<HangApp.PresenterToView, HangA
     Button buttonPublish;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addparty);
         textViewTitle=(TextView)findViewById(R.id.textViewTitle);
