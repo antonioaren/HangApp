@@ -59,7 +59,9 @@ public class HangAppModel extends GenericModel<HangApp.ModelToPresenter>
   public String getSearchLabel() {
     return HangAppButtonSearchLabel;
   }
- public String getAddLabel(){
+
+  @Override
+  public String getAddLabel(){
     return HangAppButtonAddLabel;
   }
 

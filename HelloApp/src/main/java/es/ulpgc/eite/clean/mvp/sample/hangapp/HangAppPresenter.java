@@ -33,7 +33,7 @@ import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 
     Log.d(TAG, "calling startingMainScreen()");
     Mediator app = (Mediator) getView().getApplication();
-    app.startingDummyScreen(this);
+    //app.startingDummyScreen(this);
   }
 
   /**
@@ -50,7 +50,8 @@ import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 
 
     if(configurationChangeOccurred()) {
-      getView().setLabel(getModel().getLabel());
+      getView().setLabel(getModel().getSearchLabel());
+      getView().setLabel(getModel().getSearchLabel());
 
       checkToolbarVisibility();
       checkTextVisibility();
@@ -114,7 +115,8 @@ import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
   public void onScreenStarted() {
     Log.d(TAG, "calling onScreenStarted()");
     if(isViewRunning()) {
-      getView().setLabel(getModel().getLabel());
+      getView().setLabel(getModel().getSearchLabel());
+      getView().setLabel(getModel().getAddLabel());
     }
     checkToolbarVisibility();
     checkTextVisibility();

@@ -23,7 +23,7 @@ public class HangAppView
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_hangapp);
 
-    text = (TextView) findViewById(R.id.textView);
+    text = (TextView) findViewById(R.id.textView7);
 
     toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
@@ -32,14 +32,14 @@ public class HangAppView
     buttonSearch.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        getPresenter().onButtonClicked();
+        getPresenter().onButtonSearchClicked();
       }
     });
     buttonAdd = (Button) findViewById(R.id.buttonAdd);
     buttonAdd.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        getPresenter().onButtonClicked();
+        getPresenter().onButtonAddClicked();
       }
     });
   }
@@ -116,4 +116,10 @@ public class HangAppView
   public void setLabelSearch(String txt) {
     buttonSearch.setText(txt);
   }
+
+@Override
+public void setAddLabel(String txt) {
+  buttonAdd.setText(txt);
 }
+}
+
