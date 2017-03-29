@@ -32,8 +32,8 @@ private ImageView imageSearch;
     Button buttonSearch;
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+       @Override
+         public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 

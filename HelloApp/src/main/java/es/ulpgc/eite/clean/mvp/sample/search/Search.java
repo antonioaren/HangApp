@@ -1,6 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.search;
 
 import android.content.Context;
+import android.os.Bundle;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
@@ -50,6 +51,8 @@ public interface Search {
      * Required VIEW methods available to PRESENTER
      */
     interface PresenterToView extends ContextView {
+        void onCreate(Bundle savedInstanceState);
+
         void finishScreen();
 
 
@@ -59,6 +62,17 @@ public interface Search {
         void setSearchBtnLabel(String txt);
 
 
+        void hideToolbar();
+
+        void hideText();
+
+        void showText();
+
+        void setText(String txt);
+
+        void setLabel(String txt);
+
+        void setLabelSearch(String txt);
     }
 
     /**

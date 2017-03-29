@@ -13,7 +13,7 @@
         android:id="@+id/imageViewSearch"
         android:layout_width="match_parent"
         android:layout_height="189dp"
-        android:background="@drawable/searchParty" />
+        android:background="@drawable/searchparty" />
 
     <Space
         android:layout_width="match_parent"
