@@ -119,7 +119,7 @@ public void onCreateHome() {
       presenter.setImageVisibility(toHangAppState.imageVisibility);
       //presenter.setTextVisibility(toHelloState.textVisibility);
     }
-    presenter.onScreenStarted();
+    presenter.onMainScreenStarted();
   }
 
   ///////////////////////////////////////////////////////////////////////////////////

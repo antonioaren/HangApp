@@ -117,6 +117,8 @@ interface ToHangApp{
 
   void setTextVisibility(boolean textVisibility);
   void setImageVisibility(boolean ImageVisibility);
+
+  void onMainScreenStarted();
 }
 
 }
