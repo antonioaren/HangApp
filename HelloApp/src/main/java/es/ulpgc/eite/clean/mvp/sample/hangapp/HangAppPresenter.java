@@ -31,7 +31,7 @@ import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
     setView(view);
     Log.d(TAG, "calling onCreate()");
 
-    Log.d(TAG, "calling startingDummyScreen()");
+    Log.d(TAG, "calling startingMainScreen()");
     Mediator app = (Mediator) getView().getApplication();
     app.startingDummyScreen(this);
   }
