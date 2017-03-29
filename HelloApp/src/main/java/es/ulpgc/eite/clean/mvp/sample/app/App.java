@@ -112,7 +112,15 @@ public void onCreateHome() {
     }
     presenter.onScreenStarted();
   }
+  @Override
+  public void startingMainScreen(HangApp.ToHangApp presenter){
+    if(toAddState != null) {
+      presenter.setTextVisibility(toHangAppState.textVisibility);
 
+      //presenter.setTextVisibility(toHelloState.textVisibility);
+    }
+    presenter.onScreenStarted();
+  }
 
   ///////////////////////////////////////////////////////////////////////////////////
   // Navigator /////////////////////////////////////////////////////////////////////

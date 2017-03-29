@@ -87,4 +87,9 @@ public class AddPartyView extends GenericActivity<HangApp.PresenterToView, HangA
     public void setLabelSearch(String txt) {
 
     }
+
+    @Override
+    public void setAddLabel(String txt) {
+
+    }
 }

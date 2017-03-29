@@ -113,4 +113,10 @@ interface toAdd{
 
 
   }
+interface ToHangApp{
+
+  void setTextVisibility(boolean textVisibility);
+  void setImageVisibility(boolean ImageVisibility);
+}
+
 }
