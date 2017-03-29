@@ -29,13 +29,7 @@ public interface HangApp {
   boolean isToolbarVisible();
    boolean isTextVisible();
  }
-  interface toHangApp{
-    void onScreenStarted();
 
-    void setTextVisibility(boolean visible);
-
-      void setImageVisibility(boolean imageVisibility);
-  }
   interface toSearch{
 
     void setTextVisibility(boolean textVisibility);
@@ -99,7 +93,7 @@ interface toAdd{
 
   }
 
-  public interface SearchTo {
+  interface SearchTo {
     Context getManagedContext();
     void destroyView();
 
@@ -107,7 +101,7 @@ interface toAdd{
 
   }
 
-  public interface HangAppToAdd {
+   interface HangAppToAdd {
     Context getManagedContext();
     void destroyView();
 
@@ -115,7 +109,9 @@ interface toAdd{
 
 
   }
-    interface ToHangApp{
+
+
+  interface ToHangApp{
 
   void setTextVisibility(boolean textVisibility);
   void setImageVisibility(boolean ImageVisibility);

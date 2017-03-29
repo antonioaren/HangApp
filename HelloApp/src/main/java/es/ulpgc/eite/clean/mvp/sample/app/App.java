@@ -23,12 +23,17 @@ public class App extends Application implements Mediator, Navigator {
   @Override
   public void onCreate() {
     super.onCreate();
-    toDummyState = new DummyState();
-    toDummyState.toolbarVisibility = false;
-    toDummyState.textVisibility = false;
+      toDummyState = new DummyState();
+      toDummyState.toolbarVisibility = false;
+      toDummyState.textVisibility = false;
 
-    toHelloState = new HelloState();
-    toHangAppState=new HangAppState();
+      toHelloState = new HelloState();
+      toHangAppState=new HangAppState();
+      toSearchState = new SearchState();
+      toSearchState.textVisibility = false;
+
+
+
   }
 
   ///////////////////////////////////////////////////////////////////////////////////
@@ -89,11 +94,7 @@ public class App extends Application implements Mediator, Navigator {
 
 public void onCreateHome() {
   super.onCreate();
-  toSearchState = new SearchState();
-  toSearchState.textVisibility = false;
 
-
-  toHangAppState = new HangAppState();
 }
 
   @Override

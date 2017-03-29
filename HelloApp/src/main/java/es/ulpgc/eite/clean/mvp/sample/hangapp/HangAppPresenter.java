@@ -101,18 +101,18 @@ public class HangAppPresenter extends GenericPresenter
   @Override
   public void onButtonSearchClicked() {
       Log.d(TAG, "calling onButtonSearchClicked()");
-      if (isViewRunning()) {
-          getModel().onChangeMsgByBtnClicked();
-          getView().setText(getModel().getText());
-          textVisible = true;
-          buttonClicked = true;
+//      if (isViewRunning()) {
+//          getModel().onChangeMsgByBtnClicked();
+//          getView().setText(getModel().getText());
+//          textVisible = true;
+//          buttonClicked = true;
 
-//    Navigator app = (Navigator) getView().getApplication();
-//      app.goToSearchScreen(this);
+     Navigator app = (Navigator) getView().getApplication();
+      app.goToSearchScreen(this);
       }
-      checkTextVisibility();
+    //  checkTextVisibility();
 
-  }
+
       @Override
       public void onButtonAddClicked() {
         Log.d(TAG,"Clickeado boton Add");
