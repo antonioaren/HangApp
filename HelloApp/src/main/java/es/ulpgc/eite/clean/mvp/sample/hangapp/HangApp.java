@@ -48,7 +48,7 @@ interface toAdd{
    * Methods offered to VIEW to communicate with PRESENTER
    */
   interface ViewToPresenter extends Presenter<PresenterToView> {
-    void onButtonClicked();
+
 
     void onButtonSearchClicked();
 
@@ -100,7 +100,12 @@ interface toAdd{
     boolean isTextVisible();
 
   }
+interface AddTo{
+    Context getManagedContext();
+    void destroyView();
 
+    boolean isTextVisible();
+}
    interface HangAppToAdd {
     Context getManagedContext();
     void destroyView();

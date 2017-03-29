@@ -90,6 +90,8 @@ public class App extends Application implements Mediator, Navigator {
     }
 
   }
+
+
 //----------------------Metodos para nuestra app-----------------------------------------------------------
 
 public void onCreateHome() {
@@ -146,11 +148,9 @@ public void onCreateHome() {
     }
 
   }
-
-
   @Override
   public void goToAddScreen(HangApp.HangAppToAdd presenter) {
-   addToState = new AddState();
+    addToState = new AddState();
     helloToByeState.toolbarVisibility = presenter.isTextVisible();
     //helloToByeState.textVisibility = presenter.isTextVisible();
 
@@ -161,6 +161,8 @@ public void onCreateHome() {
     }
 
   }
+
+
   ///////////////////////////////////////////////////////////////////////////////////
   // State /////////////////////////////////////////////////////////////////////////
 

@@ -14,7 +14,7 @@ import es.ulpgc.eite.clean.mvp.sample.search.SearchView;
 
 public class HangAppPresenter extends GenericPresenter
           <HangApp.PresenterToView, HangApp.PresenterToModel, HangApp.ModelToPresenter, HangAppModel>
-          implements HangApp.ViewToPresenter, HangApp.ModelToPresenter, HangApp.DummyTo, HangApp.ToDummy, HangApp.SearchTo, HangApp.ToHangApp {
+          implements HangApp.ViewToPresenter, HangApp.ModelToPresenter, HangApp.DummyTo, HangApp.ToDummy, HangApp.SearchTo, HangApp.ToHangApp, HangApp.HangAppToAdd {
 
     private boolean toolbarVisible;
    private boolean buttonClicked;
@@ -93,10 +93,6 @@ public class HangAppPresenter extends GenericPresenter
   ///////////////////////////////////////////////////////////////////////////////////
   // View To Presenter /////////////////////////////////////////////////////////////
 
-  @Override
-  public void onButtonClicked() {
-
-  }
 
   @Override
   public void onButtonSearchClicked() {
@@ -115,9 +111,9 @@ public class HangAppPresenter extends GenericPresenter
 
       @Override
       public void onButtonAddClicked() {
-        Log.d(TAG,"Clickeado boton Add");
+        Log.d(TAG,"calling onButtonAddClicked()");
         Navigator app = (Navigator) getView().getApplication();
-        app.goToAddScreen((HangApp.HangAppToAdd) this);
+        app.goToAddScreen(this);
       }
 
 
