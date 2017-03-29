@@ -116,8 +116,8 @@ public class HangAppPresenter extends GenericPresenter
       @Override
       public void onButtonAddClicked() {
         Log.d(TAG,"Clickeado boton Add");
-          // Navigator app = (Navigator) getView().getApplication();
-       // app.goToAddScreen((HangApp.HangAppToAdd) this);
+        Navigator app = (Navigator) getView().getApplication();
+        app.goToAddScreen((HangApp.HangAppToAdd) this);
       }
 
 
