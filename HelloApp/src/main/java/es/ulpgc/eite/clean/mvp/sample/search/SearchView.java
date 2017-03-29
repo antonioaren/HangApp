@@ -30,6 +30,8 @@ private ImageView imageSearch;
     TextView textDate;
     CalendarView calendar;
     Button buttonSearch;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +44,7 @@ private ImageView imageSearch;
         categories=(TextView)findViewById(R.id.textCategories);
         listCategories=(ListView)findViewById(R.id.listCategories);
          String[]categories= new String[]{"Cines","Culturales","Conciertos","Discotecas","Verbenas"};
+
         ArrayAdapter<String> adaptader = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, categories);
         listCategories.setAdapter(adaptader);
         textDate=(TextView)findViewById(R.id.textDate);
@@ -58,6 +61,11 @@ private ImageView imageSearch;
 
     @Override
     public void finishScreen() {
+
+    }
+
+    @Override
+    public void setSearchBtnLabel(String txt) {
 
     }
 
