@@ -116,7 +116,7 @@ public void onCreateHome() {
   public void startingMainScreen(HangApp.ToHangApp presenter){
     if(toAddState != null) {
       presenter.setTextVisibility(toHangAppState.textVisibility);
-
+      presenter.setImageVisibility(toHangAppState.imageVisibility);
       //presenter.setTextVisibility(toHelloState.textVisibility);
     }
     presenter.onScreenStarted();
@@ -173,7 +173,7 @@ public void onCreateHome() {
   }
 private class HangAppState{
    boolean textVisibility;
-
+   boolean imageVisibility;
   }
 private class SearchState{
   boolean textVisibility;
