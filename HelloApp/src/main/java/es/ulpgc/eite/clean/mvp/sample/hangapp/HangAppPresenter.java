@@ -14,12 +14,12 @@ import es.ulpgc.eite.clean.mvp.sample.search.SearchView;
 
 public class HangAppPresenter extends GenericPresenter
           <HangApp.PresenterToView, HangApp.PresenterToModel, HangApp.ModelToPresenter, HangAppModel>
-          implements HangApp.ViewToPresenter, HangApp.ModelToPresenter, HangApp.DummyTo, HangApp.ToDummy {
+          implements HangApp.ViewToPresenter, HangApp.ModelToPresenter, HangApp.DummyTo, HangApp.ToDummy, HangApp.SearchTo, HangApp.ToHangApp {
 
     private boolean toolbarVisible;
    private boolean buttonClicked;
    private boolean textVisible;
-
+  private boolean imageVisibility;
   /**
    * Operation called during VIEW creation in {@link GenericActivity#onResume(Class, Object)}
    * Responsible to initialize MODEL.
@@ -36,7 +36,7 @@ public class HangAppPresenter extends GenericPresenter
 
     Log.d(TAG, "calling startingMainScreen()");
     Mediator app = (Mediator) getView().getApplication();
-    app.startingMainScreen(this);
+    app.startingHangAppScreen(this);
   }
 
   /**
@@ -100,22 +100,24 @@ public class HangAppPresenter extends GenericPresenter
 
   @Override
   public void onButtonSearchClicked() {
-    Log.d(TAG, "calling onButtonSearchClicked()");
-    if(isViewRunning()) {
-      getModel().onChangeMsgByBtnClicked();
-      getView().setText(getModel().getText());
-      textVisible = true;
-      buttonClicked = true;
+      Log.d(TAG, "calling onButtonSearchClicked()");
+      if (isViewRunning()) {
+          getModel().onChangeMsgByBtnClicked();
+          getView().setText(getModel().getText());
+          textVisible = true;
+          buttonClicked = true;
 
+//    Navigator app = (Navigator) getView().getApplication();
+//      app.goToSearchScreen(this);
+      }
+      checkTextVisibility();
 
-    }
-    checkTextVisibility();
   }
-
       @Override
       public void onButtonAddClicked() {
-        Navigator app = (Navigator) getView().getApplication();
-        app.goToAddScreen((HangApp.HangAppToAdd) this);
+        Log.d(TAG,"Clickeado boton Add");
+          // Navigator app = (Navigator) getView().getApplication();
+       // app.goToAddScreen((HangApp.HangAppToAdd) this);
       }
 
 
@@ -142,6 +144,13 @@ public class HangAppPresenter extends GenericPresenter
   public void setTextVisibility(boolean visible) {
     textVisible = visible;
   }
+
+  @Override
+  public void setImageVisibility(boolean ImageVisibility) {
+     imageVisibility=ImageVisibility;
+  }
+
+
 
 
   ///////////////////////////////////////////////////////////////////////////////////

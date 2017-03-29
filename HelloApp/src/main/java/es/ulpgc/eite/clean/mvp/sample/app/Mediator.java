@@ -13,7 +13,10 @@ public interface Mediator {
 
   void startingAddScreen(HangApp.toAdd presenter);
 
-  void startingMainScreen(HangAppPresenter hangAppPresenter);
 
-  void startingMainScreen(HangApp.ToHangApp presenter);
+
+
+
+
+  void startingHangAppScreen(HangApp.ToHangApp presenter);
 }

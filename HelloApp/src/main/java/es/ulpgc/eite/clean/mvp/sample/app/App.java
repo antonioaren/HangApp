@@ -28,6 +28,7 @@ public class App extends Application implements Mediator, Navigator {
     toDummyState.textVisibility = false;
 
     toHelloState = new HelloState();
+    toHangAppState=new HangAppState();
   }
 
   ///////////////////////////////////////////////////////////////////////////////////
@@ -114,21 +115,18 @@ public void onCreateHome() {
     presenter.onScreenStarted();
   }
 
-  @Override
-  public void startingMainScreen(HangAppPresenter hangAppPresenter) {
-
-  }
 
 
   @Override
-  public void startingMainScreen(HangApp.ToHangApp presenter){
+  public void startingHangAppScreen(HangApp.ToHangApp presenter) {
     if(toHangAppState != null) {
-      presenter.setTextVisibility(toHangAppState.textVisibility);
+     presenter.setTextVisibility(toHangAppState.textVisibility);
       presenter.setImageVisibility(toHangAppState.imageVisibility);
       //presenter.setTextVisibility(toHelloState.textVisibility);
     }
-    presenter.onMainScreenStarted();
+    presenter.onScreenStarted();
   }
+
 
   ///////////////////////////////////////////////////////////////////////////////////
   // Navigator /////////////////////////////////////////////////////////////////////

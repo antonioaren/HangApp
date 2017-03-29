@@ -33,6 +33,8 @@ public interface HangApp {
     void onScreenStarted();
 
     void setTextVisibility(boolean visible);
+
+      void setImageVisibility(boolean imageVisibility);
   }
   interface toSearch{
 
@@ -113,12 +115,13 @@ interface toAdd{
 
 
   }
-interface ToHangApp{
+    interface ToHangApp{
 
   void setTextVisibility(boolean textVisibility);
   void setImageVisibility(boolean ImageVisibility);
 
-  void onMainScreenStarted();
+
+  void onScreenStarted();
 }
 
 }
