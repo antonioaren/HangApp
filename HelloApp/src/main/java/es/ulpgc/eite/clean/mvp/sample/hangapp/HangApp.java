@@ -17,18 +17,18 @@ public interface HangApp {
   ///////////////////////////////////////////////////////////////////////////////////
   // State /////////////////////////////////////////////////////////////////////////
 
-  interface ToDummy {
+  /*interface ToDummy {
     void onScreenStarted();
     void setToolbarVisibility(boolean visible);
     void setTextVisibility(boolean visible);
   }
-
-  interface DummyTo {
-    Context getManagedContext();
-    void destroyView();
-    boolean isToolbarVisible();
-    boolean isTextVisible();
-  }
+*/
+//  interface DummyTo {
+//    Context getManagedContext();
+//    void destroyView();
+//    boolean isToolbarVisible();
+//    boolean isTextVisible();
+//  }
   interface toHangApp{
     void onScreenStarted();
 
@@ -80,6 +80,8 @@ interface toAdd{
     void onChangeMsgByBtnClicked();
     String getText();
     String getLabel();
+
+    String getSearchLabel();
   }
 
   /**
