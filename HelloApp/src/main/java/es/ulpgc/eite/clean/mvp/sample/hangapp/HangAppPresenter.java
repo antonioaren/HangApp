@@ -16,7 +16,7 @@ import static android.content.ContentValues.TAG;
 
 public class HangAppPresenter extends GenericPresenter
           <HangApp.PresenterToView, HangApp.PresenterToModel, HangApp.ModelToPresenter, HangAppModel>
-          implements HangApp.ViewToPresenter, HangApp.ModelToPresenter, HangApp.DummyTo, HangApp.ToDummy, HangApp.SearchTo, HangApp.ToHangApp, HangApp.HangAppToAdd {
+          implements HangApp.ViewToPresenter, HangApp.ModelToPresenter, HangApp.DummyTo, HangApp.ToDummy, HangApp.SearchTo, HangApp.ToHangApp, HangApp.HangAppToAdd, HangApp.AddTo {
 
     private boolean toolbarVisible;
    private boolean buttonClicked;
@@ -110,7 +110,7 @@ public class HangAppPresenter extends GenericPresenter
       }
     //  checkTextVisibility();
 
-
+//Modificar metodo
       @Override
       public void onButtonAddClicked() {
         Log.d(TAG,"calling onButtonAddClicked()");
