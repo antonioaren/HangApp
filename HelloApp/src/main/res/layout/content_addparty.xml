@@ -4,7 +4,9 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1">
-
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="48dp" />
 
     <TextView
         android:id="@+id/textViewTitle"
@@ -12,11 +14,9 @@
         android:layout_height="85dp"
         android:background="#ffffff"
         android:backgroundTint="@android:color/background_light"
-        android:text="Publish your own party!!!"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="56dp" />
+        android:text="            Publish your own party!!!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        />
 
 
     <LinearLayout
