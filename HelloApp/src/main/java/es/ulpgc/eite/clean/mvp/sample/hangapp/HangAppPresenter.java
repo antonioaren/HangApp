@@ -111,7 +111,7 @@ public class HangAppPresenter extends GenericPresenter
       }
     //  checkTextVisibility();
 
-//Metodo ya funciona 
+//Metodo ya funciona
       @Override
       public void onButtonAddClicked() {
         Log.d(TAG,"calling onButtonAddClicked()");

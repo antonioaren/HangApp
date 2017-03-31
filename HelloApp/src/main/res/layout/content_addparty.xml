@@ -89,12 +89,18 @@
             android:layout_weight="0.06"
             android:background="@android:color/holo_blue_bright"
             android:text="Starts:" />
+        <Space
+            android:layout_width="14dp"
+            android:layout_height="14dp" />
+
         <TimePicker
             android:id="@+id/timePickerInit"
             android:layout_width="75dp"
             android:layout_height="match_parent"
             android:layout_weight="0.19" />
-
+        <Space
+            android:layout_width="14dp"
+            android:layout_height="14dp" />
         <TextView
             android:id="@+id/textViewFinish"
             android:layout_width="75dp"
@@ -102,6 +108,9 @@
             android:background="@android:color/holo_blue_bright"
             android:text="Finishes:" />
 
+        <Space
+            android:layout_width="14dp"
+            android:layout_height="14dp" />
         <TimePicker
             android:id="@+id/timePickerFinish"
             android:layout_width="75dp"
