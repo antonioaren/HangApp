@@ -7,12 +7,12 @@ import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.Presenter;
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangApp;
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppModel;
+import es.ulpgc.eite.clean.mvp.sample.search.Search.ViewToPresenter;
 
 /**
  * Created by alumno on 29/03/2017.
  */
-public class SearchPresenter  extends GenericPresenter<Search.PresenterToView, Search.PresenterToModel, Search.ModelToPresenter, SearchModel>
-        implements HangApp.ViewToPresenter, HangApp.ModelToPresenter, HangApp.DummyTo, HangApp.ToDummy, HangApp.SearchTo, HangApp.ToHangApp, HangApp.HangAppToAdd, HangApp.AddTo {
+public class SearchPresenter  extends GenericPresenter<Search.ViewToPresenter, Search.PresenterToModel, Search.ModelToPresenter, SearchModel> implements Search {
 
 
     @Override
@@ -26,13 +26,23 @@ public class SearchPresenter  extends GenericPresenter<Search.PresenterToView, S
     }
 
     @Override
+    public void onCreate(ViewToPresenter viewToPresenter) {
+
+    }
+
+    @Override
+    public void onResume(ViewToPresenter viewToPresenter) {
+
+    }
+
+    @Override
     public void onDestroy(boolean b) {
 
     }
 
 
     @Override
-    public void onSecundaryButtonsearchPressed(){
+    public void onButtonSecundarySearchPressed(){
 
     }
     @Override

@@ -1,8 +1,10 @@
 package es.ulpgc.eite.clean.mvp.sample.search;
 
+import es.ulpgc.eite.clean.mvp.Model;
+
 /**
  * Created by alumno on 31/03/2017.
  */
 
-public class SearchModel {
+public class SearchModel implements Model<Search.ModelToPresenter> {
 }

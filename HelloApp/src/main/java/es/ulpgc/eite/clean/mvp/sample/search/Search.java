@@ -13,6 +13,13 @@ import es.ulpgc.eite.clean.mvp.Presenter;
  */
 
 public interface Search {
+    void onCreate(PresenterToView presenterToView);
+
+    void onResume(PresenterToView presenterToView);
+
+    void onButtonSecundarySearchPressed();
+
+
     interface SearchToHangApp {
 
         boolean isTextVisible();
@@ -44,10 +51,10 @@ public interface Search {
      */
     interface ViewToPresenter extends Presenter<PresenterToView> {
 
-
-
-
         void onButtonSecundarySearchPressed();
+
+
+
 
         //void onStartingView();
     }
