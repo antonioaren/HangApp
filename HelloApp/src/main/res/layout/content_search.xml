@@ -9,8 +9,7 @@
     android:weightSum="1">
     <Space
         android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_weight="0.88" />
+        android:layout_height="40dp" />
 
     <ImageView
         android:id="@+id/imageViewSearch"
@@ -86,8 +85,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_weight="0.05" />
+        android:layout_height="32dp" />
 
 
     <LinearLayout
@@ -112,7 +110,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="35dp" />
+        android:layout_height="25dp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
