@@ -10,7 +10,7 @@ public interface Navigator {
 
   void goToByeScreen(Hello.HelloToBye presenter);
 
-  void goToAddScreen(HangApp.HangAppToAdd presenter);
+  void goToAddScreen(HangApp.AddTo presenter);
 
 
 }
