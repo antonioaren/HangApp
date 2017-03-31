@@ -14,7 +14,7 @@ import es.ulpgc.eite.clean.mvp.sample.search.Search.ViewToPresenter;
 /**
  * Created by alumno on 29/03/2017.
  */
-public class SearchPresenter  extends GenericPresenter<Search.ViewToPresenter, Search.PresenterToModel, Search.ModelToPresenter, SearchModel> implements Search {
+public class SearchPresenter  extends GenericPresenter<Search.ViewToPresenter, Search.PresenterToModel, Search.ModelToPresenter, SearchModel> implements Search, Search.ProcessedTo {
 
 
     @Override
@@ -68,5 +68,30 @@ public class SearchPresenter  extends GenericPresenter<Search.ViewToPresenter, S
     @Override
     public Context getActivityContext() {
         return null;
+    }
+
+    @Override
+    public boolean isInformationVisible() {
+        return false;
+    }
+
+    @Override
+    public boolean isImageVisible() {
+        return false;
+    }
+
+    @Override
+    public boolean ParticipantsExist() {
+        return false;
+    }
+
+    @Override
+    public Context getManagedContext() {
+        return null;
+    }
+
+    @Override
+    public void destroyView() {
+
     }
 }

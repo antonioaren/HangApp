@@ -15,5 +15,5 @@ public interface Navigator {
   void goToAddScreen(HangApp.AddTo presenter);
 
 
-    void goToProcessedInformationScreen(Search.ProcessedTo searchPresenter);
+    void goToProcessedInformationScreen(Search.ProcessedTo presenter);
 }

@@ -219,4 +219,4 @@ class ProcessedInformationState{
         boolean informationVisibility;
         boolean imageVisibility;
          boolean containsParticipants;
-        }
+        }}
