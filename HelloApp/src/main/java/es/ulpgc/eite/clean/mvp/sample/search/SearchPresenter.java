@@ -3,12 +3,16 @@ package es.ulpgc.eite.clean.mvp.sample.search;
 import android.app.Application;
 import android.content.Context;
 
+import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.Presenter;
+import es.ulpgc.eite.clean.mvp.sample.hangapp.HangApp;
+import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppModel;
 
 /**
  * Created by alumno on 29/03/2017.
  */
-public class SearchPresenter implements Presenter<Search.PresenterToView> {
+public class SearchPresenter  extends GenericPresenter<Search.PresenterToView, Search.PresenterToModel, Search.ModelToPresenter, SearchModel>
+        implements HangApp.ViewToPresenter, HangApp.ModelToPresenter, HangApp.DummyTo, HangApp.ToDummy, HangApp.SearchTo, HangApp.ToHangApp, HangApp.HangAppToAdd, HangApp.AddTo {
 
 
     @Override
@@ -26,6 +30,11 @@ public class SearchPresenter implements Presenter<Search.PresenterToView> {
 
     }
 
+
+    @Override
+    public void onSecundaryButtonsearchPressed(){
+
+    }
     @Override
     public void onBackPressed() {
 

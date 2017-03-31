@@ -76,6 +76,7 @@ public class HangAppPresenter extends GenericPresenter
   @Override
   public void onBackPressed() {
     Log.d(TAG, "calling onBackPressed()");
+
   }
 
   /**

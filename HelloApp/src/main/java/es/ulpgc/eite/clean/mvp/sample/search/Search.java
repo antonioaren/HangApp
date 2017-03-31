@@ -7,6 +7,7 @@ import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.Presenter;
 
+
 /**
  * Created by eleonora on 28/03/2017.
  */
@@ -41,11 +42,17 @@ public interface Search {
     /**
      * Methods offered to VIEW to communicate with PRESENTER
      */
-    interface ViewToPresenter extends Presenter<Search.PresenterToView> {
-        void onSearchBtnClicked();
+    interface ViewToPresenter extends Presenter<PresenterToView> {
+
+
+
+
+        void onButtonSecundarySearchPressed();
 
         //void onStartingView();
     }
+
+
 
     /**
      * Required VIEW methods available to PRESENTER

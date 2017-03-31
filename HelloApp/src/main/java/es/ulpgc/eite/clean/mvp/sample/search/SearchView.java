@@ -51,7 +51,7 @@ private ImageView imageSearch;
         buttonSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+            getPresenter().onButtonSecundarySearchPressed();
             }
         });
     }
