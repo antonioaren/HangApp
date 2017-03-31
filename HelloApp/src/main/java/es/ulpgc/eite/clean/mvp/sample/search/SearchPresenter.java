@@ -14,80 +14,88 @@ import es.ulpgc.eite.clean.mvp.sample.search.Search.ViewToPresenter;
 /**
  * Created by alumno on 29/03/2017.
  */
-public class SearchPresenter  extends GenericPresenter<Search.PresenterToView, Search.PresenterToModel, Search.ModelToPresenter, SearchModel> implements Search, Search.ProcessedTo, Presenter<Search.PresenterToView>{
+public class SearchPresenter  {
 
 
     private boolean informationVisible;
     private boolean imageVisibility;
     private boolean participantExists;
 
-    @Override
-    public void onCreate(Search.PresenterToView presenterToView) {
-
-    }
-
-    @Override
-    public void onResume(Search.PresenterToView presenterToView) {
-
-    }
-
-
-
-    @Override
-    public void onDestroy(boolean b) {
-
-    }
-
-
-    @Override
-    public void onButtonSecundarySearchPressed(){
-        Log.d(TAG,"Calling on button search");
-
-        Navigator app = (Navigator) getView().getApplication();
-        app.goToProcessedInformationScreen(this);
-    }
-    @Override
-    public void onBackPressed() {
-
-    }
-
-    @Override
-    public Application getApplication() {
-        return null;
-    }
-
-    @Override
-    public Context getApplicationContext() {
-        return null;
-    }
-
-    @Override
-    public Context getActivityContext() {
-        return null;
-    }
-
-    @Override
-    public boolean isInformationVisible() {
-       return informationVisible;
-    }
-
-    @Override
-    public boolean isImageVisible() {
-         return imageVisibility;
-    }
-
-    @Override
-    public boolean  ParticipantsExist() {
-         return participantExists;
-    }
-
-    @Override
-    public Context getManagedContext() {
-        return null;
-    }
-
-    @Override
-    public void destroyView() {
-
-    }
+//    @Override
+//    public void onCreate(Search.PresenterToView presenterToView) {
+//
+//    }
+//
+//    @Override
+//    public void onResume(Search.PresenterToView presenterToView) {
+//
+//    }
+//
+//    @Override
+//    public void onCreate(ViewToPresenter viewToPresenter) {
+//
+//    }
+//
+//    @Override
+//    public void onResume(ViewToPresenter viewToPresenter) {
+//
+//    }
+//
+//    @Override
+//    public void onDestroy(boolean b) {
+//
+//    }
+//
+//
+//    @Override
+//    public void onButtonSecundarySearchPressed(){
+//        Log.d(TAG,"Calling on button search");
+//
+//        Navigator app = (Navigator) getView().getApplication();
+//        app.goToProcessedInformationScreen(this);
+//    }
+//    @Override
+//    public void onBackPressed() {
+//
+//    }
+//
+//    @Override
+//    public Application getApplication() {
+//        return null;
+//    }
+//
+//    @Override
+//    public Context getApplicationContext() {
+//        return null;
+//    }
+//
+//    @Override
+//    public Context getActivityContext() {
+//        return null;
+//    }
+//
+//    @Override
+//    public boolean isInformationVisible() {
+//       return informationVisible;
+//    }
+//
+//    @Override
+//    public boolean isImageVisible() {
+//         return imageVisibility;
+//    }
+//
+//    @Override
+//    public boolean  ParticipantsExist() {
+//         return participantExists;
+//    }
+//
+//    @Override
+//    public Context getManagedContext() {
+//        return null;
+//    }
+//
+//    @Override
+//    public void destroyView() {
+//
+//    }
 }

@@ -7,4 +7,13 @@ import es.ulpgc.eite.clean.mvp.Model;
  */
 
 public class SearchModel implements Model<Search.ModelToPresenter> {
+    @Override
+    public void onCreate(Search.ModelToPresenter modelToPresenter) {
+
+    }
+
+    @Override
+    public void onDestroy(boolean b) {
+
+    }
 }

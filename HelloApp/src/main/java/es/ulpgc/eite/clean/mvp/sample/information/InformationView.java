@@ -58,7 +58,7 @@ public class InformationView extends GenericActivity<Information.PresenterToView
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_procesed_search);
-         image1=(ImageView)findViewById(R.id.lugar);
+         image1=(ImageView)findViewById(R.id.Lugar);
         textInformation1=(TextView)findViewById(R.id.textView1);
         numberOfParticipants1=(TextView)findViewById(R.id.textView1_1);
 
@@ -93,7 +93,7 @@ public class InformationView extends GenericActivity<Information.PresenterToView
         image9=(ImageView)findViewById(R.id.Lugar9);
         textInformation9=(TextView)findViewById(R.id.textView9);
         numberOfParticipants9=(TextView)findViewById(R.id.textView9_1);
-       
+
         image10=(ImageView)findViewById(R.id.Lugar10);
         textInformation10=(TextView)findViewById(R.id.textView10);
         numberOfParticipants1=(TextView)findViewById(R.id.textView10_1);
