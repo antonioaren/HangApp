@@ -11,6 +11,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
+import es.ulpgc.eite.clean.mvp.sample.R;
 
 /**
  * Created by eleonora on 23/03/2017.
