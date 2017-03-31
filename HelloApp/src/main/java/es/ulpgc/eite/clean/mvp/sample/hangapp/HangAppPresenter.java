@@ -12,6 +12,8 @@ import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 import es.ulpgc.eite.clean.mvp.sample.search.SearchView;
 
+import static android.content.ContentValues.TAG;
+
 public class HangAppPresenter extends GenericPresenter
           <HangApp.PresenterToView, HangApp.PresenterToModel, HangApp.ModelToPresenter, HangAppModel>
           implements HangApp.ViewToPresenter, HangApp.ModelToPresenter, HangApp.DummyTo, HangApp.ToDummy, HangApp.SearchTo, HangApp.ToHangApp, HangApp.HangAppToAdd {
@@ -103,7 +105,7 @@ public class HangAppPresenter extends GenericPresenter
 //          textVisible = true;
 //          buttonClicked = true;
 
-     Navigator app = (Navigator) getView().getApplication();
+       Navigator app = (Navigator) getView().getApplication();
       app.goToSearchScreen(this);
       }
     //  checkTextVisibility();
