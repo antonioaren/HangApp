@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 
+import es.ulpgc.eite.clean.mvp.sample.add.AddPartyView;
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangApp;
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppPresenter;
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppView;
@@ -92,6 +93,7 @@ public class App extends Application implements Mediator, Navigator {
   }
 
 
+
 //----------------------Metodos para nuestra app-----------------------------------------------------------
 
 public void onCreateHome() {
@@ -149,48 +151,51 @@ public void onCreateHome() {
 
   }
   @Override
-  public void goToAddScreen(HangApp.HangAppToAdd presenter) {
+  public void goToAddScreen(HangApp.AddTo presenter) {
     addToState = new AddState();
-    helloToByeState.toolbarVisibility = presenter.isTextVisible();
-    //helloToByeState.textVisibility = presenter.isTextVisible();
 
+    addToState.textVisibility = presenter.isTextVisible();
+   addToState.selectorsVisibility=presenter.isSelectorsVisible();
     Context view = presenter.getManagedContext();
     if (view != null) {
-      view.startActivity(new Intent(view, HangAppView.class));
-      //presenter.destroyView();
+      view.startActivity(new Intent(view, AddPartyView.class));
+      presenter.destroyView();
     }
 
   }
 
 
+}
+
+
   ///////////////////////////////////////////////////////////////////////////////////
   // State /////////////////////////////////////////////////////////////////////////
 
-  private class DummyState {
+  class DummyState {
     boolean toolbarVisibility;
     boolean textVisibility;
   }
 
-  private class ByeState {
+  class ByeState {
     boolean toolbarVisibility;
     //boolean textVisibility;
   }
 
-  private class HelloState {
+   class HelloState {
     boolean toolbarVisibility;
     //boolean textVisibility;
   }
-private class HangAppState{
+ class HangAppState{
    boolean textVisibility;
    boolean imageVisibility;
   }
-private class SearchState{
+class SearchState{
   boolean textVisibility;
 
 }
-private class AddState{
+ class AddState{
   boolean textVisibility;
   boolean selectorsVisibility;
 }
 
-}
+

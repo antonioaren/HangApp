@@ -2,16 +2,11 @@ package es.ulpgc.eite.clean.mvp.sample.hello;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
-import es.ulpgc.eite.clean.mvp.sample.R;
-import es.ulpgc.eite.clean.mvp.sample.hangapp.HangApp;
-import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppPresenter;
 
 public class HelloView
     extends GenericActivity<Hello.PresenterToView, Hello.ViewToPresenter, HelloPresenter>

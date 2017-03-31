@@ -105,6 +105,8 @@ interface AddTo{
     void destroyView();
 
     boolean isTextVisible();
+
+    boolean isSelectorsVisible();
 }
    interface HangAppToAdd {
     Context getManagedContext();

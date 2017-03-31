@@ -7,7 +7,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
-import es.ulpgc.eite.clean.mvp.sample.R;
 
 public class HangAppView
     extends GenericActivity<HangApp.PresenterToView, HangApp.ViewToPresenter, HangAppPresenter>
