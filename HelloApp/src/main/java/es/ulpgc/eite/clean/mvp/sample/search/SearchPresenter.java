@@ -76,17 +76,17 @@ public class SearchPresenter  extends GenericPresenter<Search.ViewToPresenter, S
 
     @Override
     public boolean isInformationVisible() {
-        return informationVisible;
+       return informationVisible;
     }
 
     @Override
     public boolean isImageVisible() {
-        return imageVisibility;
+         return imageVisibility;
     }
 
     @Override
-    public boolean ParticipantsExist() {
-        return participantExists;
+    public boolean  ParticipantsExist() {
+         return participantExists;
     }
 
     @Override

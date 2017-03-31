@@ -28,33 +28,36 @@ public interface Search {
     }
 
     interface ToSearch {
-        void onScreenStarted();
-
-
+       
 
         void setTextVisibility(boolean visible);
     }
 
     interface SearchTo {
         Context getManagedContext();
-
+        void setImageVisibility(boolean visible);
+        void setInformationVisibility(boolean visible);
+        void setParticipantsVisibility(boolean visible);
         void destroyView();
 
         boolean isTextVisible();
     }
  interface ProcessedTo{
 
+
      
+
+    
+
+     Context getManagedContext();
+
+     void destroyView();
 
      boolean isInformationVisible();
 
      boolean isImageVisible();
 
      boolean ParticipantsExist();
-
-     Context getManagedContext();
-
-     void destroyView();
  }
     ///////////////////////////////////////////////////////////////////////////////////
     // Screen ////////////////////////////////////////////////////////////////////////

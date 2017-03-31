@@ -10,6 +10,7 @@ import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppPresenter;
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppView;
 import es.ulpgc.eite.clean.mvp.sample.hello.Hello;
 import es.ulpgc.eite.clean.mvp.sample.information.Information;
+import es.ulpgc.eite.clean.mvp.sample.information.InformationView;
 import es.ulpgc.eite.clean.mvp.sample.search.Search;
 import es.ulpgc.eite.clean.mvp.sample.search.SearchView;
 
@@ -176,7 +177,7 @@ public void onCreateHome() {
 
     Context view = presenter.getManagedContext();
     if (view != null) {
-      view.startActivity(new Intent(view, Information.class));
+      view.startActivity(new Intent(view, InformationView.class));
       presenter.destroyView();
   }
 
