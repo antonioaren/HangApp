@@ -17,6 +17,10 @@ import es.ulpgc.eite.clean.mvp.sample.search.Search.ViewToPresenter;
 public class SearchPresenter  extends GenericPresenter<Search.ViewToPresenter, Search.PresenterToModel, Search.ModelToPresenter, SearchModel> implements Search, Search.ProcessedTo {
 
 
+    private boolean informationVisible;
+    private boolean imageVisibility;
+    private boolean participantExists;
+
     @Override
     public void onCreate(Search.PresenterToView presenterToView) {
 
@@ -72,17 +76,17 @@ public class SearchPresenter  extends GenericPresenter<Search.ViewToPresenter, S
 
     @Override
     public boolean isInformationVisible() {
-        return false;
+        return informationVisible;
     }
 
     @Override
     public boolean isImageVisible() {
-        return false;
+        return imageVisibility;
     }
 
     @Override
     public boolean ParticipantsExist() {
-        return false;
+        return participantExists;
     }
 
     @Override
