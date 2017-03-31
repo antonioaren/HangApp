@@ -42,7 +42,16 @@ public interface Search {
 
         boolean isTextVisible();
     }
+ interface ProcessedTo{
 
+     
+
+     boolean isInformationVisible();
+
+     boolean isImageVisible();
+
+     boolean ParticipantsExist();
+ }
     ///////////////////////////////////////////////////////////////////////////////////
     // Screen ////////////////////////////////////////////////////////////////////////
 

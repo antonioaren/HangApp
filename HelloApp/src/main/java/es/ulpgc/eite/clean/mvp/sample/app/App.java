@@ -9,6 +9,8 @@ import es.ulpgc.eite.clean.mvp.sample.hangapp.HangApp;
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppPresenter;
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppView;
 import es.ulpgc.eite.clean.mvp.sample.hello.Hello;
+import es.ulpgc.eite.clean.mvp.sample.information.Information;
+import es.ulpgc.eite.clean.mvp.sample.search.Search;
 import es.ulpgc.eite.clean.mvp.sample.search.SearchView;
 
 
@@ -20,6 +22,7 @@ public class App extends Application implements Mediator, Navigator {
   private HangAppState toHangAppState;
   private SearchState toSearchState, searchToState;
   private AddState toAddState,addToState;
+  private ProcessedInformationState toprocessedInformationState,processedInformationToState;
 
   @Override
   public void onCreate() {
@@ -164,6 +167,19 @@ public void onCreateHome() {
 
   }
 
+  @Override
+  public void goToProcessedInformationScreen(Search.ProcessedTo presenter) {
+    processedInformationToState=new ProcessedInformationState();
+    processedInformationToState.informationVisibility=presenter.isInformationVisible();
+    processedInformationToState.imageVisibility=presenter.isImageVisible();
+    processedInformationToState.containsParticipants=presenter.ParticipantsExist();
+
+    Context view = presenter.getManagedContext();
+    if (view != null) {
+      view.startActivity(new Intent(view, Information.class));
+      presenter.destroyView();
+  }
+
 
 }
 
@@ -199,3 +215,8 @@ class SearchState{
 }
 
 
+class ProcessedInformationState{
+        boolean informationVisibility;
+        boolean imageVisibility;
+         boolean containsParticipants;
+        }

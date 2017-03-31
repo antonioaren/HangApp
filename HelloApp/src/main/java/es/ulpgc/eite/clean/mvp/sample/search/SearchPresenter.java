@@ -2,9 +2,11 @@ package es.ulpgc.eite.clean.mvp.sample.search;
 
 import android.app.Application;
 import android.content.Context;
+import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.Presenter;
+import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangApp;
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppModel;
 import es.ulpgc.eite.clean.mvp.sample.search.Search.ViewToPresenter;
@@ -43,7 +45,10 @@ public class SearchPresenter  extends GenericPresenter<Search.ViewToPresenter, S
 
     @Override
     public void onButtonSecundarySearchPressed(){
+        Log.d(TAG,"Calling on button search");
 
+        Navigator app = (Navigator) getView().getApplication();
+        app.goToProcessedInformationScreen(this);
     }
     @Override
     public void onBackPressed() {
