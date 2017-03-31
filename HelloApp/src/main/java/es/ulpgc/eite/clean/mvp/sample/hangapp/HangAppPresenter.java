@@ -22,6 +22,7 @@ public class HangAppPresenter extends GenericPresenter
    private boolean buttonClicked;
    private boolean textVisible;
   private boolean imageVisibility;
+  private boolean selectorsVisible;
   /**
    * Operation called during VIEW creation in {@link GenericActivity#onResume(Class, Object)}
    * Responsible to initialize MODEL.
@@ -176,6 +177,14 @@ public class HangAppPresenter extends GenericPresenter
     return textVisible;
   }
 
+  @Override
+  public boolean isSelectorsVisible() {
+    return selectorsVisible;
+  }
+@Override
+public boolean isImageVisible(){
+  return imageVisibility;
+}
 
   ///////////////////////////////////////////////////////////////////////////////////
 

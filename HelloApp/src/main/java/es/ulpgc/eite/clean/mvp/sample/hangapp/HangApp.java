@@ -107,6 +107,8 @@ interface AddTo{
     boolean isTextVisible();
 
     boolean isSelectorsVisible();
+
+    boolean isImageVisible();
 }
    interface HangAppToAdd {
     Context getManagedContext();
