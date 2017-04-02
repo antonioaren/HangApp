@@ -11,7 +11,7 @@ public class HangAppModel extends GenericModel<HangApp.ModelToPresenter>
   private String HangAppButtonAddLabel;
   private int numOfTimes;
   private String msgText;
-
+//comentario
   /**
    * Method that recovers a reference to the PRESENTER
    * You must ALWAYS call {@link super#onCreate(Object)} here

@@ -35,14 +35,14 @@ public class AddPartyView extends GenericActivity<HangApp.PresenterToView, HangA
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addparty);
-        textViewTitle=(TextView)findViewById(R.id.textViewTitle);
+        textViewTitle=(TextView)findViewById(R.id.textView);//TextViewTitle
 
         textPlace=(TextView) findViewById(R.id.textPlace);
         editTextPlace=(EditText)findViewById(R.id.editTextPlace);
         textdate=(TextView)findViewById(R.id.textDate);
         datePicker=(DatePicker)findViewById(R.id.datePicker);
         textViewInit=(TextView)findViewById(R.id.textViewInit);
-        timePickerInit=(TimePicker)findViewById(R.id.timePickerInit);
+        timePickerInit=(TimePicker)findViewById(R.id.timePickerInit);//timePickerInit
         textViewFinish=(TextView)findViewById(R.id.textViewFinish);
         timePickerFinish=(TimePicker)findViewById(R.id.timePickerFinish);
         buttonPublish=(Button)findViewById(R.id.buttonPublish);
