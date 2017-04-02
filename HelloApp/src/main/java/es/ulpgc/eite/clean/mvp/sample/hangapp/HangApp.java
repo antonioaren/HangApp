@@ -1,6 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.hangapp;
 
 import android.content.Context;
+import android.os.Bundle;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
@@ -11,7 +12,7 @@ import es.ulpgc.eite.clean.mvp.Presenter;
  */
 
 public interface HangApp {
-
+//cambios hechos
 
   ///////////////////////////////////////////////////////////////////////////////////
   // State /////////////////////////////////////////////////////////////////////////
@@ -23,26 +24,43 @@ public interface HangApp {
   }
 
   interface DummyTo {
-    Context getManagedContext();
-    void destroyView();
-    boolean isToolbarVisible();
-    boolean isTextVisible();
-  }
+  Context getManagedContext();
+   void destroyView();
+  boolean isToolbarVisible();
+   boolean isTextVisible();
+ }
 
+  interface toSearch{
+
+    void setTextVisibility(boolean textVisibility);
+
+    void onScreenStarted();
+  }
   ///////////////////////////////////////////////////////////////////////////////////
   // Screen ////////////////////////////////////////////////////////////////////////
+interface toAdd{
+    void onScreenStarted();
 
+    void setTextVisibility(boolean visible);
+    void setSelectorsVisibility(boolean visible);
+  }
   /**
    * Methods offered to VIEW to communicate with PRESENTER
    */
   interface ViewToPresenter extends Presenter<PresenterToView> {
-    void onButtonClicked();
+
+
+    void onButtonSearchClicked();
+
+      void onButtonAddClicked();
   }
 
   /**
    * Required VIEW methods available to PRESENTER
    */
   interface PresenterToView extends ContextView {
+    void onCreate(Bundle savedInstanceState);
+
     void finishScreen();
     void hideToolbar();
     void hideText();
@@ -51,6 +69,8 @@ public interface HangApp {
     void setLabel(String txt);
 
       void setLabelSearch(String txt);
+
+      void setAddLabel(String txt);
   }
 
   /**
@@ -59,7 +79,11 @@ public interface HangApp {
   interface PresenterToModel extends Model<ModelToPresenter> {
     void onChangeMsgByBtnClicked();
     String getText();
-    String getLabel();
+
+
+    String getSearchLabel();
+
+    String getAddLabel();
   }
 
   /**
@@ -68,4 +92,41 @@ public interface HangApp {
   interface ModelToPresenter {
 
   }
+
+  interface SearchTo {
+    Context getManagedContext();
+    void destroyView();
+
+    boolean isTextVisible();
+
+  }
+interface AddTo{
+    Context getManagedContext();
+    void destroyView();
+
+    boolean isTextVisible();
+
+    boolean isSelectorsVisible();
+
+    boolean isImageVisible();
+}
+   interface HangAppToAdd {
+    Context getManagedContext();
+    void destroyView();
+
+    boolean isTextVisible();
+
+
+  }
+
+
+  interface ToHangApp{
+
+  void setTextVisibility(boolean textVisibility);
+  void setImageVisibility(boolean ImageVisibility);
+
+
+  void onScreenStarted();
+}
+
 }

@@ -46,10 +46,8 @@ public class HelloView
     //getPresenter().onStartingView();
   }
 
-  /**
-   * Method that initialized MVP objects
-   * {@link super#onResume(Class, Object)} should always be called
-   */
+  //**
+
   @Override
   protected void onResume() {
     super.onResume(HelloPresenter.class, this);
@@ -57,15 +55,15 @@ public class HelloView
     //getPresenter().onStartingView();
   }
 
-  /*
-  @Override
+  //*
+ /* @Override
   public boolean onCreateOptionsMenu(Menu menu) {
     // Inflate the menu; this adds items to the action bar if it is present.
-    getMenuInflater().inflate(R.menu.menu_dummy, menu);
+    getMenuInflater().inflate(es.ulpgc.eite.clean.mvp.sample.hangapp.R.menu.menu_dummy, menu);
     return true;
   }
 
-  @Override
+  /*@Override
   public boolean onOptionsItemSelected(MenuItem item) {
     // Handle action bar item clicks here. The action bar will
     // automatically handle clicks on the Home/Up btnSayHelloView, so long
@@ -73,15 +71,15 @@ public class HelloView
     int id = item.getItemId();
 
     //noinspection SimplifiableIfStatement
-    if (id == R.id.action_settings) {
+    if (id == es.ulpgc.eite.clean.mvp.sample.hangapp.R.id.action_settings) {
       return true;
     }
 
     return super.onOptionsItemSelected(item);
   }
-  */
+  //*
 
-
+*/
   ///////////////////////////////////////////////////////////////////////////////////
   // Presenter To View /////////////////////////////////////////////////////////////
 
@@ -118,4 +116,8 @@ public class HelloView
   public void setGoToByeBtnLabel(String txt) {
     btnGoToByeView.setText(txt);
   }
-}
+    }
+
+
+
+

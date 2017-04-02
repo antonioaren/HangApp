@@ -1,6 +1,5 @@
 package es.ulpgc.eite.clean.mvp.sample.hangapp;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -20,11 +19,11 @@ public class HangAppView
   private TextView text;
 
   @Override
-  protected void onCreate(Bundle savedInstanceState) {
+  public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_hangapp);
 
-    text = (TextView) findViewById(R.id.textView);
+    text = (TextView) findViewById(R.id.textView7);
 
     toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
@@ -33,14 +32,14 @@ public class HangAppView
     buttonSearch.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        getPresenter().onButtonClicked();
+        getPresenter().onButtonSearchClicked();
       }
     });
     buttonAdd = (Button) findViewById(R.id.buttonAdd);
     buttonAdd.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        getPresenter().onButtonClicked();
+        getPresenter().onButtonAddClicked();
       }
     });
   }
@@ -49,7 +48,7 @@ public class HangAppView
    * Method that initialized MVP objects
    * {@link super#onResume(Class, Object)} should always be called
    */
-  @SuppressLint("MissingSuperCall")
+
   @Override
   protected void onResume() {
     super.onResume(HangAppPresenter.class, this);
@@ -59,7 +58,7 @@ public class HangAppView
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {
     // Inflate the menu; this adds items to the action bar if it is present.
-    getMenuInflater().inflate(R.menu.menu_dummy, menu);
+    getMenuInflater().inflate(es.ulpgc.eite.clean.mvp.sample.hangapp.R.menu.menu_dummy, menu);
     return true;
   }
 
@@ -71,7 +70,7 @@ public class HangAppView
     int id = item.getItemId();
 
     //noinspection SimplifiableIfStatement
-    if (id == R.id.action_settings) {
+    if (id == es.ulpgc.eite.clean.mvp.sample.hangapp.R.id.action_settings) {
       return true;
     }
 
@@ -117,4 +116,10 @@ public class HangAppView
   public void setLabelSearch(String txt) {
     buttonSearch.setText(txt);
   }
+
+@Override
+public void setAddLabel(String txt) {
+  buttonAdd.setText(txt);
 }
+}
+

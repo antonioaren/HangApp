@@ -2,22 +2,27 @@ package es.ulpgc.eite.clean.mvp.sample.hangapp;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
+import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
+import es.ulpgc.eite.clean.mvp.sample.search.SearchView;
+
+import static android.content.ContentValues.TAG;
 
 public class HangAppPresenter extends GenericPresenter
-    <HangApp.PresenterToView, HangApp.PresenterToModel, HangApp.ModelToPresenter, HangAppModel>
-    implements HangApp.ViewToPresenter, HangApp.ModelToPresenter, HangApp.DummyTo, HangApp.ToDummy {
+          <HangApp.PresenterToView, HangApp.PresenterToModel, HangApp.ModelToPresenter, HangAppModel>
+          implements HangApp.ViewToPresenter, HangApp.ModelToPresenter, HangApp.DummyTo, HangApp.ToDummy, HangApp.SearchTo, HangApp.ToHangApp, HangApp.HangAppToAdd, HangApp.AddTo {
 
-
-  private boolean toolbarVisible;
-  private boolean buttonClicked;
-  private boolean textVisible;
-
+    private boolean toolbarVisible;
+   private boolean buttonClicked;
+   private boolean textVisible;
+  private boolean imageVisibility;
+  private boolean selectorsVisible;
   /**
    * Operation called during VIEW creation in {@link GenericActivity#onResume(Class, Object)}
    * Responsible to initialize MODEL.
@@ -32,9 +37,9 @@ public class HangAppPresenter extends GenericPresenter
     setView(view);
     Log.d(TAG, "calling onCreate()");
 
-    Log.d(TAG, "calling startingDummyScreen()");
+    Log.d(TAG, "calling startingMainScreen()");
     Mediator app = (Mediator) getView().getApplication();
-    app.startingDummyScreen(this);
+    app.startingHangAppScreen(this);
   }
 
   /**
@@ -51,7 +56,8 @@ public class HangAppPresenter extends GenericPresenter
 
 
     if(configurationChangeOccurred()) {
-      getView().setLabel(getModel().getLabel());
+      getView().setLabel(getModel().getSearchLabel());
+      getView().setLabel(getModel().getSearchLabel());
 
       checkToolbarVisibility();
       checkTextVisibility();
@@ -70,6 +76,7 @@ public class HangAppPresenter extends GenericPresenter
   @Override
   public void onBackPressed() {
     Log.d(TAG, "calling onBackPressed()");
+
   }
 
   /**
@@ -90,27 +97,39 @@ public class HangAppPresenter extends GenericPresenter
   ///////////////////////////////////////////////////////////////////////////////////
   // View To Presenter /////////////////////////////////////////////////////////////
 
+
   @Override
-  public void onButtonClicked() {
-    Log.d(TAG, "calling onSayHelloBtnClicked()");
-    if(isViewRunning()) {
-      getModel().onChangeMsgByBtnClicked();
-      getView().setText(getModel().getText());
-      textVisible = true;
-      buttonClicked = true;
-    }
-    checkTextVisibility();
-  }
+  public void onButtonSearchClicked() {
+      Log.d(TAG, "calling onButtonSearchClicked()");
+//      if (isViewRunning()) {
+//          getModel().onChangeMsgByBtnClicked();
+//          getView().setText(getModel().getText());
+//          textVisible = true;
+//          buttonClicked = true;
+
+       Navigator app = (Navigator) getView().getApplication();
+      app.goToSearchScreen(this);
+      }
+    //  checkTextVisibility();
+
+//Metodo ya funciona
+      @Override
+      public void onButtonAddClicked() {
+        Log.d(TAG,"calling onButtonAddClicked()");
+        Navigator app = (Navigator) getView().getApplication();
+        app.goToAddScreen(this);
+      }
 
 
-  ///////////////////////////////////////////////////////////////////////////////////
+      ///////////////////////////////////////////////////////////////////////////////////
   // To HangApp //////////////////////////////////////////////////////////////////////
 
   @Override
   public void onScreenStarted() {
     Log.d(TAG, "calling onScreenStarted()");
     if(isViewRunning()) {
-      getView().setLabel(getModel().getLabel());
+      getView().setLabel(getModel().getSearchLabel());
+      getView().setLabel(getModel().getAddLabel());
     }
     checkToolbarVisibility();
     checkTextVisibility();
@@ -125,6 +144,13 @@ public class HangAppPresenter extends GenericPresenter
   public void setTextVisibility(boolean visible) {
     textVisible = visible;
   }
+
+  @Override
+  public void setImageVisibility(boolean ImageVisibility) {
+     imageVisibility=ImageVisibility;
+  }
+
+
 
 
   ///////////////////////////////////////////////////////////////////////////////////
@@ -152,6 +178,14 @@ public class HangAppPresenter extends GenericPresenter
     return textVisible;
   }
 
+  @Override
+  public boolean isSelectorsVisible() {
+    return selectorsVisible;
+  }
+@Override
+public boolean isImageVisible(){
+  return imageVisibility;
+}
 
   ///////////////////////////////////////////////////////////////////////////////////
 

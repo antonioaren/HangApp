@@ -7,7 +7,8 @@ public class HangAppModel extends GenericModel<HangApp.ModelToPresenter>
     implements HangApp.PresenterToModel {
 
   private String HangAppText;
-  private String HangAppLabel;
+  private String HangAppButtonSearchLabel;
+  private String HangAppButtonAddLabel;
   private int numOfTimes;
   private String msgText;
 
@@ -20,9 +21,9 @@ public class HangAppModel extends GenericModel<HangApp.ModelToPresenter>
   @Override
   public void onCreate(HangApp.ModelToPresenter presenter) {
     super.onCreate(presenter);
-
-    HangAppLabel = "Click Me!";
-    HangAppText = "Hello World!";
+    HangAppButtonAddLabel="AddOne";
+    HangAppButtonSearchLabel = "SearchOne";
+    HangAppText = "HangApp";
   }
 
   /**
@@ -55,9 +56,13 @@ public class HangAppModel extends GenericModel<HangApp.ModelToPresenter>
   }
 
   @Override
-  public String getLabel() {
-    return HangAppLabel;
+  public String getSearchLabel() {
+    return HangAppButtonSearchLabel;
   }
 
-  //Nueva rama para modificaciones mias.
+  @Override
+  public String getAddLabel(){
+    return HangAppButtonAddLabel;
+  }
+
 }
