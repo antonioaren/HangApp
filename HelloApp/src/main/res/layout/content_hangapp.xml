@@ -3,55 +3,46 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:id="@+id/Genero"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:background="@drawable/disco"
+    android:orientation="vertical"
+    android:visibility="visible">
 
-    <TextView
-        android:id="@+id/textView7"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.51"
-        android:text="HANGAPP"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="@color/colorAccent"
-        android:textStyle="bold" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:layout_weight="0.51"
-        android:background="@drawable/disco" />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="127dp">
-
-
-        <Button
-            android:id="@+id/buttonAdd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="93dp"
-            android:background="#00ffaa"
-            android:text="+AddOne"
-            android:layout_alignParentTop="true" />
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/buttonSearch"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
+            android:layout_gravity="top"
+            android:layout_weight="1"
+            android:text="Search" />
 
-            android:layout_marginEnd="45dp"
-            android:background="@android:color/holo_blue_bright"
-            android:text="Search"
-            tools:targetApi="ice_cream_sandwich" />
-    </RelativeLayout>
+        <Button
+            android:id="@+id/buttonAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_weight="1"
+            android:text="+AddOne" />
 
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <!-- <ImageView
+         android:id="@+id/imageView"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:background="@drawable/disco"
+         android:visibility="visible" />-->
 
 </LinearLayout>
