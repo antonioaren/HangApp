@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -21,6 +22,7 @@ public class HangAppView
   private Button buttonAdd;
   private TextView text;
   ListView list;
+  ImageView image;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public class HangAppView
     setSupportActionBar(toolbar);
     //faltaba declarar el list view
     list=(ListView)findViewById(R.id.genero);
+    image=(ImageView)findViewById(R.drawable.id.disco);
 
     buttonSearch = (Button) findViewById(R.id.buttonSearch);
     buttonSearch.setOnClickListener(new View.OnClickListener() {
