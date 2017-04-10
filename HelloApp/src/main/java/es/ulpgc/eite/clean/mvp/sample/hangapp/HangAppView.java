@@ -1,13 +1,16 @@
 package es.ulpgc.eite.clean.mvp.sample.hangapp;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
+
 
 public class HangAppView
     extends GenericActivity<HangApp.PresenterToView, HangApp.ViewToPresenter, HangAppPresenter>
@@ -17,6 +20,7 @@ public class HangAppView
   private Button buttonSearch;
   private Button buttonAdd;
   private TextView text;
+  ListView list;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,8 @@ public class HangAppView
 
     toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
+    //faltaba declarar el list view
+    list=(ListView)findViewById(R.id.genero);
 
     buttonSearch = (Button) findViewById(R.id.buttonSearch);
     buttonSearch.setOnClickListener(new View.OnClickListener() {
@@ -49,6 +55,7 @@ public class HangAppView
    * {@link super#onResume(Class, Object)} should always be called
    */
 
+  @SuppressLint("MissingSuperCall")
   @Override
   protected void onResume() {
     super.onResume(HangAppPresenter.class, this);

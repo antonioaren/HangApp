@@ -2,7 +2,6 @@ package es.ulpgc.eite.clean.mvp.sample.hangapp;
 
 
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
@@ -10,9 +9,6 @@ import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
-import es.ulpgc.eite.clean.mvp.sample.search.SearchView;
-
-import static android.content.ContentValues.TAG;
 
 public class HangAppPresenter extends GenericPresenter
           <HangApp.PresenterToView, HangApp.PresenterToModel, HangApp.ModelToPresenter, HangAppModel>
