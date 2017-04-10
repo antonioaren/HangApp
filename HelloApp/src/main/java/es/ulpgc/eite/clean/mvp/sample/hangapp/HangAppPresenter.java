@@ -190,7 +190,7 @@ public boolean isImageVisible(){
     Log.d(TAG, "calling checkToolbarVisibility()");
     if(isViewRunning()) {
       if (!toolbarVisible) {
-        getView().hideToolbar();
+      //  getView().hideToolbar();
       }
     }
 

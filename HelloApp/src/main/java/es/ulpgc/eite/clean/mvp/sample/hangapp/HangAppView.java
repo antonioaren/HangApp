@@ -2,7 +2,6 @@ package es.ulpgc.eite.clean.mvp.sample.hangapp;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -17,7 +16,7 @@ public class HangAppView
     extends GenericActivity<HangApp.PresenterToView, HangApp.ViewToPresenter, HangAppPresenter>
     implements HangApp.PresenterToView {
 
-  private Toolbar toolbar;
+ // private Toolbar toolbar;
   private Button buttonSearch;
   private Button buttonAdd;
   private TextView text;
@@ -29,13 +28,13 @@ public class HangAppView
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_hangapp);
 
-    text = (TextView) findViewById(R.id.textView7);
+    //text = (TextView) findViewById(R.id.textView7);
 
-    toolbar = (Toolbar) findViewById(R.id.toolbar);
-    setSupportActionBar(toolbar);
+    //toolbar = (Toolbar) findViewById(R.id.toolbar);
+   // setSupportActionBar(toolbar);
     //faltaba declarar el list view
     list=(ListView)findViewById(R.id.genero);
-    image=(ImageView)findViewById(R.drawable.id.disco);
+  text=(TextView)findViewById(R.id.Title);
 
     buttonSearch = (Button) findViewById(R.id.buttonSearch);
     buttonSearch.setOnClickListener(new View.OnClickListener() {
@@ -97,13 +96,13 @@ public class HangAppView
     finish();
   }
 
-  @Override
-  public void hideToolbar() {
-    toolbar.setVisibility(View.GONE);
-  }
+//  Override
+//  public void hideToolbar() {
+//    toolbar.setVisibility(View.GONE);
+//  }
 
   @Override
-  public void hideText() {
+   public void hideText() {
     text.setVisibility(View.GONE);
   }
 

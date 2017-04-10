@@ -62,7 +62,7 @@ interface toAdd{
     void onCreate(Bundle savedInstanceState);
 
     void finishScreen();
-    void hideToolbar();
+   // void hideToolbar();
     void hideText();
     void showText();
     void setText(String txt);

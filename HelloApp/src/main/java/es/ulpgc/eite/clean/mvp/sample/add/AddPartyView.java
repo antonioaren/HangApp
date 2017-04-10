@@ -59,10 +59,10 @@ public class AddPartyView extends GenericActivity<HangApp.PresenterToView, HangA
 
     }
 
-    @Override
-    public void hideToolbar() {
-
-    }
+//    @Override
+//    public void hideToolbar() {
+//
+//    }
 
     @Override
     public void hideText() {
