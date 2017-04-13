@@ -13,7 +13,8 @@
         <activity
             android:name="es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppView"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+           >
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -23,12 +24,17 @@
         <activity
             android:name="es.ulpgc.eite.clean.mvp.sample.add.AddPartyView"
             android:label="@string/app_name"
+
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
             android:name="es.ulpgc.eite.clean.mvp.sample.search.SearchView"
             android:label="@string/app_name"
+            android:parentActivityName="es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppView"
             android:theme="@style/AppTheme.NoActionBar">
+   <meta-data
+       android:name="android.support.PARENT_ACTIVITY"
+       android:value=".hangapp.HangAppView"/>
         </activity>
 
     </application>

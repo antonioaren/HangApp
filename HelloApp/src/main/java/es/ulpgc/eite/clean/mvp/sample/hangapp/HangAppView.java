@@ -28,19 +28,20 @@ public class HangAppView
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_hangapp);
 
-    //text = (TextView) findViewById(R.id.textView7);
 
-    //toolbar = (Toolbar) findViewById(R.id.toolbar);
-   // setSupportActionBar(toolbar);
+
+
+
     //faltaba declarar el list view
     list=(ListView)findViewById(R.id.genero);
-  text=(TextView)findViewById(R.id.Title);
+  text=(TextView)findViewById(R.id.title);
 
     buttonSearch = (Button) findViewById(R.id.buttonSearch);
     buttonSearch.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
         getPresenter().onButtonSearchClicked();
+
       }
     });
     buttonAdd = (Button) findViewById(R.id.buttonAdd);

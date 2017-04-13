@@ -2,6 +2,7 @@ package es.ulpgc.eite.clean.mvp.sample.search;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
@@ -18,7 +19,7 @@ public interface Search {
     void onResume(PresenterToView presenterToView);
 
     void onButtonSecundarySearchPressed();
-
+    boolean onOptionsItemSelected(MenuItem item);
 
     interface SearchToHangApp {
 
@@ -103,6 +104,7 @@ public interface Search {
         void setLabel(String txt);
 
         void setLabelSearch(String txt);
+
     }
 
     /**
