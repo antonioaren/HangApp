@@ -3,6 +3,8 @@ package es.ulpgc.eite.clean.mvp.sample.add;
 import android.app.Application;
 import android.content.Context;
 
+import es.ulpgc.eite.clean.mvp.GenericPresenter;
+
 /**
  * Created by eleonora on 17/04/2017.
  */
@@ -52,10 +54,9 @@ public class AddPartyPresenter extends GenericPresenter<Add.PresenterToView, Add
     }
 
     @Override
-    public Context getManagedContext() {
-        return null;
+    public Context getManagedContext(){
+        return getActivityContext();
     }
-
     @Override
     public void destroyView() {
 
