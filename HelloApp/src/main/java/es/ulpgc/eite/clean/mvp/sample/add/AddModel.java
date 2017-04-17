@@ -7,10 +7,10 @@ import es.ulpgc.eite.clean.mvp.Model;
  */
 
 public class AddModel implements Model<Add.ModelToPresenter> {
-
+   //metod implementados
         @Override
         public void onCreate(Add.ModelToPresenter modelToPresenter) {
-                
+
         }
 
         @Override
