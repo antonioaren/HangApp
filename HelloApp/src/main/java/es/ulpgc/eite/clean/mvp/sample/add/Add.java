@@ -80,4 +80,16 @@ public interface Add {
   interface ModelToPresenter {
 
   }
+
+    public interface DummyTo {
+    }
+
+  public interface SearchTo {
+  }
+
+  public interface ToHangApp {
+  }
+
+  public interface AddtoHangApp {
+  }
 }
