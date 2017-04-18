@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 
+import es.ulpgc.eite.clean.mvp.sample.add.Add;
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyView;
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangApp;
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppView;
@@ -165,11 +166,15 @@ public void onCreateHome() {
     }
 
   }
-@Override
-public void OnOptionsItemSelected(){
-  Intent myIntent = new Intent(getApplicationContext(), HangAppView.class);
-    startActivity(myIntent);
-}
+//@Override
+//public void goBackFromAdd(Add.HangAppTo presenter){
+//  Context view = presenter.getManagedContext();
+//  if (view != null) {
+//    view.startActivity(new Intent(view, HangAppView.class));
+//    presenter.destroyView();
+//
+//
+//  }}
 
   @Override
   public void goToProcessedInformationScreen(Search.ProcessedTo presenter) {

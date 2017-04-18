@@ -1,17 +1,16 @@
 package es.ulpgc.eite.clean.mvp.sample.add;
 
-import android.app.Application;
 import android.content.Context;
+import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
-import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 
 /**
  * Created by eleonora on 17/04/2017.
  */
 
 public class AddPartyPresenter extends GenericPresenter<Add.PresenterToView, Add.PresenterToModel, Add.ModelToPresenter, AddModel>
-        implements Add.ViewToPresenter, Add.ModelToPresenter, Add.DummyTo, Add.SearchTo,  Add.AddTo {
+        implements Add.ViewToPresenter, Add.ModelToPresenter, Add.DummyTo, Add.SearchTo,  Add.AddTo, Add.HangAppTo {
 
 
     @Override
@@ -36,25 +35,11 @@ public class AddPartyPresenter extends GenericPresenter<Add.PresenterToView, Add
 
     @Override
     public void onBackPressed() {
+       Log.d(TAG,"Calling onBackPressed()");
 
-       Navigator app = (Navigator) getView().getApplication();
-    app.OnOptionsItemSelected();
     }
 
-    @Override
-    public Application getApplication() {
-        return null;
-    }
 
-    @Override
-    public Context getApplicationContext() {
-        return null;
-    }
-
-    @Override
-    public Context getActivityContext() {
-        return null;
-    }
 
     @Override
     public Context getManagedContext(){

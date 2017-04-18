@@ -1,5 +1,6 @@
 package es.ulpgc.eite.clean.mvp.sample.add;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -12,6 +13,7 @@ import android.widget.TimePicker;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
+import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppView;
 
 /**
  * Created by eleonora on 23/03/2017.
@@ -30,9 +32,8 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     TextView textViewFinish;
     TimePicker timePickerFinish;
     Button buttonPublish;
-    Toolbar t ;
-    Button Settings;
-    MenuItem i;
+    Toolbar t;
+
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -41,18 +42,12 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
 
 
-   t=(Toolbar)findViewById(R.id.toolbar);
+  t=(Toolbar)findViewById(R.id.toolbar);
 
-       setSupportActionBar(t);
-       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+      setSupportActionBar(t);
+      getSupportActionBar().setDisplayHomeAsUpEnabled(true);
       getSupportActionBar().setDisplayShowHomeEnabled(true);
-        t.setOnClickListener(new View.OnClickListener(){
 
-            @Override
-            public void onClick(View v) {
-                getPresenter().onBackPressed();
-            }
-        });
         textViewTitle=(TextView)findViewById(R.id.textView);
 
         textPlace=(TextView) findViewById(R.id.textPlace);
@@ -63,6 +58,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         timePickerInit=(TimePicker)findViewById(R.id.timePickerInit);//timePickerInit
         textViewFinish=(TextView)findViewById(R.id.textViewFinish);
         timePickerFinish=(TimePicker)findViewById(R.id.timePickerFinish);
+
         buttonPublish=(Button)findViewById(R.id.buttonPublish);
         buttonPublish.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,14 +68,15 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         });
 
     }
+
     @Override
-    public Toolbar getToolbar(){
-        return this.t;
+    public Toolbar getToolbar() {
+        return null;
     }
-@Override
-public Button getSettingsBtn(){
-    return this.Settings;
-}
+
+
+
+
     @Override
     public void finishScreen() {
 
@@ -134,21 +131,21 @@ public Button getSettingsBtn(){
     public void setAddLabel(String txt) {
 
     }
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        Intent myIntent = new Intent(getApplicationContext(), HangAppView.class);
-//        startActivityForResult(myIntent, 0);
-//
+@Override
+public boolean onOptionsItemSelected(MenuItem item) {
+      Intent myIntent = new Intent(getApplicationContext(), HangAppView.class);
+      startActivityForResult(myIntent, 0);
+
 //        // Handle action bar item clicks here. The action bar will
 //        // automatically handle clicks on the Home/Up button, so long
 //        // as you specify a parent activity in AndroidManifest.xml.
-//        int id = item.getItemId();
-//        if (id == R.id.action_settings) {
-//            return true;
-//        }
-//        return super.onOptionsItemSelected(item);
-//
-//    }
+       int id = item.getItemId();
+       if (id == R.id.action_settings) {
+          return true;
+      }
+      return super.onOptionsItemSelected(item);
+
+ }
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();

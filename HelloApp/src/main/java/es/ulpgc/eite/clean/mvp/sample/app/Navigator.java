@@ -16,6 +16,9 @@ public interface Navigator {
 
 
 
-    void OnOptionsItemSelected();
-    void goToProcessedInformationScreen(Search.ProcessedTo presenter);
+
+
+
+
+  void goToProcessedInformationScreen(Search.ProcessedTo presenter);
 }

@@ -124,5 +124,9 @@ public interface Search {
     }
 
     public interface ModelToPresenter {
+        String[]getListCategories();
+    }
+
+    public interface HangAppTo {
     }
 }
