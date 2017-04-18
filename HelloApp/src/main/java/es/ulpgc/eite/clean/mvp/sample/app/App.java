@@ -3,7 +3,7 @@ package es.ulpgc.eite.clean.mvp.sample.app;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
-import android.view.MenuItem;
+import android.widget.Button;
 
 import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyView;
@@ -168,13 +168,13 @@ public void onCreateHome() {
 
   }
 @Override
-public boolean onOptionsItemSelected(MenuItem item) {
+public boolean onOptionsItemSelected(Button button) {
   Intent myIntent = new Intent(getApplicationContext(), HangAppView.class);
  startActivity(myIntent);
   // Handle action bar item clicks here. The action bar will
   // automatically handle clicks on the Home/Up button, so long
   // as you specify a parent activity in AndroidManifest.xml.
-  int id = item.getItemId();
+  int id = button.getId();
   if (id == R.id.action_settings) {
     return true;
   }

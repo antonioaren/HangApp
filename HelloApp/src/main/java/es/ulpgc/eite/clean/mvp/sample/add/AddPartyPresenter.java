@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
+import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 
 /**
  * Created by eleonora on 17/04/2017.
@@ -35,7 +36,8 @@ public class AddPartyPresenter extends GenericPresenter<Add.PresenterToView, Add
 
     @Override
     public void onBackPressed() {
-
+        Navigator app = (Navigator) getView().getApplication();
+        app.onOptionsItemSelected(this);
     }
 
     @Override

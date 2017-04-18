@@ -3,6 +3,7 @@ package es.ulpgc.eite.clean.mvp.sample.add;
 
 import android.content.Context;
 import android.support.v7.widget.Toolbar;
+import android.widget.Button;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
@@ -55,6 +56,8 @@ public interface Add {
    */
   interface PresenterToView extends ContextView {
     Toolbar getToolbar();
+
+    Button getSettingsBtn();
 
     void finishScreen();
     void hideToolbar();

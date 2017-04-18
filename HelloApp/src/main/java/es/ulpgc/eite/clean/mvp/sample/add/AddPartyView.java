@@ -33,18 +33,25 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     TimePicker timePickerFinish;
     Button buttonPublish;
     Toolbar t ;
-    Button idSettings;
+    Button Settings;
+    MenuItem i;
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addparty);
+        Settings=(Button)findViewById(R.id.action_settings);
+        Settings.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                getPresenter().onBackPressed();
+            }
+        });
+
+
+
+
         t=(Toolbar)findViewById(R.id.toolbar);
-       t.setOnClickListener(new View.OnClickListener(){
-           @Override
-           public void onClick(View view){
-               getPresenter().onBackPressed();
-           }
-       });
+
         setSupportActionBar(t);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -71,7 +78,10 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     public Toolbar getToolbar(){
         return this.t;
     }
-
+@Override
+public Button getSettingsBtn(){
+    return this.Settings;
+}
     @Override
     public void finishScreen() {
 
