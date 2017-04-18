@@ -11,7 +11,7 @@ import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
  */
 
 public class AddPartyPresenter extends GenericPresenter<Add.PresenterToView, Add.PresenterToModel, Add.ModelToPresenter, AddModel>
-        implements Add.ViewToPresenter, Add.ModelToPresenter, Add.DummyTo, Add.SearchTo, Add.ToHangApp, Add.AddtoHangApp, Add.AddTo {
+        implements Add.ViewToPresenter, Add.ModelToPresenter, Add.DummyTo, Add.SearchTo,  Add.AddTo {
 
 
     @Override
@@ -36,8 +36,9 @@ public class AddPartyPresenter extends GenericPresenter<Add.PresenterToView, Add
 
     @Override
     public void onBackPressed() {
-        Navigator app = (Navigator) getView().getApplication();
-        app.onOptionsItemSelected(this);
+
+       Navigator app = (Navigator) getView().getApplication();
+    app.OnOptionsItemSelected();
     }
 
     @Override

@@ -1,7 +1,5 @@
 package es.ulpgc.eite.clean.mvp.sample.app;
 
-import android.widget.Button;
-
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangApp;
 import es.ulpgc.eite.clean.mvp.sample.hello.Hello;
 import es.ulpgc.eite.clean.mvp.sample.search.Search;
@@ -18,7 +16,6 @@ public interface Navigator {
 
 
 
-    boolean onOptionsItemSelected(Button button);
-
+    void OnOptionsItemSelected();
     void goToProcessedInformationScreen(Search.ProcessedTo presenter);
 }

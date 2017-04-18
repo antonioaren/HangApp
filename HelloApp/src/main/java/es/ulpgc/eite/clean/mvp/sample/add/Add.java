@@ -108,8 +108,7 @@ public interface Add {
   public interface ToHangApp {
   }
 
-  public interface AddtoHangApp {
-  }
+
 
   public class HangAppTo {
     public Context getManagedContext() {
