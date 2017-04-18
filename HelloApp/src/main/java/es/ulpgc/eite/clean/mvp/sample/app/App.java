@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.view.MenuItem;
 
 import es.ulpgc.eite.clean.mvp.sample.R;
-import es.ulpgc.eite.clean.mvp.sample.add.Add;
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyView;
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangApp;
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppView;
@@ -169,14 +168,9 @@ public void onCreateHome() {
 
   }
 @Override
-public boolean goBackfromAdd(Add.HangAppTo presenter, MenuItem item){
-//  Intent myIntent = new Intent(getApplicationContext(), HangAppView.class);
-//  startActivityForResult(myIntent, 0);
-Context view= presenter.getManagedContext();
-  if(view!=null){
-    view.startActivity(new Intent(getApplicationContext(),HangAppView.class));
-
-  }
+public boolean onOptionsItemSelected(MenuItem item) {
+  Intent myIntent = new Intent(getApplicationContext(), HangAppView.class);
+ startActivity(myIntent);
   // Handle action bar item clicks here. The action bar will
   // automatically handle clicks on the Home/Up button, so long
   // as you specify a parent activity in AndroidManifest.xml.

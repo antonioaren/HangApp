@@ -13,16 +13,14 @@ import android.widget.TimePicker;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
-import es.ulpgc.eite.clean.mvp.sample.hangapp.HangApp;
-import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppPresenter;
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppView;
 
 /**
  * Created by eleonora on 23/03/2017.
  */
 
-public class AddPartyView extends GenericActivity<HangApp.PresenterToView, HangApp.ViewToPresenter, HangAppPresenter>
-        implements HangApp.PresenterToView {
+public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewToPresenter, AddPartyPresenter>
+        implements Add.PresenterToView {
 
    TextView textViewTitle;
     TextView textPlace;
@@ -35,11 +33,18 @@ public class AddPartyView extends GenericActivity<HangApp.PresenterToView, HangA
     TimePicker timePickerFinish;
     Button buttonPublish;
     Toolbar t ;
+    Button idSettings;
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addparty);
         t=(Toolbar)findViewById(R.id.toolbar);
+       t.setOnClickListener(new View.OnClickListener(){
+           @Override
+           public void onClick(View view){
+               getPresenter().onBackPressed();
+           }
+       });
         setSupportActionBar(t);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -60,10 +65,30 @@ public class AddPartyView extends GenericActivity<HangApp.PresenterToView, HangA
 
             }
         });
+
+    }
+    @Override
+    public Toolbar getToolbar(){
+        return this.t;
     }
 
     @Override
     public void finishScreen() {
+
+    }
+
+    @Override
+    public void hideToolbar() {
+
+    }
+
+    @Override
+    public void hideHelloMsg() {
+
+    }
+
+    @Override
+    public void setPublishBtnLabel(String txt) {
 
     }
 
