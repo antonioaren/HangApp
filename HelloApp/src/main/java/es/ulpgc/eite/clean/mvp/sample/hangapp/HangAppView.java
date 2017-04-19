@@ -28,10 +28,6 @@ public class HangAppView
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_hangapp);
 
-
-
-
-
     //faltaba declarar el list view
     list=(ListView)findViewById(R.id.genero);
     text=(TextView)findViewById(R.id.title);
