@@ -55,6 +55,7 @@ public interface HangApp {
         void onButtonAddClicked();
 
 
+        void onListItemClicked();
     }
 
     /**
@@ -136,4 +137,9 @@ public interface HangApp {
         void onScreenStarted();
     }
 
+     interface DetailTo {
+        Context getManagedContext();
+        void destroyView();
+
+    }
 }

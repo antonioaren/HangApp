@@ -1,6 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.app;
 
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangApp;
+import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppPresenter;
 import es.ulpgc.eite.clean.mvp.sample.hello.Hello;
 import es.ulpgc.eite.clean.mvp.sample.search.Search;
 
@@ -21,4 +22,8 @@ public interface Navigator {
 
 
   void goToProcessedInformationScreen(Search.ProcessedTo presenter);
+
+    void goDetailScreen(HangAppPresenter hangAppPresenter);
+
+  void goDetailScreen(HangApp.DetailTo presenter);
 }

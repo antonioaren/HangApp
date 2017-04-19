@@ -3,6 +3,7 @@ package es.ulpgc.eite.clean.mvp.sample.hangapp;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -20,8 +21,9 @@ public class HangAppView
   // private Toolbar toolbar;
   private Button buttonSearch;
   private Button buttonAdd;
-  private TextView text;
+
   private TextView information;
+  private TextView title;
   ListView list;
   ImageView image;
 
@@ -31,12 +33,19 @@ public class HangAppView
     setContentView(R.layout.activity_hangapp);
     HangAppPresenter hap=new HangAppPresenter();
     //faltaba declarar el list view
+    ImageView image=(ImageView)findViewById(R.id.image);
     list=(ListView)findViewById(R.id.list);
+
+    title=(TextView)findViewById(R.id.title);
+    information=(TextView)findViewById(R.id.information);
     String[]parties=hap.getParties();
     ArrayAdapter<String> adaptder = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, parties);
     list.setAdapter(adaptder);
-    text=(TextView)findViewById(R.id.title);
-    information=(TextView)findViewById(R.id.information);
+    list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                  @Override
+                                  public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                    getPresenter().onListItemClicked();
+                                  }});
     buttonSearch = (Button) findViewById(R.id.buttonSearch);
     buttonSearch.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -102,17 +111,17 @@ public class HangAppView
 
   @Override
   public void hideText() {
-    text.setVisibility(View.GONE);
+    information.setVisibility(View.GONE);
   }
 
   @Override
   public void showText() {
-    text.setVisibility(View.VISIBLE);
+    information.setVisibility(View.VISIBLE);
   }
 
   @Override
   public void setText(String txt) {
-    text.setText(txt);
+    information.setText(txt);
   }
 
   @Override

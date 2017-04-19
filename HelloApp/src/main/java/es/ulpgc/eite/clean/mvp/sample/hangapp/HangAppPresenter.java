@@ -117,6 +117,13 @@ public class HangAppPresenter extends GenericPresenter
     app.goToAddScreen(this);
   }
 
+  @Override
+  public void onListItemClicked() {
+    Log.d(TAG,"item cliked");
+    Navigator app = (Navigator) getView().getApplication();
+    app.goDetailScreen(this);
+  }
+
 
   ///////////////////////////////////////////////////////////////////////////////////
   // To HangApp //////////////////////////////////////////////////////////////////////

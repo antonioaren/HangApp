@@ -14,7 +14,7 @@ public class HangAppModel extends GenericModel<HangApp.ModelToPresenter>
 
   String[]parties;
   public HangAppModel(){
-    this.parties= new String[]{"Concierto de FallOutBoy en Las Palmas a las 21:00","Convencion de Anime en Triana","YelmoCines estrena la nueva pelicula de los pitufos","Verbena en Tafira","Inauguracion de la disco en Maspalomas"};
+    this.parties= new String[]{"Concierto de FallOutBoy en Las Palmas a las 21:00","Convencion de Anime en Triana","YelmoCines estrena la nueva pelicula de los pitufos","Verbena en Tafira","Inauguracion de la disco en Maspalomas","Concierto de Vivaldi en Alfredo Kraus"};
   }
   /**
    * Method that recovers a reference to the PRESENTER
