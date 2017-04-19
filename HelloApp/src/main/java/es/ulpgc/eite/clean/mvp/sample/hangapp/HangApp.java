@@ -67,7 +67,9 @@ public interface HangApp {
         // void hideToolbar();
         void hideText();
         void showText();
+
         void setText(String txt);
+
         void setLabel(String txt);
 
         void setLabelSearch(String txt);

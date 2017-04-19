@@ -8,7 +8,10 @@ import es.ulpgc.eite.clean.mvp.GenericModel;
 
 public class SearchModel  extends GenericModel<Search.ModelToPresenter>
         implements Search.PresenterToModel {
-    String[]categories= new String[]{"Cines","Culturales","Conciertos","Discotecas","Verbenas"};
+    String[]categories;
+    public SearchModel(){
+        this.categories= new String[]{"Cines","Culturales","Conciertos","Verbenas","Discotecas"};
+    }
     @Override
     public void onCreate(Search.ModelToPresenter modelToPresenter) {
 
@@ -29,6 +32,6 @@ public class SearchModel  extends GenericModel<Search.ModelToPresenter>
 
     @Override
     public String[] getListCategories() {
-        return categories;
+        return this.categories;
     }
 }

@@ -70,7 +70,7 @@ public interface Search {
 
         void onButtonSecundarySearchPressed();
 
-        String[] getListCategories();
+        String[] getCategories();
 
 
         //void onStartingView();

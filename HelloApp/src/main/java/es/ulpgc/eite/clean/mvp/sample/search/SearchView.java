@@ -52,7 +52,7 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
         editTextLocation=(EditText)findViewById(R.id.editTextLocation);
         categories=(TextView)findViewById(R.id.textCategories);
         listCategories=(ListView)findViewById(R.id.listCategories);
-         String[]categories=getPresenter().getListCategories();
+         String[]categories=getPresenter().getCategories();
         ArrayAdapter<String> adaptader = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, categories);
         listCategories.setAdapter(adaptader);
         textDate=(TextView)findViewById(R.id.textDate);
