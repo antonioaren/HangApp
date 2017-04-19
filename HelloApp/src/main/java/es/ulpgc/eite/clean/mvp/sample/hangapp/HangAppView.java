@@ -20,6 +20,7 @@ public class HangAppView
   private Button buttonSearch;
   private Button buttonAdd;
   private TextView text;
+  private TextView information;
   ListView list;
   ImageView image;
 
@@ -29,9 +30,9 @@ public class HangAppView
     setContentView(R.layout.activity_hangapp);
 
     //faltaba declarar el list view
-    list=(ListView)findViewById(R.id.genero);
+    list=(ListView)findViewById(R.id.list);
     text=(TextView)findViewById(R.id.title);
-
+    information=(TextView)findViewById(R.id.information);
     buttonSearch = (Button) findViewById(R.id.buttonSearch);
     buttonSearch.setOnClickListener(new View.OnClickListener() {
       @Override
