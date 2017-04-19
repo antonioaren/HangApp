@@ -1,6 +1,8 @@
 package es.ulpgc.eite.clean.mvp.sample.add;
 
+
 import android.content.Context;
+import android.support.v7.widget.Toolbar;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
@@ -52,6 +54,10 @@ public interface Add {
    * Required VIEW methods available to PRESENTER
    */
   interface PresenterToView extends ContextView {
+    Toolbar getToolbar();
+
+
+
     void finishScreen();
     void hideToolbar();
     void hideHelloMsg();
@@ -60,6 +66,17 @@ public interface Add {
     void setPublishBtnLabel(String txt);
 
 
+    void hideText();
+
+    void showText();
+
+    void setText(String txt);
+
+    void setLabel(String txt);
+
+    void setLabelSearch(String txt);
+
+    void setAddLabel(String txt);
   }
 
   /**
@@ -80,4 +97,24 @@ public interface Add {
   interface ModelToPresenter {
 
   }
+
+  public interface DummyTo {
+  }
+
+  public interface SearchTo {
+  }
+
+  public interface ToHangApp {
+  }
+
+
+
+  interface HangAppTo {
+    Context getManagedContext() ;
+
+
+    void destroyView();
+  }
+
+
 }
