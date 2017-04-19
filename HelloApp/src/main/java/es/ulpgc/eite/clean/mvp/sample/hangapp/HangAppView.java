@@ -3,6 +3,7 @@ package es.ulpgc.eite.clean.mvp.sample.hangapp;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -28,9 +29,12 @@ public class HangAppView
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_hangapp);
-
+    HangAppPresenter hap=new HangAppPresenter();
     //faltaba declarar el list view
     list=(ListView)findViewById(R.id.list);
+    String[]parties=hap.getParties();
+    ArrayAdapter<String> adaptder = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, parties);
+    list.setAdapter(adaptder);
     text=(TextView)findViewById(R.id.title);
     information=(TextView)findViewById(R.id.information);
     buttonSearch = (Button) findViewById(R.id.buttonSearch);

@@ -88,6 +88,8 @@ public interface HangApp {
         String getSearchLabel();
 
         String getAddLabel();
+
+        String[] getListParties();
     }
 
     /**
@@ -95,6 +97,7 @@ public interface HangApp {
      */
     interface ModelToPresenter {
 
+        String[] getParties();
     }
 
     interface SearchTo {

@@ -206,6 +206,11 @@ public class HangAppPresenter extends GenericPresenter
       }
     }
   }
-
+  @Override
+  public String[] getParties() {
+    HangAppModel model= new HangAppModel();
+    String[]list= model.getListParties();
+    return list;
+  }
 }
 
