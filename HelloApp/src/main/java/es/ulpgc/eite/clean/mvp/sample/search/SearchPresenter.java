@@ -2,19 +2,14 @@ package es.ulpgc.eite.clean.mvp.sample.search;
 
 import android.app.Application;
 import android.content.Context;
-import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
-import es.ulpgc.eite.clean.mvp.Presenter;
-import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
-import es.ulpgc.eite.clean.mvp.sample.hangapp.HangApp;
-import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppModel;
-import es.ulpgc.eite.clean.mvp.sample.search.Search.ViewToPresenter;
 
 /**
  * Created by alumno on 29/03/2017.
  */
-public class SearchPresenter implements Presenter<Search.PresenterToView> {
+public class SearchPresenter  extends GenericPresenter<Search.PresenterToView, Search.PresenterToModel, Search.ModelToPresenter, SearchModel>
+        implements Search.ViewToPresenter, Search.ModelToPresenter, Search.HangAppTo, Search.ToSearch {
 
 
     private boolean informationVisible;
@@ -38,8 +33,8 @@ public class SearchPresenter implements Presenter<Search.PresenterToView> {
 
     @Override
     public void onBackPressed() {
-
     }
+
 
     @Override
     public Application getApplication() {
@@ -57,4 +52,18 @@ public class SearchPresenter implements Presenter<Search.PresenterToView> {
     }
 
 
+    @Override
+    public void setTextVisibility(boolean visible) {
+
+    }
+
+    @Override
+    public void onButtonSecundarySearchPressed() {
+
+    }
+
+    @Override
+    public String[] getListCategories() {
+        return new String[0];
+    }
 }
