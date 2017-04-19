@@ -6,10 +6,8 @@ import android.content.Intent;
 
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyView;
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangApp;
-import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppPresenter;
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppView;
 import es.ulpgc.eite.clean.mvp.sample.hello.Hello;
-import es.ulpgc.eite.clean.mvp.sample.information.Information;
 import es.ulpgc.eite.clean.mvp.sample.information.InformationView;
 import es.ulpgc.eite.clean.mvp.sample.search.Search;
 import es.ulpgc.eite.clean.mvp.sample.search.SearchView;
@@ -28,14 +26,14 @@ public class App extends Application implements Mediator, Navigator {
   @Override
   public void onCreate() {
     super.onCreate();
-      toDummyState = new DummyState();
-      toDummyState.toolbarVisibility = false;
-      toDummyState.textVisibility = false;
+    toDummyState = new DummyState();
+    toDummyState.toolbarVisibility = false;
+    toDummyState.textVisibility = false;
 
-      toHelloState = new HelloState();
-      toHangAppState=new HangAppState();
-      toSearchState = new SearchState();
-      toSearchState.textVisibility = false;
+    toHelloState = new HelloState();
+    toHangAppState=new HangAppState();
+    toSearchState = new SearchState();
+    toSearchState.textVisibility = false;
 
 
 
@@ -100,10 +98,10 @@ public class App extends Application implements Mediator, Navigator {
 
 //----------------------Metodos para nuestra app-----------------------------------------------------------
 
-public void onCreateHome() {
-  super.onCreate();
+  public void onCreateHome() {
+    super.onCreate();
 
-}
+  }
 
   @Override
   public void startingSearchScreen(HangApp.toSearch presenter){
@@ -129,7 +127,7 @@ public void onCreateHome() {
   @Override
   public void startingHangAppScreen(HangApp.ToHangApp presenter) {
     if(toHangAppState != null) {
-     presenter.setTextVisibility(toHangAppState.textVisibility);
+      presenter.setTextVisibility(toHangAppState.textVisibility);
       presenter.setImageVisibility(toHangAppState.imageVisibility);
       //presenter.setTextVisibility(toHelloState.textVisibility);
     }
@@ -159,7 +157,7 @@ public void onCreateHome() {
     addToState = new AddState();
 
     addToState.textVisibility = presenter.isTextVisible();
-   addToState.selectorsVisibility=presenter.isSelectorsVisible();
+    addToState.selectorsVisibility=presenter.isSelectorsVisible();
     Context view = presenter.getManagedContext();
     if (view != null) {
       view.startActivity(new Intent(view, AddPartyView.class));
@@ -167,6 +165,15 @@ public void onCreateHome() {
     }
 
   }
+//@Override
+//public void goBackFromAdd(Add.HangAppTo presenter){
+//  Context view = presenter.getManagedContext();
+//  if (view != null) {
+//    view.startActivity(new Intent(view, HangAppView.class));
+//    presenter.destroyView();
+//
+//
+//  }}
 
   @Override
   public void goToProcessedInformationScreen(Search.ProcessedTo presenter) {
@@ -179,10 +186,10 @@ public void onCreateHome() {
     if (view != null) {
       view.startActivity(new Intent(view, InformationView.class));
       presenter.destroyView();
+    }
+
+
   }
-
-
-}
 
 
   ///////////////////////////////////////////////////////////////////////////////////
@@ -198,26 +205,27 @@ public void onCreateHome() {
     //boolean textVisibility;
   }
 
-   class HelloState {
+  class HelloState {
     boolean toolbarVisibility;
     //boolean textVisibility;
   }
- class HangAppState{
-   boolean textVisibility;
-   boolean imageVisibility;
+  class HangAppState{
+    boolean textVisibility;
+    boolean imageVisibility;
   }
-class SearchState{
-  boolean textVisibility;
+  class SearchState{
+    boolean textVisibility;
 
-}
- class AddState{
-  boolean textVisibility;
-  boolean selectorsVisibility;
-}
+  }
+  class AddState{
+    boolean textVisibility;
+    boolean selectorsVisibility;
+  }
 
 
-class ProcessedInformationState{
-        boolean informationVisibility;
-        boolean imageVisibility;
-         boolean containsParticipants;
-        }}
+  class ProcessedInformationState{
+    boolean informationVisibility;
+    boolean imageVisibility;
+    boolean containsParticipants;
+  }}
+
