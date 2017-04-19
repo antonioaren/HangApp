@@ -4,7 +4,7 @@ import es.ulpgc.eite.clean.mvp.GenericModel;
 
 
 public class HangAppModel extends GenericModel<HangApp.ModelToPresenter>
-    implements HangApp.PresenterToModel {
+        implements HangApp.PresenterToModel {
 
   private String HangAppText;
   private String HangAppButtonSearchLabel;

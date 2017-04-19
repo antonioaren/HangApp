@@ -2,7 +2,6 @@ package es.ulpgc.eite.clean.mvp.sample.hangapp;
 
 
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
@@ -10,13 +9,10 @@ import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
-import es.ulpgc.eite.clean.mvp.sample.search.SearchView;
-
-import static android.content.ContentValues.TAG;
 
 public class HangAppPresenter extends GenericPresenter
-          <HangApp.PresenterToView, HangApp.PresenterToModel, HangApp.ModelToPresenter, HangAppModel>
-          implements HangApp.ViewToPresenter, HangApp.ModelToPresenter, HangApp.DummyTo, HangApp.ToDummy, HangApp.SearchTo, HangApp.ToHangApp, HangApp.HangAppToAdd, HangApp.AddTo {
+        <HangApp.PresenterToView, HangApp.PresenterToModel, HangApp.ModelToPresenter, HangAppModel>
+        implements HangApp.ViewToPresenter, HangApp.ModelToPresenter, HangApp.DummyTo, HangApp.ToDummy, HangApp.SearchTo, HangApp.ToHangApp, HangApp.HangAppToAdd, HangApp.AddTo {
 
   //Actualizando cosas
   private boolean toolbarVisible;
@@ -101,28 +97,28 @@ public class HangAppPresenter extends GenericPresenter
 
   @Override
   public void onButtonSearchClicked() {
-      Log.d(TAG, "calling onButtonSearchClicked()");
+    Log.d(TAG, "calling onButtonSearchClicked()");
 //      if (isViewRunning()) {
 //          getModel().onChangeMsgByBtnClicked();
 //          getView().setText(getModel().getText());
 //          textVisible = true;
 //          buttonClicked = true;
 
-       Navigator app = (Navigator) getView().getApplication();
-      app.goToSearchScreen(this);
-      }
-    //  checkTextVisibility();
+    Navigator app = (Navigator) getView().getApplication();
+    app.goToSearchScreen(this);
+  }
+  //  checkTextVisibility();
 
-//Metodo ya funciona
-      @Override
-      public void onButtonAddClicked() {
-        Log.d(TAG,"calling onButtonAddClicked()");
-        Navigator app = (Navigator) getView().getApplication();
-        app.goToAddScreen(this);
-      }
+  //Metodo ya funciona
+  @Override
+  public void onButtonAddClicked() {
+    Log.d(TAG,"calling onButtonAddClicked()");
+    Navigator app = (Navigator) getView().getApplication();
+    app.goToAddScreen(this);
+  }
 
 
-      ///////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////////
   // To HangApp //////////////////////////////////////////////////////////////////////
 
   @Override
@@ -148,7 +144,7 @@ public class HangAppPresenter extends GenericPresenter
 
   @Override
   public void setImageVisibility(boolean ImageVisibility) {
-     imageVisibility=ImageVisibility;
+    imageVisibility=ImageVisibility;
   }
 
 
@@ -183,10 +179,10 @@ public class HangAppPresenter extends GenericPresenter
   public boolean isSelectorsVisible() {
     return selectorsVisible;
   }
-@Override
-public boolean isImageVisible(){
-  return imageVisibility;
-}
+  @Override
+  public boolean isImageVisible(){
+    return imageVisibility;
+  }
 
   ///////////////////////////////////////////////////////////////////////////////////
 
@@ -194,7 +190,7 @@ public boolean isImageVisible(){
     Log.d(TAG, "calling checkToolbarVisibility()");
     if(isViewRunning()) {
       if (!toolbarVisible) {
-        getView().hideToolbar();
+        //  getView().hideToolbar();
       }
     }
 
@@ -212,3 +208,4 @@ public boolean isImageVisible(){
   }
 
 }
+
