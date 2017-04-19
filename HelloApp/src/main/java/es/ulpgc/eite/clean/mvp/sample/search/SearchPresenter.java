@@ -62,8 +62,8 @@ public class SearchPresenter  extends GenericPresenter<Search.PresenterToView, S
 
     }
 
-    @Override
+
     public String[] getListCategories() {
-        return new String[0];
+        return getModel().getListCategories();
     }
 }

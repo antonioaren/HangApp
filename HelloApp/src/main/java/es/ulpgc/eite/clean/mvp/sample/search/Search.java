@@ -70,7 +70,7 @@ public interface Search {
 
         void onButtonSecundarySearchPressed();
 
-
+        String[] getListCategories();
 
 
         //void onStartingView();
@@ -114,7 +114,7 @@ public interface Search {
 
 
         String getSearchBtnLabel();
-
+        String[]getListCategories();
 
         /**
          * Required PRESENTER methods available to MODEL
@@ -124,7 +124,7 @@ public interface Search {
     }
 
     public interface ModelToPresenter {
-        String[]getListCategories();
+
     }
 
     public interface HangAppTo {

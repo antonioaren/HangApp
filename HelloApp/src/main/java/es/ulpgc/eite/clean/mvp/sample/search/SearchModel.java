@@ -20,12 +20,15 @@ public class SearchModel  extends GenericModel<Search.ModelToPresenter>
     }
 
 
-    public String[] getList(){
-        return this.categories;
-    }
+
 
     @Override
     public String getSearchBtnLabel() {
         return null;
+    }
+
+    @Override
+    public String[] getListCategories() {
+        return categories;
     }
 }
