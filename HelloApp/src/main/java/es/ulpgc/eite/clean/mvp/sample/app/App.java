@@ -5,8 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyView;
+import es.ulpgc.eite.clean.mvp.sample.detail.DetailView;
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangApp;
-import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppPresenter;
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppView;
 import es.ulpgc.eite.clean.mvp.sample.hello.Hello;
 import es.ulpgc.eite.clean.mvp.sample.information.InformationView;
@@ -196,7 +196,7 @@ public class App extends Application implements Mediator, Navigator {
   public void goDetailScreen(HangApp.DetailTo presenter) {
     Context view = presenter.getManagedContext();
     if (view != null) {
-      view.startActivity(new Intent(view, InformationView.class));
+      view.startActivity(new Intent(view, DetailView.class));
       presenter.destroyView();
   }}
 
