@@ -2,6 +2,7 @@ package es.ulpgc.eite.clean.mvp.sample.search;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
@@ -18,7 +19,7 @@ public interface Search {
     void onResume(PresenterToView presenterToView);
 
     void onButtonSecundarySearchPressed();
-
+    boolean onOptionsItemSelected(MenuItem item);
 
     interface SearchToHangApp {
 
@@ -28,7 +29,7 @@ public interface Search {
     }
 
     interface ToSearch {
-       
+
 
         void setTextVisibility(boolean visible);
     }
@@ -42,23 +43,23 @@ public interface Search {
 
         boolean isTextVisible();
     }
- interface ProcessedTo{
+    interface ProcessedTo{
 
 
-     
 
-    
 
-     Context getManagedContext();
 
-     void destroyView();
 
-     boolean isInformationVisible();
+        Context getManagedContext();
 
-     boolean isImageVisible();
+        void destroyView();
 
-     boolean ParticipantsExist();
- }
+        boolean isInformationVisible();
+
+        boolean isImageVisible();
+
+        boolean ParticipantsExist();
+    }
     ///////////////////////////////////////////////////////////////////////////////////
     // Screen ////////////////////////////////////////////////////////////////////////
 
@@ -103,6 +104,7 @@ public interface Search {
         void setLabel(String txt);
 
         void setLabelSearch(String txt);
+
     }
 
     /**
@@ -122,5 +124,9 @@ public interface Search {
     }
 
     public interface ModelToPresenter {
+        String[]getListCategories();
+    }
+
+    public interface HangAppTo {
     }
 }
