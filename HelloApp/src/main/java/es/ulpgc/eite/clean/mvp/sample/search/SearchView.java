@@ -41,6 +41,7 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(activity_search);
+        SearchPresenter sp= new SearchPresenter();
         t = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(t);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -52,7 +53,7 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
         editTextLocation=(EditText)findViewById(R.id.editTextLocation);
         categories=(TextView)findViewById(R.id.textCategories);
         listCategories=(ListView)findViewById(R.id.listCategories);
-         String[]categories=getPresenter().getCategories();
+         String[]categories=sp.getCategories();
         ArrayAdapter<String> adaptader = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, categories);
         listCategories.setAdapter(adaptader);
         textDate=(TextView)findViewById(R.id.textDate);
