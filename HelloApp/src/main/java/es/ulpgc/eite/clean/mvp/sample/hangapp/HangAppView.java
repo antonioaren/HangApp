@@ -34,11 +34,13 @@ public class HangAppView
     HangAppPresenter hap=new HangAppPresenter();
     //faltaba declarar el list view
     ImageView image=(ImageView)findViewById(R.id.image);
-    list=(ListView)findViewById(R.id.list);
+
 
     title=(TextView)findViewById(R.id.title);
     information=(TextView)findViewById(R.id.information);
     String[]parties=hap.getParties();
+
+    list=(ListView)findViewById(R.id.list);
     ArrayAdapter<String> adaptder = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, parties);
     list.setAdapter(adaptder);
     list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -46,6 +48,9 @@ public class HangAppView
                                   public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                     getPresenter().onListItemClicked();
                                   }});
+
+
+
     buttonSearch = (Button) findViewById(R.id.buttonSearch);
     buttonSearch.setOnClickListener(new View.OnClickListener() {
       @Override
