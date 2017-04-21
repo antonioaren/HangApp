@@ -7,9 +7,9 @@
     android:id="@+id/icon"
     android:src="@drawable/hat"
     android:layout_width="40dp"
-    android:layout_height="40dp"
+    android:layout_height="64dp"
 
-   />
+    android:layout_weight="0.58" />
 
     <TextView
         android:id="@+id/content"
@@ -17,5 +17,13 @@
         android:layout_width="282dp"
         android:layout_height="50dp"
 
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        />
+
+    <TextView
+        android:id="@+id/numberOfParticipants"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="3"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:visibility="visible" />
 </LinearLayout>
