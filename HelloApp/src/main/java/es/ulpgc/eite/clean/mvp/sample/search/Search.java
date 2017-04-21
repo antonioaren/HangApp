@@ -3,6 +3,7 @@ package es.ulpgc.eite.clean.mvp.sample.search;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ListView;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
@@ -72,6 +73,8 @@ public interface Search {
 
         String[] getCategories();
 
+        void onItemListClicked();
+
 
         //void onStartingView();
     }
@@ -92,6 +95,8 @@ public interface Search {
 
         void setSearchBtnLabel(String txt);
 
+
+        ListView getListCategories();
 
         void hideToolbar();
 
@@ -128,5 +133,9 @@ public interface Search {
     }
 
     public interface HangAppTo {
+    }
+
+    public interface ListTo {
+        Context getManagedContext();
     }
 }

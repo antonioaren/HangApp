@@ -11,6 +11,10 @@ public interface Navigator {
 
   void goToByeScreen(Hello.HelloToBye presenter);
 
+
+
+  void goToPartyList(Search.ListTo presenter);
+
   void goToAddScreen(HangApp.AddTo presenter);
 
 

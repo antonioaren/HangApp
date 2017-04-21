@@ -3,6 +3,7 @@ package es.ulpgc.eite.clean.mvp.sample.app;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
+import android.widget.ListView;
 
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyView;
 import es.ulpgc.eite.clean.mvp.sample.detail.DetailView;
@@ -154,6 +155,20 @@ public class App extends Application implements Mediator, Navigator {
 
   }
   @Override
+  public void goToPartyList(Search.ListTo presenter){
+    Context view = presenter.getManagedContext();
+   SearchView sv= new SearchView();
+   ListView list= sv.getListCategories();
+  String item= list.getSelectedItem().toString();
+    if(view!=null){
+     if(item=="Conciertos")
+      view.startActivity(new Intent(view,DetailView.class));
+      if(item=="Verbenas")
+        view.startActivity(new Intent(view,HangAppView.class));
+    }
+
+  }
+  @Override
   public void goToAddScreen(HangApp.AddTo presenter) {
     addToState = new AddState();
 
@@ -236,5 +251,10 @@ public class App extends Application implements Mediator, Navigator {
     boolean informationVisibility;
     boolean imageVisibility;
     boolean containsParticipants;
-  }}
+  }
+class ListState{
+  boolean textVisility;
+}
+
+}
 

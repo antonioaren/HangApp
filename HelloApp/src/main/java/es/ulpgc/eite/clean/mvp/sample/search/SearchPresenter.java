@@ -2,8 +2,10 @@ package es.ulpgc.eite.clean.mvp.sample.search;
 
 import android.app.Application;
 import android.content.Context;
+import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
+import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 
 /**
  * Created by alumno on 29/03/2017.
@@ -68,4 +70,10 @@ public class SearchPresenter  extends GenericPresenter<Search.PresenterToView, S
         String[]list= model.getListCategories();
         return list;
     }
+@Override
+public void onItemListClicked(){
+    Log.d(TAG,"calling onItemListClicked");
+    Navigator app = (Navigator) getView().getApplication();
+    app.goToPartyList((Search.ListTo) this);
+}
 }

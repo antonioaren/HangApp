@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CalendarView;
@@ -54,6 +55,12 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
          String[]categories=sp.getCategories();
         ArrayAdapter<String> adaptader = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, categories);
         listCategories.setAdapter(adaptader);
+        listCategories.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+               getPresenter().onItemListClicked();
+            }});
+
         textDate=(TextView)findViewById(R.id.textDate);
         calendar=(CalendarView)findViewById(R.id.calendarView);
         buttonSearch=(Button)findViewById(R.id.buttonSearch);
@@ -76,6 +83,10 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
     public void setSearchBtnLabel(String txt) {
 
     }
+    @Override
+    public ListView getListCategories(){
+    return listCategories;
+}
 
     @Override
     public void hideToolbar() {
