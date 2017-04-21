@@ -40,7 +40,7 @@ public class HangAppView
     String[]parties=hap.getParties();
 
     list=(ListView)findViewById(R.id.list);
-    ArrayAdapter<String> adaptder = new ArrayAdapter<String>(this,R.layout.activity_filalista,R.id.description);
+    ArrayAdapter<String> adaptder = new ArrayAdapter<String>(this,R.layout.activity_filalista,R.id.description,parties);
     list.setAdapter(adaptder);
     list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                   @Override
