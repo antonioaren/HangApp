@@ -1,6 +1,5 @@
 package es.ulpgc.eite.clean.mvp.sample.search;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -15,7 +14,6 @@ import android.widget.TextView;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
-import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppView;
 
 import static es.ulpgc.eite.clean.mvp.sample.R.layout.activity_search;
 
@@ -109,23 +107,36 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
 
     }
 
+    /*
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
     }
+    */
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent myIntent = new Intent(getApplicationContext(), HangAppView.class);
-        startActivityForResult(myIntent, 0);
+        //Intent myIntent = new Intent(getApplicationContext(), HangAppView.class);
+        //startActivityForResult(myIntent, 0);
+
+        /*
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            finish();
+           // return true;
+        }
+        */
 
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        /*
         if (id == R.id.action_settings) {
             return true;
         }
+        */
+
         return super.onOptionsItemSelected(item);
 
     }

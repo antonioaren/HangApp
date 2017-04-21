@@ -23,7 +23,6 @@ public class HangAppView
   private Button buttonAdd;
 
   private TextView information;
-  private TextView title;
   ListView list;
   ImageView image;
 
@@ -36,7 +35,7 @@ public class HangAppView
     ImageView image=(ImageView)findViewById(R.id.image);
 
 
-    title=(TextView)findViewById(R.id.title);
+
     information=(TextView)findViewById(R.id.information);
     String[]parties=hap.getParties();
 
@@ -116,7 +115,7 @@ public class HangAppView
 
   @Override
   public void hideText() {
-    information.setVisibility(View.GONE);
+    //information.setVisibility(View.GONE);
   }
 
   @Override

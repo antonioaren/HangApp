@@ -75,7 +75,7 @@ public class App extends Application implements Mediator, Navigator {
     Context view = presenter.getManagedContext();
     if (view != null) {
       view.startActivity(new Intent(view, HangAppView.class));
-      presenter.destroyView();
+      //presenter.destroyView();
     }
 
   }
@@ -149,7 +149,7 @@ public class App extends Application implements Mediator, Navigator {
     Context view = presenter.getManagedContext();
     if (view != null) {
       view.startActivity(new Intent(view, SearchView.class));
-      presenter.destroyView();
+      //presenter.destroyView();
     }
 
   }
@@ -162,7 +162,7 @@ public class App extends Application implements Mediator, Navigator {
     Context view = presenter.getManagedContext();
     if (view != null) {
       view.startActivity(new Intent(view, AddPartyView.class));
-      presenter.destroyView();
+     // presenter.destroyView();
     }
 
   }
@@ -186,7 +186,7 @@ public class App extends Application implements Mediator, Navigator {
     Context view = presenter.getManagedContext();
     if (view != null) {
       view.startActivity(new Intent(view, InformationView.class));
-      presenter.destroyView();
+     // presenter.destroyView();
     }
 
 
@@ -197,7 +197,7 @@ public class App extends Application implements Mediator, Navigator {
     Context view = presenter.getManagedContext();
     if (view != null) {
       view.startActivity(new Intent(view, DetailView.class));
-      presenter.destroyView();
+      //presenter.destroyView();
   }}
 
 
