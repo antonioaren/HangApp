@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
-import es.ulpgc.eite.clean.mvp.sample.detail.DetailView;
+import es.ulpgc.eite.clean.mvp.sample.information.PartiesByCategoriesView;
 
 import static es.ulpgc.eite.clean.mvp.sample.R.layout.activity_search;
 
@@ -153,7 +153,7 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
    @Override
    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
       String value= (String) parent.getItemAtPosition(position);
-      Intent intent= new Intent(this,DetailView.class);
+      Intent intent= new Intent(this,PartiesByCategoriesView.class);
       intent.putExtra("categories",value);
       startActivity(intent);
   }

@@ -1,5 +1,6 @@
 package es.ulpgc.eite.clean.mvp.sample.information;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -8,6 +9,7 @@ import android.widget.ListView;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
+import es.ulpgc.eite.clean.mvp.sample.detail.DetailView;
 
 /**
  * Created by eleonora on 21/04/2017.
@@ -34,6 +36,9 @@ public class PartiesByCategoriesView  extends GenericActivity<PartiesByCategorie
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+        String value= (String) parent.getItemAtPosition(position);
+        Intent intent= new Intent(this,DetailView.class);
+        intent.putExtra("partiesDefault",value);
+        startActivity(intent);
     }
 }
