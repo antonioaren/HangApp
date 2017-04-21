@@ -3,7 +3,6 @@ package es.ulpgc.eite.clean.mvp.sample.app;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
-import android.widget.ListView;
 
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyView;
 import es.ulpgc.eite.clean.mvp.sample.detail.DetailView;
@@ -11,6 +10,7 @@ import es.ulpgc.eite.clean.mvp.sample.hangapp.HangApp;
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppView;
 import es.ulpgc.eite.clean.mvp.sample.hello.Hello;
 import es.ulpgc.eite.clean.mvp.sample.information.InformationView;
+import es.ulpgc.eite.clean.mvp.sample.information.PartiesByCategories;
 import es.ulpgc.eite.clean.mvp.sample.search.Search;
 import es.ulpgc.eite.clean.mvp.sample.search.SearchView;
 
@@ -154,20 +154,20 @@ public class App extends Application implements Mediator, Navigator {
     }
 
   }
-  @Override
-  public void goToPartyList(Search.ListTo presenter){
-    Context view = presenter.getManagedContext();
-   SearchView sv= new SearchView();
-   ListView list= sv.getListCategories();
-  String item= list.getSelectedItem().toString();
-    if(view!=null){
-     if(item=="Conciertos")
-      view.startActivity(new Intent(view,DetailView.class));
-      if(item=="Verbenas")
-        view.startActivity(new Intent(view,HangAppView.class));
-    }
-
-  }
+//  @Override
+//  public void goToPartyList(Search.ListTo presenter){
+//    Context view = presenter.getManagedContext();
+//   SearchView sv= new SearchView();
+//   ListView list=sv.getListCategories();
+//   int position= list.getSelectedItemPosition();
+//    if(view!=null){
+//      if(position==0){
+//        view.startActivity(new Intent(view,DetailView.class));
+//      }
+//      view.startActivity(new Intent(view, SearchView.class));
+//    }
+//
+//  }
   @Override
   public void goToAddScreen(HangApp.AddTo presenter) {
     addToState = new AddState();
@@ -215,7 +215,13 @@ public class App extends Application implements Mediator, Navigator {
       //presenter.destroyView();
   }}
 
-
+  @Override
+  public void goDetailScreenFromPartyList(PartiesByCategories.DetailTo presenter) {
+    Context view = presenter.getManagedContext();
+    if (view != null) {
+      view.startActivity(new Intent(view, DetailView.class));
+      //presenter.destroyView();
+    }}
   ///////////////////////////////////////////////////////////////////////////////////
   // State /////////////////////////////////////////////////////////////////////////
 

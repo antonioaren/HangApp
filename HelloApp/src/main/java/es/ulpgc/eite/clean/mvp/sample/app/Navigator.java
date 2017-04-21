@@ -2,6 +2,7 @@ package es.ulpgc.eite.clean.mvp.sample.app;
 
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangApp;
 import es.ulpgc.eite.clean.mvp.sample.hello.Hello;
+import es.ulpgc.eite.clean.mvp.sample.information.PartiesByCategories;
 import es.ulpgc.eite.clean.mvp.sample.search.Search;
 
 public interface Navigator {
@@ -13,7 +14,7 @@ public interface Navigator {
 
 
 
-  void goToPartyList(Search.ListTo presenter);
+  //void goToPartyList(Search.ListTo presenter);
 
   void goToAddScreen(HangApp.AddTo presenter);
 
@@ -29,4 +30,6 @@ public interface Navigator {
 
 
   void goDetailScreen(HangApp.DetailTo presenter);
+
+  void goDetailScreenFromPartyList(PartiesByCategories.DetailTo presenter);
 }

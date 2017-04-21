@@ -36,6 +36,11 @@
             android:label="Detail"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name="es.ulpgc.eite.clean.mvp.sample.information.PartiesByCategoriesView"
+            android:label="Parties Founded"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package es.ulpgc.eite.clean.mvp.sample.search;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
+import es.ulpgc.eite.clean.mvp.sample.information.PartiesByCategoriesView;
 
 import static es.ulpgc.eite.clean.mvp.sample.R.layout.activity_search;
 
@@ -23,7 +25,7 @@ import static es.ulpgc.eite.clean.mvp.sample.R.layout.activity_search;
  */
 
 public class SearchView  extends GenericActivity<Search.PresenterToView, Search.ViewToPresenter, SearchPresenter>
-        implements Search.PresenterToView  {
+        implements Search.PresenterToView, AdapterView.OnItemClickListener {
     private ImageView imageSearch;
     TextView text;
     TextView textLocation;
@@ -55,11 +57,8 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
          String[]categories=sp.getCategories();
         ArrayAdapter<String> adaptader = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, categories);
         listCategories.setAdapter(adaptader);
-        listCategories.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-               getPresenter().onItemListClicked();
-            }});
+
+        listCategories.setOnItemClickListener(this);
 
         textDate=(TextView)findViewById(R.id.textDate);
         calendar=(CalendarView)findViewById(R.id.calendarView);
@@ -149,6 +148,15 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
         */
 
         return super.onOptionsItemSelected(item);
+
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        String value= (String) parent.getItemAtPosition(0);
+        Intent intent= new Intent(this,PartiesByCategoriesView.class);
+        intent.putExtra("categories",value);
+        startActivity(intent);
 
     }
 }
