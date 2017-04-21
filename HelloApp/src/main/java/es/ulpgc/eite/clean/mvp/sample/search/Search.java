@@ -76,6 +76,8 @@ public interface Search {
         void onItemListClicked();
 
 
+
+
         //void onStartingView();
     }
 
@@ -136,6 +138,14 @@ public interface Search {
     }
 
     public interface ListTo {
+        Context getManagedContext();
+    }
+
+    public interface DetailTo {
+        Context getManagedContext();
+    }
+
+    public interface PartiesByCategoriesTo {
         Context getManagedContext();
     }
 }

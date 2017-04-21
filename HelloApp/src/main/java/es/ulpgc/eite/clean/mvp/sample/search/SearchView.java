@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
-import es.ulpgc.eite.clean.mvp.sample.information.PartiesByCategoriesView;
+import es.ulpgc.eite.clean.mvp.sample.detail.DetailView;
 
 import static es.ulpgc.eite.clean.mvp.sample.R.layout.activity_search;
 
@@ -59,7 +59,6 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
         listCategories.setAdapter(adaptader);
 
         listCategories.setOnItemClickListener(this);
-
         textDate=(TextView)findViewById(R.id.textDate);
         calendar=(CalendarView)findViewById(R.id.calendarView);
         buttonSearch=(Button)findViewById(R.id.buttonSearch);
@@ -150,14 +149,13 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
         return super.onOptionsItemSelected(item);
 
     }
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        String value= (String) parent.getItemAtPosition(0);
-        Intent intent= new Intent(this,PartiesByCategoriesView.class);
-        intent.putExtra("categories",value);
-        startActivity(intent);
-
-    }
+//metodo de prueba para pasar a la segunda lista,de fiestas
+   @Override
+   public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+      String value= (String) parent.getItemAtPosition(position);
+      Intent intent= new Intent(this,DetailView.class);
+      intent.putExtra("categories",value);
+      startActivity(intent);
+  }
 }
 

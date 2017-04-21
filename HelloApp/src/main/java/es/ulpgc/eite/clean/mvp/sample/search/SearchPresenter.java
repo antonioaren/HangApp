@@ -11,7 +11,7 @@ import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
  * Created by alumno on 29/03/2017.
  */
 public class SearchPresenter  extends GenericPresenter<Search.PresenterToView, Search.PresenterToModel, Search.ModelToPresenter, SearchModel>
-        implements Search.ViewToPresenter, Search.ModelToPresenter, Search.HangAppTo, Search.ToSearch {
+        implements Search.ViewToPresenter, Search.ModelToPresenter, Search.HangAppTo, Search.ToSearch, Search.DetailTo, Search.PartiesByCategoriesTo {
 
 
     private boolean informationVisible;
@@ -74,6 +74,13 @@ public class SearchPresenter  extends GenericPresenter<Search.PresenterToView, S
 public void onItemListClicked(){
     Log.d(TAG,"calling onItemListClicked");
     Navigator app = (Navigator) getView().getApplication();
-    app.goToPartyList((Search.ListTo) this);
+    app.goToItemList(this);
 }
+
+
+
+    @Override
+    public Context getManagedContext() {
+        return getActivityContext();
+    }
 }

@@ -13,7 +13,7 @@ public class PartiesByCategoriesModel extends GenericModel<PartiesByCategories.M
     String[]verbenas=new String[]{"Verbena en Tafira"};
     String[]cinema= new String[]{"Yelmo Cines estrena la nueva pelicula de los pitufos"};
     String []discotecas=new String[]{"Nueva discoteca en Maspalomas"};
-    String[]defaultParty=  new String[]{"Party 1 soon..."};
+    String[]defaultParty=  new String[]{"Party 1 soon...","Party 2 soon..."};
     @Override
     public String[]getCulturalParties(){
     return CulturalParties;

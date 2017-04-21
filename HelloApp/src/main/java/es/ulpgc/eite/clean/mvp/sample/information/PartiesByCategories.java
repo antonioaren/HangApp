@@ -15,10 +15,12 @@ public interface PartiesByCategories extends Model<PartiesByCategories.ModelToPr
 
     public interface ViewToPresenter {
 
-        public String[] getContentList() ;
+        public String[] getContentDefaultList() ;
 
 
-        void onListItemClicked();
+
+
+        void onListCategoryItemClicked();
     }
 
     public interface PresenterToModel {

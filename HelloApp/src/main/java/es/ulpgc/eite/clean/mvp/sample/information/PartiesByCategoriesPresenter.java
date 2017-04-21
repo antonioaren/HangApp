@@ -12,7 +12,7 @@ import es.ulpgc.eite.clean.mvp.sample.hangapp.HangApp;
  */
 
 public class PartiesByCategoriesPresenter  extends GenericPresenter<PartiesByCategories.PresenterToView, PartiesByCategories.PresenterToModel, PartiesByCategories.ModelToPresenter, PartiesByCategories>
-        implements PartiesByCategories.ViewToPresenter, PartiesByCategories.ModelToPresenter, PartiesByCategories.SearchTo, PartiesByCategories.ToPartiesByCategories, HangApp.DetailTo {
+        implements PartiesByCategories.ViewToPresenter, PartiesByCategories.ModelToPresenter, PartiesByCategories.SearchTo, PartiesByCategories.ToPartiesByCategories, HangApp.DetailTo, PartiesByCategories.DetailTo {
     @Override
     public void onCreate(PartiesByCategories.PresenterToView presenterToView) {
 
@@ -28,17 +28,20 @@ public class PartiesByCategoriesPresenter  extends GenericPresenter<PartiesByCat
 
     }
 @Override
-    public String[] getContentList(){
+    public String[] getContentDefaultList(){
     Log.d("TAG","Calling onItemCliked");
     PartiesByCategoriesModel pbcm= new PartiesByCategoriesModel();
    String[]content= pbcm.getDefaulParty();
     return content;
 }
+
+
+
     @Override
-    public void onListItemClicked() {
+    public void onListCategoryItemClicked() {
         Log.d(TAG,"item cliked");
         Navigator app = (Navigator) getView().getApplication();
-        app.goDetailScreen(this);
+        app.goDetailScreenFromPartyList(this);
     }
 
     @Override

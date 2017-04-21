@@ -14,7 +14,7 @@ public interface Navigator {
 
 
 
-  //void goToPartyList(Search.ListTo presenter);
+  void goToPartyList(Search.ListTo presenter);
 
   void goToAddScreen(HangApp.AddTo presenter);
 
@@ -25,11 +25,15 @@ public interface Navigator {
 
 
 
-  void goToProcessedInformationScreen(Search.ProcessedTo presenter);
+
 
 
 
   void goDetailScreen(HangApp.DetailTo presenter);
+
+
+
+  void goToItemList(Search.PartiesByCategoriesTo presenter);
 
   void goDetailScreenFromPartyList(PartiesByCategories.DetailTo presenter);
 }

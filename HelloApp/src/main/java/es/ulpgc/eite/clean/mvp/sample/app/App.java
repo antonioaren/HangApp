@@ -9,8 +9,9 @@ import es.ulpgc.eite.clean.mvp.sample.detail.DetailView;
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangApp;
 import es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppView;
 import es.ulpgc.eite.clean.mvp.sample.hello.Hello;
-import es.ulpgc.eite.clean.mvp.sample.information.InformationView;
+
 import es.ulpgc.eite.clean.mvp.sample.information.PartiesByCategories;
+import es.ulpgc.eite.clean.mvp.sample.information.PartiesByCategoriesView;
 import es.ulpgc.eite.clean.mvp.sample.search.Search;
 import es.ulpgc.eite.clean.mvp.sample.search.SearchView;
 
@@ -96,6 +97,10 @@ public class App extends Application implements Mediator, Navigator {
 
   }
 
+  @Override
+  public void goToPartyList(Search.ListTo presenter) {
+
+  }
 
 
 //----------------------Metodos para nuestra app-----------------------------------------------------------
@@ -191,21 +196,10 @@ public class App extends Application implements Mediator, Navigator {
 //
 //  }}
 
-  @Override
-  public void goToProcessedInformationScreen(Search.ProcessedTo presenter) {
-    processedInformationToState=new ProcessedInformationState();
-    processedInformationToState.informationVisibility=presenter.isInformationVisible();
-    processedInformationToState.imageVisibility=presenter.isImageVisible();
-    processedInformationToState.containsParticipants=presenter.ParticipantsExist();
-
-    Context view = presenter.getManagedContext();
-    if (view != null) {
-      view.startActivity(new Intent(view, InformationView.class));
-     // presenter.destroyView();
-    }
 
 
-  }
+
+
 
   @Override
   public void goDetailScreen(HangApp.DetailTo presenter) {
@@ -214,7 +208,14 @@ public class App extends Application implements Mediator, Navigator {
       view.startActivity(new Intent(view, DetailView.class));
       //presenter.destroyView();
   }}
+@Override
+public void goToItemList(Search.PartiesByCategoriesTo presenter){
+  Context view= presenter.getManagedContext();
+  if(view!=null){
+    view.startActivity(new Intent(view,PartiesByCategoriesView.class));
+  }
 
+}
   @Override
   public void goDetailScreenFromPartyList(PartiesByCategories.DetailTo presenter) {
     Context view = presenter.getManagedContext();
