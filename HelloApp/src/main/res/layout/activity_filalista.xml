@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="es.ulpgc.eite.clean.mvp.sample.add.AddPartyView">
+    tools:context="es.ulpgc.eite.clean.mvp.sample.hangapp.HangAppView">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -23,7 +23,9 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_addparty"/>
+    <include
+        layout="@layout/content_filalista"
+        />
 
 
 </android.support.design.widget.CoordinatorLayout>
