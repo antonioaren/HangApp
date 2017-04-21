@@ -38,9 +38,10 @@ public class HangAppView
 
     information=(TextView)findViewById(R.id.information);
     String[]parties=hap.getParties();
+    int []images=hap.getImages();
 
     list=(ListView)findViewById(R.id.list);
-    ArrayAdapter<String> adaptder = new ArrayAdapter<String>(this,R.layout.activity_filalista,R.id.description,parties);
+    ArrayAdapter<String> adaptder = new ArrayAdapter<String>(this,R.layout.content_filalista,R.id.content,parties);
     list.setAdapter(adaptder);
     list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                   @Override

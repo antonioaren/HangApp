@@ -1,6 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.hangapp;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
+import es.ulpgc.eite.clean.mvp.sample.R;
 
 
 public class HangAppModel extends GenericModel<HangApp.ModelToPresenter>
@@ -13,8 +14,10 @@ public class HangAppModel extends GenericModel<HangApp.ModelToPresenter>
   private String msgText;
 
   String[]parties;
+  int[]images;
   public HangAppModel(){
     this.parties= new String[]{"Concierto de FallOutBoy en Las Palmas a las 21:00","Convencion de Anime en Triana","YelmoCines estrena la nueva pelicula de los pitufos","Verbena en Tafira","Inauguracion de la disco en Maspalomas","Concierto de Vivaldi en Alfredo Kraus"};
+     this.images=new int[]{R.drawable.hat,R.drawable.hat,R.drawable.hat,R.drawable.hat,R.drawable.hat,R.drawable.hat};
   }
   /**
    * Method that recovers a reference to the PRESENTER
@@ -72,4 +75,9 @@ public class HangAppModel extends GenericModel<HangApp.ModelToPresenter>
   public String[] getListParties() {
     return this.parties;
   }
+
+  @Override
+  public int[]getListImages(){
+  return this.images;
+}
 }

@@ -219,5 +219,11 @@ public class HangAppPresenter extends GenericPresenter
     String[]list= model.getListParties();
     return list;
   }
+@Override
+  public int[]getImages(){
+  HangAppModel model=new HangAppModel();
+  int[]images=model.getListImages();
+  return images;
+}
 }
 
