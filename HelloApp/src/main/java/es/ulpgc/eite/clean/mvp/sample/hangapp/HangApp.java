@@ -14,119 +14,132 @@ import es.ulpgc.eite.clean.mvp.Presenter;
 public interface HangApp {
 //cambios hechos
 
-  ///////////////////////////////////////////////////////////////////////////////////
-  // State /////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////
+    // State /////////////////////////////////////////////////////////////////////////
 
-  interface ToDummy {
-    void onScreenStarted();
-    void setToolbarVisibility(boolean visible);
-    void setTextVisibility(boolean visible);
-  }
+    interface ToDummy {
+        void onScreenStarted();
+        void setToolbarVisibility(boolean visible);
+        void setTextVisibility(boolean visible);
+    }
 
-  interface DummyTo {
-  Context getManagedContext();
-   void destroyView();
-  boolean isToolbarVisible();
-   boolean isTextVisible();
- }
+    interface DummyTo {
+        Context getManagedContext();
+        void destroyView();
+        boolean isToolbarVisible();
+        boolean isTextVisible();
+    }
 
-  interface toSearch{
+    interface toSearch{
 
-    void setTextVisibility(boolean textVisibility);
+        void setTextVisibility(boolean textVisibility);
 
-    void onScreenStarted();
-  }
-  ///////////////////////////////////////////////////////////////////////////////////
-  // Screen ////////////////////////////////////////////////////////////////////////
-interface toAdd{
-    void onScreenStarted();
+        void onScreenStarted();
+    }
+    ///////////////////////////////////////////////////////////////////////////////////
+    // Screen ////////////////////////////////////////////////////////////////////////
+    interface toAdd{
+        void onScreenStarted();
 
-    void setTextVisibility(boolean visible);
-    void setSelectorsVisibility(boolean visible);
-  }
-  /**
-   * Methods offered to VIEW to communicate with PRESENTER
-   */
-  interface ViewToPresenter extends Presenter<PresenterToView> {
-
-
-    void onButtonSearchClicked();
-
-      void onButtonAddClicked();
-  }
-
-  /**
-   * Required VIEW methods available to PRESENTER
-   */
-  interface PresenterToView extends ContextView {
-    void onCreate(Bundle savedInstanceState);
-
-    void finishScreen();
-    void hideToolbar();
-    void hideText();
-    void showText();
-    void setText(String txt);
-    void setLabel(String txt);
-
-      void setLabelSearch(String txt);
-
-      void setAddLabel(String txt);
-  }
-
-  /**
-   * Methods offered to MODEL to communicate with PRESENTER
-   */
-  interface PresenterToModel extends Model<ModelToPresenter> {
-    void onChangeMsgByBtnClicked();
-    String getText();
+        void setTextVisibility(boolean visible);
+        void setSelectorsVisibility(boolean visible);
+    }
+    /**
+     * Methods offered to VIEW to communicate with PRESENTER
+     */
+    interface ViewToPresenter extends Presenter<PresenterToView> {
 
 
-    String getSearchLabel();
+        void onButtonSearchClicked();
 
-    String getAddLabel();
-  }
-
-  /**
-   * Required PRESENTER methods available to MODEL
-   */
-  interface ModelToPresenter {
-
-  }
-
-  interface SearchTo {
-    Context getManagedContext();
-    void destroyView();
-
-    boolean isTextVisible();
-
-  }
-interface AddTo{
-    Context getManagedContext();
-    void destroyView();
-
-    boolean isTextVisible();
-
-    boolean isSelectorsVisible();
-
-    boolean isImageVisible();
-}
-   interface HangAppToAdd {
-    Context getManagedContext();
-    void destroyView();
-
-    boolean isTextVisible();
+        void onButtonAddClicked();
 
 
-  }
+        void onListItemClicked();
+    }
+
+    /**
+     * Required VIEW methods available to PRESENTER
+     */
+    interface PresenterToView extends ContextView {
+        void onCreate(Bundle savedInstanceState);
+
+        void finishScreen();
+        // void hideToolbar();
+        void hideText();
+        void showText();
+
+        void setText(String txt);
+
+        void setLabel(String txt);
+
+        void setLabelSearch(String txt);
+
+        void setAddLabel(String txt);
+    }
+
+    /**
+     * Methods offered to MODEL to communicate with PRESENTER
+     */
+    interface PresenterToModel extends Model<ModelToPresenter> {
+        void onChangeMsgByBtnClicked();
+        String getText();
 
 
-  interface ToHangApp{
+        String getSearchLabel();
 
-  void setTextVisibility(boolean textVisibility);
-  void setImageVisibility(boolean ImageVisibility);
+        String getAddLabel();
+
+        String[] getListParties();
+    }
+
+    /**
+     * Required PRESENTER methods available to MODEL
+     */
+    interface ModelToPresenter {
+
+        String[] getParties();
+    }
+
+    interface SearchTo {
+        Context getManagedContext();
+        void destroyView();
+
+        boolean isTextVisible();
+
+    }
+    interface AddTo{
+        Context getManagedContext();
+        void destroyView();
+
+        boolean isTextVisible();
+
+        boolean isSelectorsVisible();
+
+        boolean isImageVisible();
+    }
+    interface HangAppToAdd {
+        Context getManagedContext();
+        void destroyView();
+
+        boolean isTextVisible();
 
 
-  void onScreenStarted();
-}
+    }
 
+
+    interface ToHangApp{
+
+        void setTextVisibility(boolean textVisibility);
+        void setImageVisibility(boolean ImageVisibility);
+
+
+        void onScreenStarted();
+    }
+
+     interface DetailTo {
+        Context getManagedContext();
+        void destroyView();
+
+    }
 }

@@ -4,14 +4,18 @@ import es.ulpgc.eite.clean.mvp.GenericModel;
 
 
 public class HangAppModel extends GenericModel<HangApp.ModelToPresenter>
-    implements HangApp.PresenterToModel {
+        implements HangApp.PresenterToModel {
 
   private String HangAppText;
   private String HangAppButtonSearchLabel;
   private String HangAppButtonAddLabel;
   private int numOfTimes;
   private String msgText;
-//comentario
+
+  String[]parties;
+  public HangAppModel(){
+    this.parties= new String[]{"Concierto de FallOutBoy en Las Palmas a las 21:00","Convencion de Anime en Triana","YelmoCines estrena la nueva pelicula de los pitufos","Verbena en Tafira","Inauguracion de la disco en Maspalomas","Concierto de Vivaldi en Alfredo Kraus"};
+  }
   /**
    * Method that recovers a reference to the PRESENTER
    * You must ALWAYS call {@link super#onCreate(Object)} here
@@ -64,5 +68,8 @@ public class HangAppModel extends GenericModel<HangApp.ModelToPresenter>
   public String getAddLabel(){
     return HangAppButtonAddLabel;
   }
-
+  @Override
+  public String[] getListParties() {
+    return this.parties;
+  }
 }
