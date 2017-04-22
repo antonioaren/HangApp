@@ -23,9 +23,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include
-        layout="@layout/content_hangapp"
-        />
+    <include layout="@layout/content_hangapp"/>
 
 
 </android.support.design.widget.CoordinatorLayout>
