@@ -82,9 +82,6 @@ public interface HangApp {
      * Methods offered to MODEL to communicate with PRESENTER
      */
     interface PresenterToModel extends Model<ModelToPresenter> {
-        void onChangeMsgByBtnClicked();
-        String getText();
-
 
         String getSearchLabel();
 
@@ -97,7 +94,6 @@ public interface HangApp {
      * Required PRESENTER methods available to MODEL
      */
     interface ModelToPresenter {
-
         String[] getParties();
     }
 
@@ -108,6 +104,7 @@ public interface HangApp {
         boolean isTextVisible();
 
     }
+
     interface AddTo{
         Context getManagedContext();
         void destroyView();
@@ -118,6 +115,7 @@ public interface HangApp {
 
         boolean isImageVisible();
     }
+
     interface HangAppToAdd {
         Context getManagedContext();
         void destroyView();

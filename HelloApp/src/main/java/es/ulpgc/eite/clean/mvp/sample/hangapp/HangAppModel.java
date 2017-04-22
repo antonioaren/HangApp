@@ -9,10 +9,8 @@ public class HangAppModel extends GenericModel<HangApp.ModelToPresenter>
   private String HangAppText;
   private String HangAppButtonSearchLabel;
   private String HangAppButtonAddLabel;
-  private int numOfTimes;
-  private String msgText;
+  private String[] parties;
 
-  String[]parties;
   public HangAppModel(){
     this.parties= new String[]{"Concierto de FallOutBoy en Las Palmas a las 21:00","Convencion de Anime en Triana","YelmoCines estrena la nueva pelicula de los pitufos","Verbena en Tafira","Inauguracion de la disco en Maspalomas","Concierto de Vivaldi en Alfredo Kraus"};
   }
@@ -43,21 +41,6 @@ public class HangAppModel extends GenericModel<HangApp.ModelToPresenter>
 
   ///////////////////////////////////////////////////////////////////////////////////
   // Presenter To Model ////////////////////////////////////////////////////////////
-
-
-  @Override
-  public void onChangeMsgByBtnClicked() {
-    msgText = HangAppText;
-    if(numOfTimes > 0) {
-      msgText += ", " + numOfTimes + " times";
-    }
-    numOfTimes++;
-  }
-
-  @Override
-  public String getText() {
-    return msgText;
-  }
 
   @Override
   public String getSearchLabel() {

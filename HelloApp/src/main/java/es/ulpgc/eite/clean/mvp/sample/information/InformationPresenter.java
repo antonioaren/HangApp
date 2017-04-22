@@ -9,7 +9,7 @@ import es.ulpgc.eite.clean.mvp.Presenter;
  * Created by alumno on 31/03/2017.
  */
 
-class InformationPresenter implements Presenter<Information.PresenterToView> {
+public class InformationPresenter implements Presenter<Information.PresenterToView> {
     @Override
     public void onCreate(Information.PresenterToView presenterToView) {
 

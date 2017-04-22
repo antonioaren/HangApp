@@ -18,31 +18,35 @@ public class HangAppView
         extends GenericActivity<HangApp.PresenterToView, HangApp.ViewToPresenter, HangAppPresenter>
         implements HangApp.PresenterToView {
 
-  // private Toolbar toolbar;
   private Button buttonSearch;
   private Button buttonAdd;
 
   private TextView information;
   private TextView title;
-  ListView list;
-  ImageView image;
+  private ListView list;
+  private ImageView image;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_hangapp);
-    HangAppPresenter hap=new HangAppPresenter();
+    HangAppPresenter hap = new HangAppPresenter();
     //faltaba declarar el list view
+
     ImageView image=(ImageView)findViewById(R.id.image);
 
 
     title=(TextView)findViewById(R.id.title);
     information=(TextView)findViewById(R.id.information);
-    String[]parties=hap.getParties();
+    String[] parties = hap.getParties();
 
-    list=(ListView)findViewById(R.id.list);
-    ArrayAdapter<String> adaptder = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, parties);
+    list = (ListView)findViewById(R.id.list);
+
+    ArrayAdapter<String> adaptder =
+            new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, parties);
+
     list.setAdapter(adaptder);
+
     list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                   @Override
                                   public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -79,27 +83,6 @@ public class HangAppView
     super.onResume(HangAppPresenter.class, this);
   }
 
-  /*
-  @Override
-  public boolean onCreateOptionsMenu(Menu menu) {
-    // Inflate the menu; this adds items to the action bar if it is present.
-    getMenuInflater().inflate(es.ulpgc.eite.clean.mvp.sample.hangapp.R.menu.menu_dummy, menu);
-    return true;
-  }
-  @Override
-  public boolean onOptionsItemSelected(MenuItem item) {
-    // Handle action bar item clicks here. The action bar will
-    // automatically handle clicks on the Home/Up button, so long
-    // as you specify a parent activity in AndroidManifest.xml.
-    int id = item.getItemId();
-    //noinspection SimplifiableIfStatement
-    if (id == es.ulpgc.eite.clean.mvp.sample.hangapp.R.id.action_settings) {
-      return true;
-    }
-    return super.onOptionsItemSelected(item);
-  }
-  */
-
 
   ///////////////////////////////////////////////////////////////////////////////////
   // Presenter To View /////////////////////////////////////////////////////////////
@@ -109,10 +92,6 @@ public class HangAppView
     finish();
   }
 
-//  Override
-//  public void hideToolbar() {
-//    toolbar.setVisibility(View.GONE);
-//  }
 
   @Override
   public void hideText() {

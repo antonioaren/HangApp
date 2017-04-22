@@ -16,9 +16,7 @@ import es.ulpgc.eite.clean.mvp.sample.search.SearchView;
 
 public class App extends Application implements Mediator, Navigator {
 
-  private DummyState toDummyState, dummyToState;
-  private HelloState toHelloState;
-  private ByeState helloToByeState;
+
   private HangAppState toHangAppState;
   private SearchState toSearchState, searchToState;
   private AddState toAddState,addToState;
@@ -27,82 +25,17 @@ public class App extends Application implements Mediator, Navigator {
   @Override
   public void onCreate() {
     super.onCreate();
-    toDummyState = new DummyState();
-    toDummyState.toolbarVisibility = false;
-    toDummyState.textVisibility = false;
 
-    toHelloState = new HelloState();
     toHangAppState=new HangAppState();
     toSearchState = new SearchState();
     toSearchState.textVisibility = false;
 
-
-
   }
+//----------------------Metodos para nuestra app----------------------------------------------------
 
   ///////////////////////////////////////////////////////////////////////////////////
   // Mediator //////////////////////////////////////////////////////////////////////
 
-  @Override
-  public void startingDummyScreen(HangApp.ToDummy presenter){
-    if(toDummyState != null) {
-      presenter.setToolbarVisibility(toDummyState.toolbarVisibility);
-      presenter.setTextVisibility(toDummyState.textVisibility);
-    }
-    presenter.onScreenStarted();
-  }
-
-  @Override
-  public void startingHelloScreen(Hello.ToHello presenter){
-    if(toHelloState != null) {
-      presenter.setToolbarVisibility(toHelloState.toolbarVisibility);
-      //presenter.setTextVisibility(toHelloState.textVisibility);
-    }
-    presenter.onScreenStarted();
-  }
-
-
-  ///////////////////////////////////////////////////////////////////////////////////
-  // Navigator /////////////////////////////////////////////////////////////////////
-
-
-  @Override
-  public void goToNextScreen(HangApp.DummyTo presenter) {
-    dummyToState = new DummyState();
-    dummyToState.toolbarVisibility = presenter.isToolbarVisible();
-    dummyToState.textVisibility = presenter.isTextVisible();
-
-    Context view = presenter.getManagedContext();
-    if (view != null) {
-      view.startActivity(new Intent(view, HangAppView.class));
-      presenter.destroyView();
-    }
-
-  }
-
-
-  @Override
-  public void goToByeScreen(Hello.HelloToBye presenter) {
-    helloToByeState = new ByeState();
-    helloToByeState.toolbarVisibility = presenter.isToolbarVisible();
-    //helloToByeState.textVisibility = presenter.isTextVisible();
-
-    Context view = presenter.getManagedContext();
-    if (view != null) {
-      view.startActivity(new Intent(view, HangAppView.class));
-      //presenter.destroyView();
-    }
-
-  }
-
-
-
-//----------------------Metodos para nuestra app-----------------------------------------------------------
-
-  public void onCreateHome() {
-    super.onCreate();
-
-  }
 
   @Override
   public void startingSearchScreen(HangApp.toSearch presenter){
@@ -188,8 +121,6 @@ public class App extends Application implements Mediator, Navigator {
       view.startActivity(new Intent(view, InformationView.class));
       presenter.destroyView();
     }
-
-
   }
 
   @Override
@@ -204,20 +135,8 @@ public class App extends Application implements Mediator, Navigator {
   ///////////////////////////////////////////////////////////////////////////////////
   // State /////////////////////////////////////////////////////////////////////////
 
-  class DummyState {
-    boolean toolbarVisibility;
-    boolean textVisibility;
-  }
 
-  class ByeState {
-    boolean toolbarVisibility;
-    //boolean textVisibility;
-  }
 
-  class HelloState {
-    boolean toolbarVisibility;
-    //boolean textVisibility;
-  }
   class HangAppState{
     boolean textVisibility;
     boolean imageVisibility;
