@@ -13,7 +13,7 @@ import es.ulpgc.eite.clean.mvp.sample.hangapp.HangApp;
 
 public class AddPartyPresenter extends GenericPresenter<Add.PresenterToView, Add.PresenterToModel, Add.ModelToPresenter, AddPartyModel>
         implements Add.ViewToPresenter, Add.ModelToPresenter, Add.DummyTo, Add.SearchTo,  Add.AddTo, Add.HangAppTo, HangApp.toAdd {
-
+private boolean buttonClicked;
 
     @Override
     public void onPublishClicked() {
@@ -30,6 +30,15 @@ public class AddPartyPresenter extends GenericPresenter<Add.PresenterToView, Add
         Mediator app = (Mediator) getView().getApplication();
         app.startingAddScreen(this);
     }
+    @Override
+    public void onScreenStarted() {
+        Log.d(TAG, "calling onScreenStarted()");
+
+
+    }
+
+
+
 
     @Override
     public void onResume(Add.PresenterToView view) {
@@ -38,21 +47,25 @@ public class AddPartyPresenter extends GenericPresenter<Add.PresenterToView, Add
 
 
         if(configurationChangeOccurred()) {
-            getView().setLabel(getModel().getSearchLabel());
-            getView().setLabel(getModel().getSearchLabel());
 
-            checkToolbarVisibility();
-            checkTextVisibility();
+            getView().setLabel(getModel().getPublishBtnLabel());
+            getView().setLabel(getModel().getPlaceLabel());
+            getView().setLabel(getModel().getDateLabel());
+            getView().setLabel(getModel().getTimeInitLabel());
+            getView().setLabel(getModel().getTimeFinishLabel());
 
             if (buttonClicked) {
-                getView().setText(getModel().getText());
+                getView().setText(getModel().getTitleLabel());
             }
+
+
         }
     }
 
     @Override
-    public void onDestroy(boolean b) {
-
+    public void onDestroy(boolean isChangingConfiguration) {
+        super.onDestroy(isChangingConfiguration);
+        Log.d(TAG, "calling onDestroy()");
     }
 
     @Override
@@ -69,7 +82,9 @@ public class AddPartyPresenter extends GenericPresenter<Add.PresenterToView, Add
     }
     @Override
     public void destroyView() {
-
+        if(isViewRunning()) {
+            getView().finishScreen();
+        }
     }
 
     @Override
@@ -77,10 +92,6 @@ public class AddPartyPresenter extends GenericPresenter<Add.PresenterToView, Add
         return false;
     }
 
-    @Override
-    public void onScreenStarted() {
-
-    }
 
     @Override
     public void setTextVisibility(boolean visible) {

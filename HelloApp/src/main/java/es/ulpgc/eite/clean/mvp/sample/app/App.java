@@ -24,6 +24,7 @@ public class App extends Application implements Mediator, Navigator {
   private HangAppState toHangAppState;
   private SearchState toSearchState, searchToState;
   private AddState toAddState,addToState;
+  private PartiesByCategoryState partiesState;
   private ProcessedInformationState toprocessedInformationState,processedInformationToState;
 
   @Override
@@ -141,6 +142,15 @@ public class App extends Application implements Mediator, Navigator {
     presenter.onScreenStarted();
   }
 
+
+
+  @Override
+public void startingPartiesListScreen(PartiesByCategories.ToPartiesByCategories presenter){
+  if(partiesState!=null){
+    presenter.setListVisibility(partiesState.listVisibility);
+  }
+ presenter.onScreenStarted();
+  }
 
   ///////////////////////////////////////////////////////////////////////////////////
   // Navigator /////////////////////////////////////////////////////////////////////
@@ -262,6 +272,8 @@ public void goToItemList(Search.PartiesByCategoriesTo presenter){
 class ListState{
   boolean textVisility;
 }
-
+class PartiesByCategoryState{
+  boolean listVisibility;
+}
 }
 

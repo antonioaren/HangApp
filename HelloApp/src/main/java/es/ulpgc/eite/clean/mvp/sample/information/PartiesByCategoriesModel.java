@@ -8,12 +8,27 @@ import es.ulpgc.eite.clean.mvp.GenericModel;
 
 public class PartiesByCategoriesModel extends GenericModel<PartiesByCategories.ModelToPresenter>
         implements PartiesByCategories.PresenterToModel{
-    String[] CulturalParties= new String[]{"Concierto de Vivaldi en Alfredo Kraus","Convencion de Anime en Triana"};
-    String[] Concerts=new String[]{"Concierto de FallOutBoy en las Palmas a las 21:00"};
-    String[]verbenas=new String[]{"Verbena en Tafira"};
-    String[]cinema= new String[]{"Yelmo Cines estrena la nueva pelicula de los pitufos"};
-    String []discotecas=new String[]{"Nueva discoteca en Maspalomas"};
-    String[]defaultParty=  new String[]{"Party 1 soon...","Party 2 soon..."};
+    String titleLabel;
+ String[]CulturalParties,Concerts,verbenas,cinema,discotecas,defaultParty;
+public PartiesByCategoriesModel(){
+    defaultParty=  new String[]{"Party 1 soon...","Party 2 soon..."};
+}
+    @Override
+    public void onCreate(PartiesByCategories.ModelToPresenter presenter) {
+        super.onCreate(presenter);
+
+       titleLabel="Parties of this category";
+        CulturalParties= new String[]{"Concierto de Vivaldi en Alfredo Kraus","Convencion de Anime en Triana"};
+         Concerts=new String[]{"Concierto de FallOutBoy en las Palmas a las 21:00"};
+        verbenas=new String[]{"Verbena en Tafira"};
+        cinema= new String[]{"Yelmo Cines estrena la nueva pelicula de los pitufos"};
+        discotecas=new String[]{"Nueva discoteca en Maspalomas"};
+        defaultParty=  new String[]{"Party 1 soon...","Party 2 soon..."};
+    }
+    @Override
+    public String getTitleLabel(){
+        return titleLabel;
+    }
     @Override
     public String[]getCulturalParties(){
     return CulturalParties;
@@ -37,6 +52,7 @@ public class PartiesByCategoriesModel extends GenericModel<PartiesByCategories.M
     }
     @Override
     public String[]getDefaulParty(){
+        System.out.println(defaultParty);
         return defaultParty;
     }
 

@@ -30,7 +30,7 @@ public class HangAppView
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_hangapp);
-    HangAppPresenter hap=new HangAppPresenter();
+
     //faltaba declarar el list view
     ImageView image=(ImageView)findViewById(R.id.image);
 

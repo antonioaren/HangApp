@@ -7,9 +7,9 @@ import es.ulpgc.eite.clean.mvp.GenericModel;
  */
 
 public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements Add.PresenterToModel{
-   
 
-    String placeLabel,dateLabel,timeInitLabel,timeFinishLabel,publishLabel;
+
+    String placeLabel,dateLabel,timeInitLabel,timeFinishLabel,publishLabel,titleLabel;
     @Override
     public void onCreate(Add.ModelToPresenter presenter) {
         super.onCreate(presenter);
@@ -18,6 +18,7 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
         timeInitLabel="Starts :";
         timeFinishLabel="Finishes :";
         publishLabel="Publish";
+        titleLabel="Add a Party";
     }
 
     @Override
@@ -29,8 +30,10 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     return this.placeLabel;
 }
 
+
+
     @Override
-    public String gePublishBtnLabel() {
+    public String getPublishBtnLabel() {
         return this.publishLabel;
     }
 
@@ -48,5 +51,8 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     public String getTimeFinishLabel() {
         return this.timeFinishLabel;
     }
-
+ @Override
+    public String getTitleLabel(){
+     return this.titleLabel;
+ }
 }

@@ -160,4 +160,7 @@ public interface Search {
     public interface PartiesByCategoriesTo {
         Context getManagedContext();
     }
+  interface toParties{
+      Context getManagetContext();
+  }
 }

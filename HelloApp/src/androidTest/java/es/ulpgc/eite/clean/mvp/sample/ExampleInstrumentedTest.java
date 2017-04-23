@@ -7,6 +7,7 @@ import android.support.test.runner.AndroidJUnit4;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import es.ulpgc.eite.clean.mvp.sample.information.PartiesByCategoriesModel;
 import es.ulpgc.eite.clean.mvp.sample.search.SearchModel;
 import es.ulpgc.eite.clean.mvp.sample.search.SearchPresenter;
 
@@ -22,6 +23,7 @@ import static org.junit.Assert.assertEquals;
 public class ExampleInstrumentedTest {
   SearchModel search= new SearchModel();
   SearchPresenter searchpr= new SearchPresenter();
+  PartiesByCategoriesModel pbcm= new PartiesByCategoriesModel();
   @Test
   public void useAppContext() throws Exception {
     // Context of the app under test.
@@ -39,5 +41,10 @@ public class ExampleInstrumentedTest {
     String[]categories= new String[]{"Cines","Culturales","Conciertos","Verbenas","Discotecas"};
     assertArrayEquals(categories,searchpr.getCategories());
   }
+@Test
+  public void getDefaultList(){
+  String[]list= new String[]{"Party 1 soon...","Party 2 soon..."};
 
+  assertArrayEquals(list,pbcm.getDefaulParty());
+}
 }

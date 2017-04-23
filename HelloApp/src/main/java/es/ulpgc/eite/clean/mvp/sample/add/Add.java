@@ -96,10 +96,15 @@ public interface Add {
 
      String getPlaceLabel();
 
-    String gePublishBtnLabel();
-     String getDateLabel();
+
+
+    String getPublishBtnLabel();
+
+    String getDateLabel();
     String getTimeInitLabel();
     String getTimeFinishLabel();
+
+    String getTitleLabel();
   }
 
   /**
