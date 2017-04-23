@@ -37,12 +37,7 @@ public class HangAppView
 
 
     information=(TextView)findViewById(R.id.information);
-    String[]parties=hap.getParties();
-    int []images=hap.getImages();
-
-    list=(ListView)findViewById(R.id.list);
-    ArrayAdapter<String> adaptder = new ArrayAdapter<String>(this,R.layout.content_filalista,R.id.content,parties);
-    list.setAdapter(adaptder);
+    onResume();
     list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                   @Override
                                   public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -77,6 +72,11 @@ public class HangAppView
   @Override
   protected void onResume() {
     super.onResume(HangAppPresenter.class, this);
+    String[]parties=getPresenter().getParties();
+    int[]images=getPresenter().getImages();
+    list=(ListView)findViewById(R.id.list);
+    ArrayAdapter<String> adaptder = new ArrayAdapter<String>(this,R.layout.content_filalista,R.id.content,parties);
+    list.setAdapter(adaptder);
   }
 
   /*

@@ -56,6 +56,10 @@ public interface HangApp {
 
 
         void onListItemClicked();
+
+        String[] getParties();
+
+        int[] getImages();
     }
 
     /**
