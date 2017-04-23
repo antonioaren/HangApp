@@ -1,17 +1,18 @@
 package es.ulpgc.eite.clean.mvp.sample.search;
 
-import android.app.Application;
 import android.content.Context;
 import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
+import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
+import es.ulpgc.eite.clean.mvp.sample.hangapp.HangApp;
 
 /**
  * Created by alumno on 29/03/2017.
  */
 public class SearchPresenter  extends GenericPresenter<Search.PresenterToView, Search.PresenterToModel, Search.ModelToPresenter, SearchModel>
-        implements Search.ViewToPresenter, Search.ModelToPresenter, Search.HangAppTo, Search.ToSearch, Search.DetailTo, Search.PartiesByCategoriesTo {
+        implements Search.ViewToPresenter, Search.ModelToPresenter, Search.HangAppTo, Search.ToSearch, Search.DetailTo, Search.PartiesByCategoriesTo, HangApp.toSearch {
 
 
     private boolean informationVisible;
@@ -19,8 +20,14 @@ public class SearchPresenter  extends GenericPresenter<Search.PresenterToView, S
     private boolean participantExists;
 
     @Override
-    public void onCreate(Search.PresenterToView presenterToView) {
+    public void onCreate(Search.PresenterToView view) {
+        super.onCreate(SearchModel.class, this);
+        setView(view);
+        Log.d(TAG, "calling onCreate()");
 
+        Log.d(TAG, "calling startingSearchScreen()");
+        Mediator app = (Mediator) getView().getApplication();
+        app.startingSearchScreen(this);
     }
 
     @Override
@@ -38,24 +45,19 @@ public class SearchPresenter  extends GenericPresenter<Search.PresenterToView, S
     }
 
 
-    @Override
-    public Application getApplication() {
-        return null;
-    }
 
-    @Override
-    public Context getApplicationContext() {
-        return null;
-    }
 
-    @Override
-    public Context getActivityContext() {
-        return null;
-    }
+
+
 
 
     @Override
     public void setTextVisibility(boolean visible) {
+
+    }
+
+    @Override
+    public void onScreenStarted() {
 
     }
 

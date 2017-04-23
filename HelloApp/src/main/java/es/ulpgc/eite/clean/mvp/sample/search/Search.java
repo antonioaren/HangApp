@@ -120,6 +120,12 @@ public interface Search {
     interface PresenterToModel extends Model<Search.ModelToPresenter> {
 
 
+        String getPlaceLabel();
+
+        String getCategoryLabel();
+
+        String getDateLabel();
+
         String getSearchBtnLabel();
         String[]getListCategories();
 
