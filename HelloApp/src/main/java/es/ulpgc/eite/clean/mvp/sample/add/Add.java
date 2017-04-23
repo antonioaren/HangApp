@@ -60,23 +60,33 @@ public interface Add {
 
     void finishScreen();
     void hideToolbar();
-    void hideHelloMsg();
+
 
 
     void setPublishBtnLabel(String txt);
 
 
+    void setTitleLabel(String txt);
+
+    void setPlaceLabel(String txt);
+
+    void setDateLabel(String txt);
+
+    void setTimeInitLabel(String txt);
+
+    void setTimeFinishLabel(String txt);
+
     void hideText();
 
-    void showText();
+
 
     void setText(String txt);
 
     void setLabel(String txt);
 
-    void setLabelSearch(String txt);
 
-    void setAddLabel(String txt);
+
+
   }
 
   /**
@@ -84,11 +94,12 @@ public interface Add {
    */
   interface PresenterToModel extends Model<ModelToPresenter> {
 
-
+     String getPlaceLabel();
 
     String gePublishBtnLabel();
-
-
+     String getDateLabel();
+    String getTimeInitLabel();
+    String getTimeFinishLabel();
   }
 
   /**
