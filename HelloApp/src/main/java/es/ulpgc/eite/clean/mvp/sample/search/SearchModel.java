@@ -13,12 +13,14 @@ public class SearchModel  extends GenericModel<Search.ModelToPresenter>
     String placeLabel;
     String categoryLabel;
     String dateLabel;
+    String SearchText;
     public SearchModel(){
         this.categories= new String[]{"Cines","Culturales","Conciertos","Verbenas","Discotecas"};
     }
     @Override
     public void onCreate(Search.ModelToPresenter presenter) {
         super.onCreate(presenter);
+        SearchText="SEARCH";
         SearchBtnLabel="Search";
          placeLabel="ByPlace";
         categoryLabel="ByCategory";
@@ -31,7 +33,10 @@ public class SearchModel  extends GenericModel<Search.ModelToPresenter>
     }
 
 
-
+@Override
+public String getSearchText(){
+    return SearchText;
+}
 @Override
 public String getPlaceLabel(){
     return placeLabel;

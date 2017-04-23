@@ -18,7 +18,7 @@ public class SearchPresenter  extends GenericPresenter<Search.PresenterToView, S
     private boolean informationVisible;
     private boolean imageVisibility;
     private boolean participantExists;
-
+    private boolean buttonClicked;
     @Override
     public void onCreate(Search.PresenterToView view) {
         super.onCreate(SearchModel.class, this);
@@ -31,17 +31,33 @@ public class SearchPresenter  extends GenericPresenter<Search.PresenterToView, S
     }
 
     @Override
-    public void onResume(Search.PresenterToView presenterToView) {
+    public void onResume(Search.PresenterToView view) {
+        setView(view);
+        Log.d(TAG, "calling onResume()");
 
+
+        if(configurationChangeOccurred()) {
+            getView().setLabel(getModel().getSearchBtnLabel());
+            getView().setLabel(getModel().getCategoryLabel());
+            getView().setLabel(getModel().getDateLabel());
+            getView().setLabel(getModel().getPlaceLabel());
+
+
+            if (buttonClicked) {
+                getView().setText(getModel().getSearchText());
+            }
+        }
     }
 
     @Override
-    public void onDestroy(boolean b) {
-
+    public void onDestroy(boolean isChangingConfiguration) {
+        super.onDestroy(isChangingConfiguration);
+        Log.d(TAG, "calling onDestroy()");
     }
 
     @Override
     public void onBackPressed() {
+     Log.d(TAG,"calling onBackPressed()");
     }
 
 

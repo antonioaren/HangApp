@@ -1,6 +1,5 @@
 package es.ulpgc.eite.clean.mvp.sample.search;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -16,7 +15,6 @@ import android.widget.TextView;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
-import es.ulpgc.eite.clean.mvp.sample.information.PartiesByCategoriesView;
 
 import static es.ulpgc.eite.clean.mvp.sample.R.layout.activity_search;
 
@@ -25,7 +23,7 @@ import static es.ulpgc.eite.clean.mvp.sample.R.layout.activity_search;
  */
 
 public class SearchView  extends GenericActivity<Search.PresenterToView, Search.ViewToPresenter, SearchPresenter>
-        implements Search.PresenterToView, AdapterView.OnItemClickListener {
+        implements Search.PresenterToView {
     private ImageView imageSearch;
     TextView text;
     TextView textLocation;
@@ -55,7 +53,11 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
         categories=(TextView)findViewById(R.id.textCategories);
         listCategories=(ListView)findViewById(R.id.listCategories);
          onResume();
-        listCategories.setOnItemClickListener(this);
+        listCategories.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                getPresenter().onItemListClicked();
+            }});
         textDate=(TextView)findViewById(R.id.textDate);
         calendar=(CalendarView)findViewById(R.id.calendarView);
         buttonSearch=(Button)findViewById(R.id.buttonSearch);
@@ -80,18 +82,26 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
     }
     @Override
     public void finishScreen() {
-
+     finish();
     }
 
     @Override
     public void setSearchBtnLabel(String txt) {
-
+       buttonSearch.setText(txt);
     }
     @Override
-    public ListView getListCategories(){
-    return listCategories;
-}
+    public void setLocationLabel(String txt){
+        textLocation.setText(txt);
+    }
+   @Override
+   public void setCategoryLabel(String txt){
+       categories.setText(txt);
+   }
 
+   @Override
+   public void setDateLabel(String txt){
+       textDate.setText(txt);
+   }
     @Override
     public void hideToolbar() {
 
@@ -156,12 +166,12 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
 
     }
 //metodo de prueba para pasar a la segunda lista,de fiestas
-   @Override
-   public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-      String value= (String) parent.getItemAtPosition(position);
-      Intent intent= new Intent(this,PartiesByCategoriesView.class);
-      intent.putExtra("categories",value);
-      startActivity(intent);
-  }
+//   @Override
+//   public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//      String value= (String) parent.getItemAtPosition(position);
+//      Intent intent= new Intent(this,PartiesByCategoriesView.class);
+//      intent.putExtra("categories",value);
+//      startActivity(intent);
+//  }
 }
 
