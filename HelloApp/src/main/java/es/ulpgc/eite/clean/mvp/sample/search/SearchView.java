@@ -42,7 +42,7 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(activity_search);
-        SearchPresenter sp= new SearchPresenter();
+
         t = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(t);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -54,10 +54,7 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
         editTextLocation=(EditText)findViewById(R.id.editTextLocation);
         categories=(TextView)findViewById(R.id.textCategories);
         listCategories=(ListView)findViewById(R.id.listCategories);
-         String[]categories=sp.getCategories();
-        ArrayAdapter<String> adaptader = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, categories);
-        listCategories.setAdapter(adaptader);
-
+         onResume();
         listCategories.setOnItemClickListener(this);
         textDate=(TextView)findViewById(R.id.textDate);
         calendar=(CalendarView)findViewById(R.id.calendarView);
@@ -72,6 +69,15 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
     }
 
 
+    @Override
+    protected void onResume() {
+        super.onResume(SearchPresenter.class, this);
+        String[]categories= getPresenter().getCategories();
+
+        listCategories=(ListView)findViewById(R.id.listCategories);
+        ArrayAdapter<String> adaptder = new ArrayAdapter<String>(this,R.layout.content_filalista,R.id.content,categories);
+        listCategories.setAdapter(adaptder);
+    }
     @Override
     public void finishScreen() {
 
