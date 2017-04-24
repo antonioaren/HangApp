@@ -1,6 +1,3 @@
-package es.ulpgc.eite.clean.mvp.sample.category;
-
-
 import android.content.Context;
 import android.util.Log;
 
@@ -58,6 +55,10 @@ public class HangAppPresenter extends GenericPresenter
 
       checkToolbarVisibility();
       checkTextVisibility();
+
+      if (buttonClicked) {
+        getView().setText(getModel().getText());
+      }
     }
 
   }
@@ -211,9 +212,15 @@ public class HangAppPresenter extends GenericPresenter
   }
   @Override
   public String[] getParties() {
-    HangAppModel model= new HangAppModel();
-    String[]list= model.getListParties();
+
+    String[]list=getModel().getListParties();
     return list;
   }
+@Override
+  public int[]getImages(){
+
+  int[]images=getModel().getListImages();
+  return images;
+}
 }
 
