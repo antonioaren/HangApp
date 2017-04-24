@@ -23,7 +23,7 @@ public class Category {
         return descripcion;
     }
 
-    public int getImagen() {
+    public int  getImagen() {
         return imagen;
     }
 }
