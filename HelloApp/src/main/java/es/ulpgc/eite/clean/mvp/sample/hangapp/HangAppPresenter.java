@@ -13,7 +13,7 @@ import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 public class HangAppPresenter extends GenericPresenter
         <HangApp.PresenterToView, HangApp.PresenterToModel, HangApp.ModelToPresenter, HangAppModel>
         implements HangApp.ViewToPresenter, HangApp.ModelToPresenter, HangApp.DummyTo, HangApp.ToDummy, HangApp.SearchTo, HangApp.ToHangApp, HangApp.HangAppToAdd, HangApp.AddTo, HangApp.DetailTo {
-
+//modificando
   //Actualizando cosas
   private boolean toolbarVisible;
   private boolean buttonClicked;
