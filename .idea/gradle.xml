@@ -9,7 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/CleanMvpLib" />
-            <option value="$PROJECT_DIR$/HelloApp" />
+            <option value="$PROJECT_DIR$/HangUp" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
