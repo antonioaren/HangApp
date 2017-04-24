@@ -1,6 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
+import es.ulpgc.eite.clean.mvp.sample.R;
 
 
 public class HangAppModel extends GenericModel<HangApp.ModelToPresenter>
@@ -9,15 +10,14 @@ public class HangAppModel extends GenericModel<HangApp.ModelToPresenter>
   private String HangAppText;
   private String HangAppButtonSearchLabel;
   private String HangAppButtonAddLabel;
-  private String[] parties;
+  private int numOfTimes;
+  private String msgText;
 
+  String[]parties;
+  int[]images;
   public HangAppModel(){
-
-      parties = new String[]{
-              "Concierto de FallOutBoy en Las Palmas a las 21:00",
-              "Convencion de Anime en Triana", "YelmoCines estrena la nueva pelicula de los pitufos",
-              "Verbena en Tafira", "Inauguracion de la disco en Maspalomas",
-              "Concierto de Vivaldi en Alfredo Kraus"};
+    this.parties= new String[]{"Concierto de FallOutBoy en Las Palmas a las 21:00","Convencion de Anime en Triana","YelmoCines estrena la nueva pelicula de los pitufos","Verbena en Tafira","Inauguracion de la disco en Maspalomas","Concierto de Vivaldi en Alfredo Kraus"};
+     this.images=new int[]{R.drawable.hat,R.drawable.hat,R.drawable.hat,R.drawable.hat,R.drawable.hat,R.drawable.hat};
   }
   /**
    * Method that recovers a reference to the PRESENTER
@@ -47,6 +47,21 @@ public class HangAppModel extends GenericModel<HangApp.ModelToPresenter>
   ///////////////////////////////////////////////////////////////////////////////////
   // Presenter To Model ////////////////////////////////////////////////////////////
 
+
+  @Override
+  public void onChangeMsgByBtnClicked() {
+    msgText = HangAppText;
+    if(numOfTimes > 0) {
+      msgText += ", " + numOfTimes + " times";
+    }
+    numOfTimes++;
+  }
+
+  @Override
+  public String getText() {
+    return msgText;
+  }
+
   @Override
   public String getSearchLabel() {
     return HangAppButtonSearchLabel;
@@ -58,11 +73,11 @@ public class HangAppModel extends GenericModel<HangApp.ModelToPresenter>
   }
   @Override
   public String[] getListParties() {
-      return parties;
+    return this.parties;
   }
 
-    @Override
-    public String getText() {
-        return null;
-  }
+  @Override
+  public int[]getListImages(){
+  return this.images;
+}
 }
