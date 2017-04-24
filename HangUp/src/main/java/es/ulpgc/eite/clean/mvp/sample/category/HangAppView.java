@@ -1,4 +1,4 @@
-package es.ulpgc.eite.clean.mvp.sample.hangapp;
+package es.ulpgc.eite.clean.mvp.sample.category;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
