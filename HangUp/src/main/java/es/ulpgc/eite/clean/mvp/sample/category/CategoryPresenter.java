@@ -130,7 +130,6 @@ public class CategoryPresenter
     if (isViewRunning()) {
       getView().setLabelSearch(getModel().getSearchLabel());
       getView().setAddLabel(getModel().getAddLabel());
-      getView().setItems(getModel().getItems());
     }
     //checkToolbarVisibility();
   }
