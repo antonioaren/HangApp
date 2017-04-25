@@ -144,3 +144,46 @@ public class HangAppView
     buttonAdd.setText(txt);
   }
 }
+class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
+
+  private List<Category> items;
+
+  public static class CategoryViewHolder extends RecyclerView.ViewHolder {
+    // Campos respectivos de un item
+    public ImageView imagen;
+    public TextView nombre;
+    public TextView descripcion;
+
+    public CategoryViewHolder(View v) {
+      super(v);
+//      imagen = (ImageView) v.findViewById(R.id.imagen);
+//      nombre = (TextView) v.findViewById(R.id.nombre);
+//      descripcion = (TextView) v.findViewById(R.id.descripcion);
+    }
+  }
+
+  public CategoryAdapter(List<Category> items) {
+    this.items = items;
+
+  }
+
+  @Override
+  public int getItemCount() {
+    return items.size();
+  }
+
+  @Override
+  public CategoryViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+    View v = LayoutInflater.from(viewGroup.getContext())
+            .inflate(R.layout.category_card, viewGroup, false);
+    return new CategoryViewHolder(v);
+  }
+
+  @Override
+  public void onBindViewHolder(CategoryViewHolder viewHolder, int i) {
+    viewHolder.imagen.setImageResource(items.get(i).getImagen());
+    viewHolder.nombre.setText(items.get(i).getNombre());
+    viewHolder.descripcion.setText(items.get(i).getDescripcion());
+  }
+}
+
