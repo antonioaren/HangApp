@@ -15,7 +15,7 @@ import android.widget.TextView;
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
 
-import  java.util.List;
+import java.util.List;
 
 public class CategoryView
         extends GenericActivity<Category.PresenterToView, Category.ViewToPresenter, CategoryPresenter>
@@ -68,18 +68,19 @@ public class CategoryView
         buttonSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getPresenter().onButtonSearchClicked();    }
+                getPresenter().onButtonSearchClicked();
+            }
         });
 
         buttonAdd = (Button) findViewById(R.id.buttonAdd);
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getPresenter().onButtonAddClicked();}
+                getPresenter().onButtonAddClicked();
+            }
         });
 
         // Obtener el Recycler
-
         /*Cuando se obtiene la instancia del recycler se usa el método setHasFixedSize() para optimizar
         las operaciones con los ítems. Con esta característica le estamos diciendo al recycler que el
         adaptador no variará su tamaño en toda la ejecución del programa.*/
@@ -88,7 +89,6 @@ public class CategoryView
         recycler.setHasFixedSize(true); //Habrá que quitarlo si la lista es dinámica.
 
         // Usar un administrador para LinearLayout
-
         /*El layout manager fue instanciado con la subclase LinearLayoutManager, indicando que el recycler
         tomará la forma de lista vertical similar al ListView. Luego se relaciona al recycler con el
         método setLayoutManager().*/
@@ -108,38 +108,16 @@ public class CategoryView
      * {@link super#onResume(Class, Object)} should always be called
      */
 
-  @SuppressLint("MissingSuperCall")
-  @Override
-  protected void onResume() {
+    @SuppressLint("MissingSuperCall")
+    @Override
+    protected void onResume() {
 //    super.onResume(CategoryPresenter.class, this);
 //    String[]parties=getPresenter().getParties();
 //    int[]images=getPresenter().getImages();
 //    list=(ListView)findViewById(R.id.list);
 //    ArrayAdapter<String> adaptder = new ArrayAdapter<String>(this,R.layout.content_filalista,R.id.content,parties);
 //    list.setAdapter(adaptder);
-  }
-
-  /*
-  @Override
-  public boolean onCreateOptionsMenu(Menu menu) {
-    // Inflate the menu; this adds items to the action bar if it is present.
-    getMenuInflater().inflate(es.ulpgc.eite.clean.mvp.sample.hangapp.R.menu.menu_dummy, menu);
-    return true;
-  }
-  @Override
-  public boolean onOptionsItemSelected(MenuItem item) {
-    // Handle action bar item clicks here. The action bar will
-    // automatically handle clicks on the Home/Up button, so long
-    // as you specify a parent activity in AndroidManifest.xml.
-    int id = item.getItemId();
-    //noinspection SimplifiableIfStatement
-    if (id == es.ulpgc.eite.clean.mvp.sample.hangapp.R.id.action_settings) {
-      return true;
     }
-    return super.onOptionsItemSelected(item);
-  }
-  */
-
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Presenter To View /////////////////////////////////////////////////////////////
@@ -212,7 +190,7 @@ class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewH
     //Encargado de crear los nuevos
 
     @Override
-    public CategoryViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+    public CategoryViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {//i es la posición.
         View v = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.category_card, viewGroup, false);
         return new CategoryViewHolder(v);
@@ -221,7 +199,7 @@ class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewH
 
     //Encargado de actualizar los datos de un ViewHolder ya existente.
     @Override
-    public void onBindViewHolder(CategoryViewHolder viewHolder, int i) {
+    public void onBindViewHolder(CategoryViewHolder viewHolder, int i) { //i es la posición.
         viewHolder.imagen.setImageResource(items.get(i).getImagen());
         viewHolder.title.setText(items.get(i).getNombre());
         viewHolder.information.setText(items.get(i).getDescripcion());

@@ -27,15 +27,15 @@ import static es.ulpgc.eite.clean.mvp.sample.R.layout.activity_search;
 public class SearchView  extends GenericActivity<Search.PresenterToView, Search.ViewToPresenter, SearchPresenter>
         implements Search.PresenterToView {
     private ImageView imageSearch;
-    TextView text;
-    TextView textLocation;
-    EditText editTextLocation;
-    TextView categories;
-    ListView listCategories;
-    TextView textDate;
-    CalendarView calendar;
-    Button buttonSearch;
-    Toolbar t;
+    private TextView text;
+    private TextView textLocation;
+    private EditText editTextLocation;
+    private TextView categories;
+    private ListView listCategories;
+    private TextView textDate;
+    private CalendarView calendar;
+    private Button buttonSearch;
+    private Toolbar t;
     // ActionBar ab;
 
     @Override

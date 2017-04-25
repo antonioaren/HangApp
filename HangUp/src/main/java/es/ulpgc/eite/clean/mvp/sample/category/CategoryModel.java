@@ -1,6 +1,10 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import es.ulpgc.eite.clean.mvp.GenericModel;
+import es.ulpgc.eite.clean.mvp.sample.R;
 
 
 public class CategoryModel extends GenericModel<Category.ModelToPresenter>
@@ -9,15 +13,26 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
   private String HangAppText;
   private String HangAppButtonSearchLabel;
   private String HangAppButtonAddLabel;
-
+  private List<CategoryData> items;
 
   String[]parties;
   int[]images;
 
   public CategoryModel() {
-    this.parties= new String[]{"Concierto de FallOutBoy en Las Palmas a las 21:00","Convencion de Anime en Triana","YelmoCines estrena la nueva pelicula de los pitufos","Verbena en Tafira","Inauguracion de la disco en Maspalomas","Concierto de Vivaldi en Alfredo Kraus"};
+//    this.parties= new String[]{"Concierto de FallOutBoy en Las Palmas a las 21:00","Convencion de Anime en Triana","YelmoCines estrena la nueva pelicula de los pitufos","Verbena en Tafira","Inauguracion de la disco en Maspalomas","Concierto de Vivaldi en Alfredo Kraus"};
 //    this.images=new int[]{
 //            R.drawable.hat,R.drawable.hat,R.drawable.hat,R.drawable.hat,R.drawable.hat,R.drawable.hat};
+
+
+    items = new ArrayList<CategoryData>();
+
+
+    items.add(new CategoryData(R.drawable.Party, "Fiestas Nocturnas", "230"));
+    items.add(new CategoryData(R.drawable.Ulpgc, "Charlas Ulpgc", "456"));
+    items.add(new CategoryData(R.drawable.Cars, "Automovilismo", "342"));
+    items.add(new CategoryData(R.drawable.Music, "Musica en directo", "645"));
+    items.add(new CategoryData(R.drawable.Astro, "Astronomía", "459"));
+
   }
   /**
    * Method that recovers a reference to the PRESENTER
