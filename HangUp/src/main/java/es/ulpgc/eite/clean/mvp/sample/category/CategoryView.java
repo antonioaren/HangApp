@@ -24,15 +24,16 @@ public class CategoryView
     private Button buttonSearch;
     private Button buttonAdd;
 
-    private TextView information;
-    private TextView title;
-    private ListView list;
-    private ImageView image;
+//    private TextView information;
+//    private TextView title;
+//    private ListView list;
+//    private ImageView image;
 
     private RecyclerView recycler;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager lManager;
-    private List<CategoryData> items;
+
+    private List items;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -93,12 +94,12 @@ public class CategoryView
         tomará la forma de lista vertical similar al ListView. Luego se relaciona al recycler con el
         método setLayoutManager().*/
 
-        lManager = new LinearLayoutManager(this);
-        recycler.setLayoutManager(lManager);
-
-        // Crear un nuevo adaptador
-        adapter = new CategoryAdapter(items);
-        recycler.setAdapter(adapter);
+//        lManager = new LinearLayoutManager(this);
+//        recycler.setLayoutManager(lManager);
+//
+//        // Crear un nuevo adaptador
+//        adapter = new CategoryAdapter(items);
+//        recycler.setAdapter(adapter);
 
 
     }
@@ -108,10 +109,9 @@ public class CategoryView
      * {@link super#onResume(Class, Object)} should always be called
      */
 
-    @SuppressLint("MissingSuperCall")
     @Override
     protected void onResume() {
-//    super.onResume(CategoryPresenter.class, this);
+        super.onResume(CategoryPresenter.class, this);
 //    String[]parties=getPresenter().getParties();
 //    int[]images=getPresenter().getImages();
 //    list=(ListView)findViewById(R.id.list);
@@ -123,29 +123,19 @@ public class CategoryView
     // Presenter To View /////////////////////////////////////////////////////////////
 
     @Override
+    public void setItems(List items) {
+        this.items = items;
+        lManager = new LinearLayoutManager(this);
+        recycler.setLayoutManager(lManager);
+
+        // Crear un nuevo adaptador
+        adapter = new CategoryAdapter(items);
+        recycler.setAdapter(adapter);
+    }
+
+    @Override
     public void finishScreen() {
         finish();
-    }
-
-
-    @Override
-    public void hideText() {
-        information.setVisibility(View.GONE);
-    }
-
-    @Override
-    public void showText() {
-        information.setVisibility(View.VISIBLE);
-    }
-
-    @Override
-    public void setText(String txt) {
-        information.setText(txt);
-    }
-
-    @Override
-    public void setLabel(String txt) {
-
     }
 
     @Override
@@ -157,13 +147,16 @@ public class CategoryView
     public void setAddLabel(String txt) {
         buttonAdd.setText(txt);
     }
+
 }
 
 class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
 
     private List<CategoryData> items;
 
+
     public static class CategoryViewHolder extends RecyclerView.ViewHolder {
+
         // Campos respectivos de un item
         public ImageView imagen;
         public TextView title;
@@ -179,15 +172,12 @@ class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewH
 
     public CategoryAdapter(List<CategoryData> items) {
         this.items = items;
-
     }
 
     @Override
     public int getItemCount() {
         return items.size();
     }
-
-    //Encargado de crear los nuevos
 
     @Override
     public CategoryViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {//i es la posición.

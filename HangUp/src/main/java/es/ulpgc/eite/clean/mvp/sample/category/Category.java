@@ -3,6 +3,8 @@ package es.ulpgc.eite.clean.mvp.sample.category;
 import android.content.Context;
 import android.os.Bundle;
 
+import java.util.List;
+
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.Presenter;
@@ -36,20 +38,24 @@ public interface Category {
     interface PresenterToView extends ContextView {
         void onCreate(Bundle savedInstanceState);
 
+        void setItems(List items);
+
         void finishScreen();
 
         // void hideToolbar();
-        void hideText();
-
-        void showText();
-
-        void setText(String txt);
-
-        void setLabel(String txt);
+//        void hideText();
+//
+//        void showText();
+//
+//        void setText(String txt);
+//
+//        void setLabel(String txt);
 
         void setLabelSearch(String txt);
 
         void setAddLabel(String txt);
+
+
     }
 
     /**
@@ -66,6 +72,9 @@ public interface Category {
         //String getText();
 
         int[] getListImages();
+
+
+        List getItems();
     }
 
     /**

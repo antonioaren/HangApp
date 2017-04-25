@@ -3,6 +3,8 @@ package es.ulpgc.eite.clean.mvp.sample.category;
 import android.content.Context;
 import android.util.Log;
 
+import java.util.List;
+
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
@@ -16,7 +18,7 @@ public class CategoryPresenter
 
 
   private boolean toolbarVisible;
-  private boolean buttonClicked;
+
   private boolean textVisible;
   private boolean imageVisibility;
   private boolean selectorsVisible;
@@ -54,11 +56,9 @@ public class CategoryPresenter
 
 
     if (configurationChangeOccurred()) {
-      getView().setLabel(getModel().getSearchLabel());
-      getView().setLabel(getModel().getSearchLabel());
+      getView().setAddLabel(getModel().getSearchLabel());
+      getView().setLabelSearch(getModel().getSearchLabel());
 
-      checkToolbarVisibility();
-      checkTextVisibility();
     }
 
   }
@@ -128,11 +128,11 @@ public class CategoryPresenter
   public void onScreenStarted() {
     Log.d(TAG, "calling onScreenStarted()");
     if (isViewRunning()) {
-      getView().setLabel(getModel().getSearchLabel());
-      getView().setLabel(getModel().getAddLabel());
+      getView().setLabelSearch(getModel().getSearchLabel());
+      getView().setAddLabel(getModel().getAddLabel());
+      getView().setItems(getModel().getItems());
     }
-    checkToolbarVisibility();
-    checkTextVisibility();
+    //checkToolbarVisibility();
   }
 
   @Override
@@ -195,17 +195,6 @@ public class CategoryPresenter
 
   }
 
-  private void checkTextVisibility() {
-    Log.d(TAG, "calling checkTextVisibility()");
-    if (isViewRunning()) {
-      if (!textVisible) {
-        getView().hideText();
-      } else {
-        getView().showText();
-      }
-    }
-  }
-
   @Override
   public String[] getParties() {
 
@@ -219,5 +208,7 @@ public class CategoryPresenter
     int[] images = getModel().getListImages();
     return images;
   }
+
+
 }
 
