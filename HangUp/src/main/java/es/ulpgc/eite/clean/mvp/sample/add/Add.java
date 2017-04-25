@@ -18,25 +18,17 @@ public interface Add {
   ///////////////////////////////////////////////////////////////////////////////////
   // State /////////////////////////////////////////////////////////////////////////
 
-  interface AddToHangApp {
-
-    boolean isTextVisible();
-
-    Context getManagedContext();
-  }
-
   interface ToAdd {
     void onScreenStarted();
 
     void setTextVisibility(boolean visible);
   }
 
-  interface AddTo {
-    Context getManagedContext();
-    void destroyView();
 
-    boolean isTextVisible();
+  public interface AddTo {
+    Context getManagedContext();
   }
+
 
   ///////////////////////////////////////////////////////////////////////////////////
   // Screen ////////////////////////////////////////////////////////////////////////
@@ -44,8 +36,11 @@ public interface Add {
   /**
    * Methods offered to VIEW to communicate with PRESENTER
    */
+
   interface ViewToPresenter extends Presenter<PresenterToView> {
     void onPublishClicked();
+
+    void destroyView();
 
     //void onStartingView();
   }
@@ -53,6 +48,7 @@ public interface Add {
   /**
    * Required VIEW methods available to PRESENTER
    */
+
   interface PresenterToView extends ContextView {
     Toolbar getToolbar();
 
@@ -60,35 +56,47 @@ public interface Add {
 
     void finishScreen();
     void hideToolbar();
-    void hideHelloMsg();
+
 
 
     void setPublishBtnLabel(String txt);
 
 
-    void hideText();
+    void setTitleLabel(String txt);
 
-    void showText();
+    void setPlaceLabel(String txt);
+
+    void setDateLabel(String txt);
+
+    void setTimeInitLabel(String txt);
+
+    void setTimeFinishLabel(String txt);
+
+    void hideText();
 
     void setText(String txt);
 
     void setLabel(String txt);
-
-    void setLabelSearch(String txt);
-
-    void setAddLabel(String txt);
   }
 
   /**
    * Methods offered to MODEL to communicate with PRESENTER
    */
+
   interface PresenterToModel extends Model<ModelToPresenter> {
 
+    String getPlaceLabel();
 
 
-    String gePublishBtnLabel();
+    String getPublishBtnLabel();
 
+    String getDateLabel();
 
+    String getTimeInitLabel();
+
+    String getTimeFinishLabel();
+
+    String getTitleLabel();
   }
 
   /**
@@ -96,24 +104,6 @@ public interface Add {
    */
   interface ModelToPresenter {
 
-  }
-
-  public interface DummyTo {
-  }
-
-  public interface SearchTo {
-  }
-
-  public interface ToHangApp {
-  }
-
-
-
-  interface HangAppTo {
-    Context getManagedContext() ;
-
-
-    void destroyView();
   }
 
 

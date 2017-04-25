@@ -1,29 +1,113 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
-/**
- * Created by Pedro Arenas on 24/4/17.
- */
+import android.content.Context;
+import android.os.Bundle;
 
-public class Category {
-    private int imagen;
-    private String nombre;
-    private String descripcion;
+import es.ulpgc.eite.clean.mvp.ContextView;
+import es.ulpgc.eite.clean.mvp.Model;
+import es.ulpgc.eite.clean.mvp.Presenter;
 
-    public Category(int imagen, String nombre, String descripcion) {
-        this.imagen = imagen;
-        this.nombre = nombre;
-        this.descripcion = descripcion;
+public interface Category {
+
+    ///////////////////////////////////////////////////////////////////////////////////
+    // Screen ////////////////////////////////////////////////////////////////////////
+
+    /**
+     * Methods offered to VIEW to communicate with PRESENTER
+     */
+    interface ViewToPresenter extends Presenter<PresenterToView> {
+
+
+        void onButtonSearchClicked();
+
+        void onButtonAddClicked();
+
+
+        void onListItemClicked();
+
+        String[] getParties();
+
+        int[] getImages();
     }
 
-    public String getNombre() {
-        return nombre;
+    /**
+     * Required VIEW methods available to PRESENTER
+     */
+    interface PresenterToView extends ContextView {
+        void onCreate(Bundle savedInstanceState);
+
+        void finishScreen();
+
+        // void hideToolbar();
+        void hideText();
+
+        void showText();
+
+        void setText(String txt);
+
+        void setLabel(String txt);
+
+        void setLabelSearch(String txt);
+
+        void setAddLabel(String txt);
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    /**
+     * Methods offered to MODEL to communicate with PRESENTER
+     */
+    interface PresenterToModel extends Model<ModelToPresenter> {
+
+        String getSearchLabel();
+
+        String getAddLabel();
+
+        String[] getListParties();
+
+        //String getText();
+
+        int[] getListImages();
     }
 
-    public int  getImagen() {
-        return imagen;
+    /**
+     * Required PRESENTER methods available to MODEL
+     */
+    interface ModelToPresenter {
+        String[] getParties();
+
+        int[] getImages();
     }
+
+
+    ///////////////////////////////////////////////////////////////////////////////////
+    // Add To /////////////////////////////////////////////////////////////////////////
+
+
+    interface CategoryTo {
+        Context getManagedContext();
+
+        void destroyView();
+
+        boolean isTextVisible();
+
+        boolean isSelectorsVisible();
+
+        boolean isImageVisible();
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////
+    // To Add /////////////////////////////////////////////////////////////////////////
+
+    interface ToCategory {
+
+        void setToolbarVisibility(boolean visible);
+
+        void setTextVisibility(boolean textVisibility);
+
+        void setImageVisibility(boolean ImageVisibility);
+
+
+        void onScreenStarted();
+    }
+
+
 }

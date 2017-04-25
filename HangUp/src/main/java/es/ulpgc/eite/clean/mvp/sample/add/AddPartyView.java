@@ -1,9 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.add;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -13,7 +11,7 @@ import android.widget.TimePicker;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
-import es.ulpgc.eite.clean.mvp.sample.category.HangAppView;
+
 
 /**
  * Created by eleonora on 23/03/2017.
@@ -71,7 +69,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
     @Override
     public Toolbar getToolbar() {
-        return null;
+        return t;
     }
 
 
@@ -79,7 +77,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
     @Override
     public void finishScreen() {
-
+        finish();
     }
 
     @Override
@@ -87,16 +85,36 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
     }
 
-    @Override
-    public void hideHelloMsg() {
-
-    }
 
     @Override
     public void setPublishBtnLabel(String txt) {
-
+        buttonPublish.setText(txt);
     }
 
+    @Override
+    public void setTitleLabel(String txt) {
+        textViewTitle.setText(txt);
+    }
+
+    @Override
+    public void setPlaceLabel(String txt) {
+        textPlace.setText(txt);
+    }
+
+    @Override
+    public void setDateLabel(String txt) {
+        textdate.setText(txt);
+    }
+
+    @Override
+    public void setTimeInitLabel(String txt) {
+        textViewInit.setText(txt);
+    }
+
+    @Override
+    public void setTimeFinishLabel(String txt) {
+        textViewFinish.setText(txt);
+    }
 //    @Override
 //    public void hideToolbar() {
 //
@@ -107,10 +125,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
     }
 
-    @Override
-    public void showText() {
 
-    }
 
     @Override
     public void setText(String txt) {
@@ -122,33 +137,6 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
     }
 
-    @Override
-    public void setLabelSearch(String txt) {
 
-    }
 
-    @Override
-    public void setAddLabel(String txt) {
-
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        Intent myIntent = new Intent(getApplicationContext(), HangAppView.class);
-        startActivityForResult(myIntent, 0);
-
-//        // Handle action bar item clicks here. The action bar will
-//        // automatically handle clicks on the Home/Up button, so long
-//        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-
-    }
-    @Override
-    public boolean onSupportNavigateUp() {
-        onBackPressed();
-        return true;
-    }
 }

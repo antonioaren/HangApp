@@ -1,10 +1,11 @@
 package es.ulpgc.eite.clean.mvp.sample.search;
 
-import android.content.Intent;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CalendarView;
@@ -15,7 +16,7 @@ import android.widget.TextView;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
-import es.ulpgc.eite.clean.mvp.sample.category.HangAppView;
+
 
 import static es.ulpgc.eite.clean.mvp.sample.R.layout.activity_search;
 
@@ -24,7 +25,7 @@ import static es.ulpgc.eite.clean.mvp.sample.R.layout.activity_search;
  */
 
 public class SearchView  extends GenericActivity<Search.PresenterToView, Search.ViewToPresenter, SearchPresenter>
-        implements Search.PresenterToView  {
+        implements Search.PresenterToView {
     private ImageView imageSearch;
     TextView text;
     TextView textLocation;
@@ -41,7 +42,7 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(activity_search);
-        SearchPresenter sp= new SearchPresenter();
+
         t = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(t);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -53,9 +54,13 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
         editTextLocation=(EditText)findViewById(R.id.editTextLocation);
         categories=(TextView)findViewById(R.id.textCategories);
         listCategories=(ListView)findViewById(R.id.listCategories);
-         String[]categories=sp.getCategories();
-        ArrayAdapter<String> adaptader = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, categories);
-        listCategories.setAdapter(adaptader);
+        onResume();
+        listCategories.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                getPresenter().onItemListClicked();
+            }
+        });
         textDate=(TextView)findViewById(R.id.textDate);
         calendar=(CalendarView)findViewById(R.id.calendarView);
         buttonSearch=(Button)findViewById(R.id.buttonSearch);
@@ -69,14 +74,40 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
     }
 
 
+    @SuppressLint("MissingSuperCall")
+    @Override
+    protected void onResume() {
+        super.onResume(SearchPresenter.class, this);
+        String[] categories = getPresenter().getCategories();
+
+//        listCategories = (ListView) findViewById(R.id.listCategories);
+//        ArrayAdapter<String> adaptder = new ArrayAdapter<String>(this, R.layout.content_filalista, R.id.content, categories);
+//        listCategories.setAdapter(adaptder);
+    }
+
     @Override
     public void finishScreen() {
-
+        finish();
     }
 
     @Override
     public void setSearchBtnLabel(String txt) {
+        buttonSearch.setText(txt);
+    }
 
+    @Override
+    public void setLocationLabel(String txt) {
+        textLocation.setText(txt);
+    }
+
+    @Override
+    public void setCategoryLabel(String txt) {
+        categories.setText(txt);
+    }
+
+    @Override
+    public void setDateLabel(String txt) {
+        textDate.setText(txt);
     }
 
     @Override
@@ -109,25 +140,46 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
 
     }
 
+    /*
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
     }
+    */
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent myIntent = new Intent(getApplicationContext(), HangAppView.class);
-        startActivityForResult(myIntent, 0);
+        //Intent myIntent = new Intent(getApplicationContext(), CategoryView.class);
+        //startActivityForResult(myIntent, 0);
+
+        /*
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            finish();
+           // return true;
+        }
+        */
 
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        /*
         if (id == R.id.action_settings) {
             return true;
         }
+        */
+
         return super.onOptionsItemSelected(item);
 
     }
+//metodo de prueba para pasar a la segunda lista,de fiestas
+//   @Override
+//   public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//      String value= (String) parent.getItemAtPosition(position);
+//      Intent intent= new Intent(this,PartiesByCategoriesView.class);
+//      intent.putExtra("categories",value);
+//      startActivity(intent);
+//  }
 }
 

@@ -4,9 +4,13 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 
+import es.ulpgc.eite.clean.mvp.sample.add.Add;
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyView;
-import es.ulpgc.eite.clean.mvp.sample.detail.DetailView;
-import es.ulpgc.eite.clean.mvp.sample.category.HangApp;
+
+
+import es.ulpgc.eite.clean.mvp.sample.category.Category;
+import es.ulpgc.eite.clean.mvp.sample.detail.DetailPresenter;
+import es.ulpgc.eite.clean.mvp.sample.information.Information;
 import es.ulpgc.eite.clean.mvp.sample.information.InformationView;
 import es.ulpgc.eite.clean.mvp.sample.search.Search;
 import es.ulpgc.eite.clean.mvp.sample.search.SearchView;
@@ -15,143 +19,188 @@ import es.ulpgc.eite.clean.mvp.sample.search.SearchView;
 public class App extends Application implements Mediator, Navigator {
 
 
-  private HangAppState toHangAppState;
-  private SearchState toSearchState, searchToState;
-  private AddState toAddState,addToState;
-  private ProcessedInformationState toprocessedInformationState,processedInformationToState;
+    private HangAppState toHangAppState;
+    private SearchState toSearchState, HangappToSearch;
+    private AddState toAddState, addToState;
 
-  @Override
-  public void onCreate() {
-    super.onCreate();
+    private PartiesByCategoryState partiesState;
+    private ProcessedInformationState toprocessedInformationState, processedInformationToState;
 
-    toHangAppState=new HangAppState();
-    toSearchState = new SearchState();
-    toSearchState.textVisibility = false;
+    @Override
+    public void onCreate() {
+        super.onCreate();
 
-  }
-//----------------------Metodos para nuestra app----------------------------------------------------
-
-  ///////////////////////////////////////////////////////////////////////////////////
-  // Mediator //////////////////////////////////////////////////////////////////////
-
-
-  @Override
-  public void startingSearchScreen(HangApp.toSearch presenter){
-    if(toSearchState != null) {
-      presenter.setTextVisibility(toSearchState.textVisibility);
+        toHangAppState = new HangAppState();
+        toSearchState = new SearchState();
+        toSearchState.textVisibility = false;
 
     }
-    presenter.onScreenStarted();
-  }
 
-  @Override
-  public void startingAddScreen(HangApp.toAdd presenter){
-    if(toAddState != null) {
-      presenter.setTextVisibility(toAddState.textVisibility);
-      presenter.setSelectorsVisibility(toAddState.selectorsVisibility);
-      //presenter.setTextVisibility(toHelloState.textVisibility);
-    }
-    presenter.onScreenStarted();
-  }
+    ///////////////////////////////////////////////////////////////////////////////////
+    // Mediator //////////////////////////////////////////////////////////////////////
 
+    @Override
+    public void startingSearchScreen(Search.ToSearch presenter) {
+        if (toSearchState != null) {
+            presenter.setTextVisibility(toSearchState.textVisibility);
 
-
-  @Override
-  public void startingHangAppScreen(HangApp.ToHangApp presenter) {
-    if(toHangAppState != null) {
-      presenter.setTextVisibility(toHangAppState.textVisibility);
-      presenter.setImageVisibility(toHangAppState.imageVisibility);
-      //presenter.setTextVisibility(toHelloState.textVisibility);
-    }
-    presenter.onScreenStarted();
-  }
-
-
-  ///////////////////////////////////////////////////////////////////////////////////
-  // Navigator /////////////////////////////////////////////////////////////////////
-
-
-  @Override
-  public void goToSearchScreen(HangApp.SearchTo presenter) {
-    searchToState = new SearchState();
-
-    searchToState.textVisibility = presenter.isTextVisible();
-
-    Context view = presenter.getManagedContext();
-    if (view != null) {
-      view.startActivity(new Intent(view, SearchView.class));
-      presenter.destroyView();
+        }
+        presenter.onScreenStarted();
     }
 
-  }
-  @Override
-  public void goToAddScreen(HangApp.AddTo presenter) {
-    addToState = new AddState();
-
-    addToState.textVisibility = presenter.isTextVisible();
-    addToState.selectorsVisibility=presenter.isSelectorsVisible();
-    Context view = presenter.getManagedContext();
-    if (view != null) {
-      view.startActivity(new Intent(view, AddPartyView.class));
-      presenter.destroyView();
+    @Override
+    public void startingAddScreen(Add.ToAdd presenter) {
+        if (toAddState != null) {
+            presenter.setTextVisibility(toAddState.textVisibility);
+            //presenter.setSelectorsVisibility(toAddState.selectorsVisibility);
+            //presenter.setTextVisibility(toHelloState.textVisibility);
+        }
+        presenter.onScreenStarted();
     }
 
-  }
+    @Override
+    public void startingCategoryScreen(es.ulpgc.eite.clean.mvp.sample.category.Category.ToCategory presenter) {
+        if (toHangAppState != null) {
+            presenter.setTextVisibility(toHangAppState.textVisibility);
+            presenter.setImageVisibility(toHangAppState.imageVisibility);
+        }
+        presenter.onScreenStarted();
+    }
+
+    @Override
+    public void startingInformationScreen(Information.ToInformation presenter) {
+        presenter.onScreenStarted();
+    }
+
+    @Override
+    public void startingDetailScreen(DetailPresenter Presenter) {
+
+    }
+
+
+//  @Override
+//public void startingInformatioScreen(){
+//  if(partiesState!=null){
+//    presenter.setListVisibility(partiesState.listVisibility);
+//  }
+// presenter.onScreenStarted();
+
+    ///////////////////////////////////////////////////////////////////////////////////
+    // Navigator /////////////////////////////////////////////////////////////////////
+
+
+    @Override
+    public void goToSearchScreen(es.ulpgc.eite.clean.mvp.sample.category.Category.CategoryTo presenter) {
+        HangappToSearch = new SearchState();
+
+        HangappToSearch.textVisibility = presenter.isTextVisible();
+
+        Context view = presenter.getManagedContext();
+        if (view != null) {
+            view.startActivity(new Intent(view, SearchView.class));
+        }
+
+    }
+
+//  @Override
+//  public void goToPartyList(Search.ListTo presenter){
+//      Context view = presenter.getManagedContext();
+//      SearchView sv= new SearchView();
+//      ListView list=sv.getListCategories();
+//      int position= list.getSelectedItemPosition();
+//      if(view!=null){
+//          if(position==0){
+//              view.startActivity(new Intent(view,DetailView.class));
+//          }
+//          view.startActivity(new Intent(view, SearchView.class));
+//      }
+//  }
+
+    @Override
+    public void goToAddScreen(Category.CategoryTo presenter) {
+        addToState = new AddState();
+
+        addToState.textVisibility = presenter.isTextVisible();
+        addToState.selectorsVisibility = presenter.isSelectorsVisible();
+        Context view = presenter.getManagedContext();
+        if (view != null) {
+            view.startActivity(new Intent(view, AddPartyView.class));
+        }
+
+    }
+
+    @Override
+    public void goToProcessedInformationScreen(Search.ProcessedTo presenter) {
+
+    }
+
 //@Override
-//public void goBackFromAdd(Add.HangAppTo presenter){
+//public void goBackFromAdd(Detail.SearchTo presenter){
 //  Context view = presenter.getManagedContext();
 //  if (view != null) {
-//    view.startActivity(new Intent(view, HangAppView.class));
+//    view.startActivity(new Intent(view, CategoryView.class));
 //    presenter.destroyView();
 //
 //
 //  }}
 
-  @Override
-  public void goToProcessedInformationScreen(Search.ProcessedTo presenter) {
-    processedInformationToState=new ProcessedInformationState();
-    processedInformationToState.informationVisibility=presenter.isInformationVisible();
-    processedInformationToState.imageVisibility=presenter.isImageVisible();
-    processedInformationToState.containsParticipants=presenter.ParticipantsExist();
 
-    Context view = presenter.getManagedContext();
-    if (view != null) {
-      view.startActivity(new Intent(view, InformationView.class));
-      presenter.destroyView();
+//    Context view = presenter.getManagedContext();
+//    if (view != null) {
+//      view.startActivity(new Intent(view, InformationView.class));
+//      presenter.destroyView();
+//    }
+//  }
+
+//    @Override
+//    public void goDetailScreen(Detail.DetailTo presenter) {
+//        Context view = presenter.getManagedContext();
+//        if (view != null) {
+//            view.startActivity(new Intent(view, DetailView.class));
+//        }
+//    }
+
+    @Override
+    public void goToItemList(Category.CategoryTo presenter) {
+        Context view = presenter.getManagedContext();
+        if (view != null) {
+            view.startActivity(new Intent(view, InformationView.class));
+        }
     }
-  }
-
-  @Override
-  public void goDetailScreen(HangApp.DetailTo presenter) {
-    Context view = presenter.getManagedContext();
-    if (view != null) {
-      view.startActivity(new Intent(view, DetailView.class));
-      presenter.destroyView();
-  }}
 
 
-  ///////////////////////////////////////////////////////////////////////////////////
-  // State /////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////
+    // State /////////////////////////////////////////////////////////////////////////
 
 
+    class HangAppState {
+        boolean textVisibility;
+        boolean imageVisibility;
+    }
 
-  class HangAppState{
-    boolean textVisibility;
-    boolean imageVisibility;
-  }
-  class SearchState{
-    boolean textVisibility;
+    class SearchState {
+        boolean textVisibility;
 
-  }
-  class AddState{
-    boolean textVisibility;
-    boolean selectorsVisibility;
-  }
+    }
+
+    class AddState {
+        boolean textVisibility;
+        boolean selectorsVisibility;
+    }
 
 
-  class ProcessedInformationState{
-    boolean informationVisibility;
-    boolean imageVisibility;
-    boolean containsParticipants;
-  }}
+    class ProcessedInformationState {
+        boolean informationVisibility;
+        boolean imageVisibility;
+        boolean containsParticipants;
+    }
+
+    class ListState {
+        boolean textVisility;
+    }
+
+    class PartiesByCategoryState {
+        boolean listVisibility;
+    }
+}
 

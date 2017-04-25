@@ -4,10 +4,13 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
     <TextView
         android:id="@+id/detail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Here we go the party details: History, date of birth , etc.."
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
+        android:text="Here we have the party details: History, popularity, etc.."
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 </LinearLayout>

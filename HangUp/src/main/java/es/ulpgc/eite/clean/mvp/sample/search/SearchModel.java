@@ -9,12 +9,22 @@ import es.ulpgc.eite.clean.mvp.GenericModel;
 public class SearchModel  extends GenericModel<Search.ModelToPresenter>
         implements Search.PresenterToModel {
     String[]categories;
+    String SearchBtnLabel;
+    String placeLabel;
+    String categoryLabel;
+    String dateLabel;
+    String SearchText;
     public SearchModel(){
         this.categories= new String[]{"Cines","Culturales","Conciertos","Verbenas","Discotecas"};
     }
     @Override
-    public void onCreate(Search.ModelToPresenter modelToPresenter) {
-
+    public void onCreate(Search.ModelToPresenter presenter) {
+        super.onCreate(presenter);
+        SearchText = "SEARCH";
+        SearchBtnLabel = "Search";
+        placeLabel = "ByPlace";
+        categoryLabel = "ByCategory";
+        dateLabel = "ByDate";
     }
 
     @Override
@@ -23,11 +33,29 @@ public class SearchModel  extends GenericModel<Search.ModelToPresenter>
     }
 
 
+    @Override
+    public String getSearchText() {
+        return SearchText;
+    }
 
+    @Override
+    public String getPlaceLabel() {
+        return placeLabel;
+    }
+
+    @Override
+    public String getCategoryLabel() {
+        return categoryLabel;
+    }
+
+    @Override
+    public String getDateLabel() {
+        return dateLabel;
+    }
 
     @Override
     public String getSearchBtnLabel() {
-        return null;
+        return SearchBtnLabel;
     }
 
     @Override

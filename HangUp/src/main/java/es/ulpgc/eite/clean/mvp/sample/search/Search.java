@@ -16,22 +16,11 @@ import es.ulpgc.eite.clean.mvp.Presenter;
 public interface Search {
     void onCreate(PresenterToView presenterToView);
 
-    void onResume(PresenterToView presenterToView);
-
-    void onButtonSecundarySearchPressed();
-    boolean onOptionsItemSelected(MenuItem item);
-
-    interface SearchToHangApp {
-
-        boolean isTextVisible();
-
-        Context getManagedContext();
-    }
-
     interface ToSearch {
 
-
         void setTextVisibility(boolean visible);
+
+        void onScreenStarted();
     }
 
     interface SearchTo {
@@ -43,6 +32,7 @@ public interface Search {
 
         boolean isTextVisible();
     }
+
     interface ProcessedTo{
 
 
@@ -72,11 +62,11 @@ public interface Search {
 
         String[] getCategories();
 
+        void onItemListClicked();
+
 
         //void onStartingView();
     }
-
-
 
     /**
      * Required VIEW methods available to PRESENTER
@@ -92,6 +82,13 @@ public interface Search {
 
         void setSearchBtnLabel(String txt);
 
+
+        void setLocationLabel(String txt);
+
+
+        void setCategoryLabel(String txt);
+
+        void setDateLabel(String txt);
 
         void hideToolbar();
 
@@ -113,6 +110,14 @@ public interface Search {
     interface PresenterToModel extends Model<Search.ModelToPresenter> {
 
 
+        String getSearchText();
+
+        String getPlaceLabel();
+
+        String getCategoryLabel();
+
+        String getDateLabel();
+
         String getSearchBtnLabel();
         String[]getListCategories();
 
@@ -127,6 +132,15 @@ public interface Search {
 
     }
 
-    public interface HangAppTo {
+//    public interface SearchTo {
+//    }
+
+
+//    public interface SearchTo {
+//        Context getManagedContext();
+//    }
+
+    interface toParties {
+        Context getManagetContext();
     }
 }

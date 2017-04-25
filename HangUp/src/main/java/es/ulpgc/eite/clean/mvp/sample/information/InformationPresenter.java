@@ -1,28 +1,34 @@
 package es.ulpgc.eite.clean.mvp.sample.information;
 
-import android.app.Application;
-import android.content.Context;
-
-import es.ulpgc.eite.clean.mvp.Presenter;
+import es.ulpgc.eite.clean.mvp.GenericPresenter;
+import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 
 /**
  * Created by alumno on 31/03/2017.
  */
 
-public class InformationPresenter implements Presenter<Information.PresenterToView> {
+public class InformationPresenter extends GenericPresenter<Information.PresenterToView, Information.PresenterToModel,
+        Information.ModelToPresenter, InformationModel>
+        implements Information.ViewToPresenter, Information.ModelToPresenter, Information.ToInformation
+        , Information.InformationTo {
     @Override
-    public void onCreate(Information.PresenterToView presenterToView) {
+    public void onCreate(Information.PresenterToView view) {
+        super.onCreate(InformationModel.class, this);
+        setView(view);
+
+        Mediator app = (Mediator) getApplication();
+        app.startingInformationScreen(this);
 
     }
 
     @Override
-    public void onResume(Information.PresenterToView presenterToView) {
-
+    public void onResume(Information.PresenterToView view) {
+        setView(view);
     }
 
     @Override
-    public void onDestroy(boolean b) {
-
+    public void onDestroy(boolean isChangingConfiguration) {
+        super.onDestroy(isChangingConfiguration);
     }
 
     @Override
@@ -31,17 +37,7 @@ public class InformationPresenter implements Presenter<Information.PresenterToVi
     }
 
     @Override
-    public Application getApplication() {
-        return null;
-    }
+    public void onScreenStarted() {
 
-    @Override
-    public Context getApplicationContext() {
-        return null;
-    }
-
-    @Override
-    public Context getActivityContext() {
-        return null;
     }
 }

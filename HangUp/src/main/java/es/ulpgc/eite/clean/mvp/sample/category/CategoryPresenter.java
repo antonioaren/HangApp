@@ -1,4 +1,5 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
+
 import android.content.Context;
 import android.util.Log;
 
@@ -8,16 +9,18 @@ import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 
-public class HangAppPresenter extends GenericPresenter
-        <HangApp.PresenterToView, HangApp.PresenterToModel, HangApp.ModelToPresenter, HangAppModel>
-        implements HangApp.ViewToPresenter, HangApp.ModelToPresenter, HangApp.DummyTo, HangApp.ToDummy, HangApp.SearchTo, HangApp.ToHangApp, HangApp.HangAppToAdd, HangApp.AddTo, HangApp.DetailTo {
+public class CategoryPresenter
+        extends GenericPresenter<Category.PresenterToView, Category.PresenterToModel,
+        Category.ModelToPresenter, CategoryModel>
+        implements Category.ViewToPresenter, Category.ModelToPresenter, Category.ToCategory, Category.CategoryTo {
 
-  //Actualizando cosas
+
   private boolean toolbarVisible;
   private boolean buttonClicked;
   private boolean textVisible;
   private boolean imageVisibility;
   private boolean selectorsVisible;
+
   /**
    * Operation called during VIEW creation in {@link GenericActivity#onResume(Class, Object)}
    * Responsible to initialize MODEL.
@@ -27,14 +30,14 @@ public class HangAppPresenter extends GenericPresenter
    * @param view The current VIEW instance
    */
   @Override
-  public void onCreate(HangApp.PresenterToView view) {
-    super.onCreate(HangAppModel.class, this);
+  public void onCreate(Category.PresenterToView view) {
+    super.onCreate(CategoryModel.class, this);
     setView(view);
     Log.d(TAG, "calling onCreate()");
 
     Log.d(TAG, "calling startingMainScreen()");
     Mediator app = (Mediator) getView().getApplication();
-    app.startingHangAppScreen(this);
+    app.startingCategoryScreen(this);
   }
 
   /**
@@ -45,21 +48,17 @@ public class HangAppPresenter extends GenericPresenter
    * @param view The current VIEW instance
    */
   @Override
-  public void onResume(HangApp.PresenterToView view) {
+  public void onResume(Category.PresenterToView view) {
     setView(view);
     Log.d(TAG, "calling onResume()");
 
 
-    if(configurationChangeOccurred()) {
+    if (configurationChangeOccurred()) {
       getView().setLabel(getModel().getSearchLabel());
       getView().setLabel(getModel().getSearchLabel());
 
       checkToolbarVisibility();
       checkTextVisibility();
-
-      if (buttonClicked) {
-        getView().setText(getModel().getText());
-      }
     }
 
   }
@@ -105,31 +104,30 @@ public class HangAppPresenter extends GenericPresenter
     Navigator app = (Navigator) getView().getApplication();
     app.goToSearchScreen(this);
   }
-  //  checkTextVisibility();
 
-  //Metodo ya funciona
+
   @Override
   public void onButtonAddClicked() {
-    Log.d(TAG,"calling onButtonAddClicked()");
+    Log.d(TAG, "calling onButtonAddClicked()");
     Navigator app = (Navigator) getView().getApplication();
     app.goToAddScreen(this);
   }
 
   @Override
   public void onListItemClicked() {
-    Log.d(TAG,"item cliked");
+    Log.d(TAG, "item cliked");
     Navigator app = (Navigator) getView().getApplication();
-    app.goDetailScreen(this);
+    app.goToItemList(this);
   }
 
 
   ///////////////////////////////////////////////////////////////////////////////////
-  // To HangApp //////////////////////////////////////////////////////////////////////
+  // To Add //////////////////////////////////////////////////////////////////////
 
   @Override
   public void onScreenStarted() {
     Log.d(TAG, "calling onScreenStarted()");
-    if(isViewRunning()) {
+    if (isViewRunning()) {
       getView().setLabel(getModel().getSearchLabel());
       getView().setLabel(getModel().getAddLabel());
     }
@@ -149,31 +147,26 @@ public class HangAppPresenter extends GenericPresenter
 
   @Override
   public void setImageVisibility(boolean ImageVisibility) {
-    imageVisibility=ImageVisibility;
+    imageVisibility = ImageVisibility;
   }
 
 
-
-
   ///////////////////////////////////////////////////////////////////////////////////
-  // HangApp To //////////////////////////////////////////////////////////////////////
+  // Add To //////////////////////////////////////////////////////////////////////
 
 
   @Override
-  public Context getManagedContext(){
+  public Context getManagedContext() {
     return getActivityContext();
   }
 
   @Override
-  public void destroyView(){
-    if(isViewRunning()) {
+  public void destroyView() {
+    if (isViewRunning()) {
       getView().finishScreen();
     }
   }
-  @Override
-  public boolean isToolbarVisible() {
-    return toolbarVisible;
-  }
+
 
   @Override
   public boolean isTextVisible() {
@@ -184,16 +177,17 @@ public class HangAppPresenter extends GenericPresenter
   public boolean isSelectorsVisible() {
     return selectorsVisible;
   }
+
   @Override
-  public boolean isImageVisible(){
+  public boolean isImageVisible() {
     return imageVisibility;
   }
 
   ///////////////////////////////////////////////////////////////////////////////////
 
-  private void checkToolbarVisibility(){
+  private void checkToolbarVisibility() {
     Log.d(TAG, "calling checkToolbarVisibility()");
-    if(isViewRunning()) {
+    if (isViewRunning()) {
       if (!toolbarVisible) {
         //  getView().hideToolbar();
       }
@@ -201,27 +195,29 @@ public class HangAppPresenter extends GenericPresenter
 
   }
 
-  private void checkTextVisibility(){
+  private void checkTextVisibility() {
     Log.d(TAG, "calling checkTextVisibility()");
-    if(isViewRunning()) {
-      if(!textVisible) {
+    if (isViewRunning()) {
+      if (!textVisible) {
         getView().hideText();
       } else {
         getView().showText();
       }
     }
   }
+
   @Override
   public String[] getParties() {
 
-    String[]list=getModel().getListParties();
+    String[] list = getModel().getListParties();
     return list;
   }
-@Override
-  public int[]getImages(){
 
-  int[]images=getModel().getListImages();
-  return images;
-}
+  @Override
+  public int[] getImages() {
+
+    int[] images = getModel().getListImages();
+    return images;
+  }
 }
 
