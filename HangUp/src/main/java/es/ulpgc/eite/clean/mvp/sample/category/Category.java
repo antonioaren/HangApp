@@ -30,6 +30,8 @@ public interface Category {
         String[] getParties();
 
         int[] getImages();
+
+        List<CategoryData> LoadItems();
     }
 
     /**
@@ -38,24 +40,11 @@ public interface Category {
     interface PresenterToView extends ContextView {
         void onCreate(Bundle savedInstanceState);
 
-        void setItems(List items);
-
         void finishScreen();
-
-        // void hideToolbar();
-//        void hideText();
-//
-//        void showText();
-//
-//        void setText(String txt);
-//
-//        void setLabel(String txt);
 
         void setLabelSearch(String txt);
 
         void setAddLabel(String txt);
-
-
     }
 
     /**
@@ -69,7 +58,6 @@ public interface Category {
 
         String[] getListParties();
 
-        //String getText();
 
         int[] getListImages();
 
@@ -88,7 +76,7 @@ public interface Category {
 
 
     ///////////////////////////////////////////////////////////////////////////////////
-    // Add To /////////////////////////////////////////////////////////////////////////
+    // Category To /////////////////////////////////////////////////////////////////////////
 
 
     interface CategoryTo {
@@ -104,7 +92,7 @@ public interface Category {
     }
 
     ///////////////////////////////////////////////////////////////////////////////////
-    // To Add /////////////////////////////////////////////////////////////////////////
+    // To Category /////////////////////////////////////////////////////////////////////////
 
     interface ToCategory {
 

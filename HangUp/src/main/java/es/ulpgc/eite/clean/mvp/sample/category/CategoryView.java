@@ -1,6 +1,5 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -9,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
@@ -23,17 +21,9 @@ public class CategoryView
 
     private Button buttonSearch;
     private Button buttonAdd;
-
-//    private TextView information;
-//    private TextView title;
-//    private ListView list;
-//    private ImageView image;
-
     private RecyclerView recycler;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager lManager;
-
-    private List items;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -94,14 +84,12 @@ public class CategoryView
         tomará la forma de lista vertical similar al ListView. Luego se relaciona al recycler con el
         método setLayoutManager().*/
 
-//        lManager = new LinearLayoutManager(this);
-//        recycler.setLayoutManager(lManager);
-//
-//        // Crear un nuevo adaptador
-//        adapter = new CategoryAdapter(items);
-//        recycler.setAdapter(adapter);
+        lManager = new LinearLayoutManager(this);
+        recycler.setLayoutManager(lManager);
 
-
+        // Crear un nuevo adaptador
+        adapter = new CategoryAdapter(getPresenter().LoadItems());
+        recycler.setAdapter(adapter);
     }
 
     /**
@@ -112,26 +100,11 @@ public class CategoryView
     @Override
     protected void onResume() {
         super.onResume(CategoryPresenter.class, this);
-//    String[]parties=getPresenter().getParties();
-//    int[]images=getPresenter().getImages();
-//    list=(ListView)findViewById(R.id.list);
-//    ArrayAdapter<String> adaptder = new ArrayAdapter<String>(this,R.layout.content_filalista,R.id.content,parties);
-//    list.setAdapter(adaptder);
     }
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Presenter To View /////////////////////////////////////////////////////////////
 
-    @Override
-    public void setItems(List items) {
-        this.items = items;
-        lManager = new LinearLayoutManager(this);
-        recycler.setLayoutManager(lManager);
-
-        // Crear un nuevo adaptador
-        adapter = new CategoryAdapter(items);
-        recycler.setAdapter(adapter);
-    }
 
     @Override
     public void finishScreen() {
@@ -157,7 +130,6 @@ class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewH
 
     public static class CategoryViewHolder extends RecyclerView.ViewHolder {
 
-        // Campos respectivos de un item
         public ImageView imagen;
         public TextView title;
         public TextView information;
@@ -186,8 +158,6 @@ class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewH
         return new CategoryViewHolder(v);
     }
 
-
-    //Encargado de actualizar los datos de un ViewHolder ya existente.
     @Override
     public void onBindViewHolder(CategoryViewHolder viewHolder, int i) { //i es la posición.
         viewHolder.imagen.setImageResource(items.get(i).getImagen());

@@ -209,6 +209,11 @@ public class CategoryPresenter
     return images;
   }
 
+  @Override
+  public List<CategoryData> LoadItems() {
+    return getModel().getItems();
+  }
+
 
 }
 
