@@ -2,6 +2,7 @@ package es.ulpgc.eite.clean.mvp.sample.category;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,10 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
@@ -25,15 +24,16 @@ public class CategoryView
     private Button buttonSearch;
     private Button buttonAdd;
 
-    private TextView information;
+    // private TextView information;
     private TextView title;
-    private ListView list;
+    // private ListView list;
     private ImageView image;
 
     private RecyclerView recycler;
-    private RecyclerView.Adapter adapter;
-    private RecyclerView.LayoutManager lManager;
-    private List<CategoryData> items;
+    private LinearLayoutManager linearmanager;
+    //private RecyclerView.Adapter adapter;
+    //  private RecyclerView.LayoutManager lManager;
+    //  private List<CategoryData> items;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,12 +44,30 @@ public class CategoryView
 //    En tal caso se hace a través del mediador.
 //    CategoryPresenter hap = new CategoryPresenter();
 
-//    faltaba declarar el list view
 
-        ImageView image = (ImageView) findViewById(R.id.image);
         title = (TextView) findViewById(R.id.title);
+        image = (ImageView) findViewById(R.id.image);
         // information = (TextView) findViewById(R.id.information);
-        String[] parties = getPresenter().getParties();
+        // Obtener el Recycler
+        /*Cuando se obtiene la instancia del recycler se usa el método setHasFixedSize() para optimizar
+        las operaciones con los ítems. Con esta característica le estamos diciendo al recycler que el
+        adaptador no variará su tamaño en toda la ejecución del programa.*/
+
+        recycler = (RecyclerView) findViewById(R.id.recycler);
+        recycler.setHasFixedSize(true); //Habrá que quitarlo si la lista es dinámica.
+
+        // Usar un administrador para LinearLayout
+        /*El layout manager fue instanciado con la subclase LinearLayoutManager, indicando que el recycler
+        tomará la forma de lista vertical similar al ListView. Luego se relaciona al recycler con el
+        método setLayoutManager().*/
+
+        linearmanager = new LinearLayoutManager(this);
+        recycler.setLayoutManager(linearmanager);
+        //Adapter por pedro
+        // Crear un nuevo adaptador
+        // adapter = new CategoryAdapter(items);
+        //al adaptador le pasamos el contenido de la lista
+        // recycler.setAdapter(new CategoryAdapter(getListOfParties()));
 //
         //list = (ListView)findViewById(R.id.list);
 //
@@ -63,7 +81,7 @@ public class CategoryView
 //                                  public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 //                                    getPresenter().onListItemClicked();}});
 
-        //Adapter por pedro
+
 
         buttonSearch = (Button) findViewById(R.id.buttonSearch);
         buttonSearch.setOnClickListener(new View.OnClickListener() {
@@ -81,26 +99,7 @@ public class CategoryView
             }
         });
 
-        // Obtener el Recycler
-        /*Cuando se obtiene la instancia del recycler se usa el método setHasFixedSize() para optimizar
-        las operaciones con los ítems. Con esta característica le estamos diciendo al recycler que el
-        adaptador no variará su tamaño en toda la ejecución del programa.*/
 
-        recycler = (RecyclerView) findViewById(R.id.recycler);
-        recycler.setHasFixedSize(true); //Habrá que quitarlo si la lista es dinámica.
-
-        // Usar un administrador para LinearLayout
-        /*El layout manager fue instanciado con la subclase LinearLayoutManager, indicando que el recycler
-        tomará la forma de lista vertical similar al ListView. Luego se relaciona al recycler con el
-        método setLayoutManager().*/
-
-        lManager = new LinearLayoutManager(this);
-        recycler.setLayoutManager(lManager);
-
-        // Crear un nuevo adaptador
-        // adapter = new CategoryAdapter(items);
-
-        recycler.setAdapter(new CategoryAdapter(getListOfParties()));
 
 
         /**
@@ -109,19 +108,19 @@ public class CategoryView
          */
     }
 
-    private List<CategoryData> getListOfParties() {
+   /* private List<CategoryData> getListOfParties() {
         CategoryData category = new CategoryData(R.drawable.disco, "1", "1");
         List<CategoryData> cd = new ArrayList<>();
         cd.add(category);
         cd.add(category);
         return cd;
 
-    }
+    }*/
 
     @SuppressLint("MissingSuperCall")
     @Override
     protected void onResume() {
-//    super.onResume(CategoryPresenter.class, this);
+        super.onResume(CategoryPresenter.class, this);
 //    String[]parties=getPresenter().getParties();
 //    int[]images=getPresenter().getImages();
 //    list=(ListView)findViewById(R.id.list);
@@ -140,17 +139,17 @@ public class CategoryView
 
     @Override
     public void hideText() {
-        information.setVisibility(View.GONE);
+        title.setVisibility(View.GONE);
     }
 
     @Override
     public void showText() {
-        information.setVisibility(View.VISIBLE);
+        title.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void setText(String txt) {
-        information.setText(txt);
+        title.setText(txt);
     }
 
     @Override
@@ -176,6 +175,8 @@ class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewH
 
     public static class CategoryViewHolder extends RecyclerView.ViewHolder {
         // Campos respectivos de un item
+
+        public CardView cv;
         public ImageView image;
         public TextView title;
         public TextView number;
@@ -184,8 +185,7 @@ class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewH
             super(v);
             image = (ImageView) v.findViewById(R.id.image);
             title = (TextView) v.findViewById(R.id.title);
-
-            number = (TextView) v.findViewById(R.id.information);
+            number = (TextView) v.findViewById(R.id.numberOfPersons);
         }
     }
 

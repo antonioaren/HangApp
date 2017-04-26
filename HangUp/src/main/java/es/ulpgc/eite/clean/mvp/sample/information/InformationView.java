@@ -50,45 +50,10 @@ public class InformationView extends GenericActivity<Information.PresenterToView
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recyclerview);
-         image1=(ImageView)findViewById(R.id.Lugar);
-        textInformation1=(TextView)findViewById(R.id.textView1);
-        numberOfParticipants1=(TextView)findViewById(R.id.textView1_1);
+        image1 = (ImageView) findViewById(R.id.imagePlace);
+        textInformation1 = (TextView) findViewById(R.id.description);
+        numberOfParticipants1 = (TextView) findViewById(R.id.number);
 
-        image2=(ImageView)findViewById(R.id.Lugar2);
-        textInformation2=(TextView)findViewById(R.id.textView2);
-        numberOfParticipants2=(TextView)findViewById(R.id.textView2_1);
-
-        image3=(ImageView)findViewById(R.id.Lugar3);
-        textInformation3=(TextView)findViewById(R.id.textView3);
-        numberOfParticipants3=(TextView)findViewById(R.id.textView3_1);
-
-        image4=(ImageView)findViewById(R.id.Lugar4);
-        textInformation4=(TextView)findViewById(R.id.textView4);
-        numberOfParticipants4=(TextView)findViewById(R.id.textView4_1);
-
-        image5=(ImageView)findViewById(R.id.Lugar5);
-        textInformation5=(TextView)findViewById(R.id.textView5);
-        numberOfParticipants5=(TextView)findViewById(R.id.textView5_1);
-
-        image6=(ImageView)findViewById(R.id.Lugar6);
-        textInformation6=(TextView)findViewById(R.id.textView6);
-        numberOfParticipants6=(TextView)findViewById(R.id.textView6_1);
-
-        image7=(ImageView)findViewById(R.id.Lugar7);
-        textInformation7=(TextView)findViewById(R.id.textView7);
-        numberOfParticipants7=(TextView)findViewById(R.id.textView7_1);
-
-        image8=(ImageView)findViewById(R.id.Lugar8);
-        textInformation8=(TextView)findViewById(R.id.textView8);
-        numberOfParticipants8=(TextView)findViewById(R.id.textView8_1);
-
-        image9=(ImageView)findViewById(R.id.Lugar9);
-        textInformation9=(TextView)findViewById(R.id.textView9);
-        numberOfParticipants9=(TextView)findViewById(R.id.textView9_1);
-
-        image10=(ImageView)findViewById(R.id.Lugar10);
-        textInformation10=(TextView)findViewById(R.id.textView10);
-        numberOfParticipants1=(TextView)findViewById(R.id.textView10_1);
 
 
 
