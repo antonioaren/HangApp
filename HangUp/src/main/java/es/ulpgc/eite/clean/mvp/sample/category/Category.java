@@ -3,7 +3,7 @@ package es.ulpgc.eite.clean.mvp.sample.category;
 import android.content.Context;
 import android.os.Bundle;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
@@ -27,11 +27,8 @@ public interface Category {
 
         void onListItemClicked();
 
-        String[] getParties();
 
-        int[] getImages();
-
-        ArrayList<CategoryData> getListOfParties();
+        List<CategoryData> getListOfParties();
     }
 
     /**
@@ -65,24 +62,17 @@ public interface Category {
 
         String getAddLabel();
 
-        String[] getListParties();
 
-        //String getText();
-
-        int[] getListImages();
-
-        ArrayList<CategoryData> getListOfParties();
+        List<CategoryData> getListOfParties();
     }
 
     /**
      * Required PRESENTER methods available to MODEL
      */
     interface ModelToPresenter {
-        String[] getParties();
 
-        int[] getImages();
 
-        ArrayList<CategoryData> getListOfParties();
+        List<CategoryData> getListOfParties();
     }
 
 

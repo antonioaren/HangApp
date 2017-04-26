@@ -7,6 +7,11 @@ import android.support.test.runner.AndroidJUnit4;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import es.ulpgc.eite.clean.mvp.sample.category.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
 import es.ulpgc.eite.clean.mvp.sample.search.SearchModel;
 import es.ulpgc.eite.clean.mvp.sample.search.SearchPresenter;
 
@@ -22,6 +27,7 @@ import static org.junit.Assert.assertEquals;
 public class ExampleInstrumentedTest {
   SearchModel search= new SearchModel();
   SearchPresenter searchpr= new SearchPresenter();
+  CategoryModel cm = new CategoryModel();
   @Test
   public void useAppContext() throws Exception {
     // Context of the app under test.
@@ -40,4 +46,16 @@ public class ExampleInstrumentedTest {
     assertArrayEquals(categories,searchpr.getCategories());
   }
 
+  @Test
+  public void testgetParties() {
+    List<CategoryData> c = new ArrayList<CategoryData>();
+    c.add(new CategoryData(R.drawable.astro, "Fiestas Nocturnas", "230"));
+    c.add(new CategoryData(R.drawable.astro, "Charlas Ulpgc", "456"));
+    c.add(new CategoryData(R.drawable.astro, "Automovilismo", "342"));
+    c.add(new CategoryData(R.drawable.astro, "Musica en directo", "645"));
+    c.add(new CategoryData(R.drawable.astro, "Astronomía", "459"));
+
+
+    assertEquals(null, cm.getListOfParties());
+  }
 }

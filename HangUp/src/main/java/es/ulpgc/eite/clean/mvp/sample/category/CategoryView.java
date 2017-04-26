@@ -26,14 +26,15 @@ public class CategoryView
 
     // private TextView information;
     private TextView title;
-    // private ListView list;
+
     private ImageView image;
 
     private RecyclerView recycler;
     private LinearLayoutManager linearmanager;
+    private CategoryAdapter adapter;
     //private RecyclerView.Adapter adapter;
-    //  private RecyclerView.LayoutManager lManager;
-    //  private List<CategoryData> items;
+    private RecyclerView.LayoutManager lManager;
+    private List<CategoryData> items;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,21 +66,11 @@ public class CategoryView
         recycler.setLayoutManager(linearmanager);
         //Adapter por pedro
         // Crear un nuevo adaptador
-        // adapter = new CategoryAdapter(items);
+        List<CategoryData> parties = getPresenter().getListOfParties();
+        adapter = new CategoryAdapter(parties);
         //al adaptador le pasamos el contenido de la lista
-        // recycler.setAdapter(new CategoryAdapter(getListOfParties()));
-//
-        //list = (ListView)findViewById(R.id.list);
-//
-//    ArrayAdapter<String> adaptder =
-//            new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, parties);
-//
-//    list.setAdapter(adaptder);
-//
-//    list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//                                  @Override
-//                                  public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                                    getPresenter().onListItemClicked();}});
+        recycler.setAdapter(adapter);
+
 
 
 
@@ -108,14 +99,7 @@ public class CategoryView
          */
     }
 
-   /* private List<CategoryData> getListOfParties() {
-        CategoryData category = new CategoryData(R.drawable.disco, "1", "1");
-        List<CategoryData> cd = new ArrayList<>();
-        cd.add(category);
-        cd.add(category);
-        return cd;
 
-    }*/
 
     @SuppressLint("MissingSuperCall")
     @Override
@@ -183,6 +167,7 @@ class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewH
 
         public CategoryViewHolder(View v) {
             super(v);
+            cv = (CardView) v.findViewById(R.id.cv);
             image = (ImageView) v.findViewById(R.id.image);
             title = (TextView) v.findViewById(R.id.title);
             number = (TextView) v.findViewById(R.id.numberOfPersons);
@@ -217,7 +202,15 @@ class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewH
         viewHolder.image.setImageResource(items.get(i).getImage());
         viewHolder.title.setText(items.get(i).getName());
         viewHolder.number.setText(items.get(i).getNumberOfParticipants());
+
     }
+
+    //Necesario hacer el override de este metodo
+    @Override
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+    }
+
 }
 
 

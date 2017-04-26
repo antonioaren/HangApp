@@ -15,18 +15,11 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
   private String HangAppButtonAddLabel;
   private List<CategoryData> items;
 
-  String[]parties;
-  int[]images;
+
 
   public CategoryModel() {
-//    this.parties= new String[]{"Concierto de FallOutBoy en Las Palmas a las 21:00","Convencion de Anime en Triana","YelmoCines estrena la nueva pelicula de los pitufos","Verbena en Tafira","Inauguracion de la disco en Maspalomas","Concierto de Vivaldi en Alfredo Kraus"};
-//    this.images=new int[]{
-//            R.drawable.hat,R.drawable.hat,R.drawable.hat,R.drawable.hat,R.drawable.hat,R.drawable.hat};
 
-
-    items = new ArrayList<CategoryData>();
-
-
+    items = new ArrayList<>();
     items.add(new CategoryData(R.drawable.astro, "Fiestas Nocturnas", "230"));
     items.add(new CategoryData(R.drawable.astro, "Charlas Ulpgc", "456"));
     items.add(new CategoryData(R.drawable.astro, "Automovilismo", "342"));
@@ -47,6 +40,13 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     HangAppButtonAddLabel="AddOne";
     HangAppButtonSearchLabel = "SearchOne";
     HangAppText = "Add";
+    items = new ArrayList<CategoryData>();
+    items.add(new CategoryData(R.drawable.astro, "Fiestas Nocturnas", "230"));
+    items.add(new CategoryData(R.drawable.astro, "Charlas Ulpgc", "456"));
+    items.add(new CategoryData(R.drawable.astro, "Automovilismo", "342"));
+    items.add(new CategoryData(R.drawable.astro, "Musica en directo", "645"));
+    items.add(new CategoryData(R.drawable.astro, "Astronomía", "459"));
+
   }
 
   /**
@@ -73,20 +73,12 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
   public String getAddLabel(){
     return HangAppButtonAddLabel;
   }
-  @Override
-  public String[] getListParties() {
-    return this.parties;
-  }
 
   @Override
-  public int[]getListImages(){
-  return this.images;
+  public List<CategoryData> getListOfParties() {
+    return this.items;
 }
 
-  @Override
-  public ArrayList<CategoryData> getListOfParties() {
-    return (ArrayList<CategoryData>) this.items;
-  }
 
 }
 
