@@ -7,12 +7,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
@@ -99,15 +99,24 @@ public class CategoryView
 
         // Crear un nuevo adaptador
         // adapter = new CategoryAdapter(items);
-        recycler.setAdapter(new Adapter);
+
+        recycler.setAdapter(new CategoryAdapter(getListOfParties()));
 
 
+        /**
+         * Method that initialized MVP objects
+         * {@link super#onResume(Class, Object)} should always be called
+         */
     }
 
-    /**
-     * Method that initialized MVP objects
-     * {@link super#onResume(Class, Object)} should always be called
-     */
+    private List<CategoryData> getListOfParties() {
+        CategoryData category = new CategoryData(R.drawable.disco, "1", "1");
+        List<CategoryData> cd = new ArrayList<>();
+        cd.add(category);
+        cd.add(category);
+        return cd;
+
+    }
 
     @SuppressLint("MissingSuperCall")
     @Override
@@ -175,6 +184,7 @@ class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewH
             super(v);
             image = (ImageView) v.findViewById(R.id.image);
             title = (TextView) v.findViewById(R.id.title);
+
             number = (TextView) v.findViewById(R.id.information);
         }
     }

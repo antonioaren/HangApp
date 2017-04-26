@@ -3,6 +3,8 @@ package es.ulpgc.eite.clean.mvp.sample.category;
 import android.content.Context;
 import android.util.Log;
 
+import java.util.ArrayList;
+
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
@@ -218,6 +220,11 @@ public class CategoryPresenter
 
     int[] images = getModel().getListImages();
     return images;
+  }
+
+  @Override
+  public ArrayList<CategoryData> getListOfParties() {
+    return getModel().getListOfParties();
   }
 }
 

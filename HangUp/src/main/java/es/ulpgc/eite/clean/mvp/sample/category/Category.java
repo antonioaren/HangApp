@@ -30,6 +30,8 @@ public interface Category {
         String[] getParties();
 
         int[] getImages();
+
+        ArrayList<CategoryData> getListOfParties();
     }
 
     /**
@@ -79,6 +81,8 @@ public interface Category {
         String[] getParties();
 
         int[] getImages();
+
+        ArrayList<CategoryData> getListOfParties();
     }
 
 
