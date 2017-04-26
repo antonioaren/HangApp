@@ -1,5 +1,6 @@
 package es.ulpgc.eite.clean.mvp.sample.search;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -73,6 +74,9 @@ public interface Search {
      */
     interface PresenterToView extends ContextView {
         void onCreate(Bundle savedInstanceState);
+
+        @SuppressLint("MissingSuperCall")
+        void onResume();
 
         void finishScreen();
 

@@ -6,7 +6,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.EditText;
@@ -16,7 +15,6 @@ import android.widget.TextView;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
-
 
 import static es.ulpgc.eite.clean.mvp.sample.R.layout.activity_search;
 
@@ -76,7 +74,7 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
 
     @SuppressLint("MissingSuperCall")
     @Override
-    protected void onResume() {
+    public void onResume() {
         super.onResume(SearchPresenter.class, this);
         String[] categories = getPresenter().getCategories();
 

@@ -31,7 +31,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     items.add(new CategoryData(R.drawable.Ulpgc, "Charlas Ulpgc", "456"));
     items.add(new CategoryData(R.drawable.Cars, "Automovilismo", "342"));
     items.add(new CategoryData(R.drawable.Music, "Musica en directo", "645"));
-    items.add(new CategoryData(R.drawable.Astro, "Astronomía", "459"));
+    items.add(new CategoryData(R.drawable.astro, "Astronomía", "459"));
 
   }
   /**
