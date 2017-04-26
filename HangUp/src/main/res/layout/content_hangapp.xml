@@ -82,12 +82,12 @@
                 android:layout_height="50dp"
                 android:src="@drawable/disco"
                 android:id="@+id/image" />
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycler"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-
+            <!--<android.support.v7.widget.RecyclerView
+                 android:id="@+id/recycler"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:layout_weight="1" />
+ -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

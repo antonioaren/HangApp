@@ -49,7 +49,7 @@ public class InformationView extends GenericActivity<Information.PresenterToView
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_procesed_search);
+        setContentView(R.layout.activity_recyclerview);
          image1=(ImageView)findViewById(R.id.Lugar);
         textInformation1=(TextView)findViewById(R.id.textView1);
         numberOfParticipants1=(TextView)findViewById(R.id.textView1_1);
