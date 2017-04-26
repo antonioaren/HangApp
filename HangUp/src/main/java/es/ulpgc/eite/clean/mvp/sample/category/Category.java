@@ -19,19 +19,13 @@ public interface Category {
      */
     interface ViewToPresenter extends Presenter<PresenterToView> {
 
-
         void onButtonSearchClicked();
 
         void onButtonAddClicked();
 
-
         void onListItemClicked();
 
-        String[] getParties();
-
-        int[] getImages();
-
-        List<CategoryData> LoadItems();
+        List<CategoryData> getItems();
     }
 
     /**
@@ -45,6 +39,8 @@ public interface Category {
         void setLabelSearch(String txt);
 
         void setAddLabel(String txt);
+
+        void setItem(List items);
     }
 
     /**
@@ -56,12 +52,6 @@ public interface Category {
 
         String getAddLabel();
 
-        String[] getListParties();
-
-
-        int[] getListImages();
-
-
         List getItems();
     }
 
@@ -69,9 +59,7 @@ public interface Category {
      * Required PRESENTER methods available to MODEL
      */
     interface ModelToPresenter {
-        String[] getParties();
 
-        int[] getImages();
     }
 
 

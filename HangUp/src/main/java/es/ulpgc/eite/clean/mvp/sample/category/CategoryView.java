@@ -3,6 +3,7 @@ package es.ulpgc.eite.clean.mvp.sample.category;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CategoryView
@@ -22,14 +24,13 @@ public class CategoryView
     private Button buttonSearch;
     private Button buttonAdd;
     private RecyclerView recycler;
-    private RecyclerView.Adapter adapter;
+    private CategoryAdapter adapter;
     private RecyclerView.LayoutManager lManager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hangapp);
-
 //    ERROR el mediador ya trae la conexion con con el presemtador
 //    En tal caso se hace a través del mediador.
 //    CategoryPresenter hap = new CategoryPresenter();
@@ -71,24 +72,13 @@ public class CategoryView
             }
         });
 
-        // Obtener el Recycler
-        /*Cuando se obtiene la instancia del recycler se usa el método setHasFixedSize() para optimizar
-        las operaciones con los ítems. Con esta característica le estamos diciendo al recycler que el
-        adaptador no variará su tamaño en toda la ejecución del programa.*/
-
         recycler = (RecyclerView) findViewById(R.id.recycler);
-        recycler.setHasFixedSize(true); //Habrá que quitarlo si la lista es dinámica.
-
-        // Usar un administrador para LinearLayout
-        /*El layout manager fue instanciado con la subclase LinearLayoutManager, indicando que el recycler
-        tomará la forma de lista vertical similar al ListView. Luego se relaciona al recycler con el
-        método setLayoutManager().*/
+        recycler.setHasFixedSize(true);
 
         lManager = new LinearLayoutManager(this);
         recycler.setLayoutManager(lManager);
 
-        // Crear un nuevo adaptador
-        adapter = new CategoryAdapter(getPresenter().LoadItems());
+        adapter = new CategoryAdapter();
         recycler.setAdapter(adapter);
     }
 
@@ -100,6 +90,9 @@ public class CategoryView
     @Override
     protected void onResume() {
         super.onResume(CategoryPresenter.class, this);
+
+        List<CategoryData> items = getPresenter().getItems();
+        adapter.setItems(getPresenter().getItems());
     }
 
     ///////////////////////////////////////////////////////////////////////////////////
@@ -121,6 +114,9 @@ public class CategoryView
         buttonAdd.setText(txt);
     }
 
+    @Override
+    public void setItem(List Items) {
+    }
 }
 
 class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
@@ -130,20 +126,26 @@ class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewH
 
     public static class CategoryViewHolder extends RecyclerView.ViewHolder {
 
-        public ImageView imagen;
+        //public ImageView imagen;
         public TextView title;
         public TextView information;
 
         public CategoryViewHolder(View v) {
             super(v);
-            imagen = (ImageView) v.findViewById(R.id.image);
+            //imagen = (ImageView) v.findViewById(R.id.image);
             title = (TextView) v.findViewById(R.id.title);
-            information = (TextView) v.findViewById(R.id.information);
+            //       information = (TextView) v.findViewById(R.id.information);
         }
     }
 
-    public CategoryAdapter(List<CategoryData> items) {
+    public CategoryAdapter() {
+        this.items = new ArrayList<>();
+        ;
+    }
+
+    public void setItems(List<CategoryData> items) {
         this.items = items;
+        this.notifyDataSetChanged();
     }
 
     @Override
@@ -152,17 +154,22 @@ class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewH
     }
 
     @Override
-    public CategoryViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {//i es la posición.
+    public CategoryViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         View v = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.category_card, viewGroup, false);
         return new CategoryViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(CategoryViewHolder viewHolder, int i) { //i es la posición.
-        viewHolder.imagen.setImageResource(items.get(i).getImagen());
-        viewHolder.title.setText(items.get(i).getNombre());
-        viewHolder.information.setText(items.get(i).getDescripcion());
+    public void onBindViewHolder(CategoryViewHolder viewHolder, int position) {
+        Log.d("my_debug", "onBindViewHolder(" + position + ")");
+
+        String nombre = items.get(position).getNombre();
+        //String descripcion = items.get(position).getDescripcion();
+
+        //viewHolder.imagen.setImageResource(items.get(position).getImagen());
+        viewHolder.title.setText(items.get(position).getNombre());
+        //viewHolder.information.setText(items.get(position).getDescripcion());
     }
 }
 

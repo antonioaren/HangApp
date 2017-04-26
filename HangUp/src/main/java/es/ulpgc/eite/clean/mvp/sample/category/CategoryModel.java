@@ -15,17 +15,6 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     private String HangAppButtonAddLabel;
     private List items;
 
-    private String[] parties;
-    private int[] images;
-
-    public CategoryModel() {
-//    this.parties= new String[]{"Concierto de FallOutBoy en Las Palmas a las 21:00","Convencion de Anime en Triana","YelmoCines estrena la nueva pelicula de los pitufos","Verbena en Tafira","Inauguracion de la disco en Maspalomas","Concierto de Vivaldi en Alfredo Kraus"};
-//    this.images=new int[]{
-//            R.drawable.hat,R.drawable.hat,R.drawable.hat,R.drawable.hat,R.drawable.hat,R.drawable.hat};
-
-
-    }
-
     /**
      * Method that recovers a reference to the PRESENTER
      * You must ALWAYS call {@link super#onCreate(Object)} here
@@ -37,16 +26,20 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     public void onCreate(Category.ModelToPresenter presenter) {
         super.onCreate(presenter);
 
-        items = new ArrayList();
-        items.add(new CategoryData(R.drawable.party, "Fiestas Nocturnas", "230"));
-        items.add(new CategoryData(R.drawable.ulpgc, "Charlas Ulpgc", "456"));
-        items.add(new CategoryData(R.drawable.cars, "Automovilismo", "342"));
-        items.add(new CategoryData(R.drawable.music, "Musica en directo", "645"));
-        items.add(new CategoryData(R.drawable.astro, "Astronomía", "459"));
-
         HangAppButtonAddLabel = "AddOne";
         HangAppButtonSearchLabel = "SearchOne";
         HangAppText = "Add";
+
+        items = new ArrayList();
+        items.add(new CategoryData("Fiestas Nocturnas", "230"));
+        items.add(new CategoryData("Charlas Ulpgc", "456"));
+        items.add(new CategoryData("Automovilismo", "342"));
+        items.add(new CategoryData("Musica en directo", "645"));
+        items.add(new CategoryData("Astronomía", "459"));
+
+        //R.drawable.party,R.drawable.ulpgc,R.drawable.cars,R.drawable.music,R.drawable.astro.
+
+
     }
 
     /**
@@ -57,7 +50,6 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
      */
     @Override
     public void onDestroy(boolean isChangingConfiguration) {
-
     }
 
     ///////////////////////////////////////////////////////////////////////////////////
@@ -72,16 +64,6 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     @Override
     public String getAddLabel() {
         return HangAppButtonAddLabel;
-    }
-
-    @Override
-    public String[] getListParties() {
-        return this.parties;
-    }
-
-    @Override
-    public int[] getListImages() {
-        return this.images;
     }
 
     @Override

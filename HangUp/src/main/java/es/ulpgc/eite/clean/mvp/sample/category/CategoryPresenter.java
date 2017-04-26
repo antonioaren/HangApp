@@ -51,15 +51,16 @@ public class CategoryPresenter
    */
   @Override
   public void onResume(Category.PresenterToView view) {
-    setView(view);
-    Log.d(TAG, "calling onResume()");
+      if (!isViewRunning()) {
+          setView(view);
+          Log.d(TAG, "calling onResume()");
 
-
-    if (configurationChangeOccurred()) {
-      getView().setAddLabel(getModel().getSearchLabel());
-      getView().setLabelSearch(getModel().getSearchLabel());
-
+          if (configurationChangeOccurred()) {
+              getView().setAddLabel(getModel().getSearchLabel());
+              getView().setLabelSearch(getModel().getSearchLabel());
+          }
     }
+
 
   }
 
@@ -120,8 +121,13 @@ public class CategoryPresenter
     app.goToItemList(this);
   }
 
+    @Override
+    public List<CategoryData> getItems() {
+        return getModel().getItems();
+    }
 
-  ///////////////////////////////////////////////////////////////////////////////////
+
+    ///////////////////////////////////////////////////////////////////////////////////
   // To Add //////////////////////////////////////////////////////////////////////
 
   @Override
@@ -130,8 +136,8 @@ public class CategoryPresenter
     if (isViewRunning()) {
       getView().setLabelSearch(getModel().getSearchLabel());
       getView().setAddLabel(getModel().getAddLabel());
+        //getView().setItem(getModel().getItems());
     }
-    //checkToolbarVisibility();
   }
 
   @Override
@@ -183,35 +189,6 @@ public class CategoryPresenter
   }
 
   ///////////////////////////////////////////////////////////////////////////////////
-
-  private void checkToolbarVisibility() {
-    Log.d(TAG, "calling checkToolbarVisibility()");
-    if (isViewRunning()) {
-      if (!toolbarVisible) {
-        //  getView().hideToolbar();
-      }
-    }
-
-  }
-
-  @Override
-  public String[] getParties() {
-
-    String[] list = getModel().getListParties();
-    return list;
-  }
-
-  @Override
-  public int[] getImages() {
-
-    int[] images = getModel().getListImages();
-    return images;
-  }
-
-  @Override
-  public List<CategoryData> LoadItems() {
-    return getModel().getItems();
-  }
 
 
 }
