@@ -7,20 +7,20 @@ package es.ulpgc.eite.clean.mvp.sample.category;
 public class CategoryData {
     private int image;
     private String name;
-    private String description;
+    private String numberOfParticipants;
 
-    public CategoryData(int image, String name, String descrition) {
+    public CategoryData(int image, String name, String numberOfParticipants) {
         this.image = image;
         this.name = name;
-        this.description = description;
+        this.numberOfParticipants = numberOfParticipants;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getNumberOfParticipants() {
+        return numberOfParticipants;
     }
 
     public int getImage() {

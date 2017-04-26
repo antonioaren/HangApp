@@ -3,6 +3,8 @@ package es.ulpgc.eite.clean.mvp.sample.category;
 import android.content.Context;
 import android.os.Bundle;
 
+import java.util.ArrayList;
+
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.Presenter;
@@ -66,6 +68,8 @@ public interface Category {
         //String getText();
 
         int[] getListImages();
+
+        ArrayList<CategoryData> getListOfParties();
     }
 
     /**

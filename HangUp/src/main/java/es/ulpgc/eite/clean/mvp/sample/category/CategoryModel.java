@@ -82,6 +82,12 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
   public int[]getListImages(){
   return this.images;
 }
+
+  @Override
+  public ArrayList<CategoryData> getListOfParties() {
+    return (ArrayList<CategoryData>) this.items;
+  }
+
 }
 
 

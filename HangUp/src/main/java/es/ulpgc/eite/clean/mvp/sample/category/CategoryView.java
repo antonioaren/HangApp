@@ -2,10 +2,12 @@ package es.ulpgc.eite.clean.mvp.sample.category;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -84,20 +86,20 @@ public class CategoryView
         las operaciones con los ítems. Con esta característica le estamos diciendo al recycler que el
         adaptador no variará su tamaño en toda la ejecución del programa.*/
 
-        //    recycler = (RecyclerView) findViewById(R.id.recycler);
-        //   recycler.setHasFixedSize(true); //Habrá que quitarlo si la lista es dinámica.
+        recycler = (RecyclerView) findViewById(R.id.recycler);
+        recycler.setHasFixedSize(true); //Habrá que quitarlo si la lista es dinámica.
 
         // Usar un administrador para LinearLayout
         /*El layout manager fue instanciado con la subclase LinearLayoutManager, indicando que el recycler
         tomará la forma de lista vertical similar al ListView. Luego se relaciona al recycler con el
         método setLayoutManager().*/
 
-        //    lManager = new LinearLayoutManager(this);
-        //   recycler.setLayoutManager(lManager);
+        lManager = new LinearLayoutManager(this);
+        recycler.setLayoutManager(lManager);
 
         // Crear un nuevo adaptador
-        //  adapter = new CategoryAdapter(items);
-        // recycler.setAdapter(adapter);
+        // adapter = new CategoryAdapter(items);
+        recycler.setAdapter(new Adapter);
 
 
     }
@@ -165,15 +167,15 @@ class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewH
 
     public static class CategoryViewHolder extends RecyclerView.ViewHolder {
         // Campos respectivos de un item
-        public ImageView imagen;
+        public ImageView image;
         public TextView title;
-        // public TextView information;
+        public TextView number;
 
         public CategoryViewHolder(View v) {
             super(v);
-            imagen = (ImageView) v.findViewById(R.id.image);
+            image = (ImageView) v.findViewById(R.id.image);
             title = (TextView) v.findViewById(R.id.title);
-            //information = (TextView) v.findViewById(R.id.information);
+            number = (TextView) v.findViewById(R.id.information);
         }
     }
 
@@ -191,9 +193,10 @@ class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewH
 
     @Override
     public CategoryViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {//i es la posición.
+        LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
 
-        View v = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.category_card, viewGroup, false);
+        View v = inflater.inflate(R.layout.category_card, viewGroup, false);
+
         return new CategoryViewHolder(v);
     }
 
@@ -201,9 +204,9 @@ class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewH
     //Encargado de actualizar los datos de un ViewHolder ya existente.
     @Override
     public void onBindViewHolder(CategoryViewHolder viewHolder, int i) { //i es la posición.
-        viewHolder.imagen.setImageResource(items.get(i).getImagen());
-        viewHolder.title.setText(items.get(i).getNombre());
-        // viewHolder.information.setText(items.get(i).getDescripcion());
+        viewHolder.image.setImageResource(items.get(i).getImage());
+        viewHolder.title.setText(items.get(i).getName());
+        viewHolder.number.setText(items.get(i).getNumberOfParticipants());
     }
 }
 

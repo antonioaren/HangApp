@@ -14,7 +14,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/imagen"
+            android:id="@+id/image"
             android:layout_width="100dp"
             android:layout_height="150dp"
             android:scaleType="centerCrop" />
@@ -25,12 +25,12 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Large Text"
             android:id="@+id/title"
-            android:layout_toRightOf="@+id/imagen"
+            android:layout_toRightOf="@+id/image"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="10dp" />
 
         <TextView
-            android:id="@+id/information"
+            android:id="@+id/numberOfPersons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
@@ -45,7 +45,7 @@
             android:background="#ffd5d5d5"
             android:id="@+id/linea"
             android:layout_above="@+id/compartir"
-            android:layout_toRightOf="@+id/imagen"></View>
+            android:layout_toRightOf="@+id/image"></View>
 
         <ImageView
             android:layout_width="wrap_content"
