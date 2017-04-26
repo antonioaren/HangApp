@@ -9,72 +9,30 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list id="6a18f264-77ba-466d-b7a7-0d52df6a7436" name="Default" comment="Merge remote-tracking branch 'origin/eleonoraBack'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/3.3/taskArtifacts/fileHashes.bin&#10;#&#9;.gradle/3.3/taskArtifacts/fileSnapshots.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.lock&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/App.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Mediator.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangApp.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangAppModel.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/Information.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationPresenter.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchView.java&#10;#&#9;HangUp/src/main/res/layout/activity_procesed_search.xml&#10;#&#9;HangUp/src/main/res/layout/content_hangapp.xml&#10;#&#9;HangUp/src/main/res/layout/content_procesed_search.xml&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Navigator.java&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/hangapp/HangAppView.java&#10;#&#9;HelloApp/src/main/res/layout/activity_filalista.xml&#10;#&#9;HelloApp/src/main/res/layout/activity_procesed_search.xml&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin.cpgz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_HangUp_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_HangUp_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_HangUp_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_HangUp_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HelloApp/src/main/res/drawable/hat.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-04-25-02-05-41-867.rawproto" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-04-25-02-30-11-279.rawproto" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-04-25-02-30-16-689.rawproto" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-04-25-04-56-41-759.rawproto" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-04-25-04-56-45-336.rawproto" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-04-25-04-58-00-082.rawproto" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-04-25-04-58-01-543.rawproto" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-04-25-05-06-15-155.rawproto" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-04-25-05-06-17-795.rawproto" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Navigator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/hangapp/HangAppView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/PartiesByCategories.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/PartiesByCategoriesModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/PartiesByCategoriesPresenter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/PartiesByCategoriesView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HelloApp/src/main/res/layout/activity_filalista.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HelloApp/src/main/res/layout/activity_partiesbycategories.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HelloApp/src/main/res/layout/content_filalista.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HelloApp/src/main/res/layout/content_partiesbycategories.xml" />
+    <list id="6a18f264-77ba-466d-b7a7-0d52df6a7436" name="Default" comment="Merge remote-tracking branch 'origin/eleonoraBack'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/3.3/taskArtifacts/fileHashes.bin&#10;#&#9;.gradle/3.3/taskArtifacts/fileSnapshots.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.lock&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/App.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Mediator.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangApp.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangAppModel.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/Information.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationPresenter.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchView.java&#10;#&#9;HangUp/src/main/res/layout/activity_procesed_search.xml&#10;#&#9;HangUp/src/main/res/layout/content_hangapp.xml&#10;#&#9;HangUp/src/main/res/layout/content_procesed_search.xml&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Navigator.java&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/hangapp/HangAppView.java&#10;#&#9;HelloApp/src/main/res/layout/activity_filalista.xml&#10;#&#9;HelloApp/src/main/res/layout/activity_procesed_search.xml&#10;" />
+    <list id="3d65f56d-93c6-4520-9708-4d2cd763dfec" name="Failed commit: Default" comment="Cambios Merges.&#10;" />
+    <list default="true" id="72c31ec8-3076-4782-a780-40cb8c2c6568" name="Failed commit: Default (2)" comment="Merge remote-tracking branch 'origin/eleonoraBack'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/3.3/taskArtifacts/fileHashes.bin&#10;#&#9;.gradle/3.3/taskArtifacts/fileSnapshots.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.lock&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/App.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Mediator.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangApp.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangAppModel.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/Information.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationPresenter.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchView.java&#10;#&#9;HangUp/src/main/res/layout/activity_procesed_search.xml&#10;#&#9;HangUp/src/main/res/layout/content_hangapp.xml&#10;#&#9;HangUp/src/main/res/layout/content_procesed_search.xml&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Navigator.java&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/hangapp/HangAppView.java&#10;#&#9;HelloApp/src/main/res/layout/activity_filalista.xml&#10;#&#9;HelloApp/src/main/res/layout/activity_procesed_search.xml&#10;">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/runConfigurations/HangApp.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-04-25-02-05-41-867.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-04-25-02-30-11-279.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-04-25-02-30-16-689.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-04-25-04-56-41-759.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-04-25-04-56-45-336.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-04-25-04-58-00-082.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-04-25-04-58-01-543.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-04-25-05-06-15-155.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-04-25-05-06-17-795.rawproto" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_HangUp_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_HangUp_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_HangUp_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_HangUp_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_HangUp_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_HangUp_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/generated/mockable-android-25.jar" afterPath="$PROJECT_DIR$/build/generated/mockable-android-25.jar" />
-    </list>
-    <list id="3d65f56d-93c6-4520-9708-4d2cd763dfec" name="Failed commit: Default" comment="Cambios Merges.&#10;" />
-    <list default="true" id="72c31ec8-3076-4782-a780-40cb8c2c6568" name="Failed commit: Default (2)" comment="Merge remote-tracking branch 'origin/eleonoraBack'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/3.3/taskArtifacts/fileHashes.bin&#10;#&#9;.gradle/3.3/taskArtifacts/fileSnapshots.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.lock&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/App.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Mediator.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangApp.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangAppModel.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/Information.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationPresenter.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchView.java&#10;#&#9;HangUp/src/main/res/layout/activity_procesed_search.xml&#10;#&#9;HangUp/src/main/res/layout/content_hangapp.xml&#10;#&#9;HangUp/src/main/res/layout/content_procesed_search.xml&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Navigator.java&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/hangapp/HangAppView.java&#10;#&#9;HelloApp/src/main/res/layout/activity_filalista.xml&#10;#&#9;HelloApp/src/main/res/layout/activity_procesed_search.xml&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/detail/DetailModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/Category.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryData.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangApp.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/Category.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangAppModel.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangAppPresenter.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryPresenter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangAppView.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/HangUp.iml" afterPath="$PROJECT_DIR$/HangUp/HangUp.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/build.gradle" afterPath="$PROJECT_DIR$/HangUp/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/proguard-rules.pro" afterPath="$PROJECT_DIR$/HangUp/proguard-rules.pro" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/HangUp/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/Add.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/Add.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyModel.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyPresenter.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyPresenter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyView.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/App.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Mediator.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Mediator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Navigator.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Navigator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/detail/Detail.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/detail/Detail.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/detail/DetailPresenter.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/detail/DetailPresenter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/detail/DetailView.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/detail/DetailView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/Information.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/Information.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationPresenter.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationPresenter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/Search.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/Search.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchModel.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchPresenter.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchPresenter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchView.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/res/layout/activity_detail.xml" afterPath="$PROJECT_DIR$/HangUp/src/main/res/layout/activity_detail.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/res/layout/activity_hangapp.xml" afterPath="$PROJECT_DIR$/HangUp/src/main/res/layout/activity_hangapp.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/res/layout/content_detail.xml" afterPath="$PROJECT_DIR$/HangUp/src/main/res/layout/content_detail.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/res/layout/content_hangapp.xml" afterPath="$PROJECT_DIR$/HangUp/src/main/res/layout/content_hangapp.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/res/menu/menu_dummy.xml" afterPath="$PROJECT_DIR$/HangUp/src/main/res/menu/menu_dummy.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryView.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryView.java" />
     </list>
     <ignored path="HangApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -106,14 +64,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SearchView.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchView.java">
+      <file leaf-file-name="content_hangapp.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/content_hangapp.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="82" column="10" selection-start-line="82" selection-start-column="10" selection-end-line="84" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="165">
+              <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="categorycard.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/categorycard.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="645">
+              <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -2159,10 +2131,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/HelloApp/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/HelloApp/src/main/res/layout/activity_dummy.xml" />
-        <option value="$PROJECT_DIR$/HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyView.java" />
-        <option value="$PROJECT_DIR$/HelloApp/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/HelloApp/src/main/res/layout/content_hangapp.xml" />
         <option value="$PROJECT_DIR$/HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchView.java" />
         <option value="$PROJECT_DIR$/HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchPresenter.java" />
@@ -2181,14 +2149,11 @@
         <option value="$PROJECT_DIR$/HangUp/src/main/res/layout/activity_search.xml" />
         <option value="$PROJECT_DIR$/HangUp/src/main/res/layout/activity_addparty.xml" />
         <option value="$PROJECT_DIR$/HangUp/src/main/res/layout/activity_procesed_search.xml" />
-        <option value="$PROJECT_DIR$/HangUp/src/main/res/layout/category_card.xml" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryAdapter.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangAppView.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangAppPresenter.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangAppModel.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangApp.java" />
-        <option value="$PROJECT_DIR$/HangUp/src/main/res/layout/content_hangapp.xml" />
-        <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/Category.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/Information.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationPresenter.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/detail/AddPartyPresenter.java" />
@@ -2196,7 +2161,6 @@
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/detail/Detail.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/detail/DetailPresenter.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/detail/DetailView.java" />
-        <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryPresenter.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/Add.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyPresenter.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Mediator.java" />
@@ -2208,15 +2172,23 @@
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationModel.java" />
         <option value="$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/ExampleInstrumentedTest.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyView.java" />
-        <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryView.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchView.java" />
+        <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryData.java" />
+        <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java" />
+        <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/Category.java" />
+        <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryPresenter.java" />
+        <option value="$PROJECT_DIR$/HangUp/src/main/res/values/dimens.xml" />
+        <option value="$PROJECT_DIR$/HangUp/src/main/res/layout/category_card.xml" />
+        <option value="$PROJECT_DIR$/HangUp/src/main/res/layout/content_hangapp.xml" />
+        <option value="$PROJECT_DIR$/HangUp/src/main/res/layout/categorycard.xml" />
+        <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryView.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="22" />
-    <option name="y" value="23" />
-    <option name="width" value="1258" />
+    <option name="x" value="3" />
+    <option name="y" value="22" />
+    <option name="width" value="1267" />
     <option name="height" value="735" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -2249,7 +2221,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="AndroidView" proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -2263,162 +2235,312 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="AndroidView">
+        <subPane />
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="HangApp" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="HangApp" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HangApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HangApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HangApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="HangUp" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HangApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HangApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HangUp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HangApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HangApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HangUp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HangApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HangApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HangUp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HangApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HangApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HangUp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HangApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HangApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HangUp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HangApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HangApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HangUp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="category" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CategoryView.java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HangApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HangApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HangUp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="category" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane />
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FrameworkLuis" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/CleanMasterDetailAndroid-master" />
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
-    <property name="device.picker.selection" value="Nexus_5X_API_25" />
+    <property name="device.picker.selection" value="192.168.56.101:5555" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/HangUp/src/main/res/layout" />
       <recent name="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/detail" />
       <recent name="$PROJECT_DIR$/HelloApp/src/main/res/layout" />
     </key>
   </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangAppModel.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangAppPresenter.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangAppView.java</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
-  </component>
-  <component name="RunManager" selected="Android App.HangUp">
+  <component name="RunManager" selected="Android App.CategoryView">
+    <configuration default="false" name="CategoryView" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false" temporary="true">
+      <module name="HangUp" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="specific_activity" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="es.ulpgc.eite.clean.mvp.sample.category.CategoryView" />
+      <method />
+    </configuration>
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -2656,59 +2778,14 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="false" name="HangUp" type="AndroidRunConfigurationType" factoryName="Android App">
-      <module name="HangUp" />
-      <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Auto>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Auto>
-      <Hybrid>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Hybrid>
-      <Java />
-      <Native>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Native>
-      <Profilers>
-        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
-        <option name="SUPPORT_LIB_ENABLED" value="true" />
-        <option name="INSTRUMENTATION_ENABLED" value="true" />
-      </Profilers>
-      <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <method />
-    </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Android App.HangApp" />
-      <item index="1" class="java.lang.String" itemvalue="Android App.HangUp" />
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Android App.CategoryView" />
     </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Android App.CategoryView" />
+      </list>
+    </recent_temporary>
     <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
       <option name="MAIN_CLASS_NAME" />
       <option name="HTML_FILE_NAME" />
@@ -2875,7 +2952,42 @@
       <option name="project" value="LOCAL" />
       <updated>1493002617966</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Merge remote-tracking branch 'origin/eleonoraBack'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/3.3/taskArtifacts/fileHashes.bin&#10;#&#9;.gradle/3.3/taskArtifacts/fileSnapshots.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.lock&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/App.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Mediator.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangApp.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangAppModel.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/Information.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationPresenter.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchView.java&#10;#&#9;HangUp/src/main/res/layout/activity_procesed_search.xml&#10;#&#9;HangUp/src/main/res/layout/content_hangapp.xml&#10;#&#9;HangUp/src/main/res/layout/content_procesed_search.xml&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Navigator.java&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/hangapp/HangAppView.java&#10;#&#9;HelloApp/src/main/res/layout/activity_filalista.xml&#10;#&#9;HelloApp/src/main/res/layout/activity_procesed_search.xml&#10;">
+      <created>1493132381073</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1493132381073</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Made connection between vies/presenter/model. No working yet">
+      <created>1493156732516</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1493156732516</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Problem with Adapter, it does not read image as a Int. Moved information to model. Conected usig MVP.">
+      <created>1493160612308</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1493160612308</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Little Error Fixed. Deleted method from View.">
+      <created>1493160802369</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1493160802369</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Changed apply. Making functional.">
+      <created>1493229846219</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1493229846219</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -2888,16 +3000,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="22" y="23" width="1258" height="735" extended-state="0" />
-    <editor active="false" />
+    <frame x="3" y="22" width="1267" height="735" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328594" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3279483" sideWeight="0.49027896" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279483" sideWeight="0.40213814" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23263328" sideWeight="0.71957237" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.3279483" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="0" y="22" width="1280" height="736" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279483" sideWeight="0.5978618" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.9273021" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="-32" y="143" width="1280" height="736" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11470113" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -2905,21 +3017,51 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22861843" sideWeight="0.4929078" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8562197" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31346938" sideWeight="0.47792706" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.227388" sideWeight="0.5070922" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3990307" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29605263" sideWeight="0.5220729" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8562197" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279483" sideWeight="0.5978618" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17447495" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="-32" y="143" width="1280" height="736" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21001616" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328594" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279483" sideWeight="0.40213814" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11470113" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15831988" sideWeight="0.28042763" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35955057" sideWeight="0.47792706" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8562197" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29605263" sideWeight="0.5220729" order="5" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -2952,89 +3094,59 @@
     <MESSAGE value="Commited to pull and update all code" />
     <MESSAGE value="Last update&#10;------------&#10;- Hello Deleted&#10;- Changed HangApp  instead of Category&#10;- Made Adapter in HangApp view&#10;- Made Product Class to setup holder (Master)" />
     <MESSAGE value="Merge remote-tracking branch 'origin/eleonoraBack'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/3.3/taskArtifacts/fileHashes.bin&#10;#&#9;.gradle/3.3/taskArtifacts/fileSnapshots.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.lock&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/App.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Mediator.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangApp.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangAppModel.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/Information.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationPresenter.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchView.java&#10;#&#9;HangUp/src/main/res/layout/activity_procesed_search.xml&#10;#&#9;HangUp/src/main/res/layout/content_hangapp.xml&#10;#&#9;HangUp/src/main/res/layout/content_procesed_search.xml&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Navigator.java&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/hangapp/HangAppView.java&#10;#&#9;HelloApp/src/main/res/layout/activity_filalista.xml&#10;#&#9;HelloApp/src/main/res/layout/activity_procesed_search.xml&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/eleonoraBack'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/3.3/taskArtifacts/fileHashes.bin&#10;#&#9;.gradle/3.3/taskArtifacts/fileSnapshots.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.lock&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/App.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Mediator.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangApp.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangAppModel.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/Information.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationPresenter.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchView.java&#10;#&#9;HangUp/src/main/res/layout/activity_procesed_search.xml&#10;#&#9;HangUp/src/main/res/layout/content_hangapp.xml&#10;#&#9;HangUp/src/main/res/layout/content_procesed_search.xml&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Navigator.java&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/hangapp/HangAppView.java&#10;#&#9;HelloApp/src/main/res/layout/activity_filalista.xml&#10;#&#9;HelloApp/src/main/res/layout/activity_procesed_search.xml&#10;" />
+    <MESSAGE value="Made connection between vies/presenter/model. No working yet" />
+    <MESSAGE value="Problem with Adapter, it does not read image as a Int. Moved information to model. Conected usig MVP." />
+    <MESSAGE value="Little Error Fixed. Deleted method from View." />
+    <MESSAGE value="Changed apply. Making functional." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed apply. Making functional." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryView.java</url>
+          <line>170</line>
+          <properties />
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="17" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/activity_hello.xml" />
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/drawable/searchparty.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/mipmap-xhdpi/ic_launcher.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/mipmap-mdpi/ic_launcher.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/mipmap-hdpi/ic_launcher.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/content_procesed_search.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/menu/menu_dummy.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/content_search.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/content_addparty.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
@@ -3046,37 +3158,37 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/activity_procesed_search.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/content_hello.xml" />
     <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/activity_addparty.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="53" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/activity_search.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/activity_search.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="8" column="67" selection-start-line="8" selection-start-column="67" selection-end-line="8" selection-end-column="67" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HangUp/build.gradle">
@@ -3087,93 +3199,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/category_card.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryAdapter.java" />
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/activity_hangapp.xml">
+      <provider selected="true" editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
-          <folding>
-            <element signature="e#552#553#0" expanded="false" />
-            <element signature="e#581#582#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-209">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#onCreate#0;class#CategoryModel#0" expanded="false" />
-            <element signature="e#1770#1771#0" expanded="true" />
-            <element signature="e#1811#1812#0" expanded="true" />
-            <element signature="e#1855#1856#0" expanded="true" />
-            <element signature="e#1893#1894#0" expanded="true" />
-            <element signature="e#1942#1943#0" expanded="true" />
-            <element signature="e#1971#1972#0" expanded="true" />
-            <element signature="e#2015#2016#0" expanded="true" />
-            <element signature="e#2039#2040#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/activity_hangapp.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="45" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
           <folding />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/content_detail.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/content_hangapp.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="81" column="44" selection-start-line="81" selection-start-column="44" selection-end-line="81" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3197,7 +3238,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3205,7 +3245,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
-          <folding />
+          <folding>
+            <element signature="method#onPublishClicked#0;class#DetailPresenter#0" expanded="false" />
+            <element signature="method#onCreate#0;class#DetailPresenter#0" expanded="false" />
+            <element signature="method#onResume#0;class#DetailPresenter#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#DetailPresenter#0" expanded="false" />
+            <element signature="method#onBackPressed#0;class#DetailPresenter#0" expanded="false" />
+            <element signature="method#destroyView#0;class#DetailPresenter#0" expanded="false" />
+            <element signature="method#setTextVisibility#0;class#DetailPresenter#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3213,7 +3261,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="e#2495#2496#0" expanded="false" />
+            <element signature="method#hideText#0;class#DetailView#0" expanded="false" />
+            <element signature="method#setText#0;class#DetailView#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3233,7 +3285,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3257,7 +3308,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
           <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="10" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3273,27 +3323,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/Category.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#ViewToPresenter#0;class#Category#0" expanded="false" />
-            <element signature="class#ViewToPresenter#0;class#Category#0" expanded="false" />
-            <element signature="docComment;class#PresenterToView#0;class#Category#0" expanded="false" />
-            <element signature="class#PresenterToView#0;class#Category#0" expanded="false" />
-            <element signature="docComment;class#PresenterToModel#0;class#Category#0" expanded="false" />
-            <element signature="class#PresenterToModel#0;class#Category#0" expanded="false" />
-            <element signature="docComment;class#ModelToPresenter#0;class#Category#0" expanded="false" />
-            <element signature="class#ModelToPresenter#0;class#Category#0" expanded="false" />
-            <element signature="class#CategoryTo#0;class#Category#0" expanded="false" />
-            <element signature="class#ToCategory#0;class#Category#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3305,43 +3334,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="68" column="10" selection-start-line="68" selection-start-column="10" selection-end-line="68" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="112" column="16" selection-start-line="112" selection-start-column="16" selection-end-line="112" selection-end-column="16" />
-          <folding>
-            <element signature="docComment;method#onCreate#0;class#CategoryPresenter#0" expanded="false" />
-            <element signature="docComment;method#onResume#0;class#CategoryPresenter#0" expanded="false" />
-            <element signature="method#onResume#0;class#CategoryPresenter#0" expanded="false" />
-            <element signature="docComment;method#onBackPressed#0;class#CategoryPresenter#0" expanded="false" />
-            <element signature="method#onBackPressed#0;class#CategoryPresenter#0" expanded="false" />
-            <element signature="docComment;method#onDestroy#0;class#CategoryPresenter#0" expanded="false" />
-            <element signature="method#onDestroy#0;class#CategoryPresenter#0" expanded="false" />
-            <element signature="e#3122#3152#0" expanded="false" />
-            <element signature="method#onScreenStarted#0;class#CategoryPresenter#0" expanded="false" />
-            <element signature="method#destroyView#0;class#CategoryPresenter#0" expanded="false" />
-            <element signature="method#checkToolbarVisibility#0;class#CategoryPresenter#0" expanded="false" />
-            <element signature="method#checkTextVisibility#0;class#CategoryPresenter#0" expanded="false" />
-            <element signature="method#getParties#0;class#CategoryPresenter#0" expanded="false" />
-            <element signature="method#getImages#0;class#CategoryPresenter#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Mediator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3351,7 +3349,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="43" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3361,7 +3359,7 @@
         <state relative-caret-position="-1155">
           <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="e#2570#2583#0" expanded="false" />
             <element signature="e#3337#3350#0" expanded="false" />
             <element signature="method#goToProcessedInformationScreen#0;class#App#0" expanded="false" />
@@ -3385,18 +3383,6 @@
       </provider>
       <provider editor-type-id="android-manifest">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="87" column="31" selection-start-line="87" selection-start-column="31" selection-end-line="87" selection-end-column="31" />
-          <folding>
-            <element signature="method#onCreate#0;class#SearchPresenter#0" expanded="false" />
-            <element signature="method#onResume#0;class#SearchPresenter#0" expanded="false" />
-            <element signature="method#onDestroy#0;class#SearchPresenter#0" expanded="false" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/Search.java">
@@ -3426,10 +3412,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
           <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-          <folding>
-            <element signature="e#413#414#0" expanded="true" />
-            <element signature="e#438#439#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3437,9 +3419,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
           <caret line="48" column="10" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3447,31 +3426,209 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1335">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryView.java">
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyPresenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="86" column="60" selection-start-line="86" selection-start-column="60" selection-end-line="86" selection-end-column="60" />
+        <state relative-caret-position="915">
+          <caret line="68" column="10" selection-start-line="68" selection-start-column="10" selection-end-line="68" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="87" column="31" selection-start-line="87" selection-start-column="31" selection-end-line="87" selection-end-column="31" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1241#1307#0" expanded="false" />
-            <element signature="method#onResume#0;class#CategoryView#0" expanded="false" />
-            <element signature="e#3959#4011#0" expanded="false" />
-            <element signature="class#CategoryAdapter#0" expanded="false" />
+            <element signature="method#onCreate#0;class#SearchPresenter#0" expanded="false" />
+            <element signature="method#onResume#0;class#SearchPresenter#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#SearchPresenter#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchView.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-510">
+          <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/drawable/astro.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/Category.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="27" column="26" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="26" />
+          <folding>
+            <element signature="docComment;class#ViewToPresenter#0;class#Category#0" expanded="false" />
+            <element signature="docComment;class#PresenterToView#0;class#Category#0" expanded="false" />
+            <element signature="docComment;class#PresenterToModel#0;class#Category#0" expanded="false" />
+            <element signature="docComment;class#ModelToPresenter#0;class#Category#0" expanded="false" />
+            <element signature="class#CategoryTo#0;class#Category#0" expanded="false" />
+            <element signature="class#ToCategory#0;class#Category#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="138" column="8" selection-start-line="138" selection-start-column="8" selection-end-line="138" selection-end-column="8" />
+          <folding>
+            <element signature="docComment;method#onCreate#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="docComment;method#onResume#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="method#onResume#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="docComment;method#onBackPressed#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="method#onBackPressed#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="docComment;method#onDestroy#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="e#2863#2946#0" expanded="false" />
+            <element signature="method#onButtonSearchClicked#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="e#3137#3167#0" expanded="false" />
+            <element signature="method#onButtonAddClicked#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="method#onListItemClicked#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="e#3854#3855#0" expanded="true" />
+            <element signature="e#3898#3899#0" expanded="true" />
+            <element signature="e#3906#3989#0" expanded="false" />
+            <element signature="e#4686#4769#0" expanded="false" />
+            <element signature="method#destroyView#0;class#CategoryPresenter#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-25/android/app/Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106">
-          <caret line="82" column="10" selection-start-line="82" selection-start-column="10" selection-end-line="84" selection-end-column="46" />
+          <caret line="6311" column="0" selection-start-line="6311" selection-start-column="0" selection-end-line="6311" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-25/android/app/ActivityThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="2480" column="0" selection-start-line="2480" selection-start-column="0" selection-end-line="2480" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/values/dimens.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-25/android/app/Instrumentation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="1257" column="0" selection-start-line="1257" selection-start-column="0" selection-end-line="1257" selection-end-column="0" />
+          <folding>
+            <element signature="e#48144#48145#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+          <folding>
+            <element signature="e#382#412#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="39" column="94" selection-start-line="39" selection-start-column="94" selection-end-line="39" selection-end-column="94" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="docComment;method#onCreate#0;class#CategoryModel#0" expanded="false" />
+            <element signature="docComment;method#onDestroy#0;class#CategoryModel#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/content_detail.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/category_card.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/content_addparty.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/categorycard.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1057#1123#0" expanded="false" />
+            <element signature="docComment;method#onResume#0;class#CategoryView#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/extras/android/m2repository/com/android/support/recyclerview-v7/25.0.0/recyclerview-v7-25.0.0-sources.jar!/android/support/v7/widget/RecyclerView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="5286" column="0" selection-start-line="5286" selection-start-column="0" selection-end-line="5286" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/content_hangapp.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
