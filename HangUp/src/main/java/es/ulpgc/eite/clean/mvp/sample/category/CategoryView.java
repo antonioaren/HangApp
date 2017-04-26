@@ -12,10 +12,10 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.List;
+
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
-
-import java.util.List;
 
 public class CategoryView
         extends GenericActivity<Category.PresenterToView, Category.ViewToPresenter, CategoryPresenter>
@@ -45,12 +45,12 @@ public class CategoryView
 
 //    faltaba declarar el list view
 
-//    ImageView image=(ImageView)findViewById(R.id.image);
-//    title=(TextView)findViewById(R.id.title);
-//    information=(TextView)findViewById(R.id.information);
-//    String[] parties = hap.getParties();
+        ImageView image = (ImageView) findViewById(R.id.image);
+        title = (TextView) findViewById(R.id.title);
+        information = (TextView) findViewById(R.id.information);
+        String[] parties = getPresenter().getParties();
 //
-//    list = (ListView)findViewById(R.id.list);
+        //list = (ListView)findViewById(R.id.list);
 //
 //    ArrayAdapter<String> adaptder =
 //            new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, parties);
