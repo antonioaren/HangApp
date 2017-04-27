@@ -42,9 +42,9 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     HangAppText = "Add";
     items = new ArrayList<CategoryData>();
     items.add(new CategoryData(R.drawable.astro, "Fiestas Nocturnas", "230"));
-    items.add(new CategoryData(R.drawable.astro, "Charlas Ulpgc", "456"));
-    items.add(new CategoryData(R.drawable.astro, "Automovilismo", "342"));
-    items.add(new CategoryData(R.drawable.astro, "Musica en directo", "645"));
+      items.add(new CategoryData(R.drawable.ulpgc, "Charlas Ulpgc", "456"));
+      items.add(new CategoryData(R.drawable.cars, "Automovilismo", "342"));
+      items.add(new CategoryData(R.drawable.musica, "Musica en directo", "645"));
     items.add(new CategoryData(R.drawable.astro, "Astronomía", "459"));
 
   }
