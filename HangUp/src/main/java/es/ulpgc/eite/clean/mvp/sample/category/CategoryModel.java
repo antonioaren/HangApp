@@ -5,7 +5,7 @@ import java.util.List;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.R;
-import es.ulpgc.eite.clean.mvp.sample.app.ModelData;
+import es.ulpgc.eite.clean.mvp.sample.app.CategoryData;
 
 
 public class CategoryModel extends GenericModel<Category.ModelToPresenter>
@@ -14,17 +14,17 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     private String HangAppText;
     private String HangAppButtonSearchLabel;
     private String HangAppButtonAddLabel;
-    private List<ModelData> items;
+    private List<CategoryData> items;
 
 
     public CategoryModel() {
 
         items = new ArrayList<>();
-        items.add(new ModelData(R.drawable.astro, "Fiestas Nocturnas", "230"));
-        items.add(new ModelData(R.drawable.astro, "Charlas Ulpgc", "456"));
-        items.add(new ModelData(R.drawable.astro, "Automovilismo", "342"));
-        items.add(new ModelData(R.drawable.astro, "Musica en directo", "645"));
-        items.add(new ModelData(R.drawable.astro, "Astronomía", "459"));
+        items.add(new CategoryData(R.drawable.astro, "Fiestas Nocturnas", "230"));
+        items.add(new CategoryData(R.drawable.astro, "Charlas Ulpgc", "456"));
+        items.add(new CategoryData(R.drawable.astro, "Automovilismo", "342"));
+        items.add(new CategoryData(R.drawable.astro, "Musica en directo", "645"));
+        items.add(new CategoryData(R.drawable.astro, "Astronomía", "459"));
 
     }
 
@@ -41,12 +41,12 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         HangAppButtonAddLabel = "AddOne";
         HangAppButtonSearchLabel = "SearchOne";
         HangAppText = "Add";
-        items = new ArrayList<ModelData>();
-        items.add(new ModelData(R.drawable.astro, "Fiestas Nocturnas", "230"));
-        items.add(new ModelData(R.drawable.ulpgc, "Charlas Ulpgc", "456"));
-        items.add(new ModelData(R.drawable.cars, "Automovilismo", "342"));
-        items.add(new ModelData(R.drawable.musica, "Musica en directo", "645"));
-        items.add(new ModelData(R.drawable.astro, "Astronomía", "459"));
+        items = new ArrayList<CategoryData>();
+        items.add(new CategoryData(R.drawable.astro, "Fiestas Nocturnas", "230"));
+        items.add(new CategoryData(R.drawable.ulpgc, "Charlas Ulpgc", "456"));
+        items.add(new CategoryData(R.drawable.cars, "Automovilismo", "342"));
+        items.add(new CategoryData(R.drawable.musica, "Musica en directo", "645"));
+        items.add(new CategoryData(R.drawable.astro, "Astronomía", "459"));
 
     }
 
@@ -76,7 +76,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     }
 
     @Override
-    public List<ModelData> getListOfParties() {
+    public List<CategoryData> getListOfParties() {
         return this.items;
     }
 

@@ -15,7 +15,7 @@ import java.util.List;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
-import es.ulpgc.eite.clean.mvp.sample.app.ModelData;
+import es.ulpgc.eite.clean.mvp.sample.app.CategoryData;
 
 public class CategoryView
         extends GenericActivity<Category.PresenterToView, Category.ViewToPresenter, CategoryPresenter>
@@ -23,28 +23,18 @@ public class CategoryView
 
     private Button buttonSearch;
     private Button buttonAdd;
-
-    // private TextView information;
     private TextView title;
-
     private ImageView image;
-
     private RecyclerView recycler;
     private LinearLayoutManager linearmanager;
     private CategoryAdapter adapter;
-    //private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager lManager;
-    private List<ModelData> items;
+    private List<CategoryData> items;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hangapp);
-
-//    ERROR el mediador ya trae la conexion con con el presemtador
-//    En tal caso se hace a través del mediador.
-//    CategoryPresenter hap = new CategoryPresenter();
-
 
         title = (TextView) findViewById(R.id.title);
         image = (ImageView) findViewById(R.id.image);
@@ -65,18 +55,6 @@ public class CategoryView
         linearmanager = new LinearLayoutManager(this);
         recycler.setLayoutManager(linearmanager);
 
-        /*
-        //Adapter por pedro
-        // Crear un nuevo adaptador
-        List<ModelData> parties = getPresenter().getListOfParties();
-        adapter = new CategoryAdapter(parties);
-        //al adaptador le pasamos el contenido de la lista
-        recycler.setAdapter(adapter);
-
-        */
-
-
-
 
         buttonSearch = (Button) findViewById(R.id.buttonSearch);
         buttonSearch.setOnClickListener(new View.OnClickListener() {
@@ -95,37 +73,17 @@ public class CategoryView
         });
 
 
-
-
-        /**
-         * Method that initialized MVP objects
-         * {@link super#onResume(Class, Object)} should always be called
-         */
     }
 
-
+    /**
+     * Method that initialized MVP objects
+     * {@link super#onResume(Class, Object)} should always be called
+     */
 
     @SuppressLint("MissingSuperCall")
     @Override
     protected void onResume() {
         super.onResume(CategoryPresenter.class, this);
-//    String[]parties=getPresenter().getParties();
-//    int[]images=getPresenter().getImages();
-//    list=(ListView)findViewById(R.id.list);
-//    ArrayAdapter<String> adaptder = new ArrayAdapter<String>(this,R.layout.content_filalista,R.id.content,parties);
-//    list.setAdapter(adaptder);
-
-
-
-/*
-
-        //Adapter por pedro
-        // Crear un nuevo adaptador
-        List<ModelData> parties = getPresenter().getListOfParties();
-        adapter = new CategoryAdapter(parties);
-        //al adaptador le pasamos el contenido de la lista
-        recycler.setAdapter(adapter);
-        */
     }
 
     ///////////////////////////////////////////////////////////////////////////////////
@@ -133,7 +91,7 @@ public class CategoryView
 
     @Override
 
-    public void settingAdapter(List<ModelData> parties) {
+    public void settingAdapter(List<CategoryData> parties) {
         adapter = new CategoryAdapter(parties);
         recycler.setAdapter(adapter);
     }
@@ -178,7 +136,7 @@ public class CategoryView
 
 class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
 
-    private List<ModelData> items;
+    private List<CategoryData> items;
 
     public static class CategoryViewHolder extends RecyclerView.ViewHolder {
         // Campos respectivos de un item
@@ -197,7 +155,7 @@ class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewH
         }
     }
 
-    public CategoryAdapter(List<ModelData> items) {
+    public CategoryAdapter(List<CategoryData> items) {
         this.items = items;
 
     }

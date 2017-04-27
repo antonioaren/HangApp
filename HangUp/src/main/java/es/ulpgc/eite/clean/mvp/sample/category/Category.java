@@ -8,7 +8,7 @@ import java.util.List;
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.Presenter;
-import es.ulpgc.eite.clean.mvp.sample.app.ModelData;
+import es.ulpgc.eite.clean.mvp.sample.app.CategoryData;
 
 public interface Category {
 
@@ -29,7 +29,7 @@ public interface Category {
         void onListItemClicked();
 
 
-        List<ModelData> getListOfParties();
+        List<CategoryData> getListOfParties();
     }
 
     /**
@@ -38,7 +38,7 @@ public interface Category {
     interface PresenterToView extends ContextView {
         void onCreate(Bundle savedInstanceState);
 
-        void settingAdapter(List<ModelData> parties);
+        void settingAdapter(List<CategoryData> parties);
 
         void finishScreen();
 
@@ -66,7 +66,7 @@ public interface Category {
         String getAddLabel();
 
 
-        List<ModelData> getListOfParties();
+        List<CategoryData> getListOfParties();
     }
 
     /**
@@ -75,7 +75,7 @@ public interface Category {
     interface ModelToPresenter {
 
 
-        List<ModelData> getListOfParties();
+        List<CategoryData> getListOfParties();
     }
 
 

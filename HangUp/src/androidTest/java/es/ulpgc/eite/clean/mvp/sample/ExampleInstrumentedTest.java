@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 import java.util.ArrayList;
 import java.util.List;
 
-import es.ulpgc.eite.clean.mvp.sample.category.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.app.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
 import es.ulpgc.eite.clean.mvp.sample.search.SearchModel;
 import es.ulpgc.eite.clean.mvp.sample.search.SearchPresenter;
