@@ -15,6 +15,7 @@ import java.util.List;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
+import es.ulpgc.eite.clean.mvp.sample.app.ModelData;
 
 public class CategoryView
         extends GenericActivity<Category.PresenterToView, Category.ViewToPresenter, CategoryPresenter>
@@ -33,7 +34,7 @@ public class CategoryView
     private CategoryAdapter adapter;
     //private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager lManager;
-    private List<CategoryData> items;
+    private List<ModelData> items;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -67,7 +68,7 @@ public class CategoryView
         /*
         //Adapter por pedro
         // Crear un nuevo adaptador
-        List<CategoryData> parties = getPresenter().getListOfParties();
+        List<ModelData> parties = getPresenter().getListOfParties();
         adapter = new CategoryAdapter(parties);
         //al adaptador le pasamos el contenido de la lista
         recycler.setAdapter(adapter);
@@ -120,7 +121,7 @@ public class CategoryView
 
         //Adapter por pedro
         // Crear un nuevo adaptador
-        List<CategoryData> parties = getPresenter().getListOfParties();
+        List<ModelData> parties = getPresenter().getListOfParties();
         adapter = new CategoryAdapter(parties);
         //al adaptador le pasamos el contenido de la lista
         recycler.setAdapter(adapter);
@@ -132,7 +133,7 @@ public class CategoryView
 
     @Override
 
-    public void settingAdapter(List<CategoryData> parties) {
+    public void settingAdapter(List<ModelData> parties) {
         adapter = new CategoryAdapter(parties);
         recycler.setAdapter(adapter);
     }
@@ -177,7 +178,7 @@ public class CategoryView
 
 class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
 
-    private List<CategoryData> items;
+    private List<ModelData> items;
 
     public static class CategoryViewHolder extends RecyclerView.ViewHolder {
         // Campos respectivos de un item
@@ -196,7 +197,7 @@ class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewH
         }
     }
 
-    public CategoryAdapter(List<CategoryData> items) {
+    public CategoryAdapter(List<ModelData> items) {
         this.items = items;
 
     }

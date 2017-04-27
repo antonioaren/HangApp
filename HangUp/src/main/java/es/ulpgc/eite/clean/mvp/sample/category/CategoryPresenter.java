@@ -9,6 +9,7 @@ import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
+import es.ulpgc.eite.clean.mvp.sample.app.ModelData;
 import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 
 public class CategoryPresenter
@@ -214,7 +215,7 @@ public class CategoryPresenter
   }
 
   @Override
-  public List<CategoryData> getListOfParties() {
+  public List<ModelData> getListOfParties() {
     return getModel().getListOfParties();
   }
 
