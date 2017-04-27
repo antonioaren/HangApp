@@ -209,7 +209,7 @@ class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewH
     //Encargado de crear los nuevos
 
     @Override
-    public CategoryViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {//i es la posición.
+    public CategoryViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {//i es la posición.
         LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
 
         View v = inflater.inflate(R.layout.category_card, viewGroup, false);
