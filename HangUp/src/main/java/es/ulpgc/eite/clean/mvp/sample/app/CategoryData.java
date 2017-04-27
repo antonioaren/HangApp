@@ -10,9 +10,10 @@ public class CategoryData {
     private int image;
     private String name;
     private String numberOfParticipants;
-    private List<InformationData> lugares;
+    private String details;
+//    private List<InformationData> lugares;
 
-    public CategoryData(int image, String name, String numberOfParticipants) {
+    public CategoryData(int image, String name, String numberOfParticipants, String details) {
         this.image = image;
         this.name = name;
         this.numberOfParticipants = numberOfParticipants;
@@ -30,7 +31,11 @@ public class CategoryData {
         return image;
     }
 
-    public List<InformationData> getLugares() {
-        return lugares;
+    public String getDetails() {
+        return details;
     }
+
+    //    public List<InformationData> getLugares() {
+//        return lugares;
+//    }
 }

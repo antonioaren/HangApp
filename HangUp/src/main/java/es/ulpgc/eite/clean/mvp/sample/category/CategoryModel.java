@@ -19,12 +19,12 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     public CategoryModel() {
 
-        items = new ArrayList<>();
-        items.add(new CategoryData(R.drawable.astro, "Fiestas Nocturnas", "230"));
-        items.add(new CategoryData(R.drawable.astro, "Charlas Ulpgc", "456"));
-        items.add(new CategoryData(R.drawable.astro, "Automovilismo", "342"));
-        items.add(new CategoryData(R.drawable.astro, "Musica en directo", "645"));
-        items.add(new CategoryData(R.drawable.astro, "Astronomía", "459"));
+        items = new ArrayList<CategoryData>();
+        items.add(new CategoryData(R.drawable.astro, "Fiestas Nocturnas", "230", "Prueba detalle Astro"));
+        items.add(new CategoryData(R.drawable.ulpgc, "Charlas Ulpgc", "456", "prueba detalle Ulpgc"));
+        items.add(new CategoryData(R.drawable.cars, "Automovilismo", "342", "prueba detalle Automovilismo"));
+        items.add(new CategoryData(R.drawable.musica, "Musica en directo", "645", "prueba detalle Musica en directo"));
+        items.add(new CategoryData(R.drawable.astro, "Astronomía", "459", "prueba detalle Astronomía"));
 
     }
 
@@ -41,13 +41,6 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         HangAppButtonAddLabel = "AddOne";
         HangAppButtonSearchLabel = "SearchOne";
         HangAppText = "Add";
-        items = new ArrayList<CategoryData>();
-        items.add(new CategoryData(R.drawable.astro, "Fiestas Nocturnas", "230"));
-        items.add(new CategoryData(R.drawable.ulpgc, "Charlas Ulpgc", "456"));
-        items.add(new CategoryData(R.drawable.cars, "Automovilismo", "342"));
-        items.add(new CategoryData(R.drawable.musica, "Musica en directo", "645"));
-        items.add(new CategoryData(R.drawable.astro, "Astronomía", "459"));
-
     }
 
     /**
