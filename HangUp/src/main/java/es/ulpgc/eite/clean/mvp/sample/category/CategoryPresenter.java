@@ -18,7 +18,7 @@ public class CategoryPresenter
 
 
   private boolean toolbarVisible;
-
+  private boolean buttonClicked;
   private boolean textVisible;
   private boolean imageVisibility;
   private boolean selectorsVisible;
@@ -37,6 +37,9 @@ public class CategoryPresenter
     setView(view);
     Log.d(TAG, "calling onCreate()");
 
+
+    // getView().settingAdapter(getModel().getListOfParties());
+
     Log.d(TAG, "calling startingMainScreen()");
     Mediator app = (Mediator) getView().getApplication();
     app.startingCategoryScreen(this);
@@ -51,16 +54,17 @@ public class CategoryPresenter
    */
   @Override
   public void onResume(Category.PresenterToView view) {
-      if (!isViewRunning()) {
-          setView(view);
-          Log.d(TAG, "calling onResume()");
+    setView(view);
+    Log.d(TAG, "calling onResume()");
 
-          if (configurationChangeOccurred()) {
-              getView().setAddLabel(getModel().getSearchLabel());
-              getView().setLabelSearch(getModel().getSearchLabel());
-          }
+
+    if (configurationChangeOccurred()) {
+      getView().setLabel(getModel().getSearchLabel());
+      getView().setLabel(getModel().getSearchLabel());
+
+      checkToolbarVisibility();
+      checkTextVisibility();
     }
-
 
   }
 
@@ -121,23 +125,21 @@ public class CategoryPresenter
     app.goToItemList(this);
   }
 
-    @Override
-    public List<CategoryData> getItems() {
-        return getModel().getItems();
-    }
 
-
-    ///////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////////
   // To Add //////////////////////////////////////////////////////////////////////
 
   @Override
   public void onScreenStarted() {
     Log.d(TAG, "calling onScreenStarted()");
     if (isViewRunning()) {
-      getView().setLabelSearch(getModel().getSearchLabel());
-      getView().setAddLabel(getModel().getAddLabel());
-        //getView().setItem(getModel().getItems());
+      getView().setLabel(getModel().getSearchLabel());
+      getView().setLabel(getModel().getAddLabel());
     }
+    checkToolbarVisibility();
+    checkTextVisibility();
+
+    getView().settingAdapter(getModel().getListOfParties());
   }
 
   @Override
@@ -189,6 +191,32 @@ public class CategoryPresenter
   }
 
   ///////////////////////////////////////////////////////////////////////////////////
+
+  private void checkToolbarVisibility() {
+    Log.d(TAG, "calling checkToolbarVisibility()");
+    if (isViewRunning()) {
+      if (!toolbarVisible) {
+        //  getView().hideToolbar();
+      }
+    }
+
+  }
+
+  private void checkTextVisibility() {
+    Log.d(TAG, "calling checkTextVisibility()");
+    if (isViewRunning()) {
+      if (!textVisible) {
+        getView().hideText();
+      } else {
+        getView().showText();
+      }
+    }
+  }
+
+  @Override
+  public List<CategoryData> getListOfParties() {
+    return getModel().getListOfParties();
+  }
 
 
 }

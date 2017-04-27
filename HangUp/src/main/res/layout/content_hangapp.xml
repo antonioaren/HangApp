@@ -1,60 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
-
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:visibility="visible">
 
+    <Space
+        android:layout_height="20dp"
+        android:layout_width="match_parent" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginTop="?attr/actionBarSize"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/title"
+            android:text="Wellcome"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorPrimaryDark"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorPrimaryDark"
-            android:padding="8dp"
-            android:text="Welcome"
-            android:textColor="@android:color/white"
-            android:textSize="20dp"/>
+            android:background="@color/colorPrimaryDark" />
+    </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="230dp"
+            android:layout_height="353dp"
             android:orientation="vertical">
 
-            <android.support.v7.widget.RecyclerView
-
-                android:id="@+id/recycler"
+            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_height="100dp"
+                android:id="@+id/image"
+                android:src="@drawable/disco" />
 
-                app:layoutManager="LinearLayoutManager"
-                tools:context="es.ulpgc.eite.clean.mvp.sample.category.CategoryView"
-                tools:listitem="@layout/categorycard"
-                >
-
-            </android.support.v7.widget.RecyclerView>
-
+            <android.support.v7.widget.RecyclerView
+                 android:id="@+id/recycler"
+                 android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:orientation="horizontal">
 
                 <Button
@@ -63,7 +53,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="top"
                     android:layout_weight="1"
-                    android:text="Search"/>
+                    android:text="Search" />
 
                 <Button
                     android:id="@+id/buttonAdd"
@@ -71,9 +61,12 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="top"
                     android:layout_weight="1"
-                    android:text="+AddOne"/>
+                    android:text="+AddOne" />
 
             </LinearLayout>
+
         </LinearLayout>
-    </LinearLayout>
-</LinearLayout>
+
+
+
+

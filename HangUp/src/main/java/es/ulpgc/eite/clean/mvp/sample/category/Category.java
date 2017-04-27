@@ -19,13 +19,16 @@ public interface Category {
      */
     interface ViewToPresenter extends Presenter<PresenterToView> {
 
+
         void onButtonSearchClicked();
 
         void onButtonAddClicked();
 
+
         void onListItemClicked();
 
-        List<CategoryData> getItems();
+
+        List<CategoryData> getListOfParties();
     }
 
     /**
@@ -34,13 +37,22 @@ public interface Category {
     interface PresenterToView extends ContextView {
         void onCreate(Bundle savedInstanceState);
 
+        void settingAdapter(List<CategoryData> parties);
+
         void finishScreen();
+
+        // void hideToolbar();
+        void hideText();
+
+        void showText();
+
+        void setText(String txt);
+
+        void setLabel(String txt);
 
         void setLabelSearch(String txt);
 
         void setAddLabel(String txt);
-
-        void setItem(List items);
     }
 
     /**
@@ -52,7 +64,8 @@ public interface Category {
 
         String getAddLabel();
 
-        List getItems();
+
+        List<CategoryData> getListOfParties();
     }
 
     /**
@@ -60,11 +73,13 @@ public interface Category {
      */
     interface ModelToPresenter {
 
+
+        List<CategoryData> getListOfParties();
     }
 
 
     ///////////////////////////////////////////////////////////////////////////////////
-    // Category To /////////////////////////////////////////////////////////////////////////
+    // Add To /////////////////////////////////////////////////////////////////////////
 
 
     interface CategoryTo {
@@ -80,7 +95,7 @@ public interface Category {
     }
 
     ///////////////////////////////////////////////////////////////////////////////////
-    // To Category /////////////////////////////////////////////////////////////////////////
+    // To Add /////////////////////////////////////////////////////////////////////////
 
     interface ToCategory {
 
