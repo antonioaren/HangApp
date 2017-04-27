@@ -2,7 +2,6 @@ package es.ulpgc.eite.clean.mvp.sample.category;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -64,12 +63,16 @@ public class CategoryView
 
         linearmanager = new LinearLayoutManager(this);
         recycler.setLayoutManager(linearmanager);
+
+        /*
         //Adapter por pedro
         // Crear un nuevo adaptador
         List<CategoryData> parties = getPresenter().getListOfParties();
         adapter = new CategoryAdapter(parties);
         //al adaptador le pasamos el contenido de la lista
         recycler.setAdapter(adapter);
+
+        */
 
 
 
@@ -110,10 +113,29 @@ public class CategoryView
 //    list=(ListView)findViewById(R.id.list);
 //    ArrayAdapter<String> adaptder = new ArrayAdapter<String>(this,R.layout.content_filalista,R.id.content,parties);
 //    list.setAdapter(adaptder);
+
+
+
+/*
+
+        //Adapter por pedro
+        // Crear un nuevo adaptador
+        List<CategoryData> parties = getPresenter().getListOfParties();
+        adapter = new CategoryAdapter(parties);
+        //al adaptador le pasamos el contenido de la lista
+        recycler.setAdapter(adapter);
+        */
     }
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Presenter To View /////////////////////////////////////////////////////////////
+
+    @Override
+
+    public void settingAdapter(List<CategoryData> parties) {
+        adapter = new CategoryAdapter(parties);
+        recycler.setAdapter(adapter);
+    }
 
     @Override
     public void finishScreen() {
@@ -160,14 +182,14 @@ class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewH
     public static class CategoryViewHolder extends RecyclerView.ViewHolder {
         // Campos respectivos de un item
 
-        public CardView cv;
+        /// public CardView cv;
         public ImageView image;
         public TextView title;
         public TextView number;
 
         public CategoryViewHolder(View v) {
             super(v);
-            cv = (CardView) v.findViewById(R.id.cv);
+            //cv = (CardView) v.findViewById(R.id.cv);
             image = (ImageView) v.findViewById(R.id.image);
             title = (TextView) v.findViewById(R.id.title);
             number = (TextView) v.findViewById(R.id.numberOfPersons);

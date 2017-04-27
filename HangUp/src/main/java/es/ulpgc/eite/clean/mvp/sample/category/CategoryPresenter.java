@@ -37,6 +37,9 @@ public class CategoryPresenter
     setView(view);
     Log.d(TAG, "calling onCreate()");
 
+
+    // getView().settingAdapter(getModel().getListOfParties());
+
     Log.d(TAG, "calling startingMainScreen()");
     Mediator app = (Mediator) getView().getApplication();
     app.startingCategoryScreen(this);
@@ -135,6 +138,8 @@ public class CategoryPresenter
     }
     checkToolbarVisibility();
     checkTextVisibility();
+
+    getView().settingAdapter(getModel().getListOfParties());
   }
 
   @Override

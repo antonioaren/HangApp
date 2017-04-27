@@ -37,6 +37,8 @@ public interface Category {
     interface PresenterToView extends ContextView {
         void onCreate(Bundle savedInstanceState);
 
+        void settingAdapter(List<CategoryData> parties);
+
         void finishScreen();
 
         // void hideToolbar();
