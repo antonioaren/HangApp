@@ -24,9 +24,10 @@ public class InformationView
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_detail);
-        Story = (TextView) findViewById(R.id.Story);
+
+        /*Story = (TextView) findViewById(R.id.Story);
         Date = (TextView) findViewById(R.id.Date);
-        Hour = (TextView) findViewById(R.id.Hour);
+        Hour = (TextView) findViewById(R.id.Hour);*/
 
 
     }
