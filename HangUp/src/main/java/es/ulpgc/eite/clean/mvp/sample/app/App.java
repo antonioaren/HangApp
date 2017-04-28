@@ -71,9 +71,10 @@ public class App extends Application implements Mediator, Navigator {
     @Override
     public void startingInformationScreen(Information.ToInformation presenter) {
         if (CategoryToInformation != null) {
-            presenter.setItem(CategoryToInformation.ItemSelected);
 
+            presenter.setItem(CategoryToInformation.ItemSelected);
         }
+        CategoryToInformation = null;
         presenter.onScreenStarted();
     }
 

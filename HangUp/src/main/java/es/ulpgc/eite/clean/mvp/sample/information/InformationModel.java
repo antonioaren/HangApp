@@ -32,6 +32,5 @@ public class InformationModel extends GenericModel<Information.ModelToPresenter>
     @Override
     public void setItem(CategoryData itemSelected) {
         Item = itemSelected;
-
     }
 }

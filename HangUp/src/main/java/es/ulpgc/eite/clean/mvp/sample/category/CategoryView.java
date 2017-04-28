@@ -7,7 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -154,47 +153,42 @@ public class CategoryView
             return new CategoryViewHolder(v);
         }
 
-        //Encargado de actualizar los datos de un ViewHolder ya existente.
         @Override
         public void onBindViewHolder(final CategoryViewHolder holder, int position) {
+            holder.item = items.get(position);
             holder.image.setImageResource(items.get(position).getImage());
             holder.title.setText(items.get(position).getName());
             holder.number.setText(items.get(position).getNumberOfParticipants());
-            holder.view.setOnClickListener(new View.OnClickListener() {
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     getPresenter().onItemClicked(holder.item);
                 }
             });
-
         }
 
-        //Necesario hacer el override de este metodo
         @Override
         public void onAttachedToRecyclerView(RecyclerView recyclerView) {
             super.onAttachedToRecyclerView(recyclerView);
         }
 
         public class CategoryViewHolder extends RecyclerView.ViewHolder {
+            public final View itemView;
 
             public ImageView image;
             public TextView title;
             public TextView number;
-            public final View view;
-
             public CategoryData item;
 
             public CategoryViewHolder(View v) {
                 super(v);
-                view = v;
+                itemView = v;
+
                 image = (ImageView) v.findViewById(R.id.image);
                 title = (TextView) v.findViewById(R.id.title);
                 number = (TextView) v.findViewById(R.id.numberOfPersons);
             }
         }
-
-
-
     }
 }
 

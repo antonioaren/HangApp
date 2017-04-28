@@ -39,7 +39,10 @@ public class InformationPresenter extends GenericPresenter<Information.Presenter
 
     @Override
     public void onScreenStarted() {
-
+        if (isViewRunning()) {
+            CategoryData item = getModel().getItem();
+            getView().setText(item.getDetails());
+        }
     }
 
     @Override

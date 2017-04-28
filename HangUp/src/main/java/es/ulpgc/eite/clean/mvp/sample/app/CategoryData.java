@@ -11,12 +11,12 @@ public class CategoryData {
     private String name;
     private String numberOfParticipants;
     private String details;
-//    private List<InformationData> lugares;
 
     public CategoryData(int image, String name, String numberOfParticipants, String details) {
         this.image = image;
         this.name = name;
         this.numberOfParticipants = numberOfParticipants;
+        this.details = details;
     }
 
     public String getName() {
@@ -35,7 +35,5 @@ public class CategoryData {
         return details;
     }
 
-    //    public List<InformationData> getLugares() {
-//        return lugares;
-//    }
+
 }

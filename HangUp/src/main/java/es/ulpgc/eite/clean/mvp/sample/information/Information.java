@@ -9,6 +9,7 @@ import es.ulpgc.eite.clean.mvp.sample.app.CategoryData;
 
 public interface Information {
     public interface PresenterToView extends ContextView {
+        void setText(String details);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
