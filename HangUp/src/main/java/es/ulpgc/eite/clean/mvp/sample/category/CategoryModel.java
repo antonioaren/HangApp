@@ -34,29 +34,29 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         participants = new int[]{randomAssistance1.nextInt(2001), randomAssistance2.nextInt(2001), randomAssistance3.nextInt(2001), randomAssistance4.nextInt(2001), randomAssistance5.nextInt(2001)};
 
         Disco = new ArrayList<InformationData>();
-        Disco.add(new InformationData(R.drawable.disco, "Fiestas Nocturnas", String.valueOf(participants), "Prueba detalle Astro"));
+        Disco.add(new InformationData(R.drawable.disco, "Fiestas Nocturnas", String.valueOf(getParticipantsAt(0)), "Prueba detalle Astro"));
 
         Ulpgc = new ArrayList<InformationData>();
-        Ulpgc.add(new InformationData(R.drawable.ulpgc, "Fiestas Nocturnas", String.valueOf(participants), "Prueba detalle Astro"));
+        Ulpgc.add(new InformationData(R.drawable.ulpgc, "Fiestas Nocturnas", String.valueOf(getParticipantsAt(1)), "Prueba detalle Astro"));
 
         Cars = new ArrayList<InformationData>();
-        Cars.add(new InformationData(R.drawable.cars, "Fiestas Nocturnas", String.valueOf(participants), "Prueba detalle Astro"));
+        Cars.add(new InformationData(R.drawable.cars, "Fiestas Nocturnas", String.valueOf(getParticipantsAt(2)), "Prueba detalle Astro"));
 
         Musica = new ArrayList<InformationData>();
-        Musica.add(new InformationData(R.drawable.musica, "Fiestas Nocturnas", String.valueOf(participants), "Prueba detalle Astro"));
+        Musica.add(new InformationData(R.drawable.musica, "Fiestas Nocturnas", String.valueOf(getParticipantsAt(3)), "Prueba detalle Astro"));
 
         Astro = new ArrayList<InformationData>();
-        Astro.add(new InformationData(R.drawable.astro, "Fiestas Nocturnas", String.valueOf(participants), "Prueba detalle Astro"));
+        Astro.add(new InformationData(R.drawable.astro, "Fiestas Nocturnas", String.valueOf(getParticipantsAt(4)), "Prueba detalle Astro"));
 
     }
 
     private void LoadCategory() {
         items = new ArrayList<CategoryData>();
-        items.add(new CategoryData(R.drawable.disco, "Fiestas Nocturnas", String.valueOf(participants), getDisco(), "Detalle Disco"));
-        items.add(new CategoryData(R.drawable.ulpgc, "Charlas Ulpgc", String.valueOf(participants), getUlpgc(), "Detalle Ulpgc"));
-        items.add(new CategoryData(R.drawable.cars, "Automovilismo", String.valueOf(participants), getCars(), "Detalle Cars"));
-        items.add(new CategoryData(R.drawable.musica, "Musica en directo", String.valueOf(participants), getMusica(), "Detalle Musica"));
-        items.add(new CategoryData(R.drawable.astro, "Astronomía", String.valueOf(participants), getAstro(), "Detalle Astro"));
+        items.add(new CategoryData(R.drawable.disco, "Fiestas Nocturnas", String.valueOf(getParticipantsAt(0)), getDisco(), "Detalle Disco La fiesta es de 12 a 5"));
+        items.add(new CategoryData(R.drawable.ulpgc, "Charlas Ulpgc", String.valueOf(getParticipantsAt(1)), getUlpgc(), "Detalle Ulpgc"));
+        items.add(new CategoryData(R.drawable.cars, "Automovilismo", String.valueOf(getParticipantsAt(2)), getCars(), "Detalle Cars"));
+        items.add(new CategoryData(R.drawable.musica, "Musica en directo", String.valueOf(getParticipantsAt(3)), getMusica(), "Detalle Musica"));
+        items.add(new CategoryData(R.drawable.astro, "Astronomía", String.valueOf(getParticipantsAt(4)), getAstro(), "Detalle Astro"));
     }
 
     /**
