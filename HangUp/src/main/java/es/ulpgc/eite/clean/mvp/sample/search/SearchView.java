@@ -6,6 +6,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.EditText;
@@ -78,9 +79,9 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
         super.onResume(SearchPresenter.class, this);
         String[] categories = getPresenter().getCategories();
 
-//        listCategories = (ListView) findViewById(R.id.listCategories);
-//        ArrayAdapter<String> adaptder = new ArrayAdapter<String>(this, R.layout.content_filalista, R.id.content, categories);
-//        listCategories.setAdapter(adaptder);
+        listCategories = (ListView) findViewById(R.id.listCategories);
+        ArrayAdapter<String> adaptder = new ArrayAdapter<String>(this, R.layout.content_filalista, R.id.content, categories);
+        listCategories.setAdapter(adaptder);
     }
 
     @Override
