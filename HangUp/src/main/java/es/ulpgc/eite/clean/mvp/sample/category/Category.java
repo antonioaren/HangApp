@@ -90,6 +90,8 @@ public interface Category {
 
         void destroyView();
 
+        CategoryData getSelectedItem();
+
         boolean isTextVisible();
 
         boolean isSelectorsVisible();

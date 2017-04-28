@@ -22,9 +22,10 @@ public class App extends Application implements Mediator, Navigator {
     private HangAppState toHangAppState;
     private SearchState toSearchState, HangappToSearch;
     private AddState toAddState, addToState;
+    private InformationState CategoryToInformation;
 
     private PartiesByCategoryState partiesState;
-    private ProcessedInformationState toprocessedInformationState, processedInformationToState;
+    private InformationState toprocessedInformationState, processedInformationToState;
 
     @Override
     public void onCreate() {
@@ -59,7 +60,7 @@ public class App extends Application implements Mediator, Navigator {
     }
 
     @Override
-    public void startingCategoryScreen(es.ulpgc.eite.clean.mvp.sample.category.Category.ToCategory presenter) {
+    public void startingCategoryScreen(Category.ToCategory presenter) {
         if (toHangAppState != null) {
             presenter.setTextVisibility(toHangAppState.textVisibility);
             presenter.setImageVisibility(toHangAppState.imageVisibility);
@@ -69,6 +70,9 @@ public class App extends Application implements Mediator, Navigator {
 
     @Override
     public void startingInformationScreen(Information.ToInformation presenter) {
+        if (CategoryToInformation != null) {
+
+        }
         presenter.onScreenStarted();
     }
 
@@ -76,14 +80,6 @@ public class App extends Application implements Mediator, Navigator {
     public void startingDetailScreen(DetailPresenter Presenter) {
 
     }
-
-
-//  @Override
-//public void startingInformatioScreen(){
-//  if(partiesState!=null){
-//    presenter.setListVisibility(partiesState.listVisibility);
-//  }
-// presenter.onScreenStarted();
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Navigator /////////////////////////////////////////////////////////////////////
@@ -162,6 +158,9 @@ public class App extends Application implements Mediator, Navigator {
 
     @Override
     public void goToInformationScreen(Category.CategoryTo presenter) {
+        CategoryToInformation = new InformationState();
+        CategoryToInformation.ItemSelected = presenter.getSelectedItem();
+
         Context view = presenter.getManagedContext();
         if (view != null) {
             view.startActivity(new Intent(view, InformationView.class));
@@ -173,33 +172,31 @@ public class App extends Application implements Mediator, Navigator {
     // State /////////////////////////////////////////////////////////////////////////
 
 
-    class HangAppState {
+    private class HangAppState {
         boolean textVisibility;
         boolean imageVisibility;
     }
 
-    class SearchState {
+    private class SearchState {
         boolean textVisibility;
 
     }
 
-    class AddState {
+    private class AddState {
         boolean textVisibility;
         boolean selectorsVisibility;
     }
 
 
-    class ProcessedInformationState {
-        boolean informationVisibility;
-        boolean imageVisibility;
-        boolean containsParticipants;
+    private class InformationState {
+        public CategoryData ItemSelected;
     }
 
-    class ListState {
+    private class ListState {
         boolean textVisility;
     }
 
-    class PartiesByCategoryState {
+    private class PartiesByCategoryState {
         boolean listVisibility;
     }
 }
