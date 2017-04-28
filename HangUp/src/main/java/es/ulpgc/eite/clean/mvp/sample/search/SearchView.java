@@ -2,16 +2,14 @@ package es.ulpgc.eite.clean.mvp.sample.search;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
@@ -30,11 +28,12 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
     private TextView textLocation;
     private EditText editTextLocation;
     private TextView categories;
-    private ListView listCategories;
+
     private TextView textDate;
     private CalendarView calendar;
     private Button buttonSearch;
     private Toolbar t;
+    private RecyclerView recycler;
     // ActionBar ab;
 
     @Override
@@ -52,14 +51,7 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
         textLocation=(TextView)findViewById(R.id.textLocation);
         editTextLocation=(EditText)findViewById(R.id.editTextLocation);
         categories=(TextView)findViewById(R.id.textCategories);
-        listCategories=(ListView)findViewById(R.id.listCategories);
-        onResume();
-        listCategories.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                getPresenter().onItemListClicked();
-            }
-        });
+
         textDate=(TextView)findViewById(R.id.textDate);
         calendar=(CalendarView)findViewById(R.id.calendarView);
         buttonSearch=(Button)findViewById(R.id.buttonSearch);
@@ -70,6 +62,7 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
 
             }
         });
+        recycler = (RecyclerView) findViewById(R.id.recycler);
     }
 
 
@@ -79,9 +72,7 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
         super.onResume(SearchPresenter.class, this);
         String[] categories = getPresenter().getCategories();
 
-        listCategories = (ListView) findViewById(R.id.listCategories);
-        ArrayAdapter<String> adaptder = new ArrayAdapter<String>(this, R.layout.content_filalista, R.id.content, categories);
-        listCategories.setAdapter(adaptder);
+
     }
 
     @Override

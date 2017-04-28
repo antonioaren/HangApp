@@ -104,7 +104,7 @@ public class CategoryView
 
     @Override
     public void hideText() {
-        title.setVisibility(View.GONE);
+       
     }
 
     @Override

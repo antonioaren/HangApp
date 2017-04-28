@@ -20,7 +20,7 @@
 
         <TextView
             android:id="@+id/title"
-            android:text="Wellcome"
+            android:text="Wellcome to HangApp, here you have the available parties"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/colorPrimaryDark" />
@@ -32,15 +32,15 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="100dp"
                 android:id="@+id/image"
-                android:src="@drawable/disco" />
+                android:src="@drawable/wellcome" />
 
             <android.support.v7.widget.RecyclerView
                  android:id="@+id/recycler"
                  android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="match_parent" />
         </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
