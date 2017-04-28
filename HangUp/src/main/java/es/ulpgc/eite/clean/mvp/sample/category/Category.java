@@ -80,6 +80,8 @@ public interface Category {
         List<InformationData> getMusica();
 
         List<InformationData> getAstro();
+
+        int getParticipantsAt(int i);
     }
 
     /**

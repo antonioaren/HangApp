@@ -23,11 +23,15 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     private List<InformationData> Cars;
     private List<InformationData> Musica;
     private List<InformationData> Astro;
-    private Random randomAssistance;
-    private int participants;
+    private Random randomAssistance1, randomAssistance2, randomAssistance3, randomAssistance4, randomAssistance5;
+    private int[] participants;
     public CategoryModel() {
-        randomAssistance = new Random();
-        participants = randomAssistance.nextInt(2001);
+        randomAssistance1 = new Random();
+        randomAssistance2 = new Random();
+        randomAssistance3 = new Random();
+        randomAssistance4 = new Random();
+        randomAssistance5 = new Random();
+        participants = new int[]{randomAssistance1.nextInt(2001), randomAssistance2.nextInt(2001), randomAssistance3.nextInt(2001), randomAssistance4.nextInt(2001), randomAssistance5.nextInt(2001)};
 
         Disco = new ArrayList<InformationData>();
         Disco.add(new InformationData(R.drawable.disco, "Fiestas Nocturnas", String.valueOf(participants), "Prueba detalle Astro"));
@@ -126,6 +130,11 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     @Override
     public List<InformationData> getAstro() {
         return Astro;
+    }
+
+    @Override
+    public int getParticipantsAt(int i) {
+        return participants[i];
     }
 }
 

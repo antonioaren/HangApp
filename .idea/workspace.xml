@@ -11,19 +11,15 @@
   <component name="ChangeListManager">
     <list id="6a18f264-77ba-466d-b7a7-0d52df6a7436" name="Default" comment="Merge remote-tracking branch 'origin/eleonoraBack'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/3.3/taskArtifacts/fileHashes.bin&#10;#&#9;.gradle/3.3/taskArtifacts/fileSnapshots.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.lock&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/App.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Mediator.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangApp.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangAppModel.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/Information.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationPresenter.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchView.java&#10;#&#9;HangUp/src/main/res/layout/activity_procesed_search.xml&#10;#&#9;HangUp/src/main/res/layout/content_hangapp.xml&#10;#&#9;HangUp/src/main/res/layout/content_procesed_search.xml&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Navigator.java&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/hangapp/HangAppView.java&#10;#&#9;HelloApp/src/main/res/layout/activity_filalista.xml&#10;#&#9;HelloApp/src/main/res/layout/activity_procesed_search.xml&#10;" />
     <list id="3d65f56d-93c6-4520-9708-4d2cd763dfec" name="Failed commit: Default" comment="Cambios Merges.&#10;" />
-    <list default="true" id="72c31ec8-3076-4782-a780-40cb8c2c6568" name="Failed commit: Default (2)" comment="simulando un numero aleatorio de participantes en el modelo">
+    <list default="true" id="72c31ec8-3076-4782-a780-40cb8c2c6568" name="Failed commit: Default (2)" comment="cambiando el numero de participantes en los items">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_HangUp_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_HangUp_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_HangUp_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_HangUp_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_HangUp_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_HangUp_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/HangUp.iml" afterPath="$PROJECT_DIR$/HangUp/HangUp.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryView.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
     </list>
     <ignored path="HangApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -105,11 +101,13 @@
       <file leaf-file-name="CategoryModel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="54" column="95" selection-start-line="54" selection-start-column="95" selection-end-line="54" selection-end-column="95" />
+            <state relative-caret-position="297">
+              <caret line="134" column="4" selection-start-line="134" selection-start-column="4" selection-end-line="134" selection-end-column="4" />
               <folding>
                 <element signature="docComment;method#onCreate#0;class#CategoryModel#0" expanded="false" />
                 <element signature="docComment;method#onDestroy#0;class#CategoryModel#0" expanded="false" />
+                <element signature="e#4892#4893#0" expanded="true" />
+                <element signature="e#4922#4923#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -3084,7 +3082,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493402754366</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="cambiando el numero de participantes en los items">
+      <created>1493403317967</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1493403317967</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -3189,7 +3194,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Checked Layouts." />
     <MESSAGE value="Merge my own branch to Master (all Local) and then pushed to update repository (remote)." />
     <MESSAGE value="checking attributes at the presenter." />
     <MESSAGE value="Cleaning code and tidy up all code. Adapter have to be changed for Card View" />
@@ -3214,7 +3218,8 @@
     <MESSAGE value="Pasa al detalle. Añadiendo el productoData" />
     <MESSAGE value="Funciona detalle texto. Empezando a implementar Database." />
     <MESSAGE value="simulando un numero aleatorio de participantes en el modelo" />
-    <option name="LAST_COMMIT_MESSAGE" value="simulando un numero aleatorio de participantes en el modelo" />
+    <MESSAGE value="cambiando el numero de participantes en los items" />
+    <option name="LAST_COMMIT_MESSAGE" value="cambiando el numero de participantes en los items" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -3446,6 +3451,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="33" column="12" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="12" />
+          <folding>
+            <element signature="docComment;class#ViewToPresenter#0;class#Category#0" expanded="false" />
+            <element signature="docComment;class#PresenterToView#0;class#Category#0" expanded="false" />
+            <element signature="docComment;class#PresenterToModel#0;class#Category#0" expanded="false" />
+            <element signature="docComment;class#ModelToPresenter#0;class#Category#0" expanded="false" />
+            <element signature="class#CategoryTo#0;class#Category#0" expanded="false" />
+            <element signature="class#ToCategory#0;class#Category#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3627,11 +3640,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="54" column="95" selection-start-line="54" selection-start-column="95" selection-end-line="54" selection-end-column="95" />
+        <state relative-caret-position="297">
+          <caret line="134" column="4" selection-start-line="134" selection-start-column="4" selection-end-line="134" selection-end-column="4" />
           <folding>
             <element signature="docComment;method#onCreate#0;class#CategoryModel#0" expanded="false" />
             <element signature="docComment;method#onDestroy#0;class#CategoryModel#0" expanded="false" />
+            <element signature="e#4892#4893#0" expanded="true" />
+            <element signature="e#4922#4923#0" expanded="true" />
           </folding>
         </state>
       </provider>
