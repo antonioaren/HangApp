@@ -2,31 +2,13 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="/Users/antonioaren/.android/build-cache/4fe9ca800b99d1761bb0b4e84958fd7af7af774c/output/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\eleonora\.android\build-cache\468799458b26006ab207dd80d7b0d3deaea9f96b\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="993e7d96c7c59ca07d8ae66165792c3987296dc0">
-        <dex dex="/Users/antonioaren/Documents/ProyectosDa/HangApp/HangUp/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b384fd719f59d7ebaac96e6c4bdc440e0e4b7291/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/antonioaren/Documents/ProyectosDa/HangApp/HangUp/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
-        <dex dex="/Users/antonioaren/Documents/ProyectosDa/HangApp/HangUp/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_70214ed32c1f1ea921bf7b323b25963799a99190/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/antonioaren/Documents/ProyectosDa/HangApp/HangUp/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="9a8edabad4ba51fe171bb852fedb40d62e3b4f43">
-        <dex dex="/Users/antonioaren/Documents/ProyectosDa/HangApp/HangUp/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_e863e543937d912498675ed1a1e0af5d8d5672e5/classes.dex" />
+        <dex dex="C:\Users\eleonora\Desktop\project1\HangApp\HangUp\build\intermediates\pre-dexed\debug\classes_fdde82dd385d78cf6ea872cc6802ef92ccbf6e5b.jar" />
     </item>
 
 </items>

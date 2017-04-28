@@ -48,11 +48,11 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     private void LoadCategory() {
         items = new ArrayList<CategoryData>();
-        items.add(new CategoryData(R.drawable.disco, "Fiestas Nocturnas", "230", getDisco(), "Detalle Disco"));
-        items.add(new CategoryData(R.drawable.ulpgc, "Charlas Ulpgc", "456", getUlpgc(), "Detalle Ulpgc"));
-        items.add(new CategoryData(R.drawable.cars, "Automovilismo", "342", getCars(), "Detalle Cars"));
-        items.add(new CategoryData(R.drawable.musica, "Musica en directo", "645", getMusica(), "Detalle Musica"));
-        items.add(new CategoryData(R.drawable.astro, "Astronomía", "459", getAstro(), "Detalle Astro"));
+        items.add(new CategoryData(R.drawable.disco, "Fiestas Nocturnas", String.valueOf(participants), getDisco(), "Detalle Disco"));
+        items.add(new CategoryData(R.drawable.ulpgc, "Charlas Ulpgc", String.valueOf(participants), getUlpgc(), "Detalle Ulpgc"));
+        items.add(new CategoryData(R.drawable.cars, "Automovilismo", String.valueOf(participants), getCars(), "Detalle Cars"));
+        items.add(new CategoryData(R.drawable.musica, "Musica en directo", String.valueOf(participants), getMusica(), "Detalle Musica"));
+        items.add(new CategoryData(R.drawable.astro, "Astronomía", String.valueOf(participants), getAstro(), "Detalle Astro"));
     }
 
     /**
