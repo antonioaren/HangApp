@@ -8,10 +8,12 @@ import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
  * Created by alumno on 31/03/2017.
  */
 
-public class InformationPresenter extends GenericPresenter<Information.PresenterToView, Information.PresenterToModel,
+public class InformationPresenter
+        extends GenericPresenter<Information.PresenterToView, Information.PresenterToModel,
         Information.ModelToPresenter, InformationModel>
         implements Information.ViewToPresenter, Information.ModelToPresenter, Information.ToInformation
         , Information.InformationTo {
+
     @Override
     public void onCreate(Information.PresenterToView view) {
         super.onCreate(InformationModel.class, this);
@@ -41,7 +43,7 @@ public class InformationPresenter extends GenericPresenter<Information.Presenter
     public void onScreenStarted() {
         if (isViewRunning()) {
             CategoryData item = getModel().getItem();
-            getView().setText(item.getDetails());
+            getView().setText(item.getDetalle());
         }
     }
 

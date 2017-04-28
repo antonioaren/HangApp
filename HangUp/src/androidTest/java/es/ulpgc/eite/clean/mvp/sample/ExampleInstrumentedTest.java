@@ -46,16 +46,4 @@ public class ExampleInstrumentedTest {
     assertArrayEquals(categories,searchpr.getCategories());
   }
 
-  @Test
-  public void testgetParties() {
-    List<CategoryData> c = new ArrayList<CategoryData>();
-    c.add(new CategoryData(R.drawable.astro, "Fiestas Nocturnas", "230"));
-    c.add(new CategoryData(R.drawable.astro, "Charlas Ulpgc", "456"));
-    c.add(new CategoryData(R.drawable.astro, "Automovilismo", "342"));
-    c.add(new CategoryData(R.drawable.astro, "Musica en directo", "645"));
-    c.add(new CategoryData(R.drawable.astro, "Astronomía", "459"));
-
-
-    assertEquals(null, cm.getListOfParties());
-  }
 }

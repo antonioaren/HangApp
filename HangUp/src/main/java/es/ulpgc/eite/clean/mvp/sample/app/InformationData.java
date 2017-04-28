@@ -7,14 +7,15 @@ package es.ulpgc.eite.clean.mvp.sample.app;
 public class InformationData {
     private int image;
     private String name;
-    private String Descripción;
     private String numberOfParticipants;
+    private String Details;
 
 
-    public InformationData(int image, String name, String numberOfParticipants) {
+    public InformationData(int image, String name, String numberOfParticipants, String details) {
         this.image = image;
         this.name = name;
         this.numberOfParticipants = numberOfParticipants;
+        this.Details = details;
     }
 
     public String getName() {
@@ -29,7 +30,7 @@ public class InformationData {
         return image;
     }
 
-    public String getDescripción() {
-        return Descripción;
+    public String getDetails() {
+        return Details;
     }
 }

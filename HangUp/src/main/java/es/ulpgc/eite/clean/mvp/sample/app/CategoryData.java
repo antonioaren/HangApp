@@ -10,13 +10,17 @@ public class CategoryData {
     private int image;
     private String name;
     private String numberOfParticipants;
-    private String details;
+    private String Detalle;
 
-    public CategoryData(int image, String name, String numberOfParticipants, String details) {
+    private List<InformationData> ItemInfo;
+
+    public CategoryData(int image, String name, String numberOfParticipants, List<InformationData> item,
+                        String details) {
         this.image = image;
         this.name = name;
         this.numberOfParticipants = numberOfParticipants;
-        this.details = details;
+        this.ItemInfo = item;
+        this.Detalle = details;
     }
 
     public String getName() {
@@ -31,9 +35,11 @@ public class CategoryData {
         return image;
     }
 
-    public String getDetails() {
-        return details;
+    public String getDetalle() {
+        return Detalle;
     }
 
-
+    public List<InformationData> getItemInfo() {
+        return ItemInfo;
+    }
 }

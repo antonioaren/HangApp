@@ -9,6 +9,7 @@ import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.Presenter;
 import es.ulpgc.eite.clean.mvp.sample.app.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.app.InformationData;
 
 public interface Category {
 
@@ -68,7 +69,17 @@ public interface Category {
         String getAddLabel();
 
 
-        List<CategoryData> getListOfParties();
+        List<CategoryData> getListCategory();
+
+        List<InformationData> getDisco();
+
+        List<InformationData> getUlpgc();
+
+        List<InformationData> getCars();
+
+        List<InformationData> getMusica();
+
+        List<InformationData> getAstro();
     }
 
     /**
