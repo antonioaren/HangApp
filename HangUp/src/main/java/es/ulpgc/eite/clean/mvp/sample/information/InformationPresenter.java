@@ -43,7 +43,7 @@ public class InformationPresenter
     public void onScreenStarted() {
         if (isViewRunning()) {
             CategoryData item = getModel().getItem();
-            getView().setText(item.getDetalle());
+            getView().setText(item.getDetalle(), item.getStory(), item.getDate(), item.getHour());
         }
     }
 
