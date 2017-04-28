@@ -8,14 +8,17 @@ public class InformationData {
     private int image;
     private String name;
     private String numberOfParticipants;
-    private String Details;
+    private String Details, story, date, hour;
 
 
-    public InformationData(int image, String name, String numberOfParticipants, String details) {
+    public InformationData(int image, String name, String numberOfParticipants, String details, String story, String date, String hour) {
         this.image = image;
         this.name = name;
         this.numberOfParticipants = numberOfParticipants;
         this.Details = details;
+        this.story = story;
+        this.date = date;
+        this.hour = hour;
     }
 
     public String getName() {
@@ -32,5 +35,17 @@ public class InformationData {
 
     public String getDetails() {
         return Details;
+    }
+
+    public String getStory() {
+        return story;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public String getHour() {
+        return hour;
     }
 }
