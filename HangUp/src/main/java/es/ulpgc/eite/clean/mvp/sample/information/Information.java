@@ -12,6 +12,8 @@ public interface Information {
 
 
         void setText(String details, String StoryDescription, String dateDescription, String hourDescription);
+
+
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
