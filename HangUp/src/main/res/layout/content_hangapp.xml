@@ -6,37 +6,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:visibility="visible">
+    android:visibility="visible"
+    android:weightSum="1">
 
     <Space
-        android:layout_height="20dp"
+        android:layout_height="35dp"
         android:layout_width="match_parent" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="?attr/actionBarSize"
-        android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/title"
-            android:text="Wellcome to HangApp, here you have the available parties"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorPrimaryDark" />
-    </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="353dp"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1.02">
 
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:id="@+id/image"
                 android:src="@drawable/wellcome" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="?attr/actionBarSize"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/title"
+                    android:text=" Here you have the available parties"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark" />
+            </LinearLayout>
             <android.support.v7.widget.RecyclerView
                  android:id="@+id/recycler"
                  android:layout_width="match_parent"
