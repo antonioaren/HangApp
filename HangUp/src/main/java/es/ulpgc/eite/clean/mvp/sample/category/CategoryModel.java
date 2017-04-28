@@ -2,6 +2,7 @@ package es.ulpgc.eite.clean.mvp.sample.category;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.R;
@@ -22,25 +23,26 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     private List<InformationData> Cars;
     private List<InformationData> Musica;
     private List<InformationData> Astro;
-
-
+    private Random randomAssistance;
+    private int participants;
     public CategoryModel() {
-
+        randomAssistance = new Random();
+        participants = randomAssistance.nextInt(2001);
 
         Disco = new ArrayList<InformationData>();
-        Disco.add(new InformationData(R.drawable.disco, "Fiestas Nocturnas", "230", "Prueba detalle Astro"));
+        Disco.add(new InformationData(R.drawable.disco, "Fiestas Nocturnas", String.valueOf(participants), "Prueba detalle Astro"));
 
         Ulpgc = new ArrayList<InformationData>();
-        Ulpgc.add(new InformationData(R.drawable.ulpgc, "Fiestas Nocturnas", "230", "Prueba detalle Astro"));
+        Ulpgc.add(new InformationData(R.drawable.ulpgc, "Fiestas Nocturnas", String.valueOf(participants), "Prueba detalle Astro"));
 
         Cars = new ArrayList<InformationData>();
-        Cars.add(new InformationData(R.drawable.cars, "Fiestas Nocturnas", "230", "Prueba detalle Astro"));
+        Cars.add(new InformationData(R.drawable.cars, "Fiestas Nocturnas", String.valueOf(participants), "Prueba detalle Astro"));
 
         Musica = new ArrayList<InformationData>();
-        Musica.add(new InformationData(R.drawable.musica, "Fiestas Nocturnas", "230", "Prueba detalle Astro"));
+        Musica.add(new InformationData(R.drawable.musica, "Fiestas Nocturnas", String.valueOf(participants), "Prueba detalle Astro"));
 
         Astro = new ArrayList<InformationData>();
-        Astro.add(new InformationData(R.drawable.astro, "Fiestas Nocturnas", "230", "Prueba detalle Astro"));
+        Astro.add(new InformationData(R.drawable.astro, "Fiestas Nocturnas", String.valueOf(participants), "Prueba detalle Astro"));
 
     }
 
