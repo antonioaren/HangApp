@@ -1,6 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.information;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
+import es.ulpgc.eite.clean.mvp.sample.app.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 
 /**
@@ -39,5 +40,10 @@ public class InformationPresenter extends GenericPresenter<Information.Presenter
     @Override
     public void onScreenStarted() {
 
+    }
+
+    @Override
+    public void setItem(CategoryData itemSelected) {
+        getModel().setItem(itemSelected);
     }
 }

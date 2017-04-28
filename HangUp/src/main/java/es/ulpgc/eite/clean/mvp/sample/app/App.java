@@ -19,7 +19,7 @@ import es.ulpgc.eite.clean.mvp.sample.search.SearchView;
 public class App extends Application implements Mediator, Navigator {
 
 
-    private HangAppState toHangAppState;
+    private CategoryState toCategoryState;
     private SearchState toSearchState, HangappToSearch;
     private AddState toAddState, addToState;
     private InformationState CategoryToInformation;
@@ -31,7 +31,7 @@ public class App extends Application implements Mediator, Navigator {
     public void onCreate() {
         super.onCreate();
 
-        toHangAppState = new HangAppState();
+        toCategoryState = new CategoryState();
         toSearchState = new SearchState();
         toSearchState.textVisibility = false;
 
@@ -61,9 +61,9 @@ public class App extends Application implements Mediator, Navigator {
 
     @Override
     public void startingCategoryScreen(Category.ToCategory presenter) {
-        if (toHangAppState != null) {
-            presenter.setTextVisibility(toHangAppState.textVisibility);
-            presenter.setImageVisibility(toHangAppState.imageVisibility);
+        if (toCategoryState != null) {
+            presenter.setTextVisibility(toCategoryState.textVisibility);
+            presenter.setImageVisibility(toCategoryState.imageVisibility);
         }
         presenter.onScreenStarted();
     }
@@ -71,6 +71,7 @@ public class App extends Application implements Mediator, Navigator {
     @Override
     public void startingInformationScreen(Information.ToInformation presenter) {
         if (CategoryToInformation != null) {
+            presenter.setItem(CategoryToInformation.ItemSelected);
 
         }
         presenter.onScreenStarted();
@@ -86,7 +87,7 @@ public class App extends Application implements Mediator, Navigator {
 
 
     @Override
-    public void goToSearchScreen(es.ulpgc.eite.clean.mvp.sample.category.Category.CategoryTo presenter) {
+    public void goToSearchScreen(Category.CategoryTo presenter) {
         HangappToSearch = new SearchState();
 
         HangappToSearch.textVisibility = presenter.isTextVisible();
@@ -172,7 +173,7 @@ public class App extends Application implements Mediator, Navigator {
     // State /////////////////////////////////////////////////////////////////////////
 
 
-    private class HangAppState {
+    private class CategoryState {
         boolean textVisibility;
         boolean imageVisibility;
     }
