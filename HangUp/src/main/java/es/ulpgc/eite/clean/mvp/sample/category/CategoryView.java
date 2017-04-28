@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -131,67 +132,70 @@ public class CategoryView
     public void setAddLabel(String txt) {
         buttonAdd.setText(txt);
     }
-}
 
 
-class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
+    private class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
 
-    private List<CategoryData> items;
+        private List<CategoryData> items;
 
-    public static class CategoryViewHolder extends RecyclerView.ViewHolder {
-        // Campos respectivos de un item
-
-        /// public CardView cv;
-        public ImageView image;
-        public TextView title;
-        public TextView number;
-
-        public CategoryViewHolder(View v) {
-            super(v);
-            //cv = (CardView) v.findViewById(R.id.cv);
-            image = (ImageView) v.findViewById(R.id.image);
-            title = (TextView) v.findViewById(R.id.title);
-            number = (TextView) v.findViewById(R.id.numberOfPersons);
+        public CategoryAdapter(List<CategoryData> items) {
+            this.items = items;
         }
+
+        @Override
+        public int getItemCount() {
+            return items.size();
+        }
+
+        @Override
+        public CategoryViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {//i es la posición.
+            LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
+            View v = inflater.inflate(R.layout.category_card, viewGroup, false);
+            return new CategoryViewHolder(v);
+        }
+
+        //Encargado de actualizar los datos de un ViewHolder ya existente.
+        @Override
+        public void onBindViewHolder(final CategoryViewHolder holder, int position) {
+            holder.image.setImageResource(items.get(position).getImage());
+            holder.title.setText(items.get(position).getName());
+            holder.number.setText(items.get(position).getNumberOfParticipants());
+            holder.view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    getPresenter().onItemClicked(holder.item);
+                }
+            });
+
+        }
+
+        //Necesario hacer el override de este metodo
+        @Override
+        public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+            super.onAttachedToRecyclerView(recyclerView);
+        }
+
+        public class CategoryViewHolder extends RecyclerView.ViewHolder {
+
+            public ImageView image;
+            public TextView title;
+            public TextView number;
+            public final View view;
+
+            public CategoryData item;
+
+            public CategoryViewHolder(View v) {
+                super(v);
+                view = v;
+                image = (ImageView) v.findViewById(R.id.image);
+                title = (TextView) v.findViewById(R.id.title);
+                number = (TextView) v.findViewById(R.id.numberOfPersons);
+            }
+        }
+
+
+
     }
-
-    public CategoryAdapter(List<CategoryData> items) {
-        this.items = items;
-
-    }
-
-    @Override
-    public int getItemCount() {
-        return items.size();
-    }
-
-    //Encargado de crear los nuevos
-
-    @Override
-    public CategoryViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {//i es la posición.
-        LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
-
-        View v = inflater.inflate(R.layout.category_card, viewGroup, false);
-
-        return new CategoryViewHolder(v);
-    }
-
-
-    //Encargado de actualizar los datos de un ViewHolder ya existente.
-    @Override
-    public void onBindViewHolder(CategoryViewHolder viewHolder, int i) { //i es la posición.
-        viewHolder.image.setImageResource(items.get(i).getImage());
-        viewHolder.title.setText(items.get(i).getName());
-        viewHolder.number.setText(items.get(i).getNumberOfParticipants());
-
-    }
-
-    //Necesario hacer el override de este metodo
-    @Override
-    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
-        super.onAttachedToRecyclerView(recyclerView);
-    }
-
 }
 
 

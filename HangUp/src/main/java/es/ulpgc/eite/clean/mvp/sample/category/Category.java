@@ -30,6 +30,8 @@ public interface Category {
 
 
         List<CategoryData> getListOfParties();
+
+        void onItemClicked(CategoryData item);
     }
 
     /**

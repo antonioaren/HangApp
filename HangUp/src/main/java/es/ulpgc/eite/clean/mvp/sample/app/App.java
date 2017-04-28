@@ -161,7 +161,7 @@ public class App extends Application implements Mediator, Navigator {
 //    }
 
     @Override
-    public void goToItemList(Category.CategoryTo presenter) {
+    public void goToInformationScreen(Category.CategoryTo presenter) {
         Context view = presenter.getManagedContext();
         if (view != null) {
             view.startActivity(new Intent(view, InformationView.class));

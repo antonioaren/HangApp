@@ -8,8 +8,6 @@ import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
 
-import static android.content.ContentValues.TAG;
-
 /**
  * Created by alumno on 29/03/2017.
  */
@@ -88,7 +86,7 @@ public class SearchPresenter
         Log.d(TAG, "calling onItemListClicked");
         Navigator app = (Navigator) getView().getApplication();
         //Revisar esta llamada.
-        app.goToItemList((Category.CategoryTo) this);
+        app.goToInformationScreen((Category.CategoryTo) this);
     }
 
 

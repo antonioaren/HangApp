@@ -23,6 +23,7 @@ public class CategoryPresenter
   private boolean textVisible;
   private boolean imageVisibility;
   private boolean selectorsVisible;
+  private CategoryData selectedItem;
 
   /**
    * Operation called during VIEW creation in {@link GenericActivity#onResume(Class, Object)}
@@ -123,7 +124,7 @@ public class CategoryPresenter
   public void onListItemClicked() {
     Log.d(TAG, "item cliked");
     Navigator app = (Navigator) getView().getApplication();
-    app.goToItemList(this);
+    app.goToInformationScreen(this);
   }
 
 
@@ -217,6 +218,19 @@ public class CategoryPresenter
   @Override
   public List<CategoryData> getListOfParties() {
     return getModel().getListOfParties();
+  }
+
+  @Override
+  public void onItemClicked(CategoryData item) {
+    selectedItem = item;
+    Log.d(TAG, "calling goToDetailScreen()");
+
+    // Al haber hecho click en uno de los elementos de la lista del maestro es necesario
+    // arrancar el detalle pasándole el estado inicial correspondiente que, en este caso,
+    // es el item seleccionado. Será el mediador quien se encargue de obtener este estado
+    // desde el maestro y pasarselo al detalle
+    Navigator app = (Navigator) getView().getApplication();
+    app.goToInformationScreen(this);
   }
 
 
