@@ -9,6 +9,7 @@ import es.ulpgc.eite.clean.mvp.sample.add.AddPartyView;
 
 
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
+import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 import es.ulpgc.eite.clean.mvp.sample.detail.DetailPresenter;
 import es.ulpgc.eite.clean.mvp.sample.information.Information;
 import es.ulpgc.eite.clean.mvp.sample.information.InformationView;
@@ -127,6 +128,14 @@ public class App extends Application implements Mediator, Navigator {
 
     }
 
+    @Override
+    public void addPartyData(Add.AddTo presenter) {
+        Context view = presenter.getManagedContext();
+        if (view != null) {
+            view.startActivity(new Intent(view, CategoryView.class).putExtra("newParty", "1"));
+
+        }
+    }
     @Override
     public void goToProcessedInformationScreen(Search.ProcessedTo presenter) {
 
