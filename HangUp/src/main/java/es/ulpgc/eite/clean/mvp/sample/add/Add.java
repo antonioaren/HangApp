@@ -2,6 +2,7 @@ package es.ulpgc.eite.clean.mvp.sample.add;
 
 
 import android.content.Context;
+import android.support.v7.widget.Toolbar;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
@@ -51,7 +52,7 @@ public interface Add {
   interface PresenterToView extends ContextView {
 
 
-
+    Toolbar getToolbar();
 
     void finishScreen();
     void hideToolbar();
@@ -77,7 +78,7 @@ public interface Add {
 
     void setLabel(String txt);
 
-    String getTitleFromEditText();
+    /*String getTitleFromEditText();
 
     String getPlaceFromEditText();
 
@@ -85,7 +86,7 @@ public interface Add {
 
     String getHourFinish();
 
-    String getDateFromCalendar();
+    String getDateFromCalendar();*/
   }
 
   /**

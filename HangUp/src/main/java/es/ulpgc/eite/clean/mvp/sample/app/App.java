@@ -6,8 +6,6 @@ import android.content.Intent;
 
 import es.ulpgc.eite.clean.mvp.sample.add.Add;
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyView;
-
-
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 import es.ulpgc.eite.clean.mvp.sample.detail.DetailPresenter;
@@ -54,8 +52,8 @@ public class App extends Application implements Mediator, Navigator {
     public void startingAddScreen(Add.ToAdd presenter) {
         if (toAddState != null) {
             presenter.setTextVisibility(toAddState.textVisibility);
-            //presenter.setSelectorsVisibility(toAddState.selectorsVisibility);
-            //presenter.setTextVisibility(toHelloState.textVisibility);
+
+
         }
         presenter.onScreenStarted();
     }
@@ -129,12 +127,11 @@ public class App extends Application implements Mediator, Navigator {
     }
 
     @Override
-    public void addPartyData(Add.AddTo presenter) {
+    public void publishParty(Add.AddTo presenter) {
         Context view = presenter.getManagedContext();
         if (view != null) {
-            view.startActivity(new Intent(view, CategoryView.class).putExtra("newParty", "1"));
-
-        }
+            view.startActivity(new Intent(view, CategoryView.class));
+    }
     }
     @Override
     public void goToProcessedInformationScreen(Search.ProcessedTo presenter) {

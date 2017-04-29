@@ -1,153 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1">
-
     <Space
         android:layout_width="match_parent"
-        android:layout_height="20dp" />
+        android:layout_height="48dp" />
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/textViewTitle"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:background="@color/colorPrimary"
-        android:text="Publish your own party!!!"
-        android:textAlignment="center" />
-
+        android:layout_height="85dp"
+        android:background="#ffffff"
+        android:backgroundTint="@android:color/background_light"
+        android:text="            Publish your own party!!!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:weightSum="1">
-
-        <TextView
-            android:id="@+id/texttitle"
-            android:layout_width="60dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.12"
-
-            android:backgroundTint="@android:color/holo_blue_bright"
-            android:text="Title:" />
-
-        <EditText
-            android:layout_width="300dp"
-            android:layout_height="match_parent"
-            android:id="@+id/titledigit" />
-
-    </LinearLayout>
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="20dp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:weightSum="1">
+        android:layout_height="70dp"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/textPlace"
-            android:layout_width="60dp"
+            android:layout_width="154dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.12"
-            android:background="@android:color/holo_green_light"
-            android:text="Place:" />
+            android:background="@android:color/holo_blue_bright"
+            android:text="Place :" />
 
         <EditText
-            android:layout_width="300dp"
+            android:id="@+id/editTextPlace"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/placedigit" />
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="digit the place of the party" />
 
     </LinearLayout>
+
     <Space
         android:layout_width="match_parent"
-        android:layout_height="20dp" />
+        android:layout_height="62dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="horizontal"
-        android:weightSum="1">
+        android:layout_height="65dp"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/textDate"
-            android:layout_width="60dp"
+            android:layout_width="154dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.12"
-            android:background="@color/colorAccent"
-            android:text="Date:" />
+            android:background="@android:color/holo_blue_bright"
+            android:text="Date :" />
 
-        <CalendarView
-            android:layout_width="300dp"
-            android:layout_height="match_parent"
-            android:id="@+id/calendar" />
 
+        <DatePicker
+            android:id="@+id/datePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/background_light" />
     </LinearLayout>
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="20dp" />
+        android:layout_height="48dp" />
+
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="46dp"
         android:orientation="horizontal"
         android:weightSum="1">
 
         <TextView
-            android:id="@+id/textHourInit"
-            android:layout_width="60dp"
+            android:id="@+id/textViewInit"
+            android:layout_width="75dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.20"
-            android:background="@android:color/holo_purple"
-            android:backgroundTint="@android:color/holo_blue_dark"
-            android:text="TimeInit:" />
+            android:layout_weight="0.06"
+            android:background="@android:color/holo_blue_bright"
+            android:text="Starts:" />
+
+        <Space
+            android:layout_width="14dp"
+            android:layout_height="14dp" />
 
         <TimePicker
-            android:id="@+id/timeInit"
-            android:layout_width="121dp"
-            android:layout_height="match_parent" />
+            android:id="@+id/timePickerInit"
+            android:layout_width="75dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.19"
+            android:timePickerMode="spinner" />
 
+        <Space
+            android:layout_width="14dp"
+            android:layout_height="14dp" />
         <TextView
-            android:id="@+id/textHourFinish"
-            android:layout_width="60dp"
+            android:id="@+id/textViewFinish"
+            android:layout_width="75dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.20"
-            android:backgroundTint="@android:color/holo_blue_dark"
-            android:text="TimeInit:" />
+            android:background="@android:color/holo_blue_bright"
+            android:text="Finishes:" />
 
+        <Space
+            android:layout_width="14dp"
+            android:layout_height="14dp" />
         <TimePicker
-            android:id="@+id/timeFinish"
-            android:layout_width="121dp"
-            android:layout_height="match_parent" />
+            android:id="@+id/timePickerFinish"
+            android:layout_width="75dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.19"
+            android:timePickerMode="spinner" />
+
     </LinearLayout>
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="20dp" />
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <Button
             android:id="@+id/buttonPublish"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:background="@android:color/darker_gray"
+            android:layout_centerVertical="true"
+            android:background="@android:color/holo_blue_dark"
+            android:backgroundTint="@android:color/darker_gray"
             android:text="Publish" />
     </RelativeLayout>
 
-
 </LinearLayout>
-
-
-
-

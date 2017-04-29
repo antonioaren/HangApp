@@ -19,7 +19,7 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
         timeInitLabel = "Starts :";
         timeFinishLabel = "Finishes :";
         publishLabel = "Publish";
-        //  titleLabel = "Detail a Party";
+        titleLabel = "Publish your own party";
     }
 
     @Override

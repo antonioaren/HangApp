@@ -16,14 +16,7 @@ public class AddPartyPresenter
         implements Add.ViewToPresenter, Add.ModelToPresenter, Add.ToAdd, Add.AddTo {
 
 
-    @Override
-    public void onPublishClicked() {
-        Log.d(TAG, "callingOnPublish");
-        Navigator app = (Navigator) getView().getApplication();
-
-        
-        app.addPartyData(this);
-    }
+    private boolean buttonClicked;
 
     @Override
     public void onCreate(Add.PresenterToView view) {
@@ -35,6 +28,7 @@ public class AddPartyPresenter
         Mediator app = (Mediator) getView().getApplication();
         app.startingAddScreen(this);
     }
+
     @Override
     public void onScreenStarted() {
         Log.d(TAG, "calling onScreenStarted()");
@@ -50,12 +44,14 @@ public class AddPartyPresenter
 
         if (configurationChangeOccurred()) {
 
-            getView().setLabel(getModel().getPublishBtnLabel());
+//            getView().setLabel(getModel().getPublishBtnLabel());
             getView().setLabel(getModel().getPlaceLabel());
             getView().setLabel(getModel().getDateLabel());
             getView().setLabel(getModel().getTimeInitLabel());
             getView().setLabel(getModel().getTimeFinishLabel());
-
+            if (buttonClicked) {
+                getView().setText(getModel().getPublishBtnLabel());
+            }
 
         }
     }
@@ -68,7 +64,7 @@ public class AddPartyPresenter
 
     @Override
     public void onBackPressed() {
-        Log.d(TAG,"Calling onBackPressed()");
+        Log.d(TAG, "calling onBackPressed()");
 
     }
     @Override
@@ -83,6 +79,14 @@ public class AddPartyPresenter
         }
     }
 
+    @Override
+    public void onPublishClicked() {
+        Log.d(TAG, "callingOnPublish");
+        Navigator app = (Navigator) getView().getApplication();
+        app.publishParty(this);
+
+
+    }
 
     @Override
     public void setTextVisibility(boolean visible) {

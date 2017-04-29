@@ -1,14 +1,13 @@
 package es.ulpgc.eite.clean.mvp.sample.add;
 
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CalendarView;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
-
-import java.text.SimpleDateFormat;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
@@ -21,42 +20,55 @@ import es.ulpgc.eite.clean.mvp.sample.R;
 public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewToPresenter, AddPartyPresenter>
         implements Add.PresenterToView {
 
-    TextView texttitle;
-    EditText titledigit;
+    TextView textViewTitle;
     TextView textPlace;
-    EditText placeDigit;
-    TextView textDate;
-    CalendarView calendar;
-    TextView textHourInit, textHourFinish;
-    TimePicker timeInit, timeFinish;
+    EditText editTextPlace;
+    TextView textdate;
+    DatePicker datePicker;
+    TextView textViewInit;
+    TimePicker timePickerInit;
+    TextView textViewFinish;
+    TimePicker timePickerFinish;
     Button buttonPublish;
+    Toolbar t;
+
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addparty);
 
-        texttitle = (TextView) findViewById(R.id.texttitle);
-        titledigit = (EditText) findViewById(R.id.titledigit);
+
+        t = (Toolbar) findViewById(R.id.toolbar);
+
+        setSupportActionBar(t);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        textViewTitle = (TextView) findViewById(R.id.textView);
+
         textPlace=(TextView) findViewById(R.id.textPlace);
-        placeDigit = (EditText) findViewById(R.id.placedigit);
-        textDate = (TextView) findViewById(R.id.textDate);
-        calendar = (CalendarView) findViewById(R.id.calendar);
-        textHourInit = (TextView) findViewById(R.id.textHourInit);
-        timeInit = (TimePicker) findViewById(R.id.timeInit);
-        textHourFinish = (TextView) findViewById(R.id.textHourFinish);
-        timeFinish = (TimePicker) findViewById(R.id.timeFinish);
+        editTextPlace = (EditText) findViewById(R.id.editTextPlace);
+        textdate = (TextView) findViewById(R.id.textDate);
+        datePicker = (DatePicker) findViewById(R.id.datePicker);
+        textViewInit = (TextView) findViewById(R.id.textViewInit);
+        timePickerInit = (TimePicker) findViewById(R.id.timePickerInit);//timePickerInit
+        textViewFinish = (TextView) findViewById(R.id.textViewFinish);
+        timePickerFinish = (TimePicker) findViewById(R.id.timePickerFinish);
+
         buttonPublish=(Button)findViewById(R.id.buttonPublish);
         buttonPublish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 getPresenter().onPublishClicked();
             }
         });
 
     }
 
-
+    @Override
+    public Toolbar getToolbar() {
+        return t;
+    }
 
 
 
@@ -79,7 +91,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
     @Override
     public void setTitleLabel(String txt) {
-        texttitle.setText(txt);
+        textViewTitle.setText(txt);
     }
 
     @Override
@@ -89,17 +101,17 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
     @Override
     public void setDateLabel(String txt) {
-        textDate.setText(txt);
+        textdate.setText(txt);
     }
 
     @Override
     public void setTimeInitLabel(String txt) {
-        textHourInit.setText(txt);
+        textViewInit.setText(txt);
     }
 
     @Override
     public void setTimeFinishLabel(String txt) {
-        textHourFinish.setText(txt);
+        textViewFinish.setText(txt);
     }
 //    @Override
 //    public void hideToolbar() {
@@ -124,38 +136,4 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     }
 
 
-    @Override
-    public String getTitleFromEditText() {
-        String title = titledigit.getText().toString();
-
-        return title;
-    }
-
-    @Override
-    public String getPlaceFromEditText() {
-        String place = placeDigit.getText().toString();
-
-        return place;
-    }
-
-    @Override
-    public String getHourInit() {
-        String hour = String.valueOf(timeInit);
-
-        return hour;
-    }
-
-    @Override
-    public String getHourFinish() {
-        String hour = String.valueOf(timeFinish);
-
-        return hour;
-    }
-
-    @Override
-    public String getDateFromCalendar() {
-        SimpleDateFormat formatter = new SimpleDateFormat("DD-MMM-yyyy");
-        String date = formatter.format(calendar.getDate());
-        return date;
-    }
 }
