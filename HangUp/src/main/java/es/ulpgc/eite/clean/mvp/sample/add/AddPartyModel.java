@@ -1,5 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.add;
 
+import android.util.Log;
+
 import es.ulpgc.eite.clean.mvp.GenericModel;
 
 /**
@@ -14,6 +16,7 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     @Override
     public void onCreate(Add.ModelToPresenter presenter) {
         super.onCreate(presenter);
+
         placeLabel = "Place :";
         dateLabel = "Date :";
         timeInitLabel = "Starts :";
@@ -24,7 +27,7 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
 
     @Override
     public void onDestroy(boolean b) {
-
+        Log.d(TAG, "calling onDestroy()");
     }
 
     @Override

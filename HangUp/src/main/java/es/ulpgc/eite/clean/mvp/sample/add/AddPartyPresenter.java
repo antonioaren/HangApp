@@ -58,8 +58,9 @@ public class AddPartyPresenter
 
     @Override
     public void onDestroy(boolean isChangingConfiguration) {
-        super.onDestroy(isChangingConfiguration);
         Log.d(TAG, "calling onDestroy()");
+        super.onDestroy(isChangingConfiguration);
+
     }
 
     @Override
