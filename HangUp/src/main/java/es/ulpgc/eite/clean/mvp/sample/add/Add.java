@@ -52,6 +52,16 @@ public interface Add {
   interface PresenterToView extends ContextView {
 
 
+    String getPlaceOfTheParty();
+
+    String getDateOfTheParty();
+
+    //captamos la hora del timePicker que indica el inicio de la fiesta
+    String getHourOfInit();
+
+    //captamos la hora del timePicker que indica el fin de la fiesta
+    String getHourOfFinish();
+
     Toolbar getToolbar();
 
     void finishScreen();

@@ -60,15 +60,20 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
             @Override
             public void onClick(View view) {
                 getPresenter().onPublishClicked();
+//             Intent intent=new Intent(AddPartyView.this,CategoryView.class);
+//                intent.putExtra("place",getPlaceOfTheParty());
+//                intent.putExtra("date",getDateOfTheParty());
             }
         });
 
     }
 
+    @Override
     public String getPlaceOfTheParty() {
         return editTextPlace.getText().toString();
     }
 
+    @Override
     public String getDateOfTheParty() {
         //captamos el valor del dia ,mes y año elegido en el calendario
         String month = String.valueOf(datePicker.getMonth());
@@ -80,6 +85,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     }
 
     //captamos la hora del timePicker que indica el inicio de la fiesta
+    @Override
     public String getHourOfInit() {
         int hour = timePickerInit.getHour();
         String init = String.valueOf(hour);
@@ -87,11 +93,14 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     }
 
     //captamos la hora del timePicker que indica el fin de la fiesta
+    @Override
     public String getHourOfFinish() {
         int hour = timePickerFinish.getHour();
         String finish = String.valueOf(hour);
         return finish;
     }
+
+
     @Override
     public Toolbar getToolbar() {
         return t;

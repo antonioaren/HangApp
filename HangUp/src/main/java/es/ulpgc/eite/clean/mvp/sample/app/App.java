@@ -129,8 +129,9 @@ public class App extends Application implements Mediator, Navigator {
     @Override
     public void publishParty(Add.AddTo presenter) {
         Context view = presenter.getManagedContext();
+        AddPartyView addView = new AddPartyView();
         if (view != null) {
-            view.startActivity(new Intent(view, CategoryView.class).putExtra("party", "yohohohoiiiiiyohohoiiiii"));
+            view.startActivity(new Intent(view, CategoryView.class).putExtra("place", addView.getPlaceOfTheParty()));
     }
     }
     @Override

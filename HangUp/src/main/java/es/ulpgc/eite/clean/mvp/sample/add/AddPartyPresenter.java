@@ -83,9 +83,9 @@ public class AddPartyPresenter
     @Override
     public void onPublishClicked() {
         Log.d(TAG, "callingOnPublish");
+
         Navigator app = (Navigator) getView().getApplication();
         app.publishParty(this);
-
 
     }
 
