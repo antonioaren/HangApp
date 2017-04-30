@@ -2,7 +2,6 @@ package es.ulpgc.eite.clean.mvp.sample.category;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -58,13 +57,7 @@ public class CategoryView
         linearmanager = new LinearLayoutManager(this);
         recycler.setLayoutManager(linearmanager);
 
-        Intent intent = getIntent();
-        Bundle extras = intent.getExtras();
-        if (extras != null) {//ver si contiene datos
-            String place = (String) extras.get("party");//Obtengo el nombre
 
-
-        }
         buttonSearch = (Button) findViewById(R.id.buttonSearch);
         buttonSearch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -192,7 +185,7 @@ public class CategoryView
             public CategoryViewHolder(View v) {
                 super(v);
                 itemView = v;
-                context = v.getContext();//accediendo a uno de los items el cardview
+
                 image = (ImageView) v.findViewById(R.id.image);
                 title = (TextView) v.findViewById(R.id.title);
                 number = (TextView) v.findViewById(R.id.numberOfPersons);
