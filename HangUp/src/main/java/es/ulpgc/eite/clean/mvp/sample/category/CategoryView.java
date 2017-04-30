@@ -1,6 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -182,7 +183,7 @@ public class CategoryView
 
         public class CategoryViewHolder extends RecyclerView.ViewHolder {
             public final View itemView;
-
+            Context context;
             public ImageView image;
             public TextView title;
             public TextView number;
@@ -191,7 +192,7 @@ public class CategoryView
             public CategoryViewHolder(View v) {
                 super(v);
                 itemView = v;
-
+                context = v.getContext();//accediendo a uno de los items el cardview
                 image = (ImageView) v.findViewById(R.id.image);
                 title = (TextView) v.findViewById(R.id.title);
                 number = (TextView) v.findViewById(R.id.numberOfPersons);
