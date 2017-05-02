@@ -37,6 +37,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     Button buttonPublish;
     Toolbar t;
 
+
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -73,7 +74,10 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
     }
 
-    
+    @Override
+    public void onResume() {
+        super.onResume(AddPartyPresenter.class, this);
+    }
     @Override
     public void finishScreen() {
         finish();
@@ -136,5 +140,52 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
     }
 
+    @Override
+    public String getMonth() {
+        //captamos el valor del dia ,mes y año elegido en el calendario
+        String month = String.valueOf(datePicker.getMonth());
+      //  String year = String.valueOf(datePicker.getYear());
+       // String day = String.valueOf(datePicker.getDayOfMonth());
+        //Creamos la fecha en el formato DD/MM/AAAA
+        //String date = day + "" + month + "" + year;
+        return month;
+    }
 
+    public String getDay(){
+        String day=String.valueOf(datePicker.getDayOfMonth());
+      return day;
+    }
+    @Override
+    public String getPlaceOfTheParty() {
+        return editTextPlace.getText().toString();
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    @Override
+    public int getHourOfInit() {
+        int hour = timePickerInit.getHour();
+        
+        return hour;
+    }
+    @Override
+    public String getDateOfTheParty() {
+        //captamos el valor del dia ,mes y año elegido en el calendario
+        String month = String.valueOf(datePicker.getMonth());
+        String year = String.valueOf(datePicker.getYear());
+        String day = String.valueOf(datePicker.getDayOfMonth());
+        //Creamos la fecha en el formato DD/MM/AAAA
+        String date = day + "" + month + "" + year;
+        return date;
+    }
+    //captamos la hora del timePicker que indica el fin de la fiesta
+    //@TargetApi(Build.VERSION_CODES.M)
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    @Override
+    public int getHourOfFinish() {
+        int hour = timePickerFinish.getHour();
+        return hour;
+
+
+
+    }
 }
