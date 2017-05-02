@@ -1,8 +1,16 @@
 package es.ulpgc.eite.clean.mvp.sample.add;
 
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.util.Log;
+import android.widget.DatePicker;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
+
+import static es.ulpgc.eite.clean.mvp.sample.R.id.datePicker;
+import static es.ulpgc.eite.clean.mvp.sample.R.id.editTextPlace;
+import static es.ulpgc.eite.clean.mvp.sample.R.id.timePickerFinish;
+import static es.ulpgc.eite.clean.mvp.sample.R.id.timePickerInit;
 
 /**
  * Created by eleonora on 17/04/2017.
@@ -60,4 +68,48 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     public String getTitleLabel() {
         return this.titleLabel;
     }
+
+
+    //Metodos a implementar para procesar la informacion introducidaa
+    /*@Override
+    public DatePicker getDatePicker() {
+        //captamos el valor del dia ,mes y año elegido en el calendario
+        String month = String.valueOf(datePicker.getMonth());
+        String year = String.valueOf(datePicker.getYear());
+        String day = String.valueOf(datePicker.getDayOfMonth());
+        //Creamos la fecha en el formato DD/MM/AAAA
+        String date = day + "" + month + "" + year;
+        return date;
+    }
+    @Override
+    public String getPlaceOfTheParty() {
+        return editTextPlace.getText().toString();
+    }
+    @Override
+    public String getHourOfInit() {
+        int hour = timePickerInit.getHour();
+        String init = String.valueOf(hour);
+        return init;
+    }
+ @Override
+    public String getDateOfTheParty() {
+        //captamos el valor del dia ,mes y año elegido en el calendario
+        String month = String.valueOf(datePicker.getMonth());
+        String year = String.valueOf(datePicker.getYear());
+        String day = String.valueOf(datePicker.getDayOfMonth());
+        //Creamos la fecha en el formato DD/MM/AAAA
+        String date = day + "" + month + "" + year;
+        return date;
+    }
+    //captamos la hora del timePicker que indica el fin de la fiesta
+    @TargetApi(Build.VERSION_CODES.M)
+    @Override
+    public int getHourOfFinish() {
+        int hour = timePickerFinish.getHour();
+        return hour;
+
+
+
+ }*/
+
 }

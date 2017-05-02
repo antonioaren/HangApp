@@ -1,6 +1,9 @@
 package es.ulpgc.eite.clean.mvp.sample.add;
 
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +14,8 @@ import android.widget.TimePicker;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
+
+import static es.ulpgc.eite.clean.mvp.sample.R.styleable.Toolbar;
 
 
 /**
@@ -68,43 +73,8 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
     }
 
-    @Override
-    public String getPlaceOfTheParty() {
-        return editTextPlace.getText().toString();
-    }
 
-    @Override
-    public String getDateOfTheParty() {
-        //captamos el valor del dia ,mes y año elegido en el calendario
-        String month = String.valueOf(datePicker.getMonth());
-        String year = String.valueOf(datePicker.getYear());
-        String day = String.valueOf(datePicker.getDayOfMonth());
-        //Creamos la fecha en el formato DD/MM/AAAA
-        String date = day + "" + month + "" + year;
-        return date;
-    }
-
-    //captamos la hora del timePicker que indica el inicio de la fiesta
-    @Override
-    public String getHourOfInit() {
-        int hour = timePickerInit.getHour();
-        String init = String.valueOf(hour);
-        return init;
-    }
-
-    //captamos la hora del timePicker que indica el fin de la fiesta
-    @Override
-    public String getHourOfFinish() {
-        int hour = timePickerFinish.getHour();
-        String finish = String.valueOf(hour);
-        return finish;
-    }
-
-
-    @Override
-    public Toolbar getToolbar() {
-        return t;
-    }
+    pub
 
 
 
