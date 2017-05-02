@@ -3,6 +3,7 @@ package es.ulpgc.eite.clean.mvp.sample.add;
 
 import android.content.Context;
 import android.support.v7.widget.Toolbar;
+import android.widget.DatePicker;
 import android.widget.EditText;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
@@ -81,6 +82,21 @@ public interface Add {
     void setText(String txt);
 
     void setLabel(String txt);
+
+    String getMonth();
+
+    String getDay();
+
+    int getYear();
+
+    String getPlaceOfTheParty();
+
+    int getHourOfInit();
+
+
+    //captamos la hora del timePicker que indica el fin de la fiesta
+    //@TargetApi(Build.VERSION_CODES.M)
+    int getHourOfFinish();
 
     /*String getTitleFromEditText();
 

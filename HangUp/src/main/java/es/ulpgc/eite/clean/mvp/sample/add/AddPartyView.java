@@ -151,10 +151,17 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         return month;
     }
 
+    @Override
     public String getDay(){
         String day=String.valueOf(datePicker.getDayOfMonth());
       return day;
     }
+    @Override
+    public int getYear() {
+        int year = datePicker.getYear();
+        return year;
+    }
+
     @Override
     public String getPlaceOfTheParty() {
         return editTextPlace.getText().toString();
@@ -164,19 +171,10 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     @Override
     public int getHourOfInit() {
         int hour = timePickerInit.getHour();
-        
+
         return hour;
     }
-    @Override
-    public String getDateOfTheParty() {
-        //captamos el valor del dia ,mes y año elegido en el calendario
-        String month = String.valueOf(datePicker.getMonth());
-        String year = String.valueOf(datePicker.getYear());
-        String day = String.valueOf(datePicker.getDayOfMonth());
-        //Creamos la fecha en el formato DD/MM/AAAA
-        String date = day + "" + month + "" + year;
-        return date;
-    }
+
     //captamos la hora del timePicker que indica el fin de la fiesta
     //@TargetApi(Build.VERSION_CODES.M)
     @RequiresApi(api = Build.VERSION_CODES.M)
