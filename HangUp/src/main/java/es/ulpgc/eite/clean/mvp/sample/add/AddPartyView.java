@@ -73,12 +73,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
     }
 
-
-    pub
-
-
-
-
+    
     @Override
     public void finishScreen() {
         finish();
