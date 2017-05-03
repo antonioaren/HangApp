@@ -1,5 +1,6 @@
 package es.ulpgc.eite.clean.mvp.sample.add;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
@@ -74,6 +75,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
     }
 
+    @SuppressLint("MissingSuperCall")
     @Override
     public void onResume() {
         super.onResume(AddPartyPresenter.class, this);
@@ -118,36 +120,23 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     public void setTimeFinishLabel(String txt) {
         textViewFinish.setText(txt);
     }
-//    @Override
-//    public void hideToolbar() {
-//
-//    }
+
 
     @Override
     public void hideText() {
-
     }
-
-
 
     @Override
     public void setText(String txt) {
-
     }
 
     @Override
     public void setLabel(String txt) {
-
     }
 
     @Override
     public String getMonth() {
-        //captamos el valor del dia ,mes y año elegido en el calendario
         String month = String.valueOf(datePicker.getMonth());
-      //  String year = String.valueOf(datePicker.getYear());
-       // String day = String.valueOf(datePicker.getDayOfMonth());
-        //Creamos la fecha en el formato DD/MM/AAAA
-        //String date = day + "" + month + "" + year;
         return month;
     }
 
@@ -171,19 +160,13 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     @Override
     public int getHourOfInit() {
         int hour = timePickerInit.getHour();
-
         return hour;
     }
 
-    //captamos la hora del timePicker que indica el fin de la fiesta
-    //@TargetApi(Build.VERSION_CODES.M)
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public int getHourOfFinish() {
         int hour = timePickerFinish.getHour();
         return hour;
-
-
-
     }
 }

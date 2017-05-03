@@ -127,6 +127,18 @@ public interface Add {
     String getTimeFinishLabel();
 
     String getTitleLabel();
+
+    void setPlaceLabel(String placeLabel);
+
+    void setDateLabel(String dateLabel);
+
+    void setTimeInitLabel(String timeInitLabel);
+
+    void setTimeFinishLabel(String timeFinishLabel);
+
+    void setPublishLabel(String publishLabel);
+
+    void setTitleLabel(String titleLabel);
   }
 
   /**

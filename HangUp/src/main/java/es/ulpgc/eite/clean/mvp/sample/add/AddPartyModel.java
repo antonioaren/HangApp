@@ -1,9 +1,8 @@
 package es.ulpgc.eite.clean.mvp.sample.add;
 
-import android.annotation.TargetApi;
-import android.os.Build;
+
 import android.util.Log;
-import android.widget.DatePicker;
+
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
 
@@ -39,10 +38,19 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
         return this.placeLabel;
     }
 
+    @Override
+    public void setPlaceLabel(String placeLabel) {
+        this.placeLabel = placeLabel;
+    }
 
     @Override
     public String getPublishBtnLabel() {
         return this.publishLabel;
+    }
+
+    @Override
+    public void setPublishLabel(String publishLabel) {
+        this.publishLabel = publishLabel;
     }
 
     @Override
@@ -51,8 +59,18 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     }
 
     @Override
+    public void setDateLabel(String dateLabel) {
+        this.dateLabel = dateLabel;
+    }
+
+    @Override
     public String getTimeInitLabel() {
         return this.timeInitLabel;
+    }
+
+    @Override
+    public void setTimeInitLabel(String timeInitLabel) {
+        this.timeInitLabel = timeInitLabel;
     }
 
     @Override
@@ -61,12 +79,20 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     }
 
     @Override
+    public void setTimeFinishLabel(String timeFinishLabel) {
+        this.timeFinishLabel = timeFinishLabel;
+    }
+
+    @Override
     public String getTitleLabel() {
         return this.titleLabel;
     }
 
+    @Override
+    public void setTitleLabel(String titleLabel) {
+        this.titleLabel = titleLabel;
+    }
 
-    //Metodos a implementar para procesar la informacion introducidaa
 
 
 }

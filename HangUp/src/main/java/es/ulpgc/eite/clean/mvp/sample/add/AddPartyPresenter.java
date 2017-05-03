@@ -44,7 +44,6 @@ public class AddPartyPresenter
 
         if (configurationChangeOccurred()) {
 
-//            getView().setLabel(getModel().getPublishBtnLabel());
             getView().setLabel(getModel().getPlaceLabel());
             getView().setLabel(getModel().getDateLabel());
             getView().setLabel(getModel().getTimeInitLabel());
@@ -91,6 +90,15 @@ public class AddPartyPresenter
 
     @Override
     public void setTextVisibility(boolean visible) {
-
     }
+
+    public void SaveParty() {
+        getView().getDay();
+        getView().getMonth();
+        getView().getYear();
+        getView().getHourOfInit();
+        getView().getPlaceOfTheParty();
+    }
+
+
 }
