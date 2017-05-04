@@ -85,7 +85,7 @@ public class AddPartyPresenter
 
        /* Navigator app = (Navigator) getView().getApplication();
         app.publishParty(this);*/
-
+        //El codigo siguiente no va aqui, es solo por probar 
        /*CategoryView category= new CategoryView();
       List<CategoryData> party= new ArrayList<CategoryData>();
        List<InformationData>item= new ArrayList<InformationData>();
