@@ -3,7 +3,6 @@ package es.ulpgc.eite.clean.mvp.sample.add;
 
 import android.util.Log;
 
-
 import es.ulpgc.eite.clean.mvp.GenericModel;
 
 
@@ -15,6 +14,11 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
 
 
     String placeLabel, dateLabel, timeInitLabel, timeFinishLabel, publishLabel, titleLabel;
+
+    public AddPartyModel() {
+
+    }
+
 
     @Override
     public void onCreate(Add.ModelToPresenter presenter) {
@@ -93,6 +97,26 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
         this.titleLabel = titleLabel;
     }
 
+    @Override
+    public String getPlaceOfTheParty() {
+        return getPresenter().getPlace();
+    }
 
+    @Override
+    public String getDateOfTheParty() {
+        String day = getPresenter().getDay();
+        String month = getPresenter().getMonth();
+        String year = String.valueOf(getPresenter().getYear());
+        String date = day + "" + month + "" + year;
+        return date;
+    }
+
+    @Override
+    public String getHourOfParty() {
+        String hourInit = String.valueOf(getPresenter().getInitTIme());
+        String hourFinish = String.valueOf(getPresenter().getFinishTime());
+        String hour = hourInit + "" + "-" + hourFinish;
+        return hour;
+    }
 
 }

@@ -5,7 +5,6 @@ import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
-import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 
 /**
  * Created by eleonora on 17/04/2017.
@@ -72,6 +71,7 @@ public class AddPartyPresenter
         return getActivityContext();
     }
 
+
     @Override
     public void destroyView() {
         if (isViewRunning()) {
@@ -83,8 +83,15 @@ public class AddPartyPresenter
     public void onPublishClicked() {
         Log.d(TAG, "callingOnPublish");
 
-        Navigator app = (Navigator) getView().getApplication();
-        app.publishParty(this);
+       /* Navigator app = (Navigator) getView().getApplication();
+        app.publishParty(this);*/
+
+       /*CategoryView category= new CategoryView();
+      List<CategoryData> party= new ArrayList<CategoryData>();
+       List<InformationData>item= new ArrayList<InformationData>();
+        item.add(new InformationData(R.drawable.astro,"name","123","detail","detail","detail","detail"));
+        party.add(new CategoryData(R.drawable.astro,"name","123",item,"detail","detail","detail","detail"));
+        category.settingAdapter(party);*/
 
     }
 
@@ -92,13 +99,47 @@ public class AddPartyPresenter
     public void setTextVisibility(boolean visible) {
     }
 
-    public void SaveParty() {
-        getView().getDay();
-        getView().getMonth();
-        getView().getYear();
-        getView().getHourOfInit();
-        getView().getPlaceOfTheParty();
+    /* public void SaveParty() {
+         getView().getDay();
+         getView().getMonth();
+         getView().getYear();
+         getView().getHourOfInit();
+         getView().getHourOfFinish();
+         getView().getPlaceOfTheParty();
+     }*/
+    @Override
+    public String getPlace() {
+        return getView().getPlaceOfTheParty();
+
     }
 
+    @Override
+    public String getDay() {
+        return getView().getDay();
 
+    }
+
+    @Override
+    public String getMonth() {
+        return getView().getMonth();
+
+    }
+
+    @Override
+    public int getYear() {
+        return getView().getYear();
+
+    }
+
+    @Override
+    public int getInitTIme() {
+        return getView().getHourOfInit();
+
+    }
+
+    @Override
+    public int getFinishTime() {
+        return getView().getHourOfFinish();
+
+    }
 }

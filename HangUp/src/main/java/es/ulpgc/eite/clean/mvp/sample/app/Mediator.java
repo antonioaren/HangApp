@@ -10,7 +10,8 @@ import es.ulpgc.eite.clean.mvp.sample.search.Search;
 public interface
 Mediator {
 
-  void startingSearchScreen(Search.ToSearch presenter);
+
+    void startingSearchScreen(Search.ToSearch presenter);
 
   void startingAddScreen(Add.ToAdd presenter);
 
@@ -19,4 +20,5 @@ Mediator {
   void startingInformationScreen(Information.ToInformation presenter);
 
   void startingDetailScreen(DetailPresenter Presenter);
+
 }
