@@ -127,7 +127,7 @@ public class App extends Application implements Mediator, Navigator {
 
     @Override
     public void publishParty(Add.AddTo presenter) {
-
+        //intentando implementar metodo
 
     }
     @Override
