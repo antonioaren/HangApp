@@ -135,7 +135,7 @@ public class App extends Application implements Mediator, Navigator {
     @Override
     public void publishParty(Add.AddTo presenter) {
         //intentando implementar metodo
-
+        //no se si los objetos los puedo crear aqui
         AddPartyModel addParty = new AddPartyModel();
         CategoryModel categoryModel = new CategoryModel();
         CategoryView categoryView = new CategoryView();
