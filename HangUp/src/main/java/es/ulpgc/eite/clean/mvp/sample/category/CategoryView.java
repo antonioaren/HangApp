@@ -90,6 +90,7 @@ public class CategoryView
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Presenter To View /////////////////////////////////////////////////////////////
+    //metodos para captar el adaptador y la lista de elementos
     public CategoryAdapter getAdapter() {
         return this.adapter;
     }
