@@ -90,7 +90,13 @@ public class CategoryView
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Presenter To View /////////////////////////////////////////////////////////////
+    public CategoryAdapter getAdapter() {
+        return this.adapter;
+    }
 
+    public List<CategoryData> getList() {
+        return this.items;
+    }
     @Override
 
     public void settingAdapter(List<CategoryData> parties) {
@@ -136,9 +142,9 @@ public class CategoryView
     }
 
 
-    private class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
+    public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
 
-        private List<CategoryData> items;
+        public List<CategoryData> items;
 
         public CategoryAdapter(List<CategoryData> items) {
             this.items = items;

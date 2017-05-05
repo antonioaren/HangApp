@@ -5,6 +5,7 @@ import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
+import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 
 /**
  * Created by eleonora on 17/04/2017.
@@ -83,8 +84,8 @@ public class AddPartyPresenter
     public void onPublishClicked() {
         Log.d(TAG, "callingOnPublish");
 
-       /* Navigator app = (Navigator) getView().getApplication();
-        app.publishParty(this);*/
+        Navigator app = (Navigator) getView().getApplication();
+        app.publishParty(this);
         //El codigo siguiente no va aqui, es solo por probar 
        /*CategoryView category= new CategoryView();
       List<CategoryData> party= new ArrayList<CategoryData>();
