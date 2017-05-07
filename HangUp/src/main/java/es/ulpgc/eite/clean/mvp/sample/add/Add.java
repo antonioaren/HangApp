@@ -2,9 +2,6 @@ package es.ulpgc.eite.clean.mvp.sample.add;
 
 
 import android.content.Context;
-import android.support.v7.widget.Toolbar;
-import android.widget.DatePicker;
-import android.widget.EditText;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
@@ -29,6 +26,7 @@ public interface Add {
 
   public interface AddTo {
     Context getManagedContext();
+      // boolean isTextInserted();
   }
 
 
@@ -139,6 +137,12 @@ public interface Add {
     void setPublishLabel(String publishLabel);
 
     void setTitleLabel(String titleLabel);
+
+      String getPlaceOfTheParty();
+
+      String getDateOfTheParty();
+
+      String getHourOfParty();
   }
 
   /**
@@ -146,6 +150,25 @@ public interface Add {
    */
   interface ModelToPresenter {
 
+      String getDay();
+
+      String getMonth();
+
+      int getInitTIme();
+
+      /* public void SaveParty() {
+                         getView().getDay();
+                         getView().getMonth();
+                         getView().getYear();
+                         getView().getHourOfInit();
+                         getView().getHourOfFinish();
+                         getView().getPlaceOfTheParty();
+                     }*/
+      String getPlace();
+
+      int getYear();
+
+      int getFinishTime();
   }
 
 

@@ -4,9 +4,15 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.add.Add;
+import es.ulpgc.eite.clean.mvp.sample.add.AddPartyModel;
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyView;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
+import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 import es.ulpgc.eite.clean.mvp.sample.detail.DetailPresenter;
 import es.ulpgc.eite.clean.mvp.sample.information.Information;
@@ -128,11 +134,19 @@ public class App extends Application implements Mediator, Navigator {
 
     @Override
     public void publishParty(Add.AddTo presenter) {
-        Context view = presenter.getManagedContext();
-        AddPartyView addView = new AddPartyView();
-        if (view != null) {
-            view.startActivity(new Intent(view, CategoryView.class));
-    }
+        //intentando implementar metodo
+        //no se si los objetos los puedo crear aqui
+        AddPartyModel addParty = new AddPartyModel();
+        CategoryModel categoryModel = new CategoryModel();
+        CategoryView categoryView = new CategoryView();
+        InformationData information = new InformationData(R.drawable.astro, "name", "123", "detail", "story", addParty.getDateOfTheParty(), addParty.getHourOfParty());
+        List<InformationData> list = new ArrayList<InformationData>();
+        list.add(information);
+        List<CategoryData> item = new ArrayList<CategoryData>();
+        item.add(new CategoryData(R.drawable.astro, "name", "123", list, "details", "story", addParty.getDateOfTheParty(), addParty.getHourOfParty()));
+        categoryView.settingAdapter(item);
+        categoryView.getAdapter().notifyItemInserted(categoryView.getList().indexOf(item));
+
     }
     @Override
     public void goToProcessedInformationScreen(Search.ProcessedTo presenter) {
@@ -194,6 +208,7 @@ public class App extends Application implements Mediator, Navigator {
     private class AddState {
         boolean textVisibility;
         boolean selectorsVisibility;
+
     }
 
 

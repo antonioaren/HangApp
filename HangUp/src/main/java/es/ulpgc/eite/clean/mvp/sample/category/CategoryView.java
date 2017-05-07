@@ -47,7 +47,7 @@ public class CategoryView
         adaptador no variará su tamaño en toda la ejecución del programa.*/
 
         recycler = (RecyclerView) findViewById(R.id.recycler);
-        recycler.setHasFixedSize(true); //Habrá que quitarlo si la lista es dinámica.
+        //  recycler.setHasFixedSize(false); //Habrá que quitarlo si la lista es dinámica.
 
         // Usar un administrador para LinearLayout
         /*El layout manager fue instanciado con la subclase LinearLayoutManager, indicando que el recycler
@@ -90,12 +90,20 @@ public class CategoryView
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Presenter To View /////////////////////////////////////////////////////////////
+    //metodos para captar el adaptador y la lista de elementos
+    public CategoryAdapter getAdapter() {
+        return this.adapter;
+    }
 
+    public List<CategoryData> getList() {
+        return this.items;
+    }
     @Override
 
     public void settingAdapter(List<CategoryData> parties) {
         adapter = new CategoryAdapter(parties);
         recycler.setAdapter(adapter);
+
     }
 
     @Override
@@ -135,9 +143,9 @@ public class CategoryView
     }
 
 
-    private class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
+    public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
 
-        private List<CategoryData> items;
+        public List<CategoryData> items;
 
         public CategoryAdapter(List<CategoryData> items) {
             this.items = items;
