@@ -3,12 +3,12 @@
 
     <item
         is-multidex="false"
-        jar="C:\Users\eleonora\.android\build-cache\468799458b26006ab207dd80d7b0d3deaea9f96b\output\jars\classes.jar"
+        jar="C:\Users\eleonora\.android\build-cache\46d55a862118a6c44af5767059bf9c416cc0fe0c\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="993e7d96c7c59ca07d8ae66165792c3987296dc0">
-        <dex dex="C:\Users\eleonora\Desktop\project1\HangApp\HangUp\build\intermediates\pre-dexed\debug\classes_fdde82dd385d78cf6ea872cc6802ef92ccbf6e5b.jar" />
+        <dex dex="C:\Users\eleonora\Desktop\project2\HangApp\HangUp\build\intermediates\pre-dexed\debug\classes_a06717fa82bb50ecaa3617201ab14de390a13a93.jar" />
     </item>
 
 </items>

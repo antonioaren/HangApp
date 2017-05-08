@@ -1,0 +1,138 @@
+[
+  {
+    "ProductName": "TAO Club & Garden",
+    "Image": 1,
+    "DetailText": "Cansado de la semana, no sabes que hacer y no quieres quedarte en casa ! TAO Club & Garden te ofrece una noche increible para compartir con quien tú quieras y en la misma ciudad sin tener que desplazarte demasiado. Buen ambiente y buena música, el mejor sitio para olvidarte de la semana y poder desconectar  aunque no salgas de casa.",
+    "Category": "Fiesta",
+    "Web": "http://www.taolaspalmas.com/",
+    "": ""
+  },
+  {
+    "ProductName": "Papagayo  Beach Club",
+    "Image": 2,
+    "DetailText": "Quieres disfrutar una noche agradable al lado del mar y con mucha música y diversión. Esta será tú mejor decisión para experimentar la mejor noche de tu vida.",
+    "Category": "Fiesta",
+    "Web": "http://www.papagayogc.com/",
+    "": ""
+  },
+  {
+    "ProductName": "Sotavento Club",
+    "Image": 3,
+    "DetailText": "Para jovenes alocados que buscan diversion, sotavento club lleva años compartiendo momentos para los más jovenes, teniendo un buen sitio al lado del muelle deportivo en el que disfrutaras de buenos momentos con tus amigos.",
+    "Category": "Fiesta",
+    "Web": "http://sotaventoclub.com/",
+    "": ""
+  },
+  {
+    "ProductName": "PACHA GC",
+    "Image": 4,
+    "DetailText": "Para los mejores momentos entre tus amigos. Pacha Gran Canaria es uno de los mejores sitios en los que podrás disfrutar con tus amigos al más puro estilo de Ibiza. Copas, Musica y sin interrupción hasta al amanecer!! NO te lo podrás perder.",
+    "Category": "Fiesta",
+    "Web": "http://pachagrancanaria.com/",
+    "": ""
+  },
+  {
+    "ProductName": "El Paraninfo",
+    "Image": 5,
+    "DetailText": "Esta atento a todas las charlas que se realizan en nuestra universidad. Nunca sabes cuando te pueden servir de utilidad.",
+    "Category": "ULPGC",
+    "Web": "http://www.ulpgc.es/",
+    "": ""
+  },
+  {
+    "ProductName": "EITE",
+    "Image": 6,
+    "DetailText": "Si eres una persona que le encanta la tecnología, que le encantaría programar y realizar sus mejores ideas, enviar un satelite al espacio y que transmita algo que deseas, hacer tu propio relog, drone y programarlo o realizar estudios acústica y estudiar el mundo del  las ondas de sonido. Esta es tu carrera, no te lo pienses solo hazlo y serás capaz. Que nada te lo impida.",
+    "Category": "ULPGC",
+    "Web": "www.eite.ulpgc.es/",
+    "": ""
+  },
+  {
+    "ProductName": "FPCT",
+    "Image": 7,
+    "DetailText": "La Fundación Canaria Parque Científico Tecnológico de la Universidad de Las Palmas de Gran Canaria (FCPCT), es un nexo de unión entre empresas innovadoras y centros de investigación. Gestiona un compendio de infraestructuras básicas de innovación y de incorporación de empresas tecnológicas, imprescindibles para los procesos de I+D+i y desarrollo tecnológico. Impulsa la creación y el crecimiento de empresas innovadoras y proporciona otros servicios de valor añadido, así como espacio e instalaciones de gran calidad.\n\nLa Fundación Canaria Parque Científico Tecnológico de la Universidad de Las Palmas de Gran Canaria aporta un espacio común de encuentro entre la empresa, el mundo de la investigación y desarrollo con el sector productivo local, y a su vez un lugar de \"cultivo\" de nuevas empresas, propiciador de la innovación y de la fórmula de \"autoempleo\" para los egresados de las universidades.",
+    "Category": "ULPGC",
+    "Web": "http://fpct.ulpgc.es/es/eventos.html",
+    "": ""
+  },
+  {
+    "ProductName": "FULP",
+    "Image": 8,
+    "DetailText": "Bolsas de trabajo, enseñanza a nuevos emprendedores sin experiencia, La fundación te dará cualquier información acerca de lo que necesites, La Fundación Canaria Parque Científico Tecnológico de la Universidad de Las Palmas de Gran Canaria (FCPCT), es un nexo de unión entre empresas innovadoras y centros de investigación. Gestiona un compendio de infraestructuras básicas de innovación y de incorporación de empresas tecnológicas, imprescindibles para los procesos de I+D+i y desarrollo tecnológico. Impulsa la creación y el crecimiento de empresas innovadoras y proporciona otros servicios de valor añadido, así como espacio e instalaciones de gran calidad.\n\nLa Fundación Canaria Parque Científico Tecnológico de la Universidad de Las Palmas de Gran Canaria aporta un espacio común de encuentro entre la empresa, el mundo de la investigación y desarrollo con el sector productivo local, y a su vez un lugar de \"cultivo\" de nuevas empresas, propiciador de la innovación y de la fórmula de \"autoempleo\" para los egresados de las universidades.\npara tu futuro.",
+    "Category": "ULPGC",
+    "Web": "http://www.fulp.es/",
+    "": ""
+  },
+  {
+    "ProductName": "WRC",
+    "Image": 9,
+    "DetailText": "The World Rally Championship (WRC) is a rallying series organised by the FIA, culminating with a champion driver and manufacturer. The driver's world championship and manufacturer's world championship are separate championships, but based on the same point system. The series currently consists of 13 three-day events driven on surfaces ranging from gravel and tarmac to snow and ice. Each rally is split into 15–25 special stages which are run against the clock on closed roads.",
+    "Category": "Motor",
+    "Web": "www.wrc.com/es/",
+    "": ""
+  },
+  {
+    "ProductName": "F1",
+    "Image": 10,
+    "DetailText": "Deseas tener toda la información de la carreras, las posiciones y los mejores puestos esta es tu web.",
+    "Category": "Motor",
+    "Web": "https://www.formula1.com",
+    "": ""
+  },
+  {
+    "ProductName": "MOTOGP",
+    "Image": 11,
+    "DetailText": "The FIM Road Racing World Championship Grand Prix is the premier class of motorcycle road racing, held since 1949.\n\nGrand Prix motorcycles are purpose-built racing machines that are neither available for purchase by the general public nor able to be ridden legally on public roads. This contrasts with the various production-based categories of racing, such as the Superbike World Championship and the Isle of Man TT Races that feature modified versions of road-going motorcycles available to the public.",
+    "Category": "Motor",
+    "Web": "www.motogp.com/es",
+    "": ""
+  },
+  {
+    "ProductName": "NASCAR",
+    "Image": 12,
+    "DetailText": "NASCAR hace referencia a las siglas en inglés de National Association for Stock Car Auto Racing (\"Asociación Nacional de Carreras de Automóviles de Serie\") y, actualmente, representa la categoría automovilística más comercial de Estados Unidos y la competición de stock cars (\"automóviles de serie\") más importante del mundo. Es miembro del Automobile Competition Committee for the United States.",
+    "Category": "Motor",
+    "Web": "www.nascar.com",
+    "": ""
+  },
+  {
+    "ProductName": "GTC",
+    "Image": 13,
+    "DetailText": "The Gran Telescopio CANARIAS (GTC), is a 10.4m telescope with a segmented primary mirror. It is located in one of the top astronomical sites in the Northern Hemisphere: the Observatorio del Roque de los Muchachos (ORM, La Palma, Canary Islands). The GTC is a Spanish initiative led by the Instituto de Astrofísica de Canarias (IAC). The project is actively supported by the Spanish Government and the Local Government from the Canary Islands through the European Funds for Regional Development (FEDER) provided by the European Union. The project also includes the participation of Mexico (Instituto de Astronomía de la Universidad Nacional Autónoma de México (IA-UNAM) and Instituto Nacional de Astrofísica, Óptica y Electrónica (INAOE), and the US University of Florida.",
+    "Category": "Astronomía",
+    "Web": "www.gtc.iac.es/",
+    "": ""
+  },
+  {
+    "ProductName": "NASA",
+    "Image": 14,
+    "DetailText": "NASA's vision: We reach for new heights and reveal the unknown for the benefit of humankind. To do that, thousands of people have been working around the world -- and off of it -- for more than 50 years, trying to answer some basic questions. What's out there in space? How do we get there? What will we find? What can we learn there, or learn just by trying to get there, that will make life better here on Earth?",
+    "Category": "Astronomía",
+    "Web": "https://www.nasa.gov/",
+    "": ""
+  },
+  {
+    "ProductName": "IAC",
+    "Image": 15,
+    "DetailText": "El Instituto Avanzado de Cosmología, fue fundado en 2007 con el propósito de agrupar a científicos de todo México interesados en el estudio del Universo. En la actualidad cuenta con más de un centenar de miembros, entre investigadores y estudiantes de posgrado, de más de 20 instituciones en todo México.",
+    "Category": "Astronomía",
+    "Web": "iac.edu.mx/",
+    "": ""
+  },
+  {
+    "ProductName": "IAA",
+    "Image": 16,
+    "DetailText": "El Instituto de Astrofísica de Andalucía (IAA) es un instituto del Consejo Superior de Investigaciones Científicas (CSIC) en Granada - Andalucía. Las actividades del IAA - CSIC están relacionadas con la investigación en el campo de la Astrofísica y el desarrollo de instrumentación para telescopios y vehículos espaciales.",
+    "Category": "Astronomía",
+    "Web": "www.iaa.es/",
+    "": ""
+  },
+  {
+    "ProductName": "ALMA",
+    "Image": 17,
+    "DetailText": "El Atacama Large Millimeter/submillimeter Array (ALMA) es un instrumento revolucionario en su concepto científico, su diseño de ingeniería y su organización como un esfuerzo científico global.\n\nActualmente bajo construcción en el aire tenue y seco del desierto de Atacama de Chile septentrional a una altitud de 5.000 metros sobre el nivel del mar, ALMA contará inicialmente con 66 antenas de alta precisión funcionando juntas en longitudes de onda milimétricas y submilimétricas, con una posible extensión en el futuro.\n\nGracias a su alta resolución y sensibilidad, ALMA abrirá una “ventana” totalmente nueva al Universo, permitiendo a los científicos desenmarañar misterios astronómicos importantes y de muchos años, explorando nuestros orígenes cósmicos.\n\nAlgunas personas dicen que el sol nunca se pone en ALMA. De hecho, ALMA es un ejemplo maravilloso de una colaboración mundial, involucrando socios de cuatro continentes. Al trabajar juntos, los científicos e ingenieros de alrededor del mundo abordan desafíos sin precedentes y buscarán ampliar las fronteras del conocimiento.\n\nSe espera que ALMA comience sus operaciones científicas con un número limitado de antenas y empiece sus operaciones cientificas totales con 66 antenas. De esta manera, científicos de alrededor del mundo utilizarán dentro de poco esta extraordinaria instalación para sondear las primerísimas estrellas y galaxias, y captar directamente exoplanetas, descubriendo posiblemente los primeros rastros de vida.",
+    "Category": "Astronomía",
+    "Web": "http://www.almaobservatory.org/es/inicio",
+    "": ""
+  }
+]
