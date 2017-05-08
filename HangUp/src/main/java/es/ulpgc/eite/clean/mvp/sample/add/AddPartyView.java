@@ -12,8 +12,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import java.util.List;
+
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
+import es.ulpgc.eite.clean.mvp.sample.app.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 
 
 /**
@@ -76,6 +80,11 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         super.onResume(AddPartyPresenter.class, this);
     }
 
+    @Override
+    public void settingAdapter(List<CategoryData> data) {
+        CategoryView category = new CategoryView();
+        category.settingAdapter(data);
+    }
     @Override
     public void finishScreen() {
         finish();

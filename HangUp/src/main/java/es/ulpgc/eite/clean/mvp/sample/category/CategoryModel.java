@@ -88,6 +88,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         items.add(new CategoryData(R.drawable.astro, "title", "0", getNewParty(), "detail", "mmmmmmmmmmm", addPartyModel.getDateOfTheParty(), addPartyModel.getHourOfParty()))
 
         ;
+
     }
 
     /**
@@ -105,6 +106,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         HangAppText = "Add";
 
         LoadCategory();
+
     }
 
     /**

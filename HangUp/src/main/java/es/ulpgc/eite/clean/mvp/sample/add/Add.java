@@ -77,6 +77,8 @@ public interface Add {
     //captamos la hora del timePicker que indica el fin de la fiesta
 
 
+    void settingAdapter(List<CategoryData> data);
+
     void finishScreen();
     void hideToolbar();
 

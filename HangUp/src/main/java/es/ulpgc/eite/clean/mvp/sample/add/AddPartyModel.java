@@ -3,11 +3,9 @@ package es.ulpgc.eite.clean.mvp.sample.add;
 
 import android.util.Log;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
-import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.app.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.app.InformationData;
 
@@ -29,9 +27,6 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     List<CategoryData> partyAdded;
     List<InformationData> party;
     public AddPartyModel() {
-        this.party = new ArrayList<InformationData>();
-
-        this.partyAdded = new ArrayList<CategoryData>();
 
     }
 
@@ -168,13 +163,13 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
 
     @Override
     public List<CategoryData> getPartyAdded() {
-        partyAdded.add(new CategoryData(R.drawable.astro, "name", "0", getParty(), "details", "story", "date", "hour"));
+
         return this.partyAdded;
     }
 
     @Override
     public List<InformationData> getParty() {
-        party.add(new InformationData(R.drawable.astro, "name", "0", "details", "story", "date", "hour"));
+
         return party;
     }
 }

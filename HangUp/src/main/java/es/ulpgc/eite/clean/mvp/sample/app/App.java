@@ -6,8 +6,8 @@ import android.content.Intent;
 
 import java.util.List;
 
-import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.add.Add;
+import es.ulpgc.eite.clean.mvp.sample.add.AddPartyModel;
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyView;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
 import es.ulpgc.eite.clean.mvp.sample.detail.DetailPresenter;
@@ -62,6 +62,7 @@ public class App extends Application implements Mediator, Navigator {
 
     @Override
     public void startingCategoryScreen(Category.ToCategory presenter) {
+
         if (toCategoryState != null) {
             presenter.setTextVisibility(toCategoryState.textVisibility);
             presenter.setImageVisibility(toCategoryState.imageVisibility);
@@ -143,31 +144,23 @@ public class App extends Application implements Mediator, Navigator {
     @Override
     public void publishParty(Add.AddTo presenter) {
 
-        /*
-        AddPartyModel addParty = new AddPartyModel();
-        CategoryModel categoryModel = new CategoryModel();
-        CategoryView categoryView = new CategoryView();
-        InformationData information = new InformationData(R.drawable.astro, "name", "123", "detail", "story", addParty.getDateOfTheParty(), addParty.getHourOfParty());
-        List<InformationData> list = new ArrayList();
-        list.add(information);
-        List<CategoryData> item = new ArrayList();
-        item.add(new CategoryData(R.drawable.astro, "name", "123", list, "details", "story", addParty.getDateOfTheParty(), addParty.getHourOfParty()));
-        categoryView.settingAdapter(item);
-        categoryView.getAdapter().notifyItemInserted(categoryView.getList().indexOf(item));
-        */
+        AddPartyModel add = new AddPartyModel();
 
         toAddState = new AddState();
 
         toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
         toAddState.dateOfTheParty = presenter.getDateOfTheParty();
         toAddState.hourOfParty = presenter.getHourOfParty();
-        //reformando metodo
-        toAddState.newparty = presenter.getPartyCreated();
-        toAddState.newparty.add(new InformationData(R.drawable.astro, "name", "0", "details", "story", "date", "hour"));
 
-        toAddState.partyAdded = presenter.getPartyAdded();
-        toAddState.partyAdded.add(new CategoryData(R.drawable.astro, "name", "0", toAddState.newparty, "details", "story", "date", "hour"));
-        presenter.settingAdapter(toAddState.partyAdded);
+
+        //reformando metodo
+        //toAddState.newparty = presenter.getPartyCreated();
+        // toAddState.newparty.add(new InformationData(R.drawable.astro, "name", "0", "details", "story", "date", "hour"));
+
+        // toAddState.partyAdded = presenter.getPartyAdded();
+        // toAddState.partyAdded.add(new CategoryData(R.drawable.astro, "name", "0", toAddState.newparty, "details", "story", "date", "hour"));
+
+
         presenter.destroyView();
     }
 
