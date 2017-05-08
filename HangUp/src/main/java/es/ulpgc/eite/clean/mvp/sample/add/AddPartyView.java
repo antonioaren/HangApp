@@ -1,7 +1,6 @@
 package es.ulpgc.eite.clean.mvp.sample.add;
 
 import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -15,8 +14,6 @@ import android.widget.TimePicker;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
-
-import static es.ulpgc.eite.clean.mvp.sample.R.styleable.Toolbar;
 
 
 /**
@@ -36,7 +33,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     TextView textViewFinish;
     TimePicker timePickerFinish;
     Button buttonPublish;
-    Toolbar t;
+    Toolbar toolbar;
 
 
     @Override
@@ -45,9 +42,9 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         setContentView(R.layout.activity_addparty);
 
 
-        t = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
 
-        setSupportActionBar(t);
+        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
@@ -80,6 +77,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     public void onResume() {
         super.onResume(AddPartyPresenter.class, this);
     }
+
     @Override
     public void finishScreen() {
         finish();
@@ -143,7 +141,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     @Override
     public String getDay(){
         String day=String.valueOf(datePicker.getDayOfMonth());
-      return day;
+        return day;
     }
     @Override
     public int getYear() {

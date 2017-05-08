@@ -24,9 +24,13 @@ public interface Add {
   }
 
 
-  public interface AddTo {
+  interface AddTo {
     Context getManagedContext();
+    String getPlaceOfTheParty();
+    String getDateOfTheParty();
+    String getHourOfParty();
     // boolean isTextInserted();
+    void destroyView();
   }
 
 
@@ -40,7 +44,7 @@ public interface Add {
   interface ViewToPresenter extends Presenter<PresenterToView> {
     void onPublishClicked();
 
-    void destroyView();
+    //void destroyView();
 
     //void onStartingView();
   }
@@ -126,6 +130,7 @@ public interface Add {
 
     String getTitleLabel();
 
+
     void setPlaceLabel(String placeLabel);
 
     void setDateLabel(String dateLabel);
@@ -143,6 +148,14 @@ public interface Add {
     String getDateOfTheParty();
 
     String getHourOfParty();
+
+
+    void setDay(String day);
+    void setHourOfFinish(int hour);
+    void setHourOfInit(int hour);
+    void setMonth(String month);
+    void setPlaceOfTheParty(String place);
+    void setYear(int year);
   }
 
   /**
@@ -150,25 +163,26 @@ public interface Add {
    */
   interface ModelToPresenter {
 
-    String getDay();
-
-    String getMonth();
-
-    int getInitTIme();
+//    String getDay();
+//
+//    String getMonth();
+//
+//    int getInitTIme();
+//    String getPlace();
+//
+//    int getYear();
+//
+//    int getFinishTime();
 
     /* public void SaveParty() {
-                       getView().getDay();
-                       getView().getMonth();
-                       getView().getYear();
-                       getView().getHourOfInit();
-                       getView().getHourOfFinish();
-                       getView().getPlaceOfTheParty();
-                   }*/
-    String getPlace();
+         getView().getDay();
+         getView().getMonth();
+         getView().getYear();
+         getView().getHourOfInit();
+         getView().getHourOfFinish();
+         getView().getPlaceOfTheParty();
+     }*/
 
-    int getYear();
-
-    int getFinishTime();
   }
 
 

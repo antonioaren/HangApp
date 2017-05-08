@@ -84,15 +84,18 @@ public class AddPartyPresenter
     public void onPublishClicked() {
         Log.d(TAG, "callingOnPublish");
 
-        Navigator app = (Navigator) getView().getApplication();
-        app.publishParty(this);
-        //El codigo siguiente no va aqui, es solo por probar 
-       /*CategoryView category= new CategoryView();
-      List<CategoryData> party= new ArrayList<CategoryData>();
-       List<InformationData>item= new ArrayList<InformationData>();
-        item.add(new InformationData(R.drawable.astro,"name","123","detail","detail","detail","detail"));
-        party.add(new CategoryData(R.drawable.astro,"name","123",item,"detail","detail","detail","detail"));
-        category.settingAdapter(party);*/
+        if (isViewRunning()) {
+            getModel().setDay(getView().getDay());
+            getModel().setHourOfFinish(getView().getHourOfFinish());
+            getModel().setHourOfInit(getView().getHourOfInit());
+            getModel().setMonth(getView().getMonth());
+            getModel().setPlaceOfTheParty(getView().getPlaceOfTheParty());
+            getModel().setYear(getView().getYear());
+
+            Navigator app = (Navigator) getView().getApplication();
+            app.publishParty(this);
+        }
+
 
     }
 
@@ -108,6 +111,27 @@ public class AddPartyPresenter
          getView().getHourOfFinish();
          getView().getPlaceOfTheParty();
      }*/
+
+
+
+    @Override
+    public String getPlaceOfTheParty() {
+        return getModel().getPlaceOfTheParty();
+    }
+
+    @Override
+    public String getDateOfTheParty() {
+        return getModel().getDateOfTheParty();
+    }
+
+    @Override
+    public String getHourOfParty() {
+        return getModel().getHourOfParty();
+    }
+
+
+
+    /*
     @Override
     public String getPlace() {
         return getView().getPlaceOfTheParty();
@@ -143,4 +167,5 @@ public class AddPartyPresenter
         return getView().getHourOfFinish();
 
     }
+    */
 }

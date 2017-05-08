@@ -14,6 +14,12 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
 
 
     String placeLabel, dateLabel, timeInitLabel, timeFinishLabel, publishLabel, titleLabel;
+    private int hourFinish;
+    private String day;
+    private int hourInit;
+    private String month;
+    private String place;
+    private int year;
 
     public AddPartyModel() {
 
@@ -99,24 +105,55 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
 
     @Override
     public String getPlaceOfTheParty() {
-        return getPresenter().getPlace();
+        //return getPresenter().getPlace();
+        return place;
     }
 
     @Override
     public String getDateOfTheParty() {
-        String day = getPresenter().getDay();
-        String month = getPresenter().getMonth();
-        String year = String.valueOf(getPresenter().getYear());
+        //String day = getPresenter().getDay();
+        //String month = getPresenter().getMonth();
+        //String year = String.valueOf(getPresenter().getYear());
         String date = day + "" + month + "" + year;
         return date;
     }
 
     @Override
     public String getHourOfParty() {
-        String hourInit = String.valueOf(getPresenter().getInitTIme());
-        String hourFinish = String.valueOf(getPresenter().getFinishTime());
+        //String hourInit = String.valueOf(getPresenter().getInitTIme());
+        //String hourFinish = String.valueOf(getPresenter().getFinishTime());
         String hour = hourInit + "" + "-" + hourFinish;
         return hour;
+    }
+
+    @Override
+    public void setDay(String day) {
+        this.day = day;
+    }
+
+    @Override
+    public void setHourOfFinish(int hour) {
+        hourFinish = hour;
+    }
+
+    @Override
+    public void setHourOfInit(int hour) {
+        hourInit = hour;
+    }
+
+    @Override
+    public void setMonth(String month) {
+        this.month = month;
+    }
+
+    @Override
+    public void setPlaceOfTheParty(String place) {
+        this.place = place;
+    }
+
+    @Override
+    public void setYear(int year) {
+        this.year=year;
     }
 
 }

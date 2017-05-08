@@ -4,16 +4,9 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.add.Add;
-import es.ulpgc.eite.clean.mvp.sample.add.AddPartyModel;
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyView;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
-import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
-import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 import es.ulpgc.eite.clean.mvp.sample.detail.DetailPresenter;
 import es.ulpgc.eite.clean.mvp.sample.information.Information;
 import es.ulpgc.eite.clean.mvp.sample.information.InformationView;
@@ -134,20 +127,30 @@ public class App extends Application implements Mediator, Navigator {
 
     @Override
     public void publishParty(Add.AddTo presenter) {
-        //intentando implementar metodo
-        //no se si los objetos los puedo crear aqui
+
+        /*
         AddPartyModel addParty = new AddPartyModel();
         CategoryModel categoryModel = new CategoryModel();
         CategoryView categoryView = new CategoryView();
         InformationData information = new InformationData(R.drawable.astro, "name", "123", "detail", "story", addParty.getDateOfTheParty(), addParty.getHourOfParty());
-        List<InformationData> list = new ArrayList<InformationData>();
+        List<InformationData> list = new ArrayList();
         list.add(information);
-        List<CategoryData> item = new ArrayList<CategoryData>();
+        List<CategoryData> item = new ArrayList();
         item.add(new CategoryData(R.drawable.astro, "name", "123", list, "details", "story", addParty.getDateOfTheParty(), addParty.getHourOfParty()));
         categoryView.settingAdapter(item);
         categoryView.getAdapter().notifyItemInserted(categoryView.getList().indexOf(item));
+        */
 
+        toAddState = new AddState();
+
+        toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
+        toAddState.dateOfTheParty = presenter.getDateOfTheParty();
+        toAddState.hourOfParty = presenter.getHourOfParty();
+
+        presenter.destroyView();
     }
+
+
     @Override
     public void goToProcessedInformationScreen(Search.ProcessedTo presenter) {
 
@@ -195,6 +198,7 @@ public class App extends Application implements Mediator, Navigator {
     // State /////////////////////////////////////////////////////////////////////////
 
 
+
     private class CategoryState {
         boolean textVisibility;
         boolean imageVisibility;
@@ -209,6 +213,9 @@ public class App extends Application implements Mediator, Navigator {
         boolean textVisibility;
         boolean selectorsVisibility;
 
+        String placeOfTheParty;
+        String dateOfTheParty;
+        String hourOfParty;
     }
 
 
