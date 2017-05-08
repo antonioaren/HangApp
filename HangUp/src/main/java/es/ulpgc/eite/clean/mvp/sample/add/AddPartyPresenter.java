@@ -3,7 +3,10 @@ package es.ulpgc.eite.clean.mvp.sample.add;
 import android.content.Context;
 import android.util.Log;
 
+import java.util.List;
+
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
+import es.ulpgc.eite.clean.mvp.sample.app.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 
@@ -142,6 +145,11 @@ public class AddPartyPresenter
     @Override
     public String getHourOfParty() {
         return getModel().getHourOfParty();
+    }
+
+    @Override
+    public List<CategoryData> getParty() {
+        return getModel().getPartyAdded();
     }
 
 

@@ -3,7 +3,12 @@ package es.ulpgc.eite.clean.mvp.sample.add;
 
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import es.ulpgc.eite.clean.mvp.GenericModel;
+import es.ulpgc.eite.clean.mvp.sample.app.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.app.InformationData;
 
 
 /**
@@ -20,9 +25,11 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     private String month;
     private String place;
     private int year;
-
+    List<CategoryData> partyAdded;
+    List<InformationData> party;
     public AddPartyModel() {
-
+        this.party = new ArrayList<InformationData>();
+        this.partyAdded = new ArrayList<CategoryData>();
     }
 
 
@@ -156,4 +163,13 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
         this.year=year;
     }
 
+    @Override
+    public List<CategoryData> getPartyAdded() {
+        return this.partyAdded;
+    }
+
+    @Override
+    public List<InformationData> getParty() {
+        return party;
+    }
 }

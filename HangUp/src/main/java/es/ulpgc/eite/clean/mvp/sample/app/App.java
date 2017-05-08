@@ -163,7 +163,7 @@ public class App extends Application implements Mediator, Navigator {
         toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
         toAddState.dateOfTheParty = presenter.getDateOfTheParty();
         toAddState.hourOfParty = presenter.getHourOfParty();
-        //reformando metodo 
+        //reformando metodo
         InformationData information = new InformationData(R.drawable.astro, "name", "123", "detail", "story", toAddState.dateOfTheParty, toAddState.hourOfParty);
         List<InformationData> list = new ArrayList();
         list.add(information);
@@ -240,6 +240,8 @@ public class App extends Application implements Mediator, Navigator {
         String placeOfTheParty;
         String dateOfTheParty;
         String hourOfParty;
+        List<CategoryData> partyAdded;
+        List<InformationData> newparty;
     }
 
 

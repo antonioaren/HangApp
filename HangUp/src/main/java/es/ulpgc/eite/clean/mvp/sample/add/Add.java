@@ -3,9 +3,13 @@ package es.ulpgc.eite.clean.mvp.sample.add;
 
 import android.content.Context;
 
+import java.util.List;
+
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.Presenter;
+import es.ulpgc.eite.clean.mvp.sample.app.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.app.InformationData;
 
 /**
  * Created by Luis on 12/11/16.
@@ -36,6 +40,7 @@ public interface Add {
     String getDateOfTheParty();
     String getHourOfParty();
     // boolean isTextInserted();
+    List<CategoryData> getParty();
     void destroyView();
   }
 
@@ -162,6 +167,10 @@ public interface Add {
     void setMonth(String month);
     void setPlaceOfTheParty(String place);
     void setYear(int year);
+
+    List<CategoryData> getPartyAdded();
+
+    List<InformationData> getParty();
   }
 
   /**
