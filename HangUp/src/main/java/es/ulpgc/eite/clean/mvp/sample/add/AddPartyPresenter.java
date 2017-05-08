@@ -3,9 +3,14 @@ package es.ulpgc.eite.clean.mvp.sample.add;
 import android.content.Context;
 import android.util.Log;
 
+import java.util.List;
+
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
+import es.ulpgc.eite.clean.mvp.sample.app.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.app.InformationData;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
+import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 
 /**
  * Created by eleonora on 17/04/2017.
@@ -84,20 +89,38 @@ public class AddPartyPresenter
     public void onPublishClicked() {
         Log.d(TAG, "callingOnPublish");
 
-        Navigator app = (Navigator) getView().getApplication();
-        app.publishParty(this);
-        //El codigo siguiente no va aqui, es solo por probar 
-       /*CategoryView category= new CategoryView();
-      List<CategoryData> party= new ArrayList<CategoryData>();
-       List<InformationData>item= new ArrayList<InformationData>();
-        item.add(new InformationData(R.drawable.astro,"name","123","detail","detail","detail","detail"));
-        party.add(new CategoryData(R.drawable.astro,"name","123",item,"detail","detail","detail","detail"));
-        category.settingAdapter(party);*/
+        if (isViewRunning()) {
+            getModel().setDay(getView().getDay());
+            getModel().setHourOfFinish(getView().getHourOfFinish());
+            getModel().setHourOfInit(getView().getHourOfInit());
+            getModel().setMonth(getView().getMonth());
+            getModel().setPlaceOfTheParty(getView().getPlaceOfTheParty());
+            getModel().setYear(getView().getYear());
+
+            Navigator app = (Navigator) getView().getApplication();
+            app.publishParty(this);
+        }
+
 
     }
 
     @Override
     public void setTextVisibility(boolean visible) {
+    }
+
+    @Override
+    public void setPlace(String place) {
+
+    }
+
+    @Override
+    public void setDate(String date) {
+
+    }
+
+    @Override
+    public void setHour(String hour) {
+
     }
 
     /* public void SaveParty() {
@@ -108,6 +131,42 @@ public class AddPartyPresenter
          getView().getHourOfFinish();
          getView().getPlaceOfTheParty();
      }*/
+
+
+
+    @Override
+    public String getPlaceOfTheParty() {
+        return getModel().getPlaceOfTheParty();
+    }
+
+    @Override
+    public String getDateOfTheParty() {
+        return getModel().getDateOfTheParty();
+    }
+
+    @Override
+    public String getHourOfParty() {
+        return getModel().getHourOfParty();
+    }
+
+    @Override
+    public List<CategoryData> getPartyAdded() {
+
+        return getModel().getPartyAdded();
+    }
+
+    @Override
+    public List<InformationData> getPartyCreated() {
+
+        return getModel().getParty();
+    }
+
+    @Override
+    public void settingAdapter(List<CategoryData> item) {
+        CategoryView categoryView = new CategoryView();
+        categoryView.settingAdapter(item);
+    }
+/*
     @Override
     public String getPlace() {
         return getView().getPlaceOfTheParty();
@@ -143,4 +202,5 @@ public class AddPartyPresenter
         return getView().getHourOfFinish();
 
     }
+    */
 }

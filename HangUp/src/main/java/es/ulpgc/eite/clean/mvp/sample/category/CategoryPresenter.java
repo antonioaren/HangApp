@@ -8,14 +8,16 @@ import java.util.List;
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
-import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
+import es.ulpgc.eite.clean.mvp.sample.add.Add;
 import es.ulpgc.eite.clean.mvp.sample.app.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.app.InformationData;
+import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 
 public class CategoryPresenter
         extends GenericPresenter<Category.PresenterToView, Category.PresenterToModel,
         Category.ModelToPresenter, CategoryModel>
-        implements Category.ViewToPresenter, Category.ModelToPresenter, Category.ToCategory, Category.CategoryTo {
+        implements Category.ViewToPresenter, Category.ModelToPresenter, Category.ToCategory, Category.CategoryTo, Add.AddTo {
 
 
   private boolean toolbarVisible;
@@ -24,6 +26,9 @@ public class CategoryPresenter
   private boolean imageVisibility;
   private boolean selectorsVisible;
   private CategoryData selectedItem;
+  private String hour;
+  private String date;
+  private String place;
 
   /**
    * Operation called during VIEW creation in {@link GenericActivity#onResume(Class, Object)}
@@ -66,7 +71,11 @@ public class CategoryPresenter
 
       checkToolbarVisibility();
       checkTextVisibility();
+
     }
+
+    Navigator app = (Navigator) getView().getApplication();
+    app.publishParty(this);
 
   }
 
@@ -145,6 +154,21 @@ public class CategoryPresenter
   }
 
   @Override
+  public void setPlace(String placeOfTheParty) {
+    this.place = placeOfTheParty;
+  }
+
+  @Override
+  public void setDate(String dateOfTheParty) {
+    this.date = dateOfTheParty;
+  }
+
+  @Override
+  public void setHour(String hourOfParty) {
+    this.hour = hourOfParty;
+  }
+
+  @Override
   public void setToolbarVisibility(boolean visible) {
     toolbarVisible = visible;
   }
@@ -167,6 +191,36 @@ public class CategoryPresenter
   @Override
   public Context getManagedContext() {
     return getActivityContext();
+  }
+
+  @Override
+  public String getPlaceOfTheParty() {
+    return null;
+  }
+
+  @Override
+  public String getDateOfTheParty() {
+    return null;
+  }
+
+  @Override
+  public String getHourOfParty() {
+    return null;
+  }
+
+  @Override
+  public List<CategoryData> getPartyAdded() {
+    return null;
+  }
+
+  @Override
+  public List<InformationData> getPartyCreated() {
+    return null;
+  }
+
+  @Override
+  public void settingAdapter(List<CategoryData> item) {
+
   }
 
   @Override

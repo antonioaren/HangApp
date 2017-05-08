@@ -21,4 +21,5 @@ Mediator {
 
   void startingDetailScreen(DetailPresenter Presenter);
 
+  void addingItems(Category.ToCategory presenter);
 }

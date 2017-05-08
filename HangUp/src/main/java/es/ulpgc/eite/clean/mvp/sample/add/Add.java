@@ -3,9 +3,13 @@ package es.ulpgc.eite.clean.mvp.sample.add;
 
 import android.content.Context;
 
+import java.util.List;
+
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.Presenter;
+import es.ulpgc.eite.clean.mvp.sample.app.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.app.InformationData;
 
 /**
  * Created by Luis on 12/11/16.
@@ -21,15 +25,28 @@ public interface Add {
     void onScreenStarted();
 
     void setTextVisibility(boolean visible);
+
+      void setPlace(String place);
+
+      void setDate(String date);
+
+      void setHour(String hour);
+
   }
 
 
-  public interface AddTo {
+  interface AddTo {
     Context getManagedContext();
-      // boolean isTextInserted();
+    String getPlaceOfTheParty();
+    String getDateOfTheParty();
+    String getHourOfParty();
+    // boolean isTextInserted();
+    List<CategoryData> getPartyAdded();
 
-        // boolean isTextInserted();
+    List<InformationData> getPartyCreated();
 
+    void settingAdapter(List<CategoryData> item);
+    void destroyView();
   }
 
 
@@ -43,7 +60,7 @@ public interface Add {
   interface ViewToPresenter extends Presenter<PresenterToView> {
     void onPublishClicked();
 
-    void destroyView();
+    //void destroyView();
 
     //void onStartingView();
   }
@@ -59,6 +76,8 @@ public interface Add {
 
     //captamos la hora del timePicker que indica el fin de la fiesta
 
+
+    void settingAdapter(List<CategoryData> data);
 
     void finishScreen();
     void hideToolbar();
@@ -129,6 +148,7 @@ public interface Add {
 
     String getTitleLabel();
 
+
     void setPlaceLabel(String placeLabel);
 
     void setDateLabel(String dateLabel);
@@ -141,12 +161,23 @@ public interface Add {
 
     void setTitleLabel(String titleLabel);
 
+    String getPlaceOfTheParty();
 
-      String getPlaceOfTheParty();
+    String getDateOfTheParty();
 
-      String getDateOfTheParty();
+    String getHourOfParty();
 
-      String getHourOfParty();
+
+    void setDay(String day);
+    void setHourOfFinish(int hour);
+    void setHourOfInit(int hour);
+    void setMonth(String month);
+    void setPlaceOfTheParty(String place);
+    void setYear(int year);
+
+    List<CategoryData> getPartyAdded();
+
+    List<InformationData> getParty();
   }
 
   /**
@@ -154,26 +185,26 @@ public interface Add {
    */
   interface ModelToPresenter {
 
+//    String getDay();
+//
+//    String getMonth();
+//
+//    int getInitTIme();
+//    String getPlace();
+//
+//    int getYear();
+//
+//    int getFinishTime();
 
-      String getDay();
+    /* public void SaveParty() {
+         getView().getDay();
+         getView().getMonth();
+         getView().getYear();
+         getView().getHourOfInit();
+         getView().getHourOfFinish();
+         getView().getPlaceOfTheParty();
+     }*/
 
-      String getMonth();
-
-      int getInitTIme();
-
-      /* public void SaveParty() {
-                         getView().getDay();
-                         getView().getMonth();
-                         getView().getYear();
-                         getView().getHourOfInit();
-                         getView().getHourOfFinish();
-                         getView().getPlaceOfTheParty();
-                     }*/
-      String getPlace();
-
-      int getYear();
-
-      int getFinishTime();
   }
 
 

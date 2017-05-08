@@ -86,6 +86,7 @@ public class CategoryView
     @Override
     protected void onResume() {
         super.onResume(CategoryPresenter.class, this);
+
     }
 
     ///////////////////////////////////////////////////////////////////////////////////

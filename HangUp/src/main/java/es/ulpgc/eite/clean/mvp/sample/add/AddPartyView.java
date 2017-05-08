@@ -1,7 +1,6 @@
 package es.ulpgc.eite.clean.mvp.sample.add;
 
 import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -13,10 +12,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import java.util.List;
+
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
-
-import static es.ulpgc.eite.clean.mvp.sample.R.styleable.Toolbar;
+import es.ulpgc.eite.clean.mvp.sample.app.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 
 
 /**
@@ -36,7 +37,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     TextView textViewFinish;
     TimePicker timePickerFinish;
     Button buttonPublish;
-    Toolbar t;
+    Toolbar toolbar;
 
 
     @Override
@@ -45,9 +46,9 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         setContentView(R.layout.activity_addparty);
 
 
-        t = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
 
-        setSupportActionBar(t);
+        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
@@ -67,9 +68,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
             @Override
             public void onClick(View view) {
                 getPresenter().onPublishClicked();
-//             Intent intent=new Intent(AddPartyView.this,CategoryView.class);
-//                intent.putExtra("place",getPlaceOfTheParty());
-//                intent.putExtra("date",getDateOfTheParty());
+
             }
         });
 
@@ -79,6 +78,12 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     @Override
     public void onResume() {
         super.onResume(AddPartyPresenter.class, this);
+    }
+
+    @Override
+    public void settingAdapter(List<CategoryData> data) {
+        CategoryView category = new CategoryView();
+        category.settingAdapter(data);
     }
     @Override
     public void finishScreen() {
@@ -143,7 +148,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     @Override
     public String getDay(){
         String day=String.valueOf(datePicker.getDayOfMonth());
-      return day;
+        return day;
     }
     @Override
     public int getYear() {
