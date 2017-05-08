@@ -7,6 +7,7 @@ import java.util.List;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.app.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.app.InformationData;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 
@@ -148,11 +149,14 @@ public class AddPartyPresenter
     }
 
     @Override
-    public List<CategoryData> getParty() {
+    public List<CategoryData> getPartyAdded() {
         return getModel().getPartyAdded();
     }
 
-
+    @Override
+    public List<InformationData> getPartyCreated() {
+        return getModel().getParty();
+    }
 
     /*
     @Override

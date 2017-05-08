@@ -40,7 +40,9 @@ public interface Add {
     String getDateOfTheParty();
     String getHourOfParty();
     // boolean isTextInserted();
-    List<CategoryData> getParty();
+    List<CategoryData> getPartyAdded();
+
+    List<InformationData> getPartyCreated();
     void destroyView();
   }
 
