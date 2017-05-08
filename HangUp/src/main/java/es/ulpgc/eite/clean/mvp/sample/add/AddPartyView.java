@@ -64,9 +64,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
             @Override
             public void onClick(View view) {
                 getPresenter().onPublishClicked();
-//             Intent intent=new Intent(AddPartyView.this,CategoryView.class);
-//                intent.putExtra("place",getPlaceOfTheParty());
-//                intent.putExtra("date",getDateOfTheParty());
+
             }
         });
 

@@ -21,6 +21,12 @@ public interface Add {
     void onScreenStarted();
 
     void setTextVisibility(boolean visible);
+
+      void setPlace(String place);
+
+      void setDate(String date);
+
+      void setHour(String hour);
   }
 
 

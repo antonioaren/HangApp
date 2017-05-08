@@ -103,6 +103,21 @@ public class AddPartyPresenter
     public void setTextVisibility(boolean visible) {
     }
 
+    @Override
+    public void setPlace(String place) {
+
+    }
+
+    @Override
+    public void setDate(String date) {
+
+    }
+
+    @Override
+    public void setHour(String hour) {
+
+    }
+
     /* public void SaveParty() {
          getView().getDay();
          getView().getMonth();

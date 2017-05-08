@@ -81,6 +81,8 @@ public interface Category {
 
         List<InformationData> getAstro();
 
+        List<InformationData> getNewParty();
+
         int getParticipantsAt(int i);
     }
 
@@ -125,6 +127,12 @@ public interface Category {
 
 
         void onScreenStarted();
+
+        void setPlace(String placeOfTheParty);
+
+        void setDate(String dateOfTheParty);
+
+        void setHour(String hourOfParty);
     }
 
 

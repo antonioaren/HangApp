@@ -2,40 +2,13 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="/Users/Luis/.android/build-cache/3dedeaa94793bffb1f174ce540bbfec44de30492/output/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\eleonora\.android\build-cache\36b29e8e4503a9eaba99728902d8ce00208fdfca\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="993e7d96c7c59ca07d8ae66165792c3987296dc0">
-        <dex dex="/Users/Luis/Documents/Android-Alumnos/HangApp/HangUp/build/intermediates/transforms/dex/debug/folders/1000/10/classes_360ec438d5dafaa6b7d020146e9e4f765a588271/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Luis/Documents/Android-Alumnos/HangApp/HangUp/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="11efa2ae607848789f97922a5931ebb683eb408a">
-        <dex dex="/Users/Luis/Documents/Android-Alumnos/HangApp/HangUp/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_71d89fe6274ecb89aad92536d82c62e7b8c4c729/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Luis/.android/build-cache/7fee28ae1328742c621c5b67c86f9203371aca91/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="00b0b7233e1ec64acebfac40d4983d32d4712426">
-        <dex dex="/Users/Luis/Documents/Android-Alumnos/HangApp/HangUp/build/intermediates/transforms/dex/debug/folders/1000/10/classes_59a7322a4d921a7bb766a2d1af788ce1bccf46c0/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Luis/Documents/Android-Alumnos/HangApp/HangUp/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
-        <dex dex="/Users/Luis/Documents/Android-Alumnos/HangApp/HangUp/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_e670a86fd434d8545b3360627ccbe3a20db5fdc9/classes.dex" />
+        <dex dex="C:\Users\eleonora\Desktop\project2\HangApp\HangUp\build\intermediates\pre-dexed\debug\classes_21e02f45cdeb38e65ece1ca89b458b2c3c8b2b70.jar" />
     </item>
 
 </items>

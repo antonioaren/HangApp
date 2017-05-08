@@ -6,6 +6,7 @@ import java.util.Random;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.R;
+import es.ulpgc.eite.clean.mvp.sample.add.AddPartyModel;
 import es.ulpgc.eite.clean.mvp.sample.app.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.app.InformationData;
 
@@ -23,9 +24,10 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     private List<InformationData> Cars;
     private List<InformationData> Musica;
     private List<InformationData> Astro;
+    private List<InformationData> newParty;
     private Random randomAssistance1, randomAssistance2, randomAssistance3, randomAssistance4, randomAssistance5;
     private int[] participants;
-
+    AddPartyModel addPartyModel;
     public CategoryModel() {
         randomAssistance1 = new Random();
         randomAssistance2 = new Random();
@@ -36,7 +38,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
             randomAssistance1.nextInt(2001), randomAssistance2.nextInt(2001),
             randomAssistance3.nextInt(2001), randomAssistance4.nextInt(2001),
             randomAssistance5.nextInt(2001)};
-
+        addPartyModel = new AddPartyModel();
         Disco = new ArrayList();
         Disco.add(new InformationData(R.drawable.disco, "Fiestas Nocturnas",
             String.valueOf(getParticipantsAt(0)), "Prueba detalle Astro",
@@ -61,7 +63,8 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         Astro.add(new InformationData(R.drawable.astro, "Fiestas Nocturnas",
             String.valueOf(getParticipantsAt(4)), "Prueba detalle Astro",
             "La disco existe desde hace mucho tiempo", "este viernes", "de 12:00 pm hasta las 5:00 am"));
-
+        newParty = new ArrayList();
+        newParty.add(new InformationData(R.drawable.astro, "title", "0", "detail", "yguy", addPartyModel.getDateOfTheParty(), addPartyModel.getHourOfParty()));
     }
 
     private void LoadCategory() {
@@ -81,6 +84,10 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         items.add(new CategoryData(R.drawable.astro, "Astronomía",
             String.valueOf(getParticipantsAt(4)), getAstro(), "Detalle Astro",
             "La astronomia se remonta en el siglo 300 A.C en la Antigua Grecia", "Hoy", "00:00"));
+        //Captando los  valores de los campos de texto cuando no hemos insertado nada 
+        items.add(new CategoryData(R.drawable.astro, "title", "0", getNewParty(), "detail", "mmmmmmmmmmm", addPartyModel.getDateOfTheParty(), addPartyModel.getHourOfParty()))
+
+        ;
     }
 
     /**
@@ -154,6 +161,11 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     @Override
     public List<InformationData> getAstro() {
         return Astro;
+    }
+
+    @Override
+    public List<InformationData> getNewParty() {
+        return newParty;
     }
 
     @Override

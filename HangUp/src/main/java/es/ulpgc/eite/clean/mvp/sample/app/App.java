@@ -81,6 +81,18 @@ public class App extends Application implements Mediator, Navigator {
 
     }
 
+    @Override
+    public void addingItems(Category.ToCategory presenter) {
+
+        if (toAddState != null) {
+            presenter.setPlace(toAddState.placeOfTheParty);
+            presenter.setDate(toAddState.dateOfTheParty);
+            presenter.setHour(toAddState.hourOfParty);
+        }
+
+    }
+
+
     ///////////////////////////////////////////////////////////////////////////////////
     // Navigator /////////////////////////////////////////////////////////////////////
 

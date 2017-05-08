@@ -24,6 +24,9 @@ public class CategoryPresenter
   private boolean imageVisibility;
   private boolean selectorsVisible;
   private CategoryData selectedItem;
+  private String hour;
+  private String date;
+  private String place;
 
   /**
    * Operation called during VIEW creation in {@link GenericActivity#onResume(Class, Object)}
@@ -66,8 +69,10 @@ public class CategoryPresenter
 
       checkToolbarVisibility();
       checkTextVisibility();
-    }
 
+    }
+    Mediator app = (Mediator) getView().getApplication();
+    app.addingItems(this);
   }
 
   /**
@@ -142,6 +147,21 @@ public class CategoryPresenter
     checkTextVisibility();
 
     getView().settingAdapter(getModel().getListCategory());
+  }
+
+  @Override
+  public void setPlace(String placeOfTheParty) {
+    this.place = placeOfTheParty;
+  }
+
+  @Override
+  public void setDate(String dateOfTheParty) {
+    this.date = dateOfTheParty;
+  }
+
+  @Override
+  public void setHour(String hourOfParty) {
+    this.hour = hourOfParty;
   }
 
   @Override
