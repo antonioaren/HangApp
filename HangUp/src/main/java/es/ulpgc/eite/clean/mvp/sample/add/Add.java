@@ -27,6 +27,9 @@ public interface Add {
   public interface AddTo {
     Context getManagedContext();
       // boolean isTextInserted();
+
+        // boolean isTextInserted();
+
   }
 
 
@@ -138,6 +141,7 @@ public interface Add {
 
     void setTitleLabel(String titleLabel);
 
+
       String getPlaceOfTheParty();
 
       String getDateOfTheParty();
@@ -149,6 +153,7 @@ public interface Add {
    * Required PRESENTER methods available to MODEL
    */
   interface ModelToPresenter {
+
 
       String getDay();
 
