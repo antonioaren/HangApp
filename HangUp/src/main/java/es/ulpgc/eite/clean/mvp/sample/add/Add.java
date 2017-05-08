@@ -41,6 +41,7 @@ public interface Add {
     String getDateOfTheParty();
     String getHourOfParty();
     // boolean isTextInserted();
+    List<CategoryData> getDefaultList();
     List<CategoryData> getPartyAdded();
 
     List<InformationData> getPartyCreated();

@@ -58,6 +58,7 @@ public class AddPartyPresenter
             }
 
         }
+
     }
 
     @Override
@@ -147,6 +148,11 @@ public class AddPartyPresenter
     @Override
     public String getHourOfParty() {
         return getModel().getHourOfParty();
+    }
+
+    @Override
+    public List<CategoryData> getDefaultList() {
+        return null;
     }
 
     @Override

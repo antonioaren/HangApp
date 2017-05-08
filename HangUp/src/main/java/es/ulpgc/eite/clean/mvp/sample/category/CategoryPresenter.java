@@ -74,8 +74,10 @@ public class CategoryPresenter
 
     }
 
-    Navigator app = (Navigator) getView().getApplication();
-    app.publishParty(this);
+      Navigator app = (Navigator) getView().getApplication();
+      app.publishParty(this);
+//    app.notify();
+
 
   }
 
@@ -207,6 +209,11 @@ public class CategoryPresenter
   public String getHourOfParty() {
     return null;
   }
+
+    @Override
+    public List<CategoryData> getDefaultList() {
+        return getModel().getListCategory();
+    }
 
   @Override
   public List<CategoryData> getPartyAdded() {
