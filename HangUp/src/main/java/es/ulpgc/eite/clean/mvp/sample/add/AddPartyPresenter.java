@@ -10,6 +10,7 @@ import es.ulpgc.eite.clean.mvp.sample.app.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.app.InformationData;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
+import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 
 /**
  * Created by eleonora on 17/04/2017.
@@ -150,15 +151,22 @@ public class AddPartyPresenter
 
     @Override
     public List<CategoryData> getPartyAdded() {
+
         return getModel().getPartyAdded();
     }
 
     @Override
     public List<InformationData> getPartyCreated() {
+
         return getModel().getParty();
     }
 
-    /*
+    @Override
+    public void settingAdapter(List<CategoryData> item) {
+        CategoryView categoryView = new CategoryView();
+        categoryView.settingAdapter(item);
+    }
+/*
     @Override
     public String getPlace() {
         return getView().getPlaceOfTheParty();

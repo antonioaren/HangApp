@@ -167,6 +167,7 @@ public class App extends Application implements Mediator, Navigator {
 
         toAddState.partyAdded = presenter.getPartyAdded();
         toAddState.partyAdded.add(new CategoryData(R.drawable.astro, "name", "0", toAddState.newparty, "details", "story", "date", "hour"));
+        presenter.settingAdapter(toAddState.partyAdded);
         presenter.destroyView();
     }
 
@@ -238,6 +239,7 @@ public class App extends Application implements Mediator, Navigator {
         String hourOfParty;
         List<CategoryData> partyAdded;
         List<InformationData> newparty;
+
     }
 
 

@@ -31,6 +31,7 @@ public interface Add {
       void setDate(String date);
 
       void setHour(String hour);
+
   }
 
 
@@ -43,6 +44,8 @@ public interface Add {
     List<CategoryData> getPartyAdded();
 
     List<InformationData> getPartyCreated();
+
+    void settingAdapter(List<CategoryData> item);
     void destroyView();
   }
 
