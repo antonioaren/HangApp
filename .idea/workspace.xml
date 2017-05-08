@@ -11,65 +11,8 @@
   <component name="ChangeListManager">
     <list id="6a18f264-77ba-466d-b7a7-0d52df6a7436" name="Default" comment="Merge remote-tracking branch 'origin/eleonoraBack'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/3.3/taskArtifacts/fileHashes.bin&#10;#&#9;.gradle/3.3/taskArtifacts/fileSnapshots.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.lock&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/App.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Mediator.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangApp.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangAppModel.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/Information.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationPresenter.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchView.java&#10;#&#9;HangUp/src/main/res/layout/activity_procesed_search.xml&#10;#&#9;HangUp/src/main/res/layout/content_hangapp.xml&#10;#&#9;HangUp/src/main/res/layout/content_procesed_search.xml&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Navigator.java&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/hangapp/HangAppView.java&#10;#&#9;HelloApp/src/main/res/layout/activity_filalista.xml&#10;#&#9;HelloApp/src/main/res/layout/activity_procesed_search.xml&#10;" />
     <list id="3d65f56d-93c6-4520-9708-4d2cd763dfec" name="Failed commit: Default" comment="Cambios Merges.&#10;" />
-    <list default="true" id="72c31ec8-3076-4782-a780-40cb8c2c6568" name="Failed commit: Default (2)" comment="reformando el metodo">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-05-02-10-55-08-264.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-05-02-10-55-19-470.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-05-02-11-50-05-627.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-05-02-11-58-02-013.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-05-02-12-00-39-719.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-05-02-12-01-29-822.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-05-02-16-37-47-895.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-05-02-16-37-57-421.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-05-02-18-07-18-433.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-05-02-18-07-21-561.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-05-02-18-07-53-393.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-05-02-18-08-02-399.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-05-03-20-07-23-834.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-05-03-20-10-39-461.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-05-03-20-10-45-856.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-05-07-01-02-56-761.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-05-07-01-03-10-303.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-05-08-18-06-25-376.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-05-08-18-06-34-673.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/generated/mockable-android-25.jar" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_HangUp_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_HangUp_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_HangUp_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_HangUp_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_HangUp_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_HangUp_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_HangUp_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_HangUp_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/CleanMvpLib_unspecified.xml" afterPath="$PROJECT_DIR$/.idea/libraries/CleanMvpLib_unspecified.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/animated_vector_drawable_25_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/animated_vector_drawable_25_0_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_25_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_25_0_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/cardview_v7_21_0_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/cardview_v7_21_0_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/design_25_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/design_25_0_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/espresso_core_2_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/espresso_core_2_2_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/espresso_idling_resource_2_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/espresso_idling_resource_2_2_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/exposed_instrumentation_api_publish_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/exposed_instrumentation_api_publish_0_5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/recyclerview_v7_25_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/recyclerview_v7_25_0_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/rules_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/rules_0_5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/runner_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/runner_0_5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_25_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_annotations_25_0_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_compat_25_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_compat_25_0_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_core_ui_25_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_core_ui_25_0_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_core_utils_25_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_core_utils_25_0_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_fragment_25_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_fragment_25_0_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_media_compat_25_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_media_compat_25_0_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_25_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_25_0_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_vector_drawable_25_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_vector_drawable_25_0_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/transition_25_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/transition_25_0_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations/HangApp.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/HangApp.xml" />
+    <list default="true" id="72c31ec8-3076-4782-a780-40cb8c2c6568" name="Failed commit: Default (2)" comment="planteado el metodo publish de otra forma">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/Add.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/Add.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyPresenter.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyPresenter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/App.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryPresenter.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryPresenter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
     </list>
     <ignored path="HangApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -200,8 +143,8 @@
             <state relative-caret-position="-156">
               <caret line="263" column="26" selection-start-line="263" selection-start-column="26" selection-end-line="263" selection-end-column="26" />
               <folding>
-                <element signature="e#5933#5934#0" expanded="true" />
-                <element signature="e#5978#5979#0" expanded="true" />
+                <element signature="e#5946#5947#0" expanded="true" />
+                <element signature="e#5997#5998#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2950,13 +2893,6 @@
       <option name="presentableId" value="Default" />
       <updated>1490022965325</updated>
     </task>
-    <task id="LOCAL-00024" summary="probando otra vez con una linea que faltaba....">
-      <created>1493228540713</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1493228540714</updated>
-    </task>
     <task id="LOCAL-00025" summary="identificador para la card view">
       <created>1493233042105</created>
       <option name="number" value="00025" />
@@ -3293,7 +3229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1494260620859</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="planteado el metodo publish de otra forma">
+      <created>1494280761529</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1494280761530</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -3339,7 +3282,7 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30862328" sideWeight="0.48064515" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30862328" sideWeight="0.48064515" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900763" sideWeight="0.5068259" order="7" side_tool="true" content_ui="tabs" />
@@ -3403,7 +3346,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="modificando el informationpresenter para que soporte todos los campos del texto del detalle" />
     <MESSAGE value="rellenando informationData con mas detalles" />
     <MESSAGE value="probando a emular la ppa con nuevo contenido" />
     <MESSAGE value="modificando activity_item_detail" />
@@ -3428,7 +3370,8 @@
     <MESSAGE value="cambiado metodo publishparty" />
     <MESSAGE value="pasando adapter al publishparty" />
     <MESSAGE value="reformando el metodo" />
-    <option name="LAST_COMMIT_MESSAGE" value="reformando el metodo" />
+    <MESSAGE value="planteado el metodo publish de otra forma" />
+    <option name="LAST_COMMIT_MESSAGE" value="planteado el metodo publish de otra forma" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -3814,8 +3757,8 @@
         <state relative-caret-position="-156">
           <caret line="263" column="26" selection-start-line="263" selection-start-column="26" selection-end-line="263" selection-end-column="26" />
           <folding>
-            <element signature="e#5933#5934#0" expanded="true" />
-            <element signature="e#5978#5979#0" expanded="true" />
+            <element signature="e#5946#5947#0" expanded="true" />
+            <element signature="e#5997#5998#0" expanded="true" />
           </folding>
         </state>
       </provider>
