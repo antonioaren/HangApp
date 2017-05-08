@@ -73,6 +73,7 @@ public class CategoryPresenter
     }
     Mediator app = (Mediator) getView().getApplication();
     app.addingItems(this);
+
   }
 
   /**

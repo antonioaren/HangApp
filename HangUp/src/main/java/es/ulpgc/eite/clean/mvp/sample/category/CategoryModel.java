@@ -84,7 +84,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         items.add(new CategoryData(R.drawable.astro, "Astronomía",
             String.valueOf(getParticipantsAt(4)), getAstro(), "Detalle Astro",
             "La astronomia se remonta en el siglo 300 A.C en la Antigua Grecia", "Hoy", "00:00"));
-        //Captando los  valores de los campos de texto cuando no hemos insertado nada 
+        //Captando los  valores de los campos de texto cuando no hemos insertado nada
         items.add(new CategoryData(R.drawable.astro, "title", "0", getNewParty(), "detail", "mmmmmmmmmmm", addPartyModel.getDateOfTheParty(), addPartyModel.getHourOfParty()))
 
         ;

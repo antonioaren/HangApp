@@ -4,9 +4,14 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.add.Add;
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyView;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
+import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 import es.ulpgc.eite.clean.mvp.sample.detail.DetailPresenter;
 import es.ulpgc.eite.clean.mvp.sample.information.Information;
 import es.ulpgc.eite.clean.mvp.sample.information.InformationView;
@@ -158,7 +163,14 @@ public class App extends Application implements Mediator, Navigator {
         toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
         toAddState.dateOfTheParty = presenter.getDateOfTheParty();
         toAddState.hourOfParty = presenter.getHourOfParty();
-
+        //reformando metodo 
+        InformationData information = new InformationData(R.drawable.astro, "name", "123", "detail", "story", toAddState.dateOfTheParty, toAddState.hourOfParty);
+        List<InformationData> list = new ArrayList();
+        list.add(information);
+        List<CategoryData> item = new ArrayList();
+        item.add(new CategoryData(R.drawable.astro, "name", "123", list, "details", "story", toAddState.dateOfTheParty, toAddState.hourOfParty));
+        CategoryView categoryView = new CategoryView();
+        categoryView.settingAdapter(item);
         presenter.destroyView();
     }
 
