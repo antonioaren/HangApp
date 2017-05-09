@@ -63,8 +63,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         Astro.add(new InformationData(R.drawable.astro, "Fiestas Nocturnas",
             String.valueOf(getParticipantsAt(4)), "Prueba detalle Astro",
             "La disco existe desde hace mucho tiempo", "este viernes", "de 12:00 pm hasta las 5:00 am"));
-        newParty = new ArrayList();
-        newParty.add(new InformationData(R.drawable.astro, "title", "0", "detail", "yguy", addPartyModel.getDateOfTheParty(), addPartyModel.getHourOfParty()));
+
     }
 
     private void LoadCategory() {
@@ -85,10 +84,15 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
             String.valueOf(getParticipantsAt(4)), getAstro(), "Detalle Astro",
             "La astronomia se remonta en el siglo 300 A.C en la Antigua Grecia", "Hoy", "00:00"));
         //Captando los  valores de los campos de texto cuando no hemos insertado nada
-        items.add(new CategoryData(R.drawable.astro, "title", "0", getNewParty(), "detail", "mmmmmmmmmmm", addPartyModel.getDateOfTheParty(), addPartyModel.getHourOfParty()))
 
         ;
 
+    }
+
+    public void reload() {
+        items.add(new CategoryData(R.drawable.astro, "title", "0", getNewParty(), "detail", "mmmmmmmmmmm", addPartyModel.getDateOfTheParty(), addPartyModel.getHourOfParty()));
+        newParty = new ArrayList();
+        newParty.add(new InformationData(R.drawable.astro, "title", "0", "detail", "yguy", addPartyModel.getDateOfTheParty(), addPartyModel.getHourOfParty()));
     }
 
     /**
