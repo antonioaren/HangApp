@@ -172,41 +172,5 @@ public class AddPartyPresenter
         CategoryView categoryView = new CategoryView();
         categoryView.settingAdapter(item);
     }
-/*
-    @Override
-    public String getPlace() {
-        return getView().getPlaceOfTheParty();
 
-    }
-
-    @Override
-    public String getDay() {
-        return getView().getDay();
-
-    }
-
-    @Override
-    public String getMonth() {
-        return getView().getMonth();
-
-    }
-
-    @Override
-    public int getYear() {
-        return getView().getYear();
-
-    }
-
-    @Override
-    public int getInitTIme() {
-        return getView().getHourOfInit();
-
-    }
-
-    @Override
-    public int getFinishTime() {
-        return getView().getHourOfFinish();
-
-    }
-    */
 }
