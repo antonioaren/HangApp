@@ -1,8 +1,10 @@
-package es.ulpgc.eite.clean.mvp.sample.app;
+package es.ulpgc.eite.clean.mvp.sample.data;
+
 
 /**
  * Created by Pedro Arenas on 27/4/17.
  */
+
 
 public class InformationData {
     private int image;

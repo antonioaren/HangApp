@@ -1,7 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.information;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
-import es.ulpgc.eite.clean.mvp.sample.app.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 
 /**
  * Created by alumno on 31/03/2017.

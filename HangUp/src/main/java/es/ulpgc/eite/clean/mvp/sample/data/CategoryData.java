@@ -1,4 +1,4 @@
-package es.ulpgc.eite.clean.mvp.sample.app;
+package es.ulpgc.eite.clean.mvp.sample.data;
 
 import java.util.List;
 

@@ -7,27 +7,33 @@ import java.util.Random;
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyModel;
-import es.ulpgc.eite.clean.mvp.sample.app.CategoryData;
-import es.ulpgc.eite.clean.mvp.sample.app.InformationData;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
+//import io.realm.Realm;
 
-//GenericModel<Information.ModelToPresenter>
 public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         implements Category.PresenterToModel {
 
     private String HangAppText;
     private String HangAppButtonSearchLabel;
     private String HangAppButtonAddLabel;
-    private List<CategoryData> items;
 
+    private List<CategoryData> items;
     private List<InformationData> Disco;
     private List<InformationData> Ulpgc;
     private List<InformationData> Cars;
     private List<InformationData> Musica;
     private List<InformationData> Astro;
     private List<InformationData> newParty;
+
     private Random randomAssistance1, randomAssistance2, randomAssistance3, randomAssistance4, randomAssistance5;
     private int[] participants;
-    AddPartyModel addPartyModel;
+    private AddPartyModel addPartyModel;
+
+    private boolean usingWrapper;
+    //private Realm realmDatabase;
+
+
     public CategoryModel() {
         randomAssistance1 = new Random();
         randomAssistance2 = new Random();
@@ -83,10 +89,6 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         items.add(new CategoryData(R.drawable.astro, "Astronomía",
             String.valueOf(getParticipantsAt(4)), getAstro(), "Detalle Astro",
             "La astronomia se remonta en el siglo 300 A.C en la Antigua Grecia", "Hoy", "00:00"));
-        //Captando los  valores de los campos de texto cuando no hemos insertado nada
-
-        ;
-
     }
 
     public void reload() {
@@ -178,6 +180,9 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     public int getParticipantsAt(int i) {
         return participants[i];
     }
+
+    ///////////////////////////  DATABASE ////////////////////////
+
 }
 
 

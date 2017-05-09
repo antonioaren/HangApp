@@ -6,8 +6,8 @@ import android.util.Log;
 import java.util.List;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
-import es.ulpgc.eite.clean.mvp.sample.app.CategoryData;
-import es.ulpgc.eite.clean.mvp.sample.app.InformationData;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
