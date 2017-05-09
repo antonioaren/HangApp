@@ -76,8 +76,9 @@ public class CategoryPresenter
 
       Navigator app = (Navigator) getView().getApplication();
       app.publishParty(this);
-//    app.notify();
 
+      getView().settingAdapter(getModel().ge);
+      notify();
 
   }
 
