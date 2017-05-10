@@ -9,6 +9,7 @@ import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyModel;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
+import io.realm.RealmResults;
 //import io.realm.Realm;
 
 public class CategoryModel extends GenericModel<Category.ModelToPresenter>
@@ -182,7 +183,31 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     }
 
     ///////////////////////////  DATABASE ////////////////////////
+    @Override
+    public List<EventsDatabase> getEvents(){
+        RealmResults<EventsDatabase> results=realmDatabase.where(EventsDatabase.class).findAll();
+        return results;
+    }
+    @Override
+    public void insertEvent(int image,String productName,String numberOfParticipants,String category,String detail,String day,String web){
+        EventsDatabase event=realmDatabase.createObject(EventsDatabase.class);
+        realmDatabase.beginTransaction();//metodo que empieza a escuchar todas las acciones que hagamos para insertar un evento
 
+        event.setImage(image);
+        event.setProductName(productName);
+        event.setNumber(numberOfParticipants);
+        event.setCategory(category);
+        event.setDetailText(detail);
+        event.setDay(day);
+        event.setWeb(web);
+        realmDatabase.commitTransaction();//Almacena registro en la base de datos
+    }
+    public void updateEvent(){
+
+    }
+    public void deteleEvent(){
+
+    }
 }
 
 
