@@ -5,7 +5,7 @@ import io.realm.RealmObject;
 /**
  * Created by eleonora on 10/05/2017.
  */
-
+//Calse de la base de datos
 public class EventsDatabase extends RealmObject {
 //    @PrimaryKey
 //    private int id;

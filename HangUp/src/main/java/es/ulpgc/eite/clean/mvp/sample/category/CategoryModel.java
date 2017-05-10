@@ -6,7 +6,7 @@ import java.util.Random;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.Database.EventsDatabase;
-import es.ulpgc.eite.clean.mvp.sample.R;
+
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyModel;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.InformationData;

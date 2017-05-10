@@ -8,6 +8,7 @@ import java.util.List;
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.Presenter;
+import es.ulpgc.eite.clean.mvp.sample.Database.EventsDatabase;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
 
@@ -84,6 +85,11 @@ public interface Category {
         List<InformationData> getNewParty();
 
         int getParticipantsAt(int i);
+
+        ///////////////////////////  DATABASE ////////////////////////
+        List<EventsDatabase> getEvents();
+
+        void insertEvent(int image, String productName, String numberOfParticipants, String category, String detail, String day, String web);
     }
 
     /**
