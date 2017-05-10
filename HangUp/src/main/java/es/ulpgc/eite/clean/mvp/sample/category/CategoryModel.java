@@ -5,12 +5,14 @@ import java.util.List;
 import java.util.Random;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
+import es.ulpgc.eite.clean.mvp.sample.Database.EventsDatabase;
 import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyModel;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
+import io.realm.Realm;
 import io.realm.RealmResults;
-//import io.realm.Realm;
+
 
 public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         implements Category.PresenterToModel {
@@ -32,7 +34,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     private AddPartyModel addPartyModel;
 
     private boolean usingWrapper;
-    //private Realm realmDatabase;
+    private Realm realmDatabase;
 
 
     public CategoryModel() {
