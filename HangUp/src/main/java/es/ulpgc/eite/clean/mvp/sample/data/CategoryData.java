@@ -2,11 +2,13 @@ package es.ulpgc.eite.clean.mvp.sample.data;
 
 import java.util.List;
 
+import io.realm.RealmObject;
+
 /**
  * Created by Pedro Arenas on 24/4/17.
  */
 
-public class CategoryData {
+public class CategoryData extends RealmObject {
     private int image;
     private String name;
     private String numberOfParticipants;

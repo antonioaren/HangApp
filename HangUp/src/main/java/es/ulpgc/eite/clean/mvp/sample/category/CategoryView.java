@@ -17,6 +17,7 @@ import java.util.List;
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
+import io.realm.Realm;
 
 public class CategoryView
         extends GenericActivity<Category.PresenterToView, Category.ViewToPresenter, CategoryPresenter>
@@ -48,6 +49,8 @@ public class CategoryView
 
         recycler = (RecyclerView) findViewById(R.id.recycler);
       //   recycler.setHasFixedSize(true); //Habrá que quitarlo si la lista es dinámica.
+     Realm realm= Realm.getDefaultInstance();
+        recycler.setAdapter(  new CategoryAdapter(realm.where(CategoryData.class).findAllAsync()));
 
         // Usar un administrador para LinearLayout
         /*El layout manager fue instanciado con la subclase LinearLayoutManager, indicando que el recycler
