@@ -20,7 +20,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     private String HangAppText;
     private String HangAppButtonSearchLabel;
     private String HangAppButtonAddLabel;
-
+     private List<EventsDatabase>itemsDatabase;
     private List<CategoryData> items;
     private List<InformationData> Disco;
     private List<InformationData> Ulpgc;
@@ -113,7 +113,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         HangAppButtonAddLabel = "AddOne";
         HangAppButtonSearchLabel = "SearchOne";
         HangAppText = "Add";
-
+         realmDatabase=Realm.getDefaultInstance();
         LoadCategory();
 
     }
