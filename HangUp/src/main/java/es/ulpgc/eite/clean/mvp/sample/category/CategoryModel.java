@@ -115,7 +115,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         HangAppButtonAddLabel = "AddOne";
         HangAppButtonSearchLabel = "SearchOne";
         HangAppText = "Add";
-         realmDatabase=Realm.getDefaultInstance();
+        // realmDatabase=Realm.getDefaultInstance();
         LoadCategory();
 
     }
@@ -220,8 +220,8 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         realmDatabase.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
-                realm.where(EventsDatabase.class).equalTo("id", id)
-                    .findAll();
+                realm.where(EventsDatabase.class).equalTo("id", id);
+                 //   .findAll();
 
             }
         });

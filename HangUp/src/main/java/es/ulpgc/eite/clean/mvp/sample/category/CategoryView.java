@@ -40,14 +40,14 @@ public class CategoryView
 
         title = (TextView) findViewById(R.id.title);
         image = (ImageView) findViewById(R.id.image);
-        // information = (TextView) findViewById(R.id.information);
+        //information = (TextView) findViewById(R.id.information);
         // Obtener el Recycler
         /*Cuando se obtiene la instancia del recycler se usa el método setHasFixedSize() para optimizar
         las operaciones con los ítems. Con esta característica le estamos diciendo al recycler que el
         adaptador no variará su tamaño en toda la ejecución del programa.*/
 
         recycler = (RecyclerView) findViewById(R.id.recycler);
-        //  recycler.setHasFixedSize(false); //Habrá que quitarlo si la lista es dinámica.
+      //   recycler.setHasFixedSize(true); //Habrá que quitarlo si la lista es dinámica.
 
         // Usar un administrador para LinearLayout
         /*El layout manager fue instanciado con la subclase LinearLayoutManager, indicando que el recycler
@@ -56,13 +56,7 @@ public class CategoryView
 
 
 
-       //----------------Preparando metodo para cargar items desde database-------------------------------------
-        //recyclerView.setAdapter(new ModelItemRecyclerViewAdapter());
-       /* Realm realm = Realm.getDefaultInstance();
-        recyclerView.setAdapter(
-                new ModelItemRecyclerViewAdapter(realm.where(ModelItem.class).findAllAsync()));*/
 
-       //-------------------------------------------------------------------------------------------------------------
         linearmanager = new LinearLayoutManager(this);
         recycler.setLayoutManager(linearmanager);
 

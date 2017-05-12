@@ -70,7 +70,7 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
     @Override
     public void onResume() {
         super.onResume(SearchPresenter.class, this);
-       // String[] categories = getPresenter().getCategories();
+       String[] categories = getPresenter().getCategories();
 
 
     }
