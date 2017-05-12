@@ -189,7 +189,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     ///////////////////////////  DATABASE ////////////////////////
    @Override
    public void setDatabaseItemsFromJson(){
-       setItemsFromJsonStream("database.json");
+      // setItemsFromJsonStream("database.json");
        //setItemsFromJsonObjectArray();
    }
 
