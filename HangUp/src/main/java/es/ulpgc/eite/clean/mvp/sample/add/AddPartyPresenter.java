@@ -6,11 +6,11 @@ import android.util.Log;
 import java.util.List;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
-import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
 
 /**
  * Created by eleonora on 17/04/2017.
@@ -98,8 +98,19 @@ public class AddPartyPresenter
             getModel().setPlaceOfTheParty(getView().getPlaceOfTheParty());
             getModel().setYear(getView().getYear());
 
-            Navigator app = (Navigator) getView().getApplication();
-            app.publishParty(this);
+        Navigator app = (Navigator) getView().getApplication();
+          app.publishParty(this);
+
+//           List<InformationData>list= new ArrayList<>();
+//            list.add(new InformationData(R.drawable.astro,"name","0", "details","story","date", "hour"));
+//           CategoryModel categoryModel= new CategoryModel();
+//            List<CategoryData>category=categoryModel.getListCategory();
+//            category.add(new CategoryData(R.drawable.astro,"name",
+//                    "0", list, "detail",
+//                   "story", "date", "hour"));
+//            CategoryView categoryView= new CategoryView();
+//            categoryView.settingAdapter(category);
+
         }
 
 
