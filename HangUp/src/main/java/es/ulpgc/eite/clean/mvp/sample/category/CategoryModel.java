@@ -192,6 +192,11 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         RealmResults<EventsDatabase> results=realmDatabase.where(EventsDatabase.class).findAll();
         return results;
     }
+
+    @Override
+    public void setItemsFromDatabase(){
+        itemsDatabase = realmDatabase.where(EventsDatabase.class).findAll();
+    }
     @Override
     public void insertEvent(String id,int image,String productName,String numberOfParticipants,String category,String detail,String day,String hour,String web){
         EventsDatabase event=realmDatabase.createObject(EventsDatabase.class);
