@@ -49,7 +49,7 @@ public class CategoryView
 
         recycler = (RecyclerView) findViewById(R.id.recycler);
       //   recycler.setHasFixedSize(true); //Habrá que quitarlo si la lista es dinámica.
-     Realm realm= Realm.getDefaultInstance();
+         Realm realm= Realm.getDefaultInstance();
         recycler.setAdapter(  new CategoryAdapter(realm.where(CategoryData.class).findAllAsync()));
 
         // Usar un administrador para LinearLayout
@@ -111,6 +111,11 @@ public class CategoryView
         adapter = new CategoryAdapter(parties);
         recycler.setAdapter(adapter);
 
+
+       /* if(recycler != null) {
+            CategoryAdapter recyclerAdapter =
+                    (CategoryAdapter) recycler.getAdapter();
+            recyclerAdapter.setItemList(items);*/
     }
 
     @Override
@@ -188,6 +193,12 @@ public class CategoryView
         public void onAttachedToRecyclerView(RecyclerView recyclerView) {
             super.onAttachedToRecyclerView(recyclerView);
         }
+
+       /* public void setItemList(List<CategoryData> items) {
+            this.items = items;
+            notifyDataSetChanged();
+
+        }*/
 
         public class CategoryViewHolder extends RecyclerView.ViewHolder {
             public final View itemView;
