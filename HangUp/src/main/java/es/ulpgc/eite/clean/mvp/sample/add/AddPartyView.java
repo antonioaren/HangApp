@@ -28,6 +28,8 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         implements Add.PresenterToView {
 
     TextView textViewTitle;
+    TextView textViewDescription;
+    EditText editTextDescrition;
     TextView textPlace;
     EditText editTextPlace;
     TextView textdate;
@@ -53,7 +55,8 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         textViewTitle = (TextView) findViewById(R.id.textView);
-
+          textViewDescription=(TextView)findViewById(R.id.textViewDescription);
+        editTextDescrition=(EditText)findViewById(R.id.editTextDescription);
         textPlace=(TextView) findViewById(R.id.textPlace);
         editTextPlace = (EditText) findViewById(R.id.editTextPlace);
         textdate = (TextView) findViewById(R.id.textDate);
