@@ -8,7 +8,7 @@ import io.realm.RealmObject;
 //Calse de la base de datos
 public class EventsDatabase extends RealmObject {
 //    @PrimaryKey
-//    private int id;
+  private String id;
     private String productName;
     private int image;
     private String number;
@@ -46,13 +46,13 @@ public class EventsDatabase extends RealmObject {
     }
 
 
-//    public int getId() {
-//        return id;
-//    }
+    public String getId() {
+        return id;
+    }
 
-//    public void setId(int id) {
-//        this.id = id;
-//    }
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getProductName() {
         return productName;

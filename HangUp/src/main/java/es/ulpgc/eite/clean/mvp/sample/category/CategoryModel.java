@@ -13,6 +13,8 @@ import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
+import static android.R.attr.id;
+
 
 public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         implements Category.PresenterToModel {
@@ -191,10 +193,10 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         return results;
     }
     @Override
-    public void insertEvent(int image,String productName,String numberOfParticipants,String category,String detail,String day,String hour,String web){
+    public void insertEvent(String id,int image,String productName,String numberOfParticipants,String category,String detail,String day,String hour,String web){
         EventsDatabase event=realmDatabase.createObject(EventsDatabase.class);
         realmDatabase.beginTransaction();//metodo que empieza a escuchar todas las acciones que hagamos para insertar un evento
-
+         event.setId(id);
         event.setImage(image);
         event.setProductName(productName);
        // event.setNumber(numberOfParticipants);
@@ -209,6 +211,16 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     }
     public void deteleEvent(){
+
+        realmDatabase.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                realm.where(EventsDatabase.class).equalTo("id", id)
+                    .findAll();
+
+            }
+        });
+
 
     }
 }
