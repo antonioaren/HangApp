@@ -112,7 +112,9 @@ public interface Add {
 
     String getPlaceOfTheParty();
 
-    int getHourOfInit();
+      String getDescription();
+
+      int getHourOfInit();
 
 
     //captamos la hora del timePicker que indica el fin de la fiesta

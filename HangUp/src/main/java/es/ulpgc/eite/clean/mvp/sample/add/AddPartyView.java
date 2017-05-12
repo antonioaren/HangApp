@@ -163,7 +163,10 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     public String getPlaceOfTheParty() {
         return editTextPlace.getText().toString();
     }
-
+    @Override
+    public String getDescription(){
+        return editTextDescrition.getText().toString();
+    }
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public int getHourOfInit() {
@@ -177,4 +180,5 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         int hour = timePickerFinish.getHour();
         return hour;
     }
+
 }
