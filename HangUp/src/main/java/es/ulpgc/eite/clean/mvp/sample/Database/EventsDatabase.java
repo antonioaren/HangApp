@@ -15,6 +15,16 @@ public class EventsDatabase extends RealmObject {
     private String detailText;
     private String Category;
     private String day;
+
+    public String getHour() {
+        return hour;
+    }
+
+    public void setHour(String hour) {
+        this.hour = hour;
+    }
+
+    private String hour;
     private String web;
 
     public String getNumber() {
