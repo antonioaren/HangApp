@@ -181,6 +181,8 @@ public interface Add {
     List<CategoryData> getPartyAdded();
 
     List<InformationData> getParty();
+
+    void setDescription(String description);
   }
 
   /**

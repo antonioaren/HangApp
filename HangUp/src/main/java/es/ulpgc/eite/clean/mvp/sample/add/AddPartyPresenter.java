@@ -97,7 +97,7 @@ public class AddPartyPresenter
             getModel().setMonth(getView().getMonth());
             getModel().setPlaceOfTheParty(getView().getPlaceOfTheParty());
             getModel().setYear(getView().getYear());
-
+             getModel().setDescription(getView().getDescription());
         Navigator app = (Navigator) getView().getApplication();
           app.publishParty(this);
 

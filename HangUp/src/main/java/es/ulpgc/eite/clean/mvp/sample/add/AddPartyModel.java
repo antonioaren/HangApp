@@ -18,6 +18,7 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
 
 
     String placeLabel, dateLabel, timeInitLabel, timeFinishLabel, publishLabel, titleLabel;
+    private String description;
     private int hourFinish;
     private String day;
     private int hourInit;
@@ -26,6 +27,13 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     private int year;
     List<CategoryData> partyAdded;
     List<InformationData> party;
+
+    public String getDescription() {
+        return description;
+    }
+
+
+
     public AddPartyModel() {
 
     }
@@ -171,5 +179,10 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     public List<InformationData> getParty() {
 
         return party;
+    }
+
+    @Override
+    public void setDescription(String description) {
+        this.description= description;
     }
 }
