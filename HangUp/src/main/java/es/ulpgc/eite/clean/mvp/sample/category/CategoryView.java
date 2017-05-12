@@ -159,8 +159,12 @@ public class CategoryView
 
         public List<CategoryData> items;
 
-        public CategoryAdapter(List<CategoryData> items) {
+        public CategoryAdapter(List<CategoryData> items  /*OrderedRealmCollection<ModelItem> items*/) {
+            //super(items, true);
+
             this.items = items;
+
+
         }
 
         @Override

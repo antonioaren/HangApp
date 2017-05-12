@@ -87,6 +87,9 @@ public interface Category {
         int getParticipantsAt(int i);
 
         ///////////////////////////  DATABASE ////////////////////////
+        void setDatabaseItemsFromJson();
+
+        ///////////////////////////  DATABASE ////////////////////////
         List<EventsDatabase> getEvents();
 
         void setItemsFromDatabase();

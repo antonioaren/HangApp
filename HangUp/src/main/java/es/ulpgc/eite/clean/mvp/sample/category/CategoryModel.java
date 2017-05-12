@@ -187,6 +187,14 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     }
 
     ///////////////////////////  DATABASE ////////////////////////
+   @Override
+   public void setDatabaseItemsFromJson(){
+       setItemsFromJsonStream("database.json");
+       //setItemsFromJsonObjectArray();
+   }
+
+
+
     @Override
     public List<EventsDatabase> getEvents(){
         RealmResults<EventsDatabase> results=realmDatabase.where(EventsDatabase.class).findAll();
