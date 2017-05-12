@@ -191,16 +191,17 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         return results;
     }
     @Override
-    public void insertEvent(int image,String productName,String numberOfParticipants,String category,String detail,String day,String web){
+    public void insertEvent(int image,String productName,String numberOfParticipants,String category,String detail,String day,String hour,String web){
         EventsDatabase event=realmDatabase.createObject(EventsDatabase.class);
         realmDatabase.beginTransaction();//metodo que empieza a escuchar todas las acciones que hagamos para insertar un evento
 
         event.setImage(image);
         event.setProductName(productName);
-        event.setNumber(numberOfParticipants);
+       // event.setNumber(numberOfParticipants);
         event.setCategory(category);
         event.setDetailText(detail);
-        event.setDay(day);
+      //  event.setDay(day);
+       // event.setHour(hour);
         event.setWeb(web);
         realmDatabase.commitTransaction();//Almacena registro en la base de datos
     }

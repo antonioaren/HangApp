@@ -89,7 +89,7 @@ public interface Category {
         ///////////////////////////  DATABASE ////////////////////////
         List<EventsDatabase> getEvents();
 
-        void insertEvent(int image, String productName, String numberOfParticipants, String category, String detail, String day, String web);
+        void insertEvent(int image, String productName, String numberOfParticipants, String category, String detail, String day,String hour, String web);
     }
 
     /**

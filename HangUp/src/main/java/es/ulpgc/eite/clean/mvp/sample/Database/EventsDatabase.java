@@ -15,6 +15,8 @@ public class EventsDatabase extends RealmObject {
     private String detailText;
     private String Category;
     private String day;
+    private String hour;
+    private String web;
 
     public String getHour() {
         return hour;
@@ -24,8 +26,6 @@ public class EventsDatabase extends RealmObject {
         this.hour = hour;
     }
 
-    private String hour;
-    private String web;
 
     public String getNumber() {
         return number;
