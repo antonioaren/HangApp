@@ -54,6 +54,12 @@ public class CategoryView
         tomará la forma de lista vertical similar al ListView. Luego se relaciona al recycler con el
         método setLayoutManager().*/
 
+
+       //----------------Preparando metodo para cargar items desde database-------------------------------------
+        //recyclerView.setAdapter(new ModelItemRecyclerViewAdapter());
+       /* Realm realm = Realm.getDefaultInstance();
+        recyclerView.setAdapter(
+                new ModelItemRecyclerViewAdapter(realm.where(ModelItem.class).findAllAsync()));*/
         linearmanager = new LinearLayoutManager(this);
         recycler.setLayoutManager(linearmanager);
 
