@@ -16,7 +16,7 @@ import java.util.List;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData_Old;
 import io.realm.Realm;
 
 public class CategoryView
@@ -32,7 +32,7 @@ public class CategoryView
     private LinearLayoutManager linearmanager;
     private CategoryAdapter adapter;
     private RecyclerView.LayoutManager lManager;
-    private List<CategoryData> items;
+    private List<CategoryData_Old> items;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,7 +50,7 @@ public class CategoryView
         recycler = (RecyclerView) findViewById(R.id.recycler);
       //   recycler.setHasFixedSize(true); //Habrá que quitarlo si la lista es dinámica.
          Realm realm= Realm.getDefaultInstance();
-        recycler.setAdapter(  new CategoryAdapter(realm.where(CategoryData.class).findAllAsync()));
+        recycler.setAdapter(new CategoryAdapter(realm.where(CategoryData_Old.class).findAllAsync()));
 
         // Usar un administrador para LinearLayout
         /*El layout manager fue instanciado con la subclase LinearLayoutManager, indicando que el recycler
@@ -102,12 +102,12 @@ public class CategoryView
         return this.adapter;
     }
 
-    public List<CategoryData> getList() {
+    public List<CategoryData_Old> getList() {
         return this.items;
     }
     @Override
 
-    public void settingAdapter(List<CategoryData> parties) {
+    public void settingAdapter(List<CategoryData_Old> parties) {
         adapter = new CategoryAdapter(parties);
         recycler.setAdapter(adapter);
 
@@ -157,9 +157,9 @@ public class CategoryView
 
     public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
 
-        public List<CategoryData> items;
+        public List<CategoryData_Old> items;
 
-        public CategoryAdapter(List<CategoryData> items  /*OrderedRealmCollection<ModelItem> items*/) {
+        public CategoryAdapter(List<CategoryData_Old> items  /*OrderedRealmCollection<ModelItem> items*/) {
             //super(items, true);
 
             this.items = items;
@@ -198,7 +198,7 @@ public class CategoryView
             super.onAttachedToRecyclerView(recyclerView);
         }
 
-       /* public void setItemList(List<CategoryData> items) {
+       /* public void setItemList(List<CategoryData_Old> items) {
             this.items = items;
             notifyDataSetChanged();
 
@@ -210,7 +210,7 @@ public class CategoryView
             public ImageView image;
             public TextView title;
             public TextView number;
-            public CategoryData item;
+            public CategoryData_Old item;
 
             public CategoryViewHolder(View v) {
                 super(v);

@@ -5,11 +5,11 @@ import java.util.List;
 import java.util.Random;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
-import es.ulpgc.eite.clean.mvp.sample.Database.EventsDatabase;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData_Old;
+import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
 import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyModel;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
-import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
+import es.ulpgc.eite.clean.mvp.sample.data.InformationData_Old;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
@@ -22,14 +22,14 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     private String HangAppText;
     private String HangAppButtonSearchLabel;
     private String HangAppButtonAddLabel;
-     private List<EventsDatabase>itemsDatabase;
-    private List<CategoryData> items;
-    private List<InformationData> Disco;
-    private List<InformationData> Ulpgc;
-    private List<InformationData> Cars;
-    private List<InformationData> Musica;
-    private List<InformationData> Astro;
-    private List<InformationData> newParty;
+    private List<InformationData> itemsDatabase;
+    private List<CategoryData_Old> items;
+    private List<InformationData_Old> Disco;
+    private List<InformationData_Old> Ulpgc;
+    private List<InformationData_Old> Cars;
+    private List<InformationData_Old> Musica;
+    private List<InformationData_Old> Astro;
+    private List<InformationData_Old> newParty;
 
     private Random randomAssistance1, randomAssistance2, randomAssistance3, randomAssistance4, randomAssistance5;
     private int[] participants;
@@ -51,27 +51,27 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
             randomAssistance5.nextInt(2001)};
         addPartyModel = new AddPartyModel();
         Disco = new ArrayList();
-        Disco.add(new InformationData(R.drawable.disco, "Fiestas Nocturnas",
+        Disco.add(new InformationData_Old(R.drawable.disco, "Fiestas Nocturnas",
             String.valueOf(getParticipantsAt(0)), "Prueba detalle Astro",
             "La disco existe desde hace mucho tiempo", "este viernes", "de 12:00 pm hasta las 5:00 am"));
 
         Ulpgc = new ArrayList();
-        Ulpgc.add(new InformationData(R.drawable.ulpgc, "Fiestas Nocturnas",
+        Ulpgc.add(new InformationData_Old(R.drawable.ulpgc, "Fiestas Nocturnas",
             String.valueOf(getParticipantsAt(1)), "Prueba detalle Astro",
             "La disco existe desde hace mucho tiempo", "este viernes", "de 12:00 pm hasta las 5:00 am"));
 
         Cars = new ArrayList();
-        Cars.add(new InformationData(R.drawable.cars, "Fiestas Nocturnas",
+        Cars.add(new InformationData_Old(R.drawable.cars, "Fiestas Nocturnas",
             String.valueOf(getParticipantsAt(2)), "Prueba detalle Astro",
             "La disco existe desde hace mucho tiempo", "este viernes", "de 12:00 pm hasta las 5:00 am"));
 
         Musica = new ArrayList();
-        Musica.add(new InformationData(R.drawable.musica, "Fiestas Nocturnas",
+        Musica.add(new InformationData_Old(R.drawable.musica, "Fiestas Nocturnas",
             String.valueOf(getParticipantsAt(3)), "Prueba detalle Astro",
             "La disco existe desde hace mucho tiempo", "este viernes", "de 12:00 pm hasta las 5:00 am"));
 
         Astro = new ArrayList();
-        Astro.add(new InformationData(R.drawable.astro, "Fiestas Nocturnas",
+        Astro.add(new InformationData_Old(R.drawable.astro, "Fiestas Nocturnas",
             String.valueOf(getParticipantsAt(4)), "Prueba detalle Astro",
             "La disco existe desde hace mucho tiempo", "este viernes", "de 12:00 pm hasta las 5:00 am"));
 
@@ -79,27 +79,27 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     private void LoadCategory() {
         items = new ArrayList();
-        items.add(new CategoryData(R.drawable.disco, "Fiestas Nocturnas",
+        items.add(new CategoryData_Old(R.drawable.disco, "Fiestas Nocturnas",
             String.valueOf(getParticipantsAt(0)), getDisco(), "Detalle Disco ",
             "La disco existe desde hace mucho tiempo", "este viernes", "de 12:00 pm hasta las 5:00 am"));
-        items.add(new CategoryData(R.drawable.ulpgc, "Charlas Ulpgc",
+        items.add(new CategoryData_Old(R.drawable.ulpgc, "Charlas Ulpgc",
             String.valueOf(getParticipantsAt(1)), getUlpgc(), "Orla Ulpgc",
             "La Universidad de Las Palmas de Gran Canaria comienza su andadura el curso 89-90 como consecuencia de un gran movimiento social que tiene lugar en esta isla de Gran Canaria y que culmina con la aprobación, por parte del Parlamento de Canarias, de la Ley de Reorganización Universitaria de Canarias, el 26 de abril de 1989.  ", "viernes 5 abril", "12:00 am"));
-        items.add(new CategoryData(R.drawable.cars, "Automovilismo",
+        items.add(new CategoryData_Old(R.drawable.cars, "Automovilismo",
             String.valueOf(getParticipantsAt(2)), getCars(), "Carrera de formula 1 ",
             "la formula se remonta en 1949", "proximo viernes", "5:00 pm"));
-        items.add(new CategoryData(R.drawable.musica, "Musica en directo",
+        items.add(new CategoryData_Old(R.drawable.musica, "Musica en directo",
             String.valueOf(getParticipantsAt(3)), getMusica(), "Detalle Musica",
             "La musica existe desde que se descubrio la escritura", "sabado 29 de abril", "16:00"));
-        items.add(new CategoryData(R.drawable.astro, "Astronomía",
+        items.add(new CategoryData_Old(R.drawable.astro, "Astronomía",
             String.valueOf(getParticipantsAt(4)), getAstro(), "Detalle Astro",
             "La astronomia se remonta en el siglo 300 A.C en la Antigua Grecia", "Hoy", "00:00"));
     }
 
     public void reload() {
-        items.add(new CategoryData(R.drawable.astro, "title", "0", getNewParty(), "detail", "mmmmmmmmmmm", addPartyModel.getDateOfTheParty(), addPartyModel.getHourOfParty()));
+        items.add(new CategoryData_Old(R.drawable.astro, "title", "0", getNewParty(), "detail", "mmmmmmmmmmm", addPartyModel.getDateOfTheParty(), addPartyModel.getHourOfParty()));
         newParty = new ArrayList();
-        newParty.add(new InformationData(R.drawable.astro, "title", "0", "detail", "yguy", addPartyModel.getDateOfTheParty(), addPartyModel.getHourOfParty()));
+        newParty.add(new InformationData_Old(R.drawable.astro, "title", "0", "detail", "yguy", addPartyModel.getDateOfTheParty(), addPartyModel.getHourOfParty()));
     }
 
     /**
@@ -146,38 +146,38 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     }
 
     @Override
-    public List<CategoryData> getListCategory() {
+    public List<CategoryData_Old> getListCategory() {
         return this.items;
     }
 
 
     @Override
-    public List<InformationData> getDisco() {
+    public List<InformationData_Old> getDisco() {
         return Disco;
     }
 
     @Override
-    public List<InformationData> getUlpgc() {
+    public List<InformationData_Old> getUlpgc() {
         return Ulpgc;
     }
 
     @Override
-    public List<InformationData> getCars() {
+    public List<InformationData_Old> getCars() {
         return Cars;
     }
 
     @Override
-    public List<InformationData> getMusica() {
+    public List<InformationData_Old> getMusica() {
         return Musica;
     }
 
     @Override
-    public List<InformationData> getAstro() {
+    public List<InformationData_Old> getAstro() {
         return Astro;
     }
 
     @Override
-    public List<InformationData> getNewParty() {
+    public List<InformationData_Old> getNewParty() {
         return newParty;
     }
 
@@ -196,18 +196,18 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
 
     @Override
-    public List<EventsDatabase> getEvents(){
-        RealmResults<EventsDatabase> results=realmDatabase.where(EventsDatabase.class).findAll();
+    public List<InformationData> getEvents() {
+        RealmResults<InformationData> results = realmDatabase.where(InformationData.class).findAll();
         return results;
     }
 
     @Override
     public void setItemsFromDatabase(){
-        itemsDatabase = realmDatabase.where(EventsDatabase.class).findAll();
+        itemsDatabase = realmDatabase.where(InformationData.class).findAll();
     }
     @Override
     public void insertEvent(String id,int image,String productName,String numberOfParticipants,String category,String detail,String day,String hour,String web){
-        EventsDatabase event=realmDatabase.createObject(EventsDatabase.class);
+        InformationData event = realmDatabase.createObject(InformationData.class);
         realmDatabase.beginTransaction();//metodo que empieza a escuchar todas las acciones que hagamos para insertar un evento
          event.setId(id);
         event.setImage(image);
@@ -228,7 +228,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         realmDatabase.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
-                realm.where(EventsDatabase.class).equalTo("id", id);
+                realm.where(InformationData.class).equalTo("id", id);
                  //   .findAll();
 
             }

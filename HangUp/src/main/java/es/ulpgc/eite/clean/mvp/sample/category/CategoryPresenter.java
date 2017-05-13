@@ -9,8 +9,8 @@ import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.add.Add;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
-import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData_Old;
+import es.ulpgc.eite.clean.mvp.sample.data.InformationData_Old;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 
@@ -25,7 +25,7 @@ public class CategoryPresenter
   private boolean textVisible;
   private boolean imageVisibility;
   private boolean selectorsVisible;
-  private CategoryData selectedItem;
+  private CategoryData_Old selectedItem;
   private String hour;
   private String date;
   private String place;
@@ -212,22 +212,22 @@ public class CategoryPresenter
   }
 
     @Override
-    public List<CategoryData> getDefaultList() {
+    public List<CategoryData_Old> getDefaultList() {
         return getModel().getListCategory();
     }
 
   @Override
-  public List<CategoryData> getPartyAdded() {
+  public List<CategoryData_Old> getPartyAdded() {
     return null;
   }
 
   @Override
-  public List<InformationData> getPartyCreated() {
+  public List<InformationData_Old> getPartyCreated() {
     return null;
   }
 
   @Override
-  public void settingAdapter(List<CategoryData> item) {
+  public void settingAdapter(List<CategoryData_Old> item) {
 
   }
 
@@ -239,7 +239,7 @@ public class CategoryPresenter
   }
 
   @Override
-  public CategoryData getSelectedItem() {
+  public CategoryData_Old getSelectedItem() {
     return selectedItem;
   }
 
@@ -282,12 +282,12 @@ public class CategoryPresenter
   }
 
   @Override
-  public List<CategoryData> getListOfParties() {
+  public List<CategoryData_Old> getListOfParties() {
     return getModel().getListCategory();
   }
 
   @Override
-  public void onItemClicked(CategoryData item) {
+  public void onItemClicked(CategoryData_Old item) {
     selectedItem = item;
     Log.d(TAG, "calling goToDetailScreen()");
 

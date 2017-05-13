@@ -6,8 +6,8 @@ import android.util.Log;
 import java.util.List;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
-import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData_Old;
+import es.ulpgc.eite.clean.mvp.sample.data.InformationData_Old;
 
 
 /**
@@ -25,8 +25,8 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     private String month;
     private String place;
     private int year;
-    List<CategoryData> partyAdded;
-    List<InformationData> party;
+    List<CategoryData_Old> partyAdded;
+    List<InformationData_Old> party;
 
     public String getDescription() {
         return description;
@@ -170,13 +170,13 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     }
 
     @Override
-    public List<CategoryData> getPartyAdded() {
+    public List<CategoryData_Old> getPartyAdded() {
 
         return this.partyAdded;
     }
 
     @Override
-    public List<InformationData> getParty() {
+    public List<InformationData_Old> getParty() {
 
         return party;
     }

@@ -8,9 +8,9 @@ import java.util.List;
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.Presenter;
-import es.ulpgc.eite.clean.mvp.sample.Database.EventsDatabase;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData_Old;
+import es.ulpgc.eite.clean.mvp.sample.data.InformationData_Old;
 
 public interface Category {
 
@@ -31,9 +31,9 @@ public interface Category {
         void onListItemClicked();
 
 
-        List<CategoryData> getListOfParties();
+        List<CategoryData_Old> getListOfParties();
 
-        void onItemClicked(CategoryData item);
+        void onItemClicked(CategoryData_Old item);
     }
 
     /**
@@ -42,7 +42,7 @@ public interface Category {
     interface PresenterToView extends ContextView {
         void onCreate(Bundle savedInstanceState);
 
-        void settingAdapter(List<CategoryData> parties);
+        void settingAdapter(List<CategoryData_Old> parties);
 
         void finishScreen();
 
@@ -70,19 +70,19 @@ public interface Category {
         String getAddLabel();
 
 
-        List<CategoryData> getListCategory();
+        List<CategoryData_Old> getListCategory();
 
-        List<InformationData> getDisco();
+        List<InformationData_Old> getDisco();
 
-        List<InformationData> getUlpgc();
+        List<InformationData_Old> getUlpgc();
 
-        List<InformationData> getCars();
+        List<InformationData_Old> getCars();
 
-        List<InformationData> getMusica();
+        List<InformationData_Old> getMusica();
 
-        List<InformationData> getAstro();
+        List<InformationData_Old> getAstro();
 
-        List<InformationData> getNewParty();
+        List<InformationData_Old> getNewParty();
 
         int getParticipantsAt(int i);
 
@@ -90,7 +90,7 @@ public interface Category {
         void setDatabaseItemsFromJson();
 
         ///////////////////////////  DATABASE ////////////////////////
-        List<EventsDatabase> getEvents();
+        List<InformationData> getEvents();
 
         void setItemsFromDatabase();
 
@@ -103,7 +103,7 @@ public interface Category {
     interface ModelToPresenter {
 
 
-        List<CategoryData> getListOfParties();
+        List<CategoryData_Old> getListOfParties();
     }
 
 
@@ -116,7 +116,7 @@ public interface Category {
 
         void destroyView();
 
-        CategoryData getSelectedItem();
+        CategoryData_Old getSelectedItem();
 
         boolean isTextVisible();
 

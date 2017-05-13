@@ -8,7 +8,8 @@ import io.realm.RealmObject;
  * Created by Pedro Arenas on 24/4/17.
  */
 
-public class CategoryData extends RealmObject {
+public class CategoryData_Old extends RealmObject {
+
     private int image;
     private String name;
     private String numberOfParticipants;
@@ -16,10 +17,10 @@ public class CategoryData extends RealmObject {
     private String story;
     private String Date;
     private String hour;
-    private List<InformationData> ItemInfo;
+    private List<InformationData_Old> ItemInfo;
 
-    public CategoryData(int image, String name, String numberOfParticipants, List<InformationData> item,
-                        String details, String story, String Date, String hour) {
+    public CategoryData_Old(int image, String name, String numberOfParticipants, List<InformationData_Old> item,
+                            String details, String story, String Date, String hour) {
         this.image = image;
         this.name = name;
         this.numberOfParticipants = numberOfParticipants;
@@ -29,6 +30,7 @@ public class CategoryData extends RealmObject {
         this.Date = Date;
         this.hour = hour;
     }
+
 
     public String getName() {
         return name;
@@ -57,7 +59,8 @@ public class CategoryData extends RealmObject {
     public String getHour() {
         return hour;
     }
-    public List<InformationData> getItemInfo() {
+
+    public List<InformationData_Old> getItemInfo() {
         return ItemInfo;
     }
 }

@@ -1,53 +1,100 @@
 package es.ulpgc.eite.clean.mvp.sample.data;
 
+import io.realm.RealmObject;
 
 /**
- * Created by Pedro Arenas on 27/4/17.
+ * Created by eleonora on 10/05/2017.
  */
-
-
-public class InformationData {
+//Calse de la base de datos
+public class InformationData extends RealmObject {
+//    @PrimaryKey
+private String id;
+    private String productName;
     private int image;
-    private String name;
-    private String numberOfParticipants;
-    private String Details, story, date, hour;
+    private String number;
+    private String detailText;
+    private String Category;
+    private String day;
+    private String hour;
+    private String web;
 
+    public String getHour() {
+        return hour;
+    }
 
-    public InformationData(int image, String name, String numberOfParticipants, String details, String story, String date, String hour) {
-        this.image = image;
-        this.name = name;
-        this.numberOfParticipants = numberOfParticipants;
-        this.Details = details;
-        this.story = story;
-        this.date = date;
+    public void setHour(String hour) {
         this.hour = hour;
     }
 
-    public String getName() {
-        return name;
+
+    public String getNumber() {
+        return number;
     }
 
-    public String getNumberOfParticipants() {
-        return numberOfParticipants;
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+
+
+    public String getDay() {
+        return day;
+    }
+
+    public void setDay(String day) {
+        this.day = day;
+    }
+
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
     public int getImage() {
         return image;
     }
 
-    public String getDetails() {
-        return Details;
+    public void setImage(int image) {
+        this.image = image;
     }
 
-    public String getStory() {
-        return story;
+    public String getDetailText() {
+        return detailText;
     }
 
-    public String getDate() {
-        return date;
+    public void setDetailText(String detailText) {
+        this.detailText = detailText;
     }
 
-    public String getHour() {
-        return hour;
+    public String getCategory() {
+        return Category;
     }
+
+    public void setCategory(String category) {
+        Category = category;
+    }
+
+    public String getWeb() {
+        return web;
+    }
+
+    public void setWeb(String web) {
+        this.web = web;
+    }
+
+
+
+
 }

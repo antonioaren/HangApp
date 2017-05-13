@@ -8,8 +8,8 @@ import java.util.List;
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
-import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData_Old;
+import es.ulpgc.eite.clean.mvp.sample.data.InformationData_Old;
 
 /**
  * Created by eleonora on 17/04/2017.
@@ -98,11 +98,11 @@ public class AddPartyPresenter
             getModel().setYear(getView().getYear());
              getModel().setDescription(getView().getDescription());
 
-//           List<InformationData>list= new ArrayList<>();
-//            list.add(new InformationData(R.drawable.astro,"name","0", "details","story","date", "hour"));
+//           List<InformationData_Old>list= new ArrayList<>();
+//            list.add(new InformationData_Old(R.drawable.astro,"name","0", "details","story","date", "hour"));
 //           CategoryModel categoryModel= new CategoryModel();
-//            List<CategoryData>category=categoryModel.getListCategory();
-//            category.add(new CategoryData(R.drawable.astro,"name",
+//            List<CategoryData_Old>category=categoryModel.getListCategory();
+//            category.add(new CategoryData_Old(R.drawable.astro,"name",
 //                    "0", list, "detail",
 //                   "story", "date", "hour"));
 //            CategoryView categoryView= new CategoryView();
@@ -159,24 +159,24 @@ public class AddPartyPresenter
     }
 
     @Override
-    public List<CategoryData> getDefaultList() {
+    public List<CategoryData_Old> getDefaultList() {
         return null;
     }
 
     @Override
-    public List<CategoryData> getPartyAdded() {
+    public List<CategoryData_Old> getPartyAdded() {
 
         return getModel().getPartyAdded();
     }
 
     @Override
-    public List<InformationData> getPartyCreated() {
+    public List<InformationData_Old> getPartyCreated() {
 
         return getModel().getParty();
     }
 
     @Override
-    public void settingAdapter(List<CategoryData> item) {
+    public void settingAdapter(List<CategoryData_Old> item) {
         CategoryView categoryView = new CategoryView();
         categoryView.settingAdapter(item);
     }

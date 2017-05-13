@@ -8,8 +8,8 @@ import java.util.List;
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.Presenter;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
-import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData_Old;
+import es.ulpgc.eite.clean.mvp.sample.data.InformationData_Old;
 
 /**
  * Created by Luis on 12/11/16.
@@ -41,12 +41,13 @@ public interface Add {
     String getDateOfTheParty();
     String getHourOfParty();
     // boolean isTextInserted();
-    List<CategoryData> getDefaultList();
-    List<CategoryData> getPartyAdded();
+    List<CategoryData_Old> getDefaultList();
 
-    List<InformationData> getPartyCreated();
+    List<CategoryData_Old> getPartyAdded();
 
-    void settingAdapter(List<CategoryData> item);
+    List<InformationData_Old> getPartyCreated();
+
+    void settingAdapter(List<CategoryData_Old> item);
     void destroyView();
   }
 
@@ -78,7 +79,7 @@ public interface Add {
     //captamos la hora del timePicker que indica el fin de la fiesta
 
 
-    void settingAdapter(List<CategoryData> data);
+    void settingAdapter(List<CategoryData_Old> data);
 
     void finishScreen();
     void hideToolbar();
@@ -178,9 +179,9 @@ public interface Add {
     void setPlaceOfTheParty(String place);
     void setYear(int year);
 
-    List<CategoryData> getPartyAdded();
+    List<CategoryData_Old> getPartyAdded();
 
-    List<InformationData> getParty();
+    List<InformationData_Old> getParty();
 
     void setDescription(String description);
   }

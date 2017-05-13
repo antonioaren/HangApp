@@ -6,21 +6,18 @@ import android.content.Intent;
 
 import java.util.List;
 
-import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.add.Add;
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyView;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
-import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData_Old;
+import es.ulpgc.eite.clean.mvp.sample.data.InformationData_Old;
 import es.ulpgc.eite.clean.mvp.sample.detail.DetailPresenter;
 import es.ulpgc.eite.clean.mvp.sample.information.Information;
 import es.ulpgc.eite.clean.mvp.sample.information.InformationView;
 import es.ulpgc.eite.clean.mvp.sample.search.Search;
 import es.ulpgc.eite.clean.mvp.sample.search.SearchView;
-import io.realm.Realm;
-import io.realm.RealmConfiguration;
 
 
 public class App extends Application implements Mediator, Navigator {
@@ -41,16 +38,11 @@ public class App extends Application implements Mediator, Navigator {
         toSearchState = new SearchState();
         toSearchState.textVisibility = false;
 
-        RealmConfiguration config = new RealmConfiguration.Builder(getApplicationContext()).build();
-        Realm.setDefaultConfiguration(config);
-        CreatingDatabase();
-
+//        RealmConfiguration config = new RealmConfiguration.Builder(getApplicationContext()).build();
+//        Realm.setDefaultConfiguration(config);
     }
 
-    private void CreatingDatabase() {
 
-
-    }
 
 
     ///////////////////////////////////////////////////////////////////////////////////
@@ -170,14 +162,14 @@ public class App extends Application implements Mediator, Navigator {
 
         //reformando metodo
         toAddState.newparty = presenter.getPartyCreated();
-        toAddState.newparty.add(new InformationData(R.drawable.astro,
+        toAddState.newparty.add(new InformationData_Old(R.drawable.astro,
                 "name", "0", "details", "story", toAddState.dateOfTheParty, toAddState.hourOfParty));
         toAddState.partyAdded = presenter.getPartyAdded();
-        toAddState.partyAdded.add(new CategoryData(R.drawable.astro,
+        toAddState.partyAdded.add(new CategoryData_Old(R.drawable.astro,
                 "name", "0", toAddState.newparty, "details", "story", toAddState.dateOfTheParty, toAddState.hourOfParty));
 
         toAddState.list = presenter.getDefaultList();
-        toAddState.list.add((CategoryData) toAddState.partyAdded);
+        toAddState.list.add((CategoryData_Old) toAddState.partyAdded);
         CategoryView cv= new CategoryView();
         cv.settingAdapter(toAddState.list);
 
@@ -250,15 +242,15 @@ public class App extends Application implements Mediator, Navigator {
         String placeOfTheParty;
         String dateOfTheParty;
         String hourOfParty;
-        List<CategoryData> partyAdded;
-        List<InformationData> newparty;
-        List<CategoryData> list;
+        List<CategoryData_Old> partyAdded;
+        List<InformationData_Old> newparty;
+        List<CategoryData_Old> list;
 
     }
 
 
     private class InformationState {
-        public CategoryData ItemSelected;
+        public CategoryData_Old ItemSelected;
     }
 
     private class ListState {

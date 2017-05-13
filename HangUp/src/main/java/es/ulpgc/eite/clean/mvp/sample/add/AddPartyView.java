@@ -16,7 +16,7 @@ import java.util.List;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData_Old;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 
 
@@ -84,7 +84,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     }
 
     @Override
-    public void settingAdapter(List<CategoryData> data) {
+    public void settingAdapter(List<CategoryData_Old> data) {
         CategoryView category = new CategoryView();
         category.settingAdapter(data);
     }
