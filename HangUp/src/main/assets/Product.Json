@@ -1,0 +1,52 @@
+[
+  {
+    "id_products": 1,
+    "title": "Noche de blanco",
+    "date": "12/09/2017",
+    "hour": "23:00",
+    "place": "Sotavento Club",
+    "detail": "Descripcion",
+    "participants": 0,
+    "category_id": 1
+  },
+  {
+    "id_products": 2,
+    "title": "Observación del cometa Haley",
+    "date": "16/12/2019",
+    "hour": "23:00",
+    "place": "Observatorio de tejina",
+    "detail": "Descripcion",
+    "participants": 0,
+    "category_id": 2
+  },
+  {
+    "id_products": 3,
+    "title": "Jornadas de puertas abiertas",
+    "date": "16/03/2017",
+    "hour": "09:00",
+    "place": "Universidad de Las Palmas",
+    "detail": "Descripcion",
+    "participants": 0,
+    "category_id": 3
+  },
+  {
+    "id_products": 4,
+    "title": "Velocidad Maspalomas",
+    "date": "18/07/2017",
+    "hour": "11:00",
+    "place": "playa el ingles",
+    "detail": "Descripcion",
+    "participants": 0,
+    "category_id": 4
+  },
+  {
+    "id_products": 5,
+    "title": "Orquesta Sinfónica de Rusia",
+    "date": "15/09/2017",
+    "hour": "21:00",
+    "place": "Alfredo Kraus",
+    "detail": "Descripcion",
+    "participants": 0,
+    "category_id": 5
+  }
+]
