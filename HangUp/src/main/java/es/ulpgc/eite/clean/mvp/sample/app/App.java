@@ -6,6 +6,7 @@ import android.content.Intent;
 
 import java.util.List;
 
+import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.add.Add;
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyView;
@@ -18,6 +19,8 @@ import es.ulpgc.eite.clean.mvp.sample.information.Information;
 import es.ulpgc.eite.clean.mvp.sample.information.InformationView;
 import es.ulpgc.eite.clean.mvp.sample.search.Search;
 import es.ulpgc.eite.clean.mvp.sample.search.SearchView;
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
 
 
 public class App extends Application implements Mediator, Navigator {
@@ -34,12 +37,21 @@ public class App extends Application implements Mediator, Navigator {
     @Override
     public void onCreate() {
         super.onCreate();
-
         toCategoryState = new CategoryState();
         toSearchState = new SearchState();
         toSearchState.textVisibility = false;
 
+        RealmConfiguration config = new RealmConfiguration.Builder(getApplicationContext()).build();
+        Realm.setDefaultConfiguration(config);
+        CreatingDatabase();
+
     }
+
+    private void CreatingDatabase() {
+
+
+    }
+
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Mediator //////////////////////////////////////////////////////////////////////
@@ -158,9 +170,11 @@ public class App extends Application implements Mediator, Navigator {
 
         //reformando metodo
         toAddState.newparty = presenter.getPartyCreated();
-        toAddState.newparty.add(new InformationData(R.drawable.astro, "name", "0", "details", "story", toAddState.dateOfTheParty, toAddState.hourOfParty));
+        toAddState.newparty.add(new InformationData(R.drawable.astro,
+                "name", "0", "details", "story", toAddState.dateOfTheParty, toAddState.hourOfParty));
         toAddState.partyAdded = presenter.getPartyAdded();
-        toAddState.partyAdded.add(new CategoryData(R.drawable.astro, "name", "0", toAddState.newparty, "details", "story", toAddState.dateOfTheParty, toAddState.hourOfParty));
+        toAddState.partyAdded.add(new CategoryData(R.drawable.astro,
+                "name", "0", toAddState.newparty, "details", "story", toAddState.dateOfTheParty, toAddState.hourOfParty));
 
         toAddState.list = presenter.getDefaultList();
         toAddState.list.add((CategoryData) toAddState.partyAdded);
