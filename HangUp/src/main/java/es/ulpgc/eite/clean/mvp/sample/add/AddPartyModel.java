@@ -6,8 +6,10 @@ import android.util.Log;
 import java.util.List;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData_Old;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
 import es.ulpgc.eite.clean.mvp.sample.data.InformationData_Old;
+import io.realm.RealmList;
 
 
 /**
@@ -25,7 +27,7 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     private String month;
     private String place;
     private int year;
-    List<CategoryData_Old> partyAdded;
+    List<CategoryData> partyAdded;
     List<InformationData_Old> party;
 
     public String getDescription() {
@@ -170,15 +172,15 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     }
 
     @Override
-    public List<CategoryData_Old> getPartyAdded() {
+    public List<CategoryData> getPartyAdded() {
 
         return this.partyAdded;
     }
 
     @Override
-    public List<InformationData_Old> getParty() {
+    public RealmList<InformationData> getParty() {
 
-        return party;
+        return null;
     }
 
     @Override

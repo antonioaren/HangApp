@@ -1,41 +1,64 @@
 package es.ulpgc.eite.clean.mvp.sample.data;
 
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
+import io.realm.annotations.Required;
 
 /**
  * Created by eleonora on 10/05/2017.
  */
-//Calse de la base de datos
+//Clase de la base de datos
 public class InformationData extends RealmObject {
-//    @PrimaryKey
-private String id;
+    @PrimaryKey
+    private String id;
+    @Required
     private String productName;
+
     private int image;
-    private String number;
+    @Required
+    private String participants;
+    @Required
     private String detailText;
-    private String Category;
+    @Required
     private String day;
+    @Required
     private String hour;
-    private String web;
 
-    public String getHour() {
-        return hour;
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public void setHour(String hour) {
-        this.hour = hour;
+    public String getProductName() {
+        return productName;
+    }
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
-
-    public String getNumber() {
-        return number;
+    public int getImage() {
+        return image;
+    }
+    public void setImage(int image) {
+        this.image = image;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public String getParticipants() {
+        return participants;
     }
 
+    public void setParticipants(String participants) {
+        this.participants = participants;
+    }
 
+    public String getDetailText() {
+        return detailText;
+    }
+    public void setDetailText(String detailText) {
+        this.detailText = detailText;
+    }
 
     public String getDay() {
         return day;
@@ -45,56 +68,11 @@ private String id;
         this.day = day;
     }
 
-
-    public String getId() {
-        return id;
+    public String getHour() {
+        return hour;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setHour(String hour) {
+        this.hour = hour;
     }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public int getImage() {
-        return image;
-    }
-
-    public void setImage(int image) {
-        this.image = image;
-    }
-
-    public String getDetailText() {
-        return detailText;
-    }
-
-    public void setDetailText(String detailText) {
-        this.detailText = detailText;
-    }
-
-    public String getCategory() {
-        return Category;
-    }
-
-    public void setCategory(String category) {
-        Category = category;
-    }
-
-    public String getWeb() {
-        return web;
-    }
-
-    public void setWeb(String web) {
-        this.web = web;
-    }
-
-
-
-
 }

@@ -8,210 +8,172 @@ import java.util.List;
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.Presenter;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData_Old;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
 import es.ulpgc.eite.clean.mvp.sample.data.InformationData_Old;
+import io.realm.RealmList;
 
-/**
- * Created by Luis on 12/11/16.
- */
 
 public interface Add {
 
 
-  ///////////////////////////////////////////////////////////////////////////////////
-  // State /////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////
+    // State /////////////////////////////////////////////////////////////////////////
 
-  interface ToAdd {
-    void onScreenStarted();
+    interface ToAdd {
+        void onScreenStarted();
 
-    void setTextVisibility(boolean visible);
+        void setTextVisibility(boolean visible);
 
-      void setPlace(String place);
+        void setPlace(String place);
 
-      void setDate(String date);
+        void setDate(String date);
 
-      void setHour(String hour);
+        void setHour(String hour);
 
-  }
+    }
 
 
-  interface AddTo {
-    Context getManagedContext();
-    String getPlaceOfTheParty();
-    String getDateOfTheParty();
-    String getHourOfParty();
-    // boolean isTextInserted();
-    List<CategoryData_Old> getDefaultList();
+    interface AddTo {
+        Context getManagedContext();
 
-    List<CategoryData_Old> getPartyAdded();
+        String getPlaceOfTheParty();
 
-    List<InformationData_Old> getPartyCreated();
+        String getDateOfTheParty();
 
-    void settingAdapter(List<CategoryData_Old> item);
-    void destroyView();
-  }
+        String getHourOfParty();
 
+        RealmList<CategoryData> getDefaultList();
 
-  ///////////////////////////////////////////////////////////////////////////////////
-  // Screen ////////////////////////////////////////////////////////////////////////
+        RealmList<CategoryData> getPartyAdded();
 
-  /**
-   * Methods offered to VIEW to communicate with PRESENTER
-   */
+        RealmList<InformationData> getPartyCreated();
 
-  interface ViewToPresenter extends Presenter<PresenterToView> {
-    void onPublishClicked();
+        void settingAdapter(RealmList<CategoryData> item);
 
-    //void destroyView();
+        void destroyView();
+    }
 
-    //void onStartingView();
-  }
 
-  /**
-   * Required VIEW methods available to PRESENTER
-   */
+    ///////////////////////////////////////////////////////////////////////////////////
+    // Screen ////////////////////////////////////////////////////////////////////////
 
-  interface PresenterToView extends ContextView {
+    /**
+     * Methods offered to VIEW to communicate with PRESENTER
+     */
 
+    interface ViewToPresenter extends Presenter<PresenterToView> {
+        void onPublishClicked();
+    }
 
-    //captamos la hora del  String getHourOfInit();
+    /**
+     * Required VIEW methods available to PRESENTER
+     */
 
-    //captamos la hora del timePicker que indica el fin de la fiesta
+    interface PresenterToView extends ContextView {
 
+        void settingAdapter(RealmList<CategoryData> data);
 
-    void settingAdapter(List<CategoryData_Old> data);
+        void finishScreen();
 
-    void finishScreen();
-    void hideToolbar();
+        void hideToolbar();
 
 
+        void setPublishBtnLabel(String txt);
 
-    void setPublishBtnLabel(String txt);
+        void setTitleLabel(String txt);
 
+        void setPlaceLabel(String txt);
 
-    void setTitleLabel(String txt);
+        void setDateLabel(String txt);
 
-    void setPlaceLabel(String txt);
+        void setTimeInitLabel(String txt);
 
-    void setDateLabel(String txt);
+        void setTimeFinishLabel(String txt);
 
-    void setTimeInitLabel(String txt);
+        void hideText();
 
-    void setTimeFinishLabel(String txt);
+        void setText(String txt);
 
-    void hideText();
+        void setLabel(String txt);
 
-    void setText(String txt);
+        String getMonth();
 
-    void setLabel(String txt);
+        String getDay();
 
-    String getMonth();
+        int getYear();
 
-    String getDay();
+        String getPlaceOfTheParty();
 
-    int getYear();
+        String getDescription();
 
-    String getPlaceOfTheParty();
+        int getHourOfInit();
 
-      String getDescription();
+        int getHourOfFinish();
+    }
 
-      int getHourOfInit();
+    /**
+     * Methods offered to MODEL to communicate with PRESENTER
+     */
 
+    interface PresenterToModel extends Model<ModelToPresenter> {
 
-    //captamos la hora del timePicker que indica el fin de la fiesta
-    //@TargetApi(Build.VERSION_CODES.M)
-    int getHourOfFinish();
+        String getPlaceLabel();
 
-    /*String getTitleFromEditText();
+        String getPublishBtnLabel();
 
-    String getPlaceFromEditText();
+        String getDateLabel();
 
-    String getHourInit();
+        String getTimeInitLabel();
 
-    String getHourFinish();
+        String getTimeFinishLabel();
 
-    String getDateFromCalendar();*/
-  }
+        String getTitleLabel();
 
-  /**
-   * Methods offered to MODEL to communicate with PRESENTER
-   */
+        void setPlaceLabel(String placeLabel);
 
-  interface PresenterToModel extends Model<ModelToPresenter> {
+        void setDateLabel(String dateLabel);
 
-    String getPlaceLabel();
+        void setTimeInitLabel(String timeInitLabel);
 
+        void setTimeFinishLabel(String timeFinishLabel);
 
-    String getPublishBtnLabel();
+        void setPublishLabel(String publishLabel);
 
-    String getDateLabel();
+        void setTitleLabel(String titleLabel);
 
-    String getTimeInitLabel();
+        String getPlaceOfTheParty();
 
-    String getTimeFinishLabel();
+        String getDateOfTheParty();
 
-    String getTitleLabel();
+        String getHourOfParty();
 
 
-    void setPlaceLabel(String placeLabel);
+        void setDay(String day);
 
-    void setDateLabel(String dateLabel);
+        void setHourOfFinish(int hour);
 
-    void setTimeInitLabel(String timeInitLabel);
+        void setHourOfInit(int hour);
 
-    void setTimeFinishLabel(String timeFinishLabel);
+        void setMonth(String month);
 
-    void setPublishLabel(String publishLabel);
+        void setPlaceOfTheParty(String place);
 
-    void setTitleLabel(String titleLabel);
+        void setYear(int year);
 
-    String getPlaceOfTheParty();
+        List<CategoryData> getPartyAdded();
 
-    String getDateOfTheParty();
+        List<InformationData> getParty();
 
-    String getHourOfParty();
+        void setDescription(String description);
+    }
 
+    /**
+     * Required PRESENTER methods available to MODEL
+     */
+    interface ModelToPresenter {
 
-    void setDay(String day);
-    void setHourOfFinish(int hour);
-    void setHourOfInit(int hour);
-    void setMonth(String month);
-    void setPlaceOfTheParty(String place);
-    void setYear(int year);
-
-    List<CategoryData_Old> getPartyAdded();
-
-    List<InformationData_Old> getParty();
-
-    void setDescription(String description);
-  }
-
-  /**
-   * Required PRESENTER methods available to MODEL
-   */
-  interface ModelToPresenter {
-
-//    String getDay();
-//
-//    String getMonth();
-//
-//    int getInitTIme();
-//    String getPlace();
-//
-//    int getYear();
-//
-//    int getFinishTime();
-
-    /* public void SaveParty() {
-         getView().getDay();
-         getView().getMonth();
-         getView().getYear();
-         getView().getHourOfInit();
-         getView().getHourOfFinish();
-         getView().getPlaceOfTheParty();
-     }*/
-
-  }
+    }
 
 
 }

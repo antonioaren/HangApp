@@ -1,7 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.information;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData_Old;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 
 /**
  * Created by alumno on 31/03/2017.
@@ -24,9 +24,9 @@ public interface Information {
 
     public interface PresenterToModel {
 
-        CategoryData_Old getItem();
+        CategoryData getItem();
 
-        void setItem(CategoryData_Old itemSelected);
+        void setItem(CategoryData itemSelected);
 
     }
 
@@ -39,7 +39,7 @@ public interface Information {
     public interface ToInformation {
         void onScreenStarted();
 
-        void setItem(CategoryData_Old itemSelected);
+        void setItem(CategoryData itemSelected);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////

@@ -1,7 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.information;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData_Old;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 
 /**
@@ -42,13 +42,12 @@ public class InformationPresenter
     @Override
     public void onScreenStarted() {
         if (isViewRunning()) {
-            CategoryData_Old item = getModel().getItem();
-            getView().setText(item.getDetalle(), item.getStory(), item.getDate(), item.getHour());
+
         }
     }
 
     @Override
-    public void setItem(CategoryData_Old itemSelected) {
+    public void setItem(CategoryData itemSelected) {
         getModel().setItem(itemSelected);
     }
 }

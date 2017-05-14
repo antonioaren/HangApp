@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData_Old;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
 import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyModel;
@@ -23,7 +23,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     private String HangAppButtonSearchLabel;
     private String HangAppButtonAddLabel;
     private List<InformationData> itemsDatabase;
-    private List<CategoryData_Old> items;
+    private List<CategoryData> items;
     private List<InformationData_Old> Disco;
     private List<InformationData_Old> Ulpgc;
     private List<InformationData_Old> Cars;
@@ -49,8 +49,10 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
             randomAssistance1.nextInt(2001), randomAssistance2.nextInt(2001),
             randomAssistance3.nextInt(2001), randomAssistance4.nextInt(2001),
             randomAssistance5.nextInt(2001)};
+
         addPartyModel = new AddPartyModel();
         Disco = new ArrayList();
+
         Disco.add(new InformationData_Old(R.drawable.disco, "Fiestas Nocturnas",
             String.valueOf(getParticipantsAt(0)), "Prueba detalle Astro",
             "La disco existe desde hace mucho tiempo", "este viernes", "de 12:00 pm hasta las 5:00 am"));
@@ -78,28 +80,11 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     }
 
     private void LoadCategory() {
-        items = new ArrayList();
-        items.add(new CategoryData_Old(R.drawable.disco, "Fiestas Nocturnas",
-            String.valueOf(getParticipantsAt(0)), getDisco(), "Detalle Disco ",
-            "La disco existe desde hace mucho tiempo", "este viernes", "de 12:00 pm hasta las 5:00 am"));
-        items.add(new CategoryData_Old(R.drawable.ulpgc, "Charlas Ulpgc",
-            String.valueOf(getParticipantsAt(1)), getUlpgc(), "Orla Ulpgc",
-            "La Universidad de Las Palmas de Gran Canaria comienza su andadura el curso 89-90 como consecuencia de un gran movimiento social que tiene lugar en esta isla de Gran Canaria y que culmina con la aprobación, por parte del Parlamento de Canarias, de la Ley de Reorganización Universitaria de Canarias, el 26 de abril de 1989.  ", "viernes 5 abril", "12:00 am"));
-        items.add(new CategoryData_Old(R.drawable.cars, "Automovilismo",
-            String.valueOf(getParticipantsAt(2)), getCars(), "Carrera de formula 1 ",
-            "la formula se remonta en 1949", "proximo viernes", "5:00 pm"));
-        items.add(new CategoryData_Old(R.drawable.musica, "Musica en directo",
-            String.valueOf(getParticipantsAt(3)), getMusica(), "Detalle Musica",
-            "La musica existe desde que se descubrio la escritura", "sabado 29 de abril", "16:00"));
-        items.add(new CategoryData_Old(R.drawable.astro, "Astronomía",
-            String.valueOf(getParticipantsAt(4)), getAstro(), "Detalle Astro",
-            "La astronomia se remonta en el siglo 300 A.C en la Antigua Grecia", "Hoy", "00:00"));
+
     }
 
     public void reload() {
-        items.add(new CategoryData_Old(R.drawable.astro, "title", "0", getNewParty(), "detail", "mmmmmmmmmmm", addPartyModel.getDateOfTheParty(), addPartyModel.getHourOfParty()));
-        newParty = new ArrayList();
-        newParty.add(new InformationData_Old(R.drawable.astro, "title", "0", "detail", "yguy", addPartyModel.getDateOfTheParty(), addPartyModel.getHourOfParty()));
+
     }
 
     /**
@@ -146,7 +131,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     }
 
     @Override
-    public List<CategoryData_Old> getListCategory() {
+    public List<CategoryData> getListCategory() {
         return this.items;
     }
 
@@ -186,7 +171,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         return participants[i];
     }
 
-    ///////////////////////////  DATABASE ////////////////////////
+    ///////////////////////////  DATABASE ///////////////////////////
    @Override
    public void setDatabaseItemsFromJson(){
       // setItemsFromJsonStream("database.json");
@@ -206,19 +191,22 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         itemsDatabase = realmDatabase.where(InformationData.class).findAll();
     }
     @Override
-    public void insertEvent(String id,int image,String productName,String numberOfParticipants,String category,String detail,String day,String hour,String web){
+    public void insertEvent(String id, int image, String productName, String participants, String category, String detail, String day, String hour, String web) {
+
         InformationData event = realmDatabase.createObject(InformationData.class);
-        realmDatabase.beginTransaction();//metodo que empieza a escuchar todas las acciones que hagamos para insertar un evento
-         event.setId(id);
+
+        realmDatabase.beginTransaction();
+
+        event.setId(id);
         event.setImage(image);
         event.setProductName(productName);
-       // event.setNumber(numberOfParticipants);
-        event.setCategory(category);
+        event.setParticipants(participants);
         event.setDetailText(detail);
-      //  event.setDay(day);
-       // event.setHour(hour);
-        event.setWeb(web);
-        realmDatabase.commitTransaction();//Almacena registro en la base de datos
+        event.setDay(day);
+        event.setHour(hour);
+
+
+        realmDatabase.commitTransaction();
     }
     public void updateEvent(){
 

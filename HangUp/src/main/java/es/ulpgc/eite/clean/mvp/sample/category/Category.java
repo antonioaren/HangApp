@@ -8,9 +8,10 @@ import java.util.List;
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.Presenter;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData_Old;
 import es.ulpgc.eite.clean.mvp.sample.data.InformationData_Old;
+import io.realm.RealmList;
 
 public interface Category {
 
@@ -24,16 +25,12 @@ public interface Category {
 
 
         void onButtonSearchClicked();
-
         void onButtonAddClicked();
-
-
         void onListItemClicked();
 
+        List<CategoryData> getListOfParties();
 
-        List<CategoryData_Old> getListOfParties();
-
-        void onItemClicked(CategoryData_Old item);
+        void onItemClicked(CategoryData item);
     }
 
     /**
@@ -42,8 +39,7 @@ public interface Category {
     interface PresenterToView extends ContextView {
         void onCreate(Bundle savedInstanceState);
 
-        void settingAdapter(List<CategoryData_Old> parties);
-
+        void settingAdapter(RealmList<CategoryData> parties);
         void finishScreen();
 
         // void hideToolbar();
@@ -70,7 +66,7 @@ public interface Category {
         String getAddLabel();
 
 
-        List<CategoryData_Old> getListCategory();
+        List<CategoryData> getListCategory();
 
         List<InformationData_Old> getDisco();
 
@@ -103,7 +99,7 @@ public interface Category {
     interface ModelToPresenter {
 
 
-        List<CategoryData_Old> getListOfParties();
+        List<CategoryData> getListOfParties();
     }
 
 
@@ -116,7 +112,7 @@ public interface Category {
 
         void destroyView();
 
-        CategoryData_Old getSelectedItem();
+        CategoryData getSelectedItem();
 
         boolean isTextVisible();
 

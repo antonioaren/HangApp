@@ -8,8 +8,11 @@ import java.util.List;
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData_Old;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
 import es.ulpgc.eite.clean.mvp.sample.data.InformationData_Old;
+import io.realm.RealmList;
+import io.realm.annotations.Required;
 
 /**
  * Created by eleonora on 17/04/2017.
@@ -77,7 +80,6 @@ public class AddPartyPresenter
         return getActivityContext();
     }
 
-
     @Override
     public void destroyView() {
         if (isViewRunning()) {
@@ -101,8 +103,8 @@ public class AddPartyPresenter
 //           List<InformationData_Old>list= new ArrayList<>();
 //            list.add(new InformationData_Old(R.drawable.astro,"name","0", "details","story","date", "hour"));
 //           CategoryModel categoryModel= new CategoryModel();
-//            List<CategoryData_Old>category=categoryModel.getListCategory();
-//            category.add(new CategoryData_Old(R.drawable.astro,"name",
+//            List<CategoryData>category=categoryModel.getListCategory();
+//            category.add(new CategoryData(R.drawable.astro,"name",
 //                    "0", list, "detail",
 //                   "story", "date", "hour"));
 //            CategoryView categoryView= new CategoryView();
@@ -132,17 +134,6 @@ public class AddPartyPresenter
 
     }
 
-    /* public void SaveParty() {
-         getView().getDay();
-         getView().getMonth();
-         getView().getYear();
-         getView().getHourOfInit();
-         getView().getHourOfFinish();
-         getView().getPlaceOfTheParty();
-     }*/
-
-
-
     @Override
     public String getPlaceOfTheParty() {
         return getModel().getPlaceOfTheParty();
@@ -159,24 +150,24 @@ public class AddPartyPresenter
     }
 
     @Override
-    public List<CategoryData_Old> getDefaultList() {
+    public RealmList<CategoryData> getDefaultList() {
         return null;
     }
 
     @Override
-    public List<CategoryData_Old> getPartyAdded() {
+    public RealmList<CategoryData> getPartyAdded() {
 
-        return getModel().getPartyAdded();
+        return (RealmList<CategoryData>) getModel().getPartyAdded();
     }
 
     @Override
-    public List<InformationData_Old> getPartyCreated() {
+    public RealmList<InformationData> getPartyCreated() {
 
-        return getModel().getParty();
+        return (RealmList<InformationData>) getModel().getParty();
     }
 
     @Override
-    public void settingAdapter(List<CategoryData_Old> item) {
+    public void settingAdapter(RealmList<CategoryData> item) {
         CategoryView categoryView = new CategoryView();
         categoryView.settingAdapter(item);
     }

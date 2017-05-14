@@ -11,7 +11,7 @@ import es.ulpgc.eite.clean.mvp.sample.add.Add;
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyView;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData_Old;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.InformationData_Old;
 import es.ulpgc.eite.clean.mvp.sample.detail.DetailPresenter;
 import es.ulpgc.eite.clean.mvp.sample.information.Information;
@@ -52,7 +52,6 @@ public class App extends Application implements Mediator, Navigator {
     public void startingSearchScreen(Search.ToSearch presenter) {
         if (toSearchState != null) {
             presenter.setTextVisibility(toSearchState.textVisibility);
-
         }
         presenter.onScreenStarted();
     }
@@ -61,8 +60,6 @@ public class App extends Application implements Mediator, Navigator {
     public void startingAddScreen(Add.ToAdd presenter) {
         if (toAddState != null) {
             presenter.setTextVisibility(toAddState.textVisibility);
-
-
         }
         presenter.onScreenStarted();
     }
@@ -151,29 +148,29 @@ public class App extends Application implements Mediator, Navigator {
     @Override
     public void publishParty(Add.AddTo presenter) {
 
+//        toAddState = new AddState();
+//
+//        toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
+//        toAddState.dateOfTheParty = presenter.getDateOfTheParty();
+//        toAddState.hourOfParty = presenter.getHourOfParty();
+//
+//
+//        //reformando metodo
+//        toAddState.newparty = presenter.getPartyCreated();
+//        toAddState.newparty.add(new InformationData_Old(R.drawable.astro,
+//                "name", "0", "details", "story", toAddState.dateOfTheParty, toAddState.hourOfParty));
+//        toAddState.partyAdded = presenter.getPartyAdded();
+//
+//        toAddState.partyAdded.add(new CategoryData(R.drawable.astro,
+//                "name", "0", toAddState.newparty, "details", "story", toAddState.dateOfTheParty, toAddState.hourOfParty));
+//
+//        toAddState.list = presenter.getDefaultList();
+//        toAddState.list.add((CategoryData) toAddState.partyAdded);
+//        CategoryView cv= new CategoryView();
+//        cv.settingAdapter(toAddState.list);
+//
+//        presenter.destroyView();
 
-
-        toAddState = new AddState();
-
-        toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
-        toAddState.dateOfTheParty = presenter.getDateOfTheParty();
-        toAddState.hourOfParty = presenter.getHourOfParty();
-
-
-        //reformando metodo
-        toAddState.newparty = presenter.getPartyCreated();
-        toAddState.newparty.add(new InformationData_Old(R.drawable.astro,
-                "name", "0", "details", "story", toAddState.dateOfTheParty, toAddState.hourOfParty));
-        toAddState.partyAdded = presenter.getPartyAdded();
-        toAddState.partyAdded.add(new CategoryData_Old(R.drawable.astro,
-                "name", "0", toAddState.newparty, "details", "story", toAddState.dateOfTheParty, toAddState.hourOfParty));
-
-        toAddState.list = presenter.getDefaultList();
-        toAddState.list.add((CategoryData_Old) toAddState.partyAdded);
-        CategoryView cv= new CategoryView();
-        cv.settingAdapter(toAddState.list);
-
-        presenter.destroyView();
     }
 
 
@@ -242,15 +239,15 @@ public class App extends Application implements Mediator, Navigator {
         String placeOfTheParty;
         String dateOfTheParty;
         String hourOfParty;
-        List<CategoryData_Old> partyAdded;
+        List<CategoryData> partyAdded;
         List<InformationData_Old> newparty;
-        List<CategoryData_Old> list;
+        List<CategoryData> list;
 
     }
 
 
     private class InformationState {
-        public CategoryData_Old ItemSelected;
+        public CategoryData ItemSelected;
     }
 
     private class ListState {

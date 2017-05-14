@@ -16,8 +16,9 @@ import java.util.List;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData_Old;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import io.realm.Realm;
+import io.realm.RealmList;
 
 public class CategoryView
         extends GenericActivity<Category.PresenterToView, Category.ViewToPresenter, CategoryPresenter>
@@ -32,7 +33,7 @@ public class CategoryView
     private LinearLayoutManager linearmanager;
     private CategoryAdapter adapter;
     private RecyclerView.LayoutManager lManager;
-    private List<CategoryData_Old> items;
+    private List<CategoryData> items;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,21 +42,13 @@ public class CategoryView
 
         title = (TextView) findViewById(R.id.title);
         image = (ImageView) findViewById(R.id.image);
-        //information = (TextView) findViewById(R.id.information);
-        // Obtener el Recycler
-        /*Cuando se obtiene la instancia del recycler se usa el método setHasFixedSize() para optimizar
-        las operaciones con los ítems. Con esta característica le estamos diciendo al recycler que el
-        adaptador no variará su tamaño en toda la ejecución del programa.*/
 
         recycler = (RecyclerView) findViewById(R.id.recycler);
-      //   recycler.setHasFixedSize(true); //Habrá que quitarlo si la lista es dinámica.
-         Realm realm= Realm.getDefaultInstance();
-        recycler.setAdapter(new CategoryAdapter(realm.where(CategoryData_Old.class).findAllAsync()));
+        recycler.setHasFixedSize(true);
+        //Realm realm= Realm.getDefaultInstance();
+        //recycler.setAdapter(new CategoryAdapter(realm.where(CategoryData.class).findAllAsync()));
 
-        // Usar un administrador para LinearLayout
-        /*El layout manager fue instanciado con la subclase LinearLayoutManager, indicando que el recycler
-        tomará la forma de lista vertical similar al ListView. Luego se relaciona al recycler con el
-        método setLayoutManager().*/
+
 
 
 
@@ -97,17 +90,17 @@ public class CategoryView
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Presenter To View /////////////////////////////////////////////////////////////
+
     //metodos para captar el adaptador y la lista de elementos
     public CategoryAdapter getAdapter() {
         return this.adapter;
     }
 
-    public List<CategoryData_Old> getList() {
+    public List<CategoryData> getList() {
         return this.items;
     }
     @Override
-
-    public void settingAdapter(List<CategoryData_Old> parties) {
+    public void settingAdapter(RealmList<CategoryData> parties) {
         adapter = new CategoryAdapter(parties);
         recycler.setAdapter(adapter);
 
@@ -157,9 +150,9 @@ public class CategoryView
 
     public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
 
-        public List<CategoryData_Old> items;
+        public RealmList<CategoryData> items;
 
-        public CategoryAdapter(List<CategoryData_Old> items  /*OrderedRealmCollection<ModelItem> items*/) {
+        public CategoryAdapter(RealmList<CategoryData> items  /*OrderedRealmCollection<ModelItem> items*/) {
             //super(items, true);
 
             this.items = items;
@@ -183,8 +176,8 @@ public class CategoryView
         public void onBindViewHolder(final CategoryViewHolder holder, int position) {
             holder.item = items.get(position);
             holder.image.setImageResource(items.get(position).getImage());
-            holder.title.setText(items.get(position).getName());
-            holder.number.setText(items.get(position).getNumberOfParticipants());
+            holder.title.setText(items.get(position).getCategoryName());
+            holder.number.setText(items.get(position).getProductsAvalables());
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -198,7 +191,7 @@ public class CategoryView
             super.onAttachedToRecyclerView(recyclerView);
         }
 
-       /* public void setItemList(List<CategoryData_Old> items) {
+       /* public void setItemList(List<CategoryData> items) {
             this.items = items;
             notifyDataSetChanged();
 
@@ -210,7 +203,7 @@ public class CategoryView
             public ImageView image;
             public TextView title;
             public TextView number;
-            public CategoryData_Old item;
+            public CategoryData item;
 
             public CategoryViewHolder(View v) {
                 super(v);

@@ -1,7 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.information;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData_Old;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 
 /**
  * Created by Pedro Arenas on 25/4/17.
@@ -10,7 +10,7 @@ import es.ulpgc.eite.clean.mvp.sample.data.CategoryData_Old;
 public class InformationModel extends GenericModel<Information.ModelToPresenter>
         implements Information.PresenterToModel {
 
-    private CategoryData_Old Item;
+    private CategoryData Item;
 
 
     @Override
@@ -24,12 +24,12 @@ public class InformationModel extends GenericModel<Information.ModelToPresenter>
     }
 
     @Override
-    public CategoryData_Old getItem() {
+    public CategoryData getItem() {
         return Item;
     }
 
     @Override
-    public void setItem(CategoryData_Old itemSelected) {
+    public void setItem(CategoryData itemSelected) {
         Item = itemSelected;
     }
 }
