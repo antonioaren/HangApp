@@ -10,7 +10,6 @@ import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.Presenter;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
-import es.ulpgc.eite.clean.mvp.sample.data.InformationData_Old;
 import io.realm.RealmList;
 
 public interface Category {
@@ -68,17 +67,17 @@ public interface Category {
 
         List<CategoryData> getListCategory();
 
-        List<InformationData_Old> getDisco();
+        List<InformationData> getDisco();
 
-        List<InformationData_Old> getUlpgc();
+        List<InformationData> getUlpgc();
 
-        List<InformationData_Old> getCars();
+        List<InformationData> getCars();
 
-        List<InformationData_Old> getMusica();
+        List<InformationData> getMusica();
 
-        List<InformationData_Old> getAstro();
+        List<InformationData> getAstro();
 
-        List<InformationData_Old> getNewParty();
+        List<InformationData> getNewParty();
 
         int getParticipantsAt(int i);
 

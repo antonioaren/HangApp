@@ -9,7 +9,6 @@ import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
 import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyModel;
-import es.ulpgc.eite.clean.mvp.sample.data.InformationData_Old;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
@@ -24,12 +23,12 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     private String HangAppButtonAddLabel;
     private List<InformationData> itemsDatabase;
     private List<CategoryData> items;
-    private List<InformationData_Old> Disco;
-    private List<InformationData_Old> Ulpgc;
-    private List<InformationData_Old> Cars;
-    private List<InformationData_Old> Musica;
-    private List<InformationData_Old> Astro;
-    private List<InformationData_Old> newParty;
+    private List<InformationData> Disco;
+    private List<InformationData> Ulpgc;
+    private List<InformationData> Cars;
+    private List<InformationData> Musica;
+    private List<InformationData> Astro;
+    private List<InformationData> newParty;
 
     private Random randomAssistance1, randomAssistance2, randomAssistance3, randomAssistance4, randomAssistance5;
     private int[] participants;
@@ -49,33 +48,6 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
             randomAssistance1.nextInt(2001), randomAssistance2.nextInt(2001),
             randomAssistance3.nextInt(2001), randomAssistance4.nextInt(2001),
             randomAssistance5.nextInt(2001)};
-
-        addPartyModel = new AddPartyModel();
-        Disco = new ArrayList();
-
-        Disco.add(new InformationData_Old(R.drawable.disco, "Fiestas Nocturnas",
-            String.valueOf(getParticipantsAt(0)), "Prueba detalle Astro",
-            "La disco existe desde hace mucho tiempo", "este viernes", "de 12:00 pm hasta las 5:00 am"));
-
-        Ulpgc = new ArrayList();
-        Ulpgc.add(new InformationData_Old(R.drawable.ulpgc, "Fiestas Nocturnas",
-            String.valueOf(getParticipantsAt(1)), "Prueba detalle Astro",
-            "La disco existe desde hace mucho tiempo", "este viernes", "de 12:00 pm hasta las 5:00 am"));
-
-        Cars = new ArrayList();
-        Cars.add(new InformationData_Old(R.drawable.cars, "Fiestas Nocturnas",
-            String.valueOf(getParticipantsAt(2)), "Prueba detalle Astro",
-            "La disco existe desde hace mucho tiempo", "este viernes", "de 12:00 pm hasta las 5:00 am"));
-
-        Musica = new ArrayList();
-        Musica.add(new InformationData_Old(R.drawable.musica, "Fiestas Nocturnas",
-            String.valueOf(getParticipantsAt(3)), "Prueba detalle Astro",
-            "La disco existe desde hace mucho tiempo", "este viernes", "de 12:00 pm hasta las 5:00 am"));
-
-        Astro = new ArrayList();
-        Astro.add(new InformationData_Old(R.drawable.astro, "Fiestas Nocturnas",
-            String.valueOf(getParticipantsAt(4)), "Prueba detalle Astro",
-            "La disco existe desde hace mucho tiempo", "este viernes", "de 12:00 pm hasta las 5:00 am"));
 
     }
 
@@ -137,32 +109,32 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
 
     @Override
-    public List<InformationData_Old> getDisco() {
+    public List<InformationData> getDisco() {
         return Disco;
     }
 
     @Override
-    public List<InformationData_Old> getUlpgc() {
+    public List<InformationData> getUlpgc() {
         return Ulpgc;
     }
 
     @Override
-    public List<InformationData_Old> getCars() {
+    public List<InformationData> getCars() {
         return Cars;
     }
 
     @Override
-    public List<InformationData_Old> getMusica() {
+    public List<InformationData> getMusica() {
         return Musica;
     }
 
     @Override
-    public List<InformationData_Old> getAstro() {
+    public List<InformationData> getAstro() {
         return Astro;
     }
 
     @Override
-    public List<InformationData_Old> getNewParty() {
+    public List<InformationData> getNewParty() {
         return newParty;
     }
 

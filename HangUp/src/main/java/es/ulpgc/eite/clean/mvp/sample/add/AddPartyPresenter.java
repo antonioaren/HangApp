@@ -3,16 +3,12 @@ package es.ulpgc.eite.clean.mvp.sample.add;
 import android.content.Context;
 import android.util.Log;
 
-import java.util.List;
-
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
-import es.ulpgc.eite.clean.mvp.sample.data.InformationData_Old;
 import io.realm.RealmList;
-import io.realm.annotations.Required;
 
 /**
  * Created by eleonora on 17/04/2017.

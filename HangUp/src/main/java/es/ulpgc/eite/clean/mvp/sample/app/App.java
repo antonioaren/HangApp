@@ -6,13 +6,11 @@ import android.content.Intent;
 
 import java.util.List;
 
-import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.add.Add;
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyView;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
-import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
-import es.ulpgc.eite.clean.mvp.sample.data.InformationData_Old;
+import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
 import es.ulpgc.eite.clean.mvp.sample.detail.DetailPresenter;
 import es.ulpgc.eite.clean.mvp.sample.information.Information;
 import es.ulpgc.eite.clean.mvp.sample.information.InformationView;
@@ -240,7 +238,7 @@ public class App extends Application implements Mediator, Navigator {
         String dateOfTheParty;
         String hourOfParty;
         List<CategoryData> partyAdded;
-        List<InformationData_Old> newparty;
+        List<InformationData> newparty;
         List<CategoryData> list;
 
     }

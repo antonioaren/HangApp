@@ -10,7 +10,6 @@ import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.Presenter;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
-import es.ulpgc.eite.clean.mvp.sample.data.InformationData_Old;
 import io.realm.RealmList;
 
 
