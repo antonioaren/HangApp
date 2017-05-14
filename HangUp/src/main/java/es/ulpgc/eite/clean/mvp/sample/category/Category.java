@@ -11,6 +11,7 @@ import es.ulpgc.eite.clean.mvp.Presenter;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import io.realm.RealmList;
+import io.realm.RealmResults;
 
 public interface Category {
 
@@ -65,31 +66,30 @@ public interface Category {
         String getAddLabel();
 
 
-        List<CategoryData> getListCategory();
-
-        List<ProductData> getDisco();
-
-        List<ProductData> getUlpgc();
-
-        List<ProductData> getCars();
-
-        List<ProductData> getMusica();
-
-        List<ProductData> getAstro();
-
-        List<ProductData> getNewParty();
+//        List<CategoryData> getListCategory();
+//
+//        List<ProductData> getDisco();
+//
+//        List<ProductData> getUlpgc();
+//
+//        List<ProductData> getCars();
+//
+//        List<ProductData> getMusica();
+//
+//        List<ProductData> getAstro();
+//
+//        List<ProductData> getNewParty();
 
         int getParticipantsAt(int i);
 
         ///////////////////////////  DATABASE ////////////////////////
-        void setDatabaseItemsFromJson();
-
-        ///////////////////////////  DATABASE ////////////////////////
-        List<ProductData> getEvents();
+        RealmResults<ProductData> getEvents();
 
         void setItemsFromDatabase();
 
         void insertEvent(String id, int image, String productName, String numberOfParticipants, String category, String detail, String day, String hour, String web);
+
+        List<CategoryData> getListCategory();
     }
 
     /**

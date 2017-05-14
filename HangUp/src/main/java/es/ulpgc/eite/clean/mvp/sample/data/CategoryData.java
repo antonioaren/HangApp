@@ -19,7 +19,6 @@ public class CategoryData extends RealmObject {
 
     public CategoryData() {
     }
-
     public CategoryData(String id, int image, String category, RealmList<ProductData> itemInfo) {
         this.id = id;
         this.image = image;
@@ -30,7 +29,6 @@ public class CategoryData extends RealmObject {
     public String getId() {
         return id;
     }
-
     public void setId(String id) {
         this.id = id;
     }
@@ -38,7 +36,6 @@ public class CategoryData extends RealmObject {
     public String getCategoryName() {
         return CategoryName;
     }
-
     public void setCategoryName(String categoryName) {
         CategoryName = categoryName;
     }
@@ -46,7 +43,6 @@ public class CategoryData extends RealmObject {
     public int getImage() {
         return image;
     }
-
     public void setImage(int image) {
         this.image = image;
     }
@@ -54,7 +50,6 @@ public class CategoryData extends RealmObject {
     public RealmList<ProductData> getItemInfo() {
         return ItemInfo;
     }
-
     public void setItemInfo(RealmList<ProductData> itemInfo) {
         ItemInfo = itemInfo;
     }
@@ -62,7 +57,6 @@ public class CategoryData extends RealmObject {
     public int getProductsAvalables() {
         return productsAvalables;
     }
-
     public void setProductsAvalables(int productsAvalables) {
         this.productsAvalables = productsAvalables;
     }

@@ -11,11 +11,14 @@ import es.ulpgc.eite.clean.mvp.sample.add.AddPartyView;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
+import es.ulpgc.eite.clean.mvp.sample.data.module.ModuleRealm;
 import es.ulpgc.eite.clean.mvp.sample.detail.DetailPresenter;
 import es.ulpgc.eite.clean.mvp.sample.product.Product;
 import es.ulpgc.eite.clean.mvp.sample.product.ProductView;
 import es.ulpgc.eite.clean.mvp.sample.search.Search;
 import es.ulpgc.eite.clean.mvp.sample.search.SearchView;
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
 
 
 public class App extends Application implements Mediator, Navigator {
@@ -36,11 +39,11 @@ public class App extends Application implements Mediator, Navigator {
         toSearchState = new SearchState();
         toSearchState.textVisibility = false;
 
-//        RealmConfiguration config = new RealmConfiguration.Builder(getApplicationContext()).build();
-//        Realm.setDefaultConfiguration(config);
+        RealmConfiguration config = new RealmConfiguration.Builder(getApplicationContext())
+                .setModules(new ModuleRealm()).build();
+        Realm.setDefaultConfiguration(config);
+        //No haría falta el getInstance. El mediador es un singleton al fin y al cabo.
     }
-
-
 
 
     ///////////////////////////////////////////////////////////////////////////////////
@@ -98,7 +101,6 @@ public class App extends Application implements Mediator, Navigator {
 
     }
 
-
     ///////////////////////////////////////////////////////////////////////////////////
     // Navigator /////////////////////////////////////////////////////////////////////
 
@@ -116,7 +118,7 @@ public class App extends Application implements Mediator, Navigator {
 
     }
 
-//  @Override
+    //  @Override
 //  public void goToPartyList(Search.ListTo presenter){
 //      Context view = presenter.getManagedContext();
 //      SearchView sv= new SearchView();
@@ -171,13 +173,12 @@ public class App extends Application implements Mediator, Navigator {
 
     }
 
-
     @Override
     public void goToProcessedInformationScreen(Search.ProcessedTo presenter) {
 
     }
 
-//@Override
+    //@Override
 //public void goBackFromAdd(Detail.SearchTo presenter){
 //  Context view = presenter.getManagedContext();
 //  if (view != null) {
@@ -214,22 +215,17 @@ public class App extends Application implements Mediator, Navigator {
         }
     }
 
-
     ///////////////////////////////////////////////////////////////////////////////////
     // State /////////////////////////////////////////////////////////////////////////
-
-
 
     private class CategoryState {
         boolean textVisibility;
         boolean imageVisibility;
     }
-
     private class SearchState {
         boolean textVisibility;
 
     }
-
     private class AddState {
         boolean textVisibility;
         boolean selectorsVisibility;
@@ -242,16 +238,12 @@ public class App extends Application implements Mediator, Navigator {
         List<CategoryData> list;
 
     }
-
-
     private class InformationState {
         public CategoryData ItemSelected;
     }
-
     private class ListState {
         boolean textVisility;
     }
-
     private class PartiesByCategoryState {
         boolean listVisibility;
     }

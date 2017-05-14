@@ -13,6 +13,7 @@ import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
+import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 import io.realm.RealmList;
 
 public class CategoryPresenter
@@ -30,6 +31,9 @@ public class CategoryPresenter
     private String hour;
     private String date;
     private String place;
+
+    private Repository.CategoryRepository repository;
+
 
     /**
      * Operation called during VIEW creation in {@link GenericActivity#onResume(Class, Object)}
@@ -111,7 +115,6 @@ public class CategoryPresenter
     ///////////////////////////////////////////////////////////////////////////////////
     // View To Presenter /////////////////////////////////////////////////////////////
 
-
     @Override
     public void onButtonSearchClicked() {
         Log.d(TAG, "calling onButtonSearchClicked()");
@@ -124,7 +127,6 @@ public class CategoryPresenter
         Navigator app = (Navigator) getView().getApplication();
         app.goToSearchScreen(this);
     }
-
 
     @Override
     public void onButtonAddClicked() {
@@ -139,7 +141,6 @@ public class CategoryPresenter
         Navigator app = (Navigator) getView().getApplication();
         app.goToInformationScreen(this);
     }
-
 
     ///////////////////////////////////////////////////////////////////////////////////
     // To Category //////////////////////////////////////////////////////////////////////
@@ -299,5 +300,6 @@ public class CategoryPresenter
         Navigator app = (Navigator) getView().getApplication();
         app.goToInformationScreen(this);
     }
+
 }
 

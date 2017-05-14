@@ -20,13 +20,13 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     private String HangAppButtonSearchLabel;
     private String HangAppButtonAddLabel;
     private List<ProductData> itemsDatabase;
-    private List<CategoryData> items;
-    private List<ProductData> Disco;
-    private List<ProductData> Ulpgc;
-    private List<ProductData> Cars;
-    private List<ProductData> Musica;
-    private List<ProductData> Astro;
-    private List<ProductData> newParty;
+//    private List<CategoryData> items;
+//    private List<ProductData> Disco;
+//    private List<ProductData> Ulpgc;
+//    private List<ProductData> Cars;
+//    private List<ProductData> Musica;
+//    private List<ProductData> Astro;
+//    private List<ProductData> newParty;
 
     private Random randomAssistance1, randomAssistance2, randomAssistance3, randomAssistance4, randomAssistance5;
     private int[] participants;
@@ -49,14 +49,6 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     }
 
-    private void LoadCategory() {
-
-    }
-
-    public void reload() {
-
-    }
-
     /**
      * Method that recovers a reference to the PRESENTER
      * You must ALWAYS call {@link super#onCreate(Object)} here
@@ -71,7 +63,6 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         HangAppButtonSearchLabel = "SearchOne";
         HangAppText = "Add";
         // realmDatabase=Realm.getDefaultInstance();
-        LoadCategory();
 
     }
 
@@ -94,64 +85,19 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     public String getSearchLabel() {
         return HangAppButtonSearchLabel;
     }
-
     @Override
     public String getAddLabel() {
         return HangAppButtonAddLabel;
     }
-
-    @Override
-    public List<CategoryData> getListCategory() {
-        return this.items;
-    }
-
-
-    @Override
-    public List<ProductData> getDisco() {
-        return Disco;
-    }
-
-    @Override
-    public List<ProductData> getUlpgc() {
-        return Ulpgc;
-    }
-
-    @Override
-    public List<ProductData> getCars() {
-        return Cars;
-    }
-
-    @Override
-    public List<ProductData> getMusica() {
-        return Musica;
-    }
-
-    @Override
-    public List<ProductData> getAstro() {
-        return Astro;
-    }
-
-    @Override
-    public List<ProductData> getNewParty() {
-        return newParty;
-    }
-
     @Override
     public int getParticipantsAt(int i) {
         return participants[i];
     }
 
-    ///////////////////////////  DATABASE ///////////////////////////
-   @Override
-   public void setDatabaseItemsFromJson(){
-      // setItemsFromJsonStream("database.json");
-       //setItemsFromJsonObjectArray();
-   }
-
-
+    ///////////////////////////  DATABASE /////////////////////////////////////////////
 
     @Override
-    public List<ProductData> getEvents() {
+    public RealmResults<ProductData> getEvents() {
         RealmResults<ProductData> results = realmDatabase.where(ProductData.class).findAll();
         return results;
     }
@@ -160,11 +106,12 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     public void setItemsFromDatabase(){
         itemsDatabase = realmDatabase.where(ProductData.class).findAll();
     }
+
     @Override
-    public void insertEvent(String id, int image, String productName, String participants, String category, String detail, String day, String hour, String web) {
+    public void insertEvent(String id, int image, String productName, String participants,
+                            String category, String detail, String day, String hour, String web) {
 
         ProductData event = realmDatabase.createObject(ProductData.class);
-
         realmDatabase.beginTransaction();
 
         event.setId(id);
@@ -175,20 +122,23 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         event.setDay(day);
         event.setHour(hour);
 
-
         realmDatabase.commitTransaction();
     }
-    public void updateEvent(){
 
+    @Override
+    public List<CategoryData> getListCategory() {
+        return null;
     }
-    public void deteleEvent(){
 
+    public void updateEvent() {
+    }
+
+    public void deteleEvent() {
         realmDatabase.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
                 realm.where(ProductData.class).equalTo("id", id);
                  //   .findAll();
-
             }
         });
 
