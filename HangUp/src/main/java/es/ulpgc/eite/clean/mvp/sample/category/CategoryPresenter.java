@@ -10,7 +10,7 @@ import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.add.Add;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
-import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
+import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 import io.realm.RealmList;
@@ -223,7 +223,7 @@ public class CategoryPresenter
     }
 
     @Override
-    public RealmList<InformationData> getPartyCreated() {
+    public RealmList<ProductData> getPartyCreated() {
         return null;
     }
 

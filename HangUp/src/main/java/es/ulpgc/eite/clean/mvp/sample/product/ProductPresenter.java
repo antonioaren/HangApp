@@ -1,4 +1,4 @@
-package es.ulpgc.eite.clean.mvp.sample.information;
+package es.ulpgc.eite.clean.mvp.sample.product;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
@@ -8,15 +8,15 @@ import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
  * Created by alumno on 31/03/2017.
  */
 
-public class InformationPresenter
-        extends GenericPresenter<Information.PresenterToView, Information.PresenterToModel,
-        Information.ModelToPresenter, InformationModel>
-        implements Information.ViewToPresenter, Information.ModelToPresenter, Information.ToInformation
-        , Information.InformationTo {
+public class ProductPresenter
+        extends GenericPresenter<Product.PresenterToView, Product.PresenterToModel,
+        Product.ModelToPresenter, ProductModel>
+        implements Product.ViewToPresenter, Product.ModelToPresenter, Product.ToInformation
+        , Product.InformationTo {
 
     @Override
-    public void onCreate(Information.PresenterToView view) {
-        super.onCreate(InformationModel.class, this);
+    public void onCreate(Product.PresenterToView view) {
+        super.onCreate(ProductModel.class, this);
         setView(view);
 
         Mediator app = (Mediator) getApplication();
@@ -25,7 +25,7 @@ public class InformationPresenter
     }
 
     @Override
-    public void onResume(Information.PresenterToView view) {
+    public void onResume(Product.PresenterToView view) {
         setView(view);
     }
 

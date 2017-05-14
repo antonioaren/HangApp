@@ -9,7 +9,7 @@ import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.Presenter;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
-import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
+import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import io.realm.RealmList;
 
 public interface Category {
@@ -67,17 +67,17 @@ public interface Category {
 
         List<CategoryData> getListCategory();
 
-        List<InformationData> getDisco();
+        List<ProductData> getDisco();
 
-        List<InformationData> getUlpgc();
+        List<ProductData> getUlpgc();
 
-        List<InformationData> getCars();
+        List<ProductData> getCars();
 
-        List<InformationData> getMusica();
+        List<ProductData> getMusica();
 
-        List<InformationData> getAstro();
+        List<ProductData> getAstro();
 
-        List<InformationData> getNewParty();
+        List<ProductData> getNewParty();
 
         int getParticipantsAt(int i);
 
@@ -85,7 +85,7 @@ public interface Category {
         void setDatabaseItemsFromJson();
 
         ///////////////////////////  DATABASE ////////////////////////
-        List<InformationData> getEvents();
+        List<ProductData> getEvents();
 
         void setItemsFromDatabase();
 

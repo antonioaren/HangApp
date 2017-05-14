@@ -9,7 +9,7 @@ import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.Presenter;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
-import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
+import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import io.realm.RealmList;
 
 
@@ -46,7 +46,7 @@ public interface Add {
 
         RealmList<CategoryData> getPartyAdded();
 
-        RealmList<InformationData> getPartyCreated();
+        RealmList<ProductData> getPartyCreated();
 
         void settingAdapter(RealmList<CategoryData> item);
 
@@ -162,7 +162,7 @@ public interface Add {
 
         List<CategoryData> getPartyAdded();
 
-        List<InformationData> getParty();
+        List<ProductData> getParty();
 
         void setDescription(String description);
     }

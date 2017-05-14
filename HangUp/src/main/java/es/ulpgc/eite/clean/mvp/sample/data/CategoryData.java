@@ -1,7 +1,5 @@
 package es.ulpgc.eite.clean.mvp.sample.data;
 
-import java.util.List;
-
 import io.realm.RealmList;
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
@@ -17,12 +15,12 @@ public class CategoryData extends RealmObject {
     private String CategoryName;
     private int image;
     private int productsAvalables;
-    private RealmList<InformationData> ItemInfo;
+    private RealmList<ProductData> ItemInfo;
 
     public CategoryData() {
     }
 
-    public CategoryData(String id, int image, String category, RealmList<InformationData> itemInfo) {
+    public CategoryData(String id, int image, String category, RealmList<ProductData> itemInfo) {
         this.id = id;
         this.image = image;
         this.CategoryName = category;
@@ -53,11 +51,11 @@ public class CategoryData extends RealmObject {
         this.image = image;
     }
 
-    public RealmList<InformationData> getItemInfo() {
+    public RealmList<ProductData> getItemInfo() {
         return ItemInfo;
     }
 
-    public void setItemInfo(RealmList<InformationData> itemInfo) {
+    public void setItemInfo(RealmList<ProductData> itemInfo) {
         ItemInfo = itemInfo;
     }
 

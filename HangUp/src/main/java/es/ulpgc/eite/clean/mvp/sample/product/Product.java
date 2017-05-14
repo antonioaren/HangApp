@@ -1,4 +1,4 @@
-package es.ulpgc.eite.clean.mvp.sample.information;
+package es.ulpgc.eite.clean.mvp.sample.product;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
@@ -7,7 +7,7 @@ import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
  * Created by alumno on 31/03/2017.
  */
 
-public interface Information {
+public interface Product {
     public interface PresenterToView extends ContextView {
 
 

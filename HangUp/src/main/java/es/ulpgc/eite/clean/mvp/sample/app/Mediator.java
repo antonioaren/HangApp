@@ -3,7 +3,7 @@ package es.ulpgc.eite.clean.mvp.sample.app;
 import es.ulpgc.eite.clean.mvp.sample.add.Add;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
 import es.ulpgc.eite.clean.mvp.sample.detail.DetailPresenter;
-import es.ulpgc.eite.clean.mvp.sample.information.Information;
+import es.ulpgc.eite.clean.mvp.sample.product.Product;
 import es.ulpgc.eite.clean.mvp.sample.search.Search;
 
 
@@ -17,7 +17,7 @@ Mediator {
 
   void startingCategoryScreen(Category.ToCategory presenter);
 
-  void startingInformationScreen(Information.ToInformation presenter);
+  void startingInformationScreen(Product.ToInformation presenter);
 
   void startingDetailScreen(DetailPresenter Presenter);
 

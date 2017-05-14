@@ -8,7 +8,7 @@ import io.realm.annotations.Required;
  * Created by eleonora on 10/05/2017.
  */
 //Clase de la base de datos
-public class InformationData extends RealmObject {
+public class ProductData extends RealmObject {
     @PrimaryKey
     private String id;
     @Required

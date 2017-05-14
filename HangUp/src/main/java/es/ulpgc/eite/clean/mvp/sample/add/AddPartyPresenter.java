@@ -7,7 +7,7 @@ import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
-import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
+import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import io.realm.RealmList;
 
 /**
@@ -157,9 +157,9 @@ public class AddPartyPresenter
     }
 
     @Override
-    public RealmList<InformationData> getPartyCreated() {
+    public RealmList<ProductData> getPartyCreated() {
 
-        return (RealmList<InformationData>) getModel().getParty();
+        return (RealmList<ProductData>) getModel().getParty();
     }
 
     @Override

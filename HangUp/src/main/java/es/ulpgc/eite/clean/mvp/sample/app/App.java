@@ -10,10 +10,10 @@ import es.ulpgc.eite.clean.mvp.sample.add.Add;
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyView;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
-import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
+import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.detail.DetailPresenter;
-import es.ulpgc.eite.clean.mvp.sample.information.Information;
-import es.ulpgc.eite.clean.mvp.sample.information.InformationView;
+import es.ulpgc.eite.clean.mvp.sample.product.Product;
+import es.ulpgc.eite.clean.mvp.sample.product.ProductView;
 import es.ulpgc.eite.clean.mvp.sample.search.Search;
 import es.ulpgc.eite.clean.mvp.sample.search.SearchView;
 
@@ -73,7 +73,7 @@ public class App extends Application implements Mediator, Navigator {
     }
 
     @Override
-    public void startingInformationScreen(Information.ToInformation presenter) {
+    public void startingInformationScreen(Product.ToInformation presenter) {
         if (CategoryToInformation != null) {
 
             presenter.setItem(CategoryToInformation.ItemSelected);
@@ -190,7 +190,7 @@ public class App extends Application implements Mediator, Navigator {
 
 //    Context view = presenter.getManagedContext();
 //    if (view != null) {
-//      view.startActivity(new Intent(view, InformationView.class));
+//      view.startActivity(new Intent(view, ProductView.class));
 //      presenter.destroyView();
 //    }
 //  }
@@ -210,7 +210,7 @@ public class App extends Application implements Mediator, Navigator {
 
         Context view = presenter.getManagedContext();
         if (view != null) {
-            view.startActivity(new Intent(view, InformationView.class));
+            view.startActivity(new Intent(view, ProductView.class));
         }
     }
 
@@ -238,7 +238,7 @@ public class App extends Application implements Mediator, Navigator {
         String dateOfTheParty;
         String hourOfParty;
         List<CategoryData> partyAdded;
-        List<InformationData> newparty;
+        List<ProductData> newparty;
         List<CategoryData> list;
 
     }

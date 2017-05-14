@@ -1,4 +1,4 @@
-package es.ulpgc.eite.clean.mvp.sample.information;
+package es.ulpgc.eite.clean.mvp.sample.product;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -11,9 +11,9 @@ import es.ulpgc.eite.clean.mvp.sample.R;
  * Created by alumno on 31/03/2017.
  */
 
-public class InformationView
-        extends GenericActivity<Information.PresenterToView, Information.ViewToPresenter, InformationPresenter>
-        implements Information.PresenterToView {
+public class ProductView
+        extends GenericActivity<Product.PresenterToView, Product.ViewToPresenter, ProductPresenter>
+        implements Product.PresenterToView {
 
     private TextView Detalle;
     private TextView Story;
@@ -35,7 +35,7 @@ public class InformationView
     @SuppressLint("MissingSuperCall")
     @Override
     protected void onResume() {
-        super.onResume(InformationPresenter.class, this);
+        super.onResume(ProductPresenter.class, this);
     }
 
     @Override

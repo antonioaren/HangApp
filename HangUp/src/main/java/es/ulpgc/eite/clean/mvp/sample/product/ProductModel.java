@@ -1,4 +1,4 @@
-package es.ulpgc.eite.clean.mvp.sample.information;
+package es.ulpgc.eite.clean.mvp.sample.product;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
@@ -7,14 +7,14 @@ import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
  * Created by Pedro Arenas on 25/4/17.
  */
 
-public class InformationModel extends GenericModel<Information.ModelToPresenter>
-        implements Information.PresenterToModel {
+public class ProductModel extends GenericModel<Product.ModelToPresenter>
+        implements Product.PresenterToModel {
 
     private CategoryData Item;
 
 
     @Override
-    public void onCreate(Information.ModelToPresenter modelToPresenter) {
+    public void onCreate(Product.ModelToPresenter modelToPresenter) {
 
     }
 

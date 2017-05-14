@@ -1,13 +1,11 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
-import es.ulpgc.eite.clean.mvp.sample.data.InformationData;
-import es.ulpgc.eite.clean.mvp.sample.R;
+import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyModel;
 import io.realm.Realm;
 import io.realm.RealmResults;
@@ -21,14 +19,14 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     private String HangAppText;
     private String HangAppButtonSearchLabel;
     private String HangAppButtonAddLabel;
-    private List<InformationData> itemsDatabase;
+    private List<ProductData> itemsDatabase;
     private List<CategoryData> items;
-    private List<InformationData> Disco;
-    private List<InformationData> Ulpgc;
-    private List<InformationData> Cars;
-    private List<InformationData> Musica;
-    private List<InformationData> Astro;
-    private List<InformationData> newParty;
+    private List<ProductData> Disco;
+    private List<ProductData> Ulpgc;
+    private List<ProductData> Cars;
+    private List<ProductData> Musica;
+    private List<ProductData> Astro;
+    private List<ProductData> newParty;
 
     private Random randomAssistance1, randomAssistance2, randomAssistance3, randomAssistance4, randomAssistance5;
     private int[] participants;
@@ -109,32 +107,32 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
 
     @Override
-    public List<InformationData> getDisco() {
+    public List<ProductData> getDisco() {
         return Disco;
     }
 
     @Override
-    public List<InformationData> getUlpgc() {
+    public List<ProductData> getUlpgc() {
         return Ulpgc;
     }
 
     @Override
-    public List<InformationData> getCars() {
+    public List<ProductData> getCars() {
         return Cars;
     }
 
     @Override
-    public List<InformationData> getMusica() {
+    public List<ProductData> getMusica() {
         return Musica;
     }
 
     @Override
-    public List<InformationData> getAstro() {
+    public List<ProductData> getAstro() {
         return Astro;
     }
 
     @Override
-    public List<InformationData> getNewParty() {
+    public List<ProductData> getNewParty() {
         return newParty;
     }
 
@@ -153,19 +151,19 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
 
     @Override
-    public List<InformationData> getEvents() {
-        RealmResults<InformationData> results = realmDatabase.where(InformationData.class).findAll();
+    public List<ProductData> getEvents() {
+        RealmResults<ProductData> results = realmDatabase.where(ProductData.class).findAll();
         return results;
     }
 
     @Override
     public void setItemsFromDatabase(){
-        itemsDatabase = realmDatabase.where(InformationData.class).findAll();
+        itemsDatabase = realmDatabase.where(ProductData.class).findAll();
     }
     @Override
     public void insertEvent(String id, int image, String productName, String participants, String category, String detail, String day, String hour, String web) {
 
-        InformationData event = realmDatabase.createObject(InformationData.class);
+        ProductData event = realmDatabase.createObject(ProductData.class);
 
         realmDatabase.beginTransaction();
 
@@ -188,7 +186,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         realmDatabase.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
-                realm.where(InformationData.class).equalTo("id", id);
+                realm.where(ProductData.class).equalTo("id", id);
                  //   .findAll();
 
             }
