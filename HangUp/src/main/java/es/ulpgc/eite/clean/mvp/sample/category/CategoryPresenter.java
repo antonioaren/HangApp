@@ -15,6 +15,7 @@ import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 import io.realm.RealmList;
+import io.realm.RealmResults;
 
 public class CategoryPresenter
         extends GenericPresenter<Category.PresenterToView, Category.PresenterToModel,
@@ -73,10 +74,6 @@ public class CategoryPresenter
         if (configurationChangeOccurred()) {
             getView().setLabel(getModel().getSearchLabel());
             getView().setLabel(getModel().getSearchLabel());
-
-            checkToolbarVisibility();
-            checkTextVisibility();
-
         }
 
 //     Navigator app = (Navigator) getView().getApplication();
@@ -94,7 +91,6 @@ public class CategoryPresenter
     @Override
     public void onBackPressed() {
         Log.d(TAG, "calling onBackPressed()");
-
     }
 
     /**
@@ -127,14 +123,12 @@ public class CategoryPresenter
         Navigator app = (Navigator) getView().getApplication();
         app.goToSearchScreen(this);
     }
-
     @Override
     public void onButtonAddClicked() {
         Log.d(TAG, "calling onButtonAddClicked()");
         Navigator app = (Navigator) getView().getApplication();
         app.goToAddScreen(this);
     }
-
     @Override
     public void onListItemClicked() {
         Log.d(TAG, "item cliked");
@@ -152,8 +146,7 @@ public class CategoryPresenter
             getView().setLabel(getModel().getSearchLabel());
             getView().setLabel(getModel().getAddLabel());
         }
-        checkToolbarVisibility();
-        checkTextVisibility();
+
 
         getView().settingAdapter((RealmList<CategoryData>) getModel().getListCategory());
     }
@@ -162,35 +155,19 @@ public class CategoryPresenter
     public void setPlace(String placeOfTheParty) {
         this.place = placeOfTheParty;
     }
-
     @Override
     public void setDate(String dateOfTheParty) {
         this.date = dateOfTheParty;
     }
-
     @Override
     public void setHour(String hourOfParty) {
         this.hour = hourOfParty;
     }
 
-    @Override
-    public void setToolbarVisibility(boolean visible) {
-        toolbarVisible = visible;
-    }
-
-    @Override
-    public void setTextVisibility(boolean visible) {
-        textVisible = visible;
-    }
-
-    @Override
-    public void setImageVisibility(boolean ImageVisibility) {
-        imageVisibility = ImageVisibility;
-    }
-
+    //// TODO: 14/5/17 Revisar para borrar.
 
     ///////////////////////////////////////////////////////////////////////////////////
-    // Category To //////////////////////////////////////////////////////////////////////
+    // Category To ///////////////////////////////////////////////////////////////////
 
 
     @Override
@@ -262,26 +239,7 @@ public class CategoryPresenter
 
     ///////////////////////////////////////////////////////////////////////////////////
 
-    private void checkToolbarVisibility() {
-        Log.d(TAG, "calling checkToolbarVisibility()");
-        if (isViewRunning()) {
-            if (!toolbarVisible) {
-                //  getView().hideToolbar();
-            }
-        }
 
-    }
-
-    private void checkTextVisibility() {
-        Log.d(TAG, "calling checkTextVisibility()");
-        if (isViewRunning()) {
-            if (!textVisible) {
-                getView().hideText();
-            } else {
-                getView().showText();
-            }
-        }
-    }
 
     @Override
     public List<CategoryData> getListOfParties() {
@@ -299,6 +257,24 @@ public class CategoryPresenter
         // desde el maestro y pasarselo al detalle
         Navigator app = (Navigator) getView().getApplication();
         app.goToInformationScreen(this);
+    }
+
+    @Override
+    public void subscribeCallbacks() {
+        Repository.OnGetAllCategoryCallback getAllCategoryCallback = new Repository.OnGetAllCategoryCallback() {
+            @Override
+            public void onSuccess(RealmResults<CategoryData> categories) {
+                getView().showCategories(categories);
+            }
+
+        };
+
+    }
+
+    @Override
+    public void unSubscribeCallbacks() {
+
+
     }
 
 }

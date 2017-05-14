@@ -69,8 +69,7 @@ public class App extends Application implements Mediator, Navigator {
     public void startingCategoryScreen(Category.ToCategory presenter) {
 
         if (toCategoryState != null) {
-            presenter.setTextVisibility(toCategoryState.textVisibility);
-            presenter.setImageVisibility(toCategoryState.imageVisibility);
+
         }
         presenter.onScreenStarted();
     }

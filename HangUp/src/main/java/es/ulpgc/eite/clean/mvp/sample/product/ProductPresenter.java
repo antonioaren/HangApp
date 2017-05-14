@@ -3,6 +3,7 @@ package es.ulpgc.eite.clean.mvp.sample.product;
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
+import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 
 /**
  * Created by alumno on 31/03/2017.
@@ -13,6 +14,8 @@ public class ProductPresenter
         Product.ModelToPresenter, ProductModel>
         implements Product.ViewToPresenter, Product.ModelToPresenter, Product.ToInformation
         , Product.InformationTo {
+
+    private ProductData ItemSelected;
 
     @Override
     public void onCreate(Product.PresenterToView view) {
@@ -49,5 +52,11 @@ public class ProductPresenter
     @Override
     public void setItem(CategoryData itemSelected) {
         getModel().setItem(itemSelected);
+    }
+
+    @Override
+    public void onItemClicked(ProductData item) {
+        ItemSelected = item;
+
     }
 }

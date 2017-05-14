@@ -17,8 +17,8 @@ import java.util.List;
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
-import io.realm.Realm;
 import io.realm.RealmList;
+import io.realm.RealmResults;
 
 public class CategoryView
         extends GenericActivity<Category.PresenterToView, Category.ViewToPresenter, CategoryPresenter>
@@ -38,7 +38,7 @@ public class CategoryView
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hangapp);
+        setContentView(R.layout.activity_category);
 
         title = (TextView) findViewById(R.id.title);
         image = (ImageView) findViewById(R.id.image);
@@ -147,6 +147,11 @@ public class CategoryView
         buttonAdd.setText(txt);
     }
 
+    @Override
+    public void showCategories(RealmResults<CategoryData> categories) {
+
+    }
+
 
     public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
 
@@ -168,7 +173,7 @@ public class CategoryView
         @Override
         public CategoryViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {//i es la posición.
             LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
-            View v = inflater.inflate(R.layout.category_card, viewGroup, false);
+            View v = inflater.inflate(R.layout.card_category, viewGroup, false);
             return new CategoryViewHolder(v);
         }
 
@@ -190,12 +195,6 @@ public class CategoryView
         public void onAttachedToRecyclerView(RecyclerView recyclerView) {
             super.onAttachedToRecyclerView(recyclerView);
         }
-
-       /* public void setItemList(List<CategoryData> items) {
-            this.items = items;
-            notifyDataSetChanged();
-
-        }*/
 
         public class CategoryViewHolder extends RecyclerView.ViewHolder {
             public final View itemView;

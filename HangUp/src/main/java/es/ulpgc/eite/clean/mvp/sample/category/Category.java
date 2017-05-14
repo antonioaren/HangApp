@@ -54,6 +54,8 @@ public interface Category {
         void setLabelSearch(String txt);
 
         void setAddLabel(String txt);
+
+        void showCategories(RealmResults<CategoryData> categories);
     }
 
     /**
@@ -99,6 +101,10 @@ public interface Category {
 
 
         List<CategoryData> getListOfParties();
+
+        void subscribeCallbacks();
+
+        void unSubscribeCallbacks();
     }
 
 
@@ -124,12 +130,6 @@ public interface Category {
     // To Add /////////////////////////////////////////////////////////////////////////
 
     interface ToCategory {
-
-        void setToolbarVisibility(boolean visible);
-
-        void setTextVisibility(boolean textVisibility);
-
-        void setImageVisibility(boolean ImageVisibility);
 
 
         void onScreenStarted();
