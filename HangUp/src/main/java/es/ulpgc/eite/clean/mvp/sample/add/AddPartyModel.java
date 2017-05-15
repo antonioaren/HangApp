@@ -3,11 +3,13 @@ package es.ulpgc.eite.clean.mvp.sample.add;
 
 import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
+import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 import io.realm.RealmList;
 
 
@@ -28,15 +30,13 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     private int year;
     List<CategoryData> partyAdded;
     List<ProductData> party;
-   @Override
-    public String getDescription() {
-        return description;
-    }
+    Repository.ProductRepository.OnSaveProductCallback callback;
 
 
 
     public AddPartyModel() {
-
+     this.party= new ArrayList<>();
+      this.partyAdded= new ArrayList<>();
     }
 
 
@@ -141,6 +141,11 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     }
 
     @Override
+    public Repository.ProductRepository.OnSaveProductCallback getCallBack() {
+        return this.callback;
+    }
+
+    @Override
     public void setDay(String day) {
         this.day = day;
     }
@@ -187,5 +192,9 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
         this.description= description;
     }
 
+    @Override
+    public String getDescription() {
+        return description;
+    }
 
 }

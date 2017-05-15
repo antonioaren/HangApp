@@ -34,6 +34,7 @@ public class CategoryView
     private CategoryAdapter adapter;
     private RecyclerView.LayoutManager lManager;
     private RealmList<CategoryData> items;
+    private static CategoryView instance;
 
     private final String PREFS_NAME = "MyprefsFile";
 
@@ -45,6 +46,8 @@ public class CategoryView
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
+        instance = this;
+      //  RealmConfiguration config = new RealmConfiguration.Builder(getApplicationContext()) .setModules(new SimpleRealmModule()).build(); Realm.setDefaultConfiguration(config);
 
         title = (TextView) findViewById(R.id.title);
         image = (ImageView) findViewById(R.id.image);
@@ -148,7 +151,10 @@ public class CategoryView
 
     }
 
+    public static CategoryView getInstance() {
 
+      return instance;
+    }
 
 
     public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {

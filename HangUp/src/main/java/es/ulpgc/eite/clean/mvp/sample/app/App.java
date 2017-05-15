@@ -11,6 +11,7 @@ import es.ulpgc.eite.clean.mvp.sample.add.AddPartyView;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
+import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 import es.ulpgc.eite.clean.mvp.sample.detail.DetailPresenter;
 import es.ulpgc.eite.clean.mvp.sample.product.Product;
 import es.ulpgc.eite.clean.mvp.sample.product.ProductView;
@@ -146,7 +147,7 @@ public class App extends Application implements Mediator, Navigator {
 //
 //
 //        //reformando metodo
-//        toAddState.newparty = presenter.getPartyCreated();
+//   toAddState.newparty = presenter.getPartyCreated();
 //        toAddState.newparty.add(new InformationData_Old(R.drawable.astro,
 //                "name", "0", "details", "story", toAddState.dateOfTheParty, toAddState.hourOfParty));
 //        toAddState.partyAdded = presenter.getPartyAdded();
@@ -226,6 +227,7 @@ public class App extends Application implements Mediator, Navigator {
         List<CategoryData> partyAdded;
         List<ProductData> newparty;
         List<CategoryData> list;
+        Repository.ProductRepository.OnSaveProductCallback callback;
 
         public String descriptionOfTheParty;
     }

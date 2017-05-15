@@ -10,6 +10,7 @@ import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.Presenter;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
+import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 import io.realm.RealmList;
 import io.realm.RealmResults;
 
@@ -150,7 +151,7 @@ public interface Add {
         String getDateOfTheParty();
 
         String getHourOfParty();
-
+       Repository.ProductRepository.OnSaveProductCallback getCallBack();
 
         void setDay(String day);
 
