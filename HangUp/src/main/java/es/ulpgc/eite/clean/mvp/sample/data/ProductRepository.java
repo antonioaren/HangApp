@@ -1,20 +1,31 @@
 package es.ulpgc.eite.clean.mvp.sample.data;
 
-import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
+import java.io.File;
+import java.util.UUID;
+
 import io.realm.Realm;
+import io.realm.RealmConfiguration;
+import io.realm.RealmMigration;
+import io.realm.internal.RealmProxyMediator;
+import io.realm.internal.SharedRealm;
+import io.realm.rx.RxObservableFactory;
 
 /**
  * Created by Pedro Arenas on 14/5/17.
  */
 
-public class ProductRepository implements Repository.ProductRepository {
+public class ProductRepository extends RealmConfiguration implements Repository.ProductRepository  {
 
+
+    protected ProductRepository(File realmDirectory, String realmFileName, String canonicalPath, String assetFilePath, byte[] key, long schemaVersion, RealmMigration migration, boolean deleteRealmIfMigrationNeeded, SharedRealm.Durability durability, RealmProxyMediator schemaMediator, RxObservableFactory rxObservableFactory, Realm.Transaction initialDataTransaction) {
+        super(realmDirectory, realmFileName, canonicalPath, assetFilePath, key, schemaVersion, migration, deleteRealmIfMigrationNeeded, durability, schemaMediator, rxObservableFactory, initialDataTransaction);
+    }
 
     public void addProduct() {
-    Realm realm = Realm.getInstance(CategoryView.getInstance());
-//        realm.beginTransaction();
-//       Product realmProduct = realm.createObject(Student.class);
-//        realmProduct.setId(UUID.randomUUID().toString());
+    Realm realm = Realm.getInstance(this);
+      realm.beginTransaction();
+    ProductData realmProduct = realm.createObject(ProductData.class);
+       realmProduct.setId(UUID.randomUUID().toString());
 //        realmProduct.setProductName(realmProduct.getName());
 //        realmStudent.setBirthday(student.getBirthday());
 //        realmStudent.setEmail(student.getEmail());

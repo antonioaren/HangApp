@@ -17,6 +17,7 @@ import java.util.List;
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
+import io.realm.Realm;
 import io.realm.RealmList;
 import io.realm.RealmResults;
 
@@ -36,7 +37,7 @@ public class CategoryView
     private RealmList<CategoryData> items;
 
     private final String PREFS_NAME = "MyprefsFile";
-    private static CategoryView instance;
+
 
     //SharedPreferences FirstTimeRunning;
     // FirstTimeRunning = getSharedPreferences(PREFS_NAME, 0);
@@ -45,14 +46,14 @@ public class CategoryView
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
-        instance=this;
+
         title = (TextView) findViewById(R.id.title);
         image = (ImageView) findViewById(R.id.image);
 
         recycler = (RecyclerView) findViewById(R.id.recycler);
         recycler.setHasFixedSize(true);
 
-        //Realm realm= Realm.getDefaultInstance();
+        Realm realm= Realm.getDefaultInstance();
         //recycler.setAdapter(new CategoryAdapter(realm.where(CategoryData.class).findAllAsync()));
 
         linearmanager = new LinearLayoutManager(this);
@@ -153,9 +154,7 @@ public class CategoryView
 
     }
 
-    public static CategoryView getInstance() {
-     return instance;
-    }
+
 
 
     public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
