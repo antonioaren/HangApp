@@ -3,18 +3,13 @@ package es.ulpgc.eite.clean.mvp.sample.category;
 import android.content.Context;
 import android.util.Log;
 
-import java.util.List;
-
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
-import es.ulpgc.eite.clean.mvp.sample.add.Add;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
-import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.Repository;
-import io.realm.RealmList;
 import io.realm.RealmResults;
 
 public class CategoryPresenter
@@ -211,10 +206,15 @@ public class CategoryPresenter
 
     @Override
     public void subscribeCallbacks() {
-        Repository.OnGetAllCategoryCallback getAllCategoryCallback = new Repository.OnGetAllCategoryCallback() {
+        Repository.CategoryRepository.OnGetAllCategoryCallback getAllCategoryCallback = new Repository.CategoryRepository.OnGetAllCategoryCallback() {
             @Override
             public void onSuccess(RealmResults<CategoryData> categories) {
                 getView().showCategories(categories);
+            }
+
+            @Override
+            public void onError(String message) {
+
             }
 
         };
