@@ -51,6 +51,8 @@ public interface Add {
         void settingAdapter(RealmList<CategoryData> item);
 
         void destroyView();
+
+        String getDescriptionOfTheParty();
     }
 
 

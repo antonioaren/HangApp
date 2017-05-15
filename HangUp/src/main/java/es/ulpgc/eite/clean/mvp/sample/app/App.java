@@ -139,8 +139,8 @@ public class App extends Application implements Mediator, Navigator {
     @Override
     public void publishParty(Add.AddTo presenter) {
 
-//        toAddState = new AddState();
-//
+      toAddState = new AddState();
+   toAddState.descriptionOfTheParty=presenter.getDescriptionOfTheParty();
 //        toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
 //        toAddState.dateOfTheParty = presenter.getDateOfTheParty();
 //        toAddState.hourOfParty = presenter.getHourOfParty();
@@ -228,6 +228,7 @@ public class App extends Application implements Mediator, Navigator {
         List<ProductData> newparty;
         List<CategoryData> list;
 
+        public String descriptionOfTheParty;
     }
     private class InformationState {
         public CategoryData ItemSelected;
