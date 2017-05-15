@@ -54,6 +54,8 @@ public interface Repository {
 
         void addProduct(ProductData product, OnSaveProductCallback callback);
 
+        void addProduct(OnSaveProductCallback callback, ProductData product);
+
         void addProductByCategoryId(
                 ProductData product, String categoryId, OnSaveProductCallback callback);
 

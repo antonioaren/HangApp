@@ -21,7 +21,8 @@ public class ProductRepository extends RealmConfiguration implements Repository.
         super(realmDirectory, realmFileName, canonicalPath, assetFilePath, key, schemaVersion, migration, deleteRealmIfMigrationNeeded, durability, schemaMediator, rxObservableFactory, initialDataTransaction);
     }
 
-    public void addProduct() {
+    @Override
+    public void addProduct(OnSaveProductCallback callback,ProductData product) {
     Realm realm = Realm.getInstance(this);
       realm.beginTransaction();
     ProductData realmProduct = realm.createObject(ProductData.class);
@@ -31,8 +32,8 @@ public class ProductRepository extends RealmConfiguration implements Repository.
      realmProduct.setDetailText(realmProduct.getDetailText());
     realm.commitTransaction();
 ////en proceso....
-//   if (callback != null)
-//         callback.onSuccess();
+ if (callback != null)
+        callback.onSuccess();
     }
 
     public void addStudentByUniversityId() {
@@ -106,10 +107,7 @@ public class ProductRepository extends RealmConfiguration implements Repository.
 //            callback.onSuccess(student);
     }
 
-    @Override
-    public void addProduct(ProductData product, OnSaveProductCallback callback) {
 
-    }
 
     @Override
     public void addProductByCategoryId(ProductData product, String categoryId, OnSaveProductCallback callback) {
