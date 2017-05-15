@@ -144,10 +144,10 @@ public class App extends Application implements Mediator, Navigator {
      toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
      toAddState.dateOfTheParty = presenter.getDateOfTheParty();
      toAddState.hourOfParty = presenter.getHourOfParty();
-//
+     toAddState.callback=presenter.getCallBack();
 //
 //        //reformando metodo
-//   toAddState.newparty = presenter.getPartyCreated();
+ toAddState.newparty = presenter.getPartyCreated();
 //        toAddState.newparty.add(new InformationData_Old(R.drawable.astro,
 //                "name", "0", "details", "story", toAddState.dateOfTheParty, toAddState.hourOfParty));
 //        toAddState.partyAdded = presenter.getPartyAdded();

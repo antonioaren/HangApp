@@ -8,6 +8,7 @@ import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
+import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 import io.realm.RealmList;
 
 /**
@@ -20,7 +21,7 @@ public class AddPartyPresenter
 
 
     private boolean buttonClicked;
-
+    private Repository.ProductRepository.OnSaveProductCallback callback;
     @Override
     public void onCreate(Add.PresenterToView view) {
         super.onCreate(AddPartyModel.class, this);
@@ -87,6 +88,11 @@ public class AddPartyPresenter
     public String getDescriptionOfTheParty() {
 
         return getModel().getDescription();
+    }
+
+    @Override
+    public Repository.ProductRepository.OnSaveProductCallback getCallBack() {
+        return callback;
     }
 
     @Override

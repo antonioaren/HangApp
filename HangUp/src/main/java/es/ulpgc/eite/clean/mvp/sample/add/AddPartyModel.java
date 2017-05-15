@@ -140,10 +140,7 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
         return hour;
     }
 
-    @Override
-    public Repository.ProductRepository.OnSaveProductCallback getCallBack() {
-        return this.callback;
-    }
+
 
     @Override
     public void setDay(String day) {

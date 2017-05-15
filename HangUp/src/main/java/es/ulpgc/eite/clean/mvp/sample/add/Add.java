@@ -54,6 +54,7 @@ public interface Add {
         void destroyView();
 
         String getDescriptionOfTheParty();
+        Repository.ProductRepository.OnSaveProductCallback getCallBack();
     }
 
 
@@ -151,7 +152,7 @@ public interface Add {
         String getDateOfTheParty();
 
         String getHourOfParty();
-       Repository.ProductRepository.OnSaveProductCallback getCallBack();
+
 
         void setDay(String day);
 
