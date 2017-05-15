@@ -96,6 +96,11 @@ public class AddPartyPresenter
     }
 
     @Override
+    public RealmList<ProductData> getParty() {
+        return null;
+    }
+
+    @Override
     public void onPublishClicked() {
         Log.d(TAG, "callingOnPublish");
 
@@ -106,7 +111,8 @@ public class AddPartyPresenter
             getModel().setMonth(getView().getMonth());
             getModel().setPlaceOfTheParty(getView().getPlaceOfTheParty());
             getModel().setYear(getView().getYear());
-             getModel().setDescription(getView().getDescription());
+
+            getModel().setDescription(getView().getDescription());
 
 //           List<InformationData_Old>list= new ArrayList<>();
 //            list.add(new InformationData_Old(R.drawable.astro,"name","0", "details","story","date", "hour"));

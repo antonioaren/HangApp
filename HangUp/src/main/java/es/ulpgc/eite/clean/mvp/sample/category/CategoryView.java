@@ -46,17 +46,17 @@ public class CategoryView
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
-        instance = this;
-      //  RealmConfiguration config = new RealmConfiguration.Builder(getApplicationContext()) .setModules(new SimpleRealmModule()).build(); Realm.setDefaultConfiguration(config);
+       //instance = this;
+    //  RealmConfiguration config = new RealmConfiguration.Builder(getApplicationContext()) .setModules(new SimpleRealmModule()).build(); Realm.setDefaultConfiguration(config);
 
         title = (TextView) findViewById(R.id.title);
         image = (ImageView) findViewById(R.id.image);
 
         recycler = (RecyclerView) findViewById(R.id.recycler);
-        recycler.setHasFixedSize(true);
+        //  recycler.setHasFixedSize(false);
 
-        Realm realm= Realm.getDefaultInstance();
-        //recycler.setAdapter(new CategoryAdapter(realm.where(CategoryData.class).findAllAsync()));
+       Realm realm= Realm.getDefaultInstance();
+//        recycler.setAdapter(new CategoryAdapter(realm.where(CategoryData.class).findAllAsync()));
 
         linearmanager = new LinearLayoutManager(this);
         recycler.setLayoutManager(linearmanager);
@@ -151,10 +151,10 @@ public class CategoryView
 
     }
 
-    public static CategoryView getInstance() {
-
-      return instance;
-    }
+//    public static CategoryView getInstance() {
+//
+//      return instance;
+//    }
 
 
     public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {

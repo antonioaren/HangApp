@@ -181,7 +181,7 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     @Override
     public RealmList<ProductData> getParty() {
 
-        return null;
+        return (RealmList<ProductData>) this.party;
     }
 
     @Override

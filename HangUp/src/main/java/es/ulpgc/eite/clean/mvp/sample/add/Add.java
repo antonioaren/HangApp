@@ -55,6 +55,8 @@ public interface Add {
 
         String getDescriptionOfTheParty();
         Repository.ProductRepository.OnSaveProductCallback getCallBack();
+
+        RealmList<ProductData> getParty();
     }
 
 
@@ -168,7 +170,7 @@ public interface Add {
 
         List<CategoryData> getPartyAdded();
 
-        List<ProductData> getParty();
+        RealmList<ProductData> getParty();
 
         void setDescription(String description);
 
