@@ -6,6 +6,7 @@ import java.util.UUID;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.data.Repository;
+import es.ulpgc.eite.clean.mvp.sample.data.module.RealmTable;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 import io.realm.RealmMigration;
@@ -107,8 +108,8 @@ public class ProductRepository extends RealmConfiguration implements Repository.
         realmProduct.setHour(realmProduct.getHour());
 //
  CategoryData category = realm.where(CategoryData.class)
-        .equalTo(RealmTable., id).findFirst();
-//       university.getStudents().add(realmStudent);
+        .equalTo(RealmTable.ID, id).findFirst();
+//       category.getStudents().add(realmStudent);
 //
 //       realm.commitTransaction();
 ////
