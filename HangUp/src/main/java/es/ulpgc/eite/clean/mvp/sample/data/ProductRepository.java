@@ -1,5 +1,8 @@
 package es.ulpgc.eite.clean.mvp.sample.data;
 
+import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
+import io.realm.Realm;
+
 /**
  * Created by Pedro Arenas on 14/5/17.
  */
@@ -8,11 +11,11 @@ public class ProductRepository implements Repository.ProductRepository {
 
 
     public void addProduct() {
-//        Realm realm = Realm.getInstance(CategoryView.getInstance());
+    Realm realm = Realm.getInstance(CategoryView.getInstance());
 //        realm.beginTransaction();
 //       Product realmProduct = realm.createObject(Student.class);
-//        realmStudent.setId(UUID.randomUUID().toString());
-//        realmStudent.setName(student.getName());
+//        realmProduct.setId(UUID.randomUUID().toString());
+//        realmProduct.setProductName(realmProduct.getName());
 //        realmStudent.setBirthday(student.getBirthday());
 //        realmStudent.setEmail(student.getEmail());
 //        realm.commitTransaction();

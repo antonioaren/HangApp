@@ -36,6 +36,7 @@ public class CategoryView
     private RealmList<CategoryData> items;
 
     private final String PREFS_NAME = "MyprefsFile";
+    private static CategoryView instance;
 
     //SharedPreferences FirstTimeRunning;
     // FirstTimeRunning = getSharedPreferences(PREFS_NAME, 0);
@@ -44,7 +45,7 @@ public class CategoryView
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
-
+        instance=this;
         title = (TextView) findViewById(R.id.title);
         image = (ImageView) findViewById(R.id.image);
 
@@ -150,6 +151,10 @@ public class CategoryView
     @Override
     public void showCategories(RealmResults<CategoryData> categories) {
 
+    }
+
+    public static CategoryView getInstance() {
+     return instance;
     }
 
 
