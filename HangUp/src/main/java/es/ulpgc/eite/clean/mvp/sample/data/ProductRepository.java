@@ -26,13 +26,13 @@ public class ProductRepository extends RealmConfiguration implements Repository.
       realm.beginTransaction();
     ProductData realmProduct = realm.createObject(ProductData.class);
        realmProduct.setId(UUID.randomUUID().toString());
-//        realmProduct.setProductName(realmProduct.getName());
-//        realmStudent.setBirthday(student.getBirthday());
-//        realmStudent.setEmail(student.getEmail());
-//        realm.commitTransaction();
+     realmProduct.setProductName(realmProduct.getProductName());
+       realmProduct.setParticipants(realmProduct.getParticipants());
+     realmProduct.setDetailText(realmProduct.getDetailText());
+    realm.commitTransaction();
 //
-//        if (callback != null)
-//            callback.onSuccess();
+     if (callback != null)
+         callback.onSuccess();
     }
 
     public void addStudentByUniversityId() {
