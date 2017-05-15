@@ -77,9 +77,9 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     @Override
     public void CreateDatabaseTablesFromJson() {
-//       RealmConfiguration config = new RealmConfiguration.Builder(context)
-//                .setModules(new ModuleRealm()).build();
-//        Realm.setDefaultConfiguration(config);
+//    RealmConfiguration config = new RealmConfiguration.Builder(context)
+//              .setModules(new ModuleRealm()).build();
+//     Realm.setDefaultConfiguration(config);
 
         insertEvent("0", "Fiestas", R.drawable.disco);
         insertEvent("1", "Música", R.drawable.musica);
