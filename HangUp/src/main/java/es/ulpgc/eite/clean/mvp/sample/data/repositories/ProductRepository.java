@@ -3,6 +3,8 @@ package es.ulpgc.eite.clean.mvp.sample.data.repositories;
 import java.io.File;
 import java.util.UUID;
 
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
@@ -10,6 +12,8 @@ import io.realm.RealmMigration;
 import io.realm.internal.RealmProxyMediator;
 import io.realm.internal.SharedRealm;
 import io.realm.rx.RxObservableFactory;
+
+import static android.R.attr.id;
 
 /**
  * Created by Pedro Arenas on 14/5/17.
@@ -26,7 +30,7 @@ public class ProductRepository extends RealmConfiguration implements Repository.
     public void addProduct(OnSaveProductCallback callback, ProductData product) {
     Realm realm = Realm.getInstance(this);
       realm.beginTransaction();
-    ProductData realmProduct = realm.createObject(ProductData.class);
+      ProductData realmProduct = realm.createObject(ProductData.class);
        realmProduct.setId(UUID.randomUUID().toString());
      realmProduct.setProductName(realmProduct.getProductName());
        realmProduct.setParticipants(realmProduct.getParticipants());
@@ -102,8 +106,8 @@ public class ProductRepository extends RealmConfiguration implements Repository.
         realmProduct.setDay(realmProduct.getDay());
         realmProduct.setHour(realmProduct.getHour());
 //
-//   CategoryData category = realm.where(CategoryData.class)
-//               .equalTo(Category.ID, universityId).findFirst();
+ CategoryData category = realm.where(CategoryData.class)
+        .equalTo(RealmTable., id).findFirst();
 //       university.getStudents().add(realmStudent);
 //
 //       realm.commitTransaction();
