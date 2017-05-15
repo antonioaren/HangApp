@@ -10,16 +10,9 @@ import io.realm.RealmResults;
 public interface Repository {
 
     public interface CategoryRepository {
-        void addCategory();
 
-        void DeleteCategoryById();
 
-        void DeleteCategoryByPosition();
-
-        void getCategoryById();
-
-        
-
+        void DeleteCategoryByPosition(int position, OnDeleteCategoryCallback callback);
 
         interface OnAddCategoryCallback {
 
@@ -45,6 +38,7 @@ public interface Repository {
             void onError(String message);
         }
 
+
         void addCategory(CategoryData category, OnAddCategoryCallback callback);
 
         void deleteCategoryById(String Id, OnDeleteCategoryCallback callback);
@@ -53,7 +47,7 @@ public interface Repository {
 
         void getAllCategories(OnGetAllCategoryCallback callback);
 
-        void getCategoryyById(String id, OnGetCategoryByIdCallback callback);
+        void getCategoryById(String id, OnGetCategoryByIdCallback callback);
 
 
     }
