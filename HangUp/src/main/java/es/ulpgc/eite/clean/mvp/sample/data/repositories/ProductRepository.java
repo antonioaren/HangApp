@@ -9,6 +9,7 @@ import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 import es.ulpgc.eite.clean.mvp.sample.data.module.RealmTable;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
+import io.realm.RealmList;
 import io.realm.RealmMigration;
 import io.realm.RealmQuery;
 import io.realm.RealmResults;
@@ -155,6 +156,11 @@ public class ProductRepository extends RealmConfiguration implements Repository.
 
     @Override
     public void getAllProductsByCategoryId(String id, OnGetProductsCallback callback) {
+          Realm realm = Realm.getInstance(this);
+         CategoryData category = realm.where(CategoryData.class).equalTo(RealmTable.ID, id).findFirst();
+         RealmList<ProductData> products = category.getItemInfo();
+          if (callback != null)
+          callback.onSuccess(products);
 
     }
 
