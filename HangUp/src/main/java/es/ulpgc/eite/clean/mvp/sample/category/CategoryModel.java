@@ -7,12 +7,10 @@ import java.util.UUID;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.R;
+import es.ulpgc.eite.clean.mvp.sample.add.AddPartyModel;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
-import es.ulpgc.eite.clean.mvp.sample.add.AddPartyModel;
-import es.ulpgc.eite.clean.mvp.sample.data.module.ModuleRealm;
 import io.realm.Realm;
-import io.realm.RealmConfiguration;
 import io.realm.RealmResults;
 
 import static android.R.attr.id;
@@ -80,9 +78,9 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     @Override
     public void CreateDatabaseTablesFromJson() {
-        RealmConfiguration config = new RealmConfiguration.Builder(context)
-                .setModules(new ModuleRealm()).build();
-        Realm.setDefaultConfiguration(config);
+//    RealmConfiguration config = new RealmConfiguration.Builder(context)
+//              .setModules(new ModuleRealm()).build();
+//     Realm.setDefaultConfiguration(config);
 
         insertEvent("Fiestas", R.drawable.disco);
         insertEvent("Música", R.drawable.musica);

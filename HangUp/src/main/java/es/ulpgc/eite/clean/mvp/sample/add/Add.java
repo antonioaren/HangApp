@@ -11,6 +11,7 @@ import es.ulpgc.eite.clean.mvp.Presenter;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import io.realm.RealmList;
+import io.realm.RealmResults;
 
 
 public interface Add {
@@ -70,7 +71,7 @@ public interface Add {
 
     interface PresenterToView extends ContextView {
 
-        void settingAdapter(RealmList<CategoryData> data);
+        void settingAdapter(RealmResults<CategoryData> data);
 
         void finishScreen();
 

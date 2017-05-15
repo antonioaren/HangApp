@@ -1,32 +1,39 @@
 package es.ulpgc.eite.clean.mvp.sample.data.repositories;
 
+import java.io.File;
 import java.util.UUID;
 
 import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 import io.realm.Realm;
-import io.realm.RealmList;
-import io.realm.RealmQuery;
-import io.realm.RealmResults;
+import io.realm.RealmConfiguration;
+import io.realm.RealmMigration;
+import io.realm.internal.RealmProxyMediator;
+import io.realm.internal.SharedRealm;
+import io.realm.rx.RxObservableFactory;
 
 /**
  * Created by Pedro Arenas on 14/5/17.
  */
 
-public class ProductRepository implements Repository.ProductRepository {
+public class ProductRepository extends RealmConfiguration implements Repository.ProductRepository  {
 
 
-    public void addStudent() {
-//        Realm realm = Realm.getInstance(SimpleRealmApp.getInstance());
-//        realm.beginTransaction();
-//        Student realmStudent = realm.createObject(Student.class);
-//        realmStudent.setId(UUID.randomUUID().toString());
-//        realmStudent.setName(student.getName());
-//        realmStudent.setBirthday(student.getBirthday());
-//        realmStudent.setEmail(student.getEmail());
-//        realm.commitTransaction();
+    protected ProductRepository(File realmDirectory, String realmFileName, String canonicalPath, String assetFilePath, byte[] key, long schemaVersion, RealmMigration migration, boolean deleteRealmIfMigrationNeeded, SharedRealm.Durability durability, RealmProxyMediator schemaMediator, RxObservableFactory rxObservableFactory, Realm.Transaction initialDataTransaction) {
+        super(realmDirectory, realmFileName, canonicalPath, assetFilePath, key, schemaVersion, migration, deleteRealmIfMigrationNeeded, durability, schemaMediator, rxObservableFactory, initialDataTransaction);
+    }
+
+    public void addProduct() {
+    Realm realm = Realm.getInstance(this);
+      realm.beginTransaction();
+    ProductData realmProduct = realm.createObject(ProductData.class);
+       realmProduct.setId(UUID.randomUUID().toString());
+     realmProduct.setProductName(realmProduct.getProductName());
+       realmProduct.setParticipants(realmProduct.getParticipants());
+     realmProduct.setDetailText(realmProduct.getDetailText());
+    realm.commitTransaction();
 //
-//        if (callback != null)
-//            callback.onSuccess();
+//     if (callback != null)
+//         callback.onSuccess();
     }
 
     public void addStudentByUniversityId() {
@@ -98,5 +105,40 @@ public class ProductRepository implements Repository.ProductRepository {
 //
 //        if (callback != null)
 //            callback.onSuccess(student);
+    }
+
+    @Override
+    public void addProduct(ProductData product, OnSaveProductCallback callback) {
+
+    }
+
+    @Override
+    public void addProductByCategoryId(ProductData product, String categoryId, OnSaveProductCallback callback) {
+
+    }
+
+    @Override
+    public void deleteProductById(String id, OnDeleteProductCallback callback) {
+
+    }
+
+    @Override
+    public void deleteProductByPosition(int position, OnDeleteProductCallback callback) {
+
+    }
+
+    @Override
+    public void getAllProducts(OnGetAllProductsCallback callback) {
+
+    }
+
+    @Override
+    public void getAllProductsByCategoryId(String id, OnGetProductsCallback callback) {
+
+    }
+
+    @Override
+    public void getProductsById(String id, OnGetProductByIdCallback callback) {
+
     }
 }
