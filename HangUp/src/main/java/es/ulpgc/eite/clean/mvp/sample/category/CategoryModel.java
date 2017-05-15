@@ -69,7 +69,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         HangAppButtonAddLabel = "AddOne";
         HangAppButtonSearchLabel = "SearchOne";
         HangAppText = "Add";
-
+      //  Realm.init(this);
         if (isFirstTimeRunning) {
             CreateDatabaseTablesFromJson();
         }
@@ -78,9 +78,9 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     @Override
     public void CreateDatabaseTablesFromJson() {
-//    RealmConfiguration config = new RealmConfiguration.Builder(context)
-//              .setModules(new ModuleRealm()).build();
-//     Realm.setDefaultConfiguration(config);
+   //RealmConfiguration config = new RealmConfiguration.Builder(context)
+       //    .setModules(new ModuleRealm()).build();
+  // Realm.setDefaultConfiguration(config);
 
         insertEvent("Fiestas", R.drawable.disco);
         insertEvent("Música", R.drawable.musica);

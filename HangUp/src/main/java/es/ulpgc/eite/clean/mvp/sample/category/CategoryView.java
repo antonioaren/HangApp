@@ -53,10 +53,10 @@ public class CategoryView
         image = (ImageView) findViewById(R.id.image);
 
         recycler = (RecyclerView) findViewById(R.id.recycler);
-        //  recycler.setHasFixedSize(false);
+         // recycler.setHasFixedSize(false);
 
        Realm realm= Realm.getDefaultInstance();
-//        recycler.setAdapter(new CategoryAdapter(realm.where(CategoryData.class).findAllAsync()));
+       recycler.setAdapter(new CategoryAdapter(realm.where(CategoryData.class).findAllAsync()));
 
         linearmanager = new LinearLayoutManager(this);
         recycler.setLayoutManager(linearmanager);
@@ -106,10 +106,17 @@ public class CategoryView
 
     @Override
     public void settingAdapter(RealmResults<CategoryData> parties) {
-        adapter = new CategoryAdapter(parties);
-        recycler.setAdapter(adapter);
-    }
+//        adapter = new CategoryAdapter(parties);
+//        recycler.setAdapter(adapter);
 
+        if (recycler != null) {
+            CategoryAdapter recyclerAdapter = (CategoryAdapter) recycler.getAdapter();
+
+            recyclerAdapter.setItemList(parties);
+
+
+        }
+    }
     @Override
     public void finishScreen() {
         finish();
@@ -195,6 +202,11 @@ public class CategoryView
         @Override
         public void onAttachedToRecyclerView(RecyclerView recyclerView) {
             super.onAttachedToRecyclerView(recyclerView);
+        }
+
+        public void setItemList(RealmResults<CategoryData> items) {
+         this.items=items;
+
         }
 
         public class CategoryViewHolder extends RecyclerView.ViewHolder {
