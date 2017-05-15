@@ -28,7 +28,7 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     private int year;
     List<CategoryData> partyAdded;
     List<ProductData> party;
-
+   @Override
     public String getDescription() {
         return description;
     }
@@ -186,4 +186,6 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     public void setDescription(String description) {
         this.description= description;
     }
+
+
 }

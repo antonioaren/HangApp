@@ -84,6 +84,12 @@ public class AddPartyPresenter
     }
 
     @Override
+    public String getDescriptionOfTheParty() {
+
+        return getModel().getDescription();
+    }
+
+    @Override
     public void onPublishClicked() {
         Log.d(TAG, "callingOnPublish");
 

@@ -138,12 +138,11 @@ public class App extends Application implements Mediator, Navigator {
 
     @Override
     public void publishParty(Add.AddTo presenter) {
-
-      toAddState = new AddState();
-   toAddState.descriptionOfTheParty=presenter.getDescriptionOfTheParty();
-//        toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
-//        toAddState.dateOfTheParty = presenter.getDateOfTheParty();
-//        toAddState.hourOfParty = presenter.getHourOfParty();
+        toAddState = new AddState();
+     toAddState.descriptionOfTheParty=presenter.getDescriptionOfTheParty();
+     toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
+     toAddState.dateOfTheParty = presenter.getDateOfTheParty();
+     toAddState.hourOfParty = presenter.getHourOfParty();
 //
 //
 //        //reformando metodo

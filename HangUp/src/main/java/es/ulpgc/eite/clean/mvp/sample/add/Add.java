@@ -119,6 +119,8 @@ public interface Add {
 
     interface PresenterToModel extends Model<ModelToPresenter> {
 
+        String getDescription();
+
         String getPlaceLabel();
 
         String getPublishBtnLabel();
@@ -167,6 +169,8 @@ public interface Add {
         List<ProductData> getParty();
 
         void setDescription(String description);
+
+
     }
 
     /**
