@@ -1,7 +1,6 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -101,16 +100,11 @@ public class CategoryView
     public List<CategoryData> getList() {
         return this.items;
     }
+
     @Override
     public void settingAdapter(RealmResults<CategoryData> parties) {
         adapter = new CategoryAdapter(parties);
         recycler.setAdapter(adapter);
-
-
-       /* if(recycler != null) {
-            CategoryAdapter recyclerAdapter =
-                    (CategoryAdapter) recycler.getAdapter();
-            recyclerAdapter.setItemList(items);*/
     }
 
     @Override
@@ -184,7 +178,6 @@ public class CategoryView
 
             holder.image.setImageResource(items.get(position).getImage());
             holder.title.setText(items.get(position).getCategoryName());
-            //holder.number.setText(items.get(position).getProductsAvalables());
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -200,10 +193,8 @@ public class CategoryView
 
         public class CategoryViewHolder extends RecyclerView.ViewHolder {
             public final View itemView;
-            Context context;
             public ImageView image;
             public TextView title;
-            //public TextView number;
             public CategoryData item;
 
             public CategoryViewHolder(View v) {
@@ -212,7 +203,6 @@ public class CategoryView
 
                 image = (ImageView) v.findViewById(R.id.image);
                 title = (TextView) v.findViewById(R.id.title);
-                //number = (TextView) v.findViewById(R.id.numberOfPersons);
             }
         }
     }

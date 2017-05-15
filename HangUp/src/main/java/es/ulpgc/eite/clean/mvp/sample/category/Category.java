@@ -28,7 +28,7 @@ public interface Category {
         void onButtonAddClicked();
         void onListItemClicked();
 
-        List<CategoryData> getListOfParties();
+        List<CategoryData> getCategoryList();
 
         void onItemClicked(CategoryData item);
     }
@@ -76,7 +76,7 @@ public interface Category {
 
         void setItemsFromDatabase();
 
-        void insertEvent(String id, String Categoryname, int image);
+        void insertEvent(String Categoryname, int image);
     }
 
     /**
@@ -84,8 +84,6 @@ public interface Category {
      */
     interface ModelToPresenter {
 
-
-        List<CategoryData> getListOfParties();
 
         void subscribeCallbacks();
 

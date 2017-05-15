@@ -3,6 +3,7 @@ package es.ulpgc.eite.clean.mvp.sample.category;
 import android.content.Context;
 
 import java.util.Random;
+import java.util.UUID;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.R;
@@ -81,11 +82,11 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 //              .setModules(new ModuleRealm()).build();
 //     Realm.setDefaultConfiguration(config);
 
-        insertEvent("0", "Fiestas", R.drawable.disco);
-        insertEvent("1", "Música", R.drawable.musica);
-        insertEvent("2", "ULPGC", R.drawable.ulpgc);
-        insertEvent("3", "Astronomía", R.drawable.astro);
-        insertEvent("4", "Automovilismo", R.drawable.cars);
+        insertEvent("Fiestas", R.drawable.disco);
+        insertEvent("Música", R.drawable.musica);
+        insertEvent("ULPGC", R.drawable.ulpgc);
+        insertEvent("Astronomía", R.drawable.astro);
+        insertEvent("Automovilismo", R.drawable.cars);
 
     }
 
@@ -134,12 +135,12 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     }
 
     @Override
-    public void insertEvent(String id, String Categoryname, int image) {
+    public void insertEvent(String Categoryname, int image) {
 
         CategoryData event = realmDatabase.createObject(CategoryData.class);
         realmDatabase.beginTransaction();
 
-        event.setId(id);
+        event.setId(UUID.randomUUID().toString());
         event.setCategoryName(Categoryname);
         event.setImage(image);
 

@@ -146,7 +146,7 @@ public class CategoryPresenter
             getView().setLabel(getModel().getSearchLabel());
             getView().setLabel(getModel().getAddLabel());
         }
-        //getView().settingAdapter(getModel().getEvents());
+        getView().settingAdapter(getModel().getEvents());
     }
 
 
@@ -192,7 +192,7 @@ public class CategoryPresenter
     ///////////////////////////////////////////////////////////////////////////////////
 
     @Override
-    public RealmResults<CategoryData> getListOfParties() {
+    public RealmResults<CategoryData> getCategoryList() {
         return getModel().getEvents();
     }
 
