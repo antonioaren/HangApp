@@ -52,7 +52,7 @@ public interface Repository {
             void onError(String message);
         }
 
-        void addProduct(ProductData product, OnSaveProductCallback callback);
+
 
         void addProduct(OnSaveProductCallback callback, ProductData product);
 

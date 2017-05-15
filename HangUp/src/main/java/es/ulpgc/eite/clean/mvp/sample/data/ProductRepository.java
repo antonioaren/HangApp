@@ -22,7 +22,7 @@ public class ProductRepository extends RealmConfiguration implements Repository.
     }
 
     @Override
-    public void addProduct(OnSaveProductCallback callback,ProductData product) {
+    public void addProduct(OnSaveProductCallback callback, ProductData product) {
     Realm realm = Realm.getInstance(this);
       realm.beginTransaction();
     ProductData realmProduct = realm.createObject(ProductData.class);
@@ -36,27 +36,6 @@ public class ProductRepository extends RealmConfiguration implements Repository.
         callback.onSuccess();
     }
 
-    public void addStudentByUniversityId() {
-
-//        Realm realm = Realm.getInstance(SimpleRealmApp.getInstance());
-//        realm.beginTransaction();
-//
-//        Student realmStudent = realm.createObject(Student.class);
-//        realmStudent.setId(UUID.randomUUID().toString());
-//        realmStudent.setName(student.getName());
-//        realmStudent.setEmail(student.getEmail());
-//        realmStudent.setBirthday(student.getBirthday());
-//
-//        University university = realm.where(University.class)
-//                .equalTo(RealmTable.ID, universityId).findFirst();
-//        university.getStudents().add(realmStudent);
-//
-//        realm.commitTransaction();
-//
-//        if (callback != null)
-//            callback.onSuccess();
-
-    }
 
     public void deleteStudentById() {
 //        Realm realm = Realm.getInstance(SimpleRealmApp.getInstance());
@@ -111,7 +90,25 @@ public class ProductRepository extends RealmConfiguration implements Repository.
 
     @Override
     public void addProductByCategoryId(ProductData product, String categoryId, OnSaveProductCallback callback) {
-
+               Realm realm = Realm.getInstance(this);
+              realm.beginTransaction();
+//
+       ProductData realmProduct = realm.createObject(ProductData.class);
+     realmProduct.setId(UUID.randomUUID().toString());
+    realmProduct.setProductName(realmProduct.getProductName());
+     realmProduct.setParticipants(realmProduct.getParticipants());
+  realmProduct.setDetailText(realmProduct.getDetailText());
+        realmProduct.setDay(realmProduct.getDay());
+        realmProduct.setHour(realmProduct.getHour());
+//
+//   CategoryData category = realm.where(CategoryData.class)
+//               .equalTo(Category.ID, universityId).findFirst();
+//       university.getStudents().add(realmStudent);
+//
+//       realm.commitTransaction();
+////
+//      if (callback != null)
+//          callback.onSuccess();
     }
 
     @Override
