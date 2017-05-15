@@ -1,5 +1,6 @@
-package es.ulpgc.eite.clean.mvp.sample.data;
+package es.ulpgc.eite.clean.mvp.sample.data.repositories;
 
+import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 import io.realm.Realm;
 import io.realm.RealmQuery;
 import io.realm.RealmResults;

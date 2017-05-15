@@ -11,14 +11,11 @@ import es.ulpgc.eite.clean.mvp.sample.add.AddPartyView;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
-import es.ulpgc.eite.clean.mvp.sample.data.module.ModuleRealm;
 import es.ulpgc.eite.clean.mvp.sample.detail.DetailPresenter;
 import es.ulpgc.eite.clean.mvp.sample.product.Product;
 import es.ulpgc.eite.clean.mvp.sample.product.ProductView;
 import es.ulpgc.eite.clean.mvp.sample.search.Search;
 import es.ulpgc.eite.clean.mvp.sample.search.SearchView;
-import io.realm.Realm;
-import io.realm.RealmConfiguration;
 
 
 public class App extends Application implements Mediator, Navigator {
@@ -35,6 +32,7 @@ public class App extends Application implements Mediator, Navigator {
     @Override
     public void onCreate() {
         super.onCreate();
+
         toCategoryState = new CategoryState();
         toSearchState = new SearchState();
         toSearchState.textVisibility = false;
@@ -63,8 +61,7 @@ public class App extends Application implements Mediator, Navigator {
     @Override
     public void startingCategoryScreen(Category.ToCategory presenter) {
         if (toCategoryState != null) {
-
-
+            //Todo Implementar estados.
         }
         presenter.onScreenStarted();
     }
