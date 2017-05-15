@@ -28,6 +28,8 @@ public interface Product {
 
         CategoryData getItem();
 
+        void insertProduct(String id, int image, String productName, String participants, String detail, String day, String hour);
+
         void setItem(CategoryData itemSelected);
 
     }

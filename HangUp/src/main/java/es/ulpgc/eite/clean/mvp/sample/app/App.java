@@ -10,18 +10,17 @@ import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.add.Add;
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyView;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
-import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 import es.ulpgc.eite.clean.mvp.sample.data.repositories.ProductRepository;
 import es.ulpgc.eite.clean.mvp.sample.detail.DetailPresenter;
 import es.ulpgc.eite.clean.mvp.sample.product.Product;
+import es.ulpgc.eite.clean.mvp.sample.product.ProductModel;
 import es.ulpgc.eite.clean.mvp.sample.product.ProductView;
 import es.ulpgc.eite.clean.mvp.sample.search.Search;
 import es.ulpgc.eite.clean.mvp.sample.search.SearchView;
 import io.realm.RealmList;
-import io.realm.RealmResults;
 
 
 public class App extends Application implements Mediator, Navigator {
@@ -149,19 +148,19 @@ public class App extends Application implements Mediator, Navigator {
         toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
         toAddState.dateOfTheParty = presenter.getDateOfTheParty();
         toAddState.hourOfParty = presenter.getHourOfParty();
-        toAddState.callback=presenter.getCallBack();
+       //  toAddState.callback=presenter.getCallBack();
 
   //        //reformando metodo
    toAddState.newparty = presenter.getParty();
   // toAddState.newparty.add(new ProductData(R.drawable.astro,toAddState.descriptionOfTheParty, "0",  "details", "story", toAddState.dateOfTheParty, toAddState.hourOfParty));
 
-     //  ProductRepository product=new ProductRepository();
-      toAddState.list = presenter.getPartyAdded();
-       toAddState.list.add(new CategoryData("0", R.drawable.astro, "category", toAddState.newparty));
-    CategoryView cv= new CategoryView();
-    cv.settingAdapter((RealmResults<CategoryData>) toAddState.list);
-    cv.getAdapter().notifyItemInserted(1);
-     presenter.destroyView();
+        ProductModel product= new ProductModel();
+        product.insertProduct("0",R.drawable.astro,toAddState.descriptionOfTheParty,"0",toAddState.descriptionOfTheParty,toAddState.dateOfTheParty,toAddState.hourOfParty);//      toAddState.list = presenter.getPartyAdded();
+//       toAddState.list.add(new CategoryData("0", R.drawable.astro, "category", toAddState.newparty));
+//    CategoryView cv= new CategoryView();
+//    cv.settingAdapter((RealmResults<CategoryData>) toAddState.list);
+//    cv.getAdapter().notifyItemInserted(1);
+//     presenter.destroyView();
 
     }
 
