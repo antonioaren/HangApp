@@ -100,22 +100,22 @@ public class ProductRepository extends RealmConfiguration implements Repository.
               realm.beginTransaction();
 //
        ProductData realmProduct = realm.createObject(ProductData.class);
-     realmProduct.setId(UUID.randomUUID().toString());
-    realmProduct.setProductName(realmProduct.getProductName());
-     realmProduct.setParticipants(realmProduct.getParticipants());
-  realmProduct.setDetailText(realmProduct.getDetailText());
+       realmProduct.setId(UUID.randomUUID().toString());
+       realmProduct.setProductName(realmProduct.getProductName());
+       realmProduct.setParticipants(realmProduct.getParticipants());
+       realmProduct.setDetailText(realmProduct.getDetailText());
         realmProduct.setDay(realmProduct.getDay());
         realmProduct.setHour(realmProduct.getHour());
-//
- CategoryData category = realm.where(CategoryData.class)
+
+         CategoryData category = realm.where(CategoryData.class)
         .equalTo(RealmTable.ID, id).findFirst();
-//       category.getStudents().add(realmStudent);
-//
-//       realm.commitTransaction();
-////
-//      if (callback != null)
-//          callback.onSuccess();
-    }
+         category.getItemInfo().add(realmProduct);
+
+         realm.commitTransaction();
+
+         if (callback != null)
+          callback.onSuccess();
+      }
 
     @Override
     public void deleteProductById(String id, OnDeleteProductCallback callback) {
