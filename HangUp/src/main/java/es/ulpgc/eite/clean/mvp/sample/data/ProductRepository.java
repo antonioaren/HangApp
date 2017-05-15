@@ -1,12 +1,5 @@
 package es.ulpgc.eite.clean.mvp.sample.data;
 
-import java.util.UUID;
-
-import io.realm.Realm;
-import io.realm.RealmList;
-import io.realm.RealmQuery;
-import io.realm.RealmResults;
-
 /**
  * Created by Pedro Arenas on 14/5/17.
  */
@@ -14,10 +7,10 @@ import io.realm.RealmResults;
 public class ProductRepository implements Repository.ProductRepository {
 
 
-    public void addStudent() {
-//        Realm realm = Realm.getInstance(SimpleRealmApp.getInstance());
+    public void addProduct() {
+//        Realm realm = Realm.getInstance(CategoryView.getInstance());
 //        realm.beginTransaction();
-//        Student realmStudent = realm.createObject(Student.class);
+//       Product realmProduct = realm.createObject(Student.class);
 //        realmStudent.setId(UUID.randomUUID().toString());
 //        realmStudent.setName(student.getName());
 //        realmStudent.setBirthday(student.getBirthday());
