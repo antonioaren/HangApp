@@ -20,7 +20,7 @@ import io.realm.RealmResults;
 public class CategoryPresenter
         extends GenericPresenter<Category.PresenterToView, Category.PresenterToModel,
         Category.ModelToPresenter, CategoryModel>
-        implements Category.ViewToPresenter, Category.ModelToPresenter, Category.ToCategory, Category.CategoryTo, Add.AddTo {
+        implements Category.ViewToPresenter, Category.ModelToPresenter, Category.ToCategory, Category.CategoryTo {
 
 
     private boolean toolbarVisible;
@@ -146,25 +146,11 @@ public class CategoryPresenter
             getView().setLabel(getModel().getSearchLabel());
             getView().setLabel(getModel().getAddLabel());
         }
-
-
-        getView().settingAdapter((RealmList<CategoryData>) getModel().getListCategory());
+        //getView().settingAdapter(getModel().getEvents());
     }
 
-    @Override
-    public void setPlace(String placeOfTheParty) {
-        this.place = placeOfTheParty;
-    }
-    @Override
-    public void setDate(String dateOfTheParty) {
-        this.date = dateOfTheParty;
-    }
-    @Override
-    public void setHour(String hourOfParty) {
-        this.hour = hourOfParty;
-    }
 
-    //// TODO: 14/5/17 Revisar para borrar.
+
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Category To ///////////////////////////////////////////////////////////////////
@@ -175,40 +161,6 @@ public class CategoryPresenter
         return getActivityContext();
     }
 
-    @Override
-    public String getPlaceOfTheParty() {
-        return null;
-    }
-
-    @Override
-    public String getDateOfTheParty() {
-        return null;
-    }
-
-    @Override
-    public String getHourOfParty() {
-        return null;
-    }
-
-    @Override
-    public RealmList<CategoryData> getDefaultList() {
-        return (RealmList<CategoryData>) getModel().getListCategory();
-    }
-
-    @Override
-    public RealmList<CategoryData> getPartyAdded() {
-        return null;
-    }
-
-    @Override
-    public RealmList<ProductData> getPartyCreated() {
-        return null;
-    }
-
-    @Override
-    public void settingAdapter(RealmList<CategoryData> item) {
-
-    }
 
     @Override
     public void destroyView() {
@@ -239,11 +191,9 @@ public class CategoryPresenter
 
     ///////////////////////////////////////////////////////////////////////////////////
 
-
-
     @Override
-    public List<CategoryData> getListOfParties() {
-        return getModel().getListCategory();
+    public RealmResults<CategoryData> getListOfParties() {
+        return getModel().getEvents();
     }
 
     @Override

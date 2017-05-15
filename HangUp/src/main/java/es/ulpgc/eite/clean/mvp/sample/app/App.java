@@ -38,11 +38,6 @@ public class App extends Application implements Mediator, Navigator {
         toCategoryState = new CategoryState();
         toSearchState = new SearchState();
         toSearchState.textVisibility = false;
-
-        RealmConfiguration config = new RealmConfiguration.Builder(getApplicationContext())
-                .setModules(new ModuleRealm()).build();
-        Realm.setDefaultConfiguration(config);
-        //No haría falta el getInstance. El mediador es un singleton al fin y al cabo.
     }
 
 
@@ -67,8 +62,8 @@ public class App extends Application implements Mediator, Navigator {
 
     @Override
     public void startingCategoryScreen(Category.ToCategory presenter) {
-
         if (toCategoryState != null) {
+
 
         }
         presenter.onScreenStarted();
@@ -93,9 +88,9 @@ public class App extends Application implements Mediator, Navigator {
     public void addingItems(Category.ToCategory presenter) {
 
         if (toAddState != null) {
-            presenter.setPlace(toAddState.placeOfTheParty);
-            presenter.setDate(toAddState.dateOfTheParty);
-            presenter.setHour(toAddState.hourOfParty);
+//            presenter.setPlace(toAddState.placeOfTheParty);
+//            presenter.setDate(toAddState.dateOfTheParty);
+//            presenter.setHour(toAddState.hourOfParty);
         }
 
     }

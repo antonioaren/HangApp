@@ -39,10 +39,10 @@ public interface Category {
     interface PresenterToView extends ContextView {
         void onCreate(Bundle savedInstanceState);
 
-        void settingAdapter(RealmList<CategoryData> parties);
+        void settingAdapter(RealmResults<CategoryData> parties);
+
         void finishScreen();
 
-        // void hideToolbar();
         void hideText();
 
         void showText();
@@ -63,35 +63,20 @@ public interface Category {
      */
     interface PresenterToModel extends Model<ModelToPresenter> {
 
+        void CreateDatabaseTablesFromJson();
+
         String getSearchLabel();
 
         String getAddLabel();
 
-
-//        List<CategoryData> getListCategory();
-//
-//        List<ProductData> getDisco();
-//
-//        List<ProductData> getUlpgc();
-//
-//        List<ProductData> getCars();
-//
-//        List<ProductData> getMusica();
-//
-//        List<ProductData> getAstro();
-//
-//        List<ProductData> getNewParty();
-
         int getParticipantsAt(int i);
 
         ///////////////////////////  DATABASE ////////////////////////
-        RealmResults<ProductData> getEvents();
+        RealmResults<CategoryData> getEvents();
 
         void setItemsFromDatabase();
 
-        void insertEvent(String id, int image, String productName, String numberOfParticipants, String category, String detail, String day, String hour, String web);
-
-        List<CategoryData> getListCategory();
+        void insertEvent(String id, String Categoryname, int image);
     }
 
     /**
@@ -130,15 +115,7 @@ public interface Category {
     // To Add /////////////////////////////////////////////////////////////////////////
 
     interface ToCategory {
-
-
         void onScreenStarted();
-
-        void setPlace(String placeOfTheParty);
-
-        void setDate(String dateOfTheParty);
-
-        void setHour(String hourOfParty);
     }
 
 

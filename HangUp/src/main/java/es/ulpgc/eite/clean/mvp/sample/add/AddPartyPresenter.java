@@ -165,7 +165,8 @@ public class AddPartyPresenter
     @Override
     public void settingAdapter(RealmList<CategoryData> item) {
         CategoryView categoryView = new CategoryView();
-        categoryView.settingAdapter(item);
+        //TODO Configurar bien para ue añada.
+        categoryView.settingAdapter(null);
     }
 
 }

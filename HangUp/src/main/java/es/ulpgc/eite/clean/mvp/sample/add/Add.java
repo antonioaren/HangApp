@@ -30,6 +30,7 @@ public interface Add {
 
         void setHour(String hour);
 
+        RealmList<CategoryData> getDefaultList();
     }
 
 
@@ -41,8 +42,6 @@ public interface Add {
         String getDateOfTheParty();
 
         String getHourOfParty();
-
-        RealmList<CategoryData> getDefaultList();
 
         RealmList<CategoryData> getPartyAdded();
 

@@ -1,13 +1,17 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
-import java.util.List;
+import android.content.Context;
+
 import java.util.Random;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
+import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyModel;
+import es.ulpgc.eite.clean.mvp.sample.data.module.ModuleRealm;
 import io.realm.Realm;
+import io.realm.RealmConfiguration;
 import io.realm.RealmResults;
 
 import static android.R.attr.id;
@@ -19,7 +23,10 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     private String HangAppText;
     private String HangAppButtonSearchLabel;
     private String HangAppButtonAddLabel;
-    private List<ProductData> itemsDatabase;
+    private RealmResults<CategoryData> itemsDatabase;
+    private boolean isFirstTimeRunning;
+    private Context context;
+
 //    private List<CategoryData> items;
 //    private List<ProductData> Disco;
 //    private List<ProductData> Ulpgc;
@@ -34,6 +41,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     private boolean usingWrapper;
     private Realm realmDatabase;
+    private final String PREFS_NAME = "MyprefsFile";
 
 
     public CategoryModel() {
@@ -43,9 +51,9 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         randomAssistance4 = new Random();
         randomAssistance5 = new Random();
         participants = new int[]{
-            randomAssistance1.nextInt(2001), randomAssistance2.nextInt(2001),
-            randomAssistance3.nextInt(2001), randomAssistance4.nextInt(2001),
-            randomAssistance5.nextInt(2001)};
+                randomAssistance1.nextInt(2001), randomAssistance2.nextInt(2001),
+                randomAssistance3.nextInt(2001), randomAssistance4.nextInt(2001),
+                randomAssistance5.nextInt(2001)};
 
     }
 
@@ -62,9 +70,27 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         HangAppButtonAddLabel = "AddOne";
         HangAppButtonSearchLabel = "SearchOne";
         HangAppText = "Add";
-        // realmDatabase=Realm.getDefaultInstance();
+
+        if (isFirstTimeRunning) {
+            CreateDatabaseTablesFromJson();
+        }
 
     }
+
+    @Override
+    public void CreateDatabaseTablesFromJson() {
+        RealmConfiguration config = new RealmConfiguration.Builder(context)
+                .setModules(new ModuleRealm()).build();
+        Realm.setDefaultConfiguration(config);
+
+        insertEvent("0", "Fiestas", R.drawable.disco);
+        insertEvent("1", "Música", R.drawable.musica);
+        insertEvent("2", "ULPGC", R.drawable.ulpgc);
+        insertEvent("3", "Astronomía", R.drawable.astro);
+        insertEvent("4", "Automovilismo", R.drawable.cars);
+
+    }
+
 
     /**
      * Called by layer PRESENTER when VIEW pass for a reconstruction/destruction.
@@ -85,10 +111,12 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     public String getSearchLabel() {
         return HangAppButtonSearchLabel;
     }
+
     @Override
     public String getAddLabel() {
         return HangAppButtonAddLabel;
     }
+
     @Override
     public int getParticipantsAt(int i) {
         return participants[i];
@@ -97,37 +125,27 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     ///////////////////////////  DATABASE /////////////////////////////////////////////
 
     @Override
-    public RealmResults<ProductData> getEvents() {
-        RealmResults<ProductData> results = realmDatabase.where(ProductData.class).findAll();
+    public RealmResults<CategoryData> getEvents() {
+        RealmResults<CategoryData> results = realmDatabase.where(CategoryData.class).findAll();
         return results;
     }
 
     @Override
-    public void setItemsFromDatabase(){
-        itemsDatabase = realmDatabase.where(ProductData.class).findAll();
+    public void setItemsFromDatabase() {
+        itemsDatabase = realmDatabase.where(CategoryData.class).findAll();
     }
 
     @Override
-    public void insertEvent(String id, int image, String productName, String participants,
-                            String category, String detail, String day, String hour, String web) {
+    public void insertEvent(String id, String Categoryname, int image) {
 
-        ProductData event = realmDatabase.createObject(ProductData.class);
+        CategoryData event = realmDatabase.createObject(CategoryData.class);
         realmDatabase.beginTransaction();
 
         event.setId(id);
+        event.setCategoryName(Categoryname);
         event.setImage(image);
-        event.setProductName(productName);
-        event.setParticipants(participants);
-        event.setDetailText(detail);
-        event.setDay(day);
-        event.setHour(hour);
 
         realmDatabase.commitTransaction();
-    }
-
-    @Override
-    public List<CategoryData> getListCategory() {
-        return null;
     }
 
     public void updateEvent() {
@@ -138,7 +156,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
             @Override
             public void execute(Realm realm) {
                 realm.where(ProductData.class).equalTo("id", id);
-                 //   .findAll();
+                //   .findAll();
             }
         });
 

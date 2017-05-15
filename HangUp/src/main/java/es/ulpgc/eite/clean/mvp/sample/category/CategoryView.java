@@ -33,7 +33,12 @@ public class CategoryView
     private LinearLayoutManager linearmanager;
     private CategoryAdapter adapter;
     private RecyclerView.LayoutManager lManager;
-    private List<CategoryData> items;
+    private RealmList<CategoryData> items;
+
+    private final String PREFS_NAME = "MyprefsFile";
+
+    //SharedPreferences FirstTimeRunning;
+    // FirstTimeRunning = getSharedPreferences(PREFS_NAME, 0);
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -45,13 +50,9 @@ public class CategoryView
 
         recycler = (RecyclerView) findViewById(R.id.recycler);
         recycler.setHasFixedSize(true);
+
         //Realm realm= Realm.getDefaultInstance();
         //recycler.setAdapter(new CategoryAdapter(realm.where(CategoryData.class).findAllAsync()));
-
-
-
-
-
 
         linearmanager = new LinearLayoutManager(this);
         recycler.setLayoutManager(linearmanager);
@@ -85,7 +86,6 @@ public class CategoryView
     @Override
     protected void onResume() {
         super.onResume(CategoryPresenter.class, this);
-
     }
 
     ///////////////////////////////////////////////////////////////////////////////////
@@ -100,7 +100,7 @@ public class CategoryView
         return this.items;
     }
     @Override
-    public void settingAdapter(RealmList<CategoryData> parties) {
+    public void settingAdapter(RealmResults<CategoryData> parties) {
         adapter = new CategoryAdapter(parties);
         recycler.setAdapter(adapter);
 
@@ -155,15 +155,12 @@ public class CategoryView
 
     public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
 
-        public RealmList<CategoryData> items;
+        public RealmResults<CategoryData> items;
 
-        public CategoryAdapter(RealmList<CategoryData> items  /*OrderedRealmCollection<ModelItem> items*/) {
-            //super(items, true);
-
+        public CategoryAdapter(RealmResults<CategoryData> items) {
             this.items = items;
-
-
         }
+
 
         @Override
         public int getItemCount() {
@@ -180,9 +177,10 @@ public class CategoryView
         @Override
         public void onBindViewHolder(final CategoryViewHolder holder, int position) {
             holder.item = items.get(position);
+
             holder.image.setImageResource(items.get(position).getImage());
             holder.title.setText(items.get(position).getCategoryName());
-            holder.number.setText(items.get(position).getProductsAvalables());
+            //holder.number.setText(items.get(position).getProductsAvalables());
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -201,7 +199,7 @@ public class CategoryView
             Context context;
             public ImageView image;
             public TextView title;
-            public TextView number;
+            //public TextView number;
             public CategoryData item;
 
             public CategoryViewHolder(View v) {
@@ -210,7 +208,7 @@ public class CategoryView
 
                 image = (ImageView) v.findViewById(R.id.image);
                 title = (TextView) v.findViewById(R.id.title);
-                number = (TextView) v.findViewById(R.id.numberOfPersons);
+                //number = (TextView) v.findViewById(R.id.numberOfPersons);
             }
         }
     }
