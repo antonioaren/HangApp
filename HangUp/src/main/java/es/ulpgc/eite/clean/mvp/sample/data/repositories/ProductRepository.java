@@ -166,6 +166,11 @@ public class ProductRepository extends RealmConfiguration implements Repository.
 
     @Override
     public void getProductsById(String id, OnGetProductByIdCallback callback) {
+             Realm realm = Realm.getInstance(this);
+    ProductData product = realm.where(ProductData.class).equalTo(RealmTable.ID, id).findFirst();
+
+           if (callback != null)
+          callback.onSuccess(product);
 
     }
 }
