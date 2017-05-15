@@ -18,7 +18,44 @@ public interface Repository {
 
         void getCategoryById();
 
-        //void getAllCategories(OnGetAllCategoryCallBack callback);
+        
+
+
+        interface OnAddCategoryCallback {
+
+            void onSuccess();
+            void onError(String message);
+        }
+
+        interface OnGetAllCategoryCallback {
+
+            void onSuccess(RealmResults<CategoryData> categories);
+            void onError(String message);
+        }
+
+        interface OnGetCategoryByIdCallback {
+
+            void onSuccess(CategoryData category);
+            void onError(String message);
+        }
+
+        interface OnDeleteCategoryCallback {
+
+            void onSuccess();
+            void onError(String message);
+        }
+
+        void addCategory(CategoryData category, OnAddCategoryCallback callback);
+
+        void deleteCategoryById(String Id, OnDeleteCategoryCallback callback);
+
+        void deleteCategoryByPosition(int position, OnDeleteCategoryCallback callback);
+
+        void getAllCategories(OnGetAllCategoryCallback callback);
+
+        void getCategoryyById(String id, OnGetCategoryByIdCallback callback);
+
+
     }
 
     public interface ProductRepository {
@@ -73,7 +110,5 @@ public interface Repository {
 
 
 
-    public interface OnGetAllCategoryCallback {
-        void onSuccess(RealmResults<CategoryData> categories);
-    }
+
 }

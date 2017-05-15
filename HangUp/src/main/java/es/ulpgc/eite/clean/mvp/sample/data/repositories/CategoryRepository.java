@@ -1,20 +1,41 @@
 package es.ulpgc.eite.clean.mvp.sample.data.repositories;
 
+import java.io.File;
+import java.util.UUID;
+
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 import io.realm.Realm;
-import io.realm.RealmQuery;
-import io.realm.RealmResults;
+import io.realm.RealmConfiguration;
+import io.realm.RealmMigration;
+import io.realm.internal.RealmProxyMediator;
+import io.realm.internal.SharedRealm;
+import io.realm.rx.RxObservableFactory;
 
 /**
  * Created by Pedro Arenas on 14/5/17.
  */
 
-public class CategoryRepository implements Repository.CategoryRepository {
+public class CategoryRepository extends RealmConfiguration implements Repository.CategoryRepository {
+
+    protected CategoryRepository(File realmDirectory, String realmFileName, String canonicalPath, String assetFilePath, byte[] key, long schemaVersion, RealmMigration migration, boolean deleteRealmIfMigrationNeeded, SharedRealm.Durability durability, RealmProxyMediator schemaMediator, RxObservableFactory rxObservableFactory, Realm.Transaction initialDataTransaction) {
+        super(realmDirectory, realmFileName, canonicalPath, assetFilePath, key, schemaVersion, migration, deleteRealmIfMigrationNeeded, durability, schemaMediator, rxObservableFactory, initialDataTransaction);
+    }
 
     @Override
     public void addCategory() {
+        CategoryData category, OnAddCategoryCallback callback) {
+            Realm realm = Realm.getInstance(this);
+            realm.beginTransaction();
+            CategoryData realmCategory = realm.createObject(CategoryData.class);
+            realmCategory.setId(UUID.randomUUID().toString());
+            realmCategory.setCategoryName(realmCategory.getCategoryName());
+            realm.commitTransaction();
 
-    }
+            if (callback != null)
+                callback.onSuccess();
+
+        }}
 
     @Override
     public void DeleteCategoryById() {
