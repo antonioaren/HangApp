@@ -31,8 +31,8 @@ public class ProductRepository extends RealmConfiguration implements Repository.
      realmProduct.setDetailText(realmProduct.getDetailText());
     realm.commitTransaction();
 //
-     if (callback != null)
-         callback.onSuccess();
+//     if (callback != null)
+//         callback.onSuccess();
     }
 
     public void addStudentByUniversityId() {
@@ -104,5 +104,40 @@ public class ProductRepository extends RealmConfiguration implements Repository.
 //
 //        if (callback != null)
 //            callback.onSuccess(student);
+    }
+
+    @Override
+    public void addProduct(ProductData product, OnSaveProductCallback callback) {
+
+    }
+
+    @Override
+    public void addProductByCategoryId(ProductData product, String categoryId, OnSaveProductCallback callback) {
+
+    }
+
+    @Override
+    public void deleteProductById(String id, OnDeleteProductCallback callback) {
+
+    }
+
+    @Override
+    public void deleteProductByPosition(int position, OnDeleteProductCallback callback) {
+
+    }
+
+    @Override
+    public void getAllProducts(OnGetAllProductsCallback callback) {
+
+    }
+
+    @Override
+    public void getAllProductsByCategoryId(String id, OnGetProductsCallback callback) {
+
+    }
+
+    @Override
+    public void getProductsById(String id, OnGetProductByIdCallback callback) {
+
     }
 }

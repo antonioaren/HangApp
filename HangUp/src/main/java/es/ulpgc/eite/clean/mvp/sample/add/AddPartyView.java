@@ -12,13 +12,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
-import java.util.List;
-
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
-import io.realm.RealmList;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
+import io.realm.RealmResults;
 
 
 /**
@@ -85,7 +83,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     }
 
     @Override
-    public void settingAdapter(RealmList<CategoryData> data) {
+    public void settingAdapter(RealmResults<CategoryData> data) {
         CategoryView category = new CategoryView();
         category.settingAdapter(data);
     }
