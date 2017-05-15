@@ -30,8 +30,8 @@ public class ProductRepository extends RealmConfiguration implements Repository.
        realmProduct.setParticipants(realmProduct.getParticipants());
      realmProduct.setDetailText(realmProduct.getDetailText());
     realm.commitTransaction();
-//
-//     if (callback != null)
+////en proceso....
+//   if (callback != null)
 //         callback.onSuccess();
     }
 
