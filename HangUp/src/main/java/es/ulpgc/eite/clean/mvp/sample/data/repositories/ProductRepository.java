@@ -119,7 +119,14 @@ public class ProductRepository extends RealmConfiguration implements Repository.
 
     @Override
     public void deleteProductById(String id, OnDeleteProductCallback callback) {
+        Realm realm = Realm.getInstance(this);
+      realm.beginTransaction();
+      ProductData result = realm.where(ProductData.class).equalTo(RealmTable.ID, id).findFirst();
+       result.deleteFromRealm();
+       realm.commitTransaction();
 
+    if (callback != null)
+      callback.onSuccess();
     }
 
     @Override
