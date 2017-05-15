@@ -55,21 +55,21 @@ public interface Repository {
         void addProduct(ProductData product, OnSaveProductCallback callback);
 
         void addProductByCategoryId(
-                ProductData product, String categoryId, OnSaveStudentCallback callback);
+                ProductData product, String categoryId, OnSaveProductCallback callback);
 
-        void deleteStudentById(String id, OnDeleteStudentCallback callback);
+        void deleteProductById(String id, OnDeleteProductCallback callback);
 
-        void deleteStudentByPosition(int position, OnDeleteStudentCallback callback);
+        void deleteProductByPosition(int position, OnDeleteProductCallback callback);
 
-        void getAllStudents(OnGetAllStudentsCallback callback);
+        void getAllProducts(OnGetAllProductsCallback callback);
 
-        void getAllStudentsByUniversityId(String id, OnGetStudentsCallback callback);
+        void getAllProductsByCategoryId(String id, OnGetProductsCallback callback);
 
-        void getStudentById(String id, OnGetStudentByIdCallback callback);
+        void getProductsById(String id, OnGetProductByIdCallback callback);
 
     }
 
-}
+
 
     public interface OnGetAllCategoryCallback {
         void onSuccess(RealmResults<CategoryData> categories);
