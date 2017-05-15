@@ -10,6 +10,8 @@ import es.ulpgc.eite.clean.mvp.sample.data.module.RealmTable;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 import io.realm.RealmMigration;
+import io.realm.RealmQuery;
+import io.realm.RealmResults;
 import io.realm.internal.RealmProxyMediator;
 import io.realm.internal.SharedRealm;
 import io.realm.rx.RxObservableFactory;
@@ -131,12 +133,24 @@ public class ProductRepository extends RealmConfiguration implements Repository.
 
     @Override
     public void deleteProductByPosition(int position, OnDeleteProductCallback callback) {
+        Realm realm = Realm.getInstance(this);
+      realm.beginTransaction();
+    RealmQuery<ProductData> query = realm.where(ProductData.class);
+    RealmResults<ProductData> results = query.findAll();
+   results.deleteFromRealm(position);
+     realm.commitTransaction();
 
+     if (callback != null)
+          callback.onSuccess();
     }
 
     @Override
     public void getAllProducts(OnGetAllProductsCallback callback) {
+        Realm realm = Realm.getInstance(this);
+        RealmResults<ProductData> results = realm.where(ProductData.class).findAll();
 
+     if (callback != null)
+         callback.onSuccess(results);
     }
 
     @Override
