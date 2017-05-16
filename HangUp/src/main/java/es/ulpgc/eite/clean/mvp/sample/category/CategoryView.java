@@ -1,6 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
 import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -37,12 +38,14 @@ public class CategoryView
     private boolean isFirstTime;
 
     private static final String PREFS_NAME = "AppInit";
-
+    SharedPreferences FirstTimeRunning;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
+
            Realm.init(this);
+        FirstTimeRunning = getSharedPreferences(PREFS_NAME, 0);
         title = (TextView) findViewById(R.id.title);
         image = (ImageView) findViewById(R.id.image);
 
@@ -176,7 +179,7 @@ public class CategoryView
 
         public CategoryAdapter(RealmResults<CategoryData> items) {
             this.items = items;
-            notifyDataSetChanged();
+          //  notifyDataSetChanged();
         }
 
         @Override

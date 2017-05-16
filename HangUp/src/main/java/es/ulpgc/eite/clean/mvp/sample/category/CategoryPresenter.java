@@ -142,6 +142,11 @@ public class CategoryPresenter
         getModel().setIsFirstimeRunning(isFirstTimeRunning);
     }
 
+    @Override
+    public boolean getTextVisibility() {
+        return false;
+    }
+
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Category To ///////////////////////////////////////////////////////////////////
