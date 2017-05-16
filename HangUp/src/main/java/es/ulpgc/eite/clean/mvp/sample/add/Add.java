@@ -10,6 +10,7 @@ import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.Presenter;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
+import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 import io.realm.RealmList;
 import io.realm.RealmResults;
 
@@ -51,6 +52,11 @@ public interface Add {
         void settingAdapter(RealmList<CategoryData> item);
 
         void destroyView();
+
+        String getDescriptionOfTheParty();
+        Repository.ProductRepository.OnSaveProductCallback getCallBack();
+
+        RealmList<ProductData> getParty();
     }
 
 
@@ -117,6 +123,8 @@ public interface Add {
 
     interface PresenterToModel extends Model<ModelToPresenter> {
 
+        String getDescription();
+
         String getPlaceLabel();
 
         String getPublishBtnLabel();
@@ -162,9 +170,11 @@ public interface Add {
 
         List<CategoryData> getPartyAdded();
 
-        List<ProductData> getParty();
+        RealmList<ProductData> getParty();
 
         void setDescription(String description);
+
+
     }
 
     /**

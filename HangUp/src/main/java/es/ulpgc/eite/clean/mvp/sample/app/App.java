@@ -7,16 +7,21 @@ import android.content.SharedPreferences;
 
 import java.util.List;
 
+import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.add.Add;
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyView;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
+import es.ulpgc.eite.clean.mvp.sample.data.Repository;
+import es.ulpgc.eite.clean.mvp.sample.data.repositories.ProductRepository;
 import es.ulpgc.eite.clean.mvp.sample.detail.DetailPresenter;
 import es.ulpgc.eite.clean.mvp.sample.product.Product;
+import es.ulpgc.eite.clean.mvp.sample.product.ProductModel;
 import es.ulpgc.eite.clean.mvp.sample.product.ProductView;
 import es.ulpgc.eite.clean.mvp.sample.search.Search;
 import es.ulpgc.eite.clean.mvp.sample.search.SearchView;
+import io.realm.RealmList;
 
 
 public class App extends Application implements Mediator, Navigator {
@@ -166,29 +171,24 @@ public class App extends Application implements Mediator, Navigator {
 
     @Override
     public void publishParty(Add.AddTo presenter) {
+        toAddState = new AddState();
+        toAddState.descriptionOfTheParty=presenter.getDescriptionOfTheParty();
+        toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
+        toAddState.dateOfTheParty = presenter.getDateOfTheParty();
+        toAddState.hourOfParty = presenter.getHourOfParty();
+       //  toAddState.callback=presenter.getCallBack();
 
-//        toAddState = new AddState();
-//
-//        toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
-//        toAddState.dateOfTheParty = presenter.getDateOfTheParty();
-//        toAddState.hourOfParty = presenter.getHourOfParty();
-//
-//
-//        //reformando metodo
-//        toAddState.newparty = presenter.getPartyCreated();
-//        toAddState.newparty.add(new InformationData_Old(R.drawable.astro,
-//                "name", "0", "details", "story", toAddState.dateOfTheParty, toAddState.hourOfParty));
-//        toAddState.partyAdded = presenter.getPartyAdded();
-//
-//        toAddState.partyAdded.add(new CategoryData(R.drawable.astro,
-//                "name", "0", toAddState.newparty, "details", "story", toAddState.dateOfTheParty, toAddState.hourOfParty));
-//
-//        toAddState.list = presenter.getDefaultList();
-//        toAddState.list.add((CategoryData) toAddState.partyAdded);
-//        CategoryView cv= new CategoryView();
-//        cv.settingAdapter(toAddState.list);
-//
-//        presenter.destroyView();
+  //        //reformando metodo
+   toAddState.newparty = presenter.getParty();
+  // toAddState.newparty.add(new ProductData(R.drawable.astro,toAddState.descriptionOfTheParty, "0",  "details", "story", toAddState.dateOfTheParty, toAddState.hourOfParty));
+
+        ProductModel product= new ProductModel();
+        product.insertProduct("0",R.drawable.astro,toAddState.descriptionOfTheParty,"0",toAddState.descriptionOfTheParty,toAddState.dateOfTheParty,toAddState.hourOfParty);//      toAddState.list = presenter.getPartyAdded();
+//       toAddState.list.add(new CategoryData("0", R.drawable.astro, "category", toAddState.newparty));
+//    CategoryView cv= new CategoryView();
+//    cv.settingAdapter((RealmResults<CategoryData>) toAddState.list);
+//    cv.getAdapter().notifyItemInserted(1);
+//     presenter.destroyView();
 
     }
 
@@ -229,13 +229,17 @@ public class App extends Application implements Mediator, Navigator {
     private class AddState {
         boolean textVisibility;
         boolean selectorsVisibility;
-
+        public String descriptionOfTheParty;
         String placeOfTheParty;
         String dateOfTheParty;
         String hourOfParty;
         List<CategoryData> partyAdded;
-        List<ProductData> newparty;
+        RealmList<ProductData> newparty;
         List<CategoryData> list;
+        Repository.ProductRepository.OnSaveProductCallback callback;
+
+       ProductRepository product;
+
 
     }
     private class InformationState {

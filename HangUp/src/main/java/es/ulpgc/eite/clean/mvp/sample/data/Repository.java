@@ -10,15 +10,46 @@ import io.realm.RealmResults;
 public interface Repository {
 
     public interface CategoryRepository {
-        void addCategory();
 
-        void DeleteCategoryById();
 
-        void DeleteCategoryByPosition();
+        void DeleteCategoryByPosition(int position, OnDeleteCategoryCallback callback);
 
-        void getCategoryById();
+        interface OnAddCategoryCallback {
 
-        //void getAllCategories(OnGetAllCategoryCallBack callback);
+            void onSuccess();
+            void onError(String message);
+        }
+
+        interface OnGetAllCategoryCallback {
+
+            void onSuccess(RealmResults<CategoryData> categories);
+            void onError(String message);
+        }
+
+        interface OnGetCategoryByIdCallback {
+
+            void onSuccess(CategoryData category);
+            void onError(String message);
+        }
+
+        interface OnDeleteCategoryCallback {
+
+            void onSuccess();
+            void onError(String message);
+        }
+
+
+        void addCategory(CategoryData category, OnAddCategoryCallback callback);
+
+        void deleteCategoryById(String Id, OnDeleteCategoryCallback callback);
+
+        void deleteCategoryByPosition(int position, OnDeleteCategoryCallback callback);
+
+        void getAllCategories(OnGetAllCategoryCallback callback);
+
+        void getCategoryById(String id, OnGetCategoryByIdCallback callback);
+
+
     }
 
     public interface ProductRepository {
@@ -52,7 +83,9 @@ public interface Repository {
             void onError(String message);
         }
 
-        void addProduct(ProductData product, OnSaveProductCallback callback);
+
+
+        void addProduct(OnSaveProductCallback callback, ProductData product);
 
         void addProductByCategoryId(
                 ProductData product, String categoryId, OnSaveProductCallback callback);
@@ -71,7 +104,5 @@ public interface Repository {
 
 
 
-    public interface OnGetAllCategoryCallback {
-        void onSuccess(RealmResults<CategoryData> categories);
-    }
+
 }

@@ -75,4 +75,17 @@ public class ProductData extends RealmObject {
     public void setHour(String hour) {
         this.hour = hour;
     }
+
+public ProductData(int image,  String productName, String participants, String detailText, String day, String hour){
+    this.image=image;
+
+    this.productName=productName;
+    this.participants=participants;
+    this.detailText=detailText;
+    this.day=day;
+    this.hour=hour;
+}
+public ProductData(){
+
+}
 }
