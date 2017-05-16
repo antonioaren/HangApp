@@ -99,15 +99,7 @@ public interface Category {
         Context getManagedContext();
 
         void destroyView();
-
         CategoryData getSelectedItem();
-
-        boolean isTextVisible();
-
-        boolean isSelectorsVisible();
-
-        boolean isImageVisible();
-
     }
 
     ///////////////////////////////////////////////////////////////////////////////////
@@ -115,7 +107,6 @@ public interface Category {
 
     interface ToCategory {
         void onScreenStarted();
-
         void setIsFirstInit(boolean isFirstTimeRunning);
 
         boolean getTextVisibility();

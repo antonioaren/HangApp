@@ -18,11 +18,7 @@ public class CategoryPresenter
         implements Category.ViewToPresenter, Category.ModelToPresenter, Category.ToCategory, Category.CategoryTo {
 
 
-    private boolean toolbarVisible;
-    private boolean buttonClicked;
-    private boolean textVisible;
-    private boolean imageVisibility;
-    private boolean selectorsVisible;
+
     private CategoryData selectedItem;
     private String hour;
     private String date;
@@ -168,21 +164,6 @@ public class CategoryPresenter
     @Override
     public CategoryData getSelectedItem() {
         return selectedItem;
-    }
-
-    @Override
-    public boolean isTextVisible() {
-        return textVisible;
-    }
-
-    @Override
-    public boolean isSelectorsVisible() {
-        return selectorsVisible;
-    }
-
-    @Override
-    public boolean isImageVisible() {
-        return imageVisibility;
     }
 
     ///////////////////////////////////////////////////////////////////////////////////
