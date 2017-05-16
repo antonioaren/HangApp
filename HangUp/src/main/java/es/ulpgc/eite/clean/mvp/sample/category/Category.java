@@ -77,6 +77,8 @@ public interface Category {
         void setItemsFromDatabase();
 
         void insertEvent(String Categoryname, int image);
+
+        void setIsFirstimeRunning(boolean isFirstTimeRunning);
     }
 
     /**
@@ -114,6 +116,9 @@ public interface Category {
 
     interface ToCategory {
         void onScreenStarted();
+
+        void setIsFirstInit(boolean isFirstTimeRunning);
+
     }
 
 

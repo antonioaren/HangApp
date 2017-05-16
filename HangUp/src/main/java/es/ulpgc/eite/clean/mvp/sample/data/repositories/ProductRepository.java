@@ -3,6 +3,7 @@ package es.ulpgc.eite.clean.mvp.sample.data.repositories;
 import java.io.File;
 import java.util.UUID;
 
+import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
@@ -15,7 +16,7 @@ import io.realm.rx.RxObservableFactory;
  * Created by Pedro Arenas on 14/5/17.
  */
 
-public class ProductRepository extends RealmConfiguration implements Repository.ProductRepository  {
+public class ProductRepository extends RealmConfiguration implements Repository.ProductRepository {
 
 
     protected ProductRepository(File realmDirectory, String realmFileName, String canonicalPath, String assetFilePath, byte[] key, long schemaVersion, RealmMigration migration, boolean deleteRealmIfMigrationNeeded, SharedRealm.Durability durability, RealmProxyMediator schemaMediator, RxObservableFactory rxObservableFactory, Realm.Transaction initialDataTransaction) {
@@ -23,14 +24,14 @@ public class ProductRepository extends RealmConfiguration implements Repository.
     }
 
     public void addProduct() {
-    Realm realm = Realm.getInstance(this);
-      realm.beginTransaction();
-    ProductData realmProduct = realm.createObject(ProductData.class);
-       realmProduct.setId(UUID.randomUUID().toString());
-     realmProduct.setProductName(realmProduct.getProductName());
-       realmProduct.setParticipants(realmProduct.getParticipants());
-     realmProduct.setDetailText(realmProduct.getDetailText());
-    realm.commitTransaction();
+//        Realm realm = Realm.getInstance(this);
+//        realm.beginTransaction();
+//        ProductData realmProduct = realm.createObject(ProductData.class);
+//        realmProduct.setId(UUID.randomUUID().toString());
+//        realmProduct.setProductName(realmProduct.getProductName());
+//        realmProduct.setParticipants(realmProduct.getParticipants());
+//        realmProduct.setDetailText(realmProduct.getDetailText());
+//        realm.commitTransaction();
 //
 //     if (callback != null)
 //         callback.onSuccess();
@@ -106,6 +107,16 @@ public class ProductRepository extends RealmConfiguration implements Repository.
 //        if (callback != null)
 //            callback.onSuccess(student);
     }
+
+//    @Override
+//    public void addProduct(ProductData product, OnSaveProductCallback callback) {
+//
+//    }
+//
+//    @Override
+//    public void addProductByCategoryId(ProductData product, String categoryId, OnSaveProductCallback callback) {
+//
+//    }
 
     @Override
     public void addProduct(ProductData product, OnSaveProductCallback callback) {

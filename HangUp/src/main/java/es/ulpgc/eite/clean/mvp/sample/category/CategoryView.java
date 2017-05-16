@@ -1,6 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
 import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -17,7 +18,6 @@ import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import io.realm.Realm;
-import io.realm.RealmList;
 import io.realm.RealmResults;
 
 public class CategoryView
@@ -32,14 +32,12 @@ public class CategoryView
     private RecyclerView recycler;
     private LinearLayoutManager linearmanager;
     private CategoryAdapter adapter;
+
     private RecyclerView.LayoutManager lManager;
-    private RealmList<CategoryData> items;
+    private RealmResults<CategoryData> items;
+    private boolean isFirstTime;
 
-    private final String PREFS_NAME = "MyprefsFile";
-
-
-    //SharedPreferences FirstTimeRunning;
-    // FirstTimeRunning = getSharedPreferences(PREFS_NAME, 0);
+    private static final String PREFS_NAME = "AppInit";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,9 +49,6 @@ public class CategoryView
 
         recycler = (RecyclerView) findViewById(R.id.recycler);
         recycler.setHasFixedSize(true);
-
-        Realm realm= Realm.getDefaultInstance();
-        //recycler.setAdapter(new CategoryAdapter(realm.where(CategoryData.class).findAllAsync()));
 
         linearmanager = new LinearLayoutManager(this);
         recycler.setLayoutManager(linearmanager);
@@ -75,7 +70,10 @@ public class CategoryView
             }
         });
 
+        Realm realm = Realm.getDefaultInstance();
+        recycler.setAdapter(new CategoryAdapter(realm.where(CategoryData.class).findAll()));
 
+        //CreateSharedPreferences();
     }
 
     /**
@@ -92,7 +90,6 @@ public class CategoryView
     ///////////////////////////////////////////////////////////////////////////////////
     // Presenter To View /////////////////////////////////////////////////////////////
 
-    //metodos para captar el adaptador y la lista de elementos
     public CategoryAdapter getAdapter() {
         return this.adapter;
     }
@@ -103,8 +100,8 @@ public class CategoryView
 
     @Override
     public void settingAdapter(RealmResults<CategoryData> parties) {
-        adapter = new CategoryAdapter(parties);
-        recycler.setAdapter(adapter);
+//        adapter = new CategoryAdapter(parties);
+//        recycler.setAdapter(adapter);
     }
 
     @Override
@@ -112,6 +109,29 @@ public class CategoryView
         finish();
     }
 
+
+//    private void CreateSharedPreferences(){
+//        SharedPreferences settings = getSharedPreferences(PREFS_NAME,0);
+//        SharedPreferences.Editor editor = settings.edit();
+//        //Crea el atributo y el valor predeterminado.
+//        editor.putBoolean("FirstInit",true);
+//        editor.commit();
+//    }
+//
+//    private boolean getIsFirstInit(){
+//        SharedPreferences settings = getSharedPreferences(PREFS_NAME,0);
+//        //Valor del atributo y lo que saldrá en caso de no encontrarlo.
+//        isFirstTime = settings.getBoolean("FirstInit",false);
+//        return isFirstTime;
+//    }
+//
+//    public boolean isFirstTime() {
+//        return isFirstTime;
+//    }
+//
+//    public void setFirstTime(boolean firstTime) {
+//        isFirstTime = firstTime;
+//    }
 
     @Override
     public void hideText() {
@@ -157,8 +177,8 @@ public class CategoryView
 
         public CategoryAdapter(RealmResults<CategoryData> items) {
             this.items = items;
+            notifyDataSetChanged();
         }
-
 
         @Override
         public int getItemCount() {
@@ -175,7 +195,6 @@ public class CategoryView
         @Override
         public void onBindViewHolder(final CategoryViewHolder holder, int position) {
             holder.item = items.get(position);
-
             holder.image.setImageResource(items.get(position).getImage());
             holder.title.setText(items.get(position).getCategoryName());
             holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -200,7 +219,6 @@ public class CategoryView
             public CategoryViewHolder(View v) {
                 super(v);
                 itemView = v;
-
                 image = (ImageView) v.findViewById(R.id.image);
                 title = (TextView) v.findViewById(R.id.title);
             }

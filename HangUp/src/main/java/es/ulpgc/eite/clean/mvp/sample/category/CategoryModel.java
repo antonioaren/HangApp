@@ -1,6 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 
 import java.util.Random;
 import java.util.UUID;
@@ -10,7 +11,10 @@ import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyModel;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
+import es.ulpgc.eite.clean.mvp.sample.data.module.ModuleRealm;
 import io.realm.Realm;
+import io.realm.RealmConfiguration;
+import io.realm.RealmObject;
 import io.realm.RealmResults;
 
 import static android.R.attr.id;
@@ -23,24 +27,17 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     private String HangAppButtonSearchLabel;
     private String HangAppButtonAddLabel;
     private RealmResults<CategoryData> itemsDatabase;
-    private boolean isFirstTimeRunning;
     private Context context;
 
-//    private List<CategoryData> items;
-//    private List<ProductData> Disco;
-//    private List<ProductData> Ulpgc;
-//    private List<ProductData> Cars;
-//    private List<ProductData> Musica;
-//    private List<ProductData> Astro;
-//    private List<ProductData> newParty;
+    private boolean isFirstTime;
+
+    private boolean usingWrapper;
+    private Realm realmDatabase;
+
 
     private Random randomAssistance1, randomAssistance2, randomAssistance3, randomAssistance4, randomAssistance5;
     private int[] participants;
     private AddPartyModel addPartyModel;
-
-    private boolean usingWrapper;
-    private Realm realmDatabase;
-    private final String PREFS_NAME = "MyprefsFile";
 
 
     public CategoryModel() {
@@ -70,17 +67,27 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         HangAppButtonSearchLabel = "SearchOne";
         HangAppText = "Add";
 
-        if (isFirstTimeRunning) {
-            CreateDatabaseTablesFromJson();
-        }
 
+        if (isFirstTime)
+            CreateDatabaseTablesFromJson();
     }
+
+
+    ///////////////////////////////////////////////////////////////////////////////////
+
+    @Override
+    public void setIsFirstimeRunning(boolean isFirstTimeRunning) {
+        this.isFirstTime = isFirstTimeRunning;
+    }
+
 
     @Override
     public void CreateDatabaseTablesFromJson() {
-//    RealmConfiguration config = new RealmConfiguration.Builder(context)
-//              .setModules(new ModuleRealm()).build();
-//     Realm.setDefaultConfiguration(config);
+
+//        RealmConfiguration config = new RealmConfiguration.Builder(context)
+//                .setModules(new ModuleRealm()).build();
+//        Realm.setDefaultConfiguration(config);
+
 
         insertEvent("Fiestas", R.drawable.disco);
         insertEvent("Música", R.drawable.musica);
@@ -89,7 +96,6 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         insertEvent("Automovilismo", R.drawable.cars);
 
     }
-
 
     /**
      * Called by layer PRESENTER when VIEW pass for a reconstruction/destruction.
@@ -102,9 +108,8 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////
-    // Presenter To Model ////////////////////////////////////////////////////////////
 
+    // Presenter To Model ////////////////////////////////////////////////////////////
 
     @Override
     public String getSearchLabel() {
@@ -138,6 +143,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     public void insertEvent(String Categoryname, int image) {
 
         CategoryData event = realmDatabase.createObject(CategoryData.class);
+
         realmDatabase.beginTransaction();
 
         event.setId(UUID.randomUUID().toString());

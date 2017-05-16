@@ -3,6 +3,7 @@ package es.ulpgc.eite.clean.mvp.sample.app;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 
 import java.util.List;
 
@@ -21,6 +22,8 @@ import es.ulpgc.eite.clean.mvp.sample.search.SearchView;
 public class App extends Application implements Mediator, Navigator {
 
 
+    private boolean isFirstTimeRunning;
+
     private CategoryState toCategoryState;
     private SearchState toSearchState, HangappToSearch;
     private AddState toAddState, addToState;
@@ -36,8 +39,33 @@ public class App extends Application implements Mediator, Navigator {
         toCategoryState = new CategoryState();
         toSearchState = new SearchState();
         toSearchState.textVisibility = false;
+
+        CheckisFirstTimeRunning();
     }
 
+    private void CheckisFirstTimeRunning() {
+        SharedPreferences pref = getSharedPreferences("es.ulpgc.eite.clean.mvp.sample", MODE_PRIVATE);
+        isFirstTimeRunning = false;
+        if (pref.getBoolean("FirstRun", true)) {
+            isFirstTimeRunning = true;
+            pref.edit().putBoolean("FirstRun", false).commit();
+        }
+    }
+
+//    private void CreateSharedPreference() {
+//        SharedPreferences settings = getSharedPreferences(PREFS_NAME,0);
+//        SharedPreferences.Editor editor = settings.edit();
+//        //Crea el atributo y el valor predeterminado.
+//        editor.putBoolean("FirstInit",true);
+//        editor.commit();
+//    }
+//    private void CheckIsFirstInit(){
+//        SharedPreferences settings = getSharedPreferences(PREFS_NAME,0);
+//        SharedPreferences.Editor editor = settings.edit();
+//
+//        //Valor del atributo y lo que saldrá en caso de no encontrarlo.
+//        isFirstTimeRunning = settings.getBoolean("FirstInit",false);
+//    }
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Mediator //////////////////////////////////////////////////////////////////////
@@ -61,8 +89,9 @@ public class App extends Application implements Mediator, Navigator {
     @Override
     public void startingCategoryScreen(Category.ToCategory presenter) {
         if (toCategoryState != null) {
-            //Todo Implementar estados.
+
         }
+        presenter.setIsFirstInit(isFirstTimeRunning);
         presenter.onScreenStarted();
     }
 
@@ -106,7 +135,6 @@ public class App extends Application implements Mediator, Navigator {
         if (view != null) {
             view.startActivity(new Intent(view, SearchView.class));
         }
-
     }
 
     //  @Override
@@ -169,24 +197,6 @@ public class App extends Application implements Mediator, Navigator {
 
     }
 
-    //@Override
-//public void goBackFromAdd(Detail.SearchTo presenter){
-//  Context view = presenter.getManagedContext();
-//  if (view != null) {
-//    view.startActivity(new Intent(view, CategoryView.class));
-//    presenter.destroyView();
-//
-//
-//  }}
-
-
-//    Context view = presenter.getManagedContext();
-//    if (view != null) {
-//      view.startActivity(new Intent(view, ProductView.class));
-//      presenter.destroyView();
-//    }
-//  }
-
 //    @Override
 //    public void goDetailScreen(Detail.DetailTo presenter) {
 //        Context view = presenter.getManagedContext();
@@ -210,8 +220,7 @@ public class App extends Application implements Mediator, Navigator {
     // State /////////////////////////////////////////////////////////////////////////
 
     private class CategoryState {
-        boolean textVisibility;
-        boolean imageVisibility;
+
     }
     private class SearchState {
         boolean textVisibility;

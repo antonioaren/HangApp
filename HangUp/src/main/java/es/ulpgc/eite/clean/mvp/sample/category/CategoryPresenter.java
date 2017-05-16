@@ -149,7 +149,10 @@ public class CategoryPresenter
         getView().settingAdapter(getModel().getEvents());
     }
 
-
+    @Override
+    public void setIsFirstInit(boolean isFirstTimeRunning) {
+        getModel().setIsFirstimeRunning(isFirstTimeRunning);
+    }
 
 
     ///////////////////////////////////////////////////////////////////////////////////
@@ -205,6 +208,8 @@ public class CategoryPresenter
         // arrancar el detalle pasándole el estado inicial correspondiente que, en este caso,
         // es el item seleccionado. Será el mediador quien se encargue de obtener este estado
         // desde el maestro y pasarselo al detalle
+
+
         Navigator app = (Navigator) getView().getApplication();
         app.goToInformationScreen(this);
     }
