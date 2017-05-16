@@ -105,6 +105,7 @@ public class AddPartyPresenter
         Log.d(TAG, "callingOnPublish");
 
         if (isViewRunning()) {
+            //Codigo Luis
             getModel().setDay(getView().getDay());
             getModel().setHourOfFinish(getView().getHourOfFinish());
             getModel().setHourOfInit(getView().getHourOfInit());
@@ -113,17 +114,6 @@ public class AddPartyPresenter
             getModel().setYear(getView().getYear());
 
             getModel().setDescription(getView().getDescription());
-
-//           List<InformationData_Old>list= new ArrayList<>();
-//            list.add(new InformationData_Old(R.drawable.astro,"name","0", "details","story","date", "hour"));
-//           CategoryModel categoryModel= new CategoryModel();
-//            List<CategoryData>category=categoryModel.getListCategory();
-//            category.add(new CategoryData(R.drawable.astro,"name",
-//                    "0", list, "detail",
-//                   "story", "date", "hour"));
-//            CategoryView categoryView= new CategoryView();
-//            categoryView.settingAdapter(category);
-
         }
 
 
@@ -170,7 +160,6 @@ public class AddPartyPresenter
 
     @Override
     public RealmList<CategoryData> getPartyAdded() {
-
         return (RealmList<CategoryData>) getModel().getPartyAdded();
     }
 

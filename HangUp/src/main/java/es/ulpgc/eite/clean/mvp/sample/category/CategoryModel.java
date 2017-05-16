@@ -2,6 +2,7 @@ package es.ulpgc.eite.clean.mvp.sample.category;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import java.util.Random;
 import java.util.UUID;
@@ -23,11 +24,9 @@ import static android.R.attr.id;
 public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         implements Category.PresenterToModel {
 
-    private String HangAppText;
     private String HangAppButtonSearchLabel;
     private String HangAppButtonAddLabel;
     private RealmResults<CategoryData> itemsDatabase;
-    private Context context;
 
     private boolean isFirstTime;
 
@@ -37,7 +36,6 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     private Random randomAssistance1, randomAssistance2, randomAssistance3, randomAssistance4, randomAssistance5;
     private int[] participants;
-    private AddPartyModel addPartyModel;
 
 
     public CategoryModel() {
@@ -63,14 +61,15 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     @Override
     public void onCreate(Category.ModelToPresenter presenter) {
         super.onCreate(presenter);
-        HangAppButtonAddLabel = "AddOne";
-        HangAppButtonSearchLabel = "SearchOne";
-        HangAppText = "Add";
+        HangAppButtonAddLabel = "Add";
+        HangAppButtonSearchLabel = "Search";
 
-        realmDatabase = Realm.getDefaultInstance();
+        RealmConfiguration setting = new RealmConfiguration.Builder().build();
+        Realm.setDefaultConfiguration(setting);
 
-        if (isFirstTime)
+        if (!isFirstTime) {
             CreateDatabaseTablesFromJson();
+        }
     }
 
 
@@ -84,18 +83,12 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     @Override
     public void CreateDatabaseTablesFromJson() {
-
-//        RealmConfiguration config = new RealmConfiguration.Builder(context)
-//                .setModules(new ModuleRealm()).build();
-//        Realm.setDefaultConfiguration(config);
-
-
+        Log.d("PruebaPasaDatos", "CreateDatabaseTablesFromJson()");
         insertEvent("Fiestas", R.drawable.disco);
         insertEvent("Música", R.drawable.musica);
         insertEvent("ULPGC", R.drawable.ulpgc);
         insertEvent("Astronomía", R.drawable.astro);
         insertEvent("Automovilismo", R.drawable.cars);
-
     }
 
     /**
@@ -131,6 +124,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     @Override
     public RealmResults<CategoryData> getEvents() {
+        Log.d(TAG, "getEvent()");
         RealmResults<CategoryData> results = realmDatabase.where(CategoryData.class).findAll();
         return results;
     }
@@ -141,17 +135,20 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     }
 
     @Override
-    public void insertEvent(String Categoryname, int image) {
+    public void insertEvent(final String Categoryname, final int image) {
 
-        CategoryData event = realmDatabase.createObject(CategoryData.class);
+        realmDatabase = Realm.getDefaultInstance();
+        realmDatabase.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                CategoryData event = realmDatabase.createObject(CategoryData.class, UUID.randomUUID().toString());
 
-        realmDatabase.beginTransaction();
+                event.setCategoryName(Categoryname);
+                event.setImage(image);
 
-        event.setId(UUID.randomUUID().toString());
-        event.setCategoryName(Categoryname);
-        event.setImage(image);
+            }
+        });
 
-        realmDatabase.commitTransaction();
     }
 
     public void updateEvent() {
@@ -162,7 +159,6 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
             @Override
             public void execute(Realm realm) {
                 realm.where(ProductData.class).equalTo("id", id);
-                //   .findAll();
             }
         });
 

@@ -71,6 +71,7 @@ public class CategoryView
         });
 
         Realm realm = Realm.getDefaultInstance();
+
         recycler.setAdapter(
                 new CategoryAdapter(realm.where(CategoryData.class).findAllAsync()));
 
@@ -96,7 +97,6 @@ public class CategoryView
             CategoryAdapter recyclerAdapter =
                     (CategoryAdapter) recycler.getAdapter();
             recyclerAdapter.setItemList(items);
-
         }
 
     }

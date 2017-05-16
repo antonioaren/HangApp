@@ -18,6 +18,7 @@ public class CategoryData extends RealmObject {
     private RealmList<ProductData> ItemInfo;
 
     public CategoryData() {
+
     }
     public CategoryData(String id, int image, String category, RealmList<ProductData> itemInfo) {
         this.id = id;
