@@ -1,7 +1,6 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
 import android.annotation.SuppressLint;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -17,6 +16,8 @@ import java.util.List;
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.util.RealmRecyclerViewAdapter;
+import io.realm.OrderedRealmCollection;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
@@ -35,17 +36,14 @@ public class CategoryView
 
     private RecyclerView.LayoutManager lManager;
     private RealmResults<CategoryData> items;
-    private boolean isFirstTime;
 
-    private static final String PREFS_NAME = "AppInit";
-    SharedPreferences FirstTimeRunning;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
-  //probado a emular con sharepreferences
-           Realm.init(this);
-        FirstTimeRunning = getSharedPreferences(PREFS_NAME, 0);
+        Realm.init(this);
+
         title = (TextView) findViewById(R.id.title);
         image = (ImageView) findViewById(R.id.image);
 
@@ -72,17 +70,16 @@ public class CategoryView
             }
         });
 
-//        Realm realm = Realm.getDefaultInstance();
-//        recycler.setAdapter(new CategoryAdapter(realm.where(CategoryData.class).findAll()));
+        Realm realm = Realm.getDefaultInstance();
+        recycler.setAdapter(
+                new CategoryAdapter(realm.where(CategoryData.class).findAllAsync()));
 
-        //CreateSharedPreferences();
     }
 
     /**
      * Method that initialized MVP objects
      * {@link super#onResume(Class, Object)} should always be called
      */
-
     @SuppressLint("MissingSuperCall")
     @Override
     protected void onResume() {
@@ -92,67 +89,21 @@ public class CategoryView
     ///////////////////////////////////////////////////////////////////////////////////
     // Presenter To View /////////////////////////////////////////////////////////////
 
-    public CategoryAdapter getAdapter() {
-        return this.adapter;
-    }
-
-    public List<CategoryData> getList() {
-        return this.items;
-    }
 
     @Override
-    public void settingAdapter(RealmResults<CategoryData> parties) {
-       adapter = new CategoryAdapter(parties);
-       recycler.setAdapter(adapter);
+    public void settingAdapter(List<CategoryData> items) {
+        if (recycler != null) {
+            CategoryAdapter recyclerAdapter =
+                    (CategoryAdapter) recycler.getAdapter();
+            recyclerAdapter.setItemList(items);
+
+        }
+
     }
 
     @Override
     public void finishScreen() {
         finish();
-    }
-
-
-//    private void CreateSharedPreferences(){
-//        SharedPreferences settings = getSharedPreferences(PREFS_NAME,0);
-//        SharedPreferences.Editor editor = settings.edit();
-//        //Crea el atributo y el valor predeterminado.
-//        editor.putBoolean("FirstInit",true);
-//        editor.commit();
-//    }
-//
-//    private boolean getIsFirstInit(){
-//        SharedPreferences settings = getSharedPreferences(PREFS_NAME,0);
-//        //Valor del atributo y lo que saldrá en caso de no encontrarlo.
-//        isFirstTime = settings.getBoolean("FirstInit",false);
-//        return isFirstTime;
-//    }
-//
-//    public boolean isFirstTime() {
-//        return isFirstTime;
-//    }
-//
-//    public void setFirstTime(boolean firstTime) {
-//        isFirstTime = firstTime;
-//    }
-
-    @Override
-    public void hideText() {
-       
-    }
-
-    @Override
-    public void showText() {
-        title.setVisibility(View.VISIBLE);
-    }
-
-    @Override
-    public void setText(String txt) {
-        title.setText(txt);
-    }
-
-    @Override
-    public void setLabel(String txt) {
-
     }
 
     @Override
@@ -165,21 +116,15 @@ public class CategoryView
         buttonAdd.setText(txt);
     }
 
-    @Override
-    public void showCategories(RealmResults<CategoryData> categories) {
 
-    }
+    public class CategoryAdapter extends
+            RealmRecyclerViewAdapter<CategoryData, CategoryAdapter.CategoryViewHolder> {
 
+        private List<CategoryData> items;
 
-
-
-    public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
-
-        public RealmResults<CategoryData> items;
-
-        public CategoryAdapter(RealmResults<CategoryData> items) {
+        public CategoryAdapter(OrderedRealmCollection<CategoryData> items) {
+            super(items, true);
             this.items = items;
-          //  notifyDataSetChanged();
         }
 
         @Override
@@ -188,7 +133,7 @@ public class CategoryView
         }
 
         @Override
-        public CategoryViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {//i es la posición.
+        public CategoryViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
             LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
             View v = inflater.inflate(R.layout.card_category, viewGroup, false);
             return new CategoryViewHolder(v);
@@ -210,6 +155,10 @@ public class CategoryView
         @Override
         public void onAttachedToRecyclerView(RecyclerView recyclerView) {
             super.onAttachedToRecyclerView(recyclerView);
+        }
+
+        public void setItemList(List<CategoryData> itemList) {
+            this.items = itemList;
         }
 
         public class CategoryViewHolder extends RecyclerView.ViewHolder {

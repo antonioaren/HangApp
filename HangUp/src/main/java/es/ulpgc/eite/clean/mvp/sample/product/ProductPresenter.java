@@ -66,4 +66,9 @@ public class ProductPresenter
     public Context getManagedContext() {
         return getActivityContext();
     }
+
+    @Override
+    public ProductData getSelectedItem() {
+        return ItemSelected;
+    }
 }

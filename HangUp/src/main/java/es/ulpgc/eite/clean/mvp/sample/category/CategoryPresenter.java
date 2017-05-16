@@ -40,11 +40,6 @@ public class CategoryPresenter
         super.onCreate(CategoryModel.class, this);
         setView(view);
         Log.d(TAG, "calling onCreate()");
-
-
-        // getView().settingAdapter(getModel().getListCategory());
-
-        Log.d(TAG, "calling startingMainScreen()");
         Mediator app = (Mediator) getView().getApplication();
         app.startingCategoryScreen(this);
     }
@@ -63,8 +58,8 @@ public class CategoryPresenter
 
 
         if (configurationChangeOccurred()) {
-            getView().setLabel(getModel().getSearchLabel());
-            getView().setLabel(getModel().getAddLabel());
+            getView().setLabelSearch(getModel().getSearchLabel());
+            getView().setAddLabel(getModel().getAddLabel());
         }
     }
 
@@ -127,8 +122,8 @@ public class CategoryPresenter
     public void onScreenStarted() {
         Log.d(TAG, "calling onScreenStarted()");
         if (isViewRunning()) {
-            getView().setLabel(getModel().getSearchLabel());
-            getView().setLabel(getModel().getAddLabel());
+            getView().setLabelSearch(getModel().getSearchLabel());
+            getView().setAddLabel(getModel().getAddLabel());
         }
         getView().settingAdapter(getModel().getEvents());
     }
@@ -185,10 +180,10 @@ public class CategoryPresenter
 
     @Override
     public void subscribeCallbacks() {
-        Repository.CategoryRepository.OnGetAllCategoryCallback getAllCategoryCallback = new Repository.CategoryRepository.OnGetAllCategoryCallback() {
+        Repository.CategoryRepository.OnGetAllCategoryCallback getAllCategoryCallback =
+                new Repository.CategoryRepository.OnGetAllCategoryCallback() {
             @Override
             public void onSuccess(RealmResults<CategoryData> categories) {
-                getView().showCategories(categories);
             }
 
             @Override

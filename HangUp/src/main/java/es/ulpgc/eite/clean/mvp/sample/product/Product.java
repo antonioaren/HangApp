@@ -53,5 +53,8 @@ public interface Product {
 
     public interface ProductTo {
         Context getManagedContext();
+
+
+        ProductData getSelectedItem();
     }
 }

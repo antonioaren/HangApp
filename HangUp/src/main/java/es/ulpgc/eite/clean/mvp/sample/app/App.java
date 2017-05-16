@@ -32,7 +32,7 @@ public class App extends Application implements Mediator, Navigator {
 
     private CategoryState toCategoryState;
     private ProductState CategoryToProduct;
-    private DetailState ProductToCategory;
+    private DetailState ProductToDetail;
 
     private SearchState CategoryToSearch;
     private AddState toAddState;
@@ -55,8 +55,7 @@ public class App extends Application implements Mediator, Navigator {
     }
 
 
-    ///////////////////////////////////////////////////////////////////////////////////
-    // Mediator //////////////////////////////////////////////////////////////////////
+    //////////////// Mediator //////////////////////////////////////////////////////////////////////
 
     @Override
     public void startingCategoryScreen(Category.ToCategory presenter) {
@@ -99,7 +98,7 @@ public class App extends Application implements Mediator, Navigator {
         presenter.onScreenStarted();
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
     public void addingItems(Category.ToCategory presenter) {
@@ -112,8 +111,7 @@ public class App extends Application implements Mediator, Navigator {
 
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////
-    // Navigator /////////////////////////////////////////////////////////////////////
+    /////////////// Navigator /////////////////////////////////////////////////////////////////////
 
     @Override
     public void goToProductScreen(Category.CategoryTo presenter) {
@@ -128,6 +126,8 @@ public class App extends Application implements Mediator, Navigator {
 
     @Override
     public void goDetailScreen(Product.ProductTo presenter) {
+        ProductToDetail = new DetailState();
+        ProductToDetail.ItemSelected = presenter.getSelectedItem();
 
         Context view = presenter.getManagedContext();
         if (view != null) {
@@ -189,9 +189,7 @@ public class App extends Application implements Mediator, Navigator {
 
     }
 
-
-    ///////////////////////////////////////////////////////////////////////////////////
-    // State /////////////////////////////////////////////////////////////////////////
+    //////////////// State /////////////////////////////////////////////////////////////////////////
 
     private class CategoryState {
 
@@ -202,7 +200,7 @@ public class App extends Application implements Mediator, Navigator {
     }
 
     private class DetailState {
-
+        public ProductData ItemSelected;
     }
 
     private class SearchState {

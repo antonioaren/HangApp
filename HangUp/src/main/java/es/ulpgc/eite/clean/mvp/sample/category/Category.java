@@ -37,23 +37,13 @@ public interface Category {
     interface PresenterToView extends ContextView {
         void onCreate(Bundle savedInstanceState);
 
-        void settingAdapter(RealmResults<CategoryData> parties);
+        void settingAdapter(List<CategoryData> items);
 
         void finishScreen();
-
-        void hideText();
-
-        void showText();
-
-        void setText(String txt);
-
-        void setLabel(String txt);
 
         void setLabelSearch(String txt);
 
         void setAddLabel(String txt);
-
-        void showCategories(RealmResults<CategoryData> categories);
     }
 
     /**
