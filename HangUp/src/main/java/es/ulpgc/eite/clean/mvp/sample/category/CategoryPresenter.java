@@ -117,7 +117,7 @@ public class CategoryPresenter
     public void onListItemClicked() {
         Log.d(TAG, "item cliked");
         Navigator app = (Navigator) getView().getApplication();
-        app.goToInformationScreen(this);
+        app.goToProductScreen(this);
     }
 
     ///////////////////////////////////////////////////////////////////////////////////
@@ -138,10 +138,6 @@ public class CategoryPresenter
         getModel().setIsFirstimeRunning(isFirstTimeRunning);
     }
 
-    @Override
-    public boolean getTextVisibility() {
-        return false;
-    }
 
 
     ///////////////////////////////////////////////////////////////////////////////////
@@ -184,7 +180,7 @@ public class CategoryPresenter
         // desde el maestro y pasarselo al detalle.
 
         Navigator app = (Navigator) getView().getApplication();
-        app.goToInformationScreen(this);
+        app.goToProductScreen(this);
     }
 
     @Override

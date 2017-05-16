@@ -86,7 +86,7 @@ public class SearchPresenter
         Log.d(TAG, "calling onItemListClicked");
         Navigator app = (Navigator) getView().getApplication();
         //Revisar esta llamada.
-        app.goToInformationScreen((Category.CategoryTo) this);
+        app.goToProductScreen((Category.CategoryTo) this);
     }
 
 

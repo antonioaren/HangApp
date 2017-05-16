@@ -83,10 +83,7 @@ public interface Category {
      * Required PRESENTER methods available to MODEL
      */
     interface ModelToPresenter {
-
-
         void subscribeCallbacks();
-
         void unSubscribeCallbacks();
     }
 
@@ -97,7 +94,6 @@ public interface Category {
 
     interface CategoryTo {
         Context getManagedContext();
-
         void destroyView();
         CategoryData getSelectedItem();
     }
@@ -108,8 +104,6 @@ public interface Category {
     interface ToCategory {
         void onScreenStarted();
         void setIsFirstInit(boolean isFirstTimeRunning);
-
-        boolean getTextVisibility();
     }
 
 

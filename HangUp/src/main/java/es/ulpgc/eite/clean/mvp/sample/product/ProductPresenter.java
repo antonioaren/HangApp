@@ -1,5 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.product;
 
+import android.content.Context;
+
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
@@ -12,8 +14,8 @@ import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 public class ProductPresenter
         extends GenericPresenter<Product.PresenterToView, Product.PresenterToModel,
         Product.ModelToPresenter, ProductModel>
-        implements Product.ViewToPresenter, Product.ModelToPresenter, Product.ToInformation
-        , Product.InformationTo {
+        implements Product.ViewToPresenter, Product.ModelToPresenter, Product.ToProduct
+        , Product.ProductTo {
 
     private ProductData ItemSelected;
 
@@ -23,7 +25,7 @@ public class ProductPresenter
         setView(view);
 
         Mediator app = (Mediator) getApplication();
-        app.startingInformationScreen(this);
+        app.startingProductScreen(this);
 
     }
 
@@ -58,5 +60,10 @@ public class ProductPresenter
     public void onItemClicked(ProductData item) {
         ItemSelected = item;
 
+    }
+
+    @Override
+    public Context getManagedContext() {
+        return getActivityContext();
     }
 }

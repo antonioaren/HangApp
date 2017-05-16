@@ -17,7 +17,7 @@ Mediator {
 
   void startingCategoryScreen(Category.ToCategory presenter);
 
-  void startingInformationScreen(Product.ToInformation presenter);
+  void startingProductScreen(Product.ToProduct presenter);
 
   void startingDetailScreen(DetailPresenter Presenter);
 
