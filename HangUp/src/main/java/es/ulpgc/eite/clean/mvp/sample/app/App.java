@@ -80,10 +80,10 @@ public class App extends Application implements Mediator, Navigator {
     @Override
     public void startingCategoryScreen(Category.ToCategory presenter) {
         if (toCategoryState != null) {
-
+        toCategoryState.textVisibility=presenter.getTextVisibility();
         }
-        presenter.setIsFirstInit(isFirstTimeRunning);
-        presenter.onScreenStarted();
+       // presenter.setIsFirstInit(isFirstTimeRunning);
+       // presenter.onScreenStarted();
     }
 
     @Override
@@ -207,6 +207,7 @@ public class App extends Application implements Mediator, Navigator {
 
     private class CategoryState {
 
+        public boolean textVisibility;
     }
     private class SearchState {
         boolean textVisibility;

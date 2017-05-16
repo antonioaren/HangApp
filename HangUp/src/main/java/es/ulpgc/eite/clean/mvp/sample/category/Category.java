@@ -9,8 +9,6 @@ import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.Presenter;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
-import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
-import io.realm.RealmList;
 import io.realm.RealmResults;
 
 public interface Category {
@@ -109,6 +107,7 @@ public interface Category {
         boolean isSelectorsVisible();
 
         boolean isImageVisible();
+
     }
 
     ///////////////////////////////////////////////////////////////////////////////////
@@ -119,6 +118,7 @@ public interface Category {
 
         void setIsFirstInit(boolean isFirstTimeRunning);
 
+        boolean getTextVisibility();
     }
 
 

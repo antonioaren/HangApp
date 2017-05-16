@@ -68,7 +68,7 @@ public class CategoryPresenter
 
         if (configurationChangeOccurred()) {
             getView().setLabel(getModel().getSearchLabel());
-            getView().setLabel(getModel().getSearchLabel());
+            getView().setLabel(getModel().getAddLabel());
         }
     }
 

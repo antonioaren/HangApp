@@ -1,7 +1,6 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
 import android.annotation.SuppressLint;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -43,7 +42,7 @@ public class CategoryView
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
-
+           Realm.init(this);
         title = (TextView) findViewById(R.id.title);
         image = (ImageView) findViewById(R.id.image);
 
@@ -70,8 +69,8 @@ public class CategoryView
             }
         });
 
-        Realm realm = Realm.getDefaultInstance();
-        recycler.setAdapter(new CategoryAdapter(realm.where(CategoryData.class).findAll()));
+//        Realm realm = Realm.getDefaultInstance();
+//        recycler.setAdapter(new CategoryAdapter(realm.where(CategoryData.class).findAll()));
 
         //CreateSharedPreferences();
     }
@@ -100,8 +99,8 @@ public class CategoryView
 
     @Override
     public void settingAdapter(RealmResults<CategoryData> parties) {
-//        adapter = new CategoryAdapter(parties);
-//        recycler.setAdapter(adapter);
+       adapter = new CategoryAdapter(parties);
+       recycler.setAdapter(adapter);
     }
 
     @Override
