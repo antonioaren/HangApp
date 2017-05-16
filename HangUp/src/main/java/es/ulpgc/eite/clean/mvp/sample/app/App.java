@@ -57,20 +57,6 @@ public class App extends Application implements Mediator, Navigator {
         }
     }
 
-//    private void CreateSharedPreference() {
-//        SharedPreferences settings = getSharedPreferences(PREFS_NAME,0);
-//        SharedPreferences.Editor editor = settings.edit();
-//        //Crea el atributo y el valor predeterminado.
-//        editor.putBoolean("FirstInit",true);
-//        editor.commit();
-//    }
-//    private void CheckIsFirstInit(){
-//        SharedPreferences settings = getSharedPreferences(PREFS_NAME,0);
-//        SharedPreferences.Editor editor = settings.edit();
-//
-//        //Valor del atributo y lo que saldrá en caso de no encontrarlo.
-//        isFirstTimeRunning = settings.getBoolean("FirstInit",false);
-//    }
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Mediator //////////////////////////////////////////////////////////////////////

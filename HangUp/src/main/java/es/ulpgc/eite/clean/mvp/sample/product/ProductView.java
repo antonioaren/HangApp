@@ -60,7 +60,6 @@ public class ProductView
 
     }
 
-    //TODO Implementar adaptador
     public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
 
         public RealmList<ProductData> items;

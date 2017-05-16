@@ -70,13 +70,6 @@ public class CategoryPresenter
             getView().setLabel(getModel().getSearchLabel());
             getView().setLabel(getModel().getSearchLabel());
         }
-
-//     Navigator app = (Navigator) getView().getApplication();
-//     app.publishParty(this);
-//
-//      //getView().settingAdapter(getModel().ge);
-//      notify();
-
     }
 
     /**
@@ -202,8 +195,7 @@ public class CategoryPresenter
         // Al haber hecho click en uno de los elementos de la lista del maestro es necesario
         // arrancar el detalle pasándole el estado inicial correspondiente que, en este caso,
         // es el item seleccionado. Será el mediador quien se encargue de obtener este estado
-        // desde el maestro y pasarselo al detalle
-
+        // desde el maestro y pasarselo al detalle.
 
         Navigator app = (Navigator) getView().getApplication();
         app.goToInformationScreen(this);
