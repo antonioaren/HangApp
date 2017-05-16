@@ -43,7 +43,7 @@ public class CategoryView
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
-
+  //probado a emular con sharepreferences
            Realm.init(this);
         FirstTimeRunning = getSharedPreferences(PREFS_NAME, 0);
         title = (TextView) findViewById(R.id.title);
