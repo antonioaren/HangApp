@@ -67,6 +67,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         HangAppButtonSearchLabel = "SearchOne";
         HangAppText = "Add";
 
+        realmDatabase = Realm.getDefaultInstance();
 
         if (isFirstTime)
             CreateDatabaseTablesFromJson();
