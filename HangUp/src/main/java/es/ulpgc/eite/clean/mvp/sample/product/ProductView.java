@@ -16,7 +16,6 @@ import java.util.List;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import io.realm.OrderedRealmCollection;
 import io.realm.Realm;
@@ -33,7 +32,7 @@ public class ProductView
    public RecyclerView recycler;
     Button buttonAdd;
     private LinearLayoutManager linearmanager;
-    private RealmResults<CategoryData> items;
+    private RealmResults<ProductData> items;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,21 +42,22 @@ public class ProductView
         recycler.setHasFixedSize(true);
          linearmanager=new LinearLayoutManager(this);
          recycler.setLayoutManager(linearmanager);
+        Realm realm = Realm.getDefaultInstance();
+        recycler.setAdapter(
+                new ProductView.ProductAdapter(realm.where(ProductData.class).findAllAsync()));
 
         buttonAdd=(Button)findViewById(R.id.buttonAdd);
-        buttonAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-              //  getPresenter().onButtonAddClicked();
-            }
-        });
+//        buttonAdd.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//              //  getPresenter().onButtonAddClicked();
+//            }
+//        });
         /*Story = (TextView) findViewById(R.id.Story);
         Date = (TextView) findViewById(R.id.Date);
         Hour = (TextView) findViewById(R.id.Hour);*/
-        Realm realm = Realm.getDefaultInstance();
 
-        recycler.setAdapter(
-                new ProductView.ProductAdapter(realm.where(ProductData.class).findAllAsync()));
+
 
     }
 @Override
@@ -97,11 +97,11 @@ public void setAddLabel(String msg){
 
     public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
 
-        public List<ProductData> items;
+        private List<ProductData> items;
 
-        public ProductAdapter(/*RealmResults<ProductData> items*/  OrderedRealmCollection<ProductData> items) {
+        public ProductAdapter(/*RealmResults<ProductData> items*/ OrderedRealmCollection<ProductData> items) {
 
-       //    super(items,true);
+        //  super(items,true);
             this.items = items;
 
 
@@ -155,7 +155,6 @@ public void setAddLabel(String msg){
             public ProductViewHolder(View v) {
                 super(v);
                 itemView = v;
-
                 image = (ImageView) v.findViewById(R.id.image);
                 title = (TextView) v.findViewById(R.id.title);
                 number = (TextView) v.findViewById(R.id.numberOfPersons);
