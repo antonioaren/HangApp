@@ -1,8 +1,11 @@
 package es.ulpgc.eite.clean.mvp.sample.product;
 
+import android.util.Log;
+
 import java.util.UUID;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
+import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import io.realm.Realm;
@@ -20,6 +23,7 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     private CategoryData Item;
     private String addlabel;
     private RealmResults<ProductData>itemsDatabase;
+    private boolean isFirstTime;
 
     @Override
     public void onCreate(Product.ModelToPresenter modelToPresenter) {
@@ -37,7 +41,7 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     }
 
     @Override
-    public void insertProduct(String id, final int image, final String title, String date, final String hour, String place, final String detail, final String participants) {
+    public void insertProduct( final int image, final String title, final String participants) {
 
           realmDatabase = Realm.getDefaultInstance();
           realmDatabase.executeTransaction(new Realm.Transaction() {
@@ -65,8 +69,17 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     public String getAddLabel() {
         return addlabel;
     }
+    @Override
+    public void setIsFirstimeRunning(boolean isFirstTimeRunning) {
+        this.isFirstTime = isFirstTimeRunning;
+    }
 
-
+    @Override
+    public void CreateDatabaseTablesFromJson() {
+        Log.d("PruebaPasaDatos", "CreateDatabaseTablesFromJson()");
+        insertProduct(R.drawable.disco,"verbena","1000");
+        insertProduct(R.drawable.astro,"concierto","30000000");
+    }
     @Override
     public void setItemsFromDatabase() {
         itemsDatabase = realmDatabase.where(ProductData.class).findAll();
