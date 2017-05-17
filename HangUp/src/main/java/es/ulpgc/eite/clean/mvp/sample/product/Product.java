@@ -31,11 +31,14 @@ public interface Product {
 
         CategoryData getItem();
 
-        void insertProduct(String id, int image, String productName, String participants, String detail, String day, String hour);
+
+        void insertProduct(String id, int image, String title, String date, String hour, String place, String detail, String participants);
 
         void setItem(CategoryData itemSelected);
 
         String getAddLabel();
+
+        void setItemsFromDatabase();
     }
 
     public interface ModelToPresenter {

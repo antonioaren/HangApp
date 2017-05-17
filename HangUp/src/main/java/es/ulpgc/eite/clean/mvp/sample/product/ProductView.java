@@ -31,7 +31,7 @@ public class ProductView
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_item_detail);
+        setContentView(R.layout.activity_item);
           recycler= (RecyclerView)findViewById(R.id.recycler);
         recycler.setHasFixedSize(true);
          linearmanager=new LinearLayoutManager(this);
