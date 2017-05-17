@@ -12,6 +12,7 @@ import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 
 public interface Product {
     public interface PresenterToView extends ContextView {
+        void setAddLabel(String msg);
 
 
         //void setText(String details, String StoryDescription, String dateDescription, String hourDescription);
@@ -34,6 +35,7 @@ public interface Product {
 
         void setItem(CategoryData itemSelected);
 
+        String getAddLabel();
     }
 
     public interface ModelToPresenter {

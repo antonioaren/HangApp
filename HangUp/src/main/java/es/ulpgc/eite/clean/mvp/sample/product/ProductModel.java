@@ -15,11 +15,12 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
         implements Product.PresenterToModel {
  Realm realmDatabase;
     private CategoryData Item;
+    private String addlabel;
 
 
     @Override
     public void onCreate(Product.ModelToPresenter modelToPresenter) {
-
+    this.addlabel="AddParty";
     }
 
     @Override
@@ -50,5 +51,10 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     @Override
     public void setItem(CategoryData itemSelected) {
         Item = itemSelected;
+    }
+
+    @Override
+    public String getAddLabel() {
+        return addlabel;
     }
 }

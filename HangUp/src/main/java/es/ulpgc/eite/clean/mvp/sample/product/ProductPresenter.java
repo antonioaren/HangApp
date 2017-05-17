@@ -1,6 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.product;
 
 import android.content.Context;
+import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
@@ -32,6 +33,15 @@ public class ProductPresenter
     @Override
     public void onResume(Product.PresenterToView view) {
         setView(view);
+
+        setView(view);
+        Log.d(TAG, "calling onResume()");
+
+
+        if (configurationChangeOccurred()) {
+            getView().setAddLabel(getModel().getAddLabel());
+
+        }
     }
 
     @Override

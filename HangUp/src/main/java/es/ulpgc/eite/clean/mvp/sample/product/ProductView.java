@@ -50,7 +50,10 @@ public class ProductView
 
 
     }
-
+@Override
+public void setAddLabel(String msg){
+    buttonAdd.setText(msg);
+}
     @SuppressLint("MissingSuperCall")
     @Override
     protected void onResume() {
