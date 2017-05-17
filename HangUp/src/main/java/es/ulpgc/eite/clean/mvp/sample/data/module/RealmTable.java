@@ -1,7 +1,5 @@
 package es.ulpgc.eite.clean.mvp.sample.data.module;
 
-import es.ulpgc.eite.clean.mvp.sample.R;
-
 /**
  * Created by eleonora on 15/05/2017.
  */
@@ -13,18 +11,19 @@ public interface RealmTable {
 
         interface Category {
 
-            String ID_CATEGORY = "id";
-            String CATEGORY_NAME = "category";
-            String PRODUCTS_AVAILABLES="products";
-            int IMAGE= R.drawable.astro;
+            String CATEGORY_NAME = "CategoryName";
+            String IMAGE = "image";
+            String PRODUCTS = "ItemInfo";
+            String PRODUCTS_AVAILABLES = "productsAvailables";
+
         }
 
         interface Product {
-            String ID="id";
-            String PRODUCT_NAME = "name";
-            int IMAGE = R.drawable.astro;
+
+            String PRODUCT_NAME = "productName";
+            String IMAGEN = "image";
             String PARTICIPANTS="participants";
-            String DETAIL = "detail";
+            String DETAIL = "detailText";
             String DATE ="date";
             String HOUR="hour";
 

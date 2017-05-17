@@ -9,6 +9,7 @@ import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.Presenter;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import io.realm.RealmResults;
 
 public interface Category {
@@ -66,13 +67,15 @@ public interface Category {
 
         void insertEvent(String Categoryname, int image);
 
-        void setIsFirstimeRunning(boolean isFirstTimeRunning);
+        void AddProductByCategoryId(ProductData product, String CategoryId);
     }
 
     /**
      * Required PRESENTER methods available to MODEL
      */
     interface ModelToPresenter {
+        Context getAppContext();
+
         void subscribeCallbacks();
         void unSubscribeCallbacks();
     }
@@ -93,7 +96,6 @@ public interface Category {
 
     interface ToCategory {
         void onScreenStarted();
-        void setIsFirstInit(boolean isFirstTimeRunning);
     }
 
 

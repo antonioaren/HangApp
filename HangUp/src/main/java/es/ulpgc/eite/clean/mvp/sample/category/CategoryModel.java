@@ -1,5 +1,6 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
+import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
@@ -10,15 +11,20 @@ import java.util.UUID;
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.add.AddPartyModel;
+import es.ulpgc.eite.clean.mvp.sample.app.App;
+import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.data.module.ModuleRealm;
+import es.ulpgc.eite.clean.mvp.sample.data.module.RealmTable;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 import io.realm.RealmObject;
 import io.realm.RealmResults;
 
+import static android.R.attr.content;
 import static android.R.attr.id;
+import static android.content.Context.MODE_PRIVATE;
 
 
 public class CategoryModel extends GenericModel<Category.ModelToPresenter>
@@ -28,7 +34,6 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     private String HangAppButtonAddLabel;
     private RealmResults<CategoryData> itemsDatabase;
 
-    private boolean isFirstTime;
 
     private boolean usingWrapper;
     private Realm realmDatabase;
@@ -64,26 +69,31 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         HangAppButtonAddLabel = "Add";
         HangAppButtonSearchLabel = "Search";
 
+
         RealmConfiguration setting = new RealmConfiguration.Builder().build();
         Realm.setDefaultConfiguration(setting);
 
-        if (!isFirstTime) {
-            CreateDatabaseTablesFromJson();
-        }
+        CreateDatabaseTablesFromJson();
+
+
+//        SharedPreferences pref =
+//                ((Category.CategoryTo)presenter).getManagedContext().getSharedPreferences("es.ulpgc.eite.clean.mvp.sample", MODE_PRIVATE);
+//        if (pref.getBoolean("FirstRun", true)) {
+//            CreateDatabaseTablesFromJson();
+//            pref.edit().putBoolean("FirstRun", false).commit();
+//        }
+
+
     }
 
 
     ///////////////////////////////////////////////////////////////////////////////////
 
-    @Override
-    public void setIsFirstimeRunning(boolean isFirstTimeRunning) {
-        this.isFirstTime = isFirstTimeRunning;
-    }
-
 
     @Override
     public void CreateDatabaseTablesFromJson() {
         Log.d("PruebaPasaDatos", "CreateDatabaseTablesFromJson()");
+
         insertEvent("Fiestas", R.drawable.disco);
         insertEvent("Música", R.drawable.musica);
         insertEvent("ULPGC", R.drawable.ulpgc);
@@ -142,14 +152,36 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
             @Override
             public void execute(Realm realm) {
                 CategoryData event = realmDatabase.createObject(CategoryData.class, UUID.randomUUID().toString());
-
                 event.setCategoryName(Categoryname);
                 event.setImage(image);
-
             }
         });
 
     }
+
+    @Override
+    public void AddProductByCategoryId(ProductData product, final String CategoryId) {
+//        realmDatabase = Realm.getDefaultInstance();
+//        realmDatabase.executeTransaction(new Realm.Transaction() {
+//            @Override
+//            public void execute(Realm realm) {
+//                ProductData RealmData = realm.createObject(ProductData.class, UUID.randomUUID().toString());
+//
+//                RealmData.setProductName("");
+//                RealmData.setImage(0);
+//                RealmData.setDate("");
+//                RealmData.setHour("");
+//                RealmData.setParticipants("");
+//                RealmData.setDetailText("");
+//
+//                CategoryData category = realmDatabase.where(CategoryData.class).
+//                        equalTo(RealmTable.ID, CategoryId).findFirst();
+//
+//                category.getItemInfo().add(RealmData);
+//            }
+//        });
+    }
+
 
     public void updateEvent() {
     }

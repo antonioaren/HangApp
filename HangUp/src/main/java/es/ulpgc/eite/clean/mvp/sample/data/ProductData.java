@@ -11,6 +11,7 @@ import io.realm.annotations.Required;
 public class ProductData extends RealmObject {
     @PrimaryKey
     private String id;
+
     @Required
     private String productName;
 
@@ -20,9 +21,23 @@ public class ProductData extends RealmObject {
     @Required
     private String detailText;
     @Required
-    private String day;
+    private String date;
     @Required
     private String hour;
+
+    public ProductData() {
+
+    }
+
+    public ProductData(int image, String productName, String participants, String detailText, String date, String hour) {
+        this.image = image;
+        this.productName = productName;
+        this.participants = participants;
+        this.detailText = detailText;
+        this.date = date;
+        this.hour = hour;
+    }
+
 
     public String getId() {
         return id;
@@ -56,16 +71,17 @@ public class ProductData extends RealmObject {
     public String getDetailText() {
         return detailText;
     }
+
     public void setDetailText(String detailText) {
         this.detailText = detailText;
     }
 
-    public String getDay() {
-        return day;
+    public String getDate() {
+        return date;
     }
 
-    public void setDay(String day) {
-        this.day = day;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getHour() {
@@ -76,16 +92,5 @@ public class ProductData extends RealmObject {
         this.hour = hour;
     }
 
-public ProductData(int image,  String productName, String participants, String detailText, String day, String hour){
-    this.image=image;
 
-    this.productName=productName;
-    this.participants=participants;
-    this.detailText=detailText;
-    this.day=day;
-    this.hour=hour;
-}
-public ProductData(){
-
-}
 }

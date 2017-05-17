@@ -20,7 +20,7 @@ import io.realm.RealmList;
 public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements Add.PresenterToModel {
 
 
-    String placeLabel, dateLabel, timeInitLabel, timeFinishLabel, publishLabel, titleLabel;
+    private String placeLabel, dateLabel, timeInitLabel, timeFinishLabel, publishLabel, titleLabel;
     private String description;
     private int hourFinish;
     private String day;
@@ -28,9 +28,9 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     private String month;
     private String place;
     private int year;
-    List<CategoryData> partyAdded;
-    List<ProductData> party;
-    Repository.ProductRepository.OnSaveProductCallback callback;
+    private List<CategoryData> partyAdded;
+    private List<ProductData> party;
+    private Repository.ProductRepository.OnSaveProductCallback callback;
 
 
 
@@ -125,7 +125,7 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
 
     @Override
     public String getDateOfTheParty() {
-        //String day = getPresenter().getDay();
+        //String day = getPresenter().getDate();
         //String month = getPresenter().getMonth();
         //String year = String.valueOf(getPresenter().getYear());
         String date = day + "" + month + "" + year;

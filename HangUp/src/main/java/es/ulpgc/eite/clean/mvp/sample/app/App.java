@@ -31,7 +31,6 @@ import io.realm.RealmList;
 public class App extends Application implements Mediator, Navigator {
 
 
-    private boolean isFirstTimeRunning;
 
     private CategoryState toCategoryState;
     private ProductState CategoryToProduct;
@@ -44,22 +43,14 @@ public class App extends Application implements Mediator, Navigator {
     @Override
     public void onCreate() {
         super.onCreate();
-        //Realm.init(this);
+        Realm.init(this);
         toCategoryState = new CategoryState();
         CategoryToSearch = new SearchState();
-
-        CheckisFirstTimeRunning();
-
-
     }
 
-    private void CheckisFirstTimeRunning() {
-        SharedPreferences pref = getSharedPreferences("es.ulpgc.eite.clean.mvp.sample", MODE_PRIVATE);
-        isFirstTimeRunning = false;
-        if (pref.getBoolean("FirstRun", true)) {
-            isFirstTimeRunning = true;
-            pref.edit().putBoolean("FirstRun", false).commit();
-        }
+    @Override
+    public Context getAppContext() {
+        return getApplicationContext();
     }
 
 
@@ -70,7 +61,6 @@ public class App extends Application implements Mediator, Navigator {
         if (toCategoryState != null) {
 
         }
-        presenter.setIsFirstInit(isFirstTimeRunning);
         presenter.onScreenStarted();
     }
 

@@ -1,5 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.app;
 
+import android.content.Context;
+
 import es.ulpgc.eite.clean.mvp.sample.add.Add;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
 import es.ulpgc.eite.clean.mvp.sample.detail.DetailPresenter;
@@ -15,10 +17,13 @@ Mediator {
 
   void startingAddScreen(Add.ToAdd presenter);
 
-  void startingCategoryScreen(Category.ToCategory presenter);
+    Context getAppContext();
+
+    void startingCategoryScreen(Category.ToCategory presenter);
 
   void startingProductScreen(Product.ToProduct presenter);
 
   void startingDetailScreen(DetailPresenter Presenter);
+
 
 }

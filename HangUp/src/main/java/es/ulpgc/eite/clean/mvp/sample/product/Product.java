@@ -28,12 +28,13 @@ public interface Product {
 
     public interface PresenterToModel {
 
-        CategoryData getItem();
+        ProductData getItem();
 
-        void insertProduct(String id, int image, String productName, String participants, String detail, String day, String hour);
+        void AddProductByCategoryId(ProductData product, String CategoryId);
 
         void setItem(CategoryData itemSelected);
 
+        void setItem(ProductData itemSelected);
     }
 
     public interface ModelToPresenter {

@@ -34,9 +34,6 @@ public class CategoryView
     private LinearLayoutManager linearmanager;
     private CategoryAdapter adapter;
 
-    private RecyclerView.LayoutManager lManager;
-    private RealmResults<CategoryData> items;
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

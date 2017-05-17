@@ -1,6 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
@@ -11,6 +12,8 @@ import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 import io.realm.RealmResults;
+
+import static android.content.Context.MODE_PRIVATE;
 
 public class CategoryPresenter
         extends GenericPresenter<Category.PresenterToView, Category.PresenterToModel,
@@ -42,6 +45,15 @@ public class CategoryPresenter
         Log.d(TAG, "calling onCreate()");
         Mediator app = (Mediator) getView().getApplication();
         app.startingCategoryScreen(this);
+
+//        SharedPreferences pref =
+//                getAppContext().getSharedPreferences("es.ulpgc.eite.clean.mvp.sample", MODE_PRIVATE);
+//        if (pref.getBoolean("FirstRun", true)) {
+//            getModel().CreateDatabaseTablesFromJson();
+//            pref.edit().putBoolean("FirstRun", false).apply();
+//        }
+
+        getView().settingAdapter(getModel().getEvents());
     }
 
     /**
@@ -55,7 +67,6 @@ public class CategoryPresenter
     public void onResume(Category.PresenterToView view) {
         setView(view);
         Log.d(TAG, "calling onResume()");
-
 
         if (configurationChangeOccurred()) {
             getView().setLabelSearch(getModel().getSearchLabel());
@@ -125,12 +136,8 @@ public class CategoryPresenter
             getView().setLabelSearch(getModel().getSearchLabel());
             getView().setAddLabel(getModel().getAddLabel());
         }
-        getView().settingAdapter(getModel().getEvents());
-    }
 
-    @Override
-    public void setIsFirstInit(boolean isFirstTimeRunning) {
-        getModel().setIsFirstimeRunning(isFirstTimeRunning);
+
     }
 
     ///////////////////////////////////////////////////////////////////////////////////
@@ -174,6 +181,11 @@ public class CategoryPresenter
 
         Navigator app = (Navigator) getView().getApplication();
         app.goToProductScreen(this);
+    }
+
+    @Override
+    public Context getAppContext() {
+        return getApplicationContext();
     }
 
     @Override

@@ -107,7 +107,7 @@ public ProductRepository(File realmDirectory, String realmFileName, String canon
        realmProduct.setProductName(realmProduct.getProductName());
        realmProduct.setParticipants(realmProduct.getParticipants());
        realmProduct.setDetailText(realmProduct.getDetailText());
-        realmProduct.setDay(realmProduct.getDay());
+        realmProduct.setDate(realmProduct.getDate());
         realmProduct.setHour(realmProduct.getHour());
 
          CategoryData category = realm.where(CategoryData.class)

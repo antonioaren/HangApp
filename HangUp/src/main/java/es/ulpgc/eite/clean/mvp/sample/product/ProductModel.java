@@ -5,6 +5,7 @@ import java.util.UUID;
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
+import es.ulpgc.eite.clean.mvp.sample.data.module.RealmTable;
 import io.realm.Realm;
 
 /**
@@ -13,8 +14,9 @@ import io.realm.Realm;
 
 public class ProductModel extends GenericModel<Product.ModelToPresenter>
         implements Product.PresenterToModel {
- Realm realmDatabase;
-    private CategoryData Item;
+
+    private Realm realmDatabase;
+    private ProductData Item;
 
 
     @Override
@@ -28,27 +30,40 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     }
 
     @Override
-    public CategoryData getItem() {
+    public ProductData getItem() {
         return Item;
     }
 
     @Override
-    public void insertProduct(String id,int image,String productName,String participants,String detail,String day,String hour){
-        ProductData event = realmDatabase.createObject(ProductData.class);
-        realmDatabase.beginTransaction();
+    public void AddProductByCategoryId(ProductData product, final String CategoryId) {
+        realmDatabase = Realm.getDefaultInstance();
+        realmDatabase.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                ProductData RealmData = realm.createObject(ProductData.class, UUID.randomUUID().toString());
 
-        event.setId(UUID.randomUUID().toString());
-       event.setImage(image);
-        event.setProductName(productName);
-        event.setParticipants(participants);
-        event.setDetailText(detail);
-        event.setDay(day);
-        event.setHour(hour);
-        realmDatabase.commitTransaction();
+                RealmData.setProductName("");
+                RealmData.setImage(0);
+                RealmData.setDate("");
+                RealmData.setHour("");
+                RealmData.setParticipants("");
+                RealmData.setDetailText("");
+
+                CategoryData category = realmDatabase.where(CategoryData.class).
+                        equalTo(RealmTable.ID, CategoryId).findFirst();
+
+                category.getItemInfo().add(RealmData);
+            }
+        });
     }
 
     @Override
     public void setItem(CategoryData itemSelected) {
+
+    }
+
+    @Override
+    public void setItem(ProductData itemSelected) {
         Item = itemSelected;
     }
 }
