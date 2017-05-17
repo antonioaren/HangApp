@@ -32,6 +32,8 @@ public interface Product {
 
         void AddProductByCategoryId(ProductData product, String CategoryId);
 
+        void insertProduct( int image, String title , String participants);
+
         void setItem(CategoryData itemSelected);
 
         void setItem(ProductData itemSelected);

@@ -1,12 +1,18 @@
 package es.ulpgc.eite.clean.mvp.sample.product;
 
+import android.util.Log;
+
 import java.util.UUID;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
+import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
-import es.ulpgc.eite.clean.mvp.sample.data.module.RealmTable;
 import io.realm.Realm;
+import io.realm.RealmConfiguration;
+import io.realm.RealmResults;
+
+import static android.R.attr.id;
 
 /**
  * Created by Pedro Arenas on 25/4/17.
@@ -14,15 +20,21 @@ import io.realm.Realm;
 
 public class ProductModel extends GenericModel<Product.ModelToPresenter>
         implements Product.PresenterToModel {
-
-    private Realm realmDatabase;
-    private ProductData Item;
-
+ Realm realmDatabase;
+    private CategoryData Item;
+    private String addlabel;
+    private RealmResults<ProductData>itemsDatabase;
+    private boolean isFirstTime;
 
     @Override
     public void onCreate(Product.ModelToPresenter modelToPresenter) {
+    this.addlabel="AddParty";
+        RealmConfiguration setting = new RealmConfiguration.Builder().build();
+        Realm.setDefaultConfiguration(setting);
 
-    }
+        if (!isFirstTime) {
+            CreateDatabaseTablesFromJson();
+    }}
 
     @Override
     public void onDestroy(boolean b) {
@@ -30,40 +42,68 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     }
 
     @Override
-    public ProductData getItem() {
+    public CategoryData getItem() {
         return Item;
     }
 
     @Override
-    public void AddProductByCategoryId(ProductData product, final String CategoryId) {
-        realmDatabase = Realm.getDefaultInstance();
-        realmDatabase.executeTransaction(new Realm.Transaction() {
+    public void insertProduct( final int image, final String title, final String participants) {
+
+          realmDatabase = Realm.getDefaultInstance();
+          realmDatabase.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
-                ProductData RealmData = realm.createObject(ProductData.class, UUID.randomUUID().toString());
+                ProductData event = realmDatabase.createObject(ProductData.class, UUID.randomUUID().toString());
+                event.setImage(image);
+                event.setProductName(title);
+                event.setParticipants(participants);
+               // event.setDetailText(detail);
+               // event.setDay(day);
+               // event.setHour(hour);
 
-                RealmData.setProductName("");
-                RealmData.setImage(0);
-                RealmData.setDate("");
-                RealmData.setHour("");
-                RealmData.setParticipants("");
-                RealmData.setDetailText("");
-
-                CategoryData category = realmDatabase.where(CategoryData.class).
-                        equalTo(RealmTable.ID, CategoryId).findFirst();
-
-                category.getItemInfo().add(RealmData);
             }
-        });
-    }
+
+
+    });}
 
     @Override
     public void setItem(CategoryData itemSelected) {
-
+        Item = itemSelected;
     }
 
     @Override
-    public void setItem(ProductData itemSelected) {
-        Item = itemSelected;
+    public String getAddLabel() {
+        return addlabel;
     }
-}
+    @Override
+    public void setIsFirstimeRunning(boolean isFirstTimeRunning) {
+        this.isFirstTime = isFirstTimeRunning;
+    }
+
+    @Override
+    public void CreateDatabaseTablesFromJson() {
+        Log.d("PruebaPasaDatos", "CreateDatabaseTablesFromJson()");
+        insertProduct(R.drawable.disco,"verbena","1000");
+        insertProduct(R.drawable.astro,"concierto","30000000");
+    }
+    @Override
+    public void setItemsFromDatabase() {
+        itemsDatabase = realmDatabase.where(ProductData.class).findAll();
+    }
+
+
+
+
+    public void updateEvent() {
+    }
+
+    public void deteleEvent() {
+        realmDatabase.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                realm.where(ProductData.class).equalTo("id", id);
+            }
+        });
+
+
+}}

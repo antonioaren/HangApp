@@ -2,7 +2,6 @@ package es.ulpgc.eite.clean.mvp.sample.detail;
 
 
 import android.content.Context;
-import android.support.v7.widget.Toolbar;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
@@ -52,7 +51,7 @@ public interface Detail {
      */
 
     interface PresenterToView extends ContextView {
-        Toolbar getToolbar();
+
 
 
         void finishScreen();
@@ -60,24 +59,19 @@ public interface Detail {
         void hideToolbar();
 
 
-        void setPublishBtnLabel(String txt);
+        ;
 
+        void setTitleLabel(String msg);
 
-        void setTitleLabel(String txt);
+        void setIntroductionLabel(String msg);
 
-        void setPlaceLabel(String txt);
+        void setDateLabel(String msg);
 
-        void setDateLabel(String txt);
-
-        void setTimeInitLabel(String txt);
-
-        void setTimeFinishLabel(String txt);
+        void setHourLabel(String msg);
 
         void hideText();
 
-        void setText(String txt);
 
-        void setLabel(String txt);
     }
 
     /**
@@ -87,6 +81,13 @@ public interface Detail {
     interface PresenterToModel extends Model<ModelToPresenter> {
 
 
+        String getTitleLabel();
+
+        String getDescriptionLabel();
+
+        String getDateLabel();
+
+        String getHourLabel();
     }
 
     /**

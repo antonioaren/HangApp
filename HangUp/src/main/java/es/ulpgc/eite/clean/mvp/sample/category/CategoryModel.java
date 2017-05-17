@@ -19,7 +19,6 @@ import es.ulpgc.eite.clean.mvp.sample.data.module.ModuleRealm;
 import es.ulpgc.eite.clean.mvp.sample.data.module.RealmTable;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
-import io.realm.RealmObject;
 import io.realm.RealmResults;
 
 import static android.R.attr.content;
@@ -39,20 +38,18 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     private Realm realmDatabase;
 
 
-    private Random randomAssistance1, randomAssistance2, randomAssistance3, randomAssistance4, randomAssistance5;
+  //  private Random randomAssistance1, randomAssistance2, randomAssistance3, randomAssistance4, randomAssistance5;
     private int[] participants;
 
 
     public CategoryModel() {
-        randomAssistance1 = new Random();
-        randomAssistance2 = new Random();
-        randomAssistance3 = new Random();
-        randomAssistance4 = new Random();
-        randomAssistance5 = new Random();
+//        randomAssistance1 = new Random();
+//        randomAssistance2 = new Random();
+//        randomAssistance3 = new Random();
+//        randomAssistance4 = new Random();
+//        randomAssistance5 = new Random();
         participants = new int[]{
-                randomAssistance1.nextInt(2001), randomAssistance2.nextInt(2001),
-                randomAssistance3.nextInt(2001), randomAssistance4.nextInt(2001),
-                randomAssistance5.nextInt(2001)};
+               1,2,3,4,5};
 
     }
 
@@ -68,7 +65,6 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         super.onCreate(presenter);
         HangAppButtonAddLabel = "Add";
         HangAppButtonSearchLabel = "Search";
-
 
         RealmConfiguration setting = new RealmConfiguration.Builder().build();
         Realm.setDefaultConfiguration(setting);
@@ -152,8 +148,10 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
             @Override
             public void execute(Realm realm) {
                 CategoryData event = realmDatabase.createObject(CategoryData.class, UUID.randomUUID().toString());
+
                 event.setCategoryName(Categoryname);
                 event.setImage(image);
+
             }
         });
 

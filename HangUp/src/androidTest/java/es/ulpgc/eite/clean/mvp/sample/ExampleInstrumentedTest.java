@@ -7,11 +7,6 @@ import android.support.test.runner.AndroidJUnit4;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
-import es.ulpgc.eite.clean.mvp.sample.search.SearchModel;
-import es.ulpgc.eite.clean.mvp.sample.search.SearchPresenter;
-
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -21,25 +16,13 @@ import static org.junit.Assert.assertEquals;
  */
 @RunWith(AndroidJUnit4.class)
 public class ExampleInstrumentedTest {
-  SearchModel search= new SearchModel();
-  SearchPresenter searchpr= new SearchPresenter();
-  CategoryModel cm = new CategoryModel();
+
   @Test
   public void useAppContext() throws Exception {
     // Context of the app under test.
     Context appContext = InstrumentationRegistry.getTargetContext();
 
     assertEquals("es.ulpgc.eite.clean.mvp.dummy", appContext.getPackageName());
-  }
-@Test
-  public void getList(){
-  String[]categories= new String[]{"Cines","Culturales","Conciertos","Verbenas","Discotecas"};
-  assertArrayEquals(categories,search.getListCategories());
-}
-  @Test
-  public void getListByPresenter(){
-    String[]categories= new String[]{"Cines","Culturales","Conciertos","Verbenas","Discotecas"};
-    assertArrayEquals(categories,searchpr.getCategories());
   }
 
 }
