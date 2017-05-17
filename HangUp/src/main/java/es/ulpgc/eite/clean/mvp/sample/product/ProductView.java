@@ -12,10 +12,15 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.List;
+
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
-import io.realm.RealmList;
+import io.realm.OrderedRealmCollection;
+import io.realm.Realm;
+import io.realm.RealmResults;
 
 /**
  * Created by alumno on 31/03/2017.
@@ -28,10 +33,12 @@ public class ProductView
    public RecyclerView recycler;
     Button buttonAdd;
     private LinearLayoutManager linearmanager;
+    private RealmResults<CategoryData> items;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item);
+        Realm.init(this);
           recycler= (RecyclerView)findViewById(R.id.recycler);
         recycler.setHasFixedSize(true);
          linearmanager=new LinearLayoutManager(this);
@@ -47,7 +54,10 @@ public class ProductView
         /*Story = (TextView) findViewById(R.id.Story);
         Date = (TextView) findViewById(R.id.Date);
         Hour = (TextView) findViewById(R.id.Hour);*/
+        Realm realm = Realm.getDefaultInstance();
 
+        recycler.setAdapter(
+                new ProductView.ProductAdapter(realm.where(ProductData.class).findAllAsync()));
 
     }
 @Override
@@ -74,13 +84,24 @@ public void setAddLabel(String msg){
 //
 //    }
 
+    @Override
+    public void settingAdapter(List<ProductData> items) {
+        if (recycler != null) {
+            ProductView.ProductAdapter recyclerAdapter =
+                    (ProductView.ProductAdapter) recycler.getAdapter();
+            recyclerAdapter.setItemList(items);
+        }
+
+    }
+
+
     public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
 
-        public RealmList<ProductData> items;
+        public List<ProductData> items;
 
-        public ProductAdapter(RealmList<ProductData> items  /*OrderedRealmCollection<ModelItem> items*/) {
-            //super(items, true);
+        public ProductAdapter(/*RealmResults<ProductData> items*/  OrderedRealmCollection<ProductData> items) {
 
+       //    super(items,true);
             this.items = items;
 
 
@@ -116,6 +137,10 @@ public void setAddLabel(String msg){
         @Override
         public void onAttachedToRecyclerView(RecyclerView recyclerView) {
             super.onAttachedToRecyclerView(recyclerView);
+        }
+
+        public void setItemList(List<ProductData> items) {
+        this.items=items;
         }
 
 

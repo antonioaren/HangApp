@@ -9,6 +9,7 @@ import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import io.realm.Realm;
+import io.realm.RealmConfiguration;
 import io.realm.RealmResults;
 
 import static android.R.attr.id;
@@ -28,7 +29,12 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     @Override
     public void onCreate(Product.ModelToPresenter modelToPresenter) {
     this.addlabel="AddParty";
-    }
+        RealmConfiguration setting = new RealmConfiguration.Builder().build();
+        Realm.setDefaultConfiguration(setting);
+
+        if (!isFirstTime) {
+            CreateDatabaseTablesFromJson();
+    }}
 
     @Override
     public void onDestroy(boolean b) {
