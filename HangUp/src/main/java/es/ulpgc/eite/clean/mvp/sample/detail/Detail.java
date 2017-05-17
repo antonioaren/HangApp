@@ -81,6 +81,13 @@ public interface Detail {
     interface PresenterToModel extends Model<ModelToPresenter> {
 
 
+        String getTitleLabel();
+
+        String getDescriptionLabel();
+
+        String getDateLabel();
+
+        String getHourLabel();
     }
 
     /**

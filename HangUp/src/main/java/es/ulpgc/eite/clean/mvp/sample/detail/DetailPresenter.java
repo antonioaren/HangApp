@@ -43,7 +43,7 @@ public class DetailPresenter
 
 
         if (configurationChangeOccurred()) {
-
+        getView().setTitleLabel(getModel().getTitleLabel());
 
         }
     }
