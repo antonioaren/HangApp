@@ -14,7 +14,7 @@ public interface Product {
     public interface PresenterToView extends ContextView {
 
 
-        void setText(String details, String StoryDescription, String dateDescription, String hourDescription);
+        //void setText(String details, String StoryDescription, String dateDescription, String hourDescription);
 
 
     }

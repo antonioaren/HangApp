@@ -6,37 +6,83 @@
     android:background="@android:color/background_light"
     android:orientation="vertical"
     android:weightSum="1">
-
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler"
+<Space
+    android:layout_height="20dp"
+    android:layout_width="match_parent"
+    />
+<TextView
+   android:layout_height="30dp"
+    android:layout_width="match_parent"
+    android:id="@+id/title"
+    android:text="Detail"
+    />
+    <Space
+        android:layout_height="20dp"
         android:layout_width="match_parent"
-        android:layout_height="455dp" />
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:id="@+id/text_introduction"
+            android:text="introduction"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/Content_introduction"
+            android:textIsSelectable="true"
+            />
+    </LinearLayout>
 
 
+    <Space
+        android:layout_height="20dp"
+        android:layout_width="match_parent"
+        />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:id="@+id/text_Date"
+            android:text="Date:"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/Content_date"
+            android:textIsSelectable="true"
+            />
+    </LinearLayout>
+        <Space
 
-<LinearLayout
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:orientation="horizontal">
+            android:layout_height="20dp"
+            android:layout_width="match_parent"
+            />
 
-<Button
-    android:id="@+id/buttonSearch"
-    android:layout_width="match_parent"
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:weightSum="1">
+           <TextView
+               android:layout_width="40dp"
+               android:layout_height="match_parent"
+               android:id="@+id/content_hour"
+               android:text="hour:"
+               android:layout_weight="0.05" />
+<TextView
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:layout_gravity="top"
-    android:layout_weight="1"
-    android:text="Search" />
-
-<Button
-    android:id="@+id/buttonAdd"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_gravity="top"
-    android:layout_weight="1"
-    android:text="+AddOne" />
-
-</LinearLayout>
+    android:id="@+id/text_hour"
+    android:textIsSelectable="true"/>
+        </LinearLayout>
+    </LinearLayout>
 
 
 
@@ -46,7 +92,3 @@ android:orientation="horizontal">
 
 
 
-
-
-
-</LinearLayout>

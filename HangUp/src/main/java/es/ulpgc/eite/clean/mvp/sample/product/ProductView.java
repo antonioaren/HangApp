@@ -3,10 +3,12 @@ package es.ulpgc.eite.clean.mvp.sample.product;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,16 +25,25 @@ public class ProductView
         extends GenericActivity<Product.PresenterToView, Product.ViewToPresenter, ProductPresenter>
         implements Product.PresenterToView {
 
-    private TextView Detalle;
-    private TextView Story;
-    private TextView Date;
-    private TextView Hour;
-    private TextView StoryDescription, HourDescription, DateDescription;
+   public RecyclerView recycler;
+    Button buttonAdd;
+    private LinearLayoutManager linearmanager;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_detail);
+          recycler= (RecyclerView)findViewById(R.id.recycler);
+        recycler.setHasFixedSize(true);
+         linearmanager=new LinearLayoutManager(this);
+         recycler.setLayoutManager(linearmanager);
 
+        buttonAdd=(Button)findViewById(R.id.buttonAdd);
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              //  getPresenter().onButtonAddClicked();
+            }
+        });
         /*Story = (TextView) findViewById(R.id.Story);
         Date = (TextView) findViewById(R.id.Date);
         Hour = (TextView) findViewById(R.id.Hour);*/
@@ -46,19 +57,19 @@ public class ProductView
         super.onResume(ProductPresenter.class, this);
     }
 
-    @Override
-    public void setText(String details, String storyDescription, String dateDescription, String hourDescription) {
-        Detalle = (TextView) findViewById(R.id.item_details);
-        Detalle.setText(details);
-
-        StoryDescription = (TextView) findViewById(R.id.StoryDescription);
-        StoryDescription.setText(storyDescription);
-        DateDescription = (TextView) findViewById(R.id.DateDescription);
-        DateDescription.setText(dateDescription);
-        HourDescription = (TextView) findViewById(R.id.HourDescription);
-        HourDescription.setText(hourDescription);
-
-    }
+//    @Override
+//    public void setText(String details, String storyDescription, String dateDescription, String hourDescription) {
+//        Detalle = (TextView) findViewById(R.id.item_details);
+//        Detalle.setText(details);
+//
+//        StoryDescription = (TextView) findViewById(R.id.StoryDescription);
+//        StoryDescription.setText(storyDescription);
+//        DateDescription = (TextView) findViewById(R.id.DateDescription);
+//        DateDescription.setText(dateDescription);
+//        HourDescription = (TextView) findViewById(R.id.HourDescription);
+//        HourDescription.setText(hourDescription);
+//
+//    }
 
     public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
 
@@ -80,7 +91,7 @@ public class ProductView
         @Override
         public ProductViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {//i es la posición.
             LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
-            View v = inflater.inflate(R.layout.card_category, viewGroup, false);
+            View v = inflater.inflate(R.layout.card_product, viewGroup, false);
             return new ProductViewHolder(v);
         }
 
