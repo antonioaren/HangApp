@@ -1,13 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.detail;
 
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.widget.Button;
-import android.widget.DatePicker;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.TimePicker;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
@@ -20,55 +14,29 @@ import es.ulpgc.eite.clean.mvp.sample.R;
 public class DetailView extends GenericActivity<Detail.PresenterToView, Detail.ViewToPresenter, DetailPresenter>
         implements Detail.PresenterToView {
 
-    TextView textViewTitle;
-    TextView textPlace;
-    EditText editTextPlace;
-    TextView textdate;
-    DatePicker datePicker;
-    TextView textViewInit;
-    TimePicker timePickerInit;
-    TextView textViewFinish;
-    TimePicker timePickerFinish;
-    Button buttonPublish;
-    Toolbar t;
-
+ private TextView title;
+ private TextView introduction;
+  private   TextView content_introduction;
+   private  TextView date;
+   private  TextView content_date;
+   private  TextView hour;
+   private  TextView content_hour;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_addparty);
+        setContentView(R.layout.activity_item_detail);
 
-
-        t = (Toolbar) findViewById(R.id.toolbar);
-
-        setSupportActionBar(t);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-
-        textViewTitle = (TextView) findViewById(R.id.textView);
-
-        textPlace = (TextView) findViewById(R.id.textPlace);
-        editTextPlace = (EditText) findViewById(R.id.editTextPlace);
-        textdate = (TextView) findViewById(R.id.textDate);
-        datePicker = (DatePicker) findViewById(R.id.datePicker);
-        textViewInit = (TextView) findViewById(R.id.textViewInit);
-        timePickerInit = (TimePicker) findViewById(R.id.timePickerInit);//timePickerInit
-        textViewFinish = (TextView) findViewById(R.id.textViewFinish);
-        timePickerFinish = (TimePicker) findViewById(R.id.timePickerFinish);
-
-        buttonPublish = (Button) findViewById(R.id.buttonPublish);
-        buttonPublish.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
+        title= (TextView)findViewById(R.id.textViewTitle);
+        introduction=(TextView)findViewById(R.id.textViewDescription);
+        content_introduction=(TextView)findViewById(R.id.Content_introduction);
+        date=(TextView)findViewById(R.id.textDate);
+        content_date=(TextView)findViewById(R.id.Content_date);
+        hour=(TextView)findViewById(R.id.text_hour);
+        content_hour=(TextView)findViewById(R.id.content_hour);
 
     }
 
-    @Override
-    public Toolbar getToolbar() {
-        return t;
-    }
+
 
 
     @Override
@@ -80,52 +48,28 @@ public class DetailView extends GenericActivity<Detail.PresenterToView, Detail.V
     public void hideToolbar() {
 
     }
-
-
-    @Override
-    public void setPublishBtnLabel(String txt) {
-        buttonPublish.setText(txt);
-    }
-
-    @Override
-    public void setTitleLabel(String txt) {
-        textViewTitle.setText(txt);
-    }
-
-    @Override
-    public void setPlaceLabel(String txt) {
-        textPlace.setText(txt);
-    }
-
-    @Override
-    public void setDateLabel(String txt) {
-        textdate.setText(txt);
-    }
-
-    @Override
-    public void setTimeInitLabel(String txt) {
-        textViewInit.setText(txt);
-    }
-
-    @Override
-    public void setTimeFinishLabel(String txt) {
-        textViewFinish.setText(txt);
-    }
-
+@Override
+public void setTitleLabel(String msg){
+    title.setText(msg);
+}
+@Override
+public void setIntroductionLabel(String msg){
+    introduction.setText(msg);
+}
+@Override
+public void setDateLabel(String msg){
+    date.setText(msg);
+}
+  @Override
+  public void setHourLabel(String msg){
+      hour.setText(msg);
+  }
     @Override
     public void hideText() {
 
     }
 
-    @Override
-    public void setText(String txt) {
 
-    }
-
-    @Override
-    public void setLabel(String txt) {
-
-    }
 
 
 }
