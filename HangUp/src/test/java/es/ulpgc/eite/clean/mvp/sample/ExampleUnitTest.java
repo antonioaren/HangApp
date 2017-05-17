@@ -45,7 +45,9 @@ public class ExampleUnitTest {
 @Test
   public void testGetParticipantsAtIndex()throws Exception{
   CategoryModel categoryModel= new CategoryModel();
-
+   int[]numbers= new int[]{1,2,3,4,5};
+  int content2= numbers[1];
+  assertEquals(content2,categoryModel.getParticipantsAt(1));
 }
 
 }
