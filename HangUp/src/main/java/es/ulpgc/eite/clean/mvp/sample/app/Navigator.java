@@ -1,9 +1,8 @@
 package es.ulpgc.eite.clean.mvp.sample.app;
 
-import es.ulpgc.eite.clean.mvp.sample.add.Add;
+import es.ulpgc.eite.clean.mvp.sample.addParty.Add;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
 import es.ulpgc.eite.clean.mvp.sample.product.Product;
-import es.ulpgc.eite.clean.mvp.sample.search.Search;
 
 public interface Navigator {
 

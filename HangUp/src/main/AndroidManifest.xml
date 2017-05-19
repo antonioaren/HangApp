@@ -27,7 +27,7 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name="es.ulpgc.eite.clean.mvp.sample.add.AddPartyView"
+            android:name="es.ulpgc.eite.clean.mvp.sample.addParty.AddPartyView"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>

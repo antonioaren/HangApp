@@ -1,4 +1,4 @@
-package es.ulpgc.eite.clean.mvp.sample.add;
+package addCategory;
 
 import android.annotation.SuppressLint;
 import android.os.Build;
@@ -23,7 +23,7 @@ import io.realm.RealmResults;
  * Created by eleonora on 23/03/2017.
  */
 
-public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewToPresenter, AddPartyPresenter>
+public class AddCategoryView extends GenericActivity<Add.PresenterToView, Add.ViewToPresenter, AddCategoryPresenter>
         implements Add.PresenterToView {
 
     TextView textViewTitle;
@@ -79,7 +79,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     @SuppressLint("MissingSuperCall")
     @Override
     public void onResume() {
-        super.onResume(AddPartyPresenter.class, this);
+        super.onResume(AddCategoryPresenter.class, this);
     }
 
     @Override

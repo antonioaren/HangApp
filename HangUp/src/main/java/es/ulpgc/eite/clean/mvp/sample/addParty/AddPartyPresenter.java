@@ -1,4 +1,4 @@
-package es.ulpgc.eite.clean.mvp.sample.add;
+package es.ulpgc.eite.clean.mvp.sample.addParty;
 
 import android.content.Context;
 import android.util.Log;

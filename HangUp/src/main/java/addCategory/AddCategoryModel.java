@@ -1,4 +1,4 @@
-package es.ulpgc.eite.clean.mvp.sample.add;
+package addCategory;
 
 
 import android.util.Log;
@@ -17,7 +17,7 @@ import io.realm.RealmList;
  * Created by eleonora on 17/04/2017.
  */
 
-public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements Add.PresenterToModel {
+public class AddCategoryModel extends GenericModel<Add.ModelToPresenter> implements Add.PresenterToModel {
 
 
     private String placeLabel, dateLabel, timeInitLabel, timeFinishLabel, publishLabel, titleLabel;
@@ -34,7 +34,7 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
 
 
 
-    public AddPartyModel() {
+    public AddCategoryModel() {
      this.party= new ArrayList<>();
       this.partyAdded= new ArrayList<>();
     }
