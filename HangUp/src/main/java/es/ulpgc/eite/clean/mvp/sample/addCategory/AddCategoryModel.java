@@ -95,7 +95,7 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     @Override
     public void insertEvent(final String Categoryname, final int image) {
       categoryModel.insertEvent(Categoryname, image);
-     notify();
+
     }
 
 }

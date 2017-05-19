@@ -80,6 +80,8 @@ public interface Category {
 
         void subscribeCallbacks();
         void unSubscribeCallbacks();
+
+        Context getManagedContext();
     }
 
 

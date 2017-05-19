@@ -37,7 +37,7 @@ Button delete;
 
             }
         });
-        text=(TextView)findViewById(R.id.textView);
+        text=(TextView)findViewById(R.id.text);
         ediText=(EditText)findViewById(R.id.editText);
 
     }

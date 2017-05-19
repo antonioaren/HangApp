@@ -82,12 +82,14 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     @Override
     public void CreateDatabaseTablesFromJson() {
         Log.d("PruebaPasaDatos", "CreateDatabaseTablesFromJson()");
-        //Realm.init(this);
+       // Realm.init(this);
         insertEvent("Fiestas", R.drawable.disco);
         insertEvent("Música", R.drawable.musica);
         insertEvent("ULPGC", R.drawable.ulpgc);
         insertEvent("Astronomía", R.drawable.astro);
         insertEvent("Automovilismo", R.drawable.cars);
+
+
     }
 
     /**
@@ -140,18 +142,17 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     @Override
     public void insertEvent(final String Categoryname, final int image) {
-
-       realmDatabase = Realm.getDefaultInstance();
+        realmDatabase = Realm.getDefaultInstance();
         realmDatabase.executeTransaction(new Realm.Transaction() {
             @Override
-            public void execute(Realm realm) {
-                CategoryData event = realmDatabase.createObject(CategoryData.class, UUID.randomUUID().toString());
+           public void execute(Realm realm) {
+               CategoryData event = realmDatabase.createObject(CategoryData.class, UUID.randomUUID().toString());
 
-                event.setCategoryName(Categoryname);
-                event.setImage(image);
+               event.setCategoryName(Categoryname);
+               event.setImage(image);
+   }
 
-            }
-        });
+       });
 
     }
 

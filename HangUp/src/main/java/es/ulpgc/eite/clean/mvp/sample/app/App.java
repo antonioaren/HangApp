@@ -164,7 +164,7 @@ presenter.onScreenStarted();
         //toAddState.hourOfParty = presenter.getHourOfParty();
 
         toAddState.newparty = presenter.getParty();
-
+     presenter.destroyView();
     }
 
 

@@ -53,7 +53,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        textViewTitle = (TextView) findViewById(R.id.textView);
+        textViewTitle = (TextView) findViewById(R.id.textViewTitle);
           textViewDescription=(TextView)findViewById(R.id.textViewDescription);
         editTextDescrition=(EditText)findViewById(R.id.editTextDescription);
         textPlace=(TextView) findViewById(R.id.textPlace);
