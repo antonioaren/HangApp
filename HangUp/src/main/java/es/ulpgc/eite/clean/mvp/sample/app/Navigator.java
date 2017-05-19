@@ -11,7 +11,7 @@ public interface Navigator {
 
     void goToSearchScreen(Category.CategoryTo presenter);
 
-    void goToAddScreen(Category.CategoryTo presenter);
+    void goToAddCategoryScreen(Category.CategoryTo presenter);
 
 
     void SaveDataAdd(Add.AddTo presenter);

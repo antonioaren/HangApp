@@ -7,8 +7,8 @@ import android.content.Intent;
 import java.util.List;
 
 import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategory;
+import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategoryView;
 import es.ulpgc.eite.clean.mvp.sample.addParty.Add;
-import es.ulpgc.eite.clean.mvp.sample.addParty.AddPartyView;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
@@ -137,14 +137,14 @@ presenter.onScreenStarted();
     }
 
     @Override
-    public void goToAddScreen(Category.CategoryTo presenter) {
+    public void goToAddCategoryScreen(Category.CategoryTo presenter) {
         toAddState = new AddState();
 
         //Añadir los estados que falten para pasarles a la busquedad. Guardar posicion, etc.
 
         Context view = presenter.getManagedContext();
         if (view != null) {
-            view.startActivity(new Intent(view, AddPartyView.class));
+            view.startActivity(new Intent(view, AddCategoryView.class));
         }
 
     }

@@ -47,7 +47,7 @@ public class AddCategoryPresenter
 
         if (configurationChangeOccurred()) {
 
-             getView().setTitleLabel(getModel().getTitleLabel());
+            getView().setTitleLabel(getModel().getTitleLabel());
             getView().setNameLabel(getModel().getNameLabel());
             getView().setPhotoLabel(getModel().getPhotoLabel());
             getView().setButtonPhotoLabel(getModel().getButtonPhotoLabel());
