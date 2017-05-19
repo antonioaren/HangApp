@@ -17,7 +17,7 @@ import es.ulpgc.eite.clean.mvp.sample.R;
 
 public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView, AddCategory.ViewToPresenter, AddCategoryPresenter>
         implements AddCategory.PresenterToView {
-
+//Clase desde la cual añadimos categegoria
     TextView textViewTitle;
     TextView textViewName;
     EditText editTextName;
