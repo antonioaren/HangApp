@@ -1,4 +1,4 @@
-package addCategory;
+package es.ulpgc.eite.clean.mvp.sample.addCategory;
 
 
 import android.util.Log;

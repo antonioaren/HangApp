@@ -1,4 +1,4 @@
-package addCategory;
+package es.ulpgc.eite.clean.mvp.sample.addCategory;
 
 
 import android.content.Context;
@@ -12,7 +12,6 @@ import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 import io.realm.RealmList;
-import io.realm.RealmResults;
 
 
 public interface Add {
@@ -69,6 +68,10 @@ public interface Add {
 
     interface ViewToPresenter extends Presenter<PresenterToView> {
         void onPublishClicked();
+
+        void onSelectClicked();
+
+        void onAddClicked();
     }
 
     /**
@@ -77,44 +80,28 @@ public interface Add {
 
     interface PresenterToView extends ContextView {
 
-        void settingAdapter(RealmResults<CategoryData> data);
+
 
         void finishScreen();
 
         void hideToolbar();
 
 
-        void setPublishBtnLabel(String txt);
+
+        void setAddBtnLabel(String txt);
 
         void setTitleLabel(String txt);
 
-        void setPlaceLabel(String txt);
-
-        void setDateLabel(String txt);
-
-        void setTimeInitLabel(String txt);
-
-        void setTimeFinishLabel(String txt);
 
         void hideText();
 
-        void setText(String txt);
 
-        void setLabel(String txt);
 
-        String getMonth();
+        void setNameLabel(String txt);
 
-        String getDay();
+        void setPhotoLabel(String txt);
 
-        int getYear();
-
-        String getPlaceOfTheParty();
-
-        String getDescription();
-
-        int getHourOfInit();
-
-        int getHourOfFinish();
+        void setButtonPhotoLabel(String txt);
     }
 
     /**
