@@ -119,15 +119,15 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     @Override
     public RealmResults<CategoryData> getEvents() {
-        Log.d(TAG, "getEvent()");
+   Log.d(TAG, "getEvent()");
         RealmResults<CategoryData> results = realmDatabase.where(CategoryData.class).findAll();
         return results;
     }
     @Override
     public int getNumberOfEvents() {
-        Log.d(TAG, "getEvent()");
-        RealmResults<CategoryData> results = realmDatabase.where(CategoryData.class).findAll();
-        return results.size();
+
+      return getEvents().size();
+
     }
     @Override
     public void setItemsFromDatabase() {

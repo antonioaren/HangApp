@@ -47,6 +47,11 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     }
 
     @Override
+    public void AddProductByCategoryId(ProductData product, String CategoryId) {
+
+    }
+
+    @Override
     public void insertProduct( final int image, final String title, final String participants) {
 
           realmDatabase = Realm.getDefaultInstance();
@@ -69,6 +74,11 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     @Override
     public void setItem(CategoryData itemSelected) {
         Item = itemSelected;
+    }
+
+    @Override
+    public void setItem(ProductData itemSelected) {
+
     }
 
     @Override

@@ -2,6 +2,8 @@ package es.ulpgc.eite.clean.mvp.sample.product;
 
 import android.content.Context;
 
+import java.util.List;
+
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
@@ -14,9 +16,12 @@ public interface Product {
     public interface PresenterToView extends ContextView {
 
 
-        void setText(String details, String StoryDescription, String dateDescription, String hourDescription);
+       // void setText(String details, String StoryDescription, String dateDescription, String hourDescription);
 
 
+        void setAddLabel(String msg);
+
+        void settingAdapter(List<ProductData> items);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -28,7 +33,7 @@ public interface Product {
 
     public interface PresenterToModel {
 
-        ProductData getItem();
+        CategoryData getItem();
 
         void AddProductByCategoryId(ProductData product, String CategoryId);
 
@@ -37,6 +42,14 @@ public interface Product {
         void setItem(CategoryData itemSelected);
 
         void setItem(ProductData itemSelected);
+
+        String getAddLabel();
+
+        void setIsFirstimeRunning(boolean isFirstTimeRunning);
+
+        void CreateDatabaseTablesFromJson();
+
+        void setItemsFromDatabase();
     }
 
     public interface ModelToPresenter {

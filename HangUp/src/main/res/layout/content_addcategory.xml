@@ -1,6 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+    <TextView
+      android:layout_height="50dp"
+      android:layout_width="match_parent"
+      android:text="Add a category"
+      android:id="@+id/title"
+      />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:layout_weight="0.07"
+    android:weightSum="1">
+    <TextView
+        android:layout_width="79dp"
+        android:layout_height="match_parent"
+
+        android:text="Name:"
+        android:id="@+id/textName"/>
+    <EditText
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/content_name"
+        />
+
+
+</LinearLayout>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_weight="0.07"
+        android:weightSum="1">
+        <TextView
+            android:layout_width="79dp"
+            android:layout_height="match_parent"
+
+            android:text="Photo:"
+            android:id="@+id/textPhoto"/>
+
+<Button android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:text="select..."
+    android:id="@+id/buttonSelect"/>
+    </LinearLayout>
 </LinearLayout>
