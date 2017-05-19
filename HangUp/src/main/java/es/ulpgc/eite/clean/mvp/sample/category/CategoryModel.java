@@ -1,29 +1,18 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
-import android.app.Application;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.util.Log;
 
-import java.util.Random;
 import java.util.UUID;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.R;
-import es.ulpgc.eite.clean.mvp.sample.add.AddPartyModel;
-import es.ulpgc.eite.clean.mvp.sample.app.App;
-import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
-import es.ulpgc.eite.clean.mvp.sample.data.module.ModuleRealm;
-import es.ulpgc.eite.clean.mvp.sample.data.module.RealmTable;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 import io.realm.RealmResults;
 
-import static android.R.attr.content;
 import static android.R.attr.id;
-import static android.content.Context.MODE_PRIVATE;
 
 
 public class CategoryModel extends GenericModel<Category.ModelToPresenter>
@@ -134,7 +123,12 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         RealmResults<CategoryData> results = realmDatabase.where(CategoryData.class).findAll();
         return results;
     }
-
+    @Override
+    public int getNumberOfEvents() {
+        Log.d(TAG, "getEvent()");
+        RealmResults<CategoryData> results = realmDatabase.where(CategoryData.class).findAll();
+        return results.size();
+    }
     @Override
     public void setItemsFromDatabase() {
         itemsDatabase = realmDatabase.where(CategoryData.class).findAll();

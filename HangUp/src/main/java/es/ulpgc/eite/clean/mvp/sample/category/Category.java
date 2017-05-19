@@ -63,6 +63,8 @@ public interface Category {
         ///////////////////////////  DATABASE ////////////////////////
         RealmResults<CategoryData> getEvents();
 
+        int getNumberOfEvents();
+
         void setItemsFromDatabase();
 
         void insertEvent(String Categoryname, int image);

@@ -49,5 +49,11 @@ public class ExampleUnitTest {
   int content2= numbers[1];
   assertEquals(content2,categoryModel.getParticipantsAt(1));
 }
+@Test
+  public void testNumberContentInCategoryData(){
+    CategoryModel category= new CategoryModel();
+    category.getEvents();
 
+  Rea
+}
 }
