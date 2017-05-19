@@ -19,11 +19,11 @@ import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.util.RealmRecyclerViewAdapter;
 import io.realm.OrderedRealmCollection;
 import io.realm.Realm;
-import io.realm.RealmResults;
 
 public class CategoryView
         extends GenericActivity<Category.PresenterToView, Category.ViewToPresenter, CategoryPresenter>
         implements Category.PresenterToView {
+
 
     private Button buttonSearch;
     private Button buttonAdd;
@@ -33,14 +33,15 @@ public class CategoryView
     private RecyclerView recycler;
     private LinearLayoutManager linearmanager;
     private CategoryAdapter adapter;
+    private CategoryView instance;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
-        Realm.init(this);
 
+         Realm.init(this);
         title = (TextView) findViewById(R.id.title);
         image = (ImageView) findViewById(R.id.image);
 
@@ -67,10 +68,9 @@ public class CategoryView
             }
         });
 
-        Realm realm = Realm.getDefaultInstance();
+     Realm realm = Realm.getDefaultInstance();
 
-        recycler.setAdapter(
-                new CategoryAdapter(realm.where(CategoryData.class).findAllAsync()));
+  recycler.setAdapter(new CategoryAdapter(realm.where(CategoryData.class).findAllAsync()));
 
     }
 
@@ -112,6 +112,8 @@ public class CategoryView
     public void setAddLabel(String txt) {
         buttonAdd.setText(txt);
     }
+
+
 
 
     public class CategoryAdapter extends
@@ -156,6 +158,7 @@ public class CategoryView
 
         public void setItemList(List<CategoryData> itemList) {
             this.items = itemList;
+            notifyDataSetChanged();
         }
 
         public class CategoryViewHolder extends RecyclerView.ViewHolder {

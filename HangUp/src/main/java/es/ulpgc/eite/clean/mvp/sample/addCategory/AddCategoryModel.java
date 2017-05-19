@@ -5,6 +5,8 @@ import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.Model;
+import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
+import io.realm.Realm;
 
 
 /**
@@ -17,10 +19,11 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
 
     private String titleLabel,nameLabel,photoLabel,buttonPhotoLabel,buttonAddlabel;
    private String namecategory;
-
+    private Realm realmDatabase;
+    CategoryModel categoryModel;
 
     public AddCategoryModel() {
-
+     categoryModel= new CategoryModel();
     }
 
 
@@ -86,6 +89,13 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     @Override
     public void setNameCategory(String name){
         this.namecategory=name;
+    }
+
+
+    @Override
+    public void insertEvent(final String Categoryname, final int image) {
+      categoryModel.insertEvent(Categoryname, image);
+     notify();
     }
 
 }

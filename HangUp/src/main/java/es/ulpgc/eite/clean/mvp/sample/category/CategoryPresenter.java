@@ -43,15 +43,15 @@ public class CategoryPresenter
         Mediator app = (Mediator) getView().getApplication();
         app.startingCategoryScreen(this);
 
-//        SharedPreferences pref =
-//                getAppContext().getSharedPreferences("es.ulpgc.eite.clean.mvp.sample", MODE_PRIVATE);
-//        if (pref.getBoolean("FirstRun", true)) {
-//            getModel().CreateDatabaseTablesFromJson();
-//            pref.edit().putBoolean("FirstRun", false).apply();
-//        }
-
-        getView().settingAdapter(getModel().getEvents());
+//      SharedPreferences pref =
+//              getAppContext().getSharedPreferences("es.ulpgc.eite.clean.mvp.sample", MODE_PRIVATE);
+//       if (pref.getBoolean("FirstRun", true)) {
+//           getModel().CreateDatabaseTablesFromJson();
+//           pref.edit().putBoolean("FirstRun", false).apply();
     }
+
+
+
 
     /**
      * Operation called by VIEW after its reconstruction.
@@ -133,7 +133,7 @@ public class CategoryPresenter
             getView().setLabelSearch(getModel().getSearchLabel());
             getView().setAddLabel(getModel().getAddLabel());
         }
-
+        getView().settingAdapter(getModel().getEvents());
 
     }
 

@@ -2,14 +2,10 @@ package es.ulpgc.eite.clean.mvp.sample.search;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CalendarView;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
@@ -23,46 +19,27 @@ import static es.ulpgc.eite.clean.mvp.sample.R.layout.activity_search;
 
 public class SearchView  extends GenericActivity<Search.PresenterToView, Search.ViewToPresenter, SearchPresenter>
         implements Search.PresenterToView {
-    private ImageView imageSearch;
-    private TextView text;
-    private TextView textLocation;
-    private EditText editTextLocation;
-    private TextView categories;
 
-    private TextView textDate;
-    private CalendarView calendar;
-    private Button buttonSearch;
-    private Toolbar t;
-    private RecyclerView recycler;
     // ActionBar ab;
+Button delete;
+    TextView text;
+    EditText ediText;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(activity_search);
-
-        t = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(t);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-
-        imageSearch=(ImageView)findViewById(R.id.imageViewSearch);
-        text= (TextView)findViewById(R.id.textView);
-        textLocation=(TextView)findViewById(R.id.textLocation);
-        editTextLocation=(EditText)findViewById(R.id.editTextLocation);
-        categories=(TextView)findViewById(R.id.textCategories);
-
-        textDate=(TextView)findViewById(R.id.textDate);
-        calendar=(CalendarView)findViewById(R.id.calendarView);
-        buttonSearch=(Button)findViewById(R.id.buttonSearch);
-        buttonSearch.setOnClickListener(new View.OnClickListener() {
+        delete=(Button)findViewById(R.id.delete);
+       delete .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getPresenter().onButtonSecundarySearchPressed();
+                getPresenter().onDeleteClicked();
 
             }
         });
-        recycler = (RecyclerView) findViewById(R.id.recycler);
+        text=(TextView)findViewById(R.id.textView);
+        ediText=(EditText)findViewById(R.id.editText);
+
     }
 
 
@@ -81,24 +58,10 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
     }
 
     @Override
-    public void setSearchBtnLabel(String txt) {
-        buttonSearch.setText(txt);
+    public void setDeleteBtnLabel(String txt) {
+        delete.setText(txt);
     }
 
-    @Override
-    public void setLocationLabel(String txt) {
-        textLocation.setText(txt);
-    }
-
-    @Override
-    public void setCategoryLabel(String txt) {
-        categories.setText(txt);
-    }
-
-    @Override
-    public void setDateLabel(String txt) {
-        textDate.setText(txt);
-    }
 
     @Override
     public void hideToolbar() {
@@ -125,10 +88,10 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
 
     }
 
-    @Override
-    public void setLabelSearch(String txt) {
-
-    }
+@Override
+public String getTextFromEditText(){
+   return ediText.getText().toString();
+}
 
     /*
     @Override

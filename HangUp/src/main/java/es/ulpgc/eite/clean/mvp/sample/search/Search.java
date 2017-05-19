@@ -3,7 +3,6 @@ package es.ulpgc.eite.clean.mvp.sample.search;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
-import android.view.MenuItem;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
@@ -65,6 +64,8 @@ public interface Search {
 
         void onItemListClicked();
 
+        void onDeleteClicked();
+
 
         //void onStartingView();
     }
@@ -84,15 +85,10 @@ public interface Search {
 
 
 
-        void setSearchBtnLabel(String txt);
+      
 
 
-        void setLocationLabel(String txt);
-
-
-        void setCategoryLabel(String txt);
-
-        void setDateLabel(String txt);
+        void setDeleteBtnLabel(String txt);
 
         void hideToolbar();
 
@@ -104,8 +100,8 @@ public interface Search {
 
         void setLabel(String txt);
 
-        void setLabelSearch(String txt);
 
+        String getTextFromEditText();
     }
 
     /**
@@ -113,6 +109,10 @@ public interface Search {
      */
     interface PresenterToModel extends Model<Search.ModelToPresenter> {
 
+
+        String getName();
+
+        void setName(String name);
 
         String getSearchText();
 
@@ -124,6 +124,8 @@ public interface Search {
 
         String getSearchBtnLabel();
         String[]getListCategories();
+
+        void deteleEvent(String name);
 
         /**
          * Required PRESENTER methods available to MODEL

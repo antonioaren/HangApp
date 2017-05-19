@@ -29,6 +29,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
   //  private Random randomAssistance1, randomAssistance2, randomAssistance3, randomAssistance4, randomAssistance5;
     private int[] participants;
+    private boolean isFirstTime;
 
 
     public CategoryModel() {
@@ -58,7 +59,9 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         RealmConfiguration setting = new RealmConfiguration.Builder().build();
         Realm.setDefaultConfiguration(setting);
 
-        CreateDatabaseTablesFromJson();
+            CreateDatabaseTablesFromJson();
+        }
+
 
 
 //        SharedPreferences pref =
@@ -66,10 +69,11 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 //        if (pref.getBoolean("FirstRun", true)) {
 //            CreateDatabaseTablesFromJson();
 //            pref.edit().putBoolean("FirstRun", false).commit();
-//        }
 
 
-    }
+
+
+
 
 
     ///////////////////////////////////////////////////////////////////////////////////
@@ -78,7 +82,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     @Override
     public void CreateDatabaseTablesFromJson() {
         Log.d("PruebaPasaDatos", "CreateDatabaseTablesFromJson()");
-
+        //Realm.init(this);
         insertEvent("Fiestas", R.drawable.disco);
         insertEvent("Música", R.drawable.musica);
         insertEvent("ULPGC", R.drawable.ulpgc);
@@ -137,7 +141,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     @Override
     public void insertEvent(final String Categoryname, final int image) {
 
-        realmDatabase = Realm.getDefaultInstance();
+       realmDatabase = Realm.getDefaultInstance();
         realmDatabase.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {

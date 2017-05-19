@@ -28,4 +28,6 @@ Mediator {
 
 
   void startinAddCategoryScreen(AddCategory.ToAdd presenter);
+
+  void SaveDataAdd(AddCategory.AddTo presenter);
 }

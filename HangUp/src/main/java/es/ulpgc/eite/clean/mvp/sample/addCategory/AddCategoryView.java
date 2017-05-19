@@ -15,8 +15,8 @@ import es.ulpgc.eite.clean.mvp.sample.R;
  * Created by eleonora on 23/03/2017.
  */
 
-public class AddCategoryView extends GenericActivity<Add.PresenterToView, Add.ViewToPresenter, AddCategoryPresenter>
-        implements Add.PresenterToView {
+public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView, AddCategory.ViewToPresenter, AddCategoryPresenter>
+        implements AddCategory.PresenterToView {
 
     TextView textViewTitle;
     TextView textViewName;

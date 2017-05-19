@@ -43,6 +43,8 @@ public interface AddCategory {
         Repository.ProductRepository.OnSaveProductCallback getCallBack();
 
         RealmList<ProductData> getParty();
+
+        String getDescriptionOfTheParty();
     }
 
 
@@ -123,16 +125,7 @@ public interface AddCategory {
         String getTitleLabel();
 
 
-
-
-
-
-
-
-
-
-
-
+        void insertEvent(String Categoryname, int image);
     }
 
     /**

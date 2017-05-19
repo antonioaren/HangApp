@@ -89,6 +89,11 @@ public class SearchPresenter
         app.goToProductScreen((Category.CategoryTo) this);
     }
 
+    @Override
+    public void onDeleteClicked() {
+        getModel().deteleEvent(getView().getTextFromEditText());
+    }
+
 
     @Override
     public Context getManagedContext() {

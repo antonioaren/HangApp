@@ -36,6 +36,7 @@ public class App extends Application implements Mediator, Navigator {
     private AddState toAddState;
     private AddCategoryState toaddCategoryState;
 
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -151,11 +152,16 @@ presenter.onScreenStarted();
 
     @Override
     public void SaveDataAdd(Add.AddTo presenter) {
+
+    }
+
+    @Override
+    public void SaveDataAdd(AddCategory.AddTo presenter) {
         toAddState = new AddState();
         toAddState.descriptionOfTheParty = presenter.getDescriptionOfTheParty();
-        toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
-        toAddState.dateOfTheParty = presenter.getDateOfTheParty();
-        toAddState.hourOfParty = presenter.getHourOfParty();
+       // toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
+       // toAddState.dateOfTheParty = presenter.getDateOfTheParty();
+        //toAddState.hourOfParty = presenter.getHourOfParty();
 
         toAddState.newparty = presenter.getParty();
 
@@ -203,7 +209,7 @@ private class AddCategoryState{
 
 
 
-}
+}}
 
-}
+
 

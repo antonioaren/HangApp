@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
+import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
@@ -27,8 +28,8 @@ public class AddCategoryPresenter
         setView(view);
         Log.d(TAG, "calling onCreate()");
 
-        Log.d(TAG, "calling startingAddScreen()");
-   Mediator app = (Mediator) getView().getApplication();
+        Log.d(TAG, "calling startingAddCategoryScreen()");
+        Mediator app = (Mediator) getView().getApplication();
     app.startinAddCategoryScreen(this);
     }
 
@@ -84,7 +85,9 @@ public class AddCategoryPresenter
 
     @Override
     public void onAddClicked() {
-
+     getModel().insertEvent(getView().getTextFromEditText(), R.drawable.astro);
+        Mediator app= (Mediator)getView().getApplication();
+        app.SaveDataAdd(this);
     }
     @Override
     public Repository.ProductRepository.OnSaveProductCallback getCallBack() {
@@ -96,9 +99,10 @@ public class AddCategoryPresenter
         return null;
     }
 
-
-
-
+    @Override
+    public String getDescriptionOfTheParty() {
+        return null;
+    }
 
 
     @Override

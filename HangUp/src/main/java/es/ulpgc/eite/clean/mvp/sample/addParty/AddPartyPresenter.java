@@ -173,6 +173,7 @@ public class AddPartyPresenter
     public void settingAdapter(RealmList<CategoryData> item) {
         CategoryView categoryView = new CategoryView();
         //TODO Configurar bien para ue añada.
+
         categoryView.settingAdapter(null);
     }
 
