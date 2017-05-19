@@ -47,10 +47,12 @@ public class AddCategoryPresenter
 
         if (configurationChangeOccurred()) {
 
+             getView().setTitleLabel(getModel().getTitleLabel());
+            getView().setNameLabel(getModel().getNameLabel());
+            getView().setPhotoLabel(getModel().getPhotoLabel());
+            getView().setButtonPhotoLabel(getModel().getButtonPhotoLabel());
+            getView().setAddBtnLabel(getModel().getButtonAddlabel());
 
-            if (buttonClicked) {
-                //getView().setText(getModel().getPublishBtnLabel());
-            }
 
         }
 
@@ -80,7 +82,10 @@ public class AddCategoryPresenter
         }
     }
 
+    @Override
+    public void onAddClicked() {
 
+    }
     @Override
     public Repository.ProductRepository.OnSaveProductCallback getCallBack() {
         return callback;
@@ -111,8 +116,5 @@ public class AddCategoryPresenter
 
     }
 
-    @Override
-    public void onAddClicked() {
 
-    }
 }

@@ -47,39 +47,39 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     public String getTitleLabel() {
         return this.titleLabel;
     }
-
+     @Override
     public void setTitleLabel(String titleLabel) {
         this.titleLabel = titleLabel;
     }
-
+    @Override
     public String getNameLabel() {
         return nameLabel;
     }
-
+    @Override
     public void setNameLabel(String nameLabel) {
         this.nameLabel = nameLabel;
     }
-
+    @Override
     public String getPhotoLabel() {
         return photoLabel;
     }
-
+    @Override
     public void setPhotoLabel(String photoLabel) {
         this.photoLabel = photoLabel;
     }
-
+    @Override
     public String getButtonPhotoLabel() {
         return buttonPhotoLabel;
     }
-
+    @Override
     public void setButtonPhotoLabel(String buttonPhotoLabel) {
         this.buttonPhotoLabel = buttonPhotoLabel;
     }
-
+    @Override
     public String getButtonAddlabel() {
         return buttonAddlabel;
     }
-
+    @Override
     public void setButtonAddlabel(String buttonAddlabel) {
         this.buttonAddlabel = buttonAddlabel;
     }
