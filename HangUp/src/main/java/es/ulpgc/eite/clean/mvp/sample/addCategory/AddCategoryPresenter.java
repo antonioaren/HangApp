@@ -4,8 +4,6 @@ import android.content.Context;
 import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
-import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
-import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.data.Repository;
@@ -29,8 +27,8 @@ public class AddCategoryPresenter
         Log.d(TAG, "calling onCreate()");
 
         Log.d(TAG, "calling startingAddScreen()");
-        Mediator app = (Mediator) getView().getApplication();
-        app.startingAddScreen(this);
+//        Mediator app = (Mediator) getView().getApplication();
+//        app.startingAddScreen(this);
     }
 
     @Override
@@ -48,12 +46,9 @@ public class AddCategoryPresenter
 
         if (configurationChangeOccurred()) {
 
-            getView().setLabel(getModel().getPlaceLabel());
-            getView().setLabel(getModel().getDateLabel());
-            getView().setLabel(getModel().getTimeInitLabel());
-            getView().setLabel(getModel().getTimeFinishLabel());
+
             if (buttonClicked) {
-                getView().setText(getModel().getPublishBtnLabel());
+                //getView().setText(getModel().getPublishBtnLabel());
             }
 
         }
@@ -84,11 +79,6 @@ public class AddCategoryPresenter
         }
     }
 
-    @Override
-    public String getDescriptionOfTheParty() {
-
-        return getModel().getDescription();
-    }
 
     @Override
     public Repository.ProductRepository.OnSaveProductCallback getCallBack() {
@@ -100,57 +90,13 @@ public class AddCategoryPresenter
         return null;
     }
 
-    @Override
-    public void onPublishClicked() {
-        Log.d(TAG, "callingOnPublish");
-
-        if (isViewRunning()) {
-            //Codigo Luis
-            getModel().setDay(getView().getDay());
-            getModel().setHourOfFinish(getView().getHourOfFinish());
-            getModel().setHourOfInit(getView().getHourOfInit());
-            getModel().setMonth(getView().getMonth());
-            getModel().setPlaceOfTheParty(getView().getPlaceOfTheParty());
-            getModel().setYear(getView().getYear());
-
-            getModel().setDescription(getView().getDescription());
-        }
 
 
-    }
+
+
 
     @Override
     public void setTextVisibility(boolean visible) {
-    }
-
-    @Override
-    public void setPlace(String place) {
-
-    }
-
-    @Override
-    public void setDate(String date) {
-
-    }
-
-    @Override
-    public void setHour(String hour) {
-
-    }
-
-    @Override
-    public String getPlaceOfTheParty() {
-        return getModel().getPlaceOfTheParty();
-    }
-
-    @Override
-    public String getDateOfTheParty() {
-        return getModel().getDateOfTheParty();
-    }
-
-    @Override
-    public String getHourOfParty() {
-        return getModel().getHourOfParty();
     }
 
     @Override
@@ -158,22 +104,14 @@ public class AddCategoryPresenter
         return null;
     }
 
+
     @Override
-    public RealmList<CategoryData> getPartyAdded() {
-        return (RealmList<CategoryData>) getModel().getPartyAdded();
+    public void onSelectClicked() {
+
     }
 
     @Override
-    public RealmList<ProductData> getPartyCreated() {
+    public void onAddClicked() {
 
-        return (RealmList<ProductData>) getModel().getParty();
     }
-
-    @Override
-    public void settingAdapter(RealmList<CategoryData> item) {
-        CategoryView categoryView = new CategoryView();
-        //TODO Configurar bien para ue añada.
-        categoryView.settingAdapter(null);
-    }
-
 }
