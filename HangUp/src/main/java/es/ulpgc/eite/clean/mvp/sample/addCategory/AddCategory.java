@@ -3,8 +3,6 @@ package es.ulpgc.eite.clean.mvp.sample.addCategory;
 
 import android.content.Context;
 
-import java.util.List;
-
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.Presenter;
@@ -101,56 +99,20 @@ public interface AddCategory {
 
     interface PresenterToModel extends Model<ModelToPresenter> {
 
-        String getDescription();
 
-        String getPlaceLabel();
-
-        String getPublishBtnLabel();
-
-        String getDateLabel();
-
-        String getTimeInitLabel();
-
-        String getTimeFinishLabel();
+        void setNameCategory(String name);
 
         String getTitleLabel();
 
-        void setPlaceLabel(String placeLabel);
-
-        void setDateLabel(String dateLabel);
-
-        void setTimeInitLabel(String timeInitLabel);
-
-        void setTimeFinishLabel(String timeFinishLabel);
-
-        void setPublishLabel(String publishLabel);
-
-        void setTitleLabel(String titleLabel);
-
-        String getPlaceOfTheParty();
-
-        String getDateOfTheParty();
-
-        String getHourOfParty();
 
 
-        void setDay(String day);
 
-        void setHourOfFinish(int hour);
 
-        void setHourOfInit(int hour);
 
-        void setMonth(String month);
 
-        void setPlaceOfTheParty(String place);
 
-        void setYear(int year);
 
-        List<CategoryData> getPartyAdded();
 
-        RealmList<ProductData> getParty();
-
-        void setDescription(String description);
 
 
     }

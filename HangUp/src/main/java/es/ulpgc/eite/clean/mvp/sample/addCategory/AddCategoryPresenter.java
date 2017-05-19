@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
+import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.data.Repository;
@@ -14,21 +15,21 @@ import io.realm.RealmList;
  */
 
 public class AddCategoryPresenter
-        extends GenericPresenter<Add.PresenterToView, Add.PresenterToModel, Add.ModelToPresenter, AddCategoryModel>
-        implements Add.ViewToPresenter, Add.ModelToPresenter, Add.ToAdd, Add.AddTo {
+        extends GenericPresenter<AddCategory.PresenterToView, AddCategory.PresenterToModel, AddCategory.ModelToPresenter, AddCategoryModel>
+        implements AddCategory.ViewToPresenter, AddCategory.ModelToPresenter, AddCategory.ToAdd, AddCategory.AddTo {
 
 
     private boolean buttonClicked;
     private Repository.ProductRepository.OnSaveProductCallback callback;
     @Override
-    public void onCreate(Add.PresenterToView view) {
+    public void onCreate(AddCategory.PresenterToView view) {
         super.onCreate(AddCategoryModel.class, this);
         setView(view);
         Log.d(TAG, "calling onCreate()");
 
         Log.d(TAG, "calling startingAddScreen()");
-//        Mediator app = (Mediator) getView().getApplication();
-//        app.startingAddScreen(this);
+   Mediator app = (Mediator) getView().getApplication();
+    app.startinAddCategoryScreen(this);
     }
 
     @Override
@@ -39,7 +40,7 @@ public class AddCategoryPresenter
     }
 
     @Override
-    public void onResume(Add.PresenterToView view) {
+    public void onResume(AddCategory.PresenterToView view) {
         setView(view);
         Log.d(TAG, "calling onResume()");
 
