@@ -14,7 +14,7 @@ import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 import io.realm.RealmList;
 
 
-public interface Add {
+public interface AddCategory {
 
 
     ///////////////////////////////////////////////////////////////////////////////////
@@ -87,6 +87,8 @@ public interface Add {
 
 
         void setNameLabel(String txt);
+
+        String getTextFromEditText();
 
         void setPhotoLabel(String txt);
 

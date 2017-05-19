@@ -97,7 +97,10 @@ public class AddCategoryView extends GenericActivity<Add.PresenterToView, Add.Vi
     textViewName.setText(txt);
     }
 
-
+   @Override
+   public String getTextFromEditText(){
+      return editTextName.getText().toString();
+   }
     @Override
     public void setPhotoLabel(String txt) {
     textPhoto.setText(txt);

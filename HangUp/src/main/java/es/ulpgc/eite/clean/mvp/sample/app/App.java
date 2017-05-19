@@ -6,6 +6,7 @@ import android.content.Intent;
 
 import java.util.List;
 
+import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategory;
 import es.ulpgc.eite.clean.mvp.sample.addParty.Add;
 import es.ulpgc.eite.clean.mvp.sample.addParty.AddPartyView;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
@@ -33,7 +34,7 @@ public class App extends Application implements Mediator, Navigator {
 
     private SearchState CategoryToSearch;
     private AddState toAddState;
-
+    private AddCategoryState toaddCategoryState;
 
     @Override
     public void onCreate() {
@@ -90,7 +91,14 @@ public class App extends Application implements Mediator, Navigator {
         }
         presenter.onScreenStarted();
     }
+@Override
+public void startinAddCategoryScreen(AddCategory.ToAdd presenter){
+    if(toaddCategoryState!=null){
+        presenter.setTextVisibility(toaddCategoryState.textVisibility);
+    }
 
+presenter.onScreenStarted();
+}
 
     /////////////// Navigator /////////////////////////////////////////////////////////////////////
 
@@ -190,5 +198,12 @@ public class App extends Application implements Mediator, Navigator {
         ProductRepository product;
 
     }
+private class AddCategoryState{
+    boolean textVisibility;
+
+
+
+}
+
 }
 
