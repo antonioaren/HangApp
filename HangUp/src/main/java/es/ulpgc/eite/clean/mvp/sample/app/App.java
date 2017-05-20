@@ -35,6 +35,7 @@ public class App extends Application implements Mediator, Navigator {
     private SearchState CategoryToSearch;
     private AddState toAddState;
     private AddCategoryState toaddCategoryState;
+    private SearchState toSearchState;
 
 
     @Override
@@ -166,7 +167,13 @@ presenter.onScreenStarted();
         toAddState.newparty = presenter.getParty();
      presenter.destroyView();
     }
-
+    
+    @Override
+    public void deleteEvent(Search.SearchTo presenter){
+        toSearchState= new SearchState();
+        toSearchState.nameToDelete=presenter.getNameToDelete();
+        presenter.destroyView();
+    }
 
     //////////////// State /////////////////////////////////////////////////////////////////////////
 
@@ -185,6 +192,7 @@ presenter.onScreenStarted();
     private class SearchState {
 
 
+        public String nameToDelete;
     }
 
     private class AddState {

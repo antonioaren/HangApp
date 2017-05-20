@@ -31,6 +31,8 @@ public interface Search {
         void destroyView();
 
         boolean isTextVisible();
+
+        String getNameToDelete();
     }
 
     interface ProcessedTo{
@@ -60,11 +62,13 @@ public interface Search {
 
         void onButtonSecundarySearchPressed();
 
-        String[] getCategories();
+
 
         void onItemListClicked();
 
         void onDeleteClicked();
+
+        void onDeleteIdClicked();
 
 
         //void onStartingView();
@@ -85,21 +89,17 @@ public interface Search {
 
 
 
-      
+
 
 
         void setDeleteBtnLabel(String txt);
 
-        void hideToolbar();
+        void setDeleIdBtnLabel(String txt);
 
-        void hideText();
+        void setText2label(String txt);
 
-        void showText();
 
-        void setText(String txt);
-
-        void setLabel(String txt);
-
+        void setText1label(String txt);
 
         String getTextFromEditText();
     }
@@ -114,18 +114,26 @@ public interface Search {
 
         void setName(String name);
 
-        String getSearchText();
 
-        String getPlaceLabel();
+        String getDeleteIdBtnLabel();
 
-        String getCategoryLabel();
+        void setDeleteIdBtnLabel(String deleteIdBtnLabel);
 
-        String getDateLabel();
+        String getDeleteBtnLabel();
 
-        String getSearchBtnLabel();
-        String[]getListCategories();
+        void setDeleteBtnLabel(String deleteBtnLabel);
+
+        String getText1Label();
+
+        void setText1Label(String text1Label);
+
+        String getText2Label();
+
+        void setText2Label(String text2Label);
 
         void deteleEvent(String name);
+
+        void deleteCategoryById(String Id);
 
         /**
          * Required PRESENTER methods available to MODEL

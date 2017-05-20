@@ -7,30 +7,25 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
-
-import static es.ulpgc.eite.clean.mvp.sample.R.layout.activity_search;
-
-/**
- * Created by eleonora on 23/03/2017.
- */
+import es.ulpgc.eite.clean.mvp.GenericActivity;
 
 public class SearchView  extends GenericActivity<Search.PresenterToView, Search.ViewToPresenter, SearchPresenter>
         implements Search.PresenterToView {
 
     // ActionBar ab;
-Button delete;
+    Button delete;
     TextView text;
     EditText ediText;
-
+    TextView text2;
+    EditText editText2;
+    Button deleteId;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(activity_search);
+        setContentView(R.layout.activity_delete);
         delete=(Button)findViewById(R.id.delete);
-       delete .setOnClickListener(new View.OnClickListener() {
+        delete .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 getPresenter().onDeleteClicked();
@@ -40,6 +35,16 @@ Button delete;
         text=(TextView)findViewById(R.id.text);
         ediText=(EditText)findViewById(R.id.editText);
 
+        text2=(TextView)findViewById(R.id.text2);
+        editText2=(EditText)findViewById(R.id.editText2);
+        deleteId=(Button)findViewById(R.id.deleteId);
+        deleteId .setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getPresenter().onDeleteIdClicked();
+
+            }
+        });
     }
 
 
@@ -47,7 +52,7 @@ Button delete;
     @Override
     public void onResume() {
         super.onResume(SearchPresenter.class, this);
-       String[] categories = getPresenter().getCategories();
+        // String[] categories = getPresenter().getCategories();
 
 
     }
@@ -62,36 +67,27 @@ Button delete;
         delete.setText(txt);
     }
 
-
     @Override
-    public void hideToolbar() {
-
+    public void setDeleIdBtnLabel(String txt){
+        deleteId.setText(txt);
     }
 
     @Override
-    public void hideText() {
-
+    public void setText2label(String txt){
+        text2.setText(txt);
     }
 
     @Override
-    public void showText() {
-
+    public void setText1label(String txt){
+        text.setText(txt);
     }
+
+
 
     @Override
-    public void setText(String txt) {
-
+    public String getTextFromEditText(){
+        return ediText.getText().toString();
     }
-
-    @Override
-    public void setLabel(String txt) {
-
-    }
-
-@Override
-public String getTextFromEditText(){
-   return ediText.getText().toString();
-}
 
     /*
     @Override

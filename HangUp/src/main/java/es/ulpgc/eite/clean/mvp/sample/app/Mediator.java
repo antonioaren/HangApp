@@ -30,4 +30,5 @@ Mediator {
   void startinAddCategoryScreen(AddCategory.ToAdd presenter);
 //modificado nombre de metodo
   void SaveDataAdd(AddCategory.AddTo presenter);
+  void deleteEvent(Search.SearchTo presenter);
 }
