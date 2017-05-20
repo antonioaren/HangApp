@@ -5,20 +5,21 @@ import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.module.RealmTable;
 import io.realm.Realm;
 
+import static android.R.attr.id;
+
 /**
  * Created by alumno on 31/03/2017.
  */
 
 public class SearchModel  extends GenericModel<Search.ModelToPresenter>
         implements Search.PresenterToModel {
-    String[]categories;
-    String SearchBtnLabel;
-    String placeLabel;
-    String categoryLabel;
-    String dateLabel;
-    String SearchText;
+
+
+    String DeleteIdBtnLabel ,DeleteBtnLabel;
+    String text1Label,text2Label;
+
     private Realm realmDatabase;
-   @Override
+    @Override
     public String getName() {
         return name;
     }
@@ -29,16 +30,49 @@ public class SearchModel  extends GenericModel<Search.ModelToPresenter>
 
     String name;
     public SearchModel(){
-        this.categories= new String[]{"Cines","Culturales","Conciertos","Verbenas","Discotecas"};
+        // this.categories= new String[]{"Cines","Culturales","Conciertos","Verbenas","Discotecas"};
     }
     @Override
     public void onCreate(Search.ModelToPresenter presenter) {
         super.onCreate(presenter);
-        SearchText = "SEARCH";
-        SearchBtnLabel = "Search";
-        placeLabel = "ByPlace";
-        categoryLabel = "ByCategory";
-        dateLabel = "ByDate";
+        text1Label = "Write a category to delete ";
+        DeleteBtnLabel="Delete";
+        text2Label="Or delete a category By Id";
+        DeleteIdBtnLabel="Delete by Id";
+
+
+    }
+    @Override
+    public String getDeleteIdBtnLabel() {
+        return DeleteIdBtnLabel;
+    }
+    @Override
+    public void setDeleteIdBtnLabel(String deleteIdBtnLabel) {
+        DeleteIdBtnLabel = deleteIdBtnLabel;
+    }
+    @Override
+    public String getDeleteBtnLabel() {
+        return DeleteBtnLabel;
+    }
+    @Override
+    public void setDeleteBtnLabel(String deleteBtnLabel) {
+        DeleteBtnLabel = deleteBtnLabel;
+    }
+    @Override
+    public String getText1Label() {
+        return text1Label;
+    }
+    @Override
+    public void setText1Label(String text1Label) {
+        this.text1Label = text1Label;
+    }
+    @Override
+    public String getText2Label() {
+        return text2Label;
+    }
+    @Override
+    public void setText2Label(String text2Label) {
+        this.text2Label = text2Label;
     }
 
     @Override
@@ -48,47 +82,35 @@ public class SearchModel  extends GenericModel<Search.ModelToPresenter>
 
 
     @Override
-    public String getSearchText() {
-        return SearchText;
-    }
-
-    @Override
-    public String getPlaceLabel() {
-        return placeLabel;
-    }
-
-    @Override
-    public String getCategoryLabel() {
-        return categoryLabel;
-    }
-
-    @Override
-    public String getDateLabel() {
-        return dateLabel;
-    }
-
-    @Override
-    public String getSearchBtnLabel() {
-        return SearchBtnLabel;
-    }
-
-    @Override
-    public String[] getListCategories() {
-        return this.categories;
-    }
-   @Override
-    public void deteleEvent(String name) {
+    public void deteleEvent( final String name) {
         realmDatabase = Realm.getDefaultInstance();
+        realmDatabase.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
 
+                realmDatabase.where(CategoryData.class).equalTo("CategoryName", name)
+                        .findAll()
+                        .deleteAllFromRealm();
+            }
+        });
 
-
-                Realm realm = Realm.getDefaultInstance();
-                realm.beginTransaction();
-                CategoryData result = realm.where(CategoryData.class).equalTo(RealmTable.ID, name).findFirst();
-                result.deleteFromRealm();
-                realm.commitTransaction();
 
 //Remove elements.
 
-            }}
+    }
+
+    @Override
+    public void deleteCategoryById(String Id) {
+
+        realmDatabase=Realm.getDefaultInstance();
+        realmDatabase.beginTransaction();
+        CategoryData category = realmDatabase.where(CategoryData.class).equalTo(RealmTable.ID, id).findFirst();
+        category.deleteFromRealm();
+        realmDatabase.commitTransaction();
+
+
+
+    }
+
+}
 
