@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:orientation="vertical"
+    android:weightSum="1">
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="70dp" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_weight="0.14"
+        android:background="@android:color/holo_blue_bright"
+        android:text="write the name of the category : " />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/editText"
+        android:layout_weight="0.20" />
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_weight="0.05"
+        android:background="?attr/colorControlHighlight"
+        android:text="delete" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="37dp" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@android:color/holo_blue_bright"
+        android:text="Or write the name of the category id:"
+        android:layout_weight="0.43" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/editText2"
+        android:layout_weight="0.13" />
+
+    <Button
+        android:id="@+id/deleteId"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_weight="0.05"
+        android:background="?attr/colorControlHighlight"
+        android:text="delete By Id" />
+</LinearLayout>
