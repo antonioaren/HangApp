@@ -5,7 +5,6 @@ import android.util.Log;
 import java.util.UUID;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
-import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import io.realm.Realm;

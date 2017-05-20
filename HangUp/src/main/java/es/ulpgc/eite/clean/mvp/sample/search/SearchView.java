@@ -7,8 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import es.ulpgc.eite.clean.mvp.sample.R;
+
 import es.ulpgc.eite.clean.mvp.GenericActivity;
+import es.ulpgc.eite.clean.mvp.sample.R;
 
 public class SearchView  extends GenericActivity<Search.PresenterToView, Search.ViewToPresenter, SearchPresenter>
         implements Search.PresenterToView {

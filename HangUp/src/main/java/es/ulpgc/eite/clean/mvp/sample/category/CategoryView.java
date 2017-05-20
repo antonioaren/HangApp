@@ -14,7 +14,6 @@ import android.widget.TextView;
 import java.util.List;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
-import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.util.RealmRecyclerViewAdapter;
 import io.realm.OrderedRealmCollection;
