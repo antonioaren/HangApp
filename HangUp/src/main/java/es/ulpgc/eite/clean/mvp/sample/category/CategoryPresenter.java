@@ -133,6 +133,7 @@ public class CategoryPresenter
             getView().setLabelSearch(getModel().getSearchLabel());
             getView().setAddLabel(getModel().getAddLabel());
         }
+        // el setting adapter va aqui
         getView().settingAdapter(getModel().getEvents());
 
     }
