@@ -39,15 +39,15 @@ public class SearchPresenter
 
 
         if (configurationChangeOccurred()) {
-            getView().setLabel(getModel().getSearchBtnLabel());
-            getView().setLabel(getModel().getCategoryLabel());
-            getView().setLabel(getModel().getDateLabel());
-            getView().setLabel(getModel().getPlaceLabel());
+            getView().setDeleteBtnLabel(getModel().getDeleteBtnLabel());
+            getView().setText1label(getModel().getText1Label());
+            getView().setDeleIdBtnLabel(getModel().getDeleteIdBtnLabel());
+            getView().setText2label(getModel().getText2Label());
 
 
-            if (buttonClicked) {
-                getView().setText(getModel().getSearchText());
-            }
+//            if (buttonClicked) {
+//                //getView().setText(getModel().getSearchText());
+//            }
         }
     }
 
@@ -75,11 +75,7 @@ public class SearchPresenter
     public void onButtonSecundarySearchPressed() {
     }
 
-    @Override
-    public String[] getCategories() {
-        String[] list = getModel().getListCategories();
-        return list;
-    }
+
 
     @Override
     public void onItemListClicked() {
@@ -92,6 +88,13 @@ public class SearchPresenter
     @Override
     public void onDeleteClicked() {
         getModel().deteleEvent(getView().getTextFromEditText());
+        Mediator app= (Mediator)getView().getApplication();
+        app.deleteEvent(this);
+    }
+
+    @Override
+    public void onDeleteIdClicked() {
+
     }
 
 
@@ -119,5 +122,10 @@ public class SearchPresenter
     @Override
     public boolean isTextVisible() {
         return false;
+    }
+
+    @Override
+    public String getNameToDelete() {
+        return getView().getTextFromEditText();
     }
 }
