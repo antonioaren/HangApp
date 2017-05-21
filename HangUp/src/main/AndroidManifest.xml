@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="es.ulpgc.eite.clean.mvp.sample">
+    <!--//Permisos necesarios para acceder a elementos de la camara , leer y escrubir en memoria externa y para poder usar el escaner el el movil-->
+    <vies-permission android:name="android.permission.CAMERA"/>
+    <vies-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <vies-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+   <protected-broadcast android:name="android.intent.action.MEDIA_MOUNTER"></protected-broadcast>
+
 
     <application
         android:allowBackup="true"
