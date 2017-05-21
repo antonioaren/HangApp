@@ -1,9 +1,10 @@
 package es.ulpgc.eite.clean.mvp.sample.addParty;
 
 import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
+
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
@@ -166,14 +167,16 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     public String getDescription(){
         return editTextDescrition.getText().toString();
     }
-    @RequiresApi(api = Build.VERSION_CODES.M)
+   // @RequiresApi(api = Build.VERSION_CODES.M)
+    @TargetApi(Build.VERSION_CODES.M)
     @Override
     public int getHourOfInit() {
         int hour = timePickerInit.getHour();
         return hour;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
+    //@RequiresApi(api = Build.VERSION_CODES.M)
+    @TargetApi(Build.VERSION_CODES.M)
     @Override
     public int getHourOfFinish() {
         int hour = timePickerFinish.getHour();
