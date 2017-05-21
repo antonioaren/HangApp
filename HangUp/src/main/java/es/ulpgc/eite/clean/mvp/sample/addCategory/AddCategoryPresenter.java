@@ -104,6 +104,11 @@ public class AddCategoryPresenter
         return null;
     }
 
+    @Override
+    public int getPhotoSelected() {
+        return getView().getPhotoSelected();
+    }
+
 
     @Override
     public void setTextVisibility(boolean visible) {
@@ -117,7 +122,8 @@ public class AddCategoryPresenter
 
     @Override
     public void onSelectClicked() {
-
+     Mediator app=(Mediator)getView().getApplication();
+        app.selectImageFromGalery(this);
     }
 
 

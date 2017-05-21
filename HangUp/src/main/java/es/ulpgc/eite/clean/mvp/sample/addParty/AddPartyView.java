@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
+import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import io.realm.RealmResults;

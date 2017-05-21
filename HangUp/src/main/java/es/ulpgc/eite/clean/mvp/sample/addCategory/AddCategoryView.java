@@ -120,4 +120,9 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
         buttonPhoto.setText(txt);
     }
 
+    @Override
+    public int getPhotoSelected() {
+        return 0;
+    }
+
 }

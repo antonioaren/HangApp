@@ -31,4 +31,6 @@ Mediator {
 //modificado nombre de metodo
   void SaveDataAdd(AddCategory.AddTo presenter);
   void deleteEvent(Search.SearchTo presenter);
+
+    void selectImage(AddCategory.AddTo presenter);
 }

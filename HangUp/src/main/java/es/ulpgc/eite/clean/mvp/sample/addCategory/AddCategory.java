@@ -45,6 +45,8 @@ public interface AddCategory {
         RealmList<ProductData> getParty();
 
         String getDescriptionOfTheParty();
+
+        int getPhotoSelected();
     }
 
 
@@ -93,6 +95,8 @@ public interface AddCategory {
         void setPhotoLabel(String txt);
 
         void setButtonPhotoLabel(String txt);
+
+        int getPhotoSelected();
     }
 
     /**

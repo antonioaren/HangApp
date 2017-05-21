@@ -174,6 +174,35 @@ presenter.onScreenStarted();
         toSearchState.nameToDelete=presenter.getNameToDelete();
         presenter.destroyView();
     }
+@Override
+public void selectImage(AddCategory.AddTo presenter){
+    final Context view= presenter.getManagedContext();
+    toaddCategoryState=new AddCategoryState();
+    toaddCategoryState.photoSelected=presenter.getPhotoSelected();
+   //final CharSequence []option= new CharSequence[]{"choose a photo","cancel"};
+   // final AlertDialog.Builder builder=new AlertDialog.Builder(this);
+  // builder.setTitle("choose an option");
+   // builder.setItems(option,new DialogInterface.OnClickListener() {
+
+//        @Override
+//        public void onClick(DialogInterface dialog, int selection) {
+//            if(option[selection]=="choose a photo"){
+//                if(view!=null){
+//                   //Intent para seleccionar la foto de la galeria
+//                   Intent intent= new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+//                           //configuramos que tipo de extension queremos que se nos muestre de las fotos.El * significa cualquier extension
+//                           .setType("image/*");
+//                    view.startActivity(intent);
+//                   intent.createChooser(intent,"choose image");
+//
+//                }
+//            }
+//        }
+//    });
+
+                // }
+
+            }
 
     //////////////// State /////////////////////////////////////////////////////////////////////////
 
@@ -216,7 +245,7 @@ private class AddCategoryState{
     boolean textVisibility;
 
 
-
+    public int photoSelected;
 }}
 
 
