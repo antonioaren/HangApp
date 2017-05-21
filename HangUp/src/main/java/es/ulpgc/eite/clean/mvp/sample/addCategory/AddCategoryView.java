@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
@@ -18,18 +19,27 @@ import es.ulpgc.eite.clean.mvp.sample.R;
 public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView, AddCategory.ViewToPresenter, AddCategoryPresenter>
         implements AddCategory.PresenterToView {
 //Clase desde la cual añadimos categegoria
+   private static String APP_DIRECTORY="drawable";
+    //variable que representa el directorio donde se guardaran nuestras imagenes extraidas de galeria
+    private static String MEDIA_DIRECTORY=APP_DIRECTORY+"name";
+    private String TEMPORAL_PICTURE_NAME="temporal.jpg";
+
+    private final int SELECT_PICTURE=200;
+    private final int PHOTO_CODE=100;
+
     TextView textViewTitle;
     TextView textViewName;
     EditText editTextName;
     TextView textPhoto;
     Button buttonPhoto;
+    ImageView image;
     Button buttonAdd;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addcategory);
-   textViewTitle=(TextView)findViewById(R.id.title);
+        textViewTitle=(TextView)findViewById(R.id.title);
         textViewName=(TextView)findViewById(R.id.textName);
         editTextName=(EditText)findViewById(R.id.content_name);
         textPhoto=(TextView)findViewById(R.id.textPhoto);
@@ -42,7 +52,7 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
             }
         });
 
-
+   image=(ImageView)findViewById(R.id.image);
         buttonAdd=(Button)findViewById(R.id.buttonAdd);
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override

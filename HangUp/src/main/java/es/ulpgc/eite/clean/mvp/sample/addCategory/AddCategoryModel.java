@@ -21,9 +21,10 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
    private String namecategory;
     private Realm realmDatabase;
     CategoryModel categoryModel;
-
+    final CharSequence[] options;
     public AddCategoryModel() {
      categoryModel= new CategoryModel();
+        options= new CharSequence[]{"Select from galery", "Cancel"};
     }
 
 
