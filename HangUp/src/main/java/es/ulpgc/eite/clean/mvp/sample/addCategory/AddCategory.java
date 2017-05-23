@@ -65,6 +65,10 @@ public interface AddCategory {
         void onSelectClicked();
 
         void onAddClicked();
+
+        String[]getNames();
+
+        Integer[]getImages();
     }
 
     /**
@@ -136,12 +140,19 @@ public interface AddCategory {
 
 
         void insertEvent(String Categoryname, int image);
+
+
+
+        String[]getNames();
+
+        Integer[] getImages();
     }
 
     /**
      * Required PRESENTER methods available to MODEL
      */
     interface ModelToPresenter {
+
 
     }
 

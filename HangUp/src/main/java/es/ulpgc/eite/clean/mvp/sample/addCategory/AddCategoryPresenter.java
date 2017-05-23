@@ -126,5 +126,13 @@ public class AddCategoryPresenter
         //app.selectImageFromGalery(this);
     }
 
-
+@Override
+    public String[]getNames(){
+    return getModel().getNames();
 }
+@Override
+    public Integer[]getImages(){
+    return getModel().getImages();
+}
+}
+

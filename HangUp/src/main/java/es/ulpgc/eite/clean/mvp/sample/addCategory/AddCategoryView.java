@@ -1,11 +1,17 @@
 package es.ulpgc.eite.clean.mvp.sample.addCategory;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
@@ -34,7 +40,7 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
     Button buttonPhoto;
     ImageView image;
     Button buttonAdd;
-
+    ListView list;
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -43,16 +49,9 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
         textViewName=(TextView)findViewById(R.id.textName);
         editTextName=(EditText)findViewById(R.id.content_name);
         textPhoto=(TextView)findViewById(R.id.textPhoto);
-        buttonPhoto=(Button)findViewById(R.id.buttonSelect);
-        buttonPhoto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getPresenter().onSelectClicked();
+           onResume();
 
-            }
-        });
-
-   image=(ImageView)findViewById(R.id.image);
+       image=(ImageView)findViewById(R.id.image);
         buttonAdd=(Button)findViewById(R.id.buttonAdd);
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +70,14 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
     @Override
     public void onResume() {
         super.onResume(AddCategoryPresenter.class, this);
+        list=(ListView)findViewById(R.id.list);
+
+
+        String[]name=getPresenter().getNames();
+        Integer[]photos=getPresenter().getImages();
+        ListAdapter adapter=new ListAdapter(this,photos,name);
+        list.setAdapter(adapter);
+
     }
 
 
@@ -125,4 +132,35 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
         return 0;
     }
 
+
+public class ListAdapter extends ArrayAdapter<String>{
+    private final Activity context;
+
+    private final String[] name;
+    private final Integer[]images;
+
+    public ListAdapter(Activity context, Integer[]images,String[]name){
+        super(context,R.layout.item_photos,name);
+        this.context=context;
+        this.name=name;
+        this.images=images;
+    }
+    public View getView(int position,View view,ViewGroup parent){
+        LayoutInflater inflater=context.getLayoutInflater();
+        View rowView=inflater.inflate(R.layout.item_photos,null,true);
+        RadioButton radio=(RadioButton)rowView.findViewById(R.id.radio);
+        ImageView image=(ImageView)rowView.findViewById(R.id.imagePhoto);
+        TextView text=(TextView)rowView.findViewById(R.id.topic);
+        radio.getText();
+        image.setImageResource(images[position]);
+        text.setText(name[position]);
+        return rowView;
+    }
+
 }
+
+
+
+}
+
+

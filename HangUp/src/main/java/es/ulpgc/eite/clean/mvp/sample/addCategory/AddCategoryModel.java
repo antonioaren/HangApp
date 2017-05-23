@@ -5,6 +5,7 @@ import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.Model;
+import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
 import io.realm.Realm;
 
@@ -21,10 +22,15 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
    private String namecategory;
     private Realm realmDatabase;
     CategoryModel categoryModel;
+    String []names;
+    Integer[]images;
     //final CharSequence[] options;
     public AddCategoryModel() {
      categoryModel= new CategoryModel();
        // options= new CharSequence[]{"Select from galery", "Cancel"};
+        this.names= new String[]{"cultural","fiesta","deportivo","academico"};
+        this.images=new Integer[]{R.drawable.astro,R.drawable.disco,R.drawable.cars,R.drawable.ulpgc};
+
     }
 
 
@@ -102,4 +108,12 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     public String getNamecategory() {
         return namecategory;
     }
+@Override
+  public String[]getNames(){
+      return this.names;
+  }
+@Override
+  public Integer[] getImages(){
+    return this.images;
+}
 }
