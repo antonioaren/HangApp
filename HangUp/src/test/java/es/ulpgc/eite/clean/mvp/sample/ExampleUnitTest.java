@@ -52,6 +52,15 @@ public class ExampleUnitTest {
 @Test
   public void testGetSearchLabel(){
   CategoryModel categoryModel= new CategoryModel();
-  categoryModel.setSearchLabel();
+  categoryModel.setSearchLabel("search");
+  assertEquals("search",categoryModel.getSearchLabel());
 }
+  @Test
+  public void testGetAddLabel(){
+    CategoryModel categoryModel= new CategoryModel();
+    categoryModel.setAddLabel("add");
+    assertEquals("add",categoryModel.getAddLabel());
+  }
+
+
 }

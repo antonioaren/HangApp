@@ -197,6 +197,12 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     public void setSearchLabel(String label) {
      this.HangAppButtonSearchLabel=label;
     }
+
+    public void setAddLabel(String label) {
+    this.HangAppButtonAddLabel=label;
+    }
+
+
 }
 
 
