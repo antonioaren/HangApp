@@ -46,17 +46,13 @@
 
             android:text="Photo:"
             android:id="@+id/textPhoto"/>
-
-<Button android:layout_height="match_parent"
-    android:layout_width="wrap_content"
-    android:text="select..."
-    android:id="@+id/buttonSelect"/>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/list"/>
     </LinearLayout>
-<ImageView
-    android:id="@+id/image"
-    android:layout_height="80dp"
-    android:layout_width="match_parent"
-    android:layout_weight="0.81" />
+
+
 
 
     <RelativeLayout
