@@ -129,7 +129,10 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
 
     @Override
     public int getPhotoSelected() {
-        return 0;
+     int position=  list.getSelectedItemPosition();
+     Integer[]images= getPresenter().getImages();
+        return images[position];
+
     }
 
 
@@ -150,10 +153,23 @@ public class ListAdapter extends ArrayAdapter<String>{
         View rowView=inflater.inflate(R.layout.item_photos,null,true);
         RadioButton radio=(RadioButton)rowView.findViewById(R.id.radio);
         ImageView image=(ImageView)rowView.findViewById(R.id.imagePhoto);
-        TextView text=(TextView)rowView.findViewById(R.id.topic);
-        radio.getText();
         image.setImageResource(images[position]);
+        //Obtengo el valor de la imagen y lo almaceno en tag
+
+
+
+
+
+        TextView text=(TextView)rowView.findViewById(R.id.topic);
         text.setText(name[position]);
+        radio.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+           String name=v.getTag().toString();
+            }
+        });
+
         return rowView;
     }
 
