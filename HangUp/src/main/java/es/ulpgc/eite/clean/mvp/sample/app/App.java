@@ -178,7 +178,7 @@ presenter.onScreenStarted();
 public void selectImage(AddCategory.AddTo presenter){
     final Context view= presenter.getManagedContext();
     toaddCategoryState=new AddCategoryState();
-    toaddCategoryState.photoSelected=presenter.getPhotoSelected();
+    //toaddCategoryState.photoSelected=presenter.getPhotoSelected();
    //final CharSequence []option= new CharSequence[]{"choose a photo","cancel"};
    // final AlertDialog.Builder builder=new AlertDialog.Builder(this);
   // builder.setTitle("choose an option");

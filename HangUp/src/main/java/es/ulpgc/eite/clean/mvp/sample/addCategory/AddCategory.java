@@ -48,7 +48,7 @@ public interface AddCategory {
 
         String getDescriptionOfTheParty();
 
-        int getPhotoSelected();
+
     }
 
 

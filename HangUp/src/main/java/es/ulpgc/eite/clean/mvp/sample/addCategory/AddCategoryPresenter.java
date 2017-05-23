@@ -103,10 +103,7 @@ public class AddCategoryPresenter
         return null;
     }
 
-    @Override
-    public int getPhotoSelected() {
-        return getView().getPhotoSelected();
-    }
+
 
 
     @Override
