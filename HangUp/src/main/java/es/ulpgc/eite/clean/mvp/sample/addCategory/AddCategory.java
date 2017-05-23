@@ -1,7 +1,9 @@
 package es.ulpgc.eite.clean.mvp.sample.addCategory;
 
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.os.Bundle;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
@@ -72,6 +74,10 @@ public interface AddCategory {
     interface PresenterToView extends ContextView {
 
 
+        void onCreate(Bundle savedInstanceState);
+
+        @SuppressLint("MissingSuperCall")
+        void onResume();
 
         void finishScreen();
 

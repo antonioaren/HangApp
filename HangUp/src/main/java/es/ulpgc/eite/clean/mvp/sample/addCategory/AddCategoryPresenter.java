@@ -123,7 +123,7 @@ public class AddCategoryPresenter
     @Override
     public void onSelectClicked() {
      Mediator app=(Mediator)getView().getApplication();
-        app.selectImageFromGalery(this);
+        //app.selectImageFromGalery(this);
     }
 
 

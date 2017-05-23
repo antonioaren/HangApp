@@ -49,5 +49,9 @@ public class ExampleUnitTest {
   int content2= numbers[1];
   assertEquals(content2,categoryModel.getParticipantsAt(1));
 }
-
+@Test
+  public void testGetSearchLabel(){
+  CategoryModel categoryModel= new CategoryModel();
+  categoryModel.setSearchLabel();
+}
 }
