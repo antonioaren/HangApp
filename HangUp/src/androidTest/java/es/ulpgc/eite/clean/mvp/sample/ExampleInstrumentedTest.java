@@ -45,7 +45,7 @@ public class ExampleInstrumentedTest {
  // onView(withId(R.id.textName)).check(matches(ViewMatchers.isDisplayed()));
 }
 
-
+//por implementar
     @Test
 public void testOnSearchCliked()throws Exception{
       // onView(withId(R.id.buttonAdd)).check(matches(ViewMatchers.isDisplayed()));
