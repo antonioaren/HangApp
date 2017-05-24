@@ -2,12 +2,8 @@ package es.ulpgc.eite.clean.mvp.sample;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
-import android.support.test.espresso.ViewAssertion;
-import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.runner.AndroidJUnit4;
-import android.view.View;
 
-import org.hamcrest.Matcher;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -15,13 +11,8 @@ import es.ulpgc.eite.clean.mvp.sample.category.CategoryPresenter;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
-import static android.support.test.espresso.matcher.ViewMatchers.supportsInputMethods;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
-import static android.support.test.espresso.matcher.ViewMatchers.withText;
-import static es.ulpgc.eite.clean.mvp.sample.R.id.textName;
-import static java.util.regex.Pattern.matches;
 import static junit.framework.Assert.assertEquals;
-import static org.junit.Assert.assertEquals;
 
 /**
  * Instrumentation test, which will execute on an Android device.

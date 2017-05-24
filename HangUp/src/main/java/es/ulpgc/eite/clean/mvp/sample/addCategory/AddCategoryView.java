@@ -23,7 +23,7 @@ import es.ulpgc.eite.clean.mvp.sample.R;
  */
 
 public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView, AddCategory.ViewToPresenter, AddCategoryPresenter>
-        implements AddCategory.PresenterToView {
+        implements AddCategory.PresenterToView{
 //Clase desde la cual añadimos categegoria
    private static String APP_DIRECTORY="drawable";
     //variable que representa el directorio donde se guardaran nuestras imagenes extraidas de galeria
@@ -42,14 +42,15 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
     Button buttonAdd;
     ListView list;
     @Override
-    public void onCreate(Bundle savedInstanceState){
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addcategory);
-        textViewTitle=(TextView)findViewById(R.id.title);
-        textViewName=(TextView)findViewById(R.id.textName);
-        editTextName=(EditText)findViewById(R.id.content_name);
-        textPhoto=(TextView)findViewById(R.id.textPhoto);
-           onResume();
+        textViewTitle = (TextView) findViewById(R.id.title);
+        textViewName = (TextView) findViewById(R.id.textName);
+        editTextName = (EditText) findViewById(R.id.content_name);
+        textPhoto = (TextView) findViewById(R.id.textPhoto);
+        onResume();
+
 
        image=(ImageView)findViewById(R.id.image);
         buttonAdd=(Button)findViewById(R.id.buttonAdd);
@@ -136,7 +137,7 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
      int position= list.getSelectedItemPosition();
 
 
-     return images[position+1];
+     return images[position];
 
     }
 
@@ -157,7 +158,12 @@ public class ListAdapter extends ArrayAdapter<String>{
         LayoutInflater inflater=context.getLayoutInflater();
         View rowView=inflater.inflate(R.layout.item_photos,null,true);
         RadioButton radio=(RadioButton)rowView.findViewById(R.id.radio);
-
+        radio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getItem(2);
+            }
+        });
         ImageView image=(ImageView)rowView.findViewById(R.id.imagePhoto);
         image.setImageResource(images[position]);
         //Obtengo el valor de la imagen y lo almaceno en tag
@@ -169,7 +175,12 @@ public class ListAdapter extends ArrayAdapter<String>{
         TextView text=(TextView)rowView.findViewById(R.id.topic);
         text.setText(name[position]);
 
+  rowView.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
 
+      }
+  });
         return rowView;
     }
 
