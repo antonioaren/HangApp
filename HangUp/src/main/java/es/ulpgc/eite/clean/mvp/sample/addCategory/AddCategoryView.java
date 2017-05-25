@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -38,6 +39,7 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
   //  ListView list;
 
     RadioButton radioButton0,radioButton1,radioButton2;
+    ImageView image1,image2,image3,image4;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,8 +54,10 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
 
         radioButton2=(RadioButton)findViewById(R.id.id2);
 
-
-
+        image1=(ImageView)findViewById(R.id.image1);
+        image2=(ImageView)findViewById(R.id.image2);
+        image3=(ImageView)findViewById(R.id.image3);
+        image4=(ImageView)findViewById(R.id.image4);
 
 
 
