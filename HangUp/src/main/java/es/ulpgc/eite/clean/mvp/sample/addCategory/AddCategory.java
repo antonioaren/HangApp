@@ -127,9 +127,20 @@ public interface AddCategory {
 
         void setPhotoLabel(String photoLabel);
 
-        String getButtonPhotoLabel();
 
-        void setButtonPhotoLabel(String buttonPhotoLabel);
+        void setLabelRadio0(String labelRadio0);
+
+        String getLabelRadio1();
+
+        void setLabelRadio1(String labelRadio1);
+
+        String getLabelRadio2();
+
+        void setLabelRadio2(String labelRadio2);
+
+        String getLabelRadio3();
+
+        void setLabelRadio3(String labelRadio3);
 
         String getButtonAddlabel();
 

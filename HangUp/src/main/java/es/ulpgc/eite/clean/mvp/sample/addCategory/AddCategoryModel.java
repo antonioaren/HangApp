@@ -22,6 +22,13 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
    private String namecategory;
     private Realm realmDatabase;
     CategoryModel categoryModel;
+    private String labelRadio0;
+    private String labelRadio1;
+    private String labelRadio2;
+
+
+
+    private String labelRadio3;
     String []names;
     Integer[]images;
     //final CharSequence[] options;
@@ -43,6 +50,10 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
         photoLabel = "Photo:";
         buttonPhotoLabel="Select...";
         buttonAddlabel="Add";
+        this.labelRadio0="astro";
+        this.labelRadio1="disco";
+        this.labelRadio2="car";
+        this.labelRadio3="cultural";
     }
 
     @Override
@@ -77,13 +88,36 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     public void setPhotoLabel(String photoLabel) {
         this.photoLabel = photoLabel;
     }
-    @Override
-    public String getButtonPhotoLabel() {
-        return buttonPhotoLabel;
+    public String getLabelRadio0() {
+        return labelRadio0;
     }
     @Override
-    public void setButtonPhotoLabel(String buttonPhotoLabel) {
-        this.buttonPhotoLabel = buttonPhotoLabel;
+    public void setLabelRadio0(String labelRadio0) {
+        this.labelRadio0 = labelRadio0;
+    }
+    @Override
+    public String getLabelRadio1() {
+        return labelRadio1;
+    }
+    @Override
+    public void setLabelRadio1(String labelRadio1) {
+        this.labelRadio1 = labelRadio1;
+    }
+    @Override
+    public String getLabelRadio2() {
+        return labelRadio2;
+    }
+    @Override
+    public void setLabelRadio2(String labelRadio2) {
+        this.labelRadio2 = labelRadio2;
+    }
+    @Override
+    public String getLabelRadio3() {
+        return labelRadio3;
+    }
+    @Override
+    public void setLabelRadio3(String labelRadio3) {
+        this.labelRadio3 = labelRadio3;
     }
     @Override
     public String getButtonAddlabel() {
