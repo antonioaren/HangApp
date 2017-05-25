@@ -29,18 +29,6 @@ public class ExampleInstrumentedTest {
 
     assertEquals("es.ulpgc.eite.clean.mvp.dummy", appContext.getPackageName());
   }
-@Test
-  public void testOnAddClicked()throws Exception{
-  CategoryPresenter category= new CategoryPresenter();
- onView(withId(R.id.buttonAdd)).perform(click());
- // onView(withId(R.id.textName)).check(matches(ViewMatchers.isDisplayed()));
-}
 
-//por implementar
-    @Test
-public void testOnSearchCliked()throws Exception{
-      // onView(withId(R.id.buttonAdd)).check(matches(ViewMatchers.isDisplayed()));
-        //onView(withId(R.id.delete)).check(matches(ViewMatchers.isDisplayed()));
-}
 
 }
