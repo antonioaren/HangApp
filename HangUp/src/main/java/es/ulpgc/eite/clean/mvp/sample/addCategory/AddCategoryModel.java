@@ -119,19 +119,33 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
 
 
 @Override
-    public int getImageById(int id){
-    String identification=String.valueOf(id);
-    if(identification.equals("id0")){
-        return images[0];
-    }else if(identification.equals("id1")){
-        return images[1];
+    public int getImageByMessage(String msg){
+
+
+//    if(identification.equals("id0")){
+//         return images[0];
+//    } if(identification.equals("id1")){
+//         return images[1];
+//    }
+//   if(identification.equals("id2")){
+//     return images[2];
+//    }
+// if(identification.equals("id3")){
+//    return images[3];
+//        }
+//
+    int image=1;
+    if(msg.indexOf("0")==2){
+        image=images[0];
     }
-else if(identification.equals("id2")){
-    return images[2];
+    if(msg.indexOf("1")==2){
+        image=images[1];
     }
-else if(identification.equals("id3")){
-    return images[3];
-        }
-      return images[1] ;
+    if(msg.indexOf("2")==2){
+        image=images[2];
+    }
+
+
+    return image;
 }
 }

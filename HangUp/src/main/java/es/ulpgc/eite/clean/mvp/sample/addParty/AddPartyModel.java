@@ -10,6 +10,7 @@ import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.data.Repository;
+import es.ulpgc.eite.clean.mvp.sample.product.ProductModel;
 import io.realm.RealmList;
 
 
@@ -31,12 +32,13 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     private List<CategoryData> partyAdded;
     private List<ProductData> party;
     private Repository.ProductRepository.OnSaveProductCallback callback;
-
+    private ProductModel product;
 
 
     public AddPartyModel() {
      this.party= new ArrayList<>();
       this.partyAdded= new ArrayList<>();
+        this.product=new ProductModel();
     }
 
 
@@ -193,5 +195,9 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     public String getDescription() {
         return description;
     }
+    @Override
+    public void insertEvent(final int image, final String name,final String numberOfParticipants) {
+        product.insertProduct(image,name,numberOfParticipants);
 
+    }
 }

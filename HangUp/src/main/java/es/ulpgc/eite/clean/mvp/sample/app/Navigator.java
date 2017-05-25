@@ -14,6 +14,8 @@ public interface Navigator {
     void goToAddCategoryScreen(Category.CategoryTo presenter);
 
 
+    void goToAddPartyScreen(Product.ProductTo presenter);
+
     void SaveDataAdd(Add.AddTo presenter);
 
 

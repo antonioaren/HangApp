@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -34,11 +33,11 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
     EditText editTextName;
     TextView textPhoto;
     Button buttonPhoto;
-    ImageView image;
+ RadioGroup radioGroup;
     Button buttonAdd;
   //  ListView list;
-    RadioGroup radioGroup;
-    RadioButton radioButton;
+
+    RadioButton radioButton0,radioButton1,radioButton2;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,14 +46,19 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
         textViewName = (TextView) findViewById(R.id.textName);
         editTextName = (EditText) findViewById(R.id.content_name);
         textPhoto = (TextView) findViewById(R.id.textPhoto);
-        radioGroup=(RadioGroup)findViewById(R.id.radioGroup);
+       radioGroup=(RadioGroup)findViewById(R.id.radioGroup);
+        radioButton0=(RadioButton)findViewById(R.id.id0);
+        radioButton1=(RadioButton)findViewById(R.id.id1);
+
+        radioButton2=(RadioButton)findViewById(R.id.id2);
 
 
 
 
 
 
-       image=(ImageView)findViewById(R.id.image);
+
+
         buttonAdd=(Button)findViewById(R.id.buttonAdd);
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,8 +135,11 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
     }
 
     @Override
-    public int getRadioButtonIdSelected() {
-        return radioGroup.getCheckedRadioButtonId();
+    public String getRadioButtonId() {
+
+
+      String id= String.valueOf(radioGroup.getCheckedRadioButtonId());
+        return id;
     }
 
 

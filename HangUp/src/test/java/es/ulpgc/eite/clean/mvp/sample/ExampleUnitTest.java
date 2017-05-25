@@ -83,7 +83,11 @@ public class ExampleUnitTest {
 
 
 //test for addcategoryModel
+@Test
+public void testGetImageByIdSelected()throws Exception{
 
+
+}
   @Test
   public void testGetNameCategoryNull(){
    AddCategoryModel add= new AddCategoryModel();

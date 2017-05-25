@@ -9,6 +9,7 @@ import java.util.List;
 import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategory;
 import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategoryView;
 import es.ulpgc.eite.clean.mvp.sample.addParty.Add;
+import es.ulpgc.eite.clean.mvp.sample.addParty.AddPartyView;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
@@ -33,7 +34,7 @@ public class App extends Application implements Mediator, Navigator {
     private DetailState ProductToDetail;
 
     private SearchState CategoryToSearch;
-    private AddState toAddState;
+    private AddPartyState toAddState;
     private AddCategoryState toaddCategoryState;
     private SearchState toSearchState;
 
@@ -140,7 +141,7 @@ presenter.onScreenStarted();
 
     @Override
     public void goToAddCategoryScreen(Category.CategoryTo presenter) {
-        toAddState = new AddState();
+        toaddCategoryState = new AddCategoryState();
 
         //Añadir los estados que falten para pasarles a la busquedad. Guardar posicion, etc.
 
@@ -150,7 +151,18 @@ presenter.onScreenStarted();
         }
 
     }
+    @Override
+    public void goToAddPartyScreen(Product.ProductTo presenter) {
+        toAddState = new AddPartyState();
 
+        //Añadir los estados que falten para pasarles a la busquedad. Guardar posicion, etc.
+
+        Context view = presenter.getManagedContext();
+        if (view != null) {
+            view.startActivity(new Intent(view, AddPartyView.class));
+        }
+
+    }
     @Override
     public void SaveDataAdd(Add.AddTo presenter) {
 
@@ -158,7 +170,7 @@ presenter.onScreenStarted();
 
     @Override
     public void SaveDataAdd(AddCategory.AddTo presenter) {
-        toAddState = new AddState();
+        toaddCategoryState = new AddCategoryState();
         toAddState.descriptionOfTheParty = presenter.getDescriptionOfTheParty();
        // toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
        // toAddState.dateOfTheParty = presenter.getDateOfTheParty();
@@ -224,7 +236,7 @@ public void selectImage(AddCategory.AddTo presenter){
         public String nameToDelete;
     }
 
-    private class AddState {
+    private class AddPartyState {
         boolean textVisibility;
         boolean selectorsVisibility;
         public String descriptionOfTheParty;

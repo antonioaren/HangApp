@@ -175,6 +175,7 @@ public interface Add {
         void setDescription(String description);
 
 
+        void insertEvent(int image, String name, String numberOfParticipants);
     }
 
     /**

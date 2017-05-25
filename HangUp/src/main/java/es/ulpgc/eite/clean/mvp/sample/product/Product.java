@@ -29,6 +29,8 @@ public interface Product {
 
     public interface ViewToPresenter {
         void onItemClicked(ProductData item);
+
+        void onButtonAddClicked();
     }
 
     public interface PresenterToModel {

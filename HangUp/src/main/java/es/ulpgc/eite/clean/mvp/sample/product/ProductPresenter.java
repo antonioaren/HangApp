@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
+import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
@@ -70,6 +71,13 @@ public class ProductPresenter
     public void onItemClicked(ProductData item) {
         ItemSelected = item;
 
+    }
+
+    @Override
+    public void onButtonAddClicked() {
+        Log.d(TAG, "calling onButtonAddClicked()");
+        Navigator app = (Navigator) getView().getApplication();
+        app.goToAddPartyScreen(this);
     }
 
     @Override
