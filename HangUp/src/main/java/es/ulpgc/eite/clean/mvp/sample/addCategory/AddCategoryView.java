@@ -153,6 +153,12 @@ public void setRadioButtonLabels(String txt0,String txt1,String txt2,String txt3
       else if(id==R.id.id2){
             identificator=2;
         }
+        else if(id==R.id.id3){
+            identificator=3;
+        }
+        else{
+           identificator=0;
+        }
        return identificator;
     }
 

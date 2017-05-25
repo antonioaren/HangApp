@@ -84,7 +84,7 @@ public class AddCategoryPresenter
 
     @Override
     public void onAddClicked() {
-       int image= getModel().getImageByMessage(getView().getRadioButtonId());
+       int image= getModel().getImageByIdSelected(getView().getRadioButtonId());
         getModel().insertEvent(getView().getTextFromEditText(),image );
         Mediator app= (Mediator)getView().getApplication();
         app.SaveDataAdd(this);

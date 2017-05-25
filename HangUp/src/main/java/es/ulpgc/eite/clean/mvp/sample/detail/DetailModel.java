@@ -11,6 +11,23 @@ public class DetailModel extends GenericModel<Detail.ModelToPresenter> implement
 
     private String titleLabel;
     private String DescriptionLabel;
+
+    public void setTitleLabel(String titleLabel) {
+        this.titleLabel = titleLabel;
+    }
+
+    public void setDescriptionLabel(String descriptionLabel) {
+        DescriptionLabel = descriptionLabel;
+    }
+
+    public void setDateLabel(String dateLabel) {
+        this.dateLabel = dateLabel;
+    }
+
+    public void setHourLabel(String hourLabel) {
+        this.hourLabel = hourLabel;
+    }
+
     private String dateLabel;
     private String hourLabel;
 

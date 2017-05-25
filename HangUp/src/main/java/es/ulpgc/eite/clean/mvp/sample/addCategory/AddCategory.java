@@ -161,7 +161,7 @@ public interface AddCategory {
 
         Integer[] getImages();
 
-        int getImageByMessage(int id);
+        int getImageByIdSelected(int id);
     }
 
     /**

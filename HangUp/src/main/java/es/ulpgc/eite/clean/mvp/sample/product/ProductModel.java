@@ -116,4 +116,9 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
         });
 
 
-}}
+}
+
+    public void setAddLabel(String txt) {
+      this.addlabel=txt;
+    }
+}

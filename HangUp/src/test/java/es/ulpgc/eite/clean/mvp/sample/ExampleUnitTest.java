@@ -5,6 +5,7 @@ import org.junit.Test;
 import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategoryModel;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
 import es.ulpgc.eite.clean.mvp.sample.detail.DetailModel;
+import es.ulpgc.eite.clean.mvp.sample.product.ProductModel;
 import es.ulpgc.eite.clean.mvp.sample.search.SearchModel;
 
 import static org.junit.Assert.assertEquals;
@@ -20,7 +21,7 @@ public class ExampleUnitTest {
     assertEquals(4, 2 + 2);
   }
 
-  //Test for addPartyView
+  //Test for addPartyModel
   @Test
   public void testTiltleLabelDetailBeforeCreating()throws Exception{
   DetailModel detail= new DetailModel();
@@ -85,9 +86,38 @@ public class ExampleUnitTest {
 //test for addcategoryModel
 @Test
 public void testGetImageByIdSelected()throws Exception{
-
+  AddCategoryModel add= new AddCategoryModel();
+ int index= add.getImageByIdSelected(1);
+  assertEquals(R.drawable.disco,add.getImageByIdSelected(1));
 
 }
+  @Test
+  public void testGetImageByIdSelectedOutOfRange()throws Exception{
+    AddCategoryModel add= new AddCategoryModel();
+    int index= add.getImageByIdSelected(-1);
+    assertEquals(R.drawable.astro,index);
+
+  }
+@Test
+public void testGetRadioLabelsWithoutSettingName()throws Exception{
+  AddCategoryModel add= new AddCategoryModel();
+  assertEquals(null,add.getLabelRadio0());
+  assertEquals(null,add.getLabelRadio1());
+  assertEquals(null,add.getLabelRadio2());
+  assertEquals(null,add.getLabelRadio3());
+}
+  @Test
+  public void testGetRadioLabelsBeforeSettingName()throws Exception{
+    AddCategoryModel add= new AddCategoryModel();
+    add.setLabelRadio0("radio");
+    add.setLabelRadio1("radio");
+    add.setLabelRadio2("radio");
+    add.setLabelRadio3("radio");
+    assertEquals("radio",add.getLabelRadio0());
+    assertEquals("radio",add.getLabelRadio1());
+    assertEquals("radio",add.getLabelRadio2());
+    assertEquals("radio",add.getLabelRadio3());
+  }
   @Test
   public void testGetNameCategoryNull(){
    AddCategoryModel add= new AddCategoryModel();
@@ -128,19 +158,9 @@ public void testGetImageByIdSelected()throws Exception{
     add.setPhotoLabel("photo");
     assertEquals("photo",add.getPhotoLabel());
   }
-@Test
-  public void testgetButtonPhotoLabelNull(){
-  AddCategoryModel add= new AddCategoryModel();
 
-  assertEquals(null,add.getButtonPhotoLabel());
-}
 
-  @Test
-  public void testgetButtonPhotoLabelNotNull(){
-    AddCategoryModel add= new AddCategoryModel();
-  add.setButtonPhotoLabel("photo");
-    assertEquals("photo",add.getButtonPhotoLabel());
-  }
+
 
   @Test
   public void testgetButtonAddLabelNull(){
@@ -210,5 +230,42 @@ public void testGetImageByIdSelected()throws Exception{
     assertEquals("dlt",search.getDeleteIdBtnLabel());
 
   }
+  //Test for ProductModel
+  @Test
+  public void testgetAddLabelWithoutSetting()throws Exception{
+    ProductModel product= new ProductModel();
+    product.getAddLabel();
+    assertEquals(null,product.getAddLabel());
+  }
+  @Test
+  public void testgetAddLabelAfterSettingName()throws Exception{
+    ProductModel product= new ProductModel();
+    product.setAddLabel("add");
+    assertEquals("add",product.getAddLabel());
+  }
+
+
+  //Test for DetailModel
+  @Test
+  public void testgetLabelsWithoutSettingName()throws Exception{
+    DetailModel detail= new DetailModel();
+    assertEquals(null,detail.getTitleLabel());
+    assertEquals(null,detail.getDescriptionLabel());
+    assertEquals(null,detail.getDateLabel());
+    assertEquals(null,detail.getHourLabel());
+  }
+  @Test
+  public void testgetLabelsAfterSettingName()throws Exception{
+    DetailModel detail= new DetailModel();
+    detail.setTitleLabel("title");
+    detail.setDescriptionLabel("title");
+    detail.setDateLabel("title");
+    detail.setHourLabel("title");
+    assertEquals("title",detail.getTitleLabel());
+    assertEquals("title",detail.getDescriptionLabel());
+    assertEquals("title",detail.getDateLabel());
+    assertEquals("title",detail.getHourLabel());
+  }
+
 
 }
