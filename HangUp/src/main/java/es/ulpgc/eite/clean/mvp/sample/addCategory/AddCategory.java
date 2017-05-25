@@ -107,7 +107,7 @@ public interface AddCategory {
         void setButtonPhotoLabel(String txt);
 
 
-        String getRadioButtonId();
+         int getRadioButtonId();
     }
 
     /**
@@ -148,7 +148,7 @@ public interface AddCategory {
 
         Integer[] getImages();
 
-        int getImageByMessage(String msg);
+        int getImageByMessage(int id);
     }
 
     /**

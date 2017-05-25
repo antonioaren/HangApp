@@ -16,7 +16,7 @@ public interface Navigator {
 
     void goToAddPartyScreen(Product.ProductTo presenter);
 
-    void SaveDataAdd(Add.AddTo presenter);
+
 
 
     void goToProductScreen(Category.CategoryTo presenter);

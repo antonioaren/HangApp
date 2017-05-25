@@ -135,11 +135,18 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
     }
 
     @Override
-    public String getRadioButtonId() {
-
-
-      String id= String.valueOf(radioGroup.getCheckedRadioButtonId());
-        return id;
+    public int getRadioButtonId() {
+      int identificator=1;
+     int id= radioGroup.getCheckedRadioButtonId();
+        if(id==R.id.id0){
+            identificator=0;
+        }else if(id==R.id.id1){
+            identificator=1;
+        }
+      else if(id==R.id.id2){
+            identificator=2;
+        }
+       return identificator;
     }
 
 

@@ -163,20 +163,16 @@ presenter.onScreenStarted();
         }
 
     }
-    @Override
-    public void SaveDataAdd(Add.AddTo presenter) {
 
-    }
 
     @Override
     public void SaveDataAdd(AddCategory.AddTo presenter) {
         toaddCategoryState = new AddCategoryState();
-        toAddState.descriptionOfTheParty = presenter.getDescriptionOfTheParty();
+
        // toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
        // toAddState.dateOfTheParty = presenter.getDateOfTheParty();
         //toAddState.hourOfParty = presenter.getHourOfParty();
 
-        toAddState.newparty = presenter.getParty();
      presenter.destroyView();
     }
     

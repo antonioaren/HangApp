@@ -134,10 +134,8 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
 //    return images[3];
 //        }
 //
-   String identification=String.valueOf(id);
-    char digit=identification.charAt(2);
-    int index= Integer.parseInt("" + digit);
-    return images[index];
+
+    return images[id];
 
 //    if(identification.indexOf("0")==2){
 //        image=images[0];
