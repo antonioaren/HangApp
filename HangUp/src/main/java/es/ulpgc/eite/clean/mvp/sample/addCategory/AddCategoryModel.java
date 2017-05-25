@@ -116,4 +116,7 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
   public Integer[] getImages(){
     return this.images;
 }
+
+
+
 }
