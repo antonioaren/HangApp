@@ -122,33 +122,10 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     public int getImageByMessage(int id){
 
 
-//    if(identification.equals("id0")){
-//         return images[0];
-//    } if(identification.equals("id1")){
-//         return images[1];
-//    }
-//   if(identification.equals("id2")){
-//     return images[2];
-//    }
-// if(identification.equals("id3")){
-//    return images[3];
-//        }
-//
+
 
     return images[id];
 
-//    if(identification.indexOf("0")==2){
-//        image=images[0];
-//    }
-//    if(identification.indexOf("1")==2){
-//        image=images[1];
-//    }
-//    if(identification.indexOf("2")==2){
-//        image=images[2];
-//    }
-//if(identification.indexOf("3")==2){
-//    image=images[3];
-//}
 
 
 }

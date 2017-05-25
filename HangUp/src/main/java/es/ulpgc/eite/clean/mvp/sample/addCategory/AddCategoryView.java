@@ -38,7 +38,7 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
     Button buttonAdd;
   //  ListView list;
 
-    RadioButton radioButton0,radioButton1,radioButton2;
+    RadioButton radioButton0,radioButton1,radioButton2,radioButton3;
     ImageView image1,image2,image3,image4;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,12 +48,12 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
         textViewName = (TextView) findViewById(R.id.textName);
         editTextName = (EditText) findViewById(R.id.content_name);
         textPhoto = (TextView) findViewById(R.id.textPhoto);
-       radioGroup=(RadioGroup)findViewById(R.id.radioGroup);
+        radioGroup=(RadioGroup)findViewById(R.id.radioGroup);
         radioButton0=(RadioButton)findViewById(R.id.id0);
         radioButton1=(RadioButton)findViewById(R.id.id1);
 
         radioButton2=(RadioButton)findViewById(R.id.id2);
-
+        radioButton3=(RadioButton)findViewById(R.id.id3);
         image1=(ImageView)findViewById(R.id.image1);
         image2=(ImageView)findViewById(R.id.image2);
         image3=(ImageView)findViewById(R.id.image3);
@@ -133,11 +133,14 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
     public void setPhotoLabel(String txt) {
     textPhoto.setText(txt);
     }
-    @Override
-    public void setButtonPhotoLabel(String txt) {
-        buttonPhoto.setText(txt);
-    }
 
+@Override
+public void setRadioButtonLabels(String txt0,String txt1,String txt2,String txt3){
+    radioButton0.setText(txt0);
+    radioButton1.setText(txt1);
+    radioButton2.setText(txt2);
+    radioButton3.setText(txt3);
+}
     @Override
     public int getRadioButtonId() {
       int identificator=1;

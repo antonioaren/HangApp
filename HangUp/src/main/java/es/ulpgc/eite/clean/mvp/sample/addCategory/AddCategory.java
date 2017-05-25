@@ -104,10 +104,10 @@ public interface AddCategory {
 
         void setPhotoLabel(String txt);
 
-        void setButtonPhotoLabel(String txt);
 
+        void setRadioButtonLabels(String txt0, String txt1, String txt2, String txt3);
 
-         int getRadioButtonId();
+        int getRadioButtonId();
     }
 
     /**
