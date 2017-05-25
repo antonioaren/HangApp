@@ -32,8 +32,8 @@ public class CategoryView
     private ImageView image;
     private RecyclerView recycler;
     private LinearLayoutManager linearmanager;
-    private CategoryAdapter adapter;
-    private CategoryView instance;
+
+
 
 
     @Override

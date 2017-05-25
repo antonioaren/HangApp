@@ -63,7 +63,7 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
 
 
 
-        buttonAdd=(Button)findViewById(R.id.buttonAdd);
+        buttonAdd=(Button)findViewById(R.id.buttonAdd2);
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

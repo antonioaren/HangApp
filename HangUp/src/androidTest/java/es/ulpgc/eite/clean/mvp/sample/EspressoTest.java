@@ -36,7 +36,7 @@ public class EspressoTest  {
      //actualizando test
          onView(withId(R.id.textPhoto)).check(matches(ViewMatchers.isDisplayed()));
          onView(withId(R.id.textName)).check(matches(ViewMatchers.isDisplayed()));
-         onView(withId(R.id.list)).check(matches(ViewMatchers.isDisplayed()));
+         onView(withId(R.id.radioGroup)).check(matches(ViewMatchers.isDisplayed()));
          onView(withId(R.id.content_name)).check(matches(ViewMatchers.isDisplayed()));
          onView(withId(R.id.buttonAdd)).check(matches(ViewMatchers.isDisplayed()));
      }
@@ -51,4 +51,17 @@ public class EspressoTest  {
         onView(withId(R.id.editText2)).check(matches(ViewMatchers.isDisplayed()));
 
     }
+    @Test
+    public void testOnAddClickeFromAddCategoryScreen(){
+
+        onView(withId(R.id.buttonAdd2)).perform(click());
+        //actualizando test
+        onView(withId(R.id.title)).check(matches(ViewMatchers.isDisplayed()));
+        onView(withId(R.id.recycler)).check(matches(ViewMatchers.isDisplayed()));
+        onView(withId(R.id.image)).check(matches(ViewMatchers.isDisplayed()));
+        onView(withId(R.id.buttonSearch)).check(matches(ViewMatchers.isDisplayed()));
+        onView(withId(R.id.buttonAdd)).check(matches(ViewMatchers.isDisplayed()));
+    }
+
+
 }
