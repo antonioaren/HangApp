@@ -146,6 +146,8 @@ public interface AddCategory {
         String[]getNames();
 
         Integer[] getImages();
+
+        int getImageById(int id);
     }
 
     /**

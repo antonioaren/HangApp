@@ -134,7 +134,7 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
     public int getPhotoSelected() {
         Integer[]images= getPresenter().getImages();
         String[]name= getPresenter().getNames();
-        int image=0;
+        int image=images[0];
        int radioButtonId=radioGroup.getCheckedRadioButtonId();
       // RadioButton radio=(RadioButton)findViewById(R.id.id0);
        String id=String.valueOf(radioButtonId);
@@ -152,7 +152,7 @@ if(id=="id1"){
             image=images[3];
         }
     // return images[position];
-      return images[radioButtonId];
+      return image;
     }
 
 
