@@ -51,30 +51,30 @@
            android:layout_width="match_parent"
            android:id="@+id/radioGroup">
            <RadioButton
-               android:id="@+id/button1"
+               android:id="@+id/0"
                android:layout_width="wrap_content"
                android:layout_height="40dp"
                android:drawableEnd="@drawable/astro"
-               android:onClick="rbclik"/>
+               />
            <RadioButton
-               android:id="@+id/button2"
+               android:id="@+id/1"
                android:layout_width="wrap_content"
                android:layout_height="40dp"
                android:drawableEnd="@drawable/disco"
-               android:onClick="rbclik"/>
+              />
 
            <RadioButton
-               android:id="@+id/button3"
+               android:id="@+id/2"
                android:layout_width="wrap_content"
                android:layout_height="40dp"
                android:drawableEnd="@drawable/cars"
-               android:onClick="rbclik"/>
+              />
            <RadioButton
-               android:id="@+id/button4"
+               android:id="@+id/3"
                android:layout_width="warp_content"
                android:layout_height="40dp"
                android:drawableEnd="@drawable/ulpgc"
-               android:onClick="rbclik"/>
+              />
 
         />
        </RadioGroup>

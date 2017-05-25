@@ -142,7 +142,7 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
 
 
     // return images[position];
-   return images[radioButtonId];
+      return images[radioButtonId];
     }
 
 
