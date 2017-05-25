@@ -119,7 +119,7 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
 
 
 @Override
-    public int getImageByMessage(String msg){
+    public int getImageByMessage(int id){
 
 
 //    if(identification.equals("id0")){
@@ -134,18 +134,24 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
 //    return images[3];
 //        }
 //
-    int image=1;
-    if(msg.indexOf("0")==2){
-        image=images[0];
-    }
-    if(msg.indexOf("1")==2){
-        image=images[1];
-    }
-    if(msg.indexOf("2")==2){
-        image=images[2];
-    }
+   String identification=String.valueOf(id);
+    char digit=identification.charAt(2);
+    int index= Integer.parseInt("" + digit);
+    return images[index];
+
+//    if(identification.indexOf("0")==2){
+//        image=images[0];
+//    }
+//    if(identification.indexOf("1")==2){
+//        image=images[1];
+//    }
+//    if(identification.indexOf("2")==2){
+//        image=images[2];
+//    }
+//if(identification.indexOf("3")==2){
+//    image=images[3];
+//}
 
 
-    return image;
 }
 }
