@@ -106,7 +106,9 @@ public interface AddCategory {
 
         void setButtonPhotoLabel(String txt);
 
-        int getPhotoSelected();
+
+
+        int getRadioButtonIdSelected();
     }
 
     /**
