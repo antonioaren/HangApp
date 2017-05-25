@@ -46,10 +46,38 @@
 
             android:text="Photo:"
             android:id="@+id/textPhoto"/>
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:id="@+id/list"/>
+       <RadioGroup
+           android:layout_height="match_parent"
+           android:layout_width="match_parent"
+           android:id="@+id/radioGroup">
+           <RadioButton
+               android:id="@+id/button1"
+               android:layout_width="wrap_content"
+               android:layout_height="40dp"
+               android:drawableEnd="@drawable/astro"
+               android:onClick="rbclik"/>
+           <RadioButton
+               android:id="@+id/button2"
+               android:layout_width="wrap_content"
+               android:layout_height="40dp"
+               android:drawableEnd="@drawable/disco"
+               android:onClick="rbclik"/>
+
+           <RadioButton
+               android:id="@+id/button3"
+               android:layout_width="wrap_content"
+               android:layout_height="40dp"
+               android:drawableEnd="@drawable/cars"
+               android:onClick="rbclik"/>
+           <RadioButton
+               android:id="@+id/button4"
+               android:layout_width="warp_content"
+               android:layout_height="40dp"
+               android:drawableEnd="@drawable/ulpgc"
+               android:onClick="rbclik"/>
+
+        />
+       </RadioGroup>
     </LinearLayout>
 
 
