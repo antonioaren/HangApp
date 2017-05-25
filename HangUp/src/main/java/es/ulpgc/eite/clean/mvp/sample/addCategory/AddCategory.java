@@ -128,6 +128,8 @@ public interface AddCategory {
         void setPhotoLabel(String photoLabel);
 
 
+        String getLabelRadio0();
+
         void setLabelRadio0(String labelRadio0);
 
         String getLabelRadio1();

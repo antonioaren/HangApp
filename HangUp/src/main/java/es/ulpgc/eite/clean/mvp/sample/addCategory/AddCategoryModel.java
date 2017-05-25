@@ -25,9 +25,6 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     private String labelRadio0;
     private String labelRadio1;
     private String labelRadio2;
-
-
-
     private String labelRadio3;
     String []names;
     Integer[]images;
@@ -88,6 +85,7 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     public void setPhotoLabel(String photoLabel) {
         this.photoLabel = photoLabel;
     }
+    @Override
     public String getLabelRadio0() {
         return labelRadio0;
     }

@@ -50,7 +50,7 @@ public class AddCategoryPresenter
             getView().setTitleLabel(getModel().getTitleLabel());
             getView().setNameLabel(getModel().getNameLabel());
             getView().setPhotoLabel(getModel().getPhotoLabel());
-            getView().setButtonPhotoLabel(getModel().getButtonPhotoLabel());
+            getView().setRadioButtonLabels(getModel().getLabelRadio0(),getModel().getLabelRadio1(),getModel().getLabelRadio2(),getModel().getLabelRadio3());
             getView().setAddBtnLabel(getModel().getButtonAddlabel());
 
 
