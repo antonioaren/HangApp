@@ -14,7 +14,7 @@ import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 import es.ulpgc.eite.clean.mvp.sample.data.repositories.ProductRepository;
 import es.ulpgc.eite.clean.mvp.sample.delete.Delete;
-import es.ulpgc.eite.clean.mvp.sample.delete.SearchView;
+import es.ulpgc.eite.clean.mvp.sample.delete.DeleteView;
 import es.ulpgc.eite.clean.mvp.sample.detail.DetailPresenter;
 import es.ulpgc.eite.clean.mvp.sample.detail.DetailView;
 import es.ulpgc.eite.clean.mvp.sample.product.Product;
@@ -133,7 +133,7 @@ presenter.onScreenStarted();
 
         Context view = presenter.getManagedContext();
         if (view != null) {
-            view.startActivity(new Intent(view, SearchView.class));
+            view.startActivity(new Intent(view, DeleteView.class));
         }
     }
 
@@ -146,7 +146,7 @@ presenter.onScreenStarted();
 
         Context view = presenter.getManagedContext();
         if (view != null) {
-            view.startActivity(new Intent(view, SearchView.class));
+            view.startActivity(new Intent(view, DeleteView.class));
         }
     }
 

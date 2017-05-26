@@ -83,7 +83,9 @@ public class ProductPresenter
 
     @Override
     public void onButtonDeleteClicked() {
-
+        Log.d(TAG, "calling onButtonDeleteClicked()");
+        Navigator app = (Navigator) getView().getApplication();
+        app.gotoDeleteProductScreen(this);
     }
 
     @Override
