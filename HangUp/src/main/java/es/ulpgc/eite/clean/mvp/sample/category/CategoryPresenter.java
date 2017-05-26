@@ -108,7 +108,7 @@ public class CategoryPresenter
 //          buttonClicked = true;
 
         Navigator app = (Navigator) getView().getApplication();
-        app.goToSearchScreen(this);
+        app.goToDeleteScreen(this);
     }
     @Override
     public void onButtonAddClicked() {
