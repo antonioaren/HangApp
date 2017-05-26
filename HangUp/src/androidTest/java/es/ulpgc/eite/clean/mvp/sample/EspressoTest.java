@@ -11,6 +11,7 @@ import org.junit.runner.RunWith;
 
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
+import es.ulpgc.eite.clean.mvp.sample.search.SearchModel;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
@@ -109,7 +110,7 @@ public class EspressoTest  {
 
     }
   @Test
-    public void insertEventTest(){
+    public void insertEventTestBeforeStartingApplication(){
     final  CategoryModel c= new CategoryModel();
       RealmConfiguration testConfig =
               new RealmConfiguration.Builder().
@@ -118,13 +119,33 @@ public class EspressoTest  {
 
       Realm testRealm = Realm.getInstance(testConfig);
 
-    c.insertEvent("bkjbbukbujbujbuhb",R.drawable.astro);
-//     testRealm.executeTransaction(new Realm.Transaction() {
-//         @Override
-//         public void execute(Realm realm) {
-//             c.insertEvent("jgbugb",R.drawable.astro);
-//         }
-//     });
-//  }
-}}
+     testRealm.executeTransaction(new Realm.Transaction() {
+         @Override
+         public void execute(Realm realm) {
+             c.insertEvent("jgbugb",R.drawable.astro);
+         }
+     });
+  }
+
+    @Test
+    public void DeleteEventTest()throws Exception{
+        final SearchModel search= new SearchModel();
+        RealmConfiguration testConfig =
+                new RealmConfiguration.Builder().
+                        inMemory().
+                        name("test-realm").build();
+
+        Realm testRealm = Realm.getInstance(testConfig);
+
+        testRealm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                search.deteleEvent("Fiestas");
+                search.deteleEvent("ULPGC");
+            }
+        });
+    }
+
+
+}
 
