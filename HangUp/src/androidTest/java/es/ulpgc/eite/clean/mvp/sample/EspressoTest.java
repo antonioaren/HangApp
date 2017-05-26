@@ -1,6 +1,5 @@
 package es.ulpgc.eite.clean.mvp.sample;
 
-import android.support.test.espresso.ViewAssertion;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
@@ -41,10 +40,11 @@ public class EspressoTest  {
 
     @Test
     public void shouldBeAbleToLaunchMainScreen(){
-//        onView(withId(R.id.buttonAdd)).perform(click());
-//         onView(withId(R.id.textName)).check(matches(ViewMatchers.isDisplayed()));
-       // onView(withId(R.id.title)).check(matches(ViewMatchers.isDisplayed()));
-        onView(withId(R.id.title)).check((ViewAssertion) isDisplayed());
+        onView(withId(R.id.buttonAdd)).check(matches(isDisplayed()));
+        onView(withId(R.id.buttonSearch)).check(matches(isDisplayed()));
+
+
+
     }
      @Test
     public void testOnAddClickedFromMainScreen(){
@@ -80,17 +80,8 @@ public class EspressoTest  {
         onView(withId(R.id.buttonSearch)).check(matches(isDisplayed()));
         onView(withId(R.id.buttonAdd)).check(matches(isDisplayed()));
     }
-@Test
-    public void loadAllCategories()throws Exception{
 
-    }
-    @Test
-    public void testShouldBeAbleToLaunchActivityAndSeeRealmResults() {
-        onView(withText("Música")).check(matches(isDisplayed()));
-         onView(withText("ULPGC")).check(matches(isDisplayed()));
-        onView(withText("Fiestas")).check(matches(isDisplayed()));
 
-    }
 
     @Test
     public void verifyMessageSentToMainActivity() {
@@ -104,7 +95,7 @@ public class EspressoTest  {
         // Clicks a button to send the message to another
         // activity through an explicit intent.
         onView(withId(R.id.buttonAdd2)).perform(click());
-        onView(withText("This is a test")).check(matches(isDisplayed()));
+        onView(withText(MESSAGE)).check(matches(isDisplayed()));
         // Verifies that the DisplayMessageActivity received an intent
         // with the correct package name and message.
 
@@ -140,8 +131,8 @@ public class EspressoTest  {
         testRealm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
-                search.deteleEvent("Fiestas");
-                search.deteleEvent("ULPGC");
+                search.deteleEvent("Música");
+
             }
         });
     }
