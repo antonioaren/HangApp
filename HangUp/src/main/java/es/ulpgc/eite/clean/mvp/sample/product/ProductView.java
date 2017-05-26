@@ -30,7 +30,7 @@ public class ProductView
         implements Product.PresenterToView {
 
    public RecyclerView recycler;
-    Button buttonAdd;
+    Button buttonAdd,buttonDelete;
     private LinearLayoutManager linearmanager;
     private RealmResults<ProductData> items;
     @Override
@@ -51,6 +51,14 @@ public class ProductView
             @Override
             public void onClick(View view) {
                getPresenter().onButtonAddClicked();
+            }
+        });
+
+        buttonDelete=(Button)findViewById(R.id.buttonDelete);
+        buttonDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getPresenter().onButtonAddClicked();
             }
         });
         /*Story = (TextView) findViewById(R.id.Story);
