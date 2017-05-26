@@ -89,4 +89,24 @@ public class ProductPresenter
     public ProductData getSelectedItem() {
         return ItemSelected;
     }
+
+    @Override
+    public String getDescriptionOfTheParty() {
+        return null;
+    }
+
+    @Override
+    public String getPlaceOfTheParty() {
+        return null;
+    }
+
+    @Override
+    public String getDateOfTheParty() {
+        return null;
+    }
+
+    @Override
+    public String getHourOfParty() {
+        return null;
+    }
 }

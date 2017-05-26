@@ -23,7 +23,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_category"/>
+    <include layout="@layout/content_product"/>
 
 
 </android.support.design.widget.CoordinatorLayout>

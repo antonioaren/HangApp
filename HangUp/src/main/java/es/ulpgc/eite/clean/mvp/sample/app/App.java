@@ -161,7 +161,7 @@ presenter.onScreenStarted();
         if (view != null) {
             view.startActivity(new Intent(view, AddPartyView.class));
         }
-        
+
     }
 
 

@@ -62,9 +62,7 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
                 event.setImage(image);
                 event.setProductName(title);
                 event.setParticipants(participants);
-               // event.setDetailText(detail);
-               // event.setDay(day);
-               // event.setHour(hour);
+
 
             }
 

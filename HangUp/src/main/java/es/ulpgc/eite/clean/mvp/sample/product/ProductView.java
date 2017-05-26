@@ -46,7 +46,7 @@ public class ProductView
         recycler.setAdapter(
                 new ProductView.ProductAdapter(realm.where(ProductData.class).findAllAsync()));
 
-        buttonAdd=(Button)findViewById(R.id.buttonAdd);
+        buttonAdd=(Button)findViewById(R.id.buttonAddParty);
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
