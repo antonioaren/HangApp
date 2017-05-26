@@ -32,5 +32,5 @@ Mediator {
   void SaveDataAdd(AddCategory.AddTo presenter);
   void deleteEvent(Search.SearchTo presenter);
 
-    void selectImage(AddCategory.AddTo presenter);
+
 }

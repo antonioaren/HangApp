@@ -4,8 +4,6 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 
-import java.util.List;
-
 import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategory;
 import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategoryView;
 import es.ulpgc.eite.clean.mvp.sample.addParty.Add;
@@ -22,7 +20,6 @@ import es.ulpgc.eite.clean.mvp.sample.product.ProductView;
 import es.ulpgc.eite.clean.mvp.sample.search.Search;
 import es.ulpgc.eite.clean.mvp.sample.search.SearchView;
 import io.realm.Realm;
-import io.realm.RealmList;
 
 
 public class App extends Application implements Mediator, Navigator {
@@ -156,12 +153,15 @@ presenter.onScreenStarted();
         toAddState = new AddPartyState();
 
         //Añadir los estados que falten para pasarles a la busquedad. Guardar posicion, etc.
-
+         toAddState.descriptionOfTheParty=presenter.getDescriptionOfTheParty();
+        toAddState.placeOfTheParty=presenter.getPlaceOfTheParty();
+        toAddState.dateOfTheParty=presenter.getDateOfTheParty();
+        toAddState.hourOfParty=presenter.getHourOfParty();
         Context view = presenter.getManagedContext();
         if (view != null) {
             view.startActivity(new Intent(view, AddPartyView.class));
         }
-
+        
     }
 
 
@@ -182,35 +182,7 @@ presenter.onScreenStarted();
         toSearchState.nameToDelete=presenter.getNameToDelete();
         presenter.destroyView();
     }
-@Override
-public void selectImage(AddCategory.AddTo presenter){
-    final Context view= presenter.getManagedContext();
-    toaddCategoryState=new AddCategoryState();
-    //toaddCategoryState.photoSelected=presenter.getPhotoSelected();
-   //final CharSequence []option= new CharSequence[]{"choose a photo","cancel"};
-   // final AlertDialog.Builder builder=new AlertDialog.Builder(this);
-  // builder.setTitle("choose an option");
-   // builder.setItems(option,new DialogInterface.OnClickListener() {
 
-//        @Override
-//        public void onClick(DialogInterface dialog, int selection) {
-//            if(option[selection]=="choose a photo"){
-//                if(view!=null){
-//                   //Intent para seleccionar la foto de la galeria
-//                   Intent intent= new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-//                           //configuramos que tipo de extension queremos que se nos muestre de las fotos.El * significa cualquier extension
-//                           .setType("image/*");
-//                    view.startActivity(intent);
-//                   intent.createChooser(intent,"choose image");
-//
-//                }
-//            }
-//        }
-//    });
-
-                // }
-
-            }
 
     //////////////// State /////////////////////////////////////////////////////////////////////////
 
@@ -236,12 +208,10 @@ public void selectImage(AddCategory.AddTo presenter){
         boolean textVisibility;
         boolean selectorsVisibility;
         public String descriptionOfTheParty;
-        String placeOfTheParty;
-        String dateOfTheParty;
-        String hourOfParty;
-        List<CategoryData> partyAdded;
-        RealmList<ProductData> newparty;
-        List<CategoryData> list;
+        public String placeOfTheParty;
+        public String dateOfTheParty;
+        public String hourOfParty;
+
 
         Repository.ProductRepository.OnSaveProductCallback callback;
 
@@ -253,7 +223,7 @@ private class AddCategoryState{
     boolean textVisibility;
 
 
-    public int photoSelected;
+
 }}
 
 

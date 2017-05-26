@@ -47,12 +47,12 @@ public class ProductView
                 new ProductView.ProductAdapter(realm.where(ProductData.class).findAllAsync()));
 
         buttonAdd=(Button)findViewById(R.id.buttonAdd);
-//        buttonAdd.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//               //getPresenter().onButtonAddClicked();
-//            }
-//        });
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               getPresenter().onButtonAddClicked();
+            }
+        });
         /*Story = (TextView) findViewById(R.id.Story);
         Date = (TextView) findViewById(R.id.Date);
         Hour = (TextView) findViewById(R.id.Hour);*/
