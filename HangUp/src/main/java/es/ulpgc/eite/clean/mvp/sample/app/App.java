@@ -13,12 +13,12 @@ import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 import es.ulpgc.eite.clean.mvp.sample.data.repositories.ProductRepository;
+import es.ulpgc.eite.clean.mvp.sample.delete.Delete;
+import es.ulpgc.eite.clean.mvp.sample.delete.SearchView;
 import es.ulpgc.eite.clean.mvp.sample.detail.DetailPresenter;
 import es.ulpgc.eite.clean.mvp.sample.detail.DetailView;
 import es.ulpgc.eite.clean.mvp.sample.product.Product;
 import es.ulpgc.eite.clean.mvp.sample.product.ProductView;
-import es.ulpgc.eite.clean.mvp.sample.search.Search;
-import es.ulpgc.eite.clean.mvp.sample.search.SearchView;
 import io.realm.Realm;
 
 
@@ -30,10 +30,11 @@ public class App extends Application implements Mediator, Navigator {
     private ProductState CategoryToProduct;
     private DetailState ProductToDetail;
 
-    private SearchState CategoryToSearch;
+    private DeleteState CategoryToSearch;
     private AddPartyState toAddState;
     private AddCategoryState toaddCategoryState;
-    private SearchState toSearchState;
+    private DeleteState toDeleteState;
+    private DeleteState ProductToDelete;
 
 
     @Override
@@ -41,7 +42,7 @@ public class App extends Application implements Mediator, Navigator {
         super.onCreate();
         Realm.init(this);
         toCategoryState = new CategoryState();
-        CategoryToSearch = new SearchState();
+        CategoryToSearch = new DeleteState();
     }
 
     @Override
@@ -77,7 +78,7 @@ public class App extends Application implements Mediator, Navigator {
     }
 
     @Override
-    public void startingSearchScreen(Search.ToSearch presenter) {
+    public void startingDeleteScreen(Delete.ToDelete presenter) {
         if (CategoryToSearch != null) {
 
         }
@@ -125,8 +126,21 @@ presenter.onScreenStarted();
     }
 
     @Override
-    public void goToSearchScreen(Category.CategoryTo presenter) {
-        CategoryToSearch = new SearchState();
+    public void goToDeleteScreen(Category.CategoryTo presenter) {
+        CategoryToSearch = new DeleteState();
+        //Añadir los estados que falten para pasarles a la busquedad. Guardar posicion, etc.
+
+
+        Context view = presenter.getManagedContext();
+        if (view != null) {
+            view.startActivity(new Intent(view, SearchView.class));
+        }
+    }
+
+
+    @Override
+    public void gotoDeleteProductScreen(Product.ProductTo presenter) {
+        ProductToDelete = new DeleteState();
         //Añadir los estados que falten para pasarles a la busquedad. Guardar posicion, etc.
 
 
@@ -177,9 +191,9 @@ presenter.onScreenStarted();
     }
     
     @Override
-    public void deleteEvent(Search.SearchTo presenter){
-        toSearchState= new SearchState();
-        toSearchState.nameToDelete=presenter.getNameToDelete();
+    public void deleteEvent(Delete.DeleteTo presenter){
+        toDeleteState= new DeleteState();
+        toDeleteState.nameToDelete=presenter.getNameToDelete();
         presenter.destroyView();
     }
 
@@ -198,7 +212,7 @@ presenter.onScreenStarted();
         public ProductData ItemSelected;
     }
 
-    private class SearchState {
+    private class DeleteState {
 
 
         public String nameToDelete;

@@ -1,4 +1,4 @@
-package es.ulpgc.eite.clean.mvp.sample.search;
+package es.ulpgc.eite.clean.mvp.sample.delete;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -13,17 +13,17 @@ import es.ulpgc.eite.clean.mvp.Presenter;
  * Created by eleonora on 28/03/2017.
  */
 
-public interface Search {
+public interface Delete {
     void onCreate(PresenterToView presenterToView);
 
-    interface ToSearch {
+    interface ToDelete {
 
         void setTextVisibility(boolean visible);
 
         void onScreenStarted();
     }
 
-    interface SearchTo {
+    interface DeleteTo {
         Context getManagedContext();
         void setImageVisibility(boolean visible);
         void setInformationVisibility(boolean visible);
@@ -107,7 +107,7 @@ public interface Search {
     /**
      * Methods offered to MODEL to communicate with PRESENTER
      */
-    interface PresenterToModel extends Model<Search.ModelToPresenter> {
+    interface PresenterToModel extends Model<Delete.ModelToPresenter> {
 
 
         String getName();
@@ -146,8 +146,6 @@ public interface Search {
 
     }
 
-//    public interface SearchTo {
-//    }
 
 
 //    public interface SearchTo {

@@ -41,6 +41,7 @@ public class ProductPresenter
 
         if (configurationChangeOccurred()) {
             getView().setAddLabel(getModel().getAddLabel());
+            getView().setDeleteLabel(getModel().getDeleteLabel());
 
         }
     }
@@ -78,6 +79,11 @@ public class ProductPresenter
         Log.d(TAG, "calling onButtonAddClicked()");
         Navigator app = (Navigator) getView().getApplication();
         app.goToAddPartyScreen(this);
+    }
+
+    @Override
+    public void onButtonDeleteClicked() {
+
     }
 
     @Override

@@ -1,4 +1,4 @@
-package es.ulpgc.eite.clean.mvp.sample.search;
+package es.ulpgc.eite.clean.mvp.sample.delete;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
@@ -11,8 +11,8 @@ import static android.R.attr.id;
  * Created by alumno on 31/03/2017.
  */
 
-public class SearchModel  extends GenericModel<Search.ModelToPresenter>
-        implements Search.PresenterToModel {
+public class DeleteModel  extends GenericModel<Delete.ModelToPresenter>
+        implements Delete.PresenterToModel {
 
 
     String DeleteIdBtnLabel ,DeleteBtnLabel;
@@ -29,11 +29,11 @@ public class SearchModel  extends GenericModel<Search.ModelToPresenter>
     }
 
     String name;
-    public SearchModel(){
+    public DeleteModel(){
         // this.categories= new String[]{"Cines","Culturales","Conciertos","Verbenas","Discotecas"};
     }
     @Override
-    public void onCreate(Search.ModelToPresenter presenter) {
+    public void onCreate(Delete.ModelToPresenter presenter) {
         super.onCreate(presenter);
         text1Label = "Write a category to delete ";
         DeleteBtnLabel="Delete";

@@ -23,12 +23,17 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
  Realm realmDatabase;
     private CategoryData Item;
     private String addlabel;
+
+
+
+    private String deleteLabel;
     private RealmResults<ProductData>itemsDatabase;
     private boolean isFirstTime;
 
     @Override
     public void onCreate(Product.ModelToPresenter modelToPresenter) {
-    this.addlabel="AddParty";
+        this.addlabel="AddParty";
+        this.deleteLabel="delete";
         RealmConfiguration setting = new RealmConfiguration.Builder().build();
         Realm.setDefaultConfiguration(setting);
 
@@ -79,10 +84,7 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
 
     }
 
-    @Override
-    public String getAddLabel() {
-        return addlabel;
-    }
+
     @Override
     public void setIsFirstimeRunning(boolean isFirstTimeRunning) {
         this.isFirstTime = isFirstTimeRunning;
@@ -113,10 +115,24 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
             }
         });
 
-
 }
 
     public void setAddLabel(String txt) {
       this.addlabel=txt;
     }
+
+    @Override
+    public String getAddLabel() {
+        return addlabel;
+    }
+
+    @Override
+    public String getDeleteLabel() {
+        return deleteLabel;
+    }
+
+    public void setDeleteLabel(String deleteLabel) {
+        this.deleteLabel = deleteLabel;
+    }
+
 }

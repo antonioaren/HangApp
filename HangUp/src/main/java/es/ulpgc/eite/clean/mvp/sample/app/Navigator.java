@@ -1,6 +1,5 @@
 package es.ulpgc.eite.clean.mvp.sample.app;
 
-import es.ulpgc.eite.clean.mvp.sample.addParty.Add;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
 import es.ulpgc.eite.clean.mvp.sample.product.Product;
 
@@ -9,7 +8,7 @@ public interface Navigator {
 
     void goDetailScreen(Product.ProductTo presenter);
 
-    void goToSearchScreen(Category.CategoryTo presenter);
+
 
     void goToAddCategoryScreen(Category.CategoryTo presenter);
 
@@ -20,6 +19,6 @@ public interface Navigator {
 
 
     void goToProductScreen(Category.CategoryTo presenter);
-
-
+    void gotoDeleteProductScreen(Product.ProductTo presenter);
+    void goToDeleteScreen(Category.CategoryTo presenter);
 }

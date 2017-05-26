@@ -5,16 +5,16 @@ import android.content.Context;
 import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategory;
 import es.ulpgc.eite.clean.mvp.sample.addParty.Add;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
+import es.ulpgc.eite.clean.mvp.sample.delete.Delete;
 import es.ulpgc.eite.clean.mvp.sample.detail.DetailPresenter;
 import es.ulpgc.eite.clean.mvp.sample.product.Product;
-import es.ulpgc.eite.clean.mvp.sample.search.Search;
 
 
 public interface
 Mediator {
 
 
-    void startingSearchScreen(Search.ToSearch presenter);
+    void startingDeleteScreen(Delete.ToDelete presenter);
 
   void startingAddScreen(Add.ToAdd presenter);
 
@@ -30,7 +30,7 @@ Mediator {
   void startinAddCategoryScreen(AddCategory.ToAdd presenter);
 //modificado nombre de metodo
   void SaveDataAdd(AddCategory.AddTo presenter);
-  void deleteEvent(Search.SearchTo presenter);
 
 
+  void deleteEvent(Delete.DeleteTo presenter);
 }

@@ -1,4 +1,4 @@
-package es.ulpgc.eite.clean.mvp.sample.search;
+package es.ulpgc.eite.clean.mvp.sample.delete;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -11,8 +11,8 @@ import android.widget.TextView;
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
 
-public class SearchView  extends GenericActivity<Search.PresenterToView, Search.ViewToPresenter, SearchPresenter>
-        implements Search.PresenterToView {
+public class DeleteView  extends GenericActivity<Delete.PresenterToView, Delete.ViewToPresenter, DeletePresenter>
+        implements Delete.PresenterToView {
 
     // ActionBar ab;
     Button delete;
@@ -52,7 +52,7 @@ public class SearchView  extends GenericActivity<Search.PresenterToView, Search.
     @SuppressLint("MissingSuperCall")
     @Override
     public void onResume() {
-        super.onResume(SearchPresenter.class, this);
+        super.onResume(DeletePresenter.class, this);
         // String[] categories = getPresenter().getCategories();
 
 

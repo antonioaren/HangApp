@@ -21,6 +21,8 @@ public interface Product {
 
         void setAddLabel(String msg);
 
+        void setDeleteLabel(String msg);
+
         void settingAdapter(List<ProductData> items);
     }
 
@@ -31,6 +33,8 @@ public interface Product {
         void onItemClicked(ProductData item);
 
         void onButtonAddClicked();
+
+        void onButtonDeleteClicked();
     }
 
     public interface PresenterToModel {
@@ -52,6 +56,8 @@ public interface Product {
         void CreateDatabaseTablesFromJson();
 
         void setItemsFromDatabase();
+
+        String getDeleteLabel();
     }
 
     public interface ModelToPresenter {

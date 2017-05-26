@@ -6,7 +6,7 @@ import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategoryModel;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
 import es.ulpgc.eite.clean.mvp.sample.detail.DetailModel;
 import es.ulpgc.eite.clean.mvp.sample.product.ProductModel;
-import es.ulpgc.eite.clean.mvp.sample.search.SearchModel;
+import es.ulpgc.eite.clean.mvp.sample.delete.SearchModel;
 
 import static org.junit.Assert.assertEquals;
 

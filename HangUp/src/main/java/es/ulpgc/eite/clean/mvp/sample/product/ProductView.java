@@ -58,7 +58,7 @@ public class ProductView
         buttonDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getPresenter().onButtonAddClicked();
+                getPresenter().onButtonDeleteClicked();
             }
         });
         /*Story = (TextView) findViewById(R.id.Story);
@@ -72,6 +72,12 @@ public class ProductView
 public void setAddLabel(String msg){
     buttonAdd.setText(msg);
 }
+    @Override
+    public void setDeleteLabel(String msg){
+        buttonDelete.setText(msg);
+    }
+
+
     @SuppressLint("MissingSuperCall")
     @Override
     protected void onResume() {

@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
-import es.ulpgc.eite.clean.mvp.sample.search.SearchModel;
+import es.ulpgc.eite.clean.mvp.sample.delete.SearchModel;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 

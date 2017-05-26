@@ -1,4 +1,4 @@
-package es.ulpgc.eite.clean.mvp.sample.search;
+package es.ulpgc.eite.clean.mvp.sample.delete;
 
 import android.content.Context;
 import android.util.Log;
@@ -11,9 +11,9 @@ import es.ulpgc.eite.clean.mvp.sample.category.Category;
 /**
  * Created by alumno on 29/03/2017.
  */
-public class SearchPresenter
-        extends GenericPresenter<Search.PresenterToView, Search.PresenterToModel, Search.ModelToPresenter, SearchModel>
-        implements Search.ViewToPresenter, Search.ModelToPresenter, Search.SearchTo, Search.ToSearch {
+public class DeletePresenter
+        extends GenericPresenter<Delete.PresenterToView, Delete.PresenterToModel, Delete.ModelToPresenter, DeleteModel>
+        implements Delete.ViewToPresenter, Delete.ModelToPresenter, Delete.DeleteTo, Delete.ToDelete {
 
 
     private boolean informationVisible;
@@ -22,18 +22,20 @@ public class SearchPresenter
     private boolean buttonClicked;
 
     @Override
-    public void onCreate(Search.PresenterToView view) {
-        super.onCreate(SearchModel.class, this);
+    public void onCreate(Delete.PresenterToView view) {
+        super.onCreate(DeleteModel.class, this);
         setView(view);
         Log.d(TAG, "calling onCreate()");
 
         Log.d(TAG, "calling startingSearchScreen()");
         Mediator app = (Mediator) getView().getApplication();
-        app.startingSearchScreen(this);
+        app.startingDeleteScreen(this);
     }
 
+
+
     @Override
-    public void onResume(Search.PresenterToView view) {
+    public void onResume(Delete.PresenterToView view) {
         setView(view);
         Log.d(TAG, "calling onResume()");
 
