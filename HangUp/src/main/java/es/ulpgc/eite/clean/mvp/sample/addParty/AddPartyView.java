@@ -12,11 +12,19 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
+
+import java.util.Calendar;
+import java.util.Date;
+
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
+
+import es.ulpgc.eite.clean.mvp.sample.util.DateFormatter;
 import io.realm.RealmResults;
+
 
 
 /**
@@ -26,23 +34,26 @@ import io.realm.RealmResults;
 public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewToPresenter, AddPartyPresenter>
         implements Add.PresenterToView {
 
-    TextView textViewTitle;
-    TextView textViewDescription;
-    EditText editTextDescrition;
-    TextView textPlace;
-    EditText editTextPlace;
-    TextView textdate;
-    DatePicker datePicker;
-    TextView textViewInit;
-    TimePicker timePickerInit;
-    TextView textViewFinish;
-    TimePicker timePickerFinish;
-    Button buttonPublish;
-    Toolbar toolbar;
+    private TextView title;
+    private TextView textViewDescription;
+    private EditText EventName;
+    private TextView textPlace;
+    private EditText EventPlace;
+    private EditText EventTimeFinish;
+    private TextView textdate;
+    private DatePicker datePicker;
+    private TextView EventDate;
+    private TimePicker timePickerInit;
+    private TextView EventTimeInit;
+    private TimePicker timePickerFinish;
+    private Button buttonPublish;
+    private Toolbar toolbar;
+
+    private Date date;
 
 
     @Override
-    public void onCreate(Bundle savedInstanceState){
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addparty);
 
@@ -53,26 +64,46 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        textViewTitle = (TextView) findViewById(R.id.textViewTitle);
-          textViewDescription=(TextView)findViewById(R.id.textViewDescription);
-        editTextDescrition=(EditText)findViewById(R.id.editTextDescription);
-        textPlace=(TextView) findViewById(R.id.textPlace);
-        editTextPlace = (EditText) findViewById(R.id.editTextPlace);
-        textdate = (TextView) findViewById(R.id.textDate);
-        datePicker = (DatePicker) findViewById(R.id.datePicker);
-        textViewInit = (TextView) findViewById(R.id.textViewInit);
-        timePickerInit = (TimePicker) findViewById(R.id.timePickerInit);//timePickerInit
-        textViewFinish = (TextView) findViewById(R.id.textViewFinish);
-        timePickerFinish = (TimePicker) findViewById(R.id.timePickerFinish);
-
-        buttonPublish=(Button)findViewById(R.id.buttonPublish);
-        buttonPublish.setOnClickListener(new View.OnClickListener() {
+        title = (TextView) findViewById(R.id.textView);
+        EventName = (EditText) findViewById(R.id.name);
+        EventPlace = (EditText) findViewById(R.id.place);
+        EventDate = (EditText) findViewById(R.id.date);
+        EventDate.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                getPresenter().onPublishClicked();
+            public void onClick(View v) {
+                Calendar now = Calendar.getInstance();
+                final DatePickerDialog d = DatePickerDialog.newInstance(
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
+                                Calendar checkedCalendar = Calendar.getInstance();
+                                checkedCalendar.set(year, monthOfYear, dayOfMonth);
+                                date = checkedCalendar.getTime();
+                                EventDate.setText(DateFormatter.convertDateToString(date));
+                            }
+                        },
+                        now.get(Calendar.YEAR),
+                        now.get(Calendar.MONTH),
+                        now.get(Calendar.DAY_OF_MONTH)
+                );
+                d.setMaxDate(now);
+                d.show(getFragmentManager(), this.getClass().getName());
 
             }
         });
+        EventTimeInit = (EditText) findViewById(R.id.timeI);
+        EventTimeFinish = (EditText) findViewById(R.id.TimeF);
+
+        buttonPublish = (Button) findViewById(R.id.Add);
+        buttonPublish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getPresenter().onPublishClicked();
+            }
+        });
+
+
+
 
     }
 
@@ -87,6 +118,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         CategoryView category = new CategoryView();
         category.settingAdapter(data);
     }
+
     @Override
     public void finishScreen() {
         finish();
@@ -105,7 +137,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
     @Override
     public void setTitleLabel(String txt) {
-        textViewTitle.setText(txt);
+        title.setText(txt);
     }
 
     @Override
@@ -120,12 +152,12 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
     @Override
     public void setTimeInitLabel(String txt) {
-        textViewInit.setText(txt);
+        EventDate.setText(txt);
     }
 
     @Override
     public void setTimeFinishLabel(String txt) {
-        textViewFinish.setText(txt);
+        EventTimeInit.setText(txt);
     }
 
 
@@ -141,32 +173,35 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     public void setLabel(String txt) {
     }
 
-    @Override
-    public String getMonth() {
-        String month = String.valueOf(datePicker.getMonth());
-        return month;
-    }
-
-    @Override
-    public String getDay(){
-        String day=String.valueOf(datePicker.getDayOfMonth());
-        return day;
-    }
-    @Override
-    public int getYear() {
-        int year = datePicker.getYear();
-        return year;
-    }
+//    @Override
+//    public String getMonth() {
+//        String month = String.valueOf(datePicker.getMonth());
+//        return month;
+//    }
+//
+//    @Override
+//    public String getDay() {
+//        String day = String.valueOf(datePicker.getDayOfMonth());
+//        return day;
+//    }
+//
+//    @Override
+//    public int getYear() {
+//        int year = datePicker.getYear();
+//        return year;
+//    }
 
     @Override
     public String getPlaceOfTheParty() {
-        return editTextPlace.getText().toString();
+        return EventPlace.getText().toString();
     }
+
     @Override
-    public String getDescription(){
-        return editTextDescrition.getText().toString();
+    public String getDescription() {
+        return EventName.getText().toString();
     }
-   // @RequiresApi(api = Build.VERSION_CODES.M)
+
+    // @RequiresApi(api = Build.VERSION_CODES.M)
     @TargetApi(Build.VERSION_CODES.M)
     @Override
     public int getHourOfInit() {

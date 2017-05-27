@@ -21,7 +21,9 @@ public class AddPartyPresenter
 
 
     private boolean buttonClicked;
+
     private Repository.ProductRepository.OnSaveProductCallback callback;
+
     @Override
     public void onCreate(Add.PresenterToView view) {
         super.onCreate(AddPartyModel.class, this);
@@ -36,7 +38,7 @@ public class AddPartyPresenter
     @Override
     public void onScreenStarted() {
         Log.d(TAG, "calling onScreenStarted()");
-
+        getView().setText(getModel().getPublishBtnLabel());
 
     }
 
@@ -44,7 +46,6 @@ public class AddPartyPresenter
     public void onResume(Add.PresenterToView view) {
         setView(view);
         Log.d(TAG, "calling onResume()");
-
 
         if (configurationChangeOccurred()) {
 
@@ -105,14 +106,9 @@ public class AddPartyPresenter
         Log.d(TAG, "callingOnPublish");
 
         if (isViewRunning()) {
-            //Codigo Luis
-            getModel().setDay(getView().getDay());
             getModel().setHourOfFinish(getView().getHourOfFinish());
             getModel().setHourOfInit(getView().getHourOfInit());
-            getModel().setMonth(getView().getMonth());
             getModel().setPlaceOfTheParty(getView().getPlaceOfTheParty());
-            getModel().setYear(getView().getYear());
-
             getModel().setDescription(getView().getDescription());
         }
 
@@ -165,14 +161,13 @@ public class AddPartyPresenter
 
     @Override
     public RealmList<ProductData> getPartyCreated() {
-
         return (RealmList<ProductData>) getModel().getParty();
     }
 
     @Override
     public void settingAdapter(RealmList<CategoryData> item) {
         CategoryView categoryView = new CategoryView();
-        //TODO Configurar bien para ue añada.
+        //TODO Configurar bien para que añada.
 
         categoryView.settingAdapter(null);
     }

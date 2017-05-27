@@ -64,6 +64,7 @@ public class App extends Application implements Mediator, Navigator {
     public void startingProductScreen(Product.ToProduct presenter) {
         if (CategoryToProduct != null) {
             presenter.setItem(CategoryToProduct.ItemSelected);
+            presenter.setIdItem(CategoryToProduct.ItemId);
         }
         CategoryToProduct = null;
         presenter.onScreenStarted();
@@ -107,6 +108,7 @@ public class App extends Application implements Mediator, Navigator {
     public void goToProductScreen(Category.CategoryTo presenter) {
         CategoryToProduct = new ProductState();
         CategoryToProduct.ItemSelected = presenter.getSelectedItem();
+        CategoryToProduct.ItemId = presenter.getItemId();
 
         Context view = presenter.getManagedContext();
         if (view != null) {
@@ -207,6 +209,7 @@ public class App extends Application implements Mediator, Navigator {
 
     private class ProductState {
         CategoryData ItemSelected;
+        String ItemId;
     }
 
     private class DetailState {

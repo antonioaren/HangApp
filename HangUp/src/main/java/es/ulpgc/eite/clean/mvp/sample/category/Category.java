@@ -29,7 +29,7 @@ public interface Category {
 
         List<CategoryData> getCategoryList();
 
-        void onItemClicked(CategoryData item);
+        void onItemClicked(CategoryData item, String id);
     }
 
     /**
@@ -93,6 +93,8 @@ public interface Category {
         Context getManagedContext();
         void destroyView();
         CategoryData getSelectedItem();
+
+        String getItemId();
     }
 
     ///////////////////////////////////////////////////////////////////////////////////

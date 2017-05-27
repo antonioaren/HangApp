@@ -62,9 +62,16 @@ public class ProductPresenter
         }
     }
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
     @Override
     public void setItem(CategoryData itemSelected) {
         getModel().setItem(itemSelected);
+    }
+
+    @Override
+    public void setIdItem(String itemId) {
+        getModel().setItemId(itemId);
     }
 
     @Override

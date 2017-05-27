@@ -20,6 +20,7 @@ public class CategoryPresenter
 
 
     private CategoryData selectedItem;
+    private String ItemId;
     private String hour;
     private String date;
     private String place;
@@ -46,7 +47,7 @@ public class CategoryPresenter
 //      SharedPreferences pref =
 //              getAppContext().getSharedPreferences("es.ulpgc.eite.clean.mvp.sample", MODE_PRIVATE);
 //       if (pref.getBoolean("FirstRun", true)) {
-//           getModel().CreateDatabaseTablesFromJson();
+//           getModel().CreateDatabaseTables();
 //           pref.edit().putBoolean("FirstRun", false).apply();
     }
 
@@ -160,6 +161,11 @@ public class CategoryPresenter
         return selectedItem;
     }
 
+    @Override
+    public String getItemId() {
+        return ItemId;
+    }
+
     ///////////////////////////////////////////////////////////////////////////////////
 
     @Override
@@ -168,8 +174,9 @@ public class CategoryPresenter
     }
 
     @Override
-    public void onItemClicked(CategoryData item) {
+    public void onItemClicked(CategoryData item, String id) {
         selectedItem = item;
+        ItemId = id;
         Log.d(TAG, "calling goToDetailScreen()");
 
         // Al haber hecho click en uno de los elementos de la lista del maestro es necesario

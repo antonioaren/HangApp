@@ -55,11 +55,13 @@ public interface Product {
         String getAddLabel();
 
 
-        void CreateDatabaseTablesFromJson();
+        void CreateDatabaseTables();
 
         void setItemsFromDatabase();
 
         String getDeleteLabel();
+
+        void setItemId(String itemId);
     }
 
     public interface ModelToPresenter {
@@ -72,6 +74,8 @@ public interface Product {
         void onScreenStarted();
 
         void setItem(CategoryData itemSelected);
+
+        void setIdItem(String itemId);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////

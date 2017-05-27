@@ -67,7 +67,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 //        SharedPreferences pref =
 //                ((Category.CategoryTo)presenter).getManagedContext().getSharedPreferences("es.ulpgc.eite.clean.mvp.sample", MODE_PRIVATE);
 //        if (pref.getBoolean("FirstRun", true)) {
-//            CreateDatabaseTablesFromJson();
+//            CreateDatabaseTables();
 //            pref.edit().putBoolean("FirstRun", false).commit();
 
 
@@ -81,7 +81,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     @Override
     public void CreateDatabaseTablesFromJson() {
-        Log.d("PruebaPasaDatos", "CreateDatabaseTablesFromJson()");
+        Log.d("PruebaPasaDatos", "CreateDatabaseTables()");
        // Realm.init(this);
         insertEvent("Fiestas", R.drawable.disco);
         insertEvent("Música", R.drawable.musica);

@@ -24,6 +24,8 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     private Realm realmDatabase;
     private CategoryData Item;
     private String addlabel;
+    private String itemId;
+
 
 
     private String deleteLabel;
@@ -47,6 +49,7 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     public CategoryData getItem() {
         return Item;
     }
+
 
     @Override
     public void AddProductByCategoryId(ProductData product, String CategoryId) {
@@ -91,8 +94,8 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     }
 
     @Override
-    public void CreateDatabaseTablesFromJson() {
-        Log.d("PruebaPasaDatos", "CreateDatabaseTablesFromJson()");
+    public void CreateDatabaseTables() {
+        Log.d("PruebaPasaDatos", "CreateDatabaseTables()");
         insertProduct(R.drawable.disco, "verbena", "1000");
         insertProduct(R.drawable.astro, "concierto", "30000000");
     }
@@ -124,5 +127,10 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     @Override
     public String getDeleteLabel() {
         return deleteLabel;
+    }
+
+    @Override
+    public void setItemId(String itemId) {
+        this.itemId = itemId;
     }
 }

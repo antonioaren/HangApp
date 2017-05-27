@@ -102,12 +102,6 @@ public interface Add {
 
         void setLabel(String txt);
 
-        String getMonth();
-
-        String getDay();
-
-        int getYear();
-
         String getPlaceOfTheParty();
 
         String getDescription();

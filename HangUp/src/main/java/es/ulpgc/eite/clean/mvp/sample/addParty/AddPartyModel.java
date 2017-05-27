@@ -50,7 +50,7 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
         dateLabel = "Date :";
         timeInitLabel = "Starts :";
         timeFinishLabel = "Finishes :";
-        publishLabel = "Publish";
+        publishLabel = "Add";
         titleLabel = "Publish your own party";
     }
 
@@ -71,7 +71,7 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
 
     @Override
     public String getPublishBtnLabel() {
-        return this.publishLabel;
+        return publishLabel;
     }
 
     @Override

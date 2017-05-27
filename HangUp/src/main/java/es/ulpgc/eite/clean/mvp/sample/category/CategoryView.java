@@ -19,6 +19,7 @@ import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.util.RealmRecyclerViewAdapter;
 import io.realm.OrderedRealmCollection;
 import io.realm.Realm;
+import io.realm.RealmResults;
 
 public class CategoryView
         extends GenericActivity<Category.PresenterToView, Category.ViewToPresenter, CategoryPresenter>
@@ -34,14 +35,12 @@ public class CategoryView
     private LinearLayoutManager linearmanager;
 
 
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
 
-         Realm.init(this);
+        Realm.init(this);
         title = (TextView) findViewById(R.id.title);
         image = (ImageView) findViewById(R.id.image);
 
@@ -68,9 +67,9 @@ public class CategoryView
             }
         });
 
-     Realm realm = Realm.getDefaultInstance();
+        Realm realm = Realm.getDefaultInstance();
 
-  recycler.setAdapter(new CategoryAdapter(realm.where(CategoryData.class).findAllAsync()));
+        recycler.setAdapter(new CategoryAdapter(realm.where(CategoryData.class).findAllAsync()));
 
     }
 
@@ -114,16 +113,14 @@ public class CategoryView
     }
 
 
-
-
     public class CategoryAdapter extends
             RealmRecyclerViewAdapter<CategoryData, CategoryAdapter.CategoryViewHolder> {
 
-        private List<CategoryData> items;
+        private RealmResults<CategoryData> items;
 
         public CategoryAdapter(OrderedRealmCollection<CategoryData> items) {
             super(items, true);
-            this.items = items;
+            this.items = (RealmResults<CategoryData>) items;
         }
 
         @Override
@@ -146,7 +143,8 @@ public class CategoryView
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    getPresenter().onItemClicked(holder.item);
+                    CategoryData categorydata = new CategoryData();
+                    getPresenter().onItemClicked(holder.item, categorydata.getId());
                 }
             });
         }
@@ -157,7 +155,7 @@ public class CategoryView
         }
 
         public void setItemList(List<CategoryData> itemList) {
-            this.items = itemList;
+            this.items = (RealmResults<CategoryData>) itemList;
             notifyDataSetChanged();
         }
 
