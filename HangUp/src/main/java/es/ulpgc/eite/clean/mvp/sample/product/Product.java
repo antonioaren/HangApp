@@ -45,13 +45,15 @@ public interface Product {
 
         void insertProduct( int image, String title , String participants);
 
+        void insertProduct(int image, String title,
+                           String participants, String CategoryId);
+
         void setItem(CategoryData itemSelected);
 
         void setItem(ProductData itemSelected);
 
         String getAddLabel();
 
-        void setIsFirstimeRunning(boolean isFirstTimeRunning);
 
         void CreateDatabaseTablesFromJson();
 

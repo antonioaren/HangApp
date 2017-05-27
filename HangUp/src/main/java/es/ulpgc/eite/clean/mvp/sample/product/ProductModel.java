@@ -8,6 +8,7 @@ import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
+import es.ulpgc.eite.clean.mvp.sample.data.module.RealmTable;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 import io.realm.RealmResults;
@@ -20,26 +21,22 @@ import static android.R.attr.id;
 
 public class ProductModel extends GenericModel<Product.ModelToPresenter>
         implements Product.PresenterToModel {
- Realm realmDatabase;
+    private Realm realmDatabase;
     private CategoryData Item;
     private String addlabel;
 
 
-
     private String deleteLabel;
-    private RealmResults<ProductData>itemsDatabase;
-    private boolean isFirstTime;
+    private RealmResults<ProductData> itemsDatabase;
 
     @Override
     public void onCreate(Product.ModelToPresenter modelToPresenter) {
-        this.addlabel="AddParty";
-        this.deleteLabel="delete";
+        addlabel = "Add";
+        deleteLabel = "delete";
         RealmConfiguration setting = new RealmConfiguration.Builder().build();
         Realm.setDefaultConfiguration(setting);
 
-        if (!isFirstTime) {
-            CreateDatabaseTablesFromJson();
-    }}
+    }
 
     @Override
     public void onDestroy(boolean b) {
@@ -57,22 +54,31 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     }
 
     @Override
-    public void insertProduct( final int image, final String title, final String participants) {
+    public void insertProduct(int image, String title, String participants) {
 
-          realmDatabase = Realm.getDefaultInstance();
-          realmDatabase.executeTransaction(new Realm.Transaction() {
+    }
+
+    @Override
+    public void insertProduct(final int image, final String title,
+                              final String participants, final String CategoryId) {
+
+        realmDatabase = Realm.getDefaultInstance();
+        realmDatabase.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
-                ProductData event = realmDatabase.createObject(ProductData.class, UUID.randomUUID().toString());
+                ProductData event = realmDatabase.createObject(ProductData.class,
+                        UUID.randomUUID().toString());
+
                 event.setImage(image);
                 event.setProductName(title);
                 event.setParticipants(participants);
 
-
+                CategoryData category = realm.where(CategoryData.class)
+                        .equalTo(RealmTable.ID, CategoryId).findFirst();
+                category.getItemInfo().add(event);
             }
-
-
-    });}
+        });
+    }
 
     @Override
     public void setItem(CategoryData itemSelected) {
@@ -84,24 +90,17 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
 
     }
 
-
-    @Override
-    public void setIsFirstimeRunning(boolean isFirstTimeRunning) {
-        this.isFirstTime = isFirstTimeRunning;
-    }
-
     @Override
     public void CreateDatabaseTablesFromJson() {
         Log.d("PruebaPasaDatos", "CreateDatabaseTablesFromJson()");
-        insertProduct(R.drawable.disco,"verbena","1000");
-        insertProduct(R.drawable.astro,"concierto","30000000");
+        insertProduct(R.drawable.disco, "verbena", "1000");
+        insertProduct(R.drawable.astro, "concierto", "30000000");
     }
+
     @Override
     public void setItemsFromDatabase() {
         itemsDatabase = realmDatabase.where(ProductData.class).findAll();
     }
-
-
 
 
     public void updateEvent() {
@@ -115,10 +114,6 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
             }
         });
 
-}
-
-    public void setAddLabel(String txt) {
-      this.addlabel=txt;
     }
 
     @Override
@@ -130,9 +125,4 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     public String getDeleteLabel() {
         return deleteLabel;
     }
-
-    public void setDeleteLabel(String deleteLabel) {
-        this.deleteLabel = deleteLabel;
-    }
-
 }

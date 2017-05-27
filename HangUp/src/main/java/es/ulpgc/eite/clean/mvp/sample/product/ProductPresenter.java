@@ -33,10 +33,8 @@ public class ProductPresenter
 
     @Override
     public void onResume(Product.PresenterToView view) {
-        setView(view);
-
-        setView(view);
         Log.d(TAG, "calling onResume()");
+        setView(view);
 
 
         if (configurationChangeOccurred()) {
@@ -59,7 +57,8 @@ public class ProductPresenter
     @Override
     public void onScreenStarted() {
         if (isViewRunning()) {
-
+            getView().setAddLabel(getModel().getAddLabel());
+            getView().setDeleteLabel(getModel().getDeleteLabel());
         }
     }
 

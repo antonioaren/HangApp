@@ -25,7 +25,6 @@ import io.realm.Realm;
 public class App extends Application implements Mediator, Navigator {
 
 
-
     private CategoryState toCategoryState;
     private ProductState CategoryToProduct;
     private DetailState ProductToDetail;
@@ -92,14 +91,15 @@ public class App extends Application implements Mediator, Navigator {
         }
         presenter.onScreenStarted();
     }
-@Override
-public void startinAddCategoryScreen(AddCategory.ToAdd presenter){
-    if(toaddCategoryState!=null){
-        presenter.setTextVisibility(toaddCategoryState.textVisibility);
-    }
 
-presenter.onScreenStarted();
-}
+    @Override
+    public void startinAddCategoryScreen(AddCategory.ToAdd presenter) {
+        if (toaddCategoryState != null) {
+            presenter.setTextVisibility(toaddCategoryState.textVisibility);
+        }
+
+        presenter.onScreenStarted();
+    }
 
     /////////////// Navigator /////////////////////////////////////////////////////////////////////
 
@@ -162,15 +162,16 @@ presenter.onScreenStarted();
         }
 
     }
+
     @Override
     public void goToAddPartyScreen(Product.ProductTo presenter) {
         toAddState = new AddPartyState();
 
         //Añadir los estados que falten para pasarles a la busquedad. Guardar posicion, etc.
-         toAddState.descriptionOfTheParty=presenter.getDescriptionOfTheParty();
-        toAddState.placeOfTheParty=presenter.getPlaceOfTheParty();
-        toAddState.dateOfTheParty=presenter.getDateOfTheParty();
-        toAddState.hourOfParty=presenter.getHourOfParty();
+        toAddState.descriptionOfTheParty = presenter.getDescriptionOfTheParty();
+        toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
+        toAddState.dateOfTheParty = presenter.getDateOfTheParty();
+        toAddState.hourOfParty = presenter.getHourOfParty();
         Context view = presenter.getManagedContext();
         if (view != null) {
             view.startActivity(new Intent(view, AddPartyView.class));
@@ -183,17 +184,17 @@ presenter.onScreenStarted();
     public void SaveDataAdd(AddCategory.AddTo presenter) {
         toaddCategoryState = new AddCategoryState();
 
-       // toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
-       // toAddState.dateOfTheParty = presenter.getDateOfTheParty();
+        // toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
+        // toAddState.dateOfTheParty = presenter.getDateOfTheParty();
         //toAddState.hourOfParty = presenter.getHourOfParty();
 
-     presenter.destroyView();
+        presenter.destroyView();
     }
-    
+
     @Override
-    public void deleteEvent(Delete.DeleteTo presenter){
-        toDeleteState= new DeleteState();
-        toDeleteState.nameToDelete=presenter.getNameToDelete();
+    public void deleteEvent(Delete.DeleteTo presenter) {
+        toDeleteState = new DeleteState();
+        toDeleteState.nameToDelete = presenter.getNameToDelete();
         presenter.destroyView();
     }
 
@@ -233,12 +234,13 @@ presenter.onScreenStarted();
         ProductRepository product;
 
     }
-private class AddCategoryState{
-    boolean textVisibility;
+
+    private class AddCategoryState {
+        boolean textVisibility;
 
 
-
-}}
+    }
+}
 
 
 

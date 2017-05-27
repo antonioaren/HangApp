@@ -29,32 +29,33 @@ public class ProductView
         extends GenericActivity<Product.PresenterToView, Product.ViewToPresenter, ProductPresenter>
         implements Product.PresenterToView {
 
-   public RecyclerView recycler;
-    Button buttonAdd,buttonDelete;
+    public RecyclerView recycler;
+    Button buttonAdd, buttonDelete;
     private LinearLayoutManager linearmanager;
     private RealmResults<ProductData> items;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_item);
+        setContentView(R.layout.activity_product);
         Realm.init(this);
-          recycler= (RecyclerView)findViewById(R.id.recycler);
+        recycler = (RecyclerView) findViewById(R.id.recycler);
         recycler.setHasFixedSize(true);
-         linearmanager=new LinearLayoutManager(this);
-         recycler.setLayoutManager(linearmanager);
+        linearmanager = new LinearLayoutManager(this);
+        recycler.setLayoutManager(linearmanager);
         Realm realm = Realm.getDefaultInstance();
         recycler.setAdapter(
                 new ProductView.ProductAdapter(realm.where(ProductData.class).findAllAsync()));
 
-        buttonAdd=(Button)findViewById(R.id.buttonAddParty);
+        buttonAdd = (Button) findViewById(R.id.buttonAdd);
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               getPresenter().onButtonAddClicked();
+                getPresenter().onButtonAddClicked();
             }
         });
 
-        buttonDelete=(Button)findViewById(R.id.buttonDelete);
+        buttonDelete = (Button) findViewById(R.id.buttonDelete);
         buttonDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,14 +67,15 @@ public class ProductView
         Hour = (TextView) findViewById(R.id.Hour);*/
 
 
-
     }
-@Override
-public void setAddLabel(String msg){
-    buttonAdd.setText(msg);
-}
+
     @Override
-    public void setDeleteLabel(String msg){
+    public void setAddLabel(String msg) {
+        buttonAdd.setText(msg);
+    }
+
+    @Override
+    public void setDeleteLabel(String msg) {
         buttonDelete.setText(msg);
     }
 
@@ -115,7 +117,7 @@ public void setAddLabel(String msg){
 
         public ProductAdapter(/*RealmResults<ProductData> items*/ OrderedRealmCollection<ProductData> items) {
 
-        //  super(items,true);
+            //  super(items,true);
             this.items = items;
 
 
@@ -154,7 +156,7 @@ public void setAddLabel(String msg){
         }
 
         public void setItemList(List<ProductData> items) {
-        this.items=items;
+            this.items = items;
         }
 
 

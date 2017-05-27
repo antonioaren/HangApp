@@ -31,10 +31,11 @@
 
             <TextView
                 android:id="@+id/title"
-                android:text=" Here you have the available parties"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorPrimaryDark" />
+                android:background="@color/colorPrimaryDark"
+                android:text=" "
+                tools:text="Text"/>
         </LinearLayout>
 
         <android.support.v7.widget.RecyclerView
@@ -49,12 +50,12 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/buttonSearch"
+            android:id="@+id/buttonDelete"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="top"
             android:layout_weight="1"
-            android:text="Search" />
+            />
 
         <Button
             android:id="@+id/buttonAdd"
@@ -62,7 +63,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="top"
             android:layout_weight="1"
-            android:text="+AddOne" />
+            />
 
     </LinearLayout>
 
