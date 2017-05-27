@@ -4,8 +4,10 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -66,7 +68,9 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
         title = (TextView) findViewById(R.id.textView);
         EventName = (EditText) findViewById(R.id.name);
+        EventName.requestFocus();
         EventPlace = (EditText) findViewById(R.id.place);
+        EventPlace.requestFocus();
         EventDate = (EditText) findViewById(R.id.date);
         EventDate.setOnClickListener(new View.OnClickListener() {
             @Override
