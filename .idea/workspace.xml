@@ -12,34 +12,7 @@
     <list id="6a18f264-77ba-466d-b7a7-0d52df6a7436" name="Default" comment="Merge remote-tracking branch 'origin/eleonoraBack'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/3.3/taskArtifacts/fileHashes.bin&#10;#&#9;.gradle/3.3/taskArtifacts/fileSnapshots.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.lock&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/App.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Mediator.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangApp.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangAppModel.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/Information.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationPresenter.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchView.java&#10;#&#9;HangUp/src/main/res/layout/activity_procesed_search.xml&#10;#&#9;HangUp/src/main/res/layout/content_hangapp.xml&#10;#&#9;HangUp/src/main/res/layout/content_procesed_search.xml&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Navigator.java&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/hangapp/HangAppView.java&#10;#&#9;HelloApp/src/main/res/layout/activity_filalista.xml&#10;#&#9;HelloApp/src/main/res/layout/activity_procesed_search.xml&#10;" />
     <list id="3d65f56d-93c6-4520-9708-4d2cd763dfec" name="Failed commit: Default" comment="Cambios Merges.&#10;" />
     <list default="true" id="72c31ec8-3076-4782-a780-40cb8c2c6568" name="Failed commit: Default (2)" comment="Añadido nuevo layout para add. Modificado y más ordenado.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/util/DateFormatter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HangUp/src/main/res/layout/content_addparty2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/CleanMvpLib_unspecified.xml" afterPath="$PROJECT_DIR$/.idea/libraries/CleanMvpLib_unspecified.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/espresso_core_2_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/espresso_core_2_2_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/espresso_idling_resource_2_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/espresso_idling_resource_2_2_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/exposed_instrumentation_api_publish_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/exposed_instrumentation_api_publish_0_5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/rules_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/rules_0_5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/runner_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/runner_0_5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations/HangApp.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/HangApp.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/HangUp.iml" afterPath="$PROJECT_DIR$/HangUp/HangUp.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/build.gradle" afterPath="$PROJECT_DIR$/HangUp/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/Add.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/Add.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddPartyModel.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddPartyModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddPartyPresenter.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddPartyPresenter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddPartyView.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddPartyView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/App.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/Category.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/Category.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryPresenter.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryPresenter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryView.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/product/Product.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/product/Product.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/product/ProductModel.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/product/ProductModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/product/ProductPresenter.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/product/ProductPresenter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/res/layout/activity_addparty.xml" afterPath="$PROJECT_DIR$/HangUp/src/main/res/layout/activity_addparty.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/res/layout/activity_category.xml" afterPath="$PROJECT_DIR$/HangUp/src/main/res/layout/activity_category.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
     </list>
     <ignored path="HangApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -87,7 +60,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddPartyPresenter.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AddPartyPresenter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddPartyPresenter.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
@@ -95,29 +68,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_addparty.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/activity_addparty.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="31" column="46" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Add.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/Add.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="102" column="34" selection-start-line="102" selection-start-column="34" selection-end-line="102" selection-end-column="34" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -3064,13 +3014,6 @@
       <option name="presentableId" value="Default" />
       <updated>1490022965325</updated>
     </task>
-    <task id="LOCAL-00027" summary="casi funciona, pero deben obtenerse los datos del modelo">
-      <created>1493240908838</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1493240908838</updated>
-    </task>
     <task id="LOCAL-00028" summary="casi funciona, pero deben obtenerse los datos del modelo">
       <created>1493241154267</created>
       <option name="number" value="00028" />
@@ -3407,7 +3350,14 @@
       <option name="project" value="LOCAL" />
       <updated>1495879559099</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="Añadido nuevo layout para add. Modificado y más ordenado.">
+      <created>1495896661362</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1495896661362</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -3879,6 +3829,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/activity_addparty.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="31" column="46" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddPartyPresenter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -3887,17 +3848,6 @@
             <element signature="imports" expanded="true" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/activity_addparty.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="31" column="46" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
   </component>
