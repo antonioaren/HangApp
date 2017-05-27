@@ -15,9 +15,13 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
+import com.wdullaer.materialdatetimepicker.time.RadialPickerLayout;
+import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 
+import java.sql.Time;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Timer;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
@@ -26,7 +30,6 @@ import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 
 import es.ulpgc.eite.clean.mvp.sample.util.DateFormatter;
 import io.realm.RealmResults;
-
 
 
 /**
@@ -52,6 +55,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     private Toolbar toolbar;
 
     private Date date;
+    private Date time;
 
 
     @Override
@@ -96,6 +100,8 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
             }
         });
         EventTimeInit = (EditText) findViewById(R.id.timeI);
+        //Todo: Añadir TimePicker Parecido al calendar.
+
         EventTimeFinish = (EditText) findViewById(R.id.TimeF);
 
         buttonPublish = (Button) findViewById(R.id.Add);
@@ -105,8 +111,6 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
                 getPresenter().onPublishClicked();
             }
         });
-
-
 
 
     }
@@ -130,9 +134,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
     @Override
     public void hideToolbar() {
-
     }
-
 
     @Override
     public void setPublishBtnLabel(String txt) {
