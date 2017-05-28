@@ -14,30 +14,29 @@ public class ProductData extends RealmObject {
 
     @Required
     private String productName;
-
-    private int image;
     @Required
-    private String participants;
-    @Required
-    private String detailText;
+    private String place;
     @Required
     private String date;
     @Required
-    private String hour;
+    private String TimeI;
+    @Required
+    private String TimeF;
+    @Required
+    private String detailText;
 
     public ProductData() {
-
     }
 
-    public ProductData(int image, String productName, String participants, String detailText, String date, String hour) {
-        this.image = image;
+    public ProductData(String id, String productName, String place, String date, String timeI, String timeF, String detailText) {
+        this.id = id;
         this.productName = productName;
-        this.participants = participants;
-        this.detailText = detailText;
+        this.place = place;
         this.date = date;
-        this.hour = hour;
+        this.TimeI = timeI;
+        this.TimeF = timeF;
+        this.detailText = detailText;
     }
-
 
     public String getId() {
         return id;
@@ -53,19 +52,35 @@ public class ProductData extends RealmObject {
         this.productName = productName;
     }
 
-    public int getImage() {
-        return image;
-    }
-    public void setImage(int image) {
-        this.image = image;
+    public String getPlace() {
+        return place;
     }
 
-    public String getParticipants() {
-        return participants;
+    public void setPlace(String place) {
+        this.place = place;
     }
 
-    public void setParticipants(String participants) {
-        this.participants = participants;
+    public String getDate() {
+        return date;
+    }
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getTimeI() {
+        return TimeI;
+    }
+
+    public void setTimeI(String timeI) {
+        TimeI = timeI;
+    }
+
+    public String getTimeF() {
+        return TimeF;
+    }
+
+    public void setTimeF(String timeF) {
+        TimeF = timeF;
     }
 
     public String getDetailText() {
@@ -75,22 +90,5 @@ public class ProductData extends RealmObject {
     public void setDetailText(String detailText) {
         this.detailText = detailText;
     }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getHour() {
-        return hour;
-    }
-
-    public void setHour(String hour) {
-        this.hour = hour;
-    }
-
 
 }

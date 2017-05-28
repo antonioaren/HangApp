@@ -28,6 +28,7 @@ import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 
+import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.util.DateFormatter;
 import io.realm.RealmResults;
 
@@ -117,7 +118,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     }
 
 
-    /////////////////////////// LABELS ///////////////////////////////////////
+    /////////////////////////// LABELS /////////////////////////////////////////
 
     @Override
     public void setTitleLabel(String txt) {
@@ -156,6 +157,11 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
 
     ///////////////////////////// CAPTAR DATOS ///////////////////////////////
+
+    public void GetData() {
+        ProductData product = new ProductData();
+
+    }
 
     @Override
     public String getDescription() {
