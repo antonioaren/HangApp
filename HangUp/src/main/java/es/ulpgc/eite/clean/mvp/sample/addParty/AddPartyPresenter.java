@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
+import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
@@ -106,10 +107,11 @@ public class AddPartyPresenter
         Log.d(TAG, "callingOnPublish");
 
         if (isViewRunning()) {
-            getModel().setHourOfFinish(getView().getHourOfFinish());
-            getModel().setHourOfInit(getView().getHourOfInit());
-            getModel().setPlaceOfTheParty(getView().getPlaceOfTheParty());
-            getModel().setDescription(getView().getDescription());
+//            getModel().setHourOfFinish(getView().getHourOfFinish());
+//            getModel().setHourOfInit(getView().getHourOfInit());
+//            getModel().setPlaceOfTheParty(getView().getPlaceOfTheParty());
+//            getModel().setDescription(getView().getDescription());
+            getModel().insertEvent(R.drawable.astro, getView().getDescription(), getView().getPlaceOfTheParty());
         }
 
 
