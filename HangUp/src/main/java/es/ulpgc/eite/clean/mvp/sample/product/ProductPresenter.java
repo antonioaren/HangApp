@@ -21,6 +21,7 @@ public class ProductPresenter
 
     private ProductData ItemSelected;
 
+
     @Override
     public void onCreate(Product.PresenterToView view) {
         super.onCreate(ProductModel.class, this);
@@ -65,12 +66,12 @@ public class ProductPresenter
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
-    public void setItem(CategoryData itemSelected) {
+    public void setItemSelected(CategoryData itemSelected) {
         getModel().setItem(itemSelected);
     }
 
     @Override
-    public void setIdItem(String itemId) {
+    public void setItemId(String itemId) {
         getModel().setItemId(itemId);
     }
 
@@ -103,6 +104,9 @@ public class ProductPresenter
     public ProductData getSelectedItem() {
         return ItemSelected;
     }
+
+
+    //TODO implementar. Paso de estados para guardar.
 
     @Override
     public String getDescriptionOfTheParty() {

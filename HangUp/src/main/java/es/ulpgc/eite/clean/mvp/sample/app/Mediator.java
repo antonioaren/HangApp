@@ -27,7 +27,7 @@ Mediator {
   void startingDetailScreen(DetailPresenter Presenter);
 
 
-  void startinAddCategoryScreen(AddCategory.ToAdd presenter);
+  void startingAddCategoryScreen(AddCategory.ToAdd presenter);
 //modificado nombre de metodo
   void SaveDataAdd(AddCategory.AddTo presenter);
 

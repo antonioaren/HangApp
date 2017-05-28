@@ -26,17 +26,12 @@ public interface AddCategory {
         void setTextVisibility(boolean visible);
 
 
-
         RealmList<CategoryData> getDefaultList();
     }
 
 
     interface AddTo {
         Context getManagedContext();
-
-
-
-
 
 
         void destroyView();
@@ -66,9 +61,9 @@ public interface AddCategory {
 
         void onAddClicked();
 
-        String[]getNames();
+        String[] getNames();
 
-        Integer[]getImages();
+        Integer[] getImages();
     }
 
     /**
@@ -85,25 +80,15 @@ public interface AddCategory {
 
         void finishScreen();
 
-        void hideToolbar();
-
-
-
         void setAddBtnLabel(String txt);
 
         void setTitleLabel(String txt);
-
-
-        void hideText();
-
-
 
         void setNameLabel(String txt);
 
         String getTextFromEditText();
 
         void setPhotoLabel(String txt);
-
 
         void setRadioButtonLabels(String txt0, String txt1, String txt2, String txt3);
 
@@ -156,8 +141,7 @@ public interface AddCategory {
         void insertEvent(String Categoryname, int image);
 
 
-
-        String[]getNames();
+        String[] getNames();
 
         Integer[] getImages();
 

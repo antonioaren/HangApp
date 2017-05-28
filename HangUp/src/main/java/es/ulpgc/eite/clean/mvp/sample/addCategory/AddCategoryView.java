@@ -19,27 +19,28 @@ import es.ulpgc.eite.clean.mvp.sample.R;
  */
 
 public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView, AddCategory.ViewToPresenter, AddCategoryPresenter>
-        implements AddCategory.PresenterToView{
-//Clase desde la cual añadimos categegoria
-   private static String APP_DIRECTORY="drawable";
+        implements AddCategory.PresenterToView {
+
+    //Clase desde la cual añadimos categegoria
+    private static String APP_DIRECTORY = "drawable";
     //variable que representa el directorio donde se guardaran nuestras imagenes extraidas de galeria
-    private static String MEDIA_DIRECTORY=APP_DIRECTORY+"name";
-    private String TEMPORAL_PICTURE_NAME="temporal.jpg";
+    private static String MEDIA_DIRECTORY = APP_DIRECTORY + "name";
+    private String TEMPORAL_PICTURE_NAME = "temporal.jpg";
 
-    private final int SELECT_PICTURE=200;
-    private final int PHOTO_CODE=100;
+    private final int SELECT_PICTURE = 200;
+    private final int PHOTO_CODE = 100;
 
-    TextView textViewTitle;
-    TextView textViewName;
-    EditText editTextName;
-    TextView textPhoto;
-    Button buttonPhoto;
- RadioGroup radioGroup;
-    Button buttonAdd;
-  //  ListView list;
+    private TextView textViewTitle;
+    private TextView textViewName;
+    private EditText editTextName;
+    private TextView textPhoto;
+    private Button buttonPhoto;
+    private RadioGroup radioGroup;
+    private Button buttonAdd;
 
-    RadioButton radioButton0,radioButton1,radioButton2,radioButton3;
-    ImageView image1,image2,image3,image4;
+    private RadioButton radioButton0, radioButton1, radioButton2, radioButton3;
+    private ImageView image1, image2, image3, image4;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,65 +49,40 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
         textViewName = (TextView) findViewById(R.id.textName);
         editTextName = (EditText) findViewById(R.id.content_name);
         textPhoto = (TextView) findViewById(R.id.textPhoto);
-        radioGroup=(RadioGroup)findViewById(R.id.radioGroup);
-        radioButton0=(RadioButton)findViewById(R.id.id0);
-        radioButton1=(RadioButton)findViewById(R.id.id1);
+        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+        radioButton0 = (RadioButton) findViewById(R.id.id0);
+        radioButton1 = (RadioButton) findViewById(R.id.id1);
 
-        radioButton2=(RadioButton)findViewById(R.id.id2);
-        radioButton3=(RadioButton)findViewById(R.id.id3);
-        image1=(ImageView)findViewById(R.id.image1);
-        image2=(ImageView)findViewById(R.id.image2);
-        image3=(ImageView)findViewById(R.id.image3);
-        image4=(ImageView)findViewById(R.id.image4);
+        radioButton2 = (RadioButton) findViewById(R.id.id2);
+        radioButton3 = (RadioButton) findViewById(R.id.id3);
 
-
-
+        image1 = (ImageView) findViewById(R.id.image1);
+        image2 = (ImageView) findViewById(R.id.image2);
+        image3 = (ImageView) findViewById(R.id.image3);
+        image4 = (ImageView) findViewById(R.id.image4);
 
 
-        buttonAdd=(Button)findViewById(R.id.buttonAdd2);
+        buttonAdd = (Button) findViewById(R.id.buttonAdd2);
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               getPresenter().onAddClicked();
+                getPresenter().onAddClicked();
 
             }
         });
 
 
-
-
     }
 
-    @SuppressLint("MissingSuperCall")
     @Override
     public void onResume() {
         super.onResume(AddCategoryPresenter.class, this);
-      //  list=(ListView)findViewById(R.id.list);
-
-
-//        String[]name=getPresenter().getNames();
-//        Integer[]photos=getPresenter().getImages();
-//        ListAdapter adapter=new ListAdapter(this,photos,name);
-//        list.setAdapter(adapter);
-
     }
 
 
     @Override
     public void finishScreen() {
         finish();
-    }
-
-    @Override
-    public void hideToolbar() {
-
-    }
-
-
-
-
-    @Override
-    public void hideText() {
     }
 
 
@@ -122,92 +98,44 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
 
     @Override
     public void setNameLabel(String txt) {
-    textViewName.setText(txt);
+        textViewName.setText(txt);
     }
 
-   @Override
-   public String getTextFromEditText(){
-      return editTextName.getText().toString();
-   }
+    @Override
+    public String getTextFromEditText() {
+        return editTextName.getText().toString();
+    }
+
     @Override
     public void setPhotoLabel(String txt) {
-    textPhoto.setText(txt);
+        textPhoto.setText(txt);
     }
 
-@Override
-public void setRadioButtonLabels(String txt0,String txt1,String txt2,String txt3){
-    radioButton0.setText(txt0);
-    radioButton1.setText(txt1);
-    radioButton2.setText(txt2);
-    radioButton3.setText(txt3);
-}
+    @Override
+    public void setRadioButtonLabels(String txt0, String txt1, String txt2, String txt3) {
+        radioButton0.setText(txt0);
+        radioButton1.setText(txt1);
+        radioButton2.setText(txt2);
+        radioButton3.setText(txt3);
+    }
+
     @Override
     public int getRadioButtonId() {
-      int identificator=1;
-     int id= radioGroup.getCheckedRadioButtonId();
-        if(id==R.id.id0){
-            identificator=0;
-        }else if(id==R.id.id1){
-            identificator=1;
+        int identificator = 1;
+        int id = radioGroup.getCheckedRadioButtonId();
+        if (id == R.id.id0) {
+            identificator = 0;
+        } else if (id == R.id.id1) {
+            identificator = 1;
+        } else if (id == R.id.id2) {
+            identificator = 2;
+        } else if (id == R.id.id3) {
+            identificator = 3;
+        } else {
+            identificator = 0;
         }
-      else if(id==R.id.id2){
-            identificator=2;
-        }
-        else if(id==R.id.id3){
-            identificator=3;
-        }
-        else{
-           identificator=0;
-        }
-       return identificator;
+        return identificator;
     }
-
-
-//public class ListAdapter extends ArrayAdapter<String>{
-//    private final Activity context;
-//
-//    private final String[] name;
-//    private final Integer[]images;
-//
-//    public ListAdapter(Activity context, Integer[]images,String[]name){
-//        super(context,R.layout.item_photos,name);
-//        this.context=context;
-//        this.name=name;
-//        this.images=images;
-//    }
-//    public View getView(int position,View view,ViewGroup parent){
-//        LayoutInflater inflater=context.getLayoutInflater();
-//        View rowView=inflater.inflate(R.layout.item_photos,null,true);
-//        RadioButton radio=(RadioButton)rowView.findViewById(R.id.radio);
-//        radio.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                getItem(2);
-//            }
-//        });
-//        ImageView image=(ImageView)rowView.findViewById(R.id.imagePhoto);
-//        image.setImageResource(images[position]);
-//        //Obtengo el valor de la imagen y lo almaceno en tag
-//
-//
-//
-//
-//
-//        TextView text=(TextView)rowView.findViewById(R.id.topic);
-//        text.setText(name[position]);
-//
-//  rowView.setOnClickListener(new View.OnClickListener() {
-//      @Override
-//      public void onClick(View v) {
-//
-//      }
-//  });
-//        return rowView;
-//    }
-//
-//}
-
-
 
 }
 

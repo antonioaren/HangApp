@@ -63,8 +63,8 @@ public class App extends Application implements Mediator, Navigator {
     @Override
     public void startingProductScreen(Product.ToProduct presenter) {
         if (CategoryToProduct != null) {
-            presenter.setItem(CategoryToProduct.ItemSelected);
-            presenter.setIdItem(CategoryToProduct.ItemId);
+            presenter.setItemSelected(CategoryToProduct.ItemSelected);
+            presenter.setItemId(CategoryToProduct.ItemId);
         }
         CategoryToProduct = null;
         presenter.onScreenStarted();
@@ -94,7 +94,7 @@ public class App extends Application implements Mediator, Navigator {
     }
 
     @Override
-    public void startinAddCategoryScreen(AddCategory.ToAdd presenter) {
+    public void startingAddCategoryScreen(AddCategory.ToAdd presenter) {
         if (toaddCategoryState != null) {
             presenter.setTextVisibility(toaddCategoryState.textVisibility);
         }
@@ -130,15 +130,12 @@ public class App extends Application implements Mediator, Navigator {
     @Override
     public void goToDeleteScreen(Category.CategoryTo presenter) {
         CategoryToSearch = new DeleteState();
-        //Añadir los estados que falten para pasarles a la busquedad. Guardar posicion, etc.
-
 
         Context view = presenter.getManagedContext();
         if (view != null) {
             view.startActivity(new Intent(view, DeleteView.class));
         }
     }
-
 
     @Override
     public void gotoDeleteProductScreen(Product.ProductTo presenter) {

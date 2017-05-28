@@ -43,7 +43,6 @@ public interface Product {
 
         void AddProductByCategoryId(ProductData product, String CategoryId);
 
-        void insertProduct( int image, String title , String participants);
 
         void insertProduct(int image, String title,
                            String participants, String CategoryId);
@@ -73,9 +72,9 @@ public interface Product {
     public interface ToProduct {
         void onScreenStarted();
 
-        void setItem(CategoryData itemSelected);
+        void setItemSelected(CategoryData itemSelected);
 
-        void setIdItem(String itemId);
+        void setItemId(String itemId);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////

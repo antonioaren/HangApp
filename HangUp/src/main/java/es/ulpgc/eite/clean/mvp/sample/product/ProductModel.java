@@ -27,7 +27,6 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     private String itemId;
 
 
-
     private String deleteLabel;
     private RealmResults<ProductData> itemsDatabase;
 
@@ -53,11 +52,6 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
 
     @Override
     public void AddProductByCategoryId(ProductData product, String CategoryId) {
-
-    }
-
-    @Override
-    public void insertProduct(int image, String title, String participants) {
 
     }
 
@@ -96,8 +90,8 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     @Override
     public void CreateDatabaseTables() {
         Log.d("PruebaPasaDatos", "CreateDatabaseTables()");
-        insertProduct(R.drawable.disco, "verbena", "1000");
-        insertProduct(R.drawable.astro, "concierto", "30000000");
+        //insertProduct(R.drawable.disco, "verbena", "1000","");
+        //insertProduct(R.drawable.astro, "concierto", "30000000","");
     }
 
     @Override

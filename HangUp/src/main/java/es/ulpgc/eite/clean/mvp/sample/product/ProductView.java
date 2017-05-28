@@ -30,7 +30,7 @@ public class ProductView
         implements Product.PresenterToView {
 
     public RecyclerView recycler;
-    Button buttonAdd, buttonDelete;
+    private Button buttonAdd, buttonDelete;
     private LinearLayoutManager linearmanager;
     private RealmResults<ProductData> items;
 
@@ -62,11 +62,12 @@ public class ProductView
                 getPresenter().onButtonDeleteClicked();
             }
         });
-        /*Story = (TextView) findViewById(R.id.Story);
-        Date = (TextView) findViewById(R.id.Date);
-        Hour = (TextView) findViewById(R.id.Hour);*/
 
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume(ProductPresenter.class, this);
     }
 
     @Override
@@ -78,27 +79,6 @@ public class ProductView
     public void setDeleteLabel(String msg) {
         buttonDelete.setText(msg);
     }
-
-
-    @SuppressLint("MissingSuperCall")
-    @Override
-    protected void onResume() {
-        super.onResume(ProductPresenter.class, this);
-    }
-
-//    @Override
-//    public void setText(String details, String storyDescription, String dateDescription, String hourDescription) {
-//        Detalle = (TextView) findViewById(R.id.item_details);
-//        Detalle.setText(details);
-//
-//        StoryDescription = (TextView) findViewById(R.id.StoryDescription);
-//        StoryDescription.setText(storyDescription);
-//        DateDescription = (TextView) findViewById(R.id.DateDescription);
-//        DateDescription.setText(dateDescription);
-//        HourDescription = (TextView) findViewById(R.id.HourDescription);
-//        HourDescription.setText(hourDescription);
-//
-//    }
 
     @Override
     public void settingAdapter(List<ProductData> items) {
@@ -115,7 +95,7 @@ public class ProductView
 
         private List<ProductData> items;
 
-        public ProductAdapter(/*RealmResults<ProductData> items*/ OrderedRealmCollection<ProductData> items) {
+        public ProductAdapter(OrderedRealmCollection<ProductData> items) {
 
             //  super(items,true);
             this.items = items;

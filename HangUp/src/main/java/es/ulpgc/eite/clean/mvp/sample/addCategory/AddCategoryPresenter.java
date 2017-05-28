@@ -21,22 +21,27 @@ public class AddCategoryPresenter
 
     private boolean buttonClicked;
     private Repository.ProductRepository.OnSaveProductCallback callback;
+
     @Override
     public void onCreate(AddCategory.PresenterToView view) {
         super.onCreate(AddCategoryModel.class, this);
         setView(view);
         Log.d(TAG, "calling onCreate()");
-
-        Log.d(TAG, "calling startingAddCategoryScreen()");
         Mediator app = (Mediator) getView().getApplication();
-    app.startinAddCategoryScreen(this);
+        app.startingAddCategoryScreen(this);
     }
 
     @Override
     public void onScreenStarted() {
         Log.d(TAG, "calling onScreenStarted()");
+        getView().setTitleLabel(getModel().getTitleLabel());
+        getView().setNameLabel(getModel().getNameLabel());
+        getView().setPhotoLabel(getModel().getPhotoLabel());
 
+        getView().setRadioButtonLabels(getModel().getLabelRadio0(), getModel().getLabelRadio1(),
+                getModel().getLabelRadio2(), getModel().getLabelRadio3());
 
+        getView().setAddBtnLabel(getModel().getButtonAddlabel());
     }
 
     @Override
@@ -46,11 +51,10 @@ public class AddCategoryPresenter
 
 
         if (configurationChangeOccurred()) {
-
             getView().setTitleLabel(getModel().getTitleLabel());
             getView().setNameLabel(getModel().getNameLabel());
             getView().setPhotoLabel(getModel().getPhotoLabel());
-            getView().setRadioButtonLabels(getModel().getLabelRadio0(),getModel().getLabelRadio1(),getModel().getLabelRadio2(),getModel().getLabelRadio3());
+            getView().setRadioButtonLabels(getModel().getLabelRadio0(), getModel().getLabelRadio1(), getModel().getLabelRadio2(), getModel().getLabelRadio3());
             getView().setAddBtnLabel(getModel().getButtonAddlabel());
 
 
@@ -70,8 +74,9 @@ public class AddCategoryPresenter
         Log.d(TAG, "calling onBackPressed()");
 
     }
+
     @Override
-    public Context getManagedContext(){
+    public Context getManagedContext() {
         return getActivityContext();
     }
 
@@ -84,11 +89,12 @@ public class AddCategoryPresenter
 
     @Override
     public void onAddClicked() {
-       int image= getModel().getImageByIdSelected(getView().getRadioButtonId());
-        getModel().insertEvent(getView().getTextFromEditText(),image );
-        Mediator app= (Mediator)getView().getApplication();
+        int image = getModel().getImageByIdSelected(getView().getRadioButtonId());
+        getModel().insertEvent(getView().getTextFromEditText(), image);
+        Mediator app = (Mediator) getView().getApplication();
         app.SaveDataAdd(this);
     }
+
     @Override
     public Repository.ProductRepository.OnSaveProductCallback getCallBack() {
         return callback;
@@ -104,9 +110,6 @@ public class AddCategoryPresenter
         return null;
     }
 
-
-
-
     @Override
     public void setTextVisibility(boolean visible) {
     }
@@ -119,17 +122,18 @@ public class AddCategoryPresenter
 
     @Override
     public void onSelectClicked() {
-     Mediator app=(Mediator)getView().getApplication();
+        //Mediator app = (Mediator) getView().getApplication();
         //app.selectImageFromGalery(this);
     }
 
-@Override
-    public String[]getNames(){
-    return getModel().getNames();
-}
-@Override
-    public Integer[]getImages(){
-    return getModel().getImages();
-}
+    @Override
+    public String[] getNames() {
+        return getModel().getNames();
+    }
+
+    @Override
+    public Integer[] getImages() {
+        return getModel().getImages();
+    }
 }
 
