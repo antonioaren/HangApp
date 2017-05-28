@@ -59,8 +59,6 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addparty);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         title = (TextView) findViewById(R.id.textView);
         EventName = (EditText) findViewById(R.id.name);
@@ -103,8 +101,6 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
                 getPresenter().onPublishClicked();
             }
         });
-
-
     }
 
     @SuppressLint("MissingSuperCall")
@@ -123,7 +119,6 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     public void finishScreen() {
         finish();
     }
-
 
     @Override
     public void setPublishBtnLabel(String txt) {

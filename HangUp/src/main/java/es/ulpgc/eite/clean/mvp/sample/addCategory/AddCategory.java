@@ -101,6 +101,8 @@ public interface AddCategory {
     interface PresenterToModel extends Model<ModelToPresenter> {
 
 
+        String getTitleLabel();
+
         void setTitleLabel(String titleLabel);
 
         String getNameLabel();

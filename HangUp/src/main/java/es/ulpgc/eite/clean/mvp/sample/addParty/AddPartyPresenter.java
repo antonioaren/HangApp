@@ -49,17 +49,8 @@ public class AddPartyPresenter
         Log.d(TAG, "calling onResume()");
 
         if (configurationChangeOccurred()) {
-
-            getView().setLabel(getModel().getPlaceLabel());
-            getView().setLabel(getModel().getDateLabel());
-            getView().setLabel(getModel().getTimeInitLabel());
-            getView().setLabel(getModel().getTimeFinishLabel());
-            if (buttonClicked) {
-                getView().setText(getModel().getPublishBtnLabel());
-            }
-
+            getView().setPublishBtnLabel(getModel().getPublishBtnLabel());
         }
-
     }
 
     @Override
@@ -74,8 +65,9 @@ public class AddPartyPresenter
         Log.d(TAG, "calling onBackPressed()");
 
     }
+
     @Override
-    public Context getManagedContext(){
+    public Context getManagedContext() {
         return getActivityContext();
     }
 
