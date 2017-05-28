@@ -81,9 +81,6 @@ public interface Add {
 
         void finishScreen();
 
-        void hideToolbar();
-
-
         void setPublishBtnLabel(String txt);
 
         void setTitleLabel(String txt);
@@ -95,12 +92,6 @@ public interface Add {
         void setTimeInitLabel(String txt);
 
         void setTimeFinishLabel(String txt);
-
-        void hideText();
-
-        void setText(String txt);
-
-        void setLabel(String txt);
 
         String getPlaceOfTheParty();
 

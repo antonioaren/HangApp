@@ -195,9 +195,10 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     public String getDescription() {
         return description;
     }
+
     @Override
     public void insertEvent(final int image, final String name,final String numberOfParticipants) {
-        product.insertProduct(image,name,numberOfParticipants);
+        //product.insertProduct(image,name,numberOfParticipants);
 
     }
 }

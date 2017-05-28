@@ -119,11 +119,9 @@ public class AddCategoryPresenter
         return null;
     }
 
-
     @Override
     public void onSelectClicked() {
-        //Mediator app = (Mediator) getView().getApplication();
-        //app.selectImageFromGalery(this);
+
     }
 
     @Override

@@ -17,40 +17,36 @@ import io.realm.Realm;
 public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter> implements AddCategory.PresenterToModel, Model<AddCategory.ModelToPresenter> {
 
 
-
-    private String titleLabel,nameLabel,photoLabel,buttonPhotoLabel,buttonAddlabel;
-   private String namecategory;
+    private String titleLabel, nameLabel, photoLabel, buttonPhotoLabel, buttonAddlabel;
+    private String namecategory;
     private Realm realmDatabase;
-    CategoryModel categoryModel;
+    private CategoryModel categoryModel;
     private String labelRadio0;
     private String labelRadio1;
     private String labelRadio2;
     private String labelRadio3;
-    String []names;
-    Integer[]images;
-    //final CharSequence[] options;
+    private String[] names;
+    private Integer[] images;
+
     public AddCategoryModel() {
-     categoryModel= new CategoryModel();
-       // options= new CharSequence[]{"Select from galery", "Cancel"};
-        this.names= new String[]{"cultural","fiesta","deportivo","academico"};
-        this.images=new Integer[]{R.drawable.astro,R.drawable.disco,R.drawable.cars,R.drawable.ulpgc};
-
+        categoryModel = new CategoryModel();
+        this.names = new String[]{"cultural", "fiesta", "deportivo", "academico"};
+        this.images = new Integer[]{R.drawable.astro, R.drawable.disco, R.drawable.cars, R.drawable.ulpgc};
     }
-
 
     @Override
     public void onCreate(AddCategory.ModelToPresenter presenter) {
         super.onCreate(presenter);
 
         titleLabel = "Publish a category";
-       nameLabel="Name:";
+        nameLabel = "Name:";
         photoLabel = "Photo:";
-        buttonPhotoLabel="Select...";
-        buttonAddlabel="Add";
-        this.labelRadio0="astro";
-        this.labelRadio1="disco";
-        this.labelRadio2="car";
-        this.labelRadio3="cultural";
+        buttonPhotoLabel = "Select...";
+        buttonAddlabel = "Add";
+        labelRadio0 = "astro";
+        labelRadio1 = "disco";
+        labelRadio2 = "car";
+        labelRadio3 = "cultural";
     }
 
     @Override
@@ -58,17 +54,18 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
         Log.d(TAG, "calling onDestroy()");
     }
 
-
-
+    ////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
     public String getTitleLabel() {
         return this.titleLabel;
     }
-     @Override
+
+    @Override
     public void setTitleLabel(String titleLabel) {
         this.titleLabel = titleLabel;
     }
+
     @Override
     public String getNameLabel() {
         return nameLabel;
@@ -77,6 +74,7 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     public void setNameLabel(String nameLabel) {
         this.nameLabel = nameLabel;
     }
+
     @Override
     public String getPhotoLabel() {
         return photoLabel;
@@ -85,6 +83,7 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     public void setPhotoLabel(String photoLabel) {
         this.photoLabel = photoLabel;
     }
+
     @Override
     public String getLabelRadio0() {
         return labelRadio0;
@@ -93,6 +92,7 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     public void setLabelRadio0(String labelRadio0) {
         this.labelRadio0 = labelRadio0;
     }
+
     @Override
     public String getLabelRadio1() {
         return labelRadio1;
@@ -101,6 +101,7 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     public void setLabelRadio1(String labelRadio1) {
         this.labelRadio1 = labelRadio1;
     }
+
     @Override
     public String getLabelRadio2() {
         return labelRadio2;
@@ -109,6 +110,7 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     public void setLabelRadio2(String labelRadio2) {
         this.labelRadio2 = labelRadio2;
     }
+
     @Override
     public String getLabelRadio3() {
         return labelRadio3;
@@ -117,6 +119,7 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     public void setLabelRadio3(String labelRadio3) {
         this.labelRadio3 = labelRadio3;
     }
+
     @Override
     public String getButtonAddlabel() {
         return buttonAddlabel;
@@ -125,38 +128,40 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     public void setButtonAddlabel(String buttonAddlabel) {
         this.buttonAddlabel = buttonAddlabel;
     }
+
     @Override
-    public void setNameCategory(String name){
-        this.namecategory=name;
+    public void setNameCategory(String name) {
+        this.namecategory = name;
     }
 
 
     @Override
     public void insertEvent(final String Categoryname, final int image) {
-     categoryModel.insertEvent(Categoryname, image);
-
+        categoryModel.insertEvent(Categoryname, image);
     }
 
     public String getNamecategory() {
         return namecategory;
     }
-@Override
-  public String[]getNames(){
-      return this.names;
-  }
-@Override
-  public Integer[] getImages(){
-    return this.images;
-}
 
-
-@Override
-    public int getImageByIdSelected(int id){
-   int image=1;
-    if(id>=0){
-  image=images[id];
-     }else{
-        image=images[0];
+    @Override
+    public String[] getNames() {
+        return this.names;
     }
-    return image;
-}}
+
+    @Override
+    public Integer[] getImages() {
+        return this.images;
+    }
+
+    @Override
+    public int getImageByIdSelected(int id) {
+        int image = 1;
+        if (id >= 0) {
+            image = images[id];
+        } else {
+            image = images[0];
+        }
+        return image;
+    }
+}

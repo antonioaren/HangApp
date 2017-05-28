@@ -21,20 +21,10 @@ import es.ulpgc.eite.clean.mvp.sample.R;
 public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView, AddCategory.ViewToPresenter, AddCategoryPresenter>
         implements AddCategory.PresenterToView {
 
-    //Clase desde la cual añadimos categegoria
-    private static String APP_DIRECTORY = "drawable";
-    //variable que representa el directorio donde se guardaran nuestras imagenes extraidas de galeria
-    private static String MEDIA_DIRECTORY = APP_DIRECTORY + "name";
-    private String TEMPORAL_PICTURE_NAME = "temporal.jpg";
-
-    private final int SELECT_PICTURE = 200;
-    private final int PHOTO_CODE = 100;
-
     private TextView textViewTitle;
     private TextView textViewName;
     private EditText editTextName;
     private TextView textPhoto;
-    private Button buttonPhoto;
     private RadioGroup radioGroup;
     private Button buttonAdd;
 
@@ -67,7 +57,6 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
             @Override
             public void onClick(View view) {
                 getPresenter().onAddClicked();
-
             }
         });
 
@@ -79,12 +68,12 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
         super.onResume(AddCategoryPresenter.class, this);
     }
 
-
     @Override
     public void finishScreen() {
         finish();
     }
 
+    //////////////////////////////////////Labels/////////////////////////////////////////////////
 
     @Override
     public void setAddBtnLabel(String txt) {
@@ -99,11 +88,6 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
     @Override
     public void setNameLabel(String txt) {
         textViewName.setText(txt);
-    }
-
-    @Override
-    public String getTextFromEditText() {
-        return editTextName.getText().toString();
     }
 
     @Override
@@ -136,6 +120,12 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
         }
         return identificator;
     }
+
+    @Override
+    public String getTextFromEditText() {
+        return editTextName.getText().toString();
+    }
+
 
 }
 

@@ -40,22 +40,18 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         implements Add.PresenterToView {
 
     private TextView title;
-    private TextView textViewDescription;
     private EditText EventName;
     private TextView textPlace;
     private EditText EventPlace;
     private EditText EventTimeFinish;
     private TextView textdate;
-    private DatePicker datePicker;
     private TextView EventDate;
     private TimePicker timePickerInit;
     private TextView EventTimeInit;
     private TimePicker timePickerFinish;
     private Button buttonPublish;
-    private Toolbar toolbar;
 
     private Date date;
-    private Date time;
 
 
     @Override
@@ -63,10 +59,6 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addparty);
 
-
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-
-        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
@@ -132,9 +124,6 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         finish();
     }
 
-    @Override
-    public void hideToolbar() {
-    }
 
     @Override
     public void setPublishBtnLabel(String txt) {
@@ -165,37 +154,6 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     public void setTimeFinishLabel(String txt) {
         EventTimeInit.setText(txt);
     }
-
-
-    @Override
-    public void hideText() {
-    }
-
-    @Override
-    public void setText(String txt) {
-    }
-
-    @Override
-    public void setLabel(String txt) {
-    }
-
-//    @Override
-//    public String getMonth() {
-//        String month = String.valueOf(datePicker.getMonth());
-//        return month;
-//    }
-//
-//    @Override
-//    public String getDay() {
-//        String day = String.valueOf(datePicker.getDayOfMonth());
-//        return day;
-//    }
-//
-//    @Override
-//    public int getYear() {
-//        int year = datePicker.getYear();
-//        return year;
-//    }
 
     @Override
     public String getPlaceOfTheParty() {
