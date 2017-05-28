@@ -39,8 +39,13 @@ public class AddPartyPresenter
     @Override
     public void onScreenStarted() {
         Log.d(TAG, "calling onScreenStarted()");
-        getView().setPublishBtnLabel(getModel().getPublishBtnLabel());
+        getView().setNameLabel(getModel().getNameLabel());
+        getView().setPlaceLabel(getModel().getPlaceLabel());
+        getView().setDateLabel(getModel().getDateLabel());
+        getView().setTimeInitLabel(getModel().getTimeInitLabel());
+        getView().setTimeFinishLabel(getModel().getTimeFinishLabel());
 
+        getView().setPublishBtnLabel(getModel().getPublishBtnLabel());
     }
 
     @Override

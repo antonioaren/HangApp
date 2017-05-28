@@ -77,13 +77,13 @@ public interface Add {
 
     interface PresenterToView extends ContextView {
 
-        void settingAdapter(RealmResults<CategoryData> data);
-
         void finishScreen();
 
         void setPublishBtnLabel(String txt);
 
         void setTitleLabel(String txt);
+
+        void setNameLabel(String txt);
 
         void setPlaceLabel(String txt);
 
@@ -109,6 +109,10 @@ public interface Add {
     interface PresenterToModel extends Model<ModelToPresenter> {
 
         String getDescription();
+
+        String getNameLabel();
+
+        void setNameLabel(String nameLabel);
 
         String getPlaceLabel();
 

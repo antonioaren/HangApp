@@ -33,6 +33,7 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     private List<ProductData> party;
     private Repository.ProductRepository.OnSaveProductCallback callback;
     private ProductModel product;
+    private String nameLabel;
 
 
     public AddPartyModel() {
@@ -46,67 +47,21 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     public void onCreate(Add.ModelToPresenter presenter) {
         super.onCreate(presenter);
 
-        placeLabel = "Place :";
-        dateLabel = "Date :";
-        timeInitLabel = "Starts :";
-        timeFinishLabel = "Finishes :";
-        publishLabel = "Add";
         titleLabel = "Publish your own party";
+
+        nameLabel = "Name";
+        placeLabel = "Place";
+        dateLabel = "Date";
+        timeInitLabel = "Starts";
+        timeFinishLabel = "Finishes";
+
+        publishLabel = "Add";
+
     }
 
     @Override
     public void onDestroy(boolean b) {
         Log.d(TAG, "calling onDestroy()");
-    }
-
-    @Override
-    public String getPlaceLabel() {
-        return this.placeLabel;
-    }
-
-    @Override
-    public void setPlaceLabel(String placeLabel) {
-        this.placeLabel = placeLabel;
-    }
-
-    @Override
-    public String getPublishBtnLabel() {
-        return publishLabel;
-    }
-
-    @Override
-    public void setPublishLabel(String publishLabel) {
-        this.publishLabel = publishLabel;
-    }
-
-    @Override
-    public String getDateLabel() {
-        return this.dateLabel;
-    }
-
-    @Override
-    public void setDateLabel(String dateLabel) {
-        this.dateLabel = dateLabel;
-    }
-
-    @Override
-    public String getTimeInitLabel() {
-        return this.timeInitLabel;
-    }
-
-    @Override
-    public void setTimeInitLabel(String timeInitLabel) {
-        this.timeInitLabel = timeInitLabel;
-    }
-
-    @Override
-    public String getTimeFinishLabel() {
-        return this.timeFinishLabel;
-    }
-
-    @Override
-    public void setTimeFinishLabel(String timeFinishLabel) {
-        this.timeFinishLabel = timeFinishLabel;
     }
 
     @Override
@@ -118,6 +73,64 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     public void setTitleLabel(String titleLabel) {
         this.titleLabel = titleLabel;
     }
+
+    @Override
+    public String getNameLabel() {
+        return nameLabel;
+    }
+
+    @Override
+    public void setNameLabel(String nameLabel) {
+        this.nameLabel = nameLabel;
+    }
+
+    @Override
+    public String getPlaceLabel() {
+        return this.placeLabel;
+    }
+    @Override
+    public void setPlaceLabel(String placeLabel) {
+        this.placeLabel = placeLabel;
+    }
+
+    @Override
+    public String getDateLabel() {
+        return this.dateLabel;
+    }
+    @Override
+    public void setDateLabel(String dateLabel) {
+        this.dateLabel = dateLabel;
+    }
+
+    @Override
+    public String getTimeInitLabel() {
+        return this.timeInitLabel;
+    }
+    @Override
+    public void setTimeInitLabel(String timeInitLabel) {
+        this.timeInitLabel = timeInitLabel;
+    }
+
+    @Override
+    public String getTimeFinishLabel() {
+        return this.timeFinishLabel;
+    }
+    @Override
+    public void setTimeFinishLabel(String timeFinishLabel) {
+        this.timeFinishLabel = timeFinishLabel;
+    }
+
+    @Override
+    public String getPublishBtnLabel() {
+        return publishLabel;
+    }
+    @Override
+    public void setPublishLabel(String publishLabel) {
+        this.publishLabel = publishLabel;
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
 
     @Override
     public String getPlaceOfTheParty() {
@@ -141,8 +154,6 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
         String hour = hourInit + "" + "-" + hourFinish;
         return hour;
     }
-
-
 
     @Override
     public void setDay(String day) {
