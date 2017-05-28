@@ -91,10 +91,6 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
         buttonAdd.setText(txt);
     }
 
-    @Override
-    public void setTitleLabel(String txt) {
-        textViewTitle.setText(txt);
-    }
 
     @Override
     public void setNameLabel(String txt) {

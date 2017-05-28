@@ -59,13 +59,7 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     }
 
 
-
-
     @Override
-    public String getTitleLabel() {
-        return this.titleLabel;
-    }
-     @Override
     public void setTitleLabel(String titleLabel) {
         this.titleLabel = titleLabel;
     }

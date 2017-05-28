@@ -82,7 +82,6 @@ public interface AddCategory {
 
         void setAddBtnLabel(String txt);
 
-        void setTitleLabel(String txt);
 
         void setNameLabel(String txt);
 
@@ -134,8 +133,6 @@ public interface AddCategory {
         void setButtonAddlabel(String buttonAddlabel);
 
         void setNameCategory(String name);
-
-        String getTitleLabel();
 
 
         void insertEvent(String Categoryname, int image);
