@@ -7,6 +7,7 @@ import android.content.Intent;
 import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategory;
 import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategoryView;
 import es.ulpgc.eite.clean.mvp.sample.addParty.Add;
+import es.ulpgc.eite.clean.mvp.sample.addParty.AddPartyPresenter;
 import es.ulpgc.eite.clean.mvp.sample.addParty.AddPartyView;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
@@ -28,6 +29,8 @@ public class App extends Application implements Mediator, Navigator {
 
     private CategoryState toCategoryState;
     private ProductState CategoryToProduct;
+    private ProductState AddToProduct;
+
     private DetailState ProductToDetail;
 
     private DeleteState CategoryToSearch;
@@ -67,7 +70,14 @@ public class App extends Application implements Mediator, Navigator {
             presenter.setItemSelected(CategoryToProduct.ItemSelected);
             presenter.setItemId(CategoryToProduct.ItemId);
         }
+
+        if (AddToProduct != null) {
+            presenter.setProductToAdd(AddToProduct.ProductToAdd);
+        }
+
         CategoryToProduct = null;
+        AddToProduct = null;
+
         presenter.onScreenStarted();
     }
 
@@ -89,7 +99,7 @@ public class App extends Application implements Mediator, Navigator {
     @Override
     public void startingAddScreen(Add.ToAdd presenter) {
         if (toAddState != null) {
-            presenter.setTextVisibility(toAddState.textVisibility);
+
         }
         presenter.onScreenStarted();
     }
@@ -114,11 +124,21 @@ public class App extends Application implements Mediator, Navigator {
         Context view = presenter.getManagedContext();
         if (view != null) {
             Intent intent = new Intent(view, ProductView.class);
-            //intent.putExtra(RealmTable.ID,presenter.getItemId());
             view.startActivity(intent);
-            //view.startActivity(new Intent(view, ProductView.class));
-
         }
+    }
+
+    @Override
+    public void goToProductScreenFromAddScreen(Add.AddTo presenter) {
+        AddToProduct = new ProductState();
+        AddToProduct.ProductToAdd = presenter.getProductAddedView();
+
+        Context view = presenter.getManagedContext();
+        if (view != null) {
+            Intent intent = new Intent(view, ProductView.class);
+            view.startActivity(intent);
+        }
+
     }
 
     @Override
@@ -212,6 +232,8 @@ public class App extends Application implements Mediator, Navigator {
     private class ProductState {
         CategoryData ItemSelected;
         String ItemId;
+        ProductData ProductToAdd;
+
     }
 
     private class DetailState {
@@ -225,8 +247,6 @@ public class App extends Application implements Mediator, Navigator {
     }
 
     private class AddPartyState {
-        boolean textVisibility;
-        boolean selectorsVisibility;
         public String descriptionOfTheParty;
         public String placeOfTheParty;
         public String dateOfTheParty;

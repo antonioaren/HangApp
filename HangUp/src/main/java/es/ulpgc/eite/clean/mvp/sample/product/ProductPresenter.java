@@ -76,6 +76,11 @@ public class ProductPresenter
     }
 
     @Override
+    public void setProductToAdd(ProductData productToAdd) {
+        getModel().setProductToAddFromAddAndInsert(productToAdd);
+    }
+
+    @Override
     public void onItemClicked(ProductData item) {
         ItemSelected = item;
 

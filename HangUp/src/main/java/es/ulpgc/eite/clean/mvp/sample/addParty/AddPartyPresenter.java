@@ -4,13 +4,10 @@ import android.content.Context;
 import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
-import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
-import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.data.Repository;
-import io.realm.RealmList;
 
 /**
  * Created by eleonora on 17/04/2017.
@@ -23,6 +20,7 @@ public class AddPartyPresenter
 
 
     private Repository.ProductRepository.OnSaveProductCallback callback;
+    private ProductData product;
 
     @Override
     public void onCreate(Add.PresenterToView view) {
@@ -77,92 +75,86 @@ public class AddPartyPresenter
         }
     }
 
-    @Override
-    public String getDescriptionOfTheParty() {
-        return getModel().getDescription();
-    }
+//    public String getDescriptionOfTheParty() {
+//        return getModel().getDescription();
+//    }
+//
+//    public Repository.ProductRepository.OnSaveProductCallback getCallBack() {
+//        return callback;
+//    }
+//
+//    public RealmList<ProductData> getParty() {
+//        return null;
+//    }
 
     @Override
-    public Repository.ProductRepository.OnSaveProductCallback getCallBack() {
-        return callback;
-    }
-
-    @Override
-    public RealmList<ProductData> getParty() {
-        return null;
-    }
-
-    @Override
-    public void onPublishClicked() {
+    public void onPublishButtonClicked() {
         Log.d(TAG, "callingOnPublish");
 
-        if (isViewRunning()) {
-//            getModel().setHourOfFinish(getView().getHourOfFinish());
-//            getModel().setHourOfInit(getView().getHourOfInit());
-//            getModel().setPlaceOfTheParty(getView().getPlaceOfTheParty());
-//            getModel().setDescription(getView().getDescription());
-            getModel().insertEvent(R.drawable.astro, getView().getDescription(), getView().getPlaceOfTheParty());
-        }
-
+        Navigator app = (Navigator) getView().getApplication();
+        app.goToProductScreenFromAddScreen(this);
 
     }
 
     @Override
-    public void setTextVisibility(boolean visible) {
+    public void DataFromAddView(ProductData product) {
+        this.product = product;
     }
 
     @Override
-    public void setPlace(String place) {
-
+    public ProductData getProductAddedView() {
+        return product;
     }
 
-    @Override
-    public void setDate(String date) {
+//    @Override
+//    public void setTextVisibility(boolean visible) {
+//    }
+//
+//    @Override
+//    public void setPlace(String place) {
+//
+//    }
+//
+//    @Override
+//    public void setDate(String date) {
+//
+//    }
+//
+//    @Override
+//    public void setHour(String hour) {
+//
+//    }
 
-    }
 
-    @Override
-    public void setHour(String hour) {
-
-    }
-
-    @Override
-    public String getPlaceOfTheParty() {
-        return getModel().getPlaceOfTheParty();
-    }
-
-    @Override
-    public String getDateOfTheParty() {
-        return getModel().getDateOfTheParty();
-    }
-
-    @Override
-    public String getHourOfParty() {
-        return getModel().getHourOfParty();
-    }
-
-    @Override
-    public RealmList<CategoryData> getDefaultList() {
-        return null;
-    }
-
-    @Override
-    public RealmList<CategoryData> getPartyAdded() {
-        return (RealmList<CategoryData>) getModel().getPartyAdded();
-    }
-
-    @Override
-    public RealmList<ProductData> getPartyCreated() {
-        return (RealmList<ProductData>) getModel().getParty();
-    }
-
-    @Override
-    public void settingAdapter(RealmList<CategoryData> item) {
-        CategoryView categoryView = new CategoryView();
-        //TODO Configurar bien para que añada.
-
-        categoryView.settingAdapter(null);
-    }
+//    @Override
+//    public String getPlaceOfTheParty() {
+//        return getModel().getPlaceOfTheParty();
+//    }
+//
+//    @Override
+//    public String getDateOfTheParty() {
+//        return getModel().getDateOfTheParty();
+//    }
+//
+//    @Override
+//    public String getHourOfParty() {
+//        return getModel().getHourOfParty();
+//    }
+//
+//    @Override
+//    public RealmList<CategoryData> getDefaultList() {
+//        return null;
+//    }
+//
+//    @Override
+//    public RealmList<CategoryData> getPartyAdded() {
+//        return (RealmList<CategoryData>) getModel().getPartyAdded();
+//    }
+//
+//    @Override
+//    public RealmList<ProductData> getPartyCreated() {
+//        return (RealmList<ProductData>) getModel().getParty();
+//    }
 
     private void LoadInitialComponents() {
         getView().setNameLabel(getModel().getNameLabel());

@@ -56,6 +56,8 @@ public interface Product {
         String getDeleteLabel();
 
         void setItemId(String itemId);
+
+        void setProductToAddFromAddAndInsert(ProductData productToAdd);
     }
 
     public interface ModelToPresenter {
@@ -70,6 +72,8 @@ public interface Product {
         void setItemSelected(CategoryData itemSelected);
 
         void setItemId(String itemId);
+
+        void setProductToAdd(ProductData productToAdd);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////

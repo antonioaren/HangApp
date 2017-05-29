@@ -24,39 +24,18 @@ public interface Add {
     interface ToAdd {
         void onScreenStarted();
 
-        void setTextVisibility(boolean visible);
-
-        void setPlace(String place);
-
-        void setDate(String date);
-
-        void setHour(String hour);
-
-        RealmList<CategoryData> getDefaultList();
     }
 
 
     interface AddTo {
         Context getManagedContext();
 
-        String getPlaceOfTheParty();
 
-        String getDateOfTheParty();
-
-        String getHourOfParty();
-
-        RealmList<CategoryData> getPartyAdded();
-
-        RealmList<ProductData> getPartyCreated();
-
-        void settingAdapter(RealmList<CategoryData> item);
 
         void destroyView();
 
-        String getDescriptionOfTheParty();
-        Repository.ProductRepository.OnSaveProductCallback getCallBack();
 
-        RealmList<ProductData> getParty();
+        ProductData getProductAddedView();
     }
 
 
@@ -68,7 +47,10 @@ public interface Add {
      */
 
     interface ViewToPresenter extends Presenter<PresenterToView> {
-        void onPublishClicked();
+        void onPublishButtonClicked();
+
+
+        void DataFromAddView(ProductData product);
     }
 
     /**

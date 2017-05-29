@@ -4,35 +4,22 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
-import com.wdullaer.materialdatetimepicker.time.RadialPickerLayout;
-import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 
-import java.sql.Time;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Timer;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
-import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.util.DateFormatter;
-import io.realm.RealmResults;
-
-import static es.ulpgc.eite.clean.mvp.sample.R.id.textPlace;
 
 
 /**
@@ -100,7 +87,8 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         buttonPublish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getPresenter().onPublishClicked();
+                SaveData();
+                getPresenter().onPublishButtonClicked();
             }
         });
     }
@@ -152,14 +140,14 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
     ///////////////////////////// CAPTAR DATOS ///////////////////////////////
 
-    public ProductData GetData() {
+    private void SaveData() {
         ProductData product = new ProductData();
         product.setProductName(EventName.getText().toString());
         product.setPlace(EventPlace.getText().toString());
         product.setDate(EventDate.getText().toString());
         product.setTimeI(EventTimeInit.getText().toString());
         product.setTimeF(EventTimeFinish.getText().toString());
-        return product;
+        getPresenter().DataFromAddView(product);
     }
 
     @Override

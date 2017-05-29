@@ -59,6 +59,11 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     }
 
     @Override
+    public void setProductToAddFromAddAndInsert(ProductData productToAdd) {
+        AddProductByCategoryId(productToAdd, getItemId());
+    }
+
+    @Override
     public String getItemId() {
         return itemId;
     }
