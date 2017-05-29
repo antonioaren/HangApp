@@ -24,6 +24,7 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     private Realm realmDatabase;
     private CategoryData Item;
     private String addlabel;
+
     private String itemId;
 
 
@@ -36,45 +37,15 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
         deleteLabel = "delete";
         RealmConfiguration setting = new RealmConfiguration.Builder().build();
         Realm.setDefaultConfiguration(setting);
-
     }
 
     @Override
     public void onDestroy(boolean b) {
-
     }
 
     @Override
     public CategoryData getItem() {
         return Item;
-    }
-
-
-    @Override
-    public void AddProductByCategoryId(ProductData product, String CategoryId) {
-
-    }
-
-    @Override
-    public void insertProduct(final int image, final String title,
-                              final String participants, final String CategoryId) {
-
-        realmDatabase = Realm.getDefaultInstance();
-        realmDatabase.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-                ProductData event = realmDatabase.createObject(ProductData.class,
-                        UUID.randomUUID().toString());
-
-                event.setImage(image);
-                event.setProductName(title);
-                event.setParticipants(participants);
-
-                CategoryData category = realm.where(CategoryData.class)
-                        .equalTo(RealmTable.ID, CategoryId).findFirst();
-                category.getItemInfo().add(event);
-            }
-        });
     }
 
     @Override
@@ -83,13 +54,40 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     }
 
     @Override
-    public void setItem(ProductData itemSelected) {
-
+    public void setItemId(String itemId) {
+        this.itemId = itemId;
     }
 
     @Override
+    public String getItemId() {
+        return itemId;
+    }
+
+    @Override
+    public void AddProductByCategoryId(final ProductData product, final String CategoryId) {
+        realmDatabase = Realm.getDefaultInstance();
+        realmDatabase.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                ProductData event = realmDatabase.createObject(ProductData.class,
+                        UUID.randomUUID().toString());
+                event.setProductName(product.getProductName());
+                event.setPlace(product.getPlace());
+                event.setDate(product.getPlace());
+                event.setTimeI(product.getTimeI());
+                event.setTimeF(product.getTimeF());
+                //event.setDetailText(product.getDetailText());
+
+                CategoryData category = realm.where(CategoryData.class)
+                        .equalTo(itemId, CategoryId).findFirst();
+                category.getItemInfo().add(event);
+            }
+        });
+    }
+
+
+    @Override
     public void CreateDatabaseTables() {
-        Log.d("PruebaPasaDatos", "CreateDatabaseTables()");
         //insertProduct(R.drawable.disco, "verbena", "1000","");
         //insertProduct(R.drawable.astro, "concierto", "30000000","");
     }
@@ -123,8 +121,5 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
         return deleteLabel;
     }
 
-    @Override
-    public void setItemId(String itemId) {
-        this.itemId = itemId;
-    }
+
 }

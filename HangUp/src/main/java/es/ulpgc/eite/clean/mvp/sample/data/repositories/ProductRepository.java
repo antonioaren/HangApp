@@ -23,26 +23,28 @@ import static android.R.attr.id;
  * Created by Pedro Arenas on 14/5/17.
  */
 
-public class ProductRepository extends RealmConfiguration implements Repository.ProductRepository  {
+public class ProductRepository extends RealmConfiguration implements Repository.ProductRepository {
 
 
-public ProductRepository(File realmDirectory, String realmFileName, String canonicalPath, String assetFilePath, byte[] key, long schemaVersion, RealmMigration migration, boolean deleteRealmIfMigrationNeeded, SharedRealm.Durability durability, RealmProxyMediator schemaMediator, RxObservableFactory rxObservableFactory, Realm.Transaction initialDataTransaction) {
-     super(realmDirectory, realmFileName, canonicalPath, assetFilePath, key, schemaVersion, migration, deleteRealmIfMigrationNeeded, durability, schemaMediator, rxObservableFactory, initialDataTransaction);
-  }
+    public ProductRepository(File realmDirectory, String realmFileName, String canonicalPath, String assetFilePath, byte[] key, long schemaVersion, RealmMigration migration, boolean deleteRealmIfMigrationNeeded, SharedRealm.Durability durability, RealmProxyMediator schemaMediator, RxObservableFactory rxObservableFactory, Realm.Transaction initialDataTransaction) {
+        super(realmDirectory, realmFileName, canonicalPath, assetFilePath, key, schemaVersion, migration, deleteRealmIfMigrationNeeded, durability, schemaMediator, rxObservableFactory, initialDataTransaction);
+    }
 
     @Override
     public void addProduct(OnSaveProductCallback callback, ProductData product) {
-    Realm realm = Realm.getInstance(this);
-      realm.beginTransaction();
-      ProductData realmProduct = realm.createObject(ProductData.class);
-       realmProduct.setId(UUID.randomUUID().toString());
-     realmProduct.setProductName(realmProduct.getProductName());
-       realmProduct.setParticipants(realmProduct.getParticipants());
-     realmProduct.setDetailText(realmProduct.getDetailText());
-    realm.commitTransaction();
+        Realm realm = Realm.getInstance(this);
+        realm.beginTransaction();
+        ProductData realmProduct = realm.createObject(ProductData.class);
+        realmProduct.setId(UUID.randomUUID().toString());
+
+        realmProduct.setProductName(realmProduct.getProductName());
+        //TODO Implementar
+        realmProduct.setDetailText(realmProduct.getDetailText());
+
+        realm.commitTransaction();
 ////en proceso....
- if (callback != null)
-        callback.onSuccess();
+        if (callback != null)
+            callback.onSuccess();
     }
 
 
@@ -96,53 +98,55 @@ public ProductRepository(File realmDirectory, String realmFileName, String canon
     }
 
 
-
     @Override
     public void addProductByCategoryId(ProductData product, String categoryId, OnSaveProductCallback callback) {
-               Realm realm = Realm.getInstance(this);
-              realm.beginTransaction();
-//
-       ProductData realmProduct = realm.createObject(ProductData.class);
-       realmProduct.setId(UUID.randomUUID().toString());
-       realmProduct.setProductName(realmProduct.getProductName());
-       realmProduct.setParticipants(realmProduct.getParticipants());
-       realmProduct.setDetailText(realmProduct.getDetailText());
+        Realm realm = Realm.getInstance(this);
+        realm.beginTransaction();
+
+        ProductData realmProduct = realm.createObject(ProductData.class);
+        realmProduct.setId(UUID.randomUUID().toString());
+
+        realmProduct.setProductName(realmProduct.getProductName());
+        realmProduct.setPlace(realmProduct.getPlace());
         realmProduct.setDate(realmProduct.getDate());
-        realmProduct.setHour(realmProduct.getHour());
+        realmProduct.setTimeI(realmProduct.getTimeI());
+        realmProduct.setTimeF(realmProduct.getTimeF());
 
-         CategoryData category = realm.where(CategoryData.class)
-        .equalTo(RealmTable.ID, id).findFirst();
-         category.getItemInfo().add(realmProduct);
+        realmProduct.setDetailText(realmProduct.getDetailText());
 
-         realm.commitTransaction();
+        CategoryData category = realm.where(CategoryData.class)
+                .equalTo(RealmTable.ID, id).findFirst();
+        category.getItemInfo().add(realmProduct);
 
-         if (callback != null)
-          callback.onSuccess();
-      }
+        realm.commitTransaction();
+
+        if (callback != null)
+            callback.onSuccess();
+    }
 
     @Override
     public void deleteProductById(String id, OnDeleteProductCallback callback) {
         Realm realm = Realm.getInstance(this);
-      realm.beginTransaction();
-      ProductData result = realm.where(ProductData.class).equalTo(RealmTable.ID, id).findFirst();
-       result.deleteFromRealm();
-       realm.commitTransaction();
+        realm.beginTransaction();
+        ProductData result = realm.where(ProductData.class).equalTo(RealmTable.ID, id).findFirst();
+        result.deleteFromRealm();
+        realm.commitTransaction();
 
-    if (callback != null)
-      callback.onSuccess();
+        if (callback != null)
+            callback.onSuccess();
     }
 
     @Override
     public void deleteProductByPosition(int position, OnDeleteProductCallback callback) {
         Realm realm = Realm.getInstance(this);
-      realm.beginTransaction();
-    RealmQuery<ProductData> query = realm.where(ProductData.class);
-    RealmResults<ProductData> results = query.findAll();
-   results.deleteFromRealm(position);
-     realm.commitTransaction();
+        realm.beginTransaction();
+        RealmQuery<ProductData> query = realm.where(ProductData.class);
+        RealmResults<ProductData> results = query.findAll();
+        results.deleteFromRealm(position);
+        realm.commitTransaction();
 
-     if (callback != null)
-          callback.onSuccess();
+        if (callback != null)
+            callback.onSuccess();
     }
 
     @Override
@@ -150,27 +154,27 @@ public ProductRepository(File realmDirectory, String realmFileName, String canon
         Realm realm = Realm.getInstance(this);
         RealmResults<ProductData> results = realm.where(ProductData.class).findAll();
 
-     if (callback != null)
-         callback.onSuccess(results);
+        if (callback != null)
+            callback.onSuccess(results);
     }
 
     @Override
     public void getAllProductsByCategoryId(String id, OnGetProductsCallback callback) {
-          Realm realm = Realm.getInstance(this);
-         CategoryData category = realm.where(CategoryData.class).equalTo(RealmTable.ID, id).findFirst();
-         RealmList<ProductData> products = category.getItemInfo();
-          if (callback != null)
-          callback.onSuccess(products);
+        Realm realm = Realm.getInstance(this);
+        CategoryData category = realm.where(CategoryData.class).equalTo(RealmTable.ID, id).findFirst();
+        RealmList<ProductData> products = category.getItemInfo();
+        if (callback != null)
+            callback.onSuccess(products);
 
     }
 
     @Override
     public void getProductsById(String id, OnGetProductByIdCallback callback) {
-             Realm realm = Realm.getInstance(this);
-    ProductData product = realm.where(ProductData.class).equalTo(RealmTable.ID, id).findFirst();
+        Realm realm = Realm.getInstance(this);
+        ProductData product = realm.where(ProductData.class).equalTo(RealmTable.ID, id).findFirst();
 
-           if (callback != null)
-          callback.onSuccess(product);
+        if (callback != null)
+            callback.onSuccess(product);
 
     }
 }

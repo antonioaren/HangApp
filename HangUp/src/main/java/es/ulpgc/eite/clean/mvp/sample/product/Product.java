@@ -41,18 +41,13 @@ public interface Product {
 
         CategoryData getItem();
 
+        String getItemId();
+
         void AddProductByCategoryId(ProductData product, String CategoryId);
-
-
-        void insertProduct(int image, String title,
-                           String participants, String CategoryId);
 
         void setItem(CategoryData itemSelected);
 
-        void setItem(ProductData itemSelected);
-
         String getAddLabel();
-
 
         void CreateDatabaseTables();
 

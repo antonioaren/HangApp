@@ -12,6 +12,7 @@ import es.ulpgc.eite.clean.mvp.sample.category.Category;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.data.Repository;
+import es.ulpgc.eite.clean.mvp.sample.data.module.RealmTable;
 import es.ulpgc.eite.clean.mvp.sample.data.repositories.ProductRepository;
 import es.ulpgc.eite.clean.mvp.sample.delete.Delete;
 import es.ulpgc.eite.clean.mvp.sample.delete.DeleteView;
@@ -112,7 +113,11 @@ public class App extends Application implements Mediator, Navigator {
 
         Context view = presenter.getManagedContext();
         if (view != null) {
-            view.startActivity(new Intent(view, ProductView.class));
+            Intent intent = new Intent(view, ProductView.class);
+            //intent.putExtra(RealmTable.ID,presenter.getItemId());
+            view.startActivity(intent);
+            //view.startActivity(new Intent(view, ProductView.class));
+
         }
     }
 

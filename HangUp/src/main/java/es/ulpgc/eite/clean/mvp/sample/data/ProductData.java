@@ -55,7 +55,6 @@ public class ProductData extends RealmObject {
     public String getPlace() {
         return place;
     }
-
     public void setPlace(String place) {
         this.place = place;
     }
@@ -70,7 +69,6 @@ public class ProductData extends RealmObject {
     public String getTimeI() {
         return TimeI;
     }
-
     public void setTimeI(String timeI) {
         TimeI = timeI;
     }
@@ -78,7 +76,6 @@ public class ProductData extends RealmObject {
     public String getTimeF() {
         return TimeF;
     }
-
     public void setTimeF(String timeF) {
         TimeF = timeF;
     }
@@ -86,9 +83,7 @@ public class ProductData extends RealmObject {
     public String getDetailText() {
         return detailText;
     }
-
     public void setDetailText(String detailText) {
         this.detailText = detailText;
     }
-
 }

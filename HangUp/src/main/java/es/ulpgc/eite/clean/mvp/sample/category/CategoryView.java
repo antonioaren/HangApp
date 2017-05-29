@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -136,15 +137,14 @@ public class CategoryView
         }
 
         @Override
-        public void onBindViewHolder(final CategoryViewHolder holder, int position) {
+        public void onBindViewHolder(final CategoryViewHolder holder, final int position) {
             holder.item = items.get(position);
             holder.image.setImageResource(items.get(position).getImage());
             holder.title.setText(items.get(position).getCategoryName());
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    CategoryData categorydata = new CategoryData();
-                    getPresenter().onItemClicked(holder.item, categorydata.getId());
+                    getPresenter().onItemClicked(holder.item, items.get(position).getId());
                 }
             });
         }

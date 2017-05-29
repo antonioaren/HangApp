@@ -158,25 +158,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     @Override
     public void AddProductByCategoryId(ProductData product, final String CategoryId) {
-//        realmDatabase = Realm.getDefaultInstance();
-//        realmDatabase.executeTransaction(new Realm.Transaction() {
-//            @Override
-//            public void execute(Realm realm) {
-//                ProductData RealmData = realm.createObject(ProductData.class, UUID.randomUUID().toString());
-//
-//                RealmData.setProductName("");
-//                RealmData.setImage(0);
-//                RealmData.setDate("");
-//                RealmData.setHour("");
-//                RealmData.setParticipants("");
-//                RealmData.setDetailText("");
-//
-//                CategoryData category = realmDatabase.where(CategoryData.class).
-//                        equalTo(RealmTable.ID, CategoryId).findFirst();
-//
-//                category.getItemInfo().add(RealmData);
-//            }
-//        });
+
     }
 
 

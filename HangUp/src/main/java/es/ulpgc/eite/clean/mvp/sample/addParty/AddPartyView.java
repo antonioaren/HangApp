@@ -124,32 +124,26 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     public void setTitleLabel(String txt) {
         title.setText(txt);
     }
-
     @Override
     public void setNameLabel(String txt) {
         EventName.setHint(txt);
     }
-
     @Override
     public void setPlaceLabel(String txt) {
         EventPlace.setHint(txt);
     }
-
     @Override
     public void setDateLabel(String txt) {
         EventDate.setHint(txt);
     }
-
     @Override
     public void setTimeInitLabel(String txt) {
         EventTimeInit.setHint(txt);
     }
-
     @Override
     public void setTimeFinishLabel(String txt) {
         EventTimeFinish.setHint(txt);
     }
-
     @Override
     public void setPublishBtnLabel(String txt) {
         buttonPublish.setText(txt);
@@ -158,9 +152,14 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
     ///////////////////////////// CAPTAR DATOS ///////////////////////////////
 
-    public void GetData() {
+    public ProductData GetData() {
         ProductData product = new ProductData();
-
+        product.setProductName(EventName.getText().toString());
+        product.setPlace(EventPlace.getText().toString());
+        product.setDate(EventDate.getText().toString());
+        product.setTimeI(EventTimeInit.getText().toString());
+        product.setTimeF(EventTimeFinish.getText().toString());
+        return product;
     }
 
     @Override

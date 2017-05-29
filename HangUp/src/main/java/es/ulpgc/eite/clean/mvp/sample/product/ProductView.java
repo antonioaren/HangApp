@@ -44,6 +44,7 @@ public class ProductView
         linearmanager = new LinearLayoutManager(this);
         recycler.setLayoutManager(linearmanager);
         Realm realm = Realm.getDefaultInstance();
+
         recycler.setAdapter(
                 new ProductView.ProductAdapter(realm.where(ProductData.class).findAllAsync()));
 
@@ -90,7 +91,6 @@ public class ProductView
 
     }
 
-
     public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
 
         private List<ProductData> items;
@@ -99,8 +99,6 @@ public class ProductView
 
             //  super(items,true);
             this.items = items;
-
-
         }
 
         @Override
@@ -119,9 +117,7 @@ public class ProductView
         public void onBindViewHolder(final ProductViewHolder holder, int position) {
 
             holder.item = items.get(position);
-            holder.image.setImageResource(items.get(position).getImage());
             holder.title.setText(items.get(position).getProductName());
-            holder.number.setText(items.get(position).getParticipants());
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -143,7 +139,7 @@ public class ProductView
         public class ProductViewHolder extends RecyclerView.ViewHolder {
             public final View itemView;
             Context context;
-            public ImageView image;
+            //public ImageView image;
             public TextView title;
             public TextView number;
             public ProductData item;
@@ -151,11 +147,10 @@ public class ProductView
             public ProductViewHolder(View v) {
                 super(v);
                 itemView = v;
-                image = (ImageView) v.findViewById(R.id.image);
+                //image = (ImageView) v.findViewById(R.id.image);
                 title = (TextView) v.findViewById(R.id.title);
                 number = (TextView) v.findViewById(R.id.numberOfPersons);
             }
         }
     }
-
 }
