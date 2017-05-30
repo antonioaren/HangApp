@@ -98,6 +98,11 @@ public class AddCategoryPresenter
     }
 
     @Override
+    public String getCategoryName() {
+        return getView().getTextFromEditText();
+    }
+
+    @Override
     public int getRadioButtonSelected() {
         return getView().getRadioButtonId();
     }
