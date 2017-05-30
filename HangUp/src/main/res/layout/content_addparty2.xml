@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
 
-    <EditText
-        android:id="@+id/introduction"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Give a little introduction of your party"
-        android:inputType="textPersonName" />
+
     <!--<TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
@@ -90,32 +84,31 @@
                     android:inputType="textPersonName"/>
             </LinearLayout>
 
-
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_weight="1" />
 
             <EditText
                 android:id="@+id/details"
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_height="40dp"
                 android:ems="10"
                 android:hint="Request6"
                 android:inputType="textMultiLine"/>
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:layout_weight="1"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp">
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/Add"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
-                    android:text="Button" />
+                    android:text="Publish" />
             </RelativeLayout>
 
 
@@ -124,3 +117,4 @@
     </LinearLayout>
 
 </LinearLayout>
+

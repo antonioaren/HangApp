@@ -67,7 +67,6 @@ public interface Add {
 
         void setPublishBtnLabel(String txt);
 
-        void setTitleLabel(String txt);
 
         void setNameLabel(String txt);
 

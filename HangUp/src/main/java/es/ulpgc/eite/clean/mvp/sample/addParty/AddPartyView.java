@@ -27,12 +27,12 @@ import es.ulpgc.eite.clean.mvp.sample.util.DateFormatter;
 public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewToPresenter, AddPartyPresenter>
         implements Add.PresenterToView {
 
-    private TextView title;
+
     private EditText EventName;
     private EditText EventPlace;
     private EditText EventTimeFinish;
 
-    private TextView EventDate;
+    private EditText EventDate;
     private TextView EventTimeInit;
     private Button buttonPublish;
     private EditText EventDetails;
@@ -45,7 +45,6 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addparty);
 
-        title = (TextView) findViewById(R.id.textView);
 
         EventName = (EditText) findViewById(R.id.name);
         EventName.requestFocus();
@@ -109,10 +108,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
     /////////////////////////// LABELS /////////////////////////////////////////
 
-    @Override
-    public void setTitleLabel(String txt) {
-        title.setText(txt);
-    }
+
     @Override
     public void setNameLabel(String txt) {
         EventName.setHint(txt);
