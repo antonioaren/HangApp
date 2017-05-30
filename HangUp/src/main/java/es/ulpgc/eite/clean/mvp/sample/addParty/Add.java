@@ -5,14 +5,10 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.os.Build;
 
-import java.util.List;
-
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.Presenter;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
-import io.realm.RealmList;
 
 
 public interface Add {
@@ -158,9 +154,7 @@ public interface Add {
 
         void setYear(int year);
 
-        List<CategoryData> getPartyAdded();
 
-        RealmList<ProductData> getParty();
 
         void setDescription(String description);
 

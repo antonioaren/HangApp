@@ -5,12 +5,14 @@ import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 import es.ulpgc.eite.clean.mvp.sample.product.ProductModel;
+import io.realm.Realm;
 import io.realm.RealmList;
 
 
@@ -35,12 +37,11 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     private ProductModel product;
     private String nameLabel;
     private String detailsLabel;
+    private Realm realmDatabase;
 
 
     public AddPartyModel() {
-     this.party= new ArrayList<>();
-      this.partyAdded= new ArrayList<>();
-        this.product=new ProductModel();
+
     }
 
 
@@ -196,17 +197,6 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
         this.year=year;
     }
 
-    @Override
-    public List<CategoryData> getPartyAdded() {
-
-        return this.partyAdded;
-    }
-
-    @Override
-    public RealmList<ProductData> getParty() {
-
-        return (RealmList<ProductData>) this.party;
-    }
 
     @Override
     public void setDescription(String description) {
@@ -221,6 +211,24 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     @Override
     public void insertEvent(final String id, final String name, final String place, final String date, final String hourInit, final String hourFinish) {
         //product.insertProduct(image,name,numberOfParticipants);
+        realmDatabase = Realm.getDefaultInstance();
+        realmDatabase.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                ProductData event = realmDatabase.createObject(ProductData.class, UUID.randomUUID().toString());
 
+                event.setProductName(product.getProductName());
+                event.setPlace(product.getPlace());
+                event.setDate(product.getPlace());
+                event.setTimeI(product.getTimeI());
+                event.setTimeF(product.getTimeF());
+                event.setDetailText(product.getDetailText());
+
+                CategoryData category = realm.where(CategoryData.class)
+                        .equalTo("id", CategoryId).findFirst();
+
+                category.getItemInfo().add(event);
+            }
+        });
     }
 }
