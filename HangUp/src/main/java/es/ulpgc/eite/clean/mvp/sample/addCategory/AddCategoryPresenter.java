@@ -119,7 +119,7 @@ public class AddCategoryPresenter
         return null;
     }
 
-   
+
     @Override
     public Integer[] getImages() {
         return getModel().getImages();

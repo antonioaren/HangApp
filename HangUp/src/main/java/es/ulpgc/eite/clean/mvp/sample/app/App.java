@@ -7,13 +7,11 @@ import android.content.Intent;
 import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategory;
 import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategoryView;
 import es.ulpgc.eite.clean.mvp.sample.addParty.Add;
-import es.ulpgc.eite.clean.mvp.sample.addParty.AddPartyPresenter;
 import es.ulpgc.eite.clean.mvp.sample.addParty.AddPartyView;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.data.Repository;
-import es.ulpgc.eite.clean.mvp.sample.data.module.RealmTable;
 import es.ulpgc.eite.clean.mvp.sample.data.repositories.ProductRepository;
 import es.ulpgc.eite.clean.mvp.sample.delete.Delete;
 import es.ulpgc.eite.clean.mvp.sample.delete.DeleteView;
@@ -215,6 +213,15 @@ public class App extends Application implements Mediator, Navigator {
         presenter.destroyView();
     }
 
+    @Override
+    public void SaveDataFromAddParty(Add.AddTo presenter) {
+        toAddState = new AddPartyState();
+        toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
+        toAddState.dateOfTheParty = presenter.getDateOfTheParty();
+        toAddState.hourOfParty = presenter.getHourOfParty();
+
+        presenter.destroyView();
+    }
     @Override
     public void deleteEvent(Delete.DeleteTo presenter) {
         toDeleteState = new DeleteState();

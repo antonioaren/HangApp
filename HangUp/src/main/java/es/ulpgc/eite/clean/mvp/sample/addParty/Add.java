@@ -10,9 +10,7 @@ import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.Presenter;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
-import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 import io.realm.RealmList;
-import io.realm.RealmResults;
 
 
 public interface Add {
@@ -36,6 +34,12 @@ public interface Add {
 
 
         ProductData getProductAddedView();
+
+        String getPlaceOfTheParty();
+
+        String getDateOfTheParty();
+
+        String getHourOfParty();
     }
 
 
