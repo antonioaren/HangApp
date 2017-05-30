@@ -51,6 +51,21 @@ public class DeletePresenter
     }
 
     @Override
+    public Context getManagedContext() {
+        return getActivityContext();
+    }
+
+    @Override
+    public void onScreenStarted() {
+        Log.d(TAG, "calling onScreenStarted");
+    }
+
+    @Override
+    public void destroyView() {
+        Log.d(TAG, "calling destroyView");
+    }
+
+    @Override
     public void onDestroy(boolean isChangingConfiguration) {
         super.onDestroy(isChangingConfiguration);
         Log.d(TAG, "calling onDestroy()");
@@ -60,15 +75,6 @@ public class DeletePresenter
     public void onBackPressed() {
         Log.d(TAG, "calling onBackPressed()");
     }
-
-
-
-    @Override
-    public void onScreenStarted() {
-    
-    }
-
-
 
 
     @Override
@@ -86,21 +92,8 @@ public class DeletePresenter
         app.deleteEvent(this);
     }
 
-    @Override
-    public void onDeleteIdClicked() {
-
-    }
 
 
-    @Override
-    public Context getManagedContext() {
-        return getActivityContext();
-    }
-
-
-    @Override
-    public void destroyView() {
-    }
 
 
     @Override

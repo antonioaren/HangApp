@@ -61,7 +61,7 @@ public interface Delete {
 
         void onDeleteClicked();
 
-        void onDeleteIdClicked();
+        // void onDeleteIdClicked();
 
 
         //void onStartingView();
