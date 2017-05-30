@@ -5,7 +5,6 @@ import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
@@ -27,6 +26,8 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     private String description;
     private int hourFinish;
     private String day;
+
+
     private int hourInit;
     private String month;
     private String place;
@@ -147,6 +148,10 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
         return date;
     }
 
+    public int getHourInit() {
+        return hourInit;
+    }
+
     @Override
     public String getHourOfParty() {
 
@@ -210,19 +215,5 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     public void insertEvent(final int image, final String name,final String numberOfParticipants) {
         //product.insertProduct(image,name,numberOfParticipants);
         realmDatabase = Realm.getDefaultInstance();
-        realmDatabase.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-                ProductData event = realmDatabase.createObject(ProductData.class,
-                        UUID.randomUUID().toString());
-                event.setProductName(name);
-                event.setI
-                //event.setDetailText(product.getDetailText());
-
-                CategoryData category = realm.where(CategoryData.class)
-                        .equalTo(itemId, CategoryId).findFirst();
-                category.getItemInfo().add(event);
-            }
-        });
     }
 }
