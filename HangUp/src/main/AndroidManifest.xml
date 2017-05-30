@@ -15,8 +15,10 @@
             android:name="es.ulpgc.eite.clean.mvp.sample.category.CategoryView"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
-
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <activity
@@ -46,10 +48,7 @@
             android:name="es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategoryView"
             android:label="Detail"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
 
     </application>
