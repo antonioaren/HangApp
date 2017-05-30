@@ -219,7 +219,7 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     }
 
     @Override
-    public void insertEvent(final int image, final String name,final String numberOfParticipants) {
+    public void insertEvent(final String id, final String name, final String place, final String date, final String hourInit, final String hourFinish) {
         //product.insertProduct(image,name,numberOfParticipants);
 
     }

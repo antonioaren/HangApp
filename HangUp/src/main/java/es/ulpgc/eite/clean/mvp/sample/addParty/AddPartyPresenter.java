@@ -96,8 +96,8 @@ public class AddPartyPresenter
         String name = getView().getName();
         String place = getView().getPlaceOfTheParty();
         String date = getView().getDateOfTheParty();
-        int hourInit = getView().getHourOfInit();
-        int hourFinish = getView().getHourOfFinish();
+        String hourInit = getView().getHourOfInit();
+        String hourFinish = getView().getHourOfFinish();
         getModel().insertEvent(id, name, place, date, hourInit, hourFinish);
         Navigator app = (Navigator) getView().getApplication();
         app.goToProductScreenFromAddScreen(this);

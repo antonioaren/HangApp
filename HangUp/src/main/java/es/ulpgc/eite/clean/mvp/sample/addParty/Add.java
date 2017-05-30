@@ -1,7 +1,9 @@
 package es.ulpgc.eite.clean.mvp.sample.addParty;
 
 
+import android.annotation.TargetApi;
 import android.content.Context;
+import android.os.Build;
 
 import java.util.List;
 
@@ -10,9 +12,7 @@ import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.Presenter;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
-import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 import io.realm.RealmList;
-import io.realm.RealmResults;
 
 
 public interface Add {
@@ -36,6 +36,14 @@ public interface Add {
 
 
         ProductData getProductAddedView();
+
+        String getNameOfTheParty();
+
+        String getPlaceOfTheParty();
+
+        String getDateOfTheParty();
+
+        String getHourOfParty();
     }
 
 
@@ -76,6 +84,19 @@ public interface Add {
         void setTimeFinishLabel(String txt);
 
         void setDetailsLabel(String detailsLabel);
+
+        //
+        String getName();
+
+        String getPlaceOfTheParty();
+
+
+        String getHourOfInit();
+
+        @TargetApi(Build.VERSION_CODES.M)
+        String getHourOfFinish();
+
+        String getDateOfTheParty();
     }
 
     /**
@@ -144,7 +165,7 @@ public interface Add {
         void setDescription(String description);
 
 
-        void insertEvent(int image, String name, String numberOfParticipants);
+        void insertEvent(String id, String name, String place, String date, String hourInit, String hourFinish);
     }
 
     /**

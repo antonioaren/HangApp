@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.TimePicker;
 
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
@@ -17,7 +16,6 @@ import java.util.Date;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
-
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.util.DateFormatter;
 
@@ -160,30 +158,32 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         getPresenter().DataFromAddView(product);
     }
 //
-//    @Override
-//    public String getDescription() {
-//        return EventName.getText().toString();
-//    }
-//
-//    @Override
-//    public String getPlaceOfTheParty() {
-//        return EventPlace.getText().toString();
-//    }
-//
-////    @TargetApi(Build.VERSION_CODES.M)
-//    @Override
-//    public int getHourOfInit() {
-//        int hour = timePickerInit.getHour();
-//        return hour;
-//    }
-//
-//    @TargetApi(Build.VERSION_CODES.M)
-//    @Override
-//    public int getHourOfFinish() {
-//        int hour = timePickerFinish.getHour();
-//        return hour;
-//    }
+@Override
+public String getName() {
+    return EventName.getText().toString();
+}
 
+    @Override
+    public String getPlaceOfTheParty() {
+        return EventPlace.getText().toString();
+    }
+
+    @TargetApi(Build.VERSION_CODES.M)
+    @Override
+    public String getHourOfInit() {
+        return EventTimeInit.getText().toString();
+    }
+
+    @TargetApi(Build.VERSION_CODES.M)
+    @Override
+    public String getHourOfFinish() {
+        return EventTimeFinish.getText().toString();
+    }
+
+    @Override
+    public String getDateOfTheParty() {
+        return EventDate.getText().toString();
+    }
 
 
 }
