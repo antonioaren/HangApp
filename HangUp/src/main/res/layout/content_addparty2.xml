@@ -4,6 +4,19 @@
               android:layout_height="wrap_content"
               android:orientation="vertical">
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_weight="1" />
+
+    <EditText
+        android:id="@+id/introduction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Give a little introduction of your party"
+        android:inputType="textPersonName" />
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
