@@ -31,7 +31,6 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     private EditText EventName;
     private EditText EventPlace;
     private EditText EventTimeFinish;
-
     private EditText EventDate;
     private TextView EventTimeInit;
     private Button buttonPublish;
