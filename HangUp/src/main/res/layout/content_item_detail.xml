@@ -7,28 +7,33 @@
     android:orientation="vertical"
     android:weightSum="1">
 <Space
-    android:layout_height="20dp"
+    android:layout_height="10dp"
     android:layout_width="match_parent"
     />
-<TextView
-   android:layout_height="30dp"
-    android:layout_width="match_parent"
-    android:id="@+id/title"
-    android:text="Detail"
-    />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Detail of the event"
+        android:layout_centerHorizontal="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
     <Space
         android:layout_height="20dp"
         android:layout_width="match_parent"
-        />
+        android:layout_weight="0.21" />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp">
+        android:layout_height="100dp">
+
         <TextView
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
             android:id="@+id/text_introduction"
+            android:layout_width="wrap_content"
+            android:layout_height="51dp"
+            android:background="@color/colorPrimary"
+            android:backgroundTint="@android:color/holo_blue_bright"
             android:text="introduction"
-            />
+            android:textAppearance="@style/TextAppearance.AppCompat" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -39,19 +44,21 @@
 
 
     <Space
-        android:layout_height="20dp"
+        android:layout_height="80dp"
         android:layout_width="match_parent"
         />
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="40dp">
+
         <TextView
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
             android:id="@+id/text_Date"
+            android:layout_width="62dp"
+            android:layout_height="match_parent"
+            android:textAppearance="@style/TextAppearance.AppCompat"
             android:text="Date:"
-            />
+            android:background="@color/colorAccent" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -68,19 +75,22 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:weightSum="1">
-           <TextView
-               android:layout_width="40dp"
-               android:layout_height="match_parent"
-               android:id="@+id/content_hour"
-               android:text="hour:"
-               android:layout_weight="0.05" />
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:id="@+id/text_hour"
-    android:textIsSelectable="true"/>
+
+            <TextView
+                android:id="@+id/content_hour"
+                android:layout_width="69dp"
+                android:layout_height="42dp"
+                android:text="hour:"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:background="@android:color/holo_green_light" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/text_hour"
+                android:textIsSelectable="true" />
         </LinearLayout>
     </LinearLayout>
 

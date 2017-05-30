@@ -3,10 +3,13 @@ package es.ulpgc.eite.clean.mvp.sample.addCategory;
 
 import android.util.Log;
 
+import java.util.UUID;
+
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import io.realm.Realm;
 
 
@@ -25,12 +28,12 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     private String labelRadio1;
     private String labelRadio2;
     private String labelRadio3;
-    private String[] names;
+
     private Integer[] images;
 
     public AddCategoryModel() {
         categoryModel = new CategoryModel();
-        this.names = new String[]{"cultural", "fiesta", "deportivo", "academico"};
+
         this.images = new Integer[]{R.drawable.astro, R.drawable.disco, R.drawable.cars, R.drawable.ulpgc};
     }
 
@@ -137,17 +140,19 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
 
     @Override
     public void insertEvent(final String Categoryname, final int image) {
-        categoryModel.insertEvent(Categoryname, image);
+        realmDatabase = Realm.getDefaultInstance();
+        realmDatabase.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                CategoryData event = realmDatabase.createObject(CategoryData.class, UUID.randomUUID().toString());
+
+                event.setCategoryName(Categoryname);
+                event.setImage(image);
+            }
+
+        });
     }
 
-    public String getNamecategory() {
-        return namecategory;
-    }
-
-    @Override
-    public String[] getNames() {
-        return this.names;
-    }
 
     @Override
     public Integer[] getImages() {

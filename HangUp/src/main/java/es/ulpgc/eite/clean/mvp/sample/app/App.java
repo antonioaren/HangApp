@@ -7,13 +7,11 @@ import android.content.Intent;
 import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategory;
 import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategoryView;
 import es.ulpgc.eite.clean.mvp.sample.addParty.Add;
-import es.ulpgc.eite.clean.mvp.sample.addParty.AddPartyPresenter;
 import es.ulpgc.eite.clean.mvp.sample.addParty.AddPartyView;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.data.Repository;
-import es.ulpgc.eite.clean.mvp.sample.data.module.RealmTable;
 import es.ulpgc.eite.clean.mvp.sample.data.repositories.ProductRepository;
 import es.ulpgc.eite.clean.mvp.sample.delete.Delete;
 import es.ulpgc.eite.clean.mvp.sample.delete.DeleteView;
@@ -107,7 +105,7 @@ public class App extends Application implements Mediator, Navigator {
     @Override
     public void startingAddCategoryScreen(AddCategory.ToAdd presenter) {
         if (toaddCategoryState != null) {
-            presenter.setTextVisibility(toaddCategoryState.textVisibility);
+            //presenter.setTextVisibility(toaddCategoryState.textVisibility);
         }
 
         presenter.onScreenStarted();
@@ -191,11 +189,7 @@ public class App extends Application implements Mediator, Navigator {
     public void goToAddPartyScreen(Product.ProductTo presenter) {
         toAddState = new AddPartyState();
 
-        //Añadir los estados que falten para pasarles a la busquedad. Guardar posicion, etc.
-        toAddState.descriptionOfTheParty = presenter.getDescriptionOfTheParty();
-        toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
-        toAddState.dateOfTheParty = presenter.getDateOfTheParty();
-        toAddState.hourOfParty = presenter.getHourOfParty();
+
         Context view = presenter.getManagedContext();
         if (view != null) {
             view.startActivity(new Intent(view, AddPartyView.class));
@@ -207,14 +201,23 @@ public class App extends Application implements Mediator, Navigator {
     @Override
     public void SaveDataAdd(AddCategory.AddTo presenter) {
         toaddCategoryState = new AddCategoryState();
-
-        // toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
-        // toAddState.dateOfTheParty = presenter.getDateOfTheParty();
-        //toAddState.hourOfParty = presenter.getHourOfParty();
+        toaddCategoryState.CategoryName = presenter.getCategoryName();
+        toaddCategoryState.radioButtonSelected = presenter.getRadioButtonSelected();
 
         presenter.destroyView();
     }
 
+    @Override
+    public void SaveDataFromAddParty(Add.AddTo presenter) {
+        toAddState = new AddPartyState();
+        //Guardando datos
+        toAddState.nameOfTheParty = presenter.getNameOfTheParty();
+        toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
+        toAddState.dateOfTheParty = presenter.getDateOfTheParty();
+        toAddState.hourOfParty = presenter.getHourOfParty();
+
+        presenter.destroyView();
+    }
     @Override
     public void deleteEvent(Delete.DeleteTo presenter) {
         toDeleteState = new DeleteState();
@@ -247,7 +250,7 @@ public class App extends Application implements Mediator, Navigator {
     }
 
     private class AddPartyState {
-        public String descriptionOfTheParty;
+        public String nameOfTheParty;
         public String placeOfTheParty;
         public String dateOfTheParty;
         public String hourOfParty;
@@ -258,12 +261,15 @@ public class App extends Application implements Mediator, Navigator {
 
         ProductRepository product;
 
+
     }
 
     private class AddCategoryState {
         boolean textVisibility;
 
 
+        public int radioButtonSelected;
+        public String CategoryName;
     }
 }
 

@@ -85,12 +85,7 @@ public interface Product {
 
         ProductData getSelectedItem();
 
-        String getDescriptionOfTheParty();
 
-        String getPlaceOfTheParty();
 
-        String getDateOfTheParty();
-
-        String getHourOfParty();
     }
 }

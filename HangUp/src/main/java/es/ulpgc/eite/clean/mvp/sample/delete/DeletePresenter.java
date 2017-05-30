@@ -16,10 +16,7 @@ public class DeletePresenter
         implements Delete.ViewToPresenter, Delete.ModelToPresenter, Delete.DeleteTo, Delete.ToDelete {
 
 
-    private boolean informationVisible;
-    private boolean imageVisibility;
-    private boolean participantExists;
-    private boolean buttonClicked;
+
 
     @Override
     public void onCreate(Delete.PresenterToView view) {
@@ -54,6 +51,21 @@ public class DeletePresenter
     }
 
     @Override
+    public Context getManagedContext() {
+        return getActivityContext();
+    }
+
+    @Override
+    public void onScreenStarted() {
+        Log.d(TAG, "calling onScreenStarted");
+    }
+
+    @Override
+    public void destroyView() {
+        Log.d(TAG, "calling destroyView");
+    }
+
+    @Override
     public void onDestroy(boolean isChangingConfiguration) {
         super.onDestroy(isChangingConfiguration);
         Log.d(TAG, "calling onDestroy()");
@@ -63,20 +75,6 @@ public class DeletePresenter
     public void onBackPressed() {
         Log.d(TAG, "calling onBackPressed()");
     }
-
-
-    @Override
-    public void setTextVisibility(boolean visible) {
-    }
-
-    @Override
-    public void onScreenStarted() {
-    }
-
-    @Override
-    public void onButtonSecundarySearchPressed() {
-    }
-
 
 
     @Override
@@ -92,38 +90,6 @@ public class DeletePresenter
         getModel().deteleEvent(getView().getTextFromEditText());
         Mediator app= (Mediator)getView().getApplication();
         app.deleteEvent(this);
-    }
-
-    @Override
-    public void onDeleteIdClicked() {
-
-    }
-
-
-    @Override
-    public Context getManagedContext() {
-        return getActivityContext();
-    }
-
-    @Override
-    public void setImageVisibility(boolean visible) {
-    }
-
-    @Override
-    public void setInformationVisibility(boolean visible) {
-    }
-
-    @Override
-    public void setParticipantsVisibility(boolean visible) {
-    }
-
-    @Override
-    public void destroyView() {
-    }
-
-    @Override
-    public boolean isTextVisible() {
-        return false;
     }
 
     @Override

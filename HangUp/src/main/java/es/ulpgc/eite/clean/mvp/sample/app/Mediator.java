@@ -32,5 +32,7 @@ Mediator {
   void SaveDataAdd(AddCategory.AddTo presenter);
 
 
+  void SaveDataFromAddParty(Add.AddTo presenter);
+
   void deleteEvent(Delete.DeleteTo presenter);
 }
