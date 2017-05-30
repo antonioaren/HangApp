@@ -211,10 +211,10 @@ public class App extends Application implements Mediator, Navigator {
     public void SaveDataFromAddParty(Add.AddTo presenter) {
         toAddState = new AddPartyState();
         //Guardando datos
-        toAddState.nameOfTheParty = presenter.getNameOfTheParty();
-        toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
-        toAddState.dateOfTheParty = presenter.getDateOfTheParty();
-        toAddState.hourOfParty = presenter.getHourOfParty();
+//        toAddState.nameOfTheParty = presenter.getNameOfTheParty();
+//        toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
+//        toAddState.dateOfTheParty = presenter.getDateOfTheParty();
+//        toAddState.hourOfParty = presenter.getHourOfParty();
 
         presenter.destroyView();
     }

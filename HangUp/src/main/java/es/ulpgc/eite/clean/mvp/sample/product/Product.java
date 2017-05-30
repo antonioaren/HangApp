@@ -7,6 +7,7 @@ import java.util.List;
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
+import io.realm.RealmList;
 
 /**
  * Created by alumno on 31/03/2017.
@@ -58,6 +59,8 @@ public interface Product {
         void setItemId(String itemId);
 
         void setProductToAddFromAddAndInsert(ProductData productToAdd);
+
+        RealmList<ProductData> getAllProductsByCategoryId(String CategoryId);
     }
 
     public interface ModelToPresenter {

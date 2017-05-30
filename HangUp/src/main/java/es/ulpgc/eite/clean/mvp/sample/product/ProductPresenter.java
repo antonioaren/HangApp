@@ -20,6 +20,7 @@ public class ProductPresenter
         , Product.ProductTo {
 
     private ProductData ItemSelected;
+    private String CategoryId;
 
 
     @Override
@@ -29,6 +30,7 @@ public class ProductPresenter
 
         Mediator app = (Mediator) getApplication();
         app.startingProductScreen(this);
+
 
     }
 
@@ -60,6 +62,7 @@ public class ProductPresenter
         if (isViewRunning()) {
             getView().setAddLabel(getModel().getAddLabel());
             getView().setDeleteLabel(getModel().getDeleteLabel());
+            SettingItemsAdapter();
         }
     }
 
@@ -72,7 +75,12 @@ public class ProductPresenter
 
     @Override
     public void setItemId(String itemId) {
+        this.CategoryId = itemId;
         getModel().setItemId(itemId);
+    }
+
+    private void SettingItemsAdapter() {
+        getView().settingAdapter(getModel().getAllProductsByCategoryId(CategoryId));
     }
 
     @Override
@@ -110,26 +118,4 @@ public class ProductPresenter
         return ItemSelected;
     }
 
-
-    //TODO implementar. Paso de estados para guardar.
-
-//    @Override
-//    public String getDescriptionOfTheParty() {
-//        return null;
-//    }
-//
-//    @Override
-//    public String getPlaceOfTheParty() {
-//        return null;
-//    }
-//
-//    @Override
-//    public String getDateOfTheParty() {
-//        return null;
-//    }
-//
-//    @Override
-//    public String getHourOfParty() {
-//        return null;
-//    }
 }

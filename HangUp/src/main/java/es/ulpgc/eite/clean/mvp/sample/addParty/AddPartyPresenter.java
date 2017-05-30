@@ -7,6 +7,7 @@ import java.util.UUID;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
+import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 
@@ -76,30 +77,13 @@ public class AddPartyPresenter
         }
     }
 
-//    public String getDescriptionOfTheParty() {
-//        return getModel().getDescription();
-//    }
-//
-//    public Repository.ProductRepository.OnSaveProductCallback getCallBack() {
-//        return callback;
-//    }
-//
-//    public RealmList<ProductData> getParty() {
-//        return null;
-//    }
 
     @Override
     public void onPublishButtonClicked() {
         Log.d(TAG, "callingOnPublish");
-        String id = UUID.randomUUID().toString();
-        String name = getView().getName();
-        String place = getView().getPlaceOfTheParty();
-        String date = getView().getDateOfTheParty();
-        String hourInit = getView().getHourOfInit();
-        String hourFinish = getView().getHourOfFinish();
-        getModel().insertEvent(id, name, place, date, hourInit, hourFinish);
-        Mediator app = (Mediator) getView().getApplication();
-        app.SaveDataFromAddParty(this);
+
+        Navigator app = (Navigator) getView().getApplication();
+        app.goToProductScreenFromAddScreen(this);
 
     }
 
@@ -113,25 +97,7 @@ public class AddPartyPresenter
         return product;
     }
 
-    @Override
-    public String getNameOfTheParty() {
-        return getView().getName();
-    }
 
-    @Override
-    public String getPlaceOfTheParty() {
-        return getView().getPlaceOfTheParty();
-    }
-
-    @Override
-    public String getDateOfTheParty() {
-        return getView().getDateOfTheParty();
-    }
-
-    @Override
-    public String getHourOfParty() {
-        return getView().getHourOfInit() + " " + getView().getHourOfFinish();
-    }
 
 
     private void LoadInitialComponents() {

@@ -11,6 +11,7 @@ import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.data.module.RealmTable;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
+import io.realm.RealmList;
 import io.realm.RealmResults;
 
 import static android.R.attr.id;
@@ -61,7 +62,6 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     @Override
     public void setProductToAddFromAddAndInsert(ProductData productToAdd) {
         AddProductByCategoryId(productToAdd, itemId);
-
     }
 
     @Override
@@ -101,7 +101,9 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
 
     @Override
     public void setItemsFromDatabase() {
-        itemsDatabase = realmDatabase.where(ProductData.class).findAll();
+        //Me los da todos
+        //itemsDatabase = realmDatabase.where(ProductData.class).findAll();
+        //TODO que me de los que de esa categoría.
     }
 
     public void deteleEvent() {
@@ -122,5 +124,14 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     @Override
     public String getDeleteLabel() {
         return deleteLabel;
+    }
+
+    @Override
+    public RealmList<ProductData> getAllProductsByCategoryId(final String CategoryId) {
+        realmDatabase = Realm.getDefaultInstance();
+        CategoryData category = realmDatabase.where(CategoryData.class).
+                equalTo("id", CategoryId).findFirst();
+        RealmList<ProductData> products = category.getItemInfo();
+        return products;
     }
 }

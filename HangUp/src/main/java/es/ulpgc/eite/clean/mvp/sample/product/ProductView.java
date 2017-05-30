@@ -1,6 +1,5 @@
 package es.ulpgc.eite.clean.mvp.sample.product;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -17,8 +15,10 @@ import java.util.List;
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
+import es.ulpgc.eite.clean.mvp.sample.util.RealmRecyclerViewAdapter;
 import io.realm.OrderedRealmCollection;
 import io.realm.Realm;
+import io.realm.RealmList;
 import io.realm.RealmResults;
 
 /**
@@ -46,7 +46,7 @@ public class ProductView
         Realm realm = Realm.getDefaultInstance();
 
         recycler.setAdapter(
-                new ProductView.ProductAdapter(realm.where(ProductData.class).findAllAsync()));
+                new ProductView.ProductAdapter(realm.where(ProductData.class).findAll()));
 
         buttonAdd = (Button) findViewById(R.id.buttonAdd);
         buttonAdd.setOnClickListener(new View.OnClickListener() {
@@ -91,13 +91,13 @@ public class ProductView
 
     }
 
-    public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
+    public class ProductAdapter extends
+            RealmRecyclerViewAdapter<ProductData, ProductAdapter.ProductViewHolder> {
 
         private List<ProductData> items;
 
         public ProductAdapter(OrderedRealmCollection<ProductData> items) {
-
-            //  super(items,true);
+            super(items, true);
             this.items = items;
         }
 
@@ -107,7 +107,7 @@ public class ProductView
         }
 
         @Override
-        public ProductViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {//i es la posición.
+        public ProductViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
             LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
             View v = inflater.inflate(R.layout.card_product, viewGroup, false);
             return new ProductViewHolder(v);
@@ -115,9 +115,9 @@ public class ProductView
 
         @Override
         public void onBindViewHolder(final ProductViewHolder holder, int position) {
-
             holder.item = items.get(position);
             holder.title.setText(items.get(position).getProductName());
+            holder.Place.setText(items.get(position).getPlace());
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -133,23 +133,22 @@ public class ProductView
 
         public void setItemList(List<ProductData> items) {
             this.items = items;
+            notifyDataSetChanged();
         }
 
 
         public class ProductViewHolder extends RecyclerView.ViewHolder {
             public final View itemView;
             Context context;
-            //public ImageView image;
             public TextView title;
-            public TextView number;
+            public TextView Place;
             public ProductData item;
 
             public ProductViewHolder(View v) {
                 super(v);
                 itemView = v;
-                //image = (ImageView) v.findViewById(R.id.image);
                 title = (TextView) v.findViewById(R.id.title);
-                number = (TextView) v.findViewById(R.id.numberOfPersons);
+                Place = (TextView) v.findViewById(R.id.place);
             }
         }
     }
