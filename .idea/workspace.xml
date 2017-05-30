@@ -11,11 +11,9 @@
   <component name="ChangeListManager">
     <list id="6a18f264-77ba-466d-b7a7-0d52df6a7436" name="Default" comment="Merge remote-tracking branch 'origin/eleonoraBack'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/3.3/taskArtifacts/fileHashes.bin&#10;#&#9;.gradle/3.3/taskArtifacts/fileSnapshots.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.lock&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/App.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Mediator.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangApp.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangAppModel.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/Information.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationPresenter.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchView.java&#10;#&#9;HangUp/src/main/res/layout/activity_procesed_search.xml&#10;#&#9;HangUp/src/main/res/layout/content_hangapp.xml&#10;#&#9;HangUp/src/main/res/layout/content_procesed_search.xml&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Navigator.java&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/hangapp/HangAppView.java&#10;#&#9;HelloApp/src/main/res/layout/activity_filalista.xml&#10;#&#9;HelloApp/src/main/res/layout/activity_procesed_search.xml&#10;" />
     <list id="3d65f56d-93c6-4520-9708-4d2cd763dfec" name="Failed commit: Default" comment="Cambios Merges.&#10;" />
-    <list default="true" id="72c31ec8-3076-4782-a780-40cb8c2c6568" name="Failed commit: Default (2)" comment="implementando metodos para captar los datos insertados en los campos de texto">
+    <list default="true" id="72c31ec8-3076-4782-a780-40cb8c2c6568" name="Failed commit: Default (2)" comment="limpiano addpartyModel">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/Add.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/Add.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddPartyModel.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddPartyModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/res/layout/content_addparty2.xml" afterPath="$PROJECT_DIR$/HangUp/src/main/res/layout/content_addparty2.xml" />
     </list>
     <ignored path="HangApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -155,20 +153,21 @@
       <file leaf-file-name="AddPartyModel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddPartyModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="222" column="43" selection-start-line="222" selection-start-column="43" selection-end-line="222" selection-end-column="43" />
+            <state relative-caret-position="124">
+              <caret line="210" column="24" selection-start-line="210" selection-start-column="24" selection-end-line="210" selection-end-column="24" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="docComment;class#AddPartyModel#0" expanded="false" />
                 <element signature="method#setTimeFinishLabel#0;class#AddPartyModel#0" expanded="false" />
-                <element signature="e#3006#3007#0" expanded="true" />
-                <element signature="e#3041#3042#0" expanded="true" />
+                <element signature="e#2951#2952#0" expanded="true" />
+                <element signature="e#2986#2987#0" expanded="true" />
                 <element signature="method#getPlaceOfTheParty#0;class#AddPartyModel#0" expanded="false" />
                 <element signature="method#getDateOfTheParty#0;class#AddPartyModel#0" expanded="false" />
-                <element signature="e#3663#3703#0" expanded="false" />
+                <element signature="e#3608#3648#0" expanded="false" />
                 <element signature="method#getHourOfParty#0;class#AddPartyModel#0" expanded="false" />
-                <element signature="e#3961#4026#0" expanded="false" />
-                <element signature="e#5248#6002#0" expanded="true" />
-                <element signature="e#6001#6002#0" expanded="true" />
+                <element signature="e#3906#3971#0" expanded="false" />
+                <element signature="e#5193#5813#0" expanded="true" />
+                <element signature="e#5812#5813#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2936,13 +2935,6 @@
       <option name="presentableId" value="Default" />
       <updated>1490022965325</updated>
     </task>
-    <task id="LOCAL-00042" summary="cambiando el layout de la pantalla de dtalle para que muestre las caracteristicas de un evento">
-      <created>1493405494783</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1493405494783</updated>
-    </task>
     <task id="LOCAL-00043" summary="cambiando el metodo setText para que rellene los campos hour,date y story del detalle del item">
       <created>1493406826458</created>
       <option name="number" value="00043" />
@@ -3279,7 +3271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1496169900580</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="limpiano addpartyModel">
+      <created>1496170161354</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1496170161354</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -3359,7 +3358,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="corregidos erroes de compilacion" />
     <MESSAGE value="implementado onresume" />
     <MESSAGE value="borrado el código, no es la tarea que debe hacer este metodo" />
     <MESSAGE value="procesada la informacion en addPartyModel para que construya la fecha y horario de una fiesta" />
@@ -3384,7 +3382,8 @@
     <MESSAGE value="Añadida funcionalidad para pasar los productos de la pantalla add hasta la pantalla producto donde tenemos la Id de la categoría y el producto. Falta por implemetar la descripcion o detalle para que esté completo." />
     <MESSAGE value="Inserta los datos aunque no se ven. Comprobado con la consola a traves de hacerle un pull al adb." />
     <MESSAGE value="implementando metodos para captar los datos insertados en los campos de texto" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementando metodos para captar los datos insertados en los campos de texto" />
+    <MESSAGE value="limpiano addpartyModel" />
+    <option name="LAST_COMMIT_MESSAGE" value="limpiano addpartyModel" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -3729,20 +3728,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddPartyModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="222" column="43" selection-start-line="222" selection-start-column="43" selection-end-line="222" selection-end-column="43" />
+        <state relative-caret-position="124">
+          <caret line="210" column="24" selection-start-line="210" selection-start-column="24" selection-end-line="210" selection-end-column="24" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="docComment;class#AddPartyModel#0" expanded="false" />
             <element signature="method#setTimeFinishLabel#0;class#AddPartyModel#0" expanded="false" />
-            <element signature="e#3006#3007#0" expanded="true" />
-            <element signature="e#3041#3042#0" expanded="true" />
+            <element signature="e#2951#2952#0" expanded="true" />
+            <element signature="e#2986#2987#0" expanded="true" />
             <element signature="method#getPlaceOfTheParty#0;class#AddPartyModel#0" expanded="false" />
             <element signature="method#getDateOfTheParty#0;class#AddPartyModel#0" expanded="false" />
-            <element signature="e#3663#3703#0" expanded="false" />
+            <element signature="e#3608#3648#0" expanded="false" />
             <element signature="method#getHourOfParty#0;class#AddPartyModel#0" expanded="false" />
-            <element signature="e#3961#4026#0" expanded="false" />
-            <element signature="e#5248#6002#0" expanded="true" />
-            <element signature="e#6001#6002#0" expanded="true" />
+            <element signature="e#3906#3971#0" expanded="false" />
+            <element signature="e#5193#5813#0" expanded="true" />
+            <element signature="e#5812#5813#0" expanded="true" />
           </folding>
         </state>
       </provider>

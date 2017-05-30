@@ -3,7 +3,6 @@ package es.ulpgc.eite.clean.mvp.sample.addParty;
 
 import android.util.Log;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -13,7 +12,6 @@ import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 import es.ulpgc.eite.clean.mvp.sample.product.ProductModel;
 import io.realm.Realm;
-import io.realm.RealmList;
 
 
 /**
@@ -217,15 +215,15 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
             public void execute(Realm realm) {
                 ProductData event = realmDatabase.createObject(ProductData.class, UUID.randomUUID().toString());
 
-                event.setProductName(product.getProductName());
-                event.setPlace(product.getPlace());
-                event.setDate(product.getPlace());
-                event.setTimeI(product.getTimeI());
-                event.setTimeF(product.getTimeF());
-                event.setDetailText(product.getDetailText());
+                event.setProductName(name);
+                event.setPlace(place);
+                event.setDate(date);
+                event.setTimeI(hourInit);
+                event.setTimeF(hourFinish);
+
 
                 CategoryData category = realm.where(CategoryData.class)
-                        .equalTo("id", CategoryId).findFirst();
+                        .equalTo("id", id).findFirst();
 
                 category.getItemInfo().add(event);
             }
