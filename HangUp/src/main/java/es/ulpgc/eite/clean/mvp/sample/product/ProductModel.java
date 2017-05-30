@@ -72,7 +72,7 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
                         UUID.randomUUID().toString());
                 event.setProductName(product.getProductName());
                 event.setPlace(product.getPlace());
-                event.setDate(product.getPlace());
+                event.setDate(product.getDate());
                 event.setTimeI(product.getTimeI());
                 event.setTimeF(product.getTimeF());
                 //event.setDetailText(product.getDetailText());

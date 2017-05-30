@@ -3,14 +3,10 @@ package es.ulpgc.eite.clean.mvp.sample.addParty;
 
 import android.content.Context;
 
-import java.util.List;
-
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.Presenter;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
-import io.realm.RealmList;
 
 
 public interface Add {
@@ -90,7 +86,6 @@ public interface Add {
 
     interface PresenterToModel extends Model<ModelToPresenter> {
 
-        String getDescription();
 
         String getNameLabel();
 
@@ -139,12 +134,10 @@ public interface Add {
 
         void setYear(int year);
 
-        List<CategoryData> getPartyAdded();
 
-        RealmList<ProductData> getParty();
+        void setName(String name);
 
-        void setDescription(String description);
-
+        String getName();
 
         void insertEvent(int image, String name, String numberOfParticipants);
     }

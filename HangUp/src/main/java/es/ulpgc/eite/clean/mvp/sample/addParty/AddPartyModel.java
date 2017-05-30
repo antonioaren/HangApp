@@ -5,6 +5,7 @@ import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
@@ -12,7 +13,6 @@ import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.product.ProductModel;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
-import io.realm.RealmList;
 
 
 /**
@@ -23,26 +23,23 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
 
 
     private String placeLabel, dateLabel, timeInitLabel, timeFinishLabel, publishLabel, titleLabel;
-    private String description;
-    private int hourFinish;
-    private String day;
-
-
-    private int hourInit;
-    private String month;
+    private String nameLabel;
+    private String name;
     private String place;
+    private int hourFinish;
+    private int hourInit;
+    private String day;
+    private String month;
     private int year;
-    private List<CategoryData> partyAdded;
-    private List<ProductData> party;
+
     // private Repository.ProductRepository.OnSaveProductCallback callback;
     private ProductModel product;
-    private String nameLabel;
+
     private Realm realmDatabase;
 
 
     public AddPartyModel() {
-     this.party= new ArrayList<>();
-      this.partyAdded= new ArrayList<>();
+
         this.product=new ProductModel();
     }
 
@@ -148,10 +145,13 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
         return date;
     }
 
-    public int getHourInit() {
-        return hourInit;
+    public String getHourInit() {
+        return String.valueOf(hourInit);
     }
 
+    public String getHourFinish() {
+        return String.valueOf(hourFinish);
+    }
     @Override
     public String getHourOfParty() {
 
@@ -189,31 +189,40 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
         this.year=year;
     }
 
-    @Override
-    public List<CategoryData> getPartyAdded() {
 
-        return this.partyAdded;
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
-    public RealmList<ProductData> getParty() {
-
-        return (RealmList<ProductData>) this.party;
+    public String getName() {
+        return name;
     }
 
-    @Override
-    public void setDescription(String description) {
-        this.description= description;
-    }
-
-    @Override
-    public String getDescription() {
-        return description;
-    }
 
     @Override
     public void insertEvent(final int image, final String name,final String numberOfParticipants) {
         //product.insertProduct(image,name,numberOfParticipants);
+
         realmDatabase = Realm.getDefaultInstance();
+        realmDatabase.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                ProductData event = realmDatabase.createObject(ProductData.class,
+                        UUID.randomUUID().toString());
+                event.setProductName(get);
+                event.setPlace(product.getPlace());
+                event.setDate(product.getDate());
+                event.setTimeI(product.getTimeI());
+                event.setTimeF(product.getTimeF());
+                //event.setDetailText(product.getDetailText());
+
+                CategoryData category = realm.where(CategoryData.class)
+                        .equalTo(itemId, CategoryId).findFirst();
+                category.getItemInfo().add(event);
+            }
+        });
     }
 }
