@@ -75,13 +75,7 @@ public interface Add {
 
         void setTimeFinishLabel(String txt);
 
-        String getPlaceOfTheParty();
-
-        String getDescription();
-
-        int getHourOfInit();
-
-        int getHourOfFinish();
+        void setDetailsLabel(String detailsLabel);
     }
 
     /**
@@ -97,6 +91,10 @@ public interface Add {
         void setNameLabel(String nameLabel);
 
         String getPlaceLabel();
+
+        String getDetailsLabel();
+
+        void setDetailsLabel(String detailsLabel);
 
         String getPublishBtnLabel();
 

@@ -34,6 +34,7 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     private Repository.ProductRepository.OnSaveProductCallback callback;
     private ProductModel product;
     private String nameLabel;
+    private String detailsLabel;
 
 
     public AddPartyModel() {
@@ -54,6 +55,7 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
         dateLabel = "Date";
         timeInitLabel = "Starts";
         timeFinishLabel = "Finishes";
+        detailsLabel = "Party's Details";
 
         publishLabel = "Add";
 
@@ -64,11 +66,11 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
         Log.d(TAG, "calling onDestroy()");
     }
 
+
     @Override
     public String getTitleLabel() {
         return this.titleLabel;
     }
-
     @Override
     public void setTitleLabel(String titleLabel) {
         this.titleLabel = titleLabel;
@@ -78,7 +80,6 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     public String getNameLabel() {
         return nameLabel;
     }
-
     @Override
     public void setNameLabel(String nameLabel) {
         this.nameLabel = nameLabel;
@@ -118,6 +119,16 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     @Override
     public void setTimeFinishLabel(String timeFinishLabel) {
         this.timeFinishLabel = timeFinishLabel;
+    }
+
+    @Override
+    public String getDetailsLabel() {
+        return detailsLabel;
+    }
+
+    @Override
+    public void setDetailsLabel(String detailsLabel) {
+        this.detailsLabel = detailsLabel;
     }
 
     @Override

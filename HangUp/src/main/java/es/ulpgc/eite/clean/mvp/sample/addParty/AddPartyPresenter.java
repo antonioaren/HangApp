@@ -162,6 +162,7 @@ public class AddPartyPresenter
         getView().setDateLabel(getModel().getDateLabel());
         getView().setTimeInitLabel(getModel().getTimeInitLabel());
         getView().setTimeFinishLabel(getModel().getTimeFinishLabel());
+        getView().setDetailsLabel(getModel().getDetailsLabel());
 
         getView().setPublishBtnLabel(getModel().getPublishBtnLabel());
     }

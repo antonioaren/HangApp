@@ -75,7 +75,7 @@ public class App extends Application implements Mediator, Navigator {
             presenter.setProductToAdd(AddToProduct.ProductToAdd);
         }
 
-        CategoryToProduct = null;
+        //CategoryToProduct = null;
         AddToProduct = null;
 
         presenter.onScreenStarted();

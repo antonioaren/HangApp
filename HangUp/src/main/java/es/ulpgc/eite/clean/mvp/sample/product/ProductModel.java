@@ -34,7 +34,7 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     @Override
     public void onCreate(Product.ModelToPresenter modelToPresenter) {
         addlabel = "Add";
-        deleteLabel = "delete";
+        deleteLabel = "Delete";
         RealmConfiguration setting = new RealmConfiguration.Builder().build();
         Realm.setDefaultConfiguration(setting);
     }
@@ -60,7 +60,8 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
 
     @Override
     public void setProductToAddFromAddAndInsert(ProductData productToAdd) {
-        AddProductByCategoryId(productToAdd, getItemId());
+        AddProductByCategoryId(productToAdd, itemId);
+
     }
 
     @Override
@@ -74,17 +75,18 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
         realmDatabase.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
-                ProductData event = realmDatabase.createObject(ProductData.class,
-                        UUID.randomUUID().toString());
+                ProductData event = realmDatabase.createObject(ProductData.class, UUID.randomUUID().toString());
+
                 event.setProductName(product.getProductName());
                 event.setPlace(product.getPlace());
                 event.setDate(product.getPlace());
                 event.setTimeI(product.getTimeI());
                 event.setTimeF(product.getTimeF());
-                //event.setDetailText(product.getDetailText());
+                event.setDetailText(product.getDetailText());
 
                 CategoryData category = realm.where(CategoryData.class)
-                        .equalTo(itemId, CategoryId).findFirst();
+                        .equalTo("id", CategoryId).findFirst();
+
                 category.getItemInfo().add(event);
             }
         });
@@ -100,10 +102,6 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     @Override
     public void setItemsFromDatabase() {
         itemsDatabase = realmDatabase.where(ProductData.class).findAll();
-    }
-
-
-    public void updateEvent() {
     }
 
     public void deteleEvent() {
@@ -125,6 +123,4 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     public String getDeleteLabel() {
         return deleteLabel;
     }
-
-
 }

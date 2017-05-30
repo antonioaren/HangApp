@@ -35,10 +35,9 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     private EditText EventTimeFinish;
 
     private TextView EventDate;
-    private TimePicker timePickerInit;
     private TextView EventTimeInit;
-    private TimePicker timePickerFinish;
     private Button buttonPublish;
+    private EditText EventDetails;
 
     private Date date;
 
@@ -82,6 +81,10 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         //Todo: Añadir TimePicker Parecido al calendar.
 
         EventTimeFinish = (EditText) findViewById(R.id.TimeF);
+
+        EventDetails = (EditText) findViewById(R.id.details);
+
+
 
         buttonPublish = (Button) findViewById(R.id.Add);
         buttonPublish.setOnClickListener(new View.OnClickListener() {
@@ -133,6 +136,11 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         EventTimeFinish.setHint(txt);
     }
     @Override
+    public void setDetailsLabel(String txt) {
+        EventDetails.setHint(txt);
+    }
+
+    @Override
     public void setPublishBtnLabel(String txt) {
         buttonPublish.setText(txt);
     }
@@ -142,36 +150,40 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
     private void SaveData() {
         ProductData product = new ProductData();
+
         product.setProductName(EventName.getText().toString());
         product.setPlace(EventPlace.getText().toString());
         product.setDate(EventDate.getText().toString());
         product.setTimeI(EventTimeInit.getText().toString());
         product.setTimeF(EventTimeFinish.getText().toString());
+        product.setDetailText(EventDetails.getText().toString());
         getPresenter().DataFromAddView(product);
     }
+//
+//    @Override
+//    public String getDescription() {
+//        return EventName.getText().toString();
+//    }
+//
+//    @Override
+//    public String getPlaceOfTheParty() {
+//        return EventPlace.getText().toString();
+//    }
+//
+////    @TargetApi(Build.VERSION_CODES.M)
+//    @Override
+//    public int getHourOfInit() {
+//        int hour = timePickerInit.getHour();
+//        return hour;
+//    }
+//
+//    @TargetApi(Build.VERSION_CODES.M)
+//    @Override
+//    public int getHourOfFinish() {
+//        int hour = timePickerFinish.getHour();
+//        return hour;
+//    }
 
-    @Override
-    public String getDescription() {
-        return EventName.getText().toString();
-    }
 
-    @Override
-    public String getPlaceOfTheParty() {
-        return EventPlace.getText().toString();
-    }
-
-    @TargetApi(Build.VERSION_CODES.M)
-    @Override
-    public int getHourOfInit() {
-        int hour = timePickerInit.getHour();
-        return hour;
-    }
-
-    @TargetApi(Build.VERSION_CODES.M)
-    @Override
-    public int getHourOfFinish() {
-        int hour = timePickerFinish.getHour();
-        return hour;
-    }
 
 }

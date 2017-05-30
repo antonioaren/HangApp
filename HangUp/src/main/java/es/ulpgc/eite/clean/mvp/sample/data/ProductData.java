@@ -12,17 +12,11 @@ public class ProductData extends RealmObject {
     @PrimaryKey
     private String id;
 
-    @Required
     private String productName;
-    @Required
     private String place;
-    @Required
     private String date;
-    @Required
     private String TimeI;
-    @Required
     private String TimeF;
-    @Required
     private String detailText;
 
     public ProductData() {
