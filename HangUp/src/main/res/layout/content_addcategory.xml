@@ -5,117 +5,125 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
-
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <TextView
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
 
         android:text="Name:"
         android:id="@+id/textName"/>
     <EditText
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:id="@+id/content_name"
         />
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_weight="0.07"
-        android:orientation="horizontal"
-        android:weightSum="1">
-        <TextView
-            android:layout_width="79dp"
-            android:layout_height="40dp"
-
-            android:text="Photo:"
-            android:id="@+id/textPhoto"/>
-<RadioGroup
-    android:id="@+id/radioGroup"
-    android:layout_width="match_parent"
-    android:layout_height="410dp"
-    android:weightSum="1">
-
-    <RadioButton
-        android:id="@+id/id0"
-        android:layout_width="98dp"
-        android:layout_height="50dp"
-
-
-
-        android:text="astro"
-
-   />
-    <ImageView
-        android:layout_width="67dp"
-        android:layout_height="50dp"
-        android:id="@+id/image1"
-        android:background="@drawable/astro"/>
-           <RadioButton
-               android:id="@+id/id1"
-               android:layout_width="104dp"
-               android:layout_height="40dp"
-               android:text="disco"
-
-
-
-              />
-    <ImageView
-        android:layout_width="60dp"
-        android:layout_height="50dp"
-        android:id="@+id/image2"
-        android:background="@drawable/disco"/>
-           <RadioButton
-               android:id="@+id/id2"
-               android:layout_width="80dp"
-               android:layout_height="50dp"
-               android:text="car"
-                />
-
-    <ImageView
-        android:layout_width="60dp"
-        android:layout_height="50dp"
-        android:id="@+id/image3"
-        android:background="@drawable/cars"/>
-    <RadioButton
-        android:id="@+id/id3"
-        android:layout_width="112dp"
-        android:layout_height="40dp"
-        android:text="ulpgc"
-
-
-
-        />
-    <ImageView
-        android:layout_width="60dp"
-        android:layout_height="50dp"
-        android:id="@+id/image4"
-        android:background="@drawable/ulpgc"/>
-
-
-</RadioGroup>
-
-
-
     </LinearLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textPhoto"
+        android:text="photo" />
 
-
-
-
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
+
+        <RadioButton
+            android:id="@+id/id0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="14dp"
+            android:text="astro"
+            android:layout_alignStart="@+id/id1" />
+
+        <ImageView
+            android:id="@+id/image1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/astro"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/id1"
+            android:layout_alignTop="@+id/id0" />
+
+        <RadioButton
+            android:id="@+id/id1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="disco"
+            android:layout_alignEnd="@+id/id3"
+            android:layout_below="@+id/id0"
+            android:layout_alignStart="@+id/id3" />
+
+        <ImageView
+            android:id="@+id/image2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/id1"
+            app:srcCompat="@drawable/disco"
+            android:layout_alignStart="@+id/image1"
+            android:layout_alignTop="@+id/id1"
+            android:layout_alignEnd="@+id/image1" />
+
+        <RadioButton
+            android:id="@+id/id2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/id1"
+            android:layout_marginTop="18dp"
+            android:text="cars"
+            android:layout_alignStart="@+id/id3" />
+
+        <ImageView
+            android:id="@+id/image3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/cars"
+            android:layout_alignTop="@+id/id2"
+            android:layout_alignStart="@+id/image2"
+            android:layout_marginStart="23dp"
+            android:layout_alignBottom="@+id/id2"
+            android:layout_alignEnd="@+id/image2" />
+
+        <RadioButton
+            android:id="@+id/id3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="academic"
+            android:layout_below="@+id/id1"
+            android:layout_toStartOf="@+id/buttonAdd2" />
+
+        <ImageView
+            android:id="@+id/image4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ulpgc"
+            android:layout_alignBottom="@+id/id3"
+            android:layout_alignStart="@+id/image3"
+            android:layout_alignEnd="@+id/image3"
+            android:layout_alignTop="@+id/id3" />
 
         <Button
             android:id="@+id/buttonAdd2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/image4"
             android:layout_centerHorizontal="true"
-            android:background="#c4ff00"
+            android:layout_marginTop="40dp"
             android:text="Add" />
+
+
     </RelativeLayout>
+
 
 </LinearLayout>
