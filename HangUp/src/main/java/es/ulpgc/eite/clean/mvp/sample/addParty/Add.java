@@ -75,6 +75,8 @@ public interface Add {
 
         String getDescription();
 
+        String getDateOfTheParty();
+
         int getHourOfInit();
 
         int getHourOfFinish();

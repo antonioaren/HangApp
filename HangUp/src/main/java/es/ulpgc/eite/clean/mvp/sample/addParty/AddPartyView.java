@@ -160,6 +160,10 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         return EventPlace.getText().toString();
     }
 
+    @Override
+    public String getDateOfTheParty() {
+        return EventDate.getText().toString();
+    }
     @TargetApi(Build.VERSION_CODES.M)
     @Override
     public int getHourOfInit() {

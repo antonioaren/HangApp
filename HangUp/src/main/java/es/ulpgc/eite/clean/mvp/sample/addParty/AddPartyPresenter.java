@@ -3,6 +3,8 @@ package es.ulpgc.eite.clean.mvp.sample.addParty;
 import android.content.Context;
 import android.util.Log;
 
+import java.util.UUID;
+
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
@@ -90,7 +92,7 @@ public class AddPartyPresenter
     @Override
     public void onPublishButtonClicked() {
         Log.d(TAG, "callingOnPublish");
-
+        getModel().insertEvent(UUID.randomUUID().toString(), getView().getDescription(), getView().getPlaceOfTheParty(), getView().getDate, getView().getHourOfInit(), getView().getHourOfFinish());
         Navigator app = (Navigator) getView().getApplication();
         app.goToProductScreenFromAddScreen(this);
 
