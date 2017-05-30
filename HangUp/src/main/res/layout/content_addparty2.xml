@@ -12,11 +12,11 @@
         android:ems="10"
         android:hint="Give a little introduction of your party"
         android:inputType="textPersonName" />
-    <TextView
+    <!--<TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"/>
+        android:layout_weight="1"/>-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -52,7 +52,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="20dp"
             android:layout_weight="1"/>
 
         <LinearLayout
@@ -90,29 +90,34 @@
                     android:inputType="textPersonName"/>
             </LinearLayout>
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="40dp" />
+
 
             <EditText
                 android:id="@+id/details"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="20dp"
                 android:ems="10"
                 android:hint="Request6"
                 android:inputType="textMultiLine"/>
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="10dp"
                 android:layout_weight="1"/>
 
-            <Button
-                android:id="@+id/Add"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Button"/>
+                android:layout_height="40dp">
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:text="Button" />
+            </RelativeLayout>
+
 
         </LinearLayout>
 
