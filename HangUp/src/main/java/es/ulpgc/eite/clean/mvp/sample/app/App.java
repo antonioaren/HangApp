@@ -216,9 +216,9 @@ public class App extends Application implements Mediator, Navigator {
     @Override
     public void SaveDataFromAddParty(Add.AddTo presenter) {
         toAddState = new AddPartyState();
-        toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
-        toAddState.dateOfTheParty = presenter.getDateOfTheParty();
-        toAddState.hourOfParty = presenter.getHourOfParty();
+//        toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
+//        toAddState.dateOfTheParty = presenter.getDateOfTheParty();
+//        toAddState.hourOfParty = presenter.getHourOfParty();
 
         presenter.destroyView();
     }

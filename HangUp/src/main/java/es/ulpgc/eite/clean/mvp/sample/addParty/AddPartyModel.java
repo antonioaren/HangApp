@@ -5,12 +5,14 @@ import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
-import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 import es.ulpgc.eite.clean.mvp.sample.product.ProductModel;
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
 import io.realm.RealmList;
 
 
@@ -31,9 +33,10 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     private int year;
     private List<CategoryData> partyAdded;
     private List<ProductData> party;
-    private Repository.ProductRepository.OnSaveProductCallback callback;
+    // private Repository.ProductRepository.OnSaveProductCallback callback;
     private ProductModel product;
     private String nameLabel;
+    private Realm realmDatabase;
 
 
     public AddPartyModel() {
@@ -48,15 +51,14 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
         super.onCreate(presenter);
 
         titleLabel = "Publish your own party";
-
         nameLabel = "Name";
         placeLabel = "Place";
         dateLabel = "Date";
         timeInitLabel = "Starts";
         timeFinishLabel = "Finishes";
-
         publishLabel = "Add";
-
+        RealmConfiguration setting = new RealmConfiguration.Builder().build();
+        Realm.setDefaultConfiguration(setting);
     }
 
     @Override
@@ -134,23 +136,20 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
 
     @Override
     public String getPlaceOfTheParty() {
-        //return getPresenter().getPlace();
+
         return place;
     }
 
     @Override
     public String getDateOfTheParty() {
-        //String day = getPresenter().getDate();
-        //String month = getPresenter().getMonth();
-        //String year = String.valueOf(getPresenter().getYear());
+
         String date = day + "" + month + "" + year;
         return date;
     }
 
     @Override
     public String getHourOfParty() {
-        //String hourInit = String.valueOf(getPresenter().getInitTIme());
-        //String hourFinish = String.valueOf(getPresenter().getFinishTime());
+
         String hour = hourInit + "" + "-" + hourFinish;
         return hour;
     }
@@ -210,6 +209,20 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     @Override
     public void insertEvent(final int image, final String name,final String numberOfParticipants) {
         //product.insertProduct(image,name,numberOfParticipants);
+        realmDatabase = Realm.getDefaultInstance();
+        realmDatabase.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                ProductData event = realmDatabase.createObject(ProductData.class,
+                        UUID.randomUUID().toString());
+                event.setProductName(name);
+                event.setI
+                //event.setDetailText(product.getDetailText());
 
+                CategoryData category = realm.where(CategoryData.class)
+                        .equalTo(itemId, CategoryId).findFirst();
+                category.getItemInfo().add(event);
+            }
+        });
     }
 }

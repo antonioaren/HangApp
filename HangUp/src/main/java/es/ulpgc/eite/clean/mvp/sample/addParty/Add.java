@@ -35,11 +35,7 @@ public interface Add {
 
         ProductData getProductAddedView();
 
-        String getPlaceOfTheParty();
 
-        String getDateOfTheParty();
-
-        String getHourOfParty();
     }
 
 

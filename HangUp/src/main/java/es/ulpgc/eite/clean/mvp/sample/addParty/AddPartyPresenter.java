@@ -106,6 +106,7 @@ public class AddPartyPresenter
         return product;
     }
 
+
 //    @Override
 //    public void setTextVisibility(boolean visible) {
 //    }
