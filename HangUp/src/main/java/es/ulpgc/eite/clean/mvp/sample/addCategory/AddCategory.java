@@ -140,8 +140,6 @@ public interface AddCategory {
         void insertEvent(String Categoryname, int image);
 
 
-        String[] getNames();
-
         Integer[] getImages();
 
         int getImageByIdSelected(int id);

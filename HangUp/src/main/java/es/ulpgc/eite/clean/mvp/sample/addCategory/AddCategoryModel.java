@@ -3,13 +3,14 @@ package es.ulpgc.eite.clean.mvp.sample.addCategory;
 
 import android.util.Log;
 
+import java.util.UUID;
+
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import io.realm.Realm;
-
-import static android.content.ContentValues.TAG;
 
 
 /**
@@ -139,11 +140,17 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
 
     @Override
     public void insertEvent(final String Categoryname, final int image) {
-        categoryModel.insertEvent(Categoryname, image);
-    }
+        realmDatabase = Realm.getDefaultInstance();
+        realmDatabase.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                CategoryData event = realmDatabase.createObject(CategoryData.class, UUID.randomUUID().toString());
 
-    public String getNamecategory() {
-        return namecategory;
+                event.setCategoryName(Categoryname);
+                event.setImage(image);
+            }
+
+        });
     }
 
 
