@@ -190,10 +190,10 @@ public class App extends Application implements Mediator, Navigator {
         toAddState = new AddPartyState();
 
         //Añadir los estados que falten para pasarles a la busquedad. Guardar posicion, etc.
-        toAddState.descriptionOfTheParty = presenter.getDescriptionOfTheParty();
-        toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
-        toAddState.dateOfTheParty = presenter.getDateOfTheParty();
-        toAddState.hourOfParty = presenter.getHourOfParty();
+//        toAddState.descriptionOfTheParty = presenter.getDescriptionOfTheParty();
+//        toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
+//        toAddState.dateOfTheParty = presenter.getDateOfTheParty();
+//        toAddState.hourOfParty = presenter.getHourOfParty();
         Context view = presenter.getManagedContext();
         if (view != null) {
             view.startActivity(new Intent(view, AddPartyView.class));
@@ -206,9 +206,6 @@ public class App extends Application implements Mediator, Navigator {
     public void SaveDataAdd(AddCategory.AddTo presenter) {
         toaddCategoryState = new AddCategoryState();
 
-        // toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
-        // toAddState.dateOfTheParty = presenter.getDateOfTheParty();
-        //toAddState.hourOfParty = presenter.getHourOfParty();
 
         presenter.destroyView();
     }

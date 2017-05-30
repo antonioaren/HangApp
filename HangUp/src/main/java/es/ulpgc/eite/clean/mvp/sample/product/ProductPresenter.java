@@ -113,23 +113,23 @@ public class ProductPresenter
 
     //TODO implementar. Paso de estados para guardar.
 
-    @Override
-    public String getDescriptionOfTheParty() {
-        return null;
-    }
-
-    @Override
-    public String getPlaceOfTheParty() {
-        return null;
-    }
-
-    @Override
-    public String getDateOfTheParty() {
-        return null;
-    }
-
-    @Override
-    public String getHourOfParty() {
-        return null;
-    }
+//    @Override
+//    public String getDescriptionOfTheParty() {
+//        return null;
+//    }
+//
+//    @Override
+//    public String getPlaceOfTheParty() {
+//        return null;
+//    }
+//
+//    @Override
+//    public String getDateOfTheParty() {
+//        return null;
+//    }
+//
+//    @Override
+//    public String getHourOfParty() {
+//        return null;
+//    }
 }
