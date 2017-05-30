@@ -92,10 +92,6 @@ public class DeletePresenter
         app.deleteEvent(this);
     }
 
-
-
-
-
     @Override
     public String getNameToDelete() {
         return getView().getTextFromEditText();

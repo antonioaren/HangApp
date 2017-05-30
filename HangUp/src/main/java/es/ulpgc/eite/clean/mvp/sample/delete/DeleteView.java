@@ -42,7 +42,7 @@ public class DeleteView  extends GenericActivity<Delete.PresenterToView, Delete.
         deleteId .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getPresenter().onDeleteIdClicked();
+                // getPresenter().onDeleteIdClicked();
 
             }
         });
