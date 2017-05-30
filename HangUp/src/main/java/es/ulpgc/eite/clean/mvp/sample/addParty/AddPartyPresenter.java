@@ -115,6 +115,11 @@ public class AddPartyPresenter
     }
 
     @Override
+    public String getNameOfTheParty() {
+        return getView().getName();
+    }
+
+    @Override
     public String getPlaceOfTheParty() {
         return getView().getPlaceOfTheParty();
     }

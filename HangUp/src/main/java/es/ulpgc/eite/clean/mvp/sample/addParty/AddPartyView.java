@@ -30,6 +30,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         implements Add.PresenterToView {
 
     private TextView title;
+    private EditText introduction;
     private EditText EventName;
     private EditText EventPlace;
     private EditText EventTimeFinish;
@@ -49,7 +50,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         setContentView(R.layout.activity_addparty);
 
         title = (TextView) findViewById(R.id.textView);
-
+        introduction = (EditText) findViewById(R.id.introduction);
         EventName = (EditText) findViewById(R.id.name);
         EventName.requestFocus();
         EventPlace = (EditText) findViewById(R.id.place);
@@ -150,6 +151,10 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         getPresenter().DataFromAddView(product);
     }
 
+    @Override
+    public String getIntroduction() {
+        return introduction.getText().toString();
+    }
     @Override
     public String getName() {
         return EventName.getText().toString();
