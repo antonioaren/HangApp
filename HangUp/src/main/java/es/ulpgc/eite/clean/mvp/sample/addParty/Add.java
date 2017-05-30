@@ -126,6 +126,8 @@ public interface Add {
 
         void setHourOfFinish(int hour);
 
+        String getHourInit();
+
         void setHourOfInit(int hour);
 
         void setMonth(String month);
@@ -139,7 +141,12 @@ public interface Add {
 
         String getName();
 
-        void insertEvent(int image, String name, String numberOfParticipants);
+
+        String getItemId();
+
+        void setItemId(String itemId);
+
+        void insertEvent(String CategoryId, String name, String place, String date, int hourOfInit, int hourOfFinish);
     }
 
     /**

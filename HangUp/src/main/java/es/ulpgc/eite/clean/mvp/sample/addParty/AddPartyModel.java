@@ -3,14 +3,11 @@ package es.ulpgc.eite.clean.mvp.sample.addParty;
 
 import android.util.Log;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
-import es.ulpgc.eite.clean.mvp.sample.product.ProductModel;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
@@ -33,14 +30,13 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     private int year;
 
     // private Repository.ProductRepository.OnSaveProductCallback callback;
-    private ProductModel product;
 
     private Realm realmDatabase;
-
+    private String itemId;
 
     public AddPartyModel() {
 
-        this.product=new ProductModel();
+
     }
 
 
@@ -130,67 +126,6 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-    @Override
-    public String getPlaceOfTheParty() {
-
-        return place;
-    }
-
-    @Override
-    public String getDateOfTheParty() {
-
-        String date = day + "" + month + "" + year;
-        return date;
-    }
-
-    public String getHourInit() {
-        return String.valueOf(hourInit);
-    }
-
-    public String getHourFinish() {
-        return String.valueOf(hourFinish);
-    }
-    @Override
-    public String getHourOfParty() {
-
-        String hour = hourInit + "" + "-" + hourFinish;
-        return hour;
-    }
-
-    @Override
-    public void setDay(String day) {
-        this.day = day;
-    }
-
-    @Override
-    public void setHourOfFinish(int hour) {
-        hourFinish = hour;
-    }
-
-    @Override
-    public void setHourOfInit(int hour) {
-        hourInit = hour;
-    }
-
-    @Override
-    public void setMonth(String month) {
-        this.month = month;
-    }
-
-    @Override
-    public void setPlaceOfTheParty(String place) {
-        this.place = place;
-    }
-
-    @Override
-    public void setYear(int year) {
-        this.year=year;
-    }
-
-
-
     @Override
     public void setName(String name) {
         this.name = name;
@@ -201,10 +136,86 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
         return name;
     }
 
+    @Override
+    public String getPlaceOfTheParty() {
+
+        return place;
+    }
 
     @Override
-    public void insertEvent(final int image, final String name,final String numberOfParticipants) {
+    public void setPlaceOfTheParty(String place) {
+        this.place = place;
+    }
+
+    @Override
+    public String getDateOfTheParty() {
+
+        String date = day + "" + month + "" + year;
+        return date;
+    }
+
+
+    @Override
+    public String getHourInit() {
+        return String.valueOf(hourInit);
+    }
+
+    @Override
+    public void setHourOfInit(int hour) {
+        hourInit = hour;
+    }
+
+    public String getHourFinish() {
+        return String.valueOf(hourFinish);
+    }
+
+    @Override
+    public void setHourOfFinish(int hour) {
+        hourFinish = hour;
+    }
+
+    @Override
+    public String getHourOfParty() {
+
+        String hour = hourInit + "" + "-" + hourFinish;
+        return hour;
+    }
+
+
+
+
+    @Override
+    public void setMonth(String month) {
+        this.month = month;
+    }
+
+    @Override
+    public void setYear(int year) {
+        this.year=year;
+    }
+
+    @Override
+    public void setDay(String day) {
+        this.day = day;
+    }
+
+
+    @Override
+    public String getItemId() {
+        return itemId;
+    }
+
+    @Override
+    public void setItemId(String itemId) {
+        this.itemId = itemId;
+    }
+
+    @Override
+    public void insertEvent(final String CategoryId, final String name, final String place, final String date, final int hourOfInit, final int hourOfFinish) {
         //product.insertProduct(image,name,numberOfParticipants);
+
+        final String InitialHour = String.valueOf(hourOfInit);
+        final String FinalHour = String.valueOf(hourOfFinish);
 
         realmDatabase = Realm.getDefaultInstance();
         realmDatabase.executeTransaction(new Realm.Transaction() {
@@ -212,11 +223,11 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
             public void execute(Realm realm) {
                 ProductData event = realmDatabase.createObject(ProductData.class,
                         UUID.randomUUID().toString());
-                event.setProductName(get);
-                event.setPlace(product.getPlace());
-                event.setDate(product.getDate());
-                event.setTimeI(product.getTimeI());
-                event.setTimeF(product.getTimeF());
+                event.setProductName(name);
+                event.setPlace(place);
+                event.setDate(date);
+                event.setTimeI(InitialHour);
+                event.setTimeF(FinalHour);
                 //event.setDetailText(product.getDetailText());
 
                 CategoryData category = realm.where(CategoryData.class)
