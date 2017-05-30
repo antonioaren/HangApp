@@ -18,19 +18,15 @@ public interface Delete {
 
     interface ToDelete {
 
-        void setTextVisibility(boolean visible);
 
         void onScreenStarted();
     }
 
     interface DeleteTo {
         Context getManagedContext();
-        void setImageVisibility(boolean visible);
-        void setInformationVisibility(boolean visible);
-        void setParticipantsVisibility(boolean visible);
+
         void destroyView();
 
-        boolean isTextVisible();
 
         String getNameToDelete();
     }
@@ -59,9 +55,6 @@ public interface Delete {
      * Methods offered to VIEW to communicate with PRESENTER
      */
     interface ViewToPresenter extends Presenter<PresenterToView> {
-
-        void onButtonSecundarySearchPressed();
-
 
 
         void onItemListClicked();

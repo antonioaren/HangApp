@@ -5,10 +5,7 @@ import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
-import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.data.Repository;
-import io.realm.RealmList;
 
 /**
  * Created by eleonora on 17/04/2017.
@@ -101,22 +98,8 @@ public class AddCategoryPresenter
     }
 
     @Override
-    public RealmList<ProductData> getParty() {
-        return null;
-    }
-
-    @Override
-    public String getDescriptionOfTheParty() {
-        return null;
-    }
-
-    @Override
-    public void setTextVisibility(boolean visible) {
-    }
-
-    @Override
-    public RealmList<CategoryData> getDefaultList() {
-        return null;
+    public int getRadioButtonSelected() {
+        return getView().getRadioButtonId();
     }
 
 

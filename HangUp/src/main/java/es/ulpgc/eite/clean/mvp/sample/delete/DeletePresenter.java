@@ -16,10 +16,7 @@ public class DeletePresenter
         implements Delete.ViewToPresenter, Delete.ModelToPresenter, Delete.DeleteTo, Delete.ToDelete {
 
 
-    private boolean informationVisible;
-    private boolean imageVisibility;
-    private boolean participantExists;
-    private boolean buttonClicked;
+
 
     @Override
     public void onCreate(Delete.PresenterToView view) {
@@ -65,17 +62,12 @@ public class DeletePresenter
     }
 
 
-    @Override
-    public void setTextVisibility(boolean visible) {
-    }
 
     @Override
     public void onScreenStarted() {
+    
     }
 
-    @Override
-    public void onButtonSecundarySearchPressed() {
-    }
 
 
 
@@ -105,26 +97,11 @@ public class DeletePresenter
         return getActivityContext();
     }
 
-    @Override
-    public void setImageVisibility(boolean visible) {
-    }
-
-    @Override
-    public void setInformationVisibility(boolean visible) {
-    }
-
-    @Override
-    public void setParticipantsVisibility(boolean visible) {
-    }
 
     @Override
     public void destroyView() {
     }
 
-    @Override
-    public boolean isTextVisible() {
-        return false;
-    }
 
     @Override
     public String getNameToDelete() {

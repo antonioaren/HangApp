@@ -105,7 +105,7 @@ public class App extends Application implements Mediator, Navigator {
     @Override
     public void startingAddCategoryScreen(AddCategory.ToAdd presenter) {
         if (toaddCategoryState != null) {
-            presenter.setTextVisibility(toaddCategoryState.textVisibility);
+            //presenter.setTextVisibility(toaddCategoryState.textVisibility);
         }
 
         presenter.onScreenStarted();
@@ -189,11 +189,7 @@ public class App extends Application implements Mediator, Navigator {
     public void goToAddPartyScreen(Product.ProductTo presenter) {
         toAddState = new AddPartyState();
 
-        //Añadir los estados que falten para pasarles a la busquedad. Guardar posicion, etc.
-//        toAddState.descriptionOfTheParty = presenter.getDescriptionOfTheParty();
-//        toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
-//        toAddState.dateOfTheParty = presenter.getDateOfTheParty();
-//        toAddState.hourOfParty = presenter.getHourOfParty();
+
         Context view = presenter.getManagedContext();
         if (view != null) {
             view.startActivity(new Intent(view, AddPartyView.class));
@@ -205,7 +201,8 @@ public class App extends Application implements Mediator, Navigator {
     @Override
     public void SaveDataAdd(AddCategory.AddTo presenter) {
         toaddCategoryState = new AddCategoryState();
-
+        toaddCategoryState.CategoryName = presenter.getCategoryName();
+        toaddCategoryState.radioButtonSelected = presenter.getRadioButtonSelected();
 
         presenter.destroyView();
     }
@@ -218,7 +215,7 @@ public class App extends Application implements Mediator, Navigator {
         toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
         toAddState.dateOfTheParty = presenter.getDateOfTheParty();
         toAddState.hourOfParty = presenter.getHourOfParty();
-    
+
         presenter.destroyView();
     }
     @Override
@@ -253,7 +250,7 @@ public class App extends Application implements Mediator, Navigator {
     }
 
     private class AddPartyState {
-        public String descriptionOfTheParty;
+        public String nameOfTheParty;
         public String placeOfTheParty;
         public String dateOfTheParty;
         public String hourOfParty;
@@ -265,13 +262,14 @@ public class App extends Application implements Mediator, Navigator {
         ProductRepository product;
 
 
-        public String nameOfTheParty;
     }
 
     private class AddCategoryState {
         boolean textVisibility;
 
 
+        public int radioButtonSelected;
+        public String CategoryName;
     }
 }
 
