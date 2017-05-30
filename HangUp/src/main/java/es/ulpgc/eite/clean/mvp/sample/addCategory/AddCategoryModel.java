@@ -9,6 +9,8 @@ import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
 import io.realm.Realm;
 
+import static android.content.ContentValues.TAG;
+
 
 /**
  * Created by eleonora on 17/04/2017.
@@ -25,12 +27,12 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     private String labelRadio1;
     private String labelRadio2;
     private String labelRadio3;
-    private String[] names;
+
     private Integer[] images;
 
     public AddCategoryModel() {
         categoryModel = new CategoryModel();
-        this.names = new String[]{"cultural", "fiesta", "deportivo", "academico"};
+
         this.images = new Integer[]{R.drawable.astro, R.drawable.disco, R.drawable.cars, R.drawable.ulpgc};
     }
 
@@ -144,10 +146,6 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
         return namecategory;
     }
 
-    @Override
-    public String[] getNames() {
-        return this.names;
-    }
 
     @Override
     public Integer[] getImages() {
