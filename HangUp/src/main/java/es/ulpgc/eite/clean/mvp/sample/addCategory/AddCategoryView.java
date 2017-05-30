@@ -1,6 +1,5 @@
 package es.ulpgc.eite.clean.mvp.sample.addCategory;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -45,11 +44,6 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
 
         radioButton2 = (RadioButton) findViewById(R.id.id2);
         radioButton3 = (RadioButton) findViewById(R.id.id3);
-
-        image1 = (ImageView) findViewById(R.id.image1);
-        image2 = (ImageView) findViewById(R.id.image2);
-        image3 = (ImageView) findViewById(R.id.image3);
-        image4 = (ImageView) findViewById(R.id.image4);
 
 
         buttonAdd = (Button) findViewById(R.id.buttonAdd2);

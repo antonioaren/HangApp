@@ -17,100 +17,68 @@
         android:text="Name:"
         android:id="@+id/textName"/>
     <EditText
-        android:layout_height="25dp"
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:id="@+id/content_name"
         />
 
     </LinearLayout>
 
+    <Space
+        android:layout_witdth="match_parent"
+        android:layout_height="wrap_content" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textPhoto"
         android:text="photo" />
 
+
     <RadioGroup
-        android:layout_width="54dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/radioGroup"
-        android:orientation="horizontal" />
-
-    <RadioButton
-        android:id="@+id/id0"
         android:layout_width="wrap_content"
-        android:layout_height="15dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="14dp"
-        android:text="astro"
-        android:layout_alignStart="@+id/id1" />
+        android:layout_height="166dp">
 
-    <ImageView
-        android:id="@+id/image1"
-        android:layout_width="64dp"
-        android:layout_height="20dp"
-        app:srcCompat="@drawable/astro" />
+        <RadioButton
+            android:id="@+id/id0"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:background="@drawable/astro"
+            android:text="astro" />
 
-    <RadioButton
-        android:id="@+id/id1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        <RadioButton
+            android:id="@+id/id1"
+            android:layout_width="122dp"
+            android:layout_height="30dp"
+            android:text="academic"
+            android:background="@drawable/ulpgc" />
 
-        android:text="disco"
-        android:layout_alignEnd="@+id/id3"
-        android:layout_below="@+id/id0"
-        android:layout_alignStart="@+id/id3" />
+        <RadioButton
+            android:id="@+id/id2"
+            android:layout_width="128dp"
+            android:layout_height="36dp"
+            android:text="disco"
+            android:background="@drawable/disco" />
 
-    <ImageView
-        android:id="@+id/image2"
-        android:layout_width="71dp"
-        android:layout_height="20dp"
-        app:srcCompat="@drawable/disco" />
-
-
-    <RadioButton
-        android:id="@+id/id2"
-        android:layout_width="wrap_content"
-        android:layout_height="15dp"
-        android:layout_below="@+id/id1"
-        android:layout_marginTop="18dp"
-        android:text="cars"
-        android:layout_alignStart="@+id/id3" />
-
-    <ImageView
-        android:id="@+id/image3"
-        android:layout_width="58dp"
-        android:layout_height="15dp"
-        app:srcCompat="@drawable/cars" />
-
-    <RadioButton
-        android:id="@+id/id3"
-        android:layout_width="wrap_content"
-        android:layout_height="15dp"
-        android:text="academic"
-        android:layout_below="@+id/id1"
-        android:layout_toStartOf="@+id/buttonAdd2" />
-
-
-    <ImageView
-        android:id="@+id/image4"
-        android:layout_width="69dp"
-        android:layout_height="15dp"
-        app:srcCompat="@drawable/ulpgc" />
+        <RadioButton
+            android:id="@+id/id3"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:text="cars"
+            android:background="@drawable/cars" />
+    </RadioGroup>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/buttonAdd2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:text="Button" />
+            android:text="Add" />
     </RelativeLayout>
-    />
 
 
 </LinearLayout>
