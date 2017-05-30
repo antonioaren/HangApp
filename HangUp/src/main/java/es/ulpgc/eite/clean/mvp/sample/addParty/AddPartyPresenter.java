@@ -92,8 +92,13 @@ public class AddPartyPresenter
     @Override
     public void onPublishButtonClicked() {
         Log.d(TAG, "callingOnPublish");
-
-        getModel().insertEvent(UUID.randomUUID().toString(), getView().getDescription(), getView().getPlaceOfTheParty(), getView().getDateOfTheParty(), getView().getHourOfInit(), getView().getHourOfFinish());
+        String id = UUID.randomUUID().toString();
+        String name = getView().getName();
+        String place = getView().getPlaceOfTheParty();
+        String date = getView().getDateOfTheParty();
+        int hourInit = getView().getHourOfInit();
+        int hourFinish = getView().getHourOfFinish();
+        getModel().insertEvent(id, name, place, date, hourInit, hourFinish);
         Navigator app = (Navigator) getView().getApplication();
         app.goToProductScreenFromAddScreen(this);
 
@@ -110,55 +115,7 @@ public class AddPartyPresenter
     }
 
 
-//    @Override
-//    public void setTextVisibility(boolean visible) {
-//    }
-//
-//    @Override
-//    public void setPlace(String place) {
-//
-//    }
-//
-//    @Override
-//    public void setDate(String date) {
-//
-//    }
-//
-//    @Override
-//    public void setHour(String hour) {
-//
-//    }
 
-
-//    @Override
-//    public String getPlaceOfTheParty() {
-//        return getModel().getPlaceOfTheParty();
-//    }
-//
-//    @Override
-//    public String getDateOfTheParty() {
-//        return getModel().getDateOfTheParty();
-//    }
-//
-//    @Override
-//    public String getHourOfParty() {
-//        return getModel().getHourOfParty();
-//    }
-//
-//    @Override
-//    public RealmList<CategoryData> getDefaultList() {
-//        return null;
-//    }
-//
-//    @Override
-//    public RealmList<CategoryData> getPartyAdded() {
-//        return (RealmList<CategoryData>) getModel().getPartyAdded();
-//    }
-//
-//    @Override
-//    public RealmList<ProductData> getPartyCreated() {
-//        return (RealmList<ProductData>) getModel().getParty();
-//    }
 
     private void LoadInitialComponents() {
         getView().setNameLabel(getModel().getNameLabel());
