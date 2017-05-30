@@ -114,7 +114,20 @@ public class AddPartyPresenter
         return product;
     }
 
+    @Override
+    public String getPlaceOfTheParty() {
+        return getView().getPlaceOfTheParty();
+    }
 
+    @Override
+    public String getDateOfTheParty() {
+        return getView().getDateOfTheParty();
+    }
+
+    @Override
+    public String getHourOfParty() {
+        return getView().getHourOfInit() + " " + getView().getHourOfFinish();
+    }
 
 
     private void LoadInitialComponents() {

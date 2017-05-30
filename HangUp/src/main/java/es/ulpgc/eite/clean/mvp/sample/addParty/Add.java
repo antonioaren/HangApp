@@ -31,7 +31,13 @@ public interface Add {
 
         ProductData getProductAddedView();
 
+        String getNameOfTheParty();
 
+        String getPlaceOfTheParty();
+
+        String getDateOfTheParty();
+
+        String getHourOfParty();
     }
 
 
