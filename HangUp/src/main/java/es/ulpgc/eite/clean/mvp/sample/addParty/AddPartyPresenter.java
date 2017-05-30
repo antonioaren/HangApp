@@ -7,7 +7,6 @@ import java.util.UUID;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
-import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 
@@ -99,8 +98,8 @@ public class AddPartyPresenter
         String hourInit = getView().getHourOfInit();
         String hourFinish = getView().getHourOfFinish();
         getModel().insertEvent(id, name, place, date, hourInit, hourFinish);
-        Navigator app = (Navigator) getView().getApplication();
-        app.goToProductScreenFromAddScreen(this);
+        Mediator app = (Mediator) getView().getApplication();
+        app.SaveDataFromAddParty(this);
 
     }
 
