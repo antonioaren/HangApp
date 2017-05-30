@@ -71,9 +71,10 @@ public interface Add {
 
         void setTimeFinishLabel(String txt);
 
+        String getName();
+
         String getPlaceOfTheParty();
 
-        String getDescription();
 
         String getDateOfTheParty();
 

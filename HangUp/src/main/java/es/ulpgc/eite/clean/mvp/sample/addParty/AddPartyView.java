@@ -151,7 +151,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     }
 
     @Override
-    public String getDescription() {
+    public String getName() {
         return EventName.getText().toString();
     }
 

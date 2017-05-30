@@ -92,7 +92,8 @@ public class AddPartyPresenter
     @Override
     public void onPublishButtonClicked() {
         Log.d(TAG, "callingOnPublish");
-        getModel().insertEvent(UUID.randomUUID().toString(), getView().getDescription(), getView().getPlaceOfTheParty(), getView().getDate, getView().getHourOfInit(), getView().getHourOfFinish());
+
+        getModel().insertEvent(UUID.randomUUID().toString(), getView().getDescription(), getView().getPlaceOfTheParty(), getView().getDateOfTheParty(), getView().getHourOfInit(), getView().getHourOfFinish());
         Navigator app = (Navigator) getView().getApplication();
         app.goToProductScreenFromAddScreen(this);
 
