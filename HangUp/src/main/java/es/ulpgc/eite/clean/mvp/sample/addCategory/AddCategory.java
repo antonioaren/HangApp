@@ -57,11 +57,8 @@ public interface AddCategory {
     interface ViewToPresenter extends Presenter<PresenterToView> {
 
 
-        void onSelectClicked();
-
         void onAddClicked();
 
-        String[] getNames();
 
         Integer[] getImages();
     }

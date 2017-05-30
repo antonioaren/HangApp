@@ -119,16 +119,7 @@ public class AddCategoryPresenter
         return null;
     }
 
-    @Override
-    public void onSelectClicked() {
-
-    }
-
-    @Override
-    public String[] getNames() {
-        return getModel().getNames();
-    }
-
+   
     @Override
     public Integer[] getImages() {
         return getModel().getImages();
