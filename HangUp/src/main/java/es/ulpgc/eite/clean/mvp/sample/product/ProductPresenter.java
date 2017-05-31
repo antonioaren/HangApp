@@ -33,7 +33,6 @@ public class ProductPresenter
 
 
     }
-
     @Override
     public void onResume(Product.PresenterToView view) {
         Log.d(TAG, "calling onResume()");
@@ -46,23 +45,20 @@ public class ProductPresenter
 
         }
     }
-
     @Override
     public void onDestroy(boolean isChangingConfiguration) {
         super.onDestroy(isChangingConfiguration);
     }
-
     @Override
     public void onBackPressed() {
-
+        //No llama al back del activity. Por eso creo otro llamado OnBackButtonPressed
+        //Que sobreescribe el backpressed del activity.
     }
-
     @Override
     public void OnBackButtonPressed() {
         Navigator app = (Navigator) getView().getApplication();
         app.goToCategoryScreen(this);
     }
-
     @Override
     public void onScreenStarted() {
         if (isViewRunning()) {
@@ -102,7 +98,8 @@ public class ProductPresenter
     @Override
     public void onItemClicked(ProductData item) {
         ItemSelected = item;
-
+        Navigator app = (Navigator) getApplication();
+        app.goDetailScreen(this);
     }
 
     @Override

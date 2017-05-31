@@ -16,6 +16,7 @@ import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 import es.ulpgc.eite.clean.mvp.sample.data.repositories.ProductRepository;
 import es.ulpgc.eite.clean.mvp.sample.delete.Delete;
 import es.ulpgc.eite.clean.mvp.sample.delete.DeleteView;
+import es.ulpgc.eite.clean.mvp.sample.detail.Detail;
 import es.ulpgc.eite.clean.mvp.sample.detail.DetailPresenter;
 import es.ulpgc.eite.clean.mvp.sample.detail.DetailView;
 import es.ulpgc.eite.clean.mvp.sample.product.Product;
@@ -82,7 +83,10 @@ public class App extends Application implements Mediator, Navigator {
     }
 
     @Override
-    public void startingDetailScreen(DetailPresenter presenter) {
+    public void startingDetailScreen(Detail.ToDetail presenter) {
+        if (ProductToDetail != null) {
+            presenter.setItemSelected(ProductToDetail.ItemSelected);
+        }
 
         presenter.onScreenStarted();
 
@@ -209,6 +213,8 @@ public class App extends Application implements Mediator, Navigator {
         }
 
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
 
 
     @Override

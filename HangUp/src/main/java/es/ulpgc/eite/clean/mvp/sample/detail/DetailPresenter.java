@@ -5,6 +5,7 @@ import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
+import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 
 /**
  * Created by eleonora on 17/04/2017.
@@ -12,13 +13,7 @@ import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 
 public class DetailPresenter
         extends GenericPresenter<Detail.PresenterToView, Detail.PresenterToModel, Detail.ModelToPresenter, DetailModel>
-        implements Detail.ViewToPresenter, Detail.ModelToPresenter, Detail.ToAdd, Detail.AddTo {
-
-
-    @Override
-    public void onPublishClicked() {
-
-    }
+        implements Detail.ViewToPresenter, Detail.ModelToPresenter, Detail.ToDetail, Detail.DetailTo {
 
     @Override
     public void onCreate(Detail.PresenterToView view) {
@@ -26,24 +21,16 @@ public class DetailPresenter
         setView(view);
         Log.d(TAG, "calling onCreate()");
 
-        Log.d(TAG, "calling startingAddScreen()");
         Mediator app = (Mediator) getView().getApplication();
         app.startingDetailScreen(this);
     }
 
     @Override
-    public void onScreenStarted() {
-        Log.d(TAG, "calling onScreenStarted()");
-    }
-
-    @Override
     public void onResume(Detail.PresenterToView view) {
-        setView(view);
         Log.d(TAG, "calling onResume()");
-
+        setView(view);
 
         if (configurationChangeOccurred()) {
-        getView().setTitleLabel(getModel().getTitleLabel());
 
         }
     }
@@ -52,6 +39,7 @@ public class DetailPresenter
     public void onDestroy(boolean isChangingConfiguration) {
         super.onDestroy(isChangingConfiguration);
         Log.d(TAG, "calling onDestroy()");
+
     }
 
     @Override
@@ -60,30 +48,22 @@ public class DetailPresenter
 
     }
 
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    @Override
+    public void onScreenStarted() {
+        Log.d(TAG, "calling onScreenStarted()");
+    }
+
     @Override
     public Context getManagedContext() {
         return getActivityContext();
     }
 
     @Override
-    public void destroyView() {
-        if (isViewRunning()) {
-            getView().finishScreen();
-        }
+    public void setItemSelected(ProductData itemSelected) {
+        getModel().setItemSelected(itemSelected);
     }
 
-    @Override
-    public boolean isTextVisible() {
-        return false;
-    }
 
-    @Override
-    public boolean isSelectorsVisible() {
-        return false;
-    }
-
-    @Override
-    public void setTextVisibility(boolean visible) {
-
-    }
 }

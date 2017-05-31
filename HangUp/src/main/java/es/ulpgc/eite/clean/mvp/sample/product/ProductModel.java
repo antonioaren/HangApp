@@ -55,7 +55,6 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     public String getItemId() {
         return itemId;
     }
-
     @Override
     public void setItemId(String itemId) {
         this.itemId = itemId;
@@ -65,7 +64,6 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     public void setProductToAddFromAddAndInsert(ProductData productToAdd) {
         AddProductByCategoryId(productToAdd, itemId);
     }
-
     @Override
     public void AddProductByCategoryId(final ProductData product, final String CategoryId) {
         realmDatabase = Realm.getDefaultInstance();

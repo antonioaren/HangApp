@@ -6,6 +6,7 @@ import android.content.Context;
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.Presenter;
+import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 
 /**
  * Created by Luis on 12/11/16.
@@ -17,20 +18,18 @@ public interface Detail {
     ///////////////////////////////////////////////////////////////////////////////////
     // State /////////////////////////////////////////////////////////////////////////
 
-    interface ToAdd {
+    interface ToDetail {
         void onScreenStarted();
 
-        void setTextVisibility(boolean visible);
+        void setItemSelected(ProductData itemSelected);
     }
 
-    interface AddTo {
+    interface DetailTo {
         Context getManagedContext();
 
-        void destroyView();
+        //void destroyView();
 
-        boolean isTextVisible();
 
-        boolean isSelectorsVisible();
     }
 
     ///////////////////////////////////////////////////////////////////////////////////
@@ -41,9 +40,7 @@ public interface Detail {
      */
 
     interface ViewToPresenter extends Presenter<PresenterToView> {
-        void onPublishClicked();
 
-        //void onStartingView();
     }
 
     /**
@@ -56,11 +53,6 @@ public interface Detail {
 
         void finishScreen();
 
-        void hideToolbar();
-
-
-        ;
-
         void setTitleLabel(String msg);
 
         void setIntroductionLabel(String msg);
@@ -69,7 +61,6 @@ public interface Detail {
 
         void setHourLabel(String msg);
 
-        void hideText();
 
 
     }
@@ -81,13 +72,9 @@ public interface Detail {
     interface PresenterToModel extends Model<ModelToPresenter> {
 
 
-        String getTitleLabel();
+        void setItemSelected(ProductData itemSelected);
 
-        String getDescriptionLabel();
-
-        String getDateLabel();
-
-        String getHourLabel();
+        ProductData getItemSelected();
     }
 
     /**
