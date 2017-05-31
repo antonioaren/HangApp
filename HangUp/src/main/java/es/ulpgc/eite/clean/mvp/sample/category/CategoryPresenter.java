@@ -77,6 +77,7 @@ public class CategoryPresenter
     @Override
     public void onBackPressed() {
         Log.d(TAG, "calling onBackPressed()");
+
     }
 
     /**
@@ -93,8 +94,6 @@ public class CategoryPresenter
         Log.d(TAG, "calling onDestroy()");
     }
 
-
-    ///////////////////////////////////////////////////////////////////////////////////
     // View To Presenter /////////////////////////////////////////////////////////////
 
     @Override
@@ -122,7 +121,6 @@ public class CategoryPresenter
         app.goToProductScreen(this);
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////
     // To Category //////////////////////////////////////////////////////////////////////
 
     @Override
@@ -137,9 +135,7 @@ public class CategoryPresenter
 
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////
     // Category To ///////////////////////////////////////////////////////////////////
-
 
     @Override
     public Context getManagedContext() {
@@ -150,7 +146,6 @@ public class CategoryPresenter
     public Context getAppContext() {
         return getApplication();
     }
-
 
     @Override
     public void destroyView() {

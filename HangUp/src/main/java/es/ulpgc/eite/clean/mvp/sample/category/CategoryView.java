@@ -83,9 +83,9 @@ public class CategoryView
         super.onResume(CategoryPresenter.class, this);
     }
 
+
     ///////////////////////////////////////////////////////////////////////////////////
     // Presenter To View /////////////////////////////////////////////////////////////
-
 
     @Override
     public void settingAdapter(List<CategoryData> items) {

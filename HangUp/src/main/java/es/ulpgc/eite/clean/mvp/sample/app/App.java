@@ -16,9 +16,8 @@ import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 import es.ulpgc.eite.clean.mvp.sample.data.repositories.ProductRepository;
 import es.ulpgc.eite.clean.mvp.sample.delete.Delete;
 import es.ulpgc.eite.clean.mvp.sample.delete.DeleteView;
-import es.ulpgc.eite.clean.mvp.sample.detail.Detail;
-import es.ulpgc.eite.clean.mvp.sample.detail.DetailPresenter;
-import es.ulpgc.eite.clean.mvp.sample.detail.DetailView;
+import es.ulpgc.eite.clean.mvp.sample.details.Detail;
+import es.ulpgc.eite.clean.mvp.sample.details.DetailView;
 import es.ulpgc.eite.clean.mvp.sample.product.Product;
 import es.ulpgc.eite.clean.mvp.sample.product.ProductView;
 import io.realm.Realm;
@@ -38,6 +37,7 @@ public class App extends Application implements Mediator, Navigator {
     private AddPartyState toAddState;
     private AddCategoryState toaddCategoryState;
     private DeleteState toDeleteState;
+
     private DeleteState ProductToDelete;
 
 

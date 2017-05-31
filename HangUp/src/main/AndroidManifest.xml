@@ -34,7 +34,7 @@
         </activity>
 
         <activity
-            android:name="es.ulpgc.eite.clean.mvp.sample.detail.DetailView"
+            android:name="es.ulpgc.eite.clean.mvp.sample.details.DetailView"
             android:label="Detail"
             android:theme="@style/AppTheme.NoActionBar">
 

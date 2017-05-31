@@ -6,8 +6,7 @@ import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategory;
 import es.ulpgc.eite.clean.mvp.sample.addParty.Add;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
 import es.ulpgc.eite.clean.mvp.sample.delete.Delete;
-import es.ulpgc.eite.clean.mvp.sample.detail.Detail;
-import es.ulpgc.eite.clean.mvp.sample.detail.DetailPresenter;
+import es.ulpgc.eite.clean.mvp.sample.details.Detail;
 import es.ulpgc.eite.clean.mvp.sample.product.Product;
 
 

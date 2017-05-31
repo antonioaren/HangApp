@@ -54,11 +54,7 @@ public class ProductPresenter
         //No llama al back del activity. Por eso creo otro llamado OnBackButtonPressed
         //Que sobreescribe el backpressed del activity.
     }
-    @Override
-    public void OnBackButtonPressed() {
-        Navigator app = (Navigator) getView().getApplication();
-        app.goToCategoryScreen(this);
-    }
+
     @Override
     public void onScreenStarted() {
         if (isViewRunning()) {

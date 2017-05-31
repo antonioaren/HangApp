@@ -1,16 +1,18 @@
-package es.ulpgc.eite.clean.mvp.sample.detail;
+package es.ulpgc.eite.clean.mvp.sample.details;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
+import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 
 /**
- * Created by eleonora on 17/04/2017.
+ * Created by Pedro Arenas on 31/5/17.
  */
 
-public class DetailModel extends GenericModel<Detail.ModelToPresenter> implements Detail.PresenterToModel {
-
+public class DetailModel extends GenericModel<Detail.ModelToPresenter>
+        implements Detail.PresenterToModel {
 
     private ProductData itemSelected;
+
 
     @Override
     public void onCreate(Detail.ModelToPresenter presenter) {
@@ -18,7 +20,8 @@ public class DetailModel extends GenericModel<Detail.ModelToPresenter> implement
     }
 
     @Override
-    public void onDestroy(boolean b) {
+    public void onDestroy(boolean isChangingConfiguration) {
+        super.onDestroy(isChangingConfiguration);
     }
 
     @Override

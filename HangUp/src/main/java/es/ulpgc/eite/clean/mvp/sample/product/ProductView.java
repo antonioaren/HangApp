@@ -70,11 +70,6 @@ public class ProductView
         super.onResume(ProductPresenter.class, this);
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        getPresenter().OnBackButtonPressed();
-    }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
