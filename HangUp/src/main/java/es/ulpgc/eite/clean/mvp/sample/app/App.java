@@ -13,7 +13,6 @@ import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.data.Repository;
-import es.ulpgc.eite.clean.mvp.sample.data.repositories.ProductRepository;
 import es.ulpgc.eite.clean.mvp.sample.delete.Delete;
 import es.ulpgc.eite.clean.mvp.sample.delete.DeleteView;
 import es.ulpgc.eite.clean.mvp.sample.details.Detail;
@@ -273,14 +272,6 @@ public class App extends Application implements Mediator, Navigator {
         public String placeOfTheParty;
         public String dateOfTheParty;
         public String hourOfParty;
-
-
-        Repository.ProductRepository.OnSaveProductCallback callback;
-
-
-        ProductRepository product;
-
-
     }
 
     private class AddCategoryState {

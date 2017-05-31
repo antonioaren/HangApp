@@ -29,7 +29,7 @@
         </android.support.design.widget.AppBarLayout>
 
         <include
-            layout="@layout/content_addparty2"/>
+            layout="@layout/content_addparty"/>
 
     </LinearLayout>
 

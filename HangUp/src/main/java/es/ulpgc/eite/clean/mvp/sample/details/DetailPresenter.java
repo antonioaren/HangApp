@@ -50,13 +50,31 @@ public class DetailPresenter
 
     @Override
     public void onScreenStarted() {
-
+        if (isViewRunning()) {
+            setHeaders();
+            setDataInTheScreen();
+        }
     }
-
 
     @Override
     public void setItemSelected(ProductData itemSelected) {
         getModel().setItemSelected(itemSelected);
+    }
+
+    private void setHeaders() {
+        getView().setHeaderPlace(getModel().getHeaderPlaceLabel());
+        getView().setHeaderDate(getModel().getHeaderDateLabel());
+        getView().setHeaderTimeInit(getModel().getHeaderTimeInitLabel());
+        getView().setHeaderTimeEnd(getModel().getHeaderTimeEndLabel());
+    }
+
+    private void setDataInTheScreen() {
+        getView().setEventName(getModel().getItemSelected().getProductName());
+        getView().setDetail(getModel().getItemSelected().getDetailText());
+        getView().setPlace(getModel().getItemSelected().getPlace());
+        getView().setDate(getModel().getItemSelected().getDate());
+        getView().setTimeInit(getModel().getItemSelected().getTimeI());
+        getView().setTimeEnd(getModel().getItemSelected().getTimeF());
     }
 
 
