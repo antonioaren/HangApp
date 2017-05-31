@@ -52,7 +52,7 @@ public interface Category {
      */
     interface PresenterToModel extends Model<ModelToPresenter> {
 
-        void CreateDatabaseTablesFromJson();
+        void CreateDatabaseTables();
 
         String getSearchLabel();
 

@@ -1,6 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
@@ -12,21 +13,15 @@ import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 import io.realm.RealmResults;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class CategoryPresenter
         extends GenericPresenter<Category.PresenterToView, Category.PresenterToModel,
         Category.ModelToPresenter, CategoryModel>
         implements Category.ViewToPresenter, Category.ModelToPresenter, Category.ToCategory, Category.CategoryTo {
 
-
-
     private CategoryData selectedItem;
     private String ItemId;
-    private String hour;
-    private String date;
-    private String place;
-
-    private Repository.CategoryRepository repository;
-
 
     /**
      * Operation called during VIEW creation in {@link GenericActivity#onResume(Class, Object)}
@@ -41,18 +36,21 @@ public class CategoryPresenter
         super.onCreate(CategoryModel.class, this);
         setView(view);
         Log.d(TAG, "calling onCreate()");
+//        CheckIfIsFirstTimeRunning();
         Mediator app = (Mediator) getView().getApplication();
         app.startingCategoryScreen(this);
-
-//      SharedPreferences pref =
-//              getAppContext().getSharedPreferences("es.ulpgc.eite.clean.mvp.sample", MODE_PRIVATE);
-//       if (pref.getBoolean("FirstRun", true)) {
-//           getModel().CreateDatabaseTables();
-//           pref.edit().putBoolean("FirstRun", false).apply();
     }
 
+    private void CheckIfIsFirstTimeRunning() {
+        SharedPreferences pref = getApplication().getSharedPreferences("PREF", MODE_PRIVATE);
+        SharedPreferences.Editor prefEditor = pref.edit();
 
-
+        if (pref.getBoolean("FirstRunning", true)) {
+            getModel().CreateDatabaseTables();
+            prefEditor.putBoolean("FirstRunning", false);
+            prefEditor.commit();
+        }
+    }
 
     /**
      * Operation called by VIEW after its reconstruction.
@@ -148,6 +146,11 @@ public class CategoryPresenter
         return getActivityContext();
     }
 
+    @Override
+    public Context getAppContext() {
+        return getApplication();
+    }
+
 
     @Override
     public void destroyView() {
@@ -188,10 +191,6 @@ public class CategoryPresenter
         app.goToProductScreen(this);
     }
 
-    @Override
-    public Context getAppContext() {
-        return getApplicationContext();
-    }
 
     @Override
     public void subscribeCallbacks() {

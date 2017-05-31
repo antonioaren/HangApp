@@ -22,20 +22,8 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
 
 
     private String placeLabel, dateLabel, timeInitLabel, timeFinishLabel, publishLabel, titleLabel;
-    private String description;
-    private int hourFinish;
-    private String day;
-    private int hourInit;
-    private String month;
-    private String place;
-    private int year;
-    private List<CategoryData> partyAdded;
-    private List<ProductData> party;
-    private Repository.ProductRepository.OnSaveProductCallback callback;
-    private ProductModel product;
     private String nameLabel;
     private String detailsLabel;
-    private Realm realmDatabase;
 
 
     public AddPartyModel() {
@@ -70,6 +58,7 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     public String getTitleLabel() {
         return this.titleLabel;
     }
+
     @Override
     public void setTitleLabel(String titleLabel) {
         this.titleLabel = titleLabel;
@@ -79,6 +68,7 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     public String getNameLabel() {
         return nameLabel;
     }
+
     @Override
     public void setNameLabel(String nameLabel) {
         this.nameLabel = nameLabel;
@@ -88,6 +78,7 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     public String getPlaceLabel() {
         return this.placeLabel;
     }
+
     @Override
     public void setPlaceLabel(String placeLabel) {
         this.placeLabel = placeLabel;
@@ -97,6 +88,7 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     public String getDateLabel() {
         return this.dateLabel;
     }
+
     @Override
     public void setDateLabel(String dateLabel) {
         this.dateLabel = dateLabel;
@@ -106,6 +98,7 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     public String getTimeInitLabel() {
         return this.timeInitLabel;
     }
+
     @Override
     public void setTimeInitLabel(String timeInitLabel) {
         this.timeInitLabel = timeInitLabel;
@@ -115,6 +108,7 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     public String getTimeFinishLabel() {
         return this.timeFinishLabel;
     }
+
     @Override
     public void setTimeFinishLabel(String timeFinishLabel) {
         this.timeFinishLabel = timeFinishLabel;
@@ -134,99 +128,11 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     public String getPublishBtnLabel() {
         return publishLabel;
     }
+
     @Override
     public void setPublishLabel(String publishLabel) {
         this.publishLabel = publishLabel;
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-    @Override
-    public String getPlaceOfTheParty() {
-        //return getPresenter().getPlace();
-        return place;
-    }
-
-    @Override
-    public String getDateOfTheParty() {
-        //String day = getPresenter().getDate();
-        //String month = getPresenter().getMonth();
-        //String year = String.valueOf(getPresenter().getYear());
-        String date = day + "" + month + "" + year;
-        return date;
-    }
-
-    @Override
-    public String getHourOfParty() {
-        //String hourInit = String.valueOf(getPresenter().getInitTIme());
-        //String hourFinish = String.valueOf(getPresenter().getFinishTime());
-        String hour = hourInit + "" + "-" + hourFinish;
-        return hour;
-    }
-
-    @Override
-    public void setDay(String day) {
-        this.day = day;
-    }
-
-    @Override
-    public void setHourOfFinish(int hour) {
-        hourFinish = hour;
-    }
-
-    @Override
-    public void setHourOfInit(int hour) {
-        hourInit = hour;
-    }
-
-    @Override
-    public void setMonth(String month) {
-        this.month = month;
-    }
-
-    @Override
-    public void setPlaceOfTheParty(String place) {
-        this.place = place;
-    }
-
-    @Override
-    public void setYear(int year) {
-        this.year=year;
-    }
-
-
-    @Override
-    public void setDescription(String description) {
-        this.description= description;
-    }
-
-    @Override
-    public String getDescription() {
-        return description;
-    }
-
-    @Override
-    public void insertEvent(final String id, final String name, final String place, final String date, final String hourInit, final String hourFinish) {
-
-        realmDatabase = Realm.getDefaultInstance();
-        realmDatabase.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-                ProductData event = realmDatabase.createObject(ProductData.class, UUID.randomUUID().toString());
-
-                event.setProductName(name);
-                event.setPlace(place);
-                event.setDate(date);
-                event.setTimeI(hourInit);
-                event.setTimeF(hourFinish);
-
-
-                CategoryData category = realm.where(CategoryData.class)
-                        .equalTo("id", id).findFirst();
-
-                category.getItemInfo().add(event);
-            }
-        });
-    }
 }

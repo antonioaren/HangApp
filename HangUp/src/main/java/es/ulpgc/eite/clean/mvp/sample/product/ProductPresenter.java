@@ -58,6 +58,12 @@ public class ProductPresenter
     }
 
     @Override
+    public void OnBackButtonPressed() {
+        Navigator app = (Navigator) getView().getApplication();
+        app.goToCategoryScreen(this);
+    }
+
+    @Override
     public void onScreenStarted() {
         if (isViewRunning()) {
             getView().setAddLabel(getModel().getAddLabel());
@@ -71,6 +77,11 @@ public class ProductPresenter
     @Override
     public void setItemSelected(CategoryData itemSelected) {
         getModel().setItem(itemSelected);
+    }
+
+    @Override
+    public ProductData getSelectedItem() {
+        return ItemSelected;
     }
 
     @Override
@@ -108,14 +119,11 @@ public class ProductPresenter
         app.gotoDeleteProductScreen(this);
     }
 
+
     @Override
     public Context getManagedContext() {
         return getActivityContext();
     }
 
-    @Override
-    public ProductData getSelectedItem() {
-        return ItemSelected;
-    }
 
 }

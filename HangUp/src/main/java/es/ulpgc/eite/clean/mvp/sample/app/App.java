@@ -9,6 +9,7 @@ import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategoryView;
 import es.ulpgc.eite.clean.mvp.sample.addParty.Add;
 import es.ulpgc.eite.clean.mvp.sample.addParty.AddPartyView;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
+import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.data.Repository;
@@ -26,6 +27,7 @@ public class App extends Application implements Mediator, Navigator {
 
 
     private CategoryState toCategoryState;
+
     private ProductState CategoryToProduct;
     private ProductState AddToProduct;
 
@@ -158,6 +160,17 @@ public class App extends Application implements Mediator, Navigator {
         if (view != null) {
             view.startActivity(new Intent(view, DeleteView.class));
         }
+    }
+
+    @Override
+    public void goToCategoryScreen(Product.ProductTo presenter) {
+        //toCategoryState = new CategoryState();
+
+        Context view = presenter.getManagedContext();
+        if (view != null) {
+            view.startActivity(new Intent(view, CategoryView.class));
+        }
+
     }
 
     @Override

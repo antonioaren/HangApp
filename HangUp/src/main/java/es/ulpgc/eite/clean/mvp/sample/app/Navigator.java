@@ -4,6 +4,7 @@ import es.ulpgc.eite.clean.mvp.sample.addParty.Add;
 import es.ulpgc.eite.clean.mvp.sample.addParty.AddPartyPresenter;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
 import es.ulpgc.eite.clean.mvp.sample.product.Product;
+import es.ulpgc.eite.clean.mvp.sample.product.ProductPresenter;
 
 public interface Navigator {
 
@@ -15,4 +16,6 @@ public interface Navigator {
     void gotoDeleteProductScreen(Product.ProductTo presenter);
     void goToDeleteScreen(Category.CategoryTo presenter);
 
+
+    void goToCategoryScreen(Product.ProductTo presenter);
 }

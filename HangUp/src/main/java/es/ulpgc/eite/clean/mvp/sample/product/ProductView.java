@@ -72,6 +72,14 @@ public class ProductView
     }
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        getPresenter().OnBackButtonPressed();
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    @Override
     public void setAddLabel(String msg) {
         buttonAdd.setText(msg);
     }

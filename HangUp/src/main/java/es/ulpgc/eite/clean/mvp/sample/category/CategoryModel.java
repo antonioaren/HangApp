@@ -1,5 +1,8 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
+import android.content.ContentProvider;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 
 import java.util.UUID;
@@ -13,6 +16,7 @@ import io.realm.RealmConfiguration;
 import io.realm.RealmResults;
 
 import static android.R.attr.id;
+import static android.content.Context.MODE_PRIVATE;
 
 
 public class CategoryModel extends GenericModel<Category.ModelToPresenter>
@@ -22,24 +26,12 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     private String HangAppButtonAddLabel;
     private RealmResults<CategoryData> itemsDatabase;
 
-
-    private boolean usingWrapper;
     private Realm realmDatabase;
-
-
-  //  private Random randomAssistance1, randomAssistance2, randomAssistance3, randomAssistance4, randomAssistance5;
     private int[] participants;
-    private boolean isFirstTime;
-
 
     public CategoryModel() {
-//        randomAssistance1 = new Random();
-//        randomAssistance2 = new Random();
-//        randomAssistance3 = new Random();
-//        randomAssistance4 = new Random();
-//        randomAssistance5 = new Random();
         participants = new int[]{
-               1,2,3,4,5};
+                1, 2, 3, 4, 5};
 
     }
 
@@ -59,37 +51,34 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         RealmConfiguration setting = new RealmConfiguration.Builder().build();
         Realm.setDefaultConfiguration(setting);
 
-            CreateDatabaseTablesFromJson();
-        }
+        //CheckIfIsFirstTimeRunning();
+        CreateDatabaseTables();
 
-
-
-//        SharedPreferences pref =
-//                ((Category.CategoryTo)presenter).getManagedContext().getSharedPreferences("es.ulpgc.eite.clean.mvp.sample", MODE_PRIVATE);
-//        if (pref.getBoolean("FirstRun", true)) {
-//            CreateDatabaseTables();
-//            pref.edit().putBoolean("FirstRun", false).commit();
-
-
-
-
-
-
+    }
 
     ///////////////////////////////////////////////////////////////////////////////////
 
-
     @Override
-    public void CreateDatabaseTablesFromJson() {
-        Log.d("PruebaPasaDatos", "CreateDatabaseTables()");
-       // Realm.init(this);
+    public void CreateDatabaseTables() {
+        Log.d(TAG, "CreateDatabaseTables()");
         insertEvent("Fiestas", R.drawable.disco);
         insertEvent("Música", R.drawable.musica);
         insertEvent("ULPGC", R.drawable.ulpgc);
         insertEvent("Astronomía", R.drawable.astro);
         insertEvent("Automovilismo", R.drawable.cars);
+    }
 
+    private void CheckIfIsFirstTimeRunning() {
+        Log.d(TAG, "CheckIfIsFirstTimeRunning");
 
+        SharedPreferences pref = getPresenter().getAppContext().getSharedPreferences("PREF", MODE_PRIVATE);
+        SharedPreferences.Editor prefEditor = pref.edit();
+
+        if (pref.getBoolean("FirstRunning", true)) {
+            CreateDatabaseTables();
+            prefEditor.putBoolean("FirstRunning", false);
+            prefEditor.commit();
+        }
     }
 
     /**
@@ -125,16 +114,18 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     @Override
     public RealmResults<CategoryData> getEvents() {
-   Log.d(TAG, "getEvent()");
+        Log.d(TAG, "getEvent()");
         RealmResults<CategoryData> results = realmDatabase.where(CategoryData.class).findAll();
         return results;
     }
+
     @Override
     public int getNumberOfEvents() {
 
-      return getEvents().size();
+        return getEvents().size();
 
     }
+
     @Override
     public void setItemsFromDatabase() {
         itemsDatabase = realmDatabase.where(CategoryData.class).findAll();
@@ -145,14 +136,14 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         realmDatabase = Realm.getDefaultInstance();
         realmDatabase.executeTransaction(new Realm.Transaction() {
             @Override
-           public void execute(Realm realm) {
-               CategoryData event = realmDatabase.createObject(CategoryData.class, UUID.randomUUID().toString());
+            public void execute(Realm realm) {
+                CategoryData event = realmDatabase.createObject(CategoryData.class, UUID.randomUUID().toString());
 
-               event.setCategoryName(Categoryname);
-               event.setImage(image);
-   }
+                event.setCategoryName(Categoryname);
+                event.setImage(image);
+            }
 
-       });
+        });
 
     }
 
@@ -177,11 +168,11 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     }
 
     public void setSearchLabel(String label) {
-     this.HangAppButtonSearchLabel=label;
+        this.HangAppButtonSearchLabel = label;
     }
 
     public void setAddLabel(String label) {
-    this.HangAppButtonAddLabel=label;
+        this.HangAppButtonAddLabel = label;
     }
 
 

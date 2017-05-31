@@ -26,20 +26,9 @@ public interface Add {
     interface AddTo {
         Context getManagedContext();
 
-
-
         void destroyView();
 
-
         ProductData getProductAddedView();
-
-        String getNameOfTheParty();
-
-        String getPlaceOfTheParty();
-
-        String getDateOfTheParty();
-
-        String getHourOfParty();
     }
 
 
@@ -100,8 +89,6 @@ public interface Add {
 
     interface PresenterToModel extends Model<ModelToPresenter> {
 
-        String getDescription();
-
         String getNameLabel();
 
         void setNameLabel(String nameLabel);
@@ -120,7 +107,6 @@ public interface Add {
 
         String getTimeFinishLabel();
 
-        String getTitleLabel();
 
         void setPlaceLabel(String placeLabel);
 
@@ -132,33 +118,16 @@ public interface Add {
 
         void setPublishLabel(String publishLabel);
 
+        String getTitleLabel();
+
         void setTitleLabel(String titleLabel);
 
-        String getPlaceOfTheParty();
-
-        String getDateOfTheParty();
-
-        String getHourOfParty();
-
-
-        void setDay(String day);
-
-        void setHourOfFinish(int hour);
-
-        void setHourOfInit(int hour);
-
-        void setMonth(String month);
-
-        void setPlaceOfTheParty(String place);
-
-        void setYear(int year);
 
 
 
-        void setDescription(String description);
 
 
-        void insertEvent(String id, String name, String place, String date, String hourInit, String hourFinish);
+
     }
 
     /**

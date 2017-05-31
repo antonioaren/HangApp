@@ -36,6 +36,9 @@ public interface Product {
         void onButtonAddClicked();
 
         void onButtonDeleteClicked();
+
+        void OnBackButtonPressed();
+
     }
 
     public interface PresenterToModel {
@@ -50,9 +53,7 @@ public interface Product {
 
         String getAddLabel();
 
-        void CreateDatabaseTables();
 
-        void setItemsFromDatabase();
 
         String getDeleteLabel();
 

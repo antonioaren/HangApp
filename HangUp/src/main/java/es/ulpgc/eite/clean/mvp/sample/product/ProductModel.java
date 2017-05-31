@@ -1,14 +1,11 @@
 package es.ulpgc.eite.clean.mvp.sample.product;
 
-import android.util.Log;
 
 import java.util.UUID;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
-import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
-import es.ulpgc.eite.clean.mvp.sample.data.module.RealmTable;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 import io.realm.RealmList;
@@ -22,6 +19,7 @@ import static android.R.attr.id;
 
 public class ProductModel extends GenericModel<Product.ModelToPresenter>
         implements Product.PresenterToModel {
+
     private Realm realmDatabase;
     private CategoryData Item;
     private String addlabel;
@@ -48,10 +46,14 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     public CategoryData getItem() {
         return Item;
     }
-
     @Override
     public void setItem(CategoryData itemSelected) {
         Item = itemSelected;
+    }
+
+    @Override
+    public String getItemId() {
+        return itemId;
     }
 
     @Override
@@ -62,11 +64,6 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     @Override
     public void setProductToAddFromAddAndInsert(ProductData productToAdd) {
         AddProductByCategoryId(productToAdd, itemId);
-    }
-
-    @Override
-    public String getItemId() {
-        return itemId;
     }
 
     @Override
@@ -92,19 +89,15 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
         });
     }
 
-
     @Override
-    public void CreateDatabaseTables() {
-        //insertProduct(R.drawable.disco, "verbena", "1000","");
-        //insertProduct(R.drawable.astro, "concierto", "30000000","");
+    public RealmList<ProductData> getAllProductsByCategoryId(final String CategoryId) {
+        realmDatabase = Realm.getDefaultInstance();
+        CategoryData category = realmDatabase.where(CategoryData.class).
+                equalTo("id", CategoryId).findFirst();
+        RealmList<ProductData> products = category.getItemInfo();
+        return products;
     }
 
-    @Override
-    public void setItemsFromDatabase() {
-        //Me los da todos
-        //itemsDatabase = realmDatabase.where(ProductData.class).findAll();
-        //TODO que me de los que de esa categoría.
-    }
 
     public void deteleEvent() {
         realmDatabase.executeTransaction(new Realm.Transaction() {
@@ -126,12 +119,5 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
         return deleteLabel;
     }
 
-    @Override
-    public RealmList<ProductData> getAllProductsByCategoryId(final String CategoryId) {
-        realmDatabase = Realm.getDefaultInstance();
-        CategoryData category = realmDatabase.where(CategoryData.class).
-                equalTo("id", CategoryId).findFirst();
-        RealmList<ProductData> products = category.getItemInfo();
-        return products;
-    }
+
 }
