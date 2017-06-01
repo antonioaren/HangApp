@@ -32,7 +32,6 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     public CategoryModel() {
         participants = new int[]{
                 1, 2, 3, 4, 5};
-
     }
 
     /**
@@ -51,7 +50,11 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         RealmConfiguration setting = new RealmConfiguration.Builder().build();
         Realm.setDefaultConfiguration(setting);
 
+        //TODO Error al crear el objeto SharedPreferences.
         //CheckIfIsFirstTimeRunning();
+
+        //Comentar esto y descomentar el metodo que se llama justo arriba de este
+        //Para saber si se ha corrido la primera vez.
         CreateDatabaseTables();
 
     }
@@ -68,14 +71,18 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         insertEvent("Automovilismo", R.drawable.cars);
     }
 
+    //TODO Usarlo, resolver problema objeto.
     private void CheckIfIsFirstTimeRunning() {
         Log.d(TAG, "CheckIfIsFirstTimeRunning");
 
         SharedPreferences pref = getPresenter().getAppContext().getSharedPreferences("PREF", MODE_PRIVATE);
         SharedPreferences.Editor prefEditor = pref.edit();
 
-        if (pref.getBoolean("FirstRunning", true)) {
+        //Si no está creado "FirstRunning", crear la base de datos, si está creado significa que ya
+        //está creada la base de datos.
+        if (!pref.getBoolean("FirstRunning", true)) {
             CreateDatabaseTables();
+            //Crear boolean y hacer commit.
             prefEditor.putBoolean("FirstRunning", false);
             prefEditor.commit();
         }

@@ -41,8 +41,6 @@ public class CategoryView
         setContentView(R.layout.activity_category);
 
         Realm.init(this);
-        title = (TextView) findViewById(R.id.title);
-        image = (ImageView) findViewById(R.id.image);
 
         recycler = (RecyclerView) findViewById(R.id.recycler);
         recycler.setHasFixedSize(true);
