@@ -1,5 +1,6 @@
 package es.ulpgc.eite.clean.mvp.sample;
 
+import android.support.test.espresso.Espresso;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
@@ -46,10 +47,15 @@ public class EspressoTest  {
         onView(withId(R.id.buttonSearch)).check(matches(isDisplayed()));
 
 
+    }
+
+    @Test
+    public void testClickingAnItemAtSpecificPositionInRecyclerView() throws Exception {
+        Espresso.onView(ViewMatcher.withId(R.id.recycler)).perform(RecyclerViewAction.actionOnItemAtPosition());
 
     }
      @Test
-    public void testOnAddClickedFromMainScreen(){
+     public void testOnAddClickedFromMainScreen() {
          onView(withId(R.id.buttonAdd)).perform(click());
      //actualizando test
          onView(withId(R.id.textPhoto)).check(matches(isDisplayed()));
@@ -162,5 +168,6 @@ public class EspressoTest  {
             }
         });
     }
+
 }
 

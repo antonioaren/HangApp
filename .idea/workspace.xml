@@ -11,19 +11,10 @@
   <component name="ChangeListManager">
     <list id="6a18f264-77ba-466d-b7a7-0d52df6a7436" name="Default" comment="Merge remote-tracking branch 'origin/eleonoraBack'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/3.3/taskArtifacts/fileHashes.bin&#10;#&#9;.gradle/3.3/taskArtifacts/fileSnapshots.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.lock&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/App.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Mediator.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangApp.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangAppModel.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/Information.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationPresenter.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchView.java&#10;#&#9;HangUp/src/main/res/layout/activity_procesed_search.xml&#10;#&#9;HangUp/src/main/res/layout/content_hangapp.xml&#10;#&#9;HangUp/src/main/res/layout/content_procesed_search.xml&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Navigator.java&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/hangapp/HangAppView.java&#10;#&#9;HelloApp/src/main/res/layout/activity_filalista.xml&#10;#&#9;HelloApp/src/main/res/layout/activity_procesed_search.xml&#10;" />
     <list id="3d65f56d-93c6-4520-9708-4d2cd763dfec" name="Failed commit: Default" comment="Cambios Merges.&#10;" />
-    <list default="true" id="72c31ec8-3076-4782-a780-40cb8c2c6568" name="Failed commit: Default (2)" comment="Complementado el detalle. Paso de estado del producto al detalle. Con lo cual podemos poner los datos que han sido elegidos por el cliente.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/CleanMvpLib_unspecified.xml" afterPath="$PROJECT_DIR$/.idea/libraries/CleanMvpLib_unspecified.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/espresso_core_2_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/espresso_core_2_2_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/espresso_idling_resource_2_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/espresso_idling_resource_2_2_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/exposed_instrumentation_api_publish_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/exposed_instrumentation_api_publish_0_5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/rules_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/rules_0_5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/runner_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/runner_0_5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations/HangApp.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/HangApp.xml" />
+    <list default="true" id="72c31ec8-3076-4782-a780-40cb8c2c6568" name="Failed commit: Default (2)" comment="controlando test con espresso,por ahora todos pasan">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/HangUp.iml" afterPath="$PROJECT_DIR$/HangUp/HangUp.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/build.gradle" afterPath="$PROJECT_DIR$/HangUp/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java" afterPath="$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
     </list>
     <ignored path="HangApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,34 +59,59 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddPartyPresenter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddPartyPresenter.java">
+      <file leaf-file-name="EspressoTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1241">
-              <caret line="84" column="7" selection-start-line="84" selection-start-column="7" selection-end-line="84" selection-end-column="7" />
+            <state relative-caret-position="195">
+              <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1861#1862#0" expanded="false" />
-                <element signature="e#1904#1905#0" expanded="false" />
-                <element signature="e#2327#2328#0" expanded="false" />
-                <element signature="e#2365#2366#0" expanded="false" />
-                <element signature="e#2427#2428#0" expanded="false" />
-                <element signature="e#2457#2458#0" expanded="false" />
+                <element signature="e#5727#6204#0" expanded="true" />
+                <element signature="e#6203#6204#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EspressoTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="148" column="0" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
-              <folding>
-                <element signature="e#5459#5932#0" expanded="true" />
-                <element signature="e#5931#5932#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CleanMvpLib/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HangUp/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-57">
+              <caret line="40" column="77" selection-start-line="40" selection-start-column="77" selection-end-line="40" selection-end-column="77" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="content_product.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/content_product.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-215">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
           </provider>
         </entry>
       </file>
@@ -157,63 +173,6 @@
                 <element signature="e#1321#1322#0" expanded="false" />
                 <element signature="e#1362#1363#0" expanded="false" />
                 <element signature="method#setProductsAvailables#0;class#CategoryData#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Navigator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Navigator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/App.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1394">
-              <caret line="139" column="27" selection-start-line="139" selection-start-column="27" selection-end-line="139" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="method#onCreate#0;class#App#0" expanded="false" />
-                <element signature="e#1729#1730#0" expanded="false" />
-                <element signature="e#1775#1776#0" expanded="false" />
-                <element signature="method#startingCategoryScreen#0;class#App#0" expanded="false" />
-                <element signature="method#startingDeleteScreen#0;class#App#0" expanded="false" />
-                <element signature="method#startingAddScreen#0;class#App#0" expanded="false" />
-                <element signature="method#startingAddCategoryScreen#0;class#App#0" expanded="false" />
-                <element signature="method#goToProductScreen#0;class#App#0" expanded="false" />
-                <element signature="method#goDetailScreen#0;class#App#0" expanded="false" />
-                <element signature="method#goToDeleteScreen#0;class#App#0" expanded="false" />
-                <element signature="method#goToCategoryScreen#0;class#App#0" expanded="false" />
-                <element signature="method#gotoDeleteProductScreen#0;class#App#0" expanded="false" />
-                <element signature="method#goToAddCategoryScreen#0;class#App#0" expanded="false" />
-                <element signature="method#goToAddPartyScreen#0;class#App#0" expanded="false" />
-                <element signature="method#SaveDataFromAddParty#0;class#App#0" expanded="false" />
-                <element signature="method#deleteEvent#0;class#App#0" expanded="false" />
-                <element signature="class#CategoryState#0;class#App#0" expanded="false" />
-                <element signature="class#ProductState#0;class#App#0" expanded="false" />
-                <element signature="class#DetailState#0;class#App#0" expanded="false" />
-                <element signature="class#DeleteState#0;class#App#0" expanded="false" />
-                <element signature="class#AddCategoryState#0;class#App#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Add.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/Add.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -2359,7 +2318,6 @@
         <option value="$PROJECT_DIR$/HangUp/src/main/res/layout/content_product.xml" />
         <option value="$PROJECT_DIR$/HangUp/src/main/res/layout/content_addparty.xml" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/util/DateFormatter.java" />
-        <option value="$PROJECT_DIR$/HangUp/build.gradle" />
         <option value="$PROJECT_DIR$/HangUp/src/main/res/layout/activity_addparty.xml" />
         <option value="$PROJECT_DIR$/HangUp/src/main/res/layout/activity_category.xml" />
         <option value="$PROJECT_DIR$/HangUp/src/main/res/layout/activity_product.xml" />
@@ -2406,6 +2364,7 @@
         <option value="$PROJECT_DIR$/HangUp/build/intermediates/res/merged/androidTest/debug/values/values.xml" />
         <option value="$PROJECT_DIR$/HangUp/build/generated/source/buildConfig/androidTest/debug/es/ulpgc/eite/android/clean/mvp/Add/test/BuildConfig.java" />
         <option value="$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java" />
+        <option value="$PROJECT_DIR$/HangUp/build.gradle" />
       </list>
     </option>
   </component>
@@ -2471,6 +2430,10 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="HangApp" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gradle Scripts" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2606,6 +2569,24 @@
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HangApp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HangUp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -2703,6 +2684,12 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HangApp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -2732,7 +2719,7 @@
       <recent name="es.ulpgc.eite.clean.mvp.sample.util" />
     </key>
   </component>
-  <component name="RunManager" selected="Android Instrumented Tests.insertEventTestBef...()">
+  <component name="RunManager" selected="Android Instrumented Tests.testClickingAnItem...()">
     <configuration default="false" name="testgetParties()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
       <module name="HangUp" />
       <option name="TESTING_TYPE" value="3" />
@@ -2813,6 +2800,31 @@
       <option name="TESTING_TYPE" value="3" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="android.support.test.runner.AndroidJUnitRunner" />
       <option name="METHOD_NAME" value="insertEventTestBeforeStartingApplication" />
+      <option name="CLASS_NAME" value="es.ulpgc.eite.clean.mvp.sample.EspressoTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <method />
+    </configuration>
+    <configuration default="false" name="testClickingAnItem...()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+      <module name="HangUp" />
+      <option name="TESTING_TYPE" value="3" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="android.support.test.runner.AndroidJUnitRunner" />
+      <option name="METHOD_NAME" value="testClickingAnItemAtSpecificPositionInRecyclerView" />
       <option name="CLASS_NAME" value="es.ulpgc.eite.clean.mvp.sample.EspressoTest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="EXTRA_OPTIONS" value="" />
@@ -3050,19 +3062,21 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method />
     </configuration>
-    <list size="6">
+    <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Android App.HangApp" />
       <item index="1" class="java.lang.String" itemvalue="Android App.HangUp" />
       <item index="2" class="java.lang.String" itemvalue="Android Instrumented Tests.testgetParties()" />
       <item index="3" class="java.lang.String" itemvalue="Android Instrumented Tests.SearchEventTest()" />
       <item index="4" class="java.lang.String" itemvalue="Android Instrumented Tests.DeleteEventTest()" />
       <item index="5" class="java.lang.String" itemvalue="Android Instrumented Tests.insertEventTestBef...()" />
+      <item index="6" class="java.lang.String" itemvalue="Android Instrumented Tests.testClickingAnItem...()" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Android Instrumented Tests.insertEventTestBef...()" />
-        <item index="1" class="java.lang.String" itemvalue="Android Instrumented Tests.SearchEventTest()" />
-        <item index="2" class="java.lang.String" itemvalue="Android Instrumented Tests.DeleteEventTest()" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Android Instrumented Tests.testClickingAnItem...()" />
+        <item index="1" class="java.lang.String" itemvalue="Android Instrumented Tests.insertEventTestBef...()" />
+        <item index="2" class="java.lang.String" itemvalue="Android Instrumented Tests.SearchEventTest()" />
+        <item index="3" class="java.lang.String" itemvalue="Android Instrumented Tests.DeleteEventTest()" />
       </list>
     </recent_temporary>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -3135,13 +3149,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1490022965325</updated>
-    </task>
-    <task id="LOCAL-00047" summary="probando a emular la ppa con nuevo contenido">
-      <created>1493409692632</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1493409692632</updated>
     </task>
     <task id="LOCAL-00048" summary="modificando activity_item_detail">
       <created>1493410026936</created>
@@ -3479,7 +3486,14 @@
       <option name="project" value="LOCAL" />
       <updated>1496267161511</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="controlando test con espresso,por ahora todos pasan">
+      <created>1496512611107</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1496512611107</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -3498,17 +3512,17 @@
     <history-entry file="insertEventTestBef___() - 2017.06.03 at 18h 51m 43s.xml">
       <configuration name="insertEventTestBef...()" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="testgetParties() - 2017.04.26 at 21h 05m 43s.xml">
-      <configuration name="testgetParties()" configurationId="AndroidTestRunConfigurationType" />
+    <history-entry file="testClickingAnItem___() - 2017.06.03 at 19h 20m 28s.xml">
+      <configuration name="testClickingAnItem...()" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="testgetParties() - 2017.04.26 at 21h 14m 53s.xml">
-      <configuration name="testgetParties()" configurationId="AndroidTestRunConfigurationType" />
+    <history-entry file="testClickingAnItem___() - 2017.06.03 at 19h 28m 30s.xml">
+      <configuration name="testClickingAnItem...()" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="testgetParties() - 2017.04.26 at 21h 23m 55s.xml">
-      <configuration name="testgetParties()" configurationId="AndroidTestRunConfigurationType" />
+    <history-entry file="testClickingAnItem___() - 2017.06.03 at 19h 34m 05s.xml">
+      <configuration name="testClickingAnItem...()" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="testgetParties() - 2017.04.26 at 21h 29m 38s.xml">
-      <configuration name="testgetParties()" configurationId="AndroidTestRunConfigurationType" />
+    <history-entry file="testClickingAnItem___() - 2017.06.03 at 19h 36m 54s.xml">
+      <configuration name="testClickingAnItem...()" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
     <history-entry file="testgetParties() - 2017.04.26 at 21h 32m 43s.xml">
       <configuration name="testgetParties()" configurationId="AndroidTestRunConfigurationType" />
@@ -3534,6 +3548,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40967742" sideWeight="0.50646204" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.7419355" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="-1916" y="-258" width="1898" height="1016" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900763" sideWeight="0.49317408" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32764506" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11290322" sideWeight="0.49353796" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43515357" sideWeight="0.3489499" order="10" side_tool="false" content_ui="tabs" />
@@ -3558,7 +3573,6 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900763" sideWeight="0.49317408" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8548387" sideWeight="0.49394855" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -3574,7 +3588,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="procesada la informacion en addPartyModel para que construya la fecha y horario de una fiesta" />
     <MESSAGE value="captando los valores de los campos de texto cuando no hemos insertado nada" />
     <MESSAGE value="reformando metodo de publicar" />
     <MESSAGE value="creando listas de Category e InformationData y los getters" />
@@ -3599,7 +3612,8 @@
     <MESSAGE value="Error con el back de detail. Hago el paso del item seleccionado, solo falta implementar los texto." />
     <MESSAGE value="Arreglado Detalle a lo heavy. Se ha vuelto a rehacer dado que no necesitaba tanta implementación. Ahora el Back Funciona correctamente." />
     <MESSAGE value="Complementado el detalle. Paso de estado del producto al detalle. Con lo cual podemos poner los datos que han sido elegidos por el cliente." />
-    <option name="LAST_COMMIT_MESSAGE" value="Complementado el detalle. Paso de estado del producto al detalle. Con lo cual podemos poner los datos que han sido elegidos por el cliente." />
+    <MESSAGE value="controlando test con espresso,por ahora todos pasan" />
+    <option name="LAST_COMMIT_MESSAGE" value="controlando test con espresso,por ahora todos pasan" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -3612,21 +3626,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddPartyView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="718">
-          <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/Category.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="52" column="64" selection-start-line="52" selection-start-column="64" selection-end-line="52" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.android/build-cache/143418f00be79c9c3ecb97305aed8fdc4ff4533c/output/jars/classes.jar!/es/ulpgc/eite/clean/mvp/GenericPresenter.class" />
     <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/content_addparty.xml" />
     <entry file="file://$PROJECT_DIR$/HangUp/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml" />
     <entry file="file://$USER_HOME$/.android/build-cache/3dcf7fc42cc5d1b1993ca5dcc90519fbe5f56770/output/res/layout/abc_popup_menu_item_layout.xml" />
@@ -3676,16 +3675,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/card_category.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/content_product.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -4051,14 +4040,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/content_product.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-215">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="148" column="0" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
+        <state relative-caret-position="195">
+          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding>
-            <element signature="e#5459#5932#0" expanded="true" />
-            <element signature="e#5931#5932#0" expanded="true" />
+            <element signature="e#5727#6204#0" expanded="true" />
+            <element signature="e#6203#6204#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CleanMvpLib/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-57">
+          <caret line="40" column="77" selection-start-line="40" selection-start-column="77" selection-end-line="40" selection-end-column="77" />
+          <folding />
         </state>
       </provider>
     </entry>
