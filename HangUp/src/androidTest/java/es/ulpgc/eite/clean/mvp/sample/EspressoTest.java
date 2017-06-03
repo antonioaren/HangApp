@@ -1,13 +1,9 @@
 package es.ulpgc.eite.clean.mvp.sample;
 
-import android.support.test.espresso.Espresso;
 import android.support.test.rule.ActivityTestRule;
-import android.support.test.runner.AndroidJUnit4;
 
-import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
@@ -25,20 +21,14 @@ import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
-
 /**
  * Created by eleonora on 24/05/2017.
  */
-@RunWith(AndroidJUnit4.class)
+
 public class EspressoTest  {
-    private static final String MESSAGE = "This is a test";
-    private static final String PACKAGE_NAME = "es.ulpgc.eite.clean.mvp.sample";
 
     @Rule public final ActivityTestRule<CategoryView> presenter= new ActivityTestRule<>(CategoryView.class);
-    @Before
-    public void setup() {
 
-    }
 
 
     @Test
@@ -51,7 +41,10 @@ public class EspressoTest  {
 
     @Test
     public void testClickingAnItemAtSpecificPositionInRecyclerView() throws Exception {
-        Espresso.onView(ViewMatcher.withId(R.id.recycler)).perform(RecyclerViewAction.actionOnItemAtPosition());
+
+        onView(withId(R.id.recycler))
+                .perform(RecyclerViewActions.actionOnItemAtPosition(3, click()));
+// Click item at position 3
 
     }
      @Test
@@ -98,12 +91,12 @@ public class EspressoTest  {
         onView(withId(R.id.buttonAdd)).perform(click());
         // Types a message into a EditText element.
         onView(withId(R.id.content_name))
-                .perform(typeText(MESSAGE), closeSoftKeyboard());
+                .perform(typeText("hello"), closeSoftKeyboard());
 
         // Clicks a button to send the message to another
         // activity through an explicit intent.
         onView(withId(R.id.buttonAdd2)).perform(click());
-        onView(withText(MESSAGE)).check(matches(isDisplayed()));
+        onView(withText("hello")).check(matches(isDisplayed()));
         // Verifies that the DisplayMessageActivity received an intent
         // with the correct package name and message.
 
