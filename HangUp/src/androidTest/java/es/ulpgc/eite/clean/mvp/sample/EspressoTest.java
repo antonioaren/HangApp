@@ -41,6 +41,42 @@ public class EspressoTest  {
     }
 
     @Test
+    public void testOnAddClickedFromMainScreen() {
+        onView(withId(R.id.buttonAdd)).perform(click());
+        //actualizando test
+        onView(withId(R.id.textPhoto)).check(matches(isDisplayed()));
+        onView(withId(R.id.textName)).check(matches(isDisplayed()));
+        onView(withId(R.id.radioGroup)).check(matches(isDisplayed()));
+        onView(withId(R.id.content_name)).check(matches(isDisplayed()));
+        onView(withId(R.id.buttonAdd2)).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void testOnAddClickeFromAddCategoryScreen() {
+        //the test starts at main screen
+        onView(withId(R.id.buttonAdd)).perform(click());
+        onView(withId(R.id.buttonAdd2)).check(matches(isDisplayed()));
+        onView(withId(R.id.buttonAdd2)).perform(click());
+        //actualizando test
+
+        onView(withId(R.id.recycler)).check(matches(isDisplayed()));
+
+        onView(withId(R.id.buttonSearch)).check(matches(isDisplayed()));
+        onView(withId(R.id.buttonAdd)).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void testOnSearchCliked() throws Exception {
+        onView(withId(R.id.buttonSearch)).perform(click());
+        onView(withId(R.id.delete)).check(matches(isDisplayed()));
+        onView(withId(R.id.deleteId)).check(matches(isDisplayed()));
+        onView(withId(R.id.text)).check(matches(isDisplayed()));
+        onView(withId(R.id.text2)).check(matches(isDisplayed()));
+        onView(withId(R.id.editText)).check(matches(isDisplayed()));
+        onView(withId(R.id.editText2)).check(matches(isDisplayed()));
+
+    }
+    @Test
     public void testClickingAnItemAtSpecificPositionInRecyclerView() throws Exception {
 
         onView(withId(R.id.recycler))
@@ -51,6 +87,23 @@ public class EspressoTest  {
 
     }
 
+    @Test
+    public void verifyMessageSentToMainActivity() {
+
+
+        onView(withId(R.id.buttonAdd)).perform(click());
+        // Types a message into a EditText element.
+        onView(withId(R.id.content_name))
+                .perform(typeText("hello"), closeSoftKeyboard());
+
+        // Clicks a button to send the message to another
+        // activity through an explicit intent.
+        onView(withId(R.id.buttonAdd2)).perform(click());
+        onView(withText("hello")).check(matches(isDisplayed()));
+        // Verifies that the DisplayMessageActivity received an intent
+        // with the correct package name and message.
+
+    }
     @Test
     public void testInsertingANewPartyInACategory() throws Exception {
 
@@ -78,63 +131,15 @@ public class EspressoTest  {
         onView(withText("anime convention")).check(matches(isDisplayed()));
         // Verifies that the DisplayMessageActivity received an intent
         // with the correct package name and message.
-// Click item at position 3
 
-    }
-     @Test
-     public void testOnAddClickedFromMainScreen() {
-         onView(withId(R.id.buttonAdd)).perform(click());
-     //actualizando test
-         onView(withId(R.id.textPhoto)).check(matches(isDisplayed()));
-         onView(withId(R.id.textName)).check(matches(isDisplayed()));
-         onView(withId(R.id.radioGroup)).check(matches(isDisplayed()));
-         onView(withId(R.id.content_name)).check(matches(isDisplayed()));
-         onView(withId(R.id.buttonAdd2)).check(matches(isDisplayed()));
-     }
-    @Test
-    public void testOnSearchCliked()throws Exception{
-        onView(withId(R.id.buttonSearch)).perform(click());
-        onView(withId(R.id.delete)).check(matches(isDisplayed()));
-        onView(withId(R.id.deleteId)).check(matches(isDisplayed()));
-        onView(withId(R.id.text)).check(matches(isDisplayed()));
-        onView(withId(R.id.text2)).check(matches(isDisplayed()));
-        onView(withId(R.id.editText)).check(matches(isDisplayed()));
-        onView(withId(R.id.editText2)).check(matches(isDisplayed()));
 
-    }
-    @Test
-    public void testOnAddClickeFromAddCategoryScreen(){
-      //the test starts at main screen
-       onView(withId(R.id.buttonAdd)).perform(click());
-        onView(withId(R.id.buttonAdd2)).check(matches(isDisplayed()));
-        onView(withId(R.id.buttonAdd2)).perform(click());
-        //actualizando test
-
-        onView(withId(R.id.recycler)).check(matches(isDisplayed()));
-
-        onView(withId(R.id.buttonSearch)).check(matches(isDisplayed()));
-        onView(withId(R.id.buttonAdd)).check(matches(isDisplayed()));
     }
 
 
 
-    @Test
-    public void verifyMessageSentToMainActivity() {
 
 
-        onView(withId(R.id.buttonAdd)).perform(click());
-        // Types a message into a EditText element.
-        onView(withId(R.id.content_name))
-                .perform(typeText("hello"), closeSoftKeyboard());
 
-        // Clicks a button to send the message to another
-        // activity through an explicit intent.
-        onView(withId(R.id.buttonAdd2)).perform(click());
-        onView(withText("hello")).check(matches(isDisplayed()));
-        // Verifies that the DisplayMessageActivity received an intent
-        // with the correct package name and message.
-
-    }
   @Test
     public void insertEventTestBeforeStartingApplication(){
     final  CategoryModel c= new CategoryModel();
