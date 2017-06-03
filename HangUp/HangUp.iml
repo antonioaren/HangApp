@@ -95,7 +95,6 @@
     <orderEntry type="jdk" jdkName="Android API 25 Platform (1)" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" scope="TEST" name="runner-0.5" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="recyclerview-v7-22.2.0" level="project" />
     <orderEntry type="library" exported="" name="CleanMvpLib-unspecified" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="espresso-idling-resource-2.2.2" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="accessibility-test-framework-2.0" level="project" />
@@ -118,7 +117,6 @@
     <orderEntry type="library" exported="" scope="TEST" name="rules-0.5" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="uiautomator-v18-2.1.2" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="javax.annotation-api-1.2" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="support-v4-22.2.0" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="javax.inject-1" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="javawriter-2.1.1" level="project" />
     <orderEntry type="library" exported="" name="support-v4-25.3.1" level="project" />

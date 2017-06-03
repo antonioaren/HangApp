@@ -1,5 +1,6 @@
 package es.ulpgc.eite.clean.mvp.sample;
 
+import android.support.test.espresso.contrib.RecyclerViewActions;
 import android.support.test.rule.ActivityTestRule;
 
 import org.junit.Rule;
@@ -44,6 +45,29 @@ public class EspressoTest  {
 
         onView(withId(R.id.recycler))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(3, click()));
+        onView(withId(R.id.buttonDelete)).check(matches(isDisplayed()));
+        onView(withId(R.id.buttonAdd)).check(matches(isDisplayed()));
+// Click item at position 3
+
+    }
+
+    @Test
+    public void testInsertingANewPartyInACategory() throws Exception {
+
+        onView(withId(R.id.recycler))
+                .perform(RecyclerViewActions.actionOnItemAtPosition(3, click()));
+        onView(withId(R.id.buttonDelete)).check(matches(isDisplayed()));
+        onView(withId(R.id.buttonAdd)).check(matches(isDisplayed()));
+        onView(withId(R.id.buttonAdd)).perform(click());
+        onView(withId(R.id.content_name))
+                .perform(typeText("hello"), closeSoftKeyboard());
+
+        // Clicks a button to send the message to another
+        // activity through an explicit intent.
+        onView(withId(R.id.Add)).perform(click());
+        onView(withText("hello")).check(matches(isDisplayed()));
+        // Verifies that the DisplayMessageActivity received an intent
+        // with the correct package name and message.
 // Click item at position 3
 
     }
