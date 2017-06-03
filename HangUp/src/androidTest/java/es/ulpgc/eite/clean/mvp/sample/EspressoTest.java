@@ -59,13 +59,23 @@ public class EspressoTest  {
         onView(withId(R.id.buttonDelete)).check(matches(isDisplayed()));
         onView(withId(R.id.buttonAdd)).check(matches(isDisplayed()));
         onView(withId(R.id.buttonAdd)).perform(click());
-        onView(withId(R.id.content_name))
-                .perform(typeText("hello"), closeSoftKeyboard());
+        onView(withId(R.id.name))
+                // Types a message into a EditText element.
+                .perform(typeText("anime convention"), closeSoftKeyboard());
+        onView(withId(R.id.place))
+                .perform(typeText("tokyo"), closeSoftKeyboard());
+        onView(withId(R.id.date))
+                .perform(typeText("4/07/2017"), closeSoftKeyboard());
+        onView(withId(R.id.timeI))
+                .perform(typeText("16:00"), closeSoftKeyboard());
+
+        onView(withId(R.id.TimeF))
+                .perform(typeText("21:00"), closeSoftKeyboard());
 
         // Clicks a button to send the message to another
         // activity through an explicit intent.
         onView(withId(R.id.Add)).perform(click());
-        onView(withText("hello")).check(matches(isDisplayed()));
+        onView(withText("anime convention")).check(matches(isDisplayed()));
         // Verifies that the DisplayMessageActivity received an intent
         // with the correct package name and message.
 // Click item at position 3

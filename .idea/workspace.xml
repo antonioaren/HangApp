@@ -11,9 +11,8 @@
   <component name="ChangeListManager">
     <list id="6a18f264-77ba-466d-b7a7-0d52df6a7436" name="Default" comment="Merge remote-tracking branch 'origin/eleonoraBack'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/3.3/taskArtifacts/fileHashes.bin&#10;#&#9;.gradle/3.3/taskArtifacts/fileSnapshots.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.lock&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/App.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Mediator.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangApp.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangAppModel.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/Information.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationPresenter.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchView.java&#10;#&#9;HangUp/src/main/res/layout/activity_procesed_search.xml&#10;#&#9;HangUp/src/main/res/layout/content_hangapp.xml&#10;#&#9;HangUp/src/main/res/layout/content_procesed_search.xml&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Navigator.java&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/hangapp/HangAppView.java&#10;#&#9;HelloApp/src/main/res/layout/activity_filalista.xml&#10;#&#9;HelloApp/src/main/res/layout/activity_procesed_search.xml&#10;" />
     <list id="3d65f56d-93c6-4520-9708-4d2cd763dfec" name="Failed commit: Default" comment="Cambios Merges.&#10;" />
-    <list default="true" id="72c31ec8-3076-4782-a780-40cb8c2c6568" name="Failed commit: Default (2)" comment="añadiendo la libreria contrib a espresso para hacer test sobre el click en un determinado item de la lista">
+    <list default="true" id="72c31ec8-3076-4782-a780-40cb8c2c6568" name="Failed commit: Default (2)" comment="creando metodo para hacer click en un item de una determinada posicion del recycler view y otro para añadir una fiesta">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/HangUp.iml" afterPath="$PROJECT_DIR$/HangUp/HangUp.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java" afterPath="$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java" />
     </list>
     <ignored path="HangApp.iws" />
@@ -62,12 +61,12 @@
       <file leaf-file-name="EspressoTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="68" column="53" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="53" />
+            <state relative-caret-position="-1143">
+              <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6497#6974#0" expanded="true" />
-                <element signature="e#6973#6974#0" expanded="true" />
+                <element signature="e#6995#7472#0" expanded="true" />
+                <element signature="e#7471#7472#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2506,32 +2505,7 @@
       <recent name="es.ulpgc.eite.clean.mvp.sample.util" />
     </key>
   </component>
-  <component name="RunManager" selected="Android Instrumented Tests.testClickingAnItem...()">
-    <configuration default="false" name="testgetParties()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
-      <module name="HangUp" />
-      <option name="TESTING_TYPE" value="3" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="android.support.test.runner.AndroidJUnitRunner" />
-      <option name="METHOD_NAME" value="testgetParties" />
-      <option name="CLASS_NAME" value="es.ulpgc.eite.clean.mvp.sample.ExampleInstrumentedTest" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="EXTRA_OPTIONS" value="" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Java />
-      <Profilers>
-        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
-        <option name="SUPPORT_LIB_ENABLED" value="true" />
-        <option name="INSTRUMENTATION_ENABLED" value="true" />
-      </Profilers>
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Android Instrumented Tests.testInsertingANewP...()">
     <configuration default="false" name="SearchEventTest()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
       <module name="HangUp" />
       <option name="TESTING_TYPE" value="3" />
@@ -2612,6 +2586,31 @@
       <option name="TESTING_TYPE" value="3" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="android.support.test.runner.AndroidJUnitRunner" />
       <option name="METHOD_NAME" value="testClickingAnItemAtSpecificPositionInRecyclerView" />
+      <option name="CLASS_NAME" value="es.ulpgc.eite.clean.mvp.sample.EspressoTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <method />
+    </configuration>
+    <configuration default="false" name="testInsertingANewP...()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+      <module name="HangUp" />
+      <option name="TESTING_TYPE" value="3" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="android.support.test.runner.AndroidJUnitRunner" />
+      <option name="METHOD_NAME" value="testInsertingANewPartyInACategory" />
       <option name="CLASS_NAME" value="es.ulpgc.eite.clean.mvp.sample.EspressoTest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="EXTRA_OPTIONS" value="" />
@@ -2852,18 +2851,19 @@
     <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Android App.HangApp" />
       <item index="1" class="java.lang.String" itemvalue="Android App.HangUp" />
-      <item index="2" class="java.lang.String" itemvalue="Android Instrumented Tests.testgetParties()" />
-      <item index="3" class="java.lang.String" itemvalue="Android Instrumented Tests.SearchEventTest()" />
-      <item index="4" class="java.lang.String" itemvalue="Android Instrumented Tests.DeleteEventTest()" />
-      <item index="5" class="java.lang.String" itemvalue="Android Instrumented Tests.insertEventTestBef...()" />
-      <item index="6" class="java.lang.String" itemvalue="Android Instrumented Tests.testClickingAnItem...()" />
+      <item index="2" class="java.lang.String" itemvalue="Android Instrumented Tests.SearchEventTest()" />
+      <item index="3" class="java.lang.String" itemvalue="Android Instrumented Tests.DeleteEventTest()" />
+      <item index="4" class="java.lang.String" itemvalue="Android Instrumented Tests.insertEventTestBef...()" />
+      <item index="5" class="java.lang.String" itemvalue="Android Instrumented Tests.testClickingAnItem...()" />
+      <item index="6" class="java.lang.String" itemvalue="Android Instrumented Tests.testInsertingANewP...()" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Android Instrumented Tests.testClickingAnItem...()" />
-        <item index="1" class="java.lang.String" itemvalue="Android Instrumented Tests.insertEventTestBef...()" />
-        <item index="2" class="java.lang.String" itemvalue="Android Instrumented Tests.SearchEventTest()" />
-        <item index="3" class="java.lang.String" itemvalue="Android Instrumented Tests.DeleteEventTest()" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Android Instrumented Tests.testInsertingANewP...()" />
+        <item index="1" class="java.lang.String" itemvalue="Android Instrumented Tests.testClickingAnItem...()" />
+        <item index="2" class="java.lang.String" itemvalue="Android Instrumented Tests.insertEventTestBef...()" />
+        <item index="3" class="java.lang.String" itemvalue="Android Instrumented Tests.SearchEventTest()" />
+        <item index="4" class="java.lang.String" itemvalue="Android Instrumented Tests.DeleteEventTest()" />
       </list>
     </recent_temporary>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -2936,13 +2936,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1490022965325</updated>
-    </task>
-    <task id="LOCAL-00050" summary="cambiando la imagen de inicio en la app y la estructura">
-      <created>1493413775650</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1493413775697</updated>
     </task>
     <task id="LOCAL-00051" summary="mejorada la pantalla inicial">
       <created>1493414920877</created>
@@ -3280,16 +3273,17 @@
       <option name="project" value="LOCAL" />
       <updated>1496519535591</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="creando metodo para hacer click en un item de una determinada posicion del recycler view y otro para añadir una fiesta">
+      <created>1496520517218</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1496520517218</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DeleteEventTest() - 2017.06.03 at 18h 43m 44s.xml">
-      <configuration name="DeleteEventTest()" configurationId="AndroidTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="SearchEventTest() - 2017.06.03 at 18h 45m 33s.xml">
-      <configuration name="SearchEventTest()" configurationId="AndroidTestRunConfigurationType" />
-    </history-entry>
     <history-entry file="SearchEventTest() - 2017.06.03 at 18h 47m 35s.xml">
       <configuration name="SearchEventTest()" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
@@ -3314,6 +3308,12 @@
     <history-entry file="testClickingAnItem___() - 2017.06.03 at 20h 46m 18s.xml">
       <configuration name="testClickingAnItem...()" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
+    <history-entry file="testClickingAnItem___() - 2017.06.03 at 21h 24m 23s.xml">
+      <configuration name="testClickingAnItem...()" configurationId="AndroidTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="testInsertingANewP___() - 2017.06.03 at 21h 25m 11s.xml">
+      <configuration name="testInsertingANewP...()" configurationId="AndroidTestRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -3336,7 +3336,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40967742" sideWeight="0.50646204" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.7419355" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="-1916" y="-258" width="1898" height="1016" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900763" sideWeight="0.49317408" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32764506" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32764506" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11290322" sideWeight="0.49353796" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43515357" sideWeight="0.3489499" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -3375,7 +3375,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="creando listas de Category e InformationData y los getters" />
     <MESSAGE value="cambiado metodo publishparty" />
     <MESSAGE value="pasando adapter al publishparty" />
     <MESSAGE value="planteado el metodo publish de otra forma" />
@@ -3400,7 +3399,8 @@
     <MESSAGE value="controlando test con espresso,por ahora todos pasan" />
     <MESSAGE value="actualizando la version de espresso" />
     <MESSAGE value="añadiendo la libreria contrib a espresso para hacer test sobre el click en un determinado item de la lista" />
-    <option name="LAST_COMMIT_MESSAGE" value="añadiendo la libreria contrib a espresso para hacer test sobre el click en un determinado item de la lista" />
+    <MESSAGE value="creando metodo para hacer click en un item de una determinada posicion del recycler view y otro para añadir una fiesta" />
+    <option name="LAST_COMMIT_MESSAGE" value="creando metodo para hacer click en un item de una determinada posicion del recycler view y otro para añadir una fiesta" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -3872,12 +3872,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="68" column="53" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="53" />
+        <state relative-caret-position="-1143">
+          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6497#6974#0" expanded="true" />
-            <element signature="e#6973#6974#0" expanded="true" />
+            <element signature="e#6995#7472#0" expanded="true" />
+            <element signature="e#7471#7472#0" expanded="true" />
           </folding>
         </state>
       </provider>
