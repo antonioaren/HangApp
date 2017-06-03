@@ -10,9 +10,11 @@ import org.junit.runner.RunWith;
 
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
-import es.ulpgc.eite.clean.mvp.sample.delete.SearchModel;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.delete.DeleteModel;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
+import io.realm.RealmResults;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
@@ -120,7 +122,7 @@ public class EspressoTest  {
 
     @Test
     public void DeleteEventTest()throws Exception{
-        final SearchModel search= new SearchModel();
+        final DeleteModel search = new DeleteModel();
         RealmConfiguration testConfig =
                 new RealmConfiguration.Builder().
                         inMemory().
@@ -137,6 +139,28 @@ public class EspressoTest  {
         });
     }
 
+    @Test
+    public void SearchEventTest() throws Exception {
 
+        RealmConfiguration testConfig =
+                new RealmConfiguration.Builder().
+                        inMemory().
+                        name("test-realm").build();
+
+        Realm testRealm = Realm.getInstance(testConfig);
+
+        testRealm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                RealmResults<CategoryData> pups = realm.where(CategoryData.class)
+                        .equalTo("CategoryName", "Música")
+                        .equalTo("CategoryName", "Fiestas")
+                        .equalTo("CategoryName", "Astronomía")
+                        .equalTo("CategoryName", "ULPGC")
+                        .findAll();
+
+            }
+        });
+    }
 }
 
