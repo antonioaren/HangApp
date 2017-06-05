@@ -4,9 +4,8 @@ import org.junit.Test;
 
 import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategoryModel;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
-import es.ulpgc.eite.clean.mvp.sample.details.DetailModel;
-import es.ulpgc.eite.clean.mvp.sample.product.ProductModel;
 import es.ulpgc.eite.clean.mvp.sample.delete.DeleteModel;
+import es.ulpgc.eite.clean.mvp.sample.product.ProductModel;
 
 import static org.junit.Assert.assertEquals;
 
@@ -126,18 +125,36 @@ public void testGetRadioLabelsWithoutSettingName()throws Exception{
     assertEquals("Add",add.getButtonAddlabel());
   }
 
-  //Test for DetailModel
+  //test for product model
   @Test
   public void testgetAddLabelWithoutSetting()throws Exception{
     ProductModel product= new ProductModel();
     product.getAddLabel();
     assertEquals(null,product.getAddLabel());
   }
+  //Test for DetailModel
+
 
   //Test for DetailModel
 
 
-  //test for SearchModel
+  //test for DeleteModel
 
+  @Test
+  public void testGetDeleteButtonLabelAndDeleteIdBtonLabelWithoutSetting() throws Exception {
+    DeleteModel delete = new DeleteModel();
+    String label = delete.getDeleteBtnLabel();
+    String label2 = delete.getDeleteIdBtnLabel();
+    assertEquals(null, label);
+    assertEquals(null, label2);
+  }
 
+  @Test
+  public void testGetDeleteButtonLabelAndDeleteIdBtonLabelBeforeSetting() throws Exception {
+    DeleteModel delete = new DeleteModel();
+    delete.setDeleteBtnLabel("delete");
+    delete.setDeleteIdBtnLabel("delete by Id");
+    assertEquals("delete", delete.getDeleteBtnLabel());
+    assertEquals("delete by Id", delete.getDeleteIdBtnLabel());
+  }
 }

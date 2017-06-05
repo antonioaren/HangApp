@@ -28,9 +28,7 @@ public class DeleteModel  extends GenericModel<Delete.ModelToPresenter>
     }
 
     String name;
-    public DeleteModel(){
-        // this.categories= new String[]{"Cines","Culturales","Conciertos","Verbenas","Discotecas"};
-    }
+
     @Override
     public void onCreate(Delete.ModelToPresenter presenter) {
         super.onCreate(presenter);
