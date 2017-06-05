@@ -36,6 +36,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     private TextView EventTimeInit;
     private Button buttonPublish;
     private EditText EventDetails;
+    private TextView textselect;
     private RadioGroup rg;
     private Date date;
 
@@ -80,6 +81,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         EventTimeFinish = (EditText) findViewById(R.id.TimeF);
 
         EventDetails = (EditText) findViewById(R.id.details);
+        textselect = (TextView) findViewById(R.id.textSelect);
         rg = (RadioGroup) findViewById(R.id.rg);
 
 
@@ -135,6 +137,10 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     }
 
     @Override
+    public void setTextSelectPhotoLabel(String txt) {
+        textselect.setText(txt);
+    }
+    @Override
     public void setPublishBtnLabel(String txt) {
         buttonPublish.setText(txt);
     }
@@ -151,7 +157,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         product.setTimeI(EventTimeInit.getText().toString());
         product.setTimeF(EventTimeFinish.getText().toString());
         product.setDetailText(EventDetails.getText().toString());
-        product.setImage(getIdNumberOfRadiouGroup());
+        product.setImage(getPresenter().getImageForProduct());
         getPresenter().DataFromAddView(product);
     }
 //
@@ -185,8 +191,23 @@ public String getName() {
     @Override
     public int getIdNumberOfRadiouGroup() {
         String id = String.valueOf(rg.getCheckedRadioButtonId());
-        int digit = Integer.parseInt("" + id.charAt(6));
-        return digit;
+        String lastdigit = id.substring(9);
+        int idNumber = Integer.parseInt(lastdigit);
+        // int digit =1;
+//        if(id==R.id.r0){
+//          digit=0;
+//
+//      }
+//     if(id==R.id.r1){
+//         digit=1;
+//     }
+//    if(id==R.id.r2){
+//        digit=2;
+//    }if(id==R.id.r3){
+//           digit=3;
+//        }
+//     return digit;
+        return idNumber;
     }
 
 }

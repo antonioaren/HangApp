@@ -3,15 +3,8 @@ package es.ulpgc.eite.clean.mvp.sample.addParty;
 
 import android.util.Log;
 
-import java.util.List;
-import java.util.UUID;
-
 import es.ulpgc.eite.clean.mvp.GenericModel;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
-import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
-import es.ulpgc.eite.clean.mvp.sample.data.Repository;
-import es.ulpgc.eite.clean.mvp.sample.product.ProductModel;
-import io.realm.Realm;
+import es.ulpgc.eite.clean.mvp.sample.R;
 
 
 /**
@@ -21,13 +14,17 @@ import io.realm.Realm;
 public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements Add.PresenterToModel {
 
 
+
     private String placeLabel, dateLabel, timeInitLabel, timeFinishLabel, publishLabel, titleLabel;
     private String nameLabel;
     private String detailsLabel;
 
 
-    public AddPartyModel() {
+    private String selectPhotoLabel;
+    private Integer[] images;
 
+    public AddPartyModel() {
+        this.images = new Integer[]{R.drawable.astro, R.drawable.ulpgc, R.drawable.cars, R.drawable.disco};
     }
 
 
@@ -43,7 +40,7 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
         timeInitLabel = "Starts";
         timeFinishLabel = "Finishes";
         detailsLabel = "Party's Details";
-
+        selectPhotoLabel = "Selec a photo : ";
         publishLabel = "Add";
 
     }
@@ -125,6 +122,16 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     }
 
     @Override
+    public String getSelectPhotoTextLabel() {
+        return selectPhotoLabel;
+    }
+
+    @Override
+    public void setSelectPhotoTextlabel(String text) {
+        this.selectPhotoLabel = text;
+    }
+
+    @Override
     public String getPublishBtnLabel() {
         return publishLabel;
     }
@@ -135,4 +142,16 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    @Override
+    public int getImageByIdSelected(int id) {
+        int image = 1;
+        if (id >= 0) {
+            image = images[id];
+        } else {
+            image = 0;
+        }
+        return image;
+    }
 }

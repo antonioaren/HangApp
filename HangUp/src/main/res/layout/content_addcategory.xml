@@ -57,7 +57,7 @@
             android:layout_width="122dp"
             android:layout_height="30dp"
             android:text="academic"
-            android:background="@drawable/academic" />
+            android:background="@drawable/ulpgc" />
 
         <RadioButton
             android:id="@+id/id2"

@@ -44,6 +44,8 @@ public interface Add {
 
 
         void DataFromAddView(ProductData product);
+
+        int getImageForProduct();
     }
 
     /**
@@ -53,6 +55,8 @@ public interface Add {
     interface PresenterToView extends ContextView {
 
         void finishScreen();
+
+        void setTextSelectPhotoLabel(String txt);
 
         void setPublishBtnLabel(String txt);
 
@@ -101,6 +105,10 @@ public interface Add {
 
         void setDetailsLabel(String detailsLabel);
 
+        String getSelectPhotoTextLabel();
+
+        void setSelectPhotoTextlabel(String text);
+
         String getPublishBtnLabel();
 
         String getDateLabel();
@@ -125,11 +133,7 @@ public interface Add {
         void setTitleLabel(String titleLabel);
 
 
-
-
-
-
-
+        int getImageByIdSelected(int id);
     }
 
     /**
