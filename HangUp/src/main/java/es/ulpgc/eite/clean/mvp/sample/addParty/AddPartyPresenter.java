@@ -3,8 +3,6 @@ package es.ulpgc.eite.clean.mvp.sample.addParty;
 import android.content.Context;
 import android.util.Log;
 
-import java.util.UUID;
-
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
@@ -81,7 +79,7 @@ public class AddPartyPresenter
     @Override
     public void onPublishButtonClicked() {
         Log.d(TAG, "callingOnPublish");
-
+        getImageForProduct();
         Navigator app = (Navigator) getView().getApplication();
         app.goToProductScreenFromAddScreen(this);
 
@@ -107,8 +105,12 @@ public class AddPartyPresenter
         getView().setTimeInitLabel(getModel().getTimeInitLabel());
         getView().setTimeFinishLabel(getModel().getTimeFinishLabel());
         getView().setDetailsLabel(getModel().getDetailsLabel());
-
+        getView().setTextSelectPhotoLabel(getModel().getSelectPhotoTextLabel());
         getView().setPublishBtnLabel(getModel().getPublishBtnLabel());
     }
 
+    @Override
+    public int getImageForProduct() {
+        return getModel().getImageByIdSelected(getView().getIdNumberOfRadiouGroup());
+    }
 }
