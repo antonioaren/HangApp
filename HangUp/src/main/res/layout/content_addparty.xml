@@ -107,13 +107,13 @@
 
             <RadioGroup
                 android:layout_width="wrap_content"
-                android:layout_height="166dp"
+                android:layout_height="wrap_content"
                 android:id="@+id/rg">
 
                 <RadioButton
                     android:id="@+id/r0"
                     android:layout_width="wrap_content"
-                    android:layout_height="42dp"
+                    android:layout_height="20dp"
                     android:background="@drawable/astro"
                     android:text="astro"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -121,22 +121,22 @@
 
                 <RadioButton
                     android:id="@+id/r1"
-                    android:layout_width="122dp"
-                    android:layout_height="30dp"
+                    android:layout_width="wrap"
+                    android:layout_height="20dp"
                     android:text="academic"
                     android:background="@drawable/ulpgc" />
 
                 <RadioButton
                     android:id="@+id/r2"
                     android:layout_width="128dp"
-                    android:layout_height="36dp"
+                    android:layout_height="20dp"
                     android:text="motor racing"
                     android:background="@drawable/cars" />
 
                 <RadioButton
                     android:id="@+id/r3"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="20dp"
                     android:text="party"
                     android:background="@drawable/disco" />
             </RadioGroup>

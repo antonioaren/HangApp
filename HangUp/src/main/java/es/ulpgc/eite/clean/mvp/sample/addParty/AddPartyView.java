@@ -190,24 +190,27 @@ public String getName() {
 
     @Override
     public int getIdNumberOfRadiouGroup() {
-        String id = String.valueOf(rg.getCheckedRadioButtonId());
-        String lastdigit = id.substring(9);
-        int idNumber = Integer.parseInt(lastdigit);
-        // int digit =1;
-//        if(id==R.id.r0){
-//          digit=0;
-//
-//      }
-//     if(id==R.id.r1){
-//         digit=1;
-//     }
-//    if(id==R.id.r2){
-//        digit=2;
-//    }if(id==R.id.r3){
-//           digit=3;
-//        }
-//     return digit;
-        return idNumber;
+        int id = rg.getCheckedRadioButtonId();
+//Intentando que funcione con menos codigo, pero la aplicacion se detiene
+//       char lastdigit = id.charAt(6);
+//        int idNumber = Integer.parseInt("" + lastdigit);
+        //no da error pero no capta la foto
+        int digit = 1;
+        if (id == R.id.r0) {
+            digit = 0;
+        }
+        if (id == R.id.r1) {
+
+            digit = 1;
+        }
+        if (id == R.id.r2) {
+            digit = 2;
+        }
+        if (id == R.id.r3) {
+            digit = 3;
+        }
+
+        return digit;
     }
 
 }
