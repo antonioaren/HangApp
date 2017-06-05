@@ -4,8 +4,6 @@ import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import io.realm.Realm;
 
-import static android.R.attr.id;
-
 /**
  * Created by alumno on 31/03/2017.
  */
@@ -97,13 +95,18 @@ public class DeleteModel  extends GenericModel<Delete.ModelToPresenter>
     }
 
     @Override
-    public void deleteCategoryById(String Id) {
+    public void deleteCategoryById(final String Id) {
 
         realmDatabase=Realm.getDefaultInstance();
-        realmDatabase.beginTransaction();
-        CategoryData category = realmDatabase.where(CategoryData.class).equalTo("id", id).findFirst();
-        category.deleteFromRealm();
-        realmDatabase.commitTransaction();
+        realmDatabase.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+
+                realmDatabase.where(CategoryData.class).equalTo("id", Id)
+                        .findAll()
+                        .deleteAllFromRealm();
+            }
+        });
 
 
 
