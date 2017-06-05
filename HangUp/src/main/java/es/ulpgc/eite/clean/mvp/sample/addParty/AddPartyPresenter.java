@@ -79,7 +79,7 @@ public class AddPartyPresenter
     @Override
     public void onPublishButtonClicked() {
         Log.d(TAG, "callingOnPublish");
-        getImageForProduct();
+
         Navigator app = (Navigator) getView().getApplication();
         app.goToProductScreenFromAddScreen(this);
 
@@ -109,8 +109,5 @@ public class AddPartyPresenter
         getView().setPublishBtnLabel(getModel().getPublishBtnLabel());
     }
 
-    @Override
-    public int getImageForProduct() {
-        return getModel().getImageByIdSelected(getView().getIdNumberOfRadiouGroup());
-    }
+
 }

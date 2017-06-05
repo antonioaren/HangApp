@@ -144,20 +144,5 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-    @Override
-    public int getImageByIdSelected(int id) {
-        int image = 1;
-        if (id == 0) {
-            image = R.drawable.astro;
 
-        } else if (id == 1) {
-            image = R.drawable.ulpgc;
-        } else if (id == 2) {
-            image = R.drawable.cars;
-
-        } else if (id == 3) {
-            image = R.drawable.disco;
-        }
-        return image;
-    }
 }

@@ -157,7 +157,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         product.setTimeI(EventTimeInit.getText().toString());
         product.setTimeF(EventTimeFinish.getText().toString());
         product.setDetailText(EventDetails.getText().toString());
-        product.setImage(getPresenter().getImageForProduct());
+
         getPresenter().DataFromAddView(product);
     }
 //
@@ -188,29 +188,5 @@ public String getName() {
         return EventDate.getText().toString();
     }
 
-    @Override
-    public int getIdNumberOfRadiouGroup() {
-        int id = rg.getCheckedRadioButtonId();
-//Intentando que funcione con menos codigo, pero la aplicacion se detiene
-//       char lastdigit = id.charAt(6);
-//        int idNumber = Integer.parseInt("" + lastdigit);
-        //no da error pero no capta la foto
-        int digit = 1;
-        if (id == R.id.r0) {
-            digit = 0;
-        }
-        if (id == R.id.r1) {
-
-            digit = 1;
-        }
-        if (id == R.id.r2) {
-            digit = 2;
-        }
-        if (id == R.id.r3) {
-            digit = 3;
-        }
-
-        return digit;
-    }
 
 }

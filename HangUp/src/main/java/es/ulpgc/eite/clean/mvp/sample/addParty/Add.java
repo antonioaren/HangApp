@@ -45,7 +45,7 @@ public interface Add {
 
         void DataFromAddView(ProductData product);
 
-        int getImageForProduct();
+
     }
 
     /**
@@ -86,7 +86,7 @@ public interface Add {
 
         String getDateOfTheParty();
 
-        int getIdNumberOfRadiouGroup();
+
     }
 
     /**
@@ -133,7 +133,6 @@ public interface Add {
         void setTitleLabel(String titleLabel);
 
 
-        int getImageByIdSelected(int id);
     }
 
     /**
