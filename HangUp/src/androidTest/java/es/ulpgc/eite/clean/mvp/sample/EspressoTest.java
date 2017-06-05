@@ -88,18 +88,18 @@ public class EspressoTest  {
     }
 
     @Test
-    public void verifyMessageSentToMainActivity() {
+    public void insertCategoryFromAddScreen() {
 
 
         onView(withId(R.id.buttonAdd)).perform(click());
         // Types a message into a EditText element.
         onView(withId(R.id.content_name))
-                .perform(typeText("hello"), closeSoftKeyboard());
+                .perform(typeText("Fiestas"), closeSoftKeyboard());
 
         // Clicks a button to send the message to another
         // activity through an explicit intent.
         onView(withId(R.id.buttonAdd2)).perform(click());
-        onView(withText("hello")).check(matches(isDisplayed()));
+        onView(withText("Fiestas")).check(matches(isDisplayed()));
         // Verifies that the DisplayMessageActivity received an intent
         // with the correct package name and message.
 
@@ -153,7 +153,7 @@ public class EspressoTest  {
      testRealm.executeTransaction(new Realm.Transaction() {
          @Override
          public void execute(Realm realm) {
-             c.insertEvent("jgbugb",R.drawable.astro);
+             c.insertEvent("Fiestas", R.drawable.astro);
          }
      });
   }

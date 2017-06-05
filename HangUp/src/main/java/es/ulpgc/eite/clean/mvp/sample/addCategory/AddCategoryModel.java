@@ -8,6 +8,7 @@ import java.util.UUID;
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.sample.R;
+import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import io.realm.Realm;
 
@@ -29,11 +30,11 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     private String labelRadio3;
 
     private Integer[] images;
-
+    private CategoryModel category;
     public AddCategoryModel() {
 
-
-        this.images = new Integer[]{R.drawable.astro, R.drawable.disco, R.drawable.cars, R.drawable.ulpgc};
+        this.category = new CategoryModel();
+        this.images = new Integer[]{R.drawable.astro, R.drawable.ulpgc, R.drawable.cars, R.drawable.disco};
     }
 
     @Override
@@ -143,12 +144,15 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
         realmDatabase.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
+
                 CategoryData event = realmDatabase.createObject(CategoryData.class, UUID.randomUUID().toString());
-                //    if(Categoryname==)
+
+
                 event.setCategoryName(Categoryname);
                 event.setImage(image);
-            }
 
+
+            }
         });
     }
 

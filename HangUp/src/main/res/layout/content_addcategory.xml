@@ -57,21 +57,21 @@
             android:layout_width="122dp"
             android:layout_height="30dp"
             android:text="academic"
-            android:background="@drawable/ulpgc" />
+            android:background="@drawable/academic" />
 
         <RadioButton
             android:id="@+id/id2"
             android:layout_width="128dp"
             android:layout_height="36dp"
-            android:text="disco"
-            android:background="@drawable/disco" />
+            android:text="motor racing"
+            android:background="@drawable/cars" />
 
         <RadioButton
             android:id="@+id/id3"
             android:layout_width="match_parent"
             android:layout_height="32dp"
-            android:text="cars"
-            android:background="@drawable/cars" />
+            android:text="party"
+            android:background="@drawable/disco" />
     </RadioGroup>
 
     <RelativeLayout

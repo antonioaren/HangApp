@@ -12,7 +12,6 @@ import es.ulpgc.eite.clean.mvp.sample.category.Category;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
-import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 import es.ulpgc.eite.clean.mvp.sample.delete.Delete;
 import es.ulpgc.eite.clean.mvp.sample.delete.DeleteView;
 import es.ulpgc.eite.clean.mvp.sample.details.Detail;
@@ -20,6 +19,7 @@ import es.ulpgc.eite.clean.mvp.sample.details.DetailView;
 import es.ulpgc.eite.clean.mvp.sample.product.Product;
 import es.ulpgc.eite.clean.mvp.sample.product.ProductView;
 import io.realm.Realm;
+import io.realm.RealmResults;
 
 
 public class App extends Application implements Mediator, Navigator {
@@ -280,6 +280,7 @@ public class App extends Application implements Mediator, Navigator {
 
         public int radioButtonSelected;
         public String CategoryName;
+        public RealmResults<CategoryData> Categories;
     }
 }
 
