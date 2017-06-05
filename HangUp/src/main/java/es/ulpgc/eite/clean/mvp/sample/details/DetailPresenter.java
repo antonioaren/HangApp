@@ -3,7 +3,6 @@ package es.ulpgc.eite.clean.mvp.sample.details;
 import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
-import es.ulpgc.eite.clean.mvp.Presenter;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 
@@ -31,7 +30,8 @@ public class DetailPresenter
         setView(View);
 
         if (configurationChangeOccurred()) {
-
+            setHeaders();
+            setDataInTheScreen();
         }
 
     }
