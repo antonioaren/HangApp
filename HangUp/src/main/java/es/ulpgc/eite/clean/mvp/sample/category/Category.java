@@ -69,7 +69,7 @@ public interface Category {
 
         void insertEvent(String Categoryname, int image);
 
-        void AddProductByCategoryId(ProductData product, String CategoryId);
+        
     }
 
     /**

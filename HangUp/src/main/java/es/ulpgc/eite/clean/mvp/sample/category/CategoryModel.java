@@ -160,9 +160,6 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     }
 
 
-    public void updateEvent() {
-    }
-
     public void deteleEvent() {
         realmDatabase.executeTransaction(new Realm.Transaction() {
             @Override

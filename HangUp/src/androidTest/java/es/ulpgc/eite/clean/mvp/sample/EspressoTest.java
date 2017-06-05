@@ -185,7 +185,7 @@ public class EspressoTest  {
         testRealm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
-                delete.deleteCategoryById("1");
+                delete.deleteCategoryById("2");
 
             }
         });
@@ -193,7 +193,6 @@ public class EspressoTest  {
 
     @Test
     public void SearchEventTest() throws Exception {
-
         RealmConfiguration testConfig =
                 new RealmConfiguration.Builder().
                         inMemory().
