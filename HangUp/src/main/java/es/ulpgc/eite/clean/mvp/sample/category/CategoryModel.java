@@ -1,21 +1,19 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
-import android.content.ContentProvider;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
-import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 import io.realm.RealmResults;
 
-import static android.R.attr.id;
 import static android.content.Context.MODE_PRIVATE;
 
 
@@ -127,6 +125,15 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     }
 
     @Override
+    public String getCategoryNameAtIndex(int index) {
+        RealmResults<CategoryData> results = realmDatabase.where(CategoryData.class).findAll();
+        List<CategoryData> list = new ArrayList<>();
+        list.addAll(realmDatabase.copyFromRealm(results));
+        String name = list.get(index).getCategoryName();
+        return name;
+    }
+
+    @Override
     public int getNumberOfEvents() {
 
         return getEvents().size();
@@ -154,22 +161,10 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     }
 
-    @Override
-    public void AddProductByCategoryId(ProductData product, final String CategoryId) {
-
-    }
 
 
-    public void deteleEvent() {
-        realmDatabase.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-                realm.where(ProductData.class).equalTo("id", id);
-            }
-        });
 
 
-    }
 
     public void setSearchLabel(String label) {
         this.HangAppButtonSearchLabel = label;

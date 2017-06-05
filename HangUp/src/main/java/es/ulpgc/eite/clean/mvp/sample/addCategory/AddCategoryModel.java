@@ -144,7 +144,7 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
             @Override
             public void execute(Realm realm) {
                 CategoryData event = realmDatabase.createObject(CategoryData.class, UUID.randomUUID().toString());
-
+                //    if(Categoryname==)
                 event.setCategoryName(Categoryname);
                 event.setImage(image);
             }
