@@ -178,6 +178,20 @@ public class EspressoTest  {
     }
 
     @Test
+    public void testDeleteEventByIdTest() throws Exception {
+        final DeleteModel delete = new DeleteModel();
+        RealmConfiguration testConfig = new RealmConfiguration.Builder().inMemory().name("test-deleteById").build();
+        Realm testRealm = Realm.getInstance(testConfig);
+        testRealm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                delete.deleteCategoryById("1");
+
+            }
+        });
+    }
+
+    @Test
     public void SearchEventTest() throws Exception {
 
         RealmConfiguration testConfig =
