@@ -2,7 +2,6 @@ package es.ulpgc.eite.clean.mvp.sample.data;
 
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
-import io.realm.annotations.Required;
 
 /**
  * Created by eleonora on 10/05/2017.
@@ -19,6 +18,8 @@ public class ProductData extends RealmObject {
     private String TimeF;
     private String detailText;
 
+
+    private int image;
     public ProductData() {
     }
 
@@ -80,4 +81,13 @@ public class ProductData extends RealmObject {
     public void setDetailText(String detailText) {
         this.detailText = detailText;
     }
+
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
+    }
+
 }

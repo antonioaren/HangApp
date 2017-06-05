@@ -81,6 +81,8 @@ public interface Add {
         String getHourOfFinish();
 
         String getDateOfTheParty();
+
+        int getIdNumberOfRadiouGroup();
     }
 
     /**

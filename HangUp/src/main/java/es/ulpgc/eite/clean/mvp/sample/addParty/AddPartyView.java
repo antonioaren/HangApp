@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
@@ -35,7 +36,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     private TextView EventTimeInit;
     private Button buttonPublish;
     private EditText EventDetails;
-
+    private RadioGroup rg;
     private Date date;
 
 
@@ -79,7 +80,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         EventTimeFinish = (EditText) findViewById(R.id.TimeF);
 
         EventDetails = (EditText) findViewById(R.id.details);
-
+        rg = (RadioGroup) findViewById(R.id.rg);
 
 
         buttonPublish = (Button) findViewById(R.id.Add);
@@ -150,6 +151,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         product.setTimeI(EventTimeInit.getText().toString());
         product.setTimeF(EventTimeFinish.getText().toString());
         product.setDetailText(EventDetails.getText().toString());
+        product.setImage(getIdNumberOfRadiouGroup());
         getPresenter().DataFromAddView(product);
     }
 //
@@ -180,5 +182,11 @@ public String getName() {
         return EventDate.getText().toString();
     }
 
+    @Override
+    public int getIdNumberOfRadiouGroup() {
+        String id = String.valueOf(rg.getCheckedRadioButtonId());
+        int digit = Integer.parseInt("" + id.charAt(6));
+        return digit;
+    }
 
 }

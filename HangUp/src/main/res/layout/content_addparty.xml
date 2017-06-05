@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
 
@@ -98,6 +99,47 @@
                 android:hint="Request6"
                 android:inputType="textMultiLine"/>
 
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="select a photo : "
+                android:id="@+id/text" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="166dp"
+                android:id="@+id/rg">
+
+                <RadioButton
+                    android:id="@+id/r0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:background="@drawable/astro"
+                    android:text="astro"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    tools:text="@string/HangApp_screen_title" />
+
+                <RadioButton
+                    android:id="@+id/r1"
+                    android:layout_width="122dp"
+                    android:layout_height="30dp"
+                    android:text="disco"
+                    android:background="@drawable/disco" />
+
+                <RadioButton
+                    android:id="@+id/r2"
+                    android:layout_width="128dp"
+                    android:layout_height="36dp"
+                    android:text="cars"
+                    android:background="@drawable/cars" />
+
+                <RadioButton
+                    android:id="@+id/r3"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:text="ulpgc"
+                    android:background="@drawable/ulpgc" />
+            </RadioGroup>
 
             <RelativeLayout
                 android:layout_width="match_parent"
