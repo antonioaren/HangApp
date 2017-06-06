@@ -14,25 +14,25 @@ public class DeleteProductView extends GenericActivity<DeleteProduct.PresenterTo
         implements DeleteProduct.PresenterToView {
 
     // ActionBar ab;
-    Button delete;
-    TextView text;
-    EditText ediText;
+    Button btnDeleteProduct;
+    private TextView textTitleDelete;
+    private EditText ediTextProduct;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_delete);
-        delete = (Button) findViewById(R.id.delete);
-        delete.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_deleteproduct);
+        btnDeleteProduct = (Button) findViewById(R.id.btnDeleteProduct);
+        btnDeleteProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 getPresenter().onDeleteButtonClicked();
 
             }
         });
-        text = (TextView) findViewById(R.id.text);
-        ediText = (EditText) findViewById(R.id.editText);
+        textTitleDelete = (TextView) findViewById(R.id.textTitleDelete);
+        ediTextProduct = (EditText) findViewById(R.id.editTextProduct);
 
 
     }
@@ -53,14 +53,14 @@ public class DeleteProductView extends GenericActivity<DeleteProduct.PresenterTo
 
     @Override
     public void setDeleteBtnLabel(String txt) {
-        delete.setText(txt);
+        btnDeleteProduct.setText(txt);
     }
 
 
 
     @Override
     public String getTextFromEditText() {
-        return ediText.getText().toString();
+        return ediTextProduct.getText().toString();
     }
 
 
