@@ -16,6 +16,7 @@ import es.ulpgc.eite.clean.mvp.sample.delete.Delete;
 import es.ulpgc.eite.clean.mvp.sample.delete.DeleteView;
 import es.ulpgc.eite.clean.mvp.sample.deleteProduct.DeleteProduct;
 import es.ulpgc.eite.clean.mvp.sample.deleteProduct.DeleteProductPresenter;
+import es.ulpgc.eite.clean.mvp.sample.deleteProduct.DeleteProductView;
 import es.ulpgc.eite.clean.mvp.sample.details.Detail;
 import es.ulpgc.eite.clean.mvp.sample.details.DetailView;
 import es.ulpgc.eite.clean.mvp.sample.product.Product;
@@ -189,17 +190,7 @@ public class App extends Application implements Mediator, Navigator {
 
     }
 
-    @Override
-    public void gotoDeleteProductScreen(Product.ProductTo presenter) {
-        ProductToDelete = new DeleteState();
-        //Añadir los estados que falten para pasarles a la busquedad. Guardar posicion, etc.
 
-
-        Context view = presenter.getManagedContext();
-        if (view != null) {
-            view.startActivity(new Intent(view, DeleteView.class));
-        }
-    }
 
     @Override
     public void goToAddCategoryScreen(Category.CategoryTo presenter) {

@@ -12,43 +12,26 @@ public class DeleteProductModel extends GenericModel<DeleteProduct.ModelToPresen
         implements DeleteProduct.PresenterToModel {
 
 
-    String DeleteIdBtnLabel, DeleteBtnLabel;
-    String text1Label, text2Label;
+    String DeleteBtnLabel;
+
+
+    String textLabel;
 
     private Realm realmDatabase;
 
-    @Override
-    public String getName() {
-        return name;
-    }
 
-    @Override
-    public void setName(String name) {
-        this.name = name;
-    }
 
-    String name;
 
     @Override
     public void onCreate(DeleteProduct.ModelToPresenter presenter) {
         super.onCreate(presenter);
-        text1Label = "Write a category to delete ";
+        textLabel = "Write an event  to delete ";
         DeleteBtnLabel = "Delete";
-        text2Label = "Or delete a category By Id";
-        DeleteIdBtnLabel = "Delete by Id";
 
 
     }
 
-    @Override
-    public String getDeleteIdBtnLabel() {
-        return DeleteIdBtnLabel;
-    }
 
-    @Override
-    public void setDeleteIdBtnLabel(String deleteIdBtnLabel) {
-        DeleteIdBtnLabel = deleteIdBtnLabel;
-    }
 
     @Override
     public String getDeleteBtnLabel() {
@@ -59,26 +42,15 @@ public class DeleteProductModel extends GenericModel<DeleteProduct.ModelToPresen
     public void setDeleteBtnLabel(String deleteBtnLabel) {
         DeleteBtnLabel = deleteBtnLabel;
     }
-
     @Override
-    public String getText1Label() {
-        return text1Label;
+    public String getTextLabel() {
+        return textLabel;
+    }
+    @Override
+    public void setTextLabel(String textLabel) {
+        this.textLabel = textLabel;
     }
 
-    @Override
-    public void setText1Label(String text1Label) {
-        this.text1Label = text1Label;
-    }
-
-    @Override
-    public String getText2Label() {
-        return text2Label;
-    }
-
-    @Override
-    public void setText2Label(String text2Label) {
-        this.text2Label = text2Label;
-    }
 
     @Override
     public void onDestroy(boolean b) {

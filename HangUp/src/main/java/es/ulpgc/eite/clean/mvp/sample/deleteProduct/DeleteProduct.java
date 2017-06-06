@@ -92,31 +92,22 @@ public interface DeleteProduct {
     /**
      * Methods offered to MODEL to communicate with PRESENTER
      */
-    interface PresenterToModel extends Model<Delete.ModelToPresenter> {
+    interface PresenterToModel extends Model<DeleteProduct.ModelToPresenter> {
 
 
-        String getName();
-
-        void setName(String name);
 
 
-        String getDeleteIdBtnLabel();
-
-        void setDeleteIdBtnLabel(String deleteIdBtnLabel);
 
         String getDeleteBtnLabel();
 
         void setDeleteBtnLabel(String deleteBtnLabel);
 
-        String getText1Label();
 
-        void setText1Label(String text1Label);
+        String getTextLabel();
 
-        String getText2Label();
+        void setTextLabel(String textLabel);
 
-        void setText2Label(String text2Label);
-
-        void deteleEvent(String name);
+        void deteleEvent(final String name);
 
 
         /**

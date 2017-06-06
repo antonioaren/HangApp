@@ -11,8 +11,8 @@ import android.widget.TextView;
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
 
-public class DeleteProductView extends GenericActivity<Delete.PresenterToView, Delete.ViewToPresenter, DeletePresenter>
-        implements Delete.PresenterToView {
+public class DeleteProductView extends GenericActivity<DeleteProduct.PresenterToView, DeleteProduct.ViewToPresenter, DeleteProductPresenter>
+        implements DeleteProduct.PresenterToView {
 
     // ActionBar ab;
     Button delete;
@@ -30,7 +30,7 @@ public class DeleteProductView extends GenericActivity<Delete.PresenterToView, D
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getPresenter().onButtonDeleteClicked();
+                getPresenter().onDeleteButtonClicked();
 
             }
         });
@@ -53,7 +53,7 @@ public class DeleteProductView extends GenericActivity<Delete.PresenterToView, D
     @SuppressLint("MissingSuperCall")
     @Override
     public void onResume() {
-        super.onResume(DeletePresenter.class, this);
+        super.onResume(DeleteProductPresenter.class, this);
         // String[] categories = getPresenter().getCategories();
 
 

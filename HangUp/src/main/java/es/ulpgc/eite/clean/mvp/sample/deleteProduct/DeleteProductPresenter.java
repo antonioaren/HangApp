@@ -6,7 +6,6 @@ import android.util.Log;
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
-import es.ulpgc.eite.clean.mvp.sample.product.Product;
 
 
 /**
@@ -80,7 +79,12 @@ public class DeleteProductPresenter
         Log.d(TAG, "calling onItemListClicked");
         Navigator app = (Navigator) getView().getApplication();
         //Revisar esta llamada.
-        app.goToProductScreen((Product.ProductTo) this);
+        //  app.goToProductScreen((Product.ProductTo) this);
+    }
+
+    @Override
+    public void onDeleteClicked() {
+
     }
 
     @Override
