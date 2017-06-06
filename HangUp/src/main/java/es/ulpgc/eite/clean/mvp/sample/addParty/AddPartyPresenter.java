@@ -75,14 +75,12 @@ public class AddPartyPresenter
         }
     }
 
-
     @Override
     public void onPublishButtonClicked() {
         Log.d(TAG, "callingOnPublish");
 
         Navigator app = (Navigator) getView().getApplication();
         app.goToProductScreenFromAddScreen(this);
-
     }
 
     @Override
@@ -105,7 +103,6 @@ public class AddPartyPresenter
         getView().setTimeInitLabel(getModel().getTimeInitLabel());
         getView().setTimeFinishLabel(getModel().getTimeFinishLabel());
         getView().setDetailsLabel(getModel().getDetailsLabel());
-        getView().setTextSelectPhotoLabel(getModel().getSelectPhotoTextLabel());
         getView().setPublishBtnLabel(getModel().getPublishBtnLabel());
     }
 

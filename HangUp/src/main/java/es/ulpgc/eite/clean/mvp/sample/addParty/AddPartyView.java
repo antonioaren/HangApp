@@ -31,13 +31,13 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
     private EditText EventName;
     private EditText EventPlace;
+    private TextView EventDate;
+    private EditText EventTimeInit;
     private EditText EventTimeFinish;
-    private EditText EventDate;
-    private TextView EventTimeInit;
+
     private Button buttonPublish;
     private EditText EventDetails;
-    private TextView textselect;
-    private RadioGroup rg;
+
     private Date date;
 
 
@@ -51,7 +51,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         EventName.requestFocus();
         EventPlace = (EditText) findViewById(R.id.place);
         EventPlace.requestFocus();
-        EventDate = (EditText) findViewById(R.id.date);
+        EventDate = (TextView) findViewById(R.id.date);
         EventDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,9 +81,6 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         EventTimeFinish = (EditText) findViewById(R.id.TimeF);
 
         EventDetails = (EditText) findViewById(R.id.details);
-        textselect = (TextView) findViewById(R.id.textSelect);
-        rg = (RadioGroup) findViewById(R.id.rg);
-
 
         buttonPublish = (Button) findViewById(R.id.Add);
         buttonPublish.setOnClickListener(new View.OnClickListener() {
@@ -115,31 +112,37 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     public void setNameLabel(String txt) {
         EventName.setHint(txt);
     }
+
     @Override
     public void setPlaceLabel(String txt) {
         EventPlace.setHint(txt);
     }
+
     @Override
     public void setDateLabel(String txt) {
         EventDate.setHint(txt);
     }
+
     @Override
     public void setTimeInitLabel(String txt) {
         EventTimeInit.setHint(txt);
     }
+
     @Override
     public void setTimeFinishLabel(String txt) {
         EventTimeFinish.setHint(txt);
     }
+
     @Override
     public void setDetailsLabel(String txt) {
         EventDetails.setHint(txt);
     }
 
-    @Override
-    public void setTextSelectPhotoLabel(String txt) {
-        textselect.setText(txt);
-    }
+//    @Override
+//    public void setTextSelectPhotoLabel(String txt) {
+//        textselect.setText(txt);
+//    }
+
     @Override
     public void setPublishBtnLabel(String txt) {
         buttonPublish.setText(txt);
@@ -160,33 +163,5 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
         getPresenter().DataFromAddView(product);
     }
-//
-@Override
-public String getName() {
-    return EventName.getText().toString();
-}
-
-    @Override
-    public String getPlaceOfTheParty() {
-        return EventPlace.getText().toString();
-    }
-
-    @TargetApi(Build.VERSION_CODES.M)
-    @Override
-    public String getHourOfInit() {
-        return EventTimeInit.getText().toString();
-    }
-
-    @TargetApi(Build.VERSION_CODES.M)
-    @Override
-    public String getHourOfFinish() {
-        return EventTimeFinish.getText().toString();
-    }
-
-    @Override
-    public String getDateOfTheParty() {
-        return EventDate.getText().toString();
-    }
-
 
 }

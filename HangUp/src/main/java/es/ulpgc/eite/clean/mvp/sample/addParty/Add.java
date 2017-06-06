@@ -56,7 +56,7 @@ public interface Add {
 
         void finishScreen();
 
-        void setTextSelectPhotoLabel(String txt);
+//        void setTextSelectPhotoLabel(String txt);
 
         void setPublishBtnLabel(String txt);
 
@@ -72,21 +72,6 @@ public interface Add {
         void setTimeFinishLabel(String txt);
 
         void setDetailsLabel(String detailsLabel);
-
-        //
-        String getName();
-
-        String getPlaceOfTheParty();
-
-
-        String getHourOfInit();
-
-        @TargetApi(Build.VERSION_CODES.M)
-        String getHourOfFinish();
-
-        String getDateOfTheParty();
-
-
     }
 
     /**
