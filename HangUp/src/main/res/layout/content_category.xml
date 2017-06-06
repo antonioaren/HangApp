@@ -62,7 +62,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="top"
             android:layout_weight="1"
-            android:text="+AddOne" />
+            android:text="+AddOne"/>
 
     </LinearLayout>
 

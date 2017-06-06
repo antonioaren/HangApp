@@ -121,7 +121,7 @@
 
                 <RadioButton
                     android:id="@+id/r1"
-                    android:layout_width="wrap"
+                    android:layout_width="wrap_content"
                     android:layout_height="20dp"
                     android:text="academic"
                     android:background="@drawable/ulpgc" />

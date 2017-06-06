@@ -1,20 +1,24 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
+import android.content.ContentProvider;
+import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.AssetManager;
 import android.util.Log;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.UUID;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 import io.realm.RealmResults;
 
-import static android.content.Context.MODE_PRIVATE;
+import static android.R.attr.id;
 
 
 public class CategoryModel extends GenericModel<Category.ModelToPresenter>
@@ -62,6 +66,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     @Override
     public void CreateDatabaseTables() {
         Log.d(TAG, "CreateDatabaseTables()");
+
         insertEvent("Fiestas", R.drawable.disco);
         insertEvent("Música", R.drawable.musica);
         insertEvent("ULPGC", R.drawable.ulpgc);
@@ -69,19 +74,31 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         insertEvent("Automovilismo", R.drawable.cars);
     }
 
+    private void OpenImageFromAssets(String fileName) {
+        try {
+            InputStream photos = getPresenter().getAppContext().getAssets().open(fileName);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     //TODO Usarlo, resolver problema objeto.
     private void CheckIfIsFirstTimeRunning() {
         Log.d(TAG, "CheckIfIsFirstTimeRunning");
 
-        SharedPreferences pref = getPresenter().getAppContext().getSharedPreferences("PREF", MODE_PRIVATE);
+        Context context = getPresenter().getAppContext();
+
+        SharedPreferences pref = context.getSharedPreferences("PREF", Context.MODE_PRIVATE);
         SharedPreferences.Editor prefEditor = pref.edit();
 
         //Si no está creado "FirstRunning", crear la base de datos, si está creado significa que ya
         //está creada la base de datos.
+
         if (!pref.getBoolean("FirstRunning", true)) {
             CreateDatabaseTables();
             //Crear boolean y hacer commit.
-            prefEditor.putBoolean("FirstRunning", false);
+            prefEditor.putBoolean("FirstRunning", true);
             prefEditor.commit();
         }
     }
@@ -126,18 +143,12 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     @Override
     public String getCategoryNameAtIndex(int index) {
-        RealmResults<CategoryData> results = realmDatabase.where(CategoryData.class).findAll();
-        List<CategoryData> list = new ArrayList<>();
-        list.addAll(realmDatabase.copyFromRealm(results));
-        String name = list.get(index).getCategoryName();
-        return name;
+        return null;
     }
 
     @Override
     public int getNumberOfEvents() {
-
         return getEvents().size();
-
     }
 
     @Override
@@ -162,9 +173,19 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     }
 
 
+    public void updateEvent() {
+    }
+
+    public void deteleEvent() {
+        realmDatabase.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                realm.where(ProductData.class).equalTo("id", id);
+            }
+        });
 
 
-
+    }
 
     public void setSearchLabel(String label) {
         this.HangAppButtonSearchLabel = label;
