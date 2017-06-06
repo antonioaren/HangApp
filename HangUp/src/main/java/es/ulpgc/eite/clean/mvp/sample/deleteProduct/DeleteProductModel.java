@@ -65,7 +65,7 @@ public class DeleteProductModel extends GenericModel<DeleteProduct.ModelToPresen
             @Override
             public void execute(Realm realm) {
 
-                realmDatabase.where(ProductData.class).equalTo("CategoryName", name)
+                realmDatabase.where(ProductData.class).equalTo("productName", name)
                         .findAll()
                         .deleteAllFromRealm();
             }
