@@ -13,8 +13,8 @@ import es.ulpgc.eite.clean.mvp.sample.R;
 public class DeleteProductView extends GenericActivity<DeleteProduct.PresenterToView, DeleteProduct.ViewToPresenter, DeleteProductPresenter>
         implements DeleteProduct.PresenterToView {
 
-    // ActionBar ab;
-    Button btnDeleteProduct;
+
+    private Button btnDeleteProduct;
     private TextView textTitleDelete;
     private EditText ediTextProduct;
 
@@ -51,6 +51,10 @@ public class DeleteProductView extends GenericActivity<DeleteProduct.PresenterTo
         finish();
     }
 
+    @Override
+    public void setTitleLabel(String txt) {
+        textTitleDelete.setText(txt);
+    }
     @Override
     public void setDeleteBtnLabel(String txt) {
         btnDeleteProduct.setText(txt);

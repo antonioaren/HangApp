@@ -76,6 +76,8 @@ public interface DeleteProduct {
         void finishScreen();
 
 
+        void setTitleLabel(String txt);
+
         void setDeleteBtnLabel(String txt);
 
 

@@ -36,12 +36,8 @@ public class DeleteProductPresenter
 
         if (configurationChangeOccurred()) {
             getView().setDeleteBtnLabel(getModel().getDeleteBtnLabel());
-            getView().setText1label(getModel().getTextLabel());
-
-
-//            if (buttonClicked) {
-//                //getView().setText(getModel().getSearchText());
-//            }
+            getView().setTitleLabel(getModel().getTextLabel());
+            
         }
     }
 
