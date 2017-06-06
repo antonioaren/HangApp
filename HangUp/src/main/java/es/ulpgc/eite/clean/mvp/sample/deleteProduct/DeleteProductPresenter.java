@@ -37,7 +37,6 @@ public class DeleteProductPresenter
         if (configurationChangeOccurred()) {
             getView().setDeleteBtnLabel(getModel().getDeleteBtnLabel());
             getView().setText1label(getModel().getTextLabel());
-            
 
 
 //            if (buttonClicked) {
@@ -81,10 +80,7 @@ public class DeleteProductPresenter
         //  app.goToProductScreen((Product.ProductTo) this);
     }
 
-    @Override
-    public void onDeleteClicked() {
 
-    }
 
     @Override
     public void onDeleteButtonClicked() {

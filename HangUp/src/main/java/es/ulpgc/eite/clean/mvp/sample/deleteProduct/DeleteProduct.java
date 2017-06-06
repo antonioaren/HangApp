@@ -55,7 +55,6 @@ public interface DeleteProduct {
 
         void onItemListClicked();
 
-        void onDeleteClicked();
 
         void onDeleteButtonClicked();
 
@@ -79,12 +78,6 @@ public interface DeleteProduct {
 
         void setDeleteBtnLabel(String txt);
 
-        void setDeleIdBtnLabel(String txt);
-
-        void setText2label(String txt);
-
-
-        void setText1label(String txt);
 
         String getTextFromEditText();
     }
