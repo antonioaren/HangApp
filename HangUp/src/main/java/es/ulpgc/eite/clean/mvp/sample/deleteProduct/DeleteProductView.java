@@ -42,7 +42,7 @@ public class DeleteProductView extends GenericActivity<DeleteProduct.PresenterTo
     @Override
     public void onResume() {
         super.onResume(DeleteProductPresenter.class, this);
-      
+
 
     }
 
