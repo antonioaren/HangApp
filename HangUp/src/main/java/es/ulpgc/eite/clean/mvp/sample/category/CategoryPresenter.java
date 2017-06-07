@@ -65,7 +65,7 @@ public class CategoryPresenter
         Log.d(TAG, "calling onResume()");
 
         if (configurationChangeOccurred()) {
-            getView().setLabelSearch(getModel().getSearchLabel());
+            //getView().setLabelSearch(getModel().getSearchLabel());
             getView().setAddLabel(getModel().getAddLabel());
         }
     }
@@ -105,8 +105,8 @@ public class CategoryPresenter
 //          textVisible = true;
 //          buttonClicked = true;
 
-        Navigator app = (Navigator) getView().getApplication();
-        app.goToDeleteScreen(this);
+//        Navigator app = (Navigator) getView().getApplication();
+//        app.goToDeleteScreen(this);
     }
     @Override
     public void onButtonAddClicked() {
@@ -127,7 +127,7 @@ public class CategoryPresenter
     public void onScreenStarted() {
         Log.d(TAG, "calling onScreenStarted()");
         if (isViewRunning()) {
-            getView().setLabelSearch(getModel().getSearchLabel());
+            //getView().setLabelSearch(getModel().getSearchLabel());
             getView().setAddLabel(getModel().getAddLabel());
         }
         // el setting adapter va aqui
@@ -187,28 +187,7 @@ public class CategoryPresenter
     }
 
 
-    @Override
-    public void subscribeCallbacks() {
-        Repository.CategoryRepository.OnGetAllCategoryCallback getAllCategoryCallback =
-                new Repository.CategoryRepository.OnGetAllCategoryCallback() {
-            @Override
-            public void onSuccess(RealmResults<CategoryData> categories) {
-            }
 
-            @Override
-            public void onError(String message) {
-
-            }
-
-        };
-
-    }
-
-    @Override
-    public void unSubscribeCallbacks() {
-
-
-    }
 
 }
 

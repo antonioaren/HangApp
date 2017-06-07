@@ -2,6 +2,7 @@ package es.ulpgc.eite.clean.mvp.sample.product;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -21,7 +22,6 @@ import es.ulpgc.eite.clean.mvp.sample.util.RealmRecyclerViewAdapter;
 import io.realm.OrderedRealmCollection;
 import io.realm.Realm;
 import io.realm.RealmList;
-import io.realm.RealmResults;
 
 /**
  * Created by alumno on 31/03/2017.
@@ -32,7 +32,8 @@ public class ProductView
         implements Product.PresenterToView {
 
     public RecyclerView recycler;
-    private Button buttonAdd, buttonDelete;
+    private Button buttonAdd;
+    private FloatingActionButton FButtonAdd;
     private LinearLayoutManager linearmanager;
     private RealmList<ProductData> items;
     private ProductAdapter adapter;
@@ -51,23 +52,23 @@ public class ProductView
         recycler.setAdapter(
                 new ProductView.ProductAdapter(realm.where(ProductData.class).findAll()));
 
-        buttonAdd = (Button) findViewById(R.id.buttonAdd);
-        buttonAdd.setOnClickListener(new View.OnClickListener() {
+        FButtonAdd = (FloatingActionButton) findViewById(R.id.fButtonAdd);
+        FButtonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 getPresenter().onButtonAddClicked();
             }
         });
 
-        buttonDelete = (Button) findViewById(R.id.buttonDelete);
-        buttonDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getPresenter().onButtonDeleteClicked();
-            }
-        });
+//        buttonDelete = (Button) findViewById(R.id.buttonDelete);
+//        buttonDelete.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                getPresenter().onButtonDeleteClicked();
+//            }
+//        });
 
-        InitComponents();
+        InitComponentSwipeAndMove();
 
     }
 
@@ -77,7 +78,7 @@ public class ProductView
 
     }
 
-    private void InitComponents() {
+    private void InitComponentSwipeAndMove() {
 
         recycler.setItemAnimator(new DefaultItemAnimator());
 
@@ -102,12 +103,12 @@ public class ProductView
 
     @Override
     public void setAddLabel(String msg) {
-        buttonAdd.setText(msg);
+        //buttonAdd.setText(msg);
     }
 
     @Override
     public void setDeleteLabel(String msg) {
-        buttonDelete.setText(msg);
+
     }
 
     @Override
@@ -169,7 +170,6 @@ public class ProductView
         public class ProductViewHolder extends RecyclerView.ViewHolder {
 
             public final View itemView;
-            Context context;
             public TextView title;
             public TextView Place;
             public ProductData item;

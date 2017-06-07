@@ -12,11 +12,6 @@ import es.ulpgc.eite.clean.mvp.sample.category.Category;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
-import es.ulpgc.eite.clean.mvp.sample.delete.Delete;
-import es.ulpgc.eite.clean.mvp.sample.delete.DeleteView;
-import es.ulpgc.eite.clean.mvp.sample.deleteProduct.DeleteProduct;
-import es.ulpgc.eite.clean.mvp.sample.deleteProduct.DeleteProductPresenter;
-import es.ulpgc.eite.clean.mvp.sample.deleteProduct.DeleteProductView;
 import es.ulpgc.eite.clean.mvp.sample.details.Detail;
 import es.ulpgc.eite.clean.mvp.sample.details.DetailView;
 import es.ulpgc.eite.clean.mvp.sample.product.Product;
@@ -35,12 +30,8 @@ public class App extends Application implements Mediator, Navigator {
 
     private DetailState ProductToDetail;
 
-    private DeleteState CategoryToSearch;
-    private AddPartyState toAddState;
     private AddCategoryState toaddCategoryState;
-    private DeleteState toDeleteState;
 
-    private DeleteState ProductToDelete;
 
 
     @Override
@@ -48,7 +39,6 @@ public class App extends Application implements Mediator, Navigator {
         super.onCreate();
         Realm.init(this);
         toCategoryState = new CategoryState();
-        CategoryToSearch = new DeleteState();
     }
 
     @Override
@@ -95,25 +85,15 @@ public class App extends Application implements Mediator, Navigator {
     }
 
     @Override
-    public void startingDeleteScreen(Delete.ToDelete presenter) {
-        if (CategoryToSearch != null) {
-
-        }
-        presenter.onScreenStarted();
-    }
-
-    @Override
     public void startingAddScreen(Add.ToAdd presenter) {
-        if (toAddState != null) {
 
-        }
         presenter.onScreenStarted();
     }
 
     @Override
     public void startingAddCategoryScreen(AddCategory.ToAdd presenter) {
         if (toaddCategoryState != null) {
-            //presenter.setTextVisibility(toaddCategoryState.textVisibility);
+
         }
 
         presenter.onScreenStarted();
@@ -158,27 +138,7 @@ public class App extends Application implements Mediator, Navigator {
         }
     }
 
-    @Override
-    public void goToDeleteScreen(Category.CategoryTo presenter) {
-        CategoryToSearch = new DeleteState();
 
-        Context view = presenter.getManagedContext();
-        if (view != null) {
-            view.startActivity(new Intent(view, DeleteView.class));
-        }
-    }
-
-    @Override
-    public void gotoDeleteProductScreen(Product.ProductTo presenter) {
-        ProductToDelete = new DeleteState();
-        //Añadir los estados que falten para pasarles a la busquedad. Guardar posicion, etc.
-
-
-        Context view = presenter.getManagedContext();
-        if (view != null) {
-            view.startActivity(new Intent(view, DeleteProductView.class));
-        }
-    }
     @Override
     public void goToCategoryScreen(Product.ProductTo presenter) {
         //toCategoryState = new CategoryState();
@@ -207,7 +167,6 @@ public class App extends Application implements Mediator, Navigator {
 
     @Override
     public void goToAddPartyScreen(Product.ProductTo presenter) {
-        toAddState = new AddPartyState();
 
 
         Context view = presenter.getManagedContext();
@@ -231,33 +190,12 @@ public class App extends Application implements Mediator, Navigator {
 
     @Override
     public void SaveDataFromAddParty(Add.AddTo presenter) {
-        toAddState = new AddPartyState();
-        //Guardando datos
-//        toAddState.nameOfTheParty = presenter.getNameOfTheParty();
-//        toAddState.placeOfTheParty = presenter.getPlaceOfTheParty();
-//        toAddState.dateOfTheParty = presenter.getDateOfTheParty();
-//        toAddState.hourOfParty = presenter.getHourOfParty();
+
 
         presenter.destroyView();
     }
-    @Override
-    public void deleteEvent(Delete.DeleteTo presenter) {
-        toDeleteState = new DeleteState();
-        toDeleteState.nameToDelete = presenter.getNameToDelete();
-        presenter.destroyView();
-    }
 
-    @Override
-    public void deleteProduct(DeleteProduct.DeleteTo presenter) {
-        toDeleteState = new DeleteState();
-        toDeleteState.nameToDelete = presenter.getNameToDelete();
-        presenter.destroyView();
-    }
 
-    @Override
-    public void startingDeleteProductScreen(DeleteProductPresenter deleteProductPresenter) {
-        deleteProductPresenter.onScreenStarted();
-    }
     //////////////// State /////////////////////////////////////////////////////////////////////////
 
     private class CategoryState {
@@ -275,18 +213,9 @@ public class App extends Application implements Mediator, Navigator {
         public ProductData ItemSelected;
     }
 
-    private class DeleteState {
 
 
-        public String nameToDelete;
-    }
 
-    private class AddPartyState {
-        public String nameOfTheParty;
-        public String placeOfTheParty;
-        public String dateOfTheParty;
-        public String hourOfParty;
-    }
 
     private class AddCategoryState {
         boolean textVisibility;

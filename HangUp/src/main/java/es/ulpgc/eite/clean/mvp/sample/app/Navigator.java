@@ -13,9 +13,5 @@ public interface Navigator {
     void goToAddCategoryScreen(Category.CategoryTo presenter);
     void goToAddPartyScreen(Product.ProductTo presenter);
     void goToProductScreen(Category.CategoryTo presenter);
-    void gotoDeleteProductScreen(Product.ProductTo presenter);
-    void goToDeleteScreen(Category.CategoryTo presenter);
-
-
     void goToCategoryScreen(Product.ProductTo presenter);
 }

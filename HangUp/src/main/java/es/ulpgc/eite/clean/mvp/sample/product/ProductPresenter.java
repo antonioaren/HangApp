@@ -30,8 +30,6 @@ public class ProductPresenter
 
         Mediator app = (Mediator) getApplication();
         app.startingProductScreen(this);
-
-
     }
     @Override
     public void onResume(Product.PresenterToView view) {
@@ -108,8 +106,6 @@ public class ProductPresenter
     @Override
     public void onButtonDeleteClicked() {
         Log.d(TAG, "calling onButtonDeleteClicked()");
-        Navigator app = (Navigator) getView().getApplication();
-        app.gotoDeleteProductScreen(this);
     }
 
     @Override

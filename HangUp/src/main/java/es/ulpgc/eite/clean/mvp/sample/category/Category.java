@@ -79,8 +79,6 @@ public interface Category {
     interface ModelToPresenter {
         Context getAppContext();
 
-        void subscribeCallbacks();
-        void unSubscribeCallbacks();
 
         Context getManagedContext();
     }

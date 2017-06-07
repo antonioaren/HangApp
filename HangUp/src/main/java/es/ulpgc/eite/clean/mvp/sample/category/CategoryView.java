@@ -26,7 +26,7 @@ public class CategoryView
         implements Category.PresenterToView {
 
 
-    private Button buttonSearch;
+    //    private Button buttonSearch;
     private Button buttonAdd;
     private TextView title;
 
@@ -49,13 +49,13 @@ public class CategoryView
         recycler.setLayoutManager(linearmanager);
 
 
-        buttonSearch = (Button) findViewById(R.id.buttonSearch);
-        buttonSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getPresenter().onButtonSearchClicked();
-            }
-        });
+//        buttonSearch = (Button) findViewById(R.id.buttonSearch);
+//        buttonSearch.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                getPresenter().onButtonSearchClicked();
+//            }
+//        });
 
         buttonAdd = (Button) findViewById(R.id.buttonAdd);
         buttonAdd.setOnClickListener(new View.OnClickListener() {
@@ -102,7 +102,7 @@ public class CategoryView
 
     @Override
     public void setLabelSearch(String txt) {
-        buttonSearch.setText(txt);
+        // buttonSearch.setText(txt);
     }
 
     @Override
