@@ -96,12 +96,13 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
         return products;
     }
 
-
-    public void deteleEvent() {
+    @Override
+    public void deleteItemById(final String id) {
         realmDatabase.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
-                realm.where(ProductData.class).equalTo("id", id);
+                ProductData product = realm.where(ProductData.class).equalTo("id", id).findFirst();
+                product.deleteFromRealm();
             }
         });
 

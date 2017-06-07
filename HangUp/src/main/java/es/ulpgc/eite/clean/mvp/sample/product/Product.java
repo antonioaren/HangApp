@@ -2,8 +2,6 @@ package es.ulpgc.eite.clean.mvp.sample.product;
 
 import android.content.Context;
 
-import java.util.List;
-
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
@@ -24,7 +22,7 @@ public interface Product {
 
         void setDeleteLabel(String msg);
 
-        void settingAdapter(List<ProductData> items);
+        void settingAdapter(RealmList<ProductData> items);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -36,6 +34,9 @@ public interface Product {
         void onButtonAddClicked();
 
         void onButtonDeleteClicked();
+
+        void OnSwipedItem(String id);
+
     }
 
     public interface PresenterToModel {
@@ -47,6 +48,8 @@ public interface Product {
         void AddProductByCategoryId(ProductData product, String CategoryId);
 
         void setItem(CategoryData itemSelected);
+
+        void deleteItemById(String id);
 
         String getAddLabel();
 

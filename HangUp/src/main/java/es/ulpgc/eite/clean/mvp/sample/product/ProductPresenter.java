@@ -112,6 +112,12 @@ public class ProductPresenter
         app.gotoDeleteProductScreen(this);
     }
 
+    @Override
+    public void OnSwipedItem(String id) {
+        getModel().deleteItemById(id);
+        SettingItemsAdapter();
+    }
+
 
     @Override
     public Context getManagedContext() {

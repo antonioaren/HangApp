@@ -2,8 +2,10 @@ package es.ulpgc.eite.clean.mvp.sample.product;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +20,7 @@ import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.util.RealmRecyclerViewAdapter;
 import io.realm.OrderedRealmCollection;
 import io.realm.Realm;
+import io.realm.RealmList;
 import io.realm.RealmResults;
 
 /**
@@ -31,7 +34,8 @@ public class ProductView
     public RecyclerView recycler;
     private Button buttonAdd, buttonDelete;
     private LinearLayoutManager linearmanager;
-    private RealmResults<ProductData> items;
+    private RealmList<ProductData> items;
+    private ProductAdapter adapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,11 +67,34 @@ public class ProductView
             }
         });
 
+        InitComponents();
+
     }
 
     @Override
     protected void onResume() {
         super.onResume(ProductPresenter.class, this);
+
+    }
+
+    private void InitComponents() {
+
+        recycler.setItemAnimator(new DefaultItemAnimator());
+
+        ItemTouchHelper swipeToDismissTouchHelper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(
+                ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                getPresenter().OnSwipedItem(items.get(viewHolder.getAdapterPosition()).getId());
+            }
+        });
+
+        swipeToDismissTouchHelper.attachToRecyclerView(recycler);
     }
 
 
@@ -84,13 +111,13 @@ public class ProductView
     }
 
     @Override
-    public void settingAdapter(List<ProductData> items) {
+    public void settingAdapter(RealmList<ProductData> items) {
         if (recycler != null) {
+            this.items = items;
             ProductView.ProductAdapter recyclerAdapter =
                     (ProductView.ProductAdapter) recycler.getAdapter();
             recyclerAdapter.setItemList(items);
         }
-
     }
 
     public class ProductAdapter extends
@@ -140,6 +167,7 @@ public class ProductView
 
 
         public class ProductViewHolder extends RecyclerView.ViewHolder {
+
             public final View itemView;
             Context context;
             public TextView title;
