@@ -37,8 +37,8 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
 
     public AddCategoryModel() {
 
-
-        this.images = new Integer[]{R.drawable.astro, R.drawable.ulpgc, R.drawable.cars, R.drawable.disco};
+        int astro = readImageFromAssets("astro.jpeg");
+        this.images = new Integer[]{astro, R.drawable.ulpgc, R.drawable.cars, R.drawable.disco};
     }
 
     @Override
@@ -167,7 +167,7 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
             InputStream manager = Resources.getSystem().getAssets().open(name);
 
             //convierte el archivo de assets en un objeto drawable
-            Drawable drawableImage = Drawable.createFromStream(manager, null);
+            Drawable drawableImage = Drawable.createFromStream(manager, name);
 
             image = Integer.parseInt(drawableImage.toString());
         } catch (IOException e) {
