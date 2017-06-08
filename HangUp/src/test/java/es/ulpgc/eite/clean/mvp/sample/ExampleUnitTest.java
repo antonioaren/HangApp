@@ -2,6 +2,8 @@ package es.ulpgc.eite.clean.mvp.sample;
 
 import org.junit.Test;
 
+import java.io.IOException;
+
 import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategoryModel;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
 import es.ulpgc.eite.clean.mvp.sample.product.ProductModel;
@@ -40,7 +42,7 @@ public class ExampleUnitTest {
   @Test
   public void testGetAddLabel(){
     CategoryModel categoryModel= new CategoryModel();
-    categoryModel.setAddLabel("add");
+    //categoryModel.setAddLabel("add");
     assertEquals("add",categoryModel.getAddLabel());
   }
   @Test
@@ -69,7 +71,8 @@ public void testGetImageByIdSelected()throws Exception{
   @Test
   public void testReadImageFromAssets() throws Exception {
     AddCategoryModel add = new AddCategoryModel();
-
+    int image = add.readImageFromAssets("astro.jpeg");
+    assertEquals(R.drawable.astro, image);
 
   }
   @Test
@@ -107,14 +110,14 @@ public void testGetRadioLabelsWithoutSettingName()throws Exception{
 
 
   @Test
-  public void testgetPhotoLabelNull(){
+  public void testgetPhotoLabelNull() throws IOException {
     AddCategoryModel add= new AddCategoryModel();
 
     assertEquals(null,add.getPhotoLabel());
   }
 
   @Test
-  public void testgetPhotoLabelNotNull(){
+  public void testgetPhotoLabelNotNull() throws IOException {
     AddCategoryModel add= new AddCategoryModel();
     add.setPhotoLabel("photo");
     assertEquals("photo",add.getPhotoLabel());
