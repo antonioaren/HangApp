@@ -186,7 +186,7 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     public int getImageByIdSelected(int id) {
         int image = 1;
         if (id >= 0) {
-            image = readImageFromAssets("astro.jpeg");
+            image = images[id];
         } else {
             image = images[0];
         }
