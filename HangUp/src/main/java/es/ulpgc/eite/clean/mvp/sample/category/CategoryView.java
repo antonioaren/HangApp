@@ -2,6 +2,7 @@ package es.ulpgc.eite.clean.mvp.sample.category;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -34,6 +35,7 @@ public class CategoryView
     private TextView title;
 
     private ImageView image;
+    private FloatingActionButton fButtonAddCategory;
     private RecyclerView recycler;
     private LinearLayoutManager linearmanager;
     private RealmList<CategoryData> items;
@@ -52,16 +54,8 @@ public class CategoryView
         recycler.setLayoutManager(linearmanager);
 
 
-//        buttonSearch = (Button) findViewById(R.id.buttonSearch);
-//        buttonSearch.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                getPresenter().onButtonSearchClicked();
-//            }
-//        });
-
-        buttonAdd = (Button) findViewById(R.id.buttonAdd);
-        buttonAdd.setOnClickListener(new View.OnClickListener() {
+        fButtonAddCategory = (FloatingActionButton) findViewById(R.id.fButtonAddCategory);
+        fButtonAddCategory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 getPresenter().onButtonAddClicked();
