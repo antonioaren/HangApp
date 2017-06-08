@@ -130,7 +130,8 @@ public class CategoryPresenter
             getView().setAddLabel(getModel().getAddLabel());
         }
         // el setting adapter va aqui
-        getView().settingAdapter(getModel().getEvents());
+        // getView().settingAdapter(getModel().getEvents());
+        SettingItemsAdapter();
 
     }
 
