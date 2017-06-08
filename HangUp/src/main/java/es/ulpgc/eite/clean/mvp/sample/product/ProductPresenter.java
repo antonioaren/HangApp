@@ -39,7 +39,7 @@ public class ProductPresenter
 
         if (configurationChangeOccurred()) {
             getView().setAddLabel(getModel().getAddLabel());
-            getView().setDeleteLabel(getModel().getDeleteLabel());
+            // getView().setDeleteLabel(getModel().getDeleteLabel());
 
         }
     }
@@ -57,7 +57,7 @@ public class ProductPresenter
     public void onScreenStarted() {
         if (isViewRunning()) {
             getView().setAddLabel(getModel().getAddLabel());
-            getView().setDeleteLabel(getModel().getDeleteLabel());
+            //getView().setDeleteLabel(getModel().getDeleteLabel());
             SettingItemsAdapter();
         }
     }

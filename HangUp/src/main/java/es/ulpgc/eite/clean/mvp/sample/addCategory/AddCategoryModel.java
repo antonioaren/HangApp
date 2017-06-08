@@ -11,6 +11,7 @@ import java.util.UUID;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.Model;
+import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import io.realm.Realm;
@@ -40,7 +41,7 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
         int academic = readImageFromAssets("ulpgc.png");
         int car = readImageFromAssets("cars.jpeg");
         int disco = readImageFromAssets("disco.jpg");
-        this.images = new Integer[]{astro, academic, car, disco};
+        this.images = new Integer[]{R.drawable.astro, R.drawable.ulpgc, R.drawable.cars, R.drawable.disco};
     }
 
     @Override

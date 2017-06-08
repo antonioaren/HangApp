@@ -45,7 +45,7 @@ public interface Category {
 
         void setLabelSearch(String txt);
 
-        void setAddLabel(String txt);
+
     }
 
     /**

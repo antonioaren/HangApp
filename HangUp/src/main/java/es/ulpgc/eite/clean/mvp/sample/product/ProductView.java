@@ -1,6 +1,5 @@
 package es.ulpgc.eite.clean.mvp.sample.product;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -60,13 +59,6 @@ public class ProductView
             }
         });
 
-//        buttonDelete = (Button) findViewById(R.id.buttonDelete);
-//        buttonDelete.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                getPresenter().onButtonDeleteClicked();
-//            }
-//        });
 
         InitComponentSwipeAndMove();
 

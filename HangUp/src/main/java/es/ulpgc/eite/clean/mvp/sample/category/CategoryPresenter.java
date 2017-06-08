@@ -65,7 +65,7 @@ public class CategoryPresenter
 
         if (configurationChangeOccurred()) {
             //getView().setLabelSearch(getModel().getSearchLabel());
-            getView().setAddLabel(getModel().getAddLabel());
+
         }
     }
 
@@ -75,8 +75,8 @@ public class CategoryPresenter
      */
     @Override
     public void onBackPressed() {
-        Log.d(TAG, "calling onBackPressed()");
-
+        //No llama al back del activity. Por eso creo otro llamado OnBackButtonPressed
+        //Que sobreescribe el backpressed del activity.
     }
 
     /**
@@ -127,7 +127,7 @@ public class CategoryPresenter
         Log.d(TAG, "calling onScreenStarted()");
         if (isViewRunning()) {
             //getView().setLabelSearch(getModel().getSearchLabel());
-            getView().setAddLabel(getModel().getAddLabel());
+
         }
         // el setting adapter va aqui
         // getView().settingAdapter(getModel().getEvents());
