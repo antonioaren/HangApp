@@ -2,10 +2,14 @@ package es.ulpgc.eite.clean.mvp.sample.category;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.AssetManager;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.UUID;
@@ -63,7 +67,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     public void CreateDatabaseTables() {
         Log.d(TAG, "CreateDatabaseTables()");
 
-        insertEvent("Fiestas", R.drawable.disco);
+        insertEvent("Fiestas", R.drawable.astro);
         insertEvent("Música", R.drawable.musica);
         insertEvent("ULPGC", R.drawable.ulpgc);
         insertEvent("Astronomía", R.drawable.astro);
@@ -71,18 +75,31 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     }
 
     public int readImageFromAssets(String name) {
-        int image = 1;
+        String msg = "";
+        int im = 1;
         try {
             //Recoger el archivo desde assets
-            InputStream manager = Resources.getSystem().getAssets().open(name);
+
+            AssetManager am = Resources.getSystem().getAssets();
+            InputStream manager = am.open(name);
             //convierte el archivo de assets en un objeto drawable
             Drawable drawableImage = Drawable.createFromStream(manager, null);
-            image = Integer.parseInt(drawableImage.toString());
+
+            Bitmap bm = BitmapFactory.decodeStream(manager);
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            bm.compress(Bitmap.CompressFormat.PNG, 100, stream);
+            //Convierte la imagen en un array de bytes.Imprescindible para hacer operacion sobre ella
+            byte[] byteArray = stream.toByteArray();
+            im = Integer.parseInt(byteArray.toString());
+
+            //  image=Integer.parseInt(drawableImage.toString());
+
+
         } catch (IOException e) {
             //Captando el mensaje en caso de error al cargar el archivo
             Log.e(TAG, e.getMessage());
         }
-        return image;
+        return im;
     }
 
     //TODO Usarlo, resolver problema objeto.
