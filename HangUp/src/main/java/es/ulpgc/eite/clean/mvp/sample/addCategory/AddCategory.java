@@ -8,7 +8,6 @@ import android.os.Bundle;
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.Presenter;
-import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 
 
 public interface AddCategory {
@@ -29,9 +28,6 @@ public interface AddCategory {
 
 
         void destroyView();
-
-
-        Repository.ProductRepository.OnSaveProductCallback getCallBack();
 
 
         String getCategoryName();

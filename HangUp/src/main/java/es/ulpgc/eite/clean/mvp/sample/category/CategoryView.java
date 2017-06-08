@@ -10,7 +10,6 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,7 +21,6 @@ import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.util.RealmRecyclerViewAdapter;
 import io.realm.OrderedRealmCollection;
 import io.realm.Realm;
-import io.realm.RealmList;
 import io.realm.RealmResults;
 
 public class CategoryView
@@ -31,14 +29,13 @@ public class CategoryView
 
 
     //    private Button buttonSearch;
-    private Button buttonAdd;
-    private TextView title;
+
 
     private ImageView image;
     private FloatingActionButton fButtonAddCategory;
     private RecyclerView recycler;
     private LinearLayoutManager linearmanager;
-    private RealmList<CategoryData> items;
+    private RealmResults<CategoryData> items;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -98,17 +95,18 @@ public class CategoryView
         swipeToDismissTouchHelper.attachToRecyclerView(recycler);
     }
 
+
     ///////////////////////////////////////////////////////////////////////////////////
     // Presenter To View /////////////////////////////////////////////////////////////
 
     @Override
-    public void settingAdapter(List<CategoryData> items) {
+    public void settingAdapter(RealmResults<CategoryData> items) {
         if (recycler != null) {
-            CategoryAdapter recyclerAdapter =
-                    (CategoryAdapter) recycler.getAdapter();
+            this.items = items;
+            CategoryView.CategoryAdapter recyclerAdapter =
+                    (CategoryView.CategoryAdapter) recycler.getAdapter();
             recyclerAdapter.setItemList(items);
         }
-
     }
 
     @Override
@@ -124,12 +122,13 @@ public class CategoryView
 
     public class CategoryAdapter extends
             RealmRecyclerViewAdapter<CategoryData, CategoryAdapter.CategoryViewHolder> {
-
-        private RealmResults<CategoryData> items;
+        private List<CategoryData> items;
+        // private RealmResults<CategoryData> items;
 
         public CategoryAdapter(OrderedRealmCollection<CategoryData> items) {
             super(items, true);
-            this.items = (RealmResults<CategoryData>) items;
+            //this.items = (RealmResults<CategoryData>) items;
+            this.items = items;
         }
 
         @Override

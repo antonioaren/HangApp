@@ -2,6 +2,8 @@ package es.ulpgc.eite.clean.mvp.sample.category;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 
 import java.io.IOException;
@@ -11,12 +13,9 @@ import java.util.UUID;
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
-import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 import io.realm.RealmResults;
-
-import static android.R.attr.id;
 
 
 public class CategoryModel extends GenericModel<Category.ModelToPresenter>
@@ -44,8 +43,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     @Override
     public void onCreate(Category.ModelToPresenter presenter) {
         super.onCreate(presenter);
-        HangAppButtonAddLabel = "Add";
-        HangAppButtonSearchLabel = "Search";
+
 
         RealmConfiguration setting = new RealmConfiguration.Builder().build();
         Realm.setDefaultConfiguration(setting);
@@ -72,13 +70,19 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         insertEvent("Automovilismo", R.drawable.cars);
     }
 
-    private void OpenImageFromAssets(String fileName) {
+    public int readImageFromAssets(String name) {
+        int image = 1;
         try {
-            InputStream photos = getPresenter().getAppContext().getAssets().open(fileName);
-
+            //Recoger el archivo desde assets
+            InputStream manager = Resources.getSystem().getAssets().open(name);
+            //convierte el archivo de assets en un objeto drawable
+            Drawable drawableImage = Drawable.createFromStream(manager, null);
+            image = Integer.parseInt(drawableImage.toString());
         } catch (IOException e) {
-            e.printStackTrace();
+            //Captando el mensaje en caso de error al cargar el archivo
+            Log.e(TAG, e.getMessage());
         }
+        return image;
     }
 
     //TODO Usarlo, resolver problema objeto.
@@ -182,26 +186,9 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     }
 
 
-    public void updateEvent() {
-    }
-
-    public void deteleEvent() {
-        realmDatabase.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-                realm.where(ProductData.class).equalTo("id", id);
-            }
-        });
-
-
-    }
 
     public void setSearchLabel(String label) {
         this.HangAppButtonSearchLabel = label;
-    }
-
-    public void setAddLabel(String label) {
-        this.HangAppButtonAddLabel = label;
     }
 
 

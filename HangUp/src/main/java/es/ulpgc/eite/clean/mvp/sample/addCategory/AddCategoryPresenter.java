@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
+import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 
@@ -87,15 +88,11 @@ public class AddCategoryPresenter
     @Override
     public void onAddClicked() {
         int image = getModel().getImageByIdSelected(getView().getRadioButtonId());
-        getModel().insertEvent(getView().getTextFromEditText(), image);
+        getModel().insertEvent(getView().getTextFromEditText(), R.drawable.astro);
         Mediator app = (Mediator) getView().getApplication();
         app.SaveDataAdd(this);
     }
 
-    @Override
-    public Repository.ProductRepository.OnSaveProductCallback getCallBack() {
-        return callback;
-    }
 
     @Override
     public String getCategoryName() {

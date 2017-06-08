@@ -39,7 +39,8 @@ public interface Category {
     interface PresenterToView extends ContextView {
         void onCreate(Bundle savedInstanceState);
 
-        void settingAdapter(List<CategoryData> items);
+
+        void settingAdapter(RealmResults<CategoryData> items);
 
         void finishScreen();
 
