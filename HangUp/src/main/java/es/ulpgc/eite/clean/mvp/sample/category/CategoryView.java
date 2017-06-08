@@ -2,8 +2,10 @@ package es.ulpgc.eite.clean.mvp.sample.category;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +21,7 @@ import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.util.RealmRecyclerViewAdapter;
 import io.realm.OrderedRealmCollection;
 import io.realm.Realm;
+import io.realm.RealmList;
 import io.realm.RealmResults;
 
 public class CategoryView
@@ -33,7 +36,7 @@ public class CategoryView
     private ImageView image;
     private RecyclerView recycler;
     private LinearLayoutManager linearmanager;
-
+    private RealmList<CategoryData> items;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -68,7 +71,7 @@ public class CategoryView
         Realm realm = Realm.getDefaultInstance();
 
         recycler.setAdapter(new CategoryAdapter(realm.where(CategoryData.class).findAllAsync()));
-
+        InitComponentSwipeAndMove();
     }
 
     /**
@@ -81,6 +84,25 @@ public class CategoryView
         super.onResume(CategoryPresenter.class, this);
     }
 
+    private void InitComponentSwipeAndMove() {
+
+        recycler.setItemAnimator(new DefaultItemAnimator());
+
+        ItemTouchHelper swipeToDismissTouchHelper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(
+                ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                getPresenter().OnSwipedItem(items.get(viewHolder.getAdapterPosition()).getId());
+            }
+        });
+
+        swipeToDismissTouchHelper.attachToRecyclerView(recycler);
+    }
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Presenter To View /////////////////////////////////////////////////////////////

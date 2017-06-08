@@ -10,7 +10,6 @@ import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
-import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 import io.realm.RealmResults;
 
 import static android.content.Context.MODE_PRIVATE;
@@ -186,7 +185,15 @@ public class CategoryPresenter
         app.goToProductScreen(this);
     }
 
+    @Override
+    public void OnSwipedItem(String id) {
+        getModel().deleteItemById(id);
+        SettingItemsAdapter();
+    }
 
+    private void SettingItemsAdapter() {
+        getView().settingAdapter(getModel().getEvents());
+    }
 
 
 }

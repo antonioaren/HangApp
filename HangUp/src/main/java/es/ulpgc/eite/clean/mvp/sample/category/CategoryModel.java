@@ -1,9 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
-import android.content.ContentProvider;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.AssetManager;
 import android.util.Log;
 
 import java.io.IOException;
@@ -170,6 +168,17 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
         });
 
+    }
+
+    @Override
+    public void deleteItemById(final String id) {
+        realmDatabase.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                CategoryData category = realm.where(CategoryData.class).equalTo("id", id).findFirst();
+                category.deleteFromRealm();
+            }
+        });
     }
 
 

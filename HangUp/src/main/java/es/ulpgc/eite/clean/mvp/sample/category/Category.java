@@ -29,6 +29,8 @@ public interface Category {
         List<CategoryData> getCategoryList();
 
         void onItemClicked(CategoryData item, String id);
+
+        void OnSwipedItem(String id);
     }
 
     /**
@@ -71,6 +73,7 @@ public interface Category {
         void insertEvent(String Categoryname, int image);
 
 
+        void deleteItemById(String id);
     }
 
     /**
