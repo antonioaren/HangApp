@@ -1,6 +1,8 @@
 package es.ulpgc.eite.clean.mvp.sample.addCategory;
 
 
+import android.content.res.AssetManager;
+import android.content.res.Resources;
 import android.util.Log;
 
 import java.util.UUID;
@@ -11,7 +13,6 @@ import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import io.realm.Realm;
-
 
 /**
  * Created by eleonora on 17/04/2017.
@@ -156,6 +157,10 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
         });
     }
 
+    public int readImageFromAssets(String name) {
+        AssetManager manager = Resources.getSystem().getAssets();
+        return 0;
+    }
 
     @Override
     public Integer[] getImages() {
