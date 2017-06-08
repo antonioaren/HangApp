@@ -1,10 +1,12 @@
 package es.ulpgc.eite.clean.mvp.sample.addCategory;
 
 
-import android.content.res.AssetManager;
 import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.UUID;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
@@ -158,8 +160,18 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     }
 
     public int readImageFromAssets(String name) {
-        AssetManager manager = Resources.getSystem().getAssets();
-        return 0;
+        int image = 1;
+        try {
+            //Recoger el archivo desde assets
+            InputStream manager = Resources.getSystem().getAssets().open(name);
+            //convierte el archivo de assets en un objeto drawable
+            Drawable drawableImage = Drawable.createFromStream(manager, null);
+            image = Integer.parseInt(drawableImage.toString());
+        } catch (IOException e) {
+            //Captando el mensaje en caso de error al cargar el archivo
+            Log.e(TAG, e.getMessage());
+        }
+        return image;
     }
 
     @Override
