@@ -4,7 +4,6 @@ import org.junit.Test;
 
 import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategoryModel;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
-import es.ulpgc.eite.clean.mvp.sample.delete.DeleteModel;
 import es.ulpgc.eite.clean.mvp.sample.product.ProductModel;
 
 import static org.junit.Assert.assertEquals;
@@ -67,6 +66,12 @@ public void testGetImageByIdSelected()throws Exception{
 
 }
 
+  @Test
+  public void testReadImageFromAssets() throws Exception {
+    AddCategoryModel add = new AddCategoryModel();
+
+
+  }
   @Test
   public void testGetCharacterSequenceFromAWord() throws Exception {
     String word = "R.id.r0";
@@ -146,21 +151,5 @@ public void testGetRadioLabelsWithoutSettingName()throws Exception{
 
   //test for DeleteModel
 
-  @Test
-  public void testGetDeleteButtonLabelAndDeleteIdBtonLabelWithoutSetting() throws Exception {
-    DeleteModel delete = new DeleteModel();
-    String label = delete.getDeleteBtnLabel();
-    String label2 = delete.getDeleteIdBtnLabel();
-    assertEquals(null, label);
-    assertEquals(null, label2);
-  }
 
-  @Test
-  public void testGetDeleteButtonLabelAndDeleteIdBtonLabelBeforeSetting() throws Exception {
-    DeleteModel delete = new DeleteModel();
-    delete.setDeleteBtnLabel("delete");
-    delete.setDeleteIdBtnLabel("delete by Id");
-    assertEquals("delete", delete.getDeleteBtnLabel());
-    assertEquals("delete by Id", delete.getDeleteIdBtnLabel());
-  }
 }

@@ -33,9 +33,9 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
 
     private Integer[] images;
     private CategoryModel category;
-    public AddCategoryModel() {
 
-        this.category = new CategoryModel();
+    public AddCategoryModel() throws IOException {
+
         int astro = readImageFromAssets("astro.jpeg");
         int academic = readImageFromAssets("ulpgc.png");
         int car = readImageFromAssets("cars.jpeg");
