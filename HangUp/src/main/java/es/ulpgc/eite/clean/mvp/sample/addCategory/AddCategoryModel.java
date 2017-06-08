@@ -11,7 +11,6 @@ import java.util.UUID;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.Model;
-import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import io.realm.Realm;
@@ -37,7 +36,11 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     public AddCategoryModel() {
 
         this.category = new CategoryModel();
-        this.images = new Integer[]{R.drawable.astro, R.drawable.ulpgc, R.drawable.cars, R.drawable.disco};
+        int astro = readImageFromAssets("astro.jpeg");
+        int academic = readImageFromAssets("ulpgc.png");
+        int car = readImageFromAssets("cars.jpeg");
+        int disco = readImageFromAssets("disco.jpg");
+        this.images = new Integer[]{astro, academic, car, disco};
     }
 
     @Override
@@ -183,7 +186,7 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     public int getImageByIdSelected(int id) {
         int image = 1;
         if (id >= 0) {
-            image = images[id];
+            image = readImageFromAssets("astro.jpeg");
         } else {
             image = images[0];
         }
