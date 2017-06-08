@@ -1,27 +1,15 @@
 package es.ulpgc.eite.clean.mvp.sample;
 
-import android.support.test.espresso.contrib.RecyclerViewActions;
 import android.support.test.rule.ActivityTestRule;
 
 import org.junit.Rule;
 import org.junit.Test;
 
-import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
-import es.ulpgc.eite.clean.mvp.sample.delete.DeleteModel;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 import io.realm.RealmResults;
-
-import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.action.ViewActions.click;
-import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
-import static android.support.test.espresso.action.ViewActions.typeText;
-import static android.support.test.espresso.assertion.ViewAssertions.matches;
-import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static android.support.test.espresso.matcher.ViewMatchers.withId;
-import static android.support.test.espresso.matcher.ViewMatchers.withText;
 /**
  * Created by eleonora on 24/05/2017.
  */
@@ -31,27 +19,18 @@ public class EspressoTest  {
     @Rule public final ActivityTestRule<CategoryView> presenter= new ActivityTestRule<>(CategoryView.class);
 
 
+//    @Test
+//    public void testOnAddClickedFromMainScreen() {
+//        onView(withId(R.id.buttonAdd)).perform(click());
+//        //actualizando test
+//        onView(withId(R.id.textPhoto)).check(matches(isDisplayed()));
+//        onView(withId(R.id.textName)).check(matches(isDisplayed()));
+//        onView(withId(R.id.radioGroup)).check(matches(isDisplayed()));
+//        onView(withId(R.id.content_name)).check(matches(isDisplayed()));
+//        onView(withId(R.id.buttonAdd2)).check(matches(isDisplayed()));
+//    }
 
-    @Test
-    public void shouldBeAbleToLaunchMainScreen(){
-        onView(withId(R.id.buttonAdd)).check(matches(isDisplayed()));
-        onView(withId(R.id.buttonSearch)).check(matches(isDisplayed()));
-
-
-    }
-
-    @Test
-    public void testOnAddClickedFromMainScreen() {
-        onView(withId(R.id.buttonAdd)).perform(click());
-        //actualizando test
-        onView(withId(R.id.textPhoto)).check(matches(isDisplayed()));
-        onView(withId(R.id.textName)).check(matches(isDisplayed()));
-        onView(withId(R.id.radioGroup)).check(matches(isDisplayed()));
-        onView(withId(R.id.content_name)).check(matches(isDisplayed()));
-        onView(withId(R.id.buttonAdd2)).check(matches(isDisplayed()));
-    }
-
-    @Test
+   /* @Test
     public void testOnAddClickeFromAddCategoryScreen() {
         //the test starts at main screen
         onView(withId(R.id.buttonAdd)).perform(click());
@@ -189,7 +168,7 @@ public class EspressoTest  {
 
             }
         });
-    }
+    }*/
 
     @Test
     public void SearchEventTest() throws Exception {

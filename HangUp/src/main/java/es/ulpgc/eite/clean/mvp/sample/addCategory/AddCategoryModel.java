@@ -168,8 +168,10 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
         try {
             //Recoger el archivo desde assets
             InputStream manager = Resources.getSystem().getAssets().open(name);
+
             //convierte el archivo de assets en un objeto drawable
             Drawable drawableImage = Drawable.createFromStream(manager, null);
+
             image = Integer.parseInt(drawableImage.toString());
         } catch (IOException e) {
             //Captando el mensaje en caso de error al cargar el archivo
