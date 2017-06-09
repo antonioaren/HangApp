@@ -2,6 +2,8 @@ package es.ulpgc.eite.clean.mvp.sample.category;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.AssetManager;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Log;
@@ -61,7 +63,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     @Override
     public void CreateDatabaseTables() {
         Log.d(TAG, "CreateDatabaseTables()");
-        Bitmap astro = getBitmapFromAssets("astro.jpeg");
+        int astro = getBitmapFromAssets("astro.jpeg");
         insertEvent("Fiestas", astro);
         insertEvent("Música", astro);
         insertEvent("ULPGC", astro);
@@ -69,21 +71,23 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         insertEvent("Automovilismo", astro);
     }
 
-    public Bitmap getBitmapFromAssets(String name) {
+    public int getBitmapFromAssets(String name) {
 
         int im = 1;
-        Context context = getPresenter().getManagedContext();
+
         InputStream stream = null;
         try {
             //Recoger el archivo desde assets
-            stream = context.getAssets().open(name);
+            AssetManager am = Resources.getSystem().getAssets();
+
+            stream = am.open(name);
         } catch (IOException e) {
             //Captando el mensaje en caso de error al cargar el archivo
             Log.e(TAG, e.getMessage());
         }
         Bitmap bm = BitmapFactory.decodeStream(stream);
-
-        return bm;
+        int image = Integer.parseInt(bm.toString());
+        return image;
     }
 
     //TODO Usarlo, resolver problema objeto.
@@ -160,7 +164,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     }
 
     @Override
-    public void insertEvent(final String Categoryname, final Bitmap image) {
+    public void insertEvent(final String Categoryname, final int image) {
         realmDatabase = Realm.getDefaultInstance();
         realmDatabase.executeTransaction(new Realm.Transaction() {
             @Override

@@ -2,7 +2,6 @@ package es.ulpgc.eite.clean.mvp.sample.addCategory;
 
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.util.Log;
 
 import java.io.IOException;
@@ -160,37 +159,32 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
         });
     }
 
-    public int readImageFromAssets(String name) {
+    public void readImageFromAssets(String name) {
         String msg = "";
         int im = 1;
         try {
             //Recoger el archivo desde assets
 
+//            AssetManager am = Resources.getSystem().getAssets();
+//            InputStream manager = am.open(name);
             //convierte el archivo de assets en un objeto drawable
+//            Drawable drawableImage = Drawable.createFromStream(manager, null);
 //
+//            Bitmap bm = BitmapFactory.decodeStream(manager);
+//            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+//            bm.compress(Bitmap.CompressFormat.PNG, 100, stream);
+//            byte[] byteArray = stream.toByteArray();
+//            im = Integer.parseInt(byteArray.toString());
 
             //  image=Integer.parseInt(drawableImage.toString());
             Context context = getPresenter().getManagedContext();
             InputStream stream = context.getAssets().open(name);
-            Drawable drawableImage = Drawable.createFromStream(stream, null);
 
-            int size = stream.available();
-            byte[] buffer = new byte[size];
-            stream.read(buffer);
-            stream.close();
-            String file = new String(buffer);
-            im = Integer.parseInt(file);
-            /*
-            Bitmap bm = BitmapFactory.decodeStream(manager);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bm.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            byte[] byteArray = stream.toByteArray();
-            im = Integer.parseInt(byteArray.toString());*/
         } catch (IOException e) {
             //Captando el mensaje en caso de error al cargar el archivo
             Log.e(TAG, e.getMessage());
         }
-        return im;
+
     }
 
     @Override

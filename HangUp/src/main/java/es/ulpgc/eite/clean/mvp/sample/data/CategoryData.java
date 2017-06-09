@@ -1,7 +1,5 @@
 package es.ulpgc.eite.clean.mvp.sample.data;
 
-import android.graphics.Bitmap;
-
 import io.realm.RealmList;
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
@@ -15,7 +13,7 @@ public class CategoryData extends RealmObject {
     private String id;
 
     private String CategoryName;
-    private Bitmap image;
+    private int image;
     private int productsAvailables;
     private RealmList<ProductData> ItemInfo;
 
@@ -23,7 +21,7 @@ public class CategoryData extends RealmObject {
 
     }
 
-    public CategoryData(String id, Bitmap image, String category, RealmList<ProductData> itemInfo) {
+    public CategoryData(String id, int image, String category, RealmList<ProductData> itemInfo) {
         this.id = id;
         this.image = image;
         this.CategoryName = category;
@@ -46,11 +44,11 @@ public class CategoryData extends RealmObject {
         CategoryName = categoryName;
     }
 
-    public Bitmap getImage() {
+    public int getImage() {
         return image;
     }
 
-    public void setImage(Bitmap image) {
+    public void setImage(int image) {
         this.image = image;
     }
 
