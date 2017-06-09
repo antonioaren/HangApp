@@ -4,14 +4,17 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.UUID;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
+import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
@@ -62,35 +65,41 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     @Override
     public void CreateDatabaseTables() {
         Log.d(TAG, "CreateDatabaseTables()");
-        int[] astro = getBitmapFromAssets("astro.jpeg");
-        insertEvent("Fiestas", astro);
-        insertEvent("Música", astro);
-        insertEvent("ULPGC", astro);
-        insertEvent("Astronomía", astro);
-        insertEvent("Automovilismo", astro);
+        //int astro= getBitmapFromAssets("musica.png");
+        insertEvent("Fiestas", R.drawable.disco);
+        insertEvent("Música", R.drawable.musica);
+        insertEvent("ULPGC", R.drawable.ulpgc);
+        insertEvent("Astronomía", R.drawable.astro);
+        insertEvent("Automovilismo", R.drawable.cars);
     }
 
-    public int[] getBitmapFromAssets(String name) {
+    public int getBitmapFromAssets(String name) {
 
         int im = 1;
         int[] array = new int[1000];
+        Drawable drawableImage = null;
         try {
             //Recoger el archivo desde assets
-
-
             InputStream stream = Resources.getSystem().getAssets().open(name);
-            Bitmap bm = BitmapFactory.decodeStream(stream);
-            //Initialize the intArray with the same size as the number of pixels on the image
-            array = new int[bm.getWidth() * bm.getHeight()];
-            //copy pixel data from the Bitmap into the 'intArray' array
-            bm.getPixels(array, 0, bm.getWidth(), 0, 0, bm.getWidth(), bm.getHeight());
+            //   Bitmap bm = BitmapFactory.decodeStream(stream);
+            drawableImage = Drawable.createFromStream(stream, null);
+
+
+            // the drawable (Captain Obvious, to the rescue!!!)
+            Bitmap bitmap = ((BitmapDrawable) drawableImage).getBitmap();
+            ByteArrayOutputStream out = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
+            byte[] bitmapdata = out.toByteArray();
+            im = Integer.parseInt(bitmapdata.toString());
+
+
         } catch (IOException e) {
             //Captando el mensaje en caso de error al cargar el archivo
             Log.e(TAG, e.getMessage());
         }
 
 
-        return array;
+        return im;
     }
 
     //TODO Usarlo, resolver problema objeto.
@@ -167,7 +176,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     }
 
     @Override
-    public void insertEvent(final String Categoryname, final int[] image) {
+    public void insertEvent(final String Categoryname, final int image) {
         realmDatabase = Realm.getDefaultInstance();
         realmDatabase.executeTransaction(new Realm.Transaction() {
             @Override

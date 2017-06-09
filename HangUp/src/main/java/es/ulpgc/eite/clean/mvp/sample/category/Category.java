@@ -71,7 +71,7 @@ public interface Category {
 
         void setItemsFromDatabase();
 
-        void insertEvent(String Categoryname, int[] image);
+        void insertEvent(String Categoryname, int image);
 
 
         void deleteItemById(String id);
