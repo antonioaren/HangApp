@@ -2,7 +2,6 @@ package es.ulpgc.eite.clean.mvp.sample.category;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -63,7 +62,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     @Override
     public void CreateDatabaseTables() {
         Log.d(TAG, "CreateDatabaseTables()");
-        int astro = getBitmapFromAssets("astro.jpeg");
+        int[] astro = getBitmapFromAssets("astro.jpeg");
         insertEvent("Fiestas", astro);
         insertEvent("Música", astro);
         insertEvent("ULPGC", astro);
@@ -71,23 +70,27 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         insertEvent("Automovilismo", astro);
     }
 
-    public int getBitmapFromAssets(String name) {
+    public int[] getBitmapFromAssets(String name) {
 
         int im = 1;
-
-        InputStream stream = null;
+        int[] array = new int[1000];
         try {
             //Recoger el archivo desde assets
-            AssetManager am = Resources.getSystem().getAssets();
 
-            stream = am.open(name);
+
+            InputStream stream = Resources.getSystem().getAssets().open(name);
+            Bitmap bm = BitmapFactory.decodeStream(stream);
+            //Initialize the intArray with the same size as the number of pixels on the image
+            array = new int[bm.getWidth() * bm.getHeight()];
+            //copy pixel data from the Bitmap into the 'intArray' array
+            bm.getPixels(array, 0, bm.getWidth(), 0, 0, bm.getWidth(), bm.getHeight());
         } catch (IOException e) {
             //Captando el mensaje en caso de error al cargar el archivo
             Log.e(TAG, e.getMessage());
         }
-        Bitmap bm = BitmapFactory.decodeStream(stream);
-        int image = Integer.parseInt(bm.toString());
-        return image;
+
+
+        return array;
     }
 
     //TODO Usarlo, resolver problema objeto.
@@ -164,7 +167,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     }
 
     @Override
-    public void insertEvent(final String Categoryname, final int image) {
+    public void insertEvent(final String Categoryname, final int[] image) {
         realmDatabase = Realm.getDefaultInstance();
         realmDatabase.executeTransaction(new Realm.Transaction() {
             @Override
