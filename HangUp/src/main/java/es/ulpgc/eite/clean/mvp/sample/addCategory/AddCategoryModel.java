@@ -51,8 +51,8 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
         buttonAddlabel = "Add";
         labelRadio0 = "astro";
         labelRadio1 = "academic";
-        labelRadio2 = "disco";
-        labelRadio3 = "car";
+        labelRadio2 = "car";
+        labelRadio3 = "disco";
     }
 
     @Override
