@@ -139,6 +139,7 @@ public interface AddCategory {
     interface ModelToPresenter {
 
 
+        Context getManagedContext();
     }
 
 
