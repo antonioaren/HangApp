@@ -1,6 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 
 import java.util.List;
@@ -71,7 +72,7 @@ public interface Category {
 
         void setItemsFromDatabase();
 
-        void insertEvent(String Categoryname, int image);
+        void insertEvent(String Categoryname, Bitmap image);
 
 
         void deleteItemById(String id);

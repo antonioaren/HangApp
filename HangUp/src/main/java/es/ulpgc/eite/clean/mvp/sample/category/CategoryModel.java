@@ -11,7 +11,6 @@ import java.io.InputStream;
 import java.util.UUID;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
-import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
@@ -62,12 +61,12 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     @Override
     public void CreateDatabaseTables() {
         Log.d(TAG, "CreateDatabaseTables()");
-
-        insertEvent("Fiestas", R.drawable.disco);
-        insertEvent("Música", R.drawable.musica);
-        insertEvent("ULPGC", R.drawable.ulpgc);
-        insertEvent("Astronomía", R.drawable.astro);
-        insertEvent("Automovilismo", R.drawable.cars);
+        Bitmap astro = getBitmapFromAssets("astro.jpeg");
+        insertEvent("Fiestas", astro);
+        insertEvent("Música", astro);
+        insertEvent("ULPGC", astro);
+        insertEvent("Astronomía", astro);
+        insertEvent("Automovilismo", astro);
     }
 
     public Bitmap getBitmapFromAssets(String name) {
@@ -77,9 +76,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         InputStream stream = null;
         try {
             //Recoger el archivo desde assets
-
             stream = context.getAssets().open(name);
-
         } catch (IOException e) {
             //Captando el mensaje en caso de error al cargar el archivo
             Log.e(TAG, e.getMessage());
@@ -163,7 +160,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     }
 
     @Override
-    public void insertEvent(final String Categoryname, final int image) {
+    public void insertEvent(final String Categoryname, final Bitmap image) {
         realmDatabase = Realm.getDefaultInstance();
         realmDatabase.executeTransaction(new Realm.Transaction() {
             @Override
