@@ -31,7 +31,6 @@ public class CategoryData extends RealmObject {
     public String getId() {
         return id;
     }
-
     public void setId(String id) {
         this.id = id;
     }
@@ -39,7 +38,6 @@ public class CategoryData extends RealmObject {
     public String getCategoryName() {
         return CategoryName;
     }
-
     public void setCategoryName(String categoryName) {
         CategoryName = categoryName;
     }
@@ -55,7 +53,6 @@ public class CategoryData extends RealmObject {
     public RealmList<ProductData> getItemInfo() {
         return ItemInfo;
     }
-
     public void setItemInfo(RealmList<ProductData> itemInfo) {
         ItemInfo = itemInfo;
     }
@@ -63,7 +60,6 @@ public class CategoryData extends RealmObject {
     public int getProductsAvailables() {
         return productsAvailables;
     }
-
     public void setProductsAvailables(int productsAvailables) {
         this.productsAvailables = productsAvailables;
     }

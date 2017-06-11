@@ -40,6 +40,8 @@ public interface Category {
         void onCreate(Bundle savedInstanceState);
 
 
+        boolean isFirstTime();
+
         void settingAdapter(RealmResults<CategoryData> items);
 
         void finishScreen();
@@ -58,7 +60,6 @@ public interface Category {
 
         String getSearchLabel();
 
-        String getAddLabel();
 
         int getParticipantsAt(int i);
 
@@ -71,8 +72,8 @@ public interface Category {
 
         void setItemsFromDatabase();
 
-        void insertEvent(String Categoryname, int image);
 
+        void insertEvent(String Categoryname, int image);
 
         void deleteItemById(String id);
     }

@@ -35,21 +35,15 @@ public class CategoryPresenter
         super.onCreate(CategoryModel.class, this);
         setView(view);
         Log.d(TAG, "calling onCreate()");
-//        CheckIfIsFirstTimeRunning();
+
+        if (getView().isFirstTime())
+            getModel().CreateDatabaseTables();
+
         Mediator app = (Mediator) getView().getApplication();
         app.startingCategoryScreen(this);
     }
 
-    private void CheckIfIsFirstTimeRunning() {
-        SharedPreferences pref = getApplication().getSharedPreferences("PREF", MODE_PRIVATE);
-        SharedPreferences.Editor prefEditor = pref.edit();
 
-        if (pref.getBoolean("FirstRunning", true)) {
-            getModel().CreateDatabaseTables();
-            prefEditor.putBoolean("FirstRunning", false);
-            prefEditor.commit();
-        }
-    }
 
     /**
      * Operation called by VIEW after its reconstruction.
@@ -62,9 +56,9 @@ public class CategoryPresenter
     public void onResume(Category.PresenterToView view) {
         setView(view);
         Log.d(TAG, "calling onResume()");
+        SettingItemsAdapter();
 
         if (configurationChangeOccurred()) {
-            //getView().setLabelSearch(getModel().getSearchLabel());
 
         }
     }
@@ -75,8 +69,7 @@ public class CategoryPresenter
      */
     @Override
     public void onBackPressed() {
-        //No llama al back del activity. Por eso creo otro llamado OnBackButtonPressed
-        //Que sobreescribe el backpressed del activity.
+
     }
 
     /**

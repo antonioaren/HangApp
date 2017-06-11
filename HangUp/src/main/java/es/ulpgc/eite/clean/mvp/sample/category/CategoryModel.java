@@ -8,7 +8,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.UUID;
@@ -25,7 +24,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         implements Category.PresenterToModel {
 
     private String HangAppButtonSearchLabel;
-    private String HangAppButtonAddLabel;
+
     private RealmResults<CategoryData> itemsDatabase;
 
     private Realm realmDatabase;
@@ -51,13 +50,6 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         RealmConfiguration setting = new RealmConfiguration.Builder().build();
         Realm.setDefaultConfiguration(setting);
 
-        //TODO Error al crear el objeto SharedPreferences.
-        //CheckIfIsFirstTimeRunning();
-
-        //Comentar esto y descomentar el metodo que se llama justo arriba de este
-        //Para saber si se ha corrido la primera vez.
-        CreateDatabaseTables();
-
     }
 
     ///////////////////////////////////////////////////////////////////////////////////
@@ -65,7 +57,8 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     @Override
     public void CreateDatabaseTables() {
         Log.d(TAG, "CreateDatabaseTables()");
-        //int astro= getBitmapFromAssets("musica.png");
+        //int[] astro = getBitmapFromAssets("astro.jpeg");
+
         insertEvent("Fiestas", R.drawable.disco);
         insertEvent("Música", R.drawable.musica);
         insertEvent("ULPGC", R.drawable.ulpgc);
@@ -78,8 +71,10 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         int im = 1;
         int[] array = new int[1000];
         Drawable drawableImage = null;
+
         try {
             //Recoger el archivo desde assets
+
             InputStream stream = Resources.getSystem().getAssets().open(name);
             //   Bitmap bm = BitmapFactory.decodeStream(stream);
             drawableImage = Drawable.createFromStream(stream, null);
@@ -102,25 +97,6 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         return im;
     }
 
-    //TODO Usarlo, resolver problema objeto.
-    private void CheckIfIsFirstTimeRunning() {
-        Log.d(TAG, "CheckIfIsFirstTimeRunning");
-
-        Context context = getPresenter().getAppContext();
-
-        SharedPreferences pref = context.getSharedPreferences("PREF", Context.MODE_PRIVATE);
-        SharedPreferences.Editor prefEditor = pref.edit();
-
-        //Si no está creado "FirstRunning", crear la base de datos, si está creado significa que ya
-        //está creada la base de datos.
-
-        if (!pref.getBoolean("FirstRunning", true)) {
-            CreateDatabaseTables();
-            //Crear boolean y hacer commit.
-            prefEditor.putBoolean("FirstRunning", true);
-            prefEditor.commit();
-        }
-    }
 
     /**
      * Called by layer PRESENTER when VIEW pass for a reconstruction/destruction.
@@ -141,10 +117,6 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         return HangAppButtonSearchLabel;
     }
 
-    @Override
-    public String getAddLabel() {
-        return HangAppButtonAddLabel;
-    }
 
     @Override
     public int getParticipantsAt(int i) {
@@ -156,8 +128,8 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     @Override
     public RealmResults<CategoryData> getEvents() {
         Log.d(TAG, "getEvent()");
-        RealmResults<CategoryData> results = realmDatabase.where(CategoryData.class).findAll();
-        return results;
+        itemsDatabase = realmDatabase.where(CategoryData.class).findAll();
+        return itemsDatabase;
     }
 
     @Override
@@ -201,8 +173,6 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
             }
         });
     }
-
-
 
     public void setSearchLabel(String label) {
         this.HangAppButtonSearchLabel = label;

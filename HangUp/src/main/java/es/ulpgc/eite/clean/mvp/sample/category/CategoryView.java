@@ -1,12 +1,15 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +39,7 @@ public class CategoryView
     private RecyclerView recycler;
     private LinearLayoutManager linearmanager;
     private RealmResults<CategoryData> items;
+    private boolean isFirstTime;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,7 +67,9 @@ public class CategoryView
 
         recycler.setAdapter(new CategoryAdapter(realm.where(CategoryData.class).findAllAsync()));
         InitComponentSwipeAndMove();
+        //CheckIfIsFirstTimeRunning();
     }
+
 
     /**
      * Method that initialized MVP objects
@@ -74,6 +80,7 @@ public class CategoryView
     protected void onResume() {
         super.onResume(CategoryPresenter.class, this);
     }
+
 
     private void InitComponentSwipeAndMove() {
 
@@ -93,8 +100,30 @@ public class CategoryView
         });
 
         swipeToDismissTouchHelper.attachToRecyclerView(recycler);
+        CheckIfIsFirstTimeRunning();
     }
 
+    private void CheckIfIsFirstTimeRunning() {
+        Log.d(TAG, "CheckIfIsFirstTimeRunning");
+
+
+        SharedPreferences pref = getSharedPreferences("PREF", MODE_PRIVATE);
+        SharedPreferences.Editor prefEditor = pref.edit();
+
+        //Si no está creado "FirstRunning", crear la base de datos, si está creado significa que ya
+        //está creada la base de datos.
+        isFirstTime = false;
+        if (pref.getBoolean("FirstRunning", true)) {
+            prefEditor.putBoolean("FirstRunning", true);
+            prefEditor.commit();
+            isFirstTime = true;
+        }
+    }
+
+    @Override
+    public boolean isFirstTime() {
+        return isFirstTime;
+    }
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Presenter To View /////////////////////////////////////////////////////////////
@@ -127,7 +156,6 @@ public class CategoryView
 
         public CategoryAdapter(OrderedRealmCollection<CategoryData> items) {
             super(items, true);
-            //this.items = (RealmResults<CategoryData>) items;
             this.items = items;
         }
 
@@ -162,7 +190,7 @@ public class CategoryView
         }
 
         public void setItemList(List<CategoryData> itemList) {
-            this.items = (RealmResults<CategoryData>) itemList;
+            this.items = itemList;
             notifyDataSetChanged();
         }
 
