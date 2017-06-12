@@ -67,7 +67,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         insertEvent("Astronomía", R.drawable.astro);
 
         insertEvent("Automovilismo", R.drawable.cars);
-        this.numberOfCategoriesAdded = 5;
+
     }
 
     public int getBitmapFromAssets(String name) {

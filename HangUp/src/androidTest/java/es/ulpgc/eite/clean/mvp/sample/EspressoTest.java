@@ -125,8 +125,8 @@ public class EspressoTest  {
 
   @Test
     public void insertEventTestBeforeStartingApplication(){
+      //funciona
       final CategoryModel c = new CategoryModel();
-
       c.CreateDatabaseTables();
       RealmConfiguration testConfig =
               new RealmConfiguration.Builder().
@@ -151,6 +151,7 @@ public class EspressoTest  {
 
     @Test
     public void DeleteEventTest()throws Exception{
+        //no funciona ,debo corregir
         final CategoryModel categoryModel = new CategoryModel();
         categoryModel.CreateDatabaseTables();
         RealmConfiguration testConfig =
