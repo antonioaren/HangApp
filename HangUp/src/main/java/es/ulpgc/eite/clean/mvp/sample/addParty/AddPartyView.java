@@ -131,6 +131,10 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     }
 
     @Override
+    public void setTextSelectLabel(String txt) {
+        textSelect.setText(txt);
+    }
+    @Override
     public void setTimeInitLabel(String txt) {
         EventTimeInit.setHint(txt);
     }

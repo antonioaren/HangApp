@@ -1,9 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.addParty;
 
 
-import android.annotation.TargetApi;
 import android.content.Context;
-import android.os.Build;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
@@ -67,6 +65,8 @@ public interface Add {
 
         void setDateLabel(String txt);
 
+        void setTextSelectLabel(String txt);
+
         void setTimeInitLabel(String txt);
 
         void setTimeFinishLabel(String txt);
@@ -92,9 +92,9 @@ public interface Add {
 
         void setDetailsLabel(String detailsLabel);
 
-        String getSelectPhotoTextLabel();
+        String getSelectTextLabel();
 
-        void setSelectPhotoTextlabel(String text);
+        void setSelectTextlabel(String text);
 
         String getPublishBtnLabel();
 

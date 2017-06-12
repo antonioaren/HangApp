@@ -100,6 +100,7 @@ public class AddPartyPresenter
         getView().setNameLabel(getModel().getNameLabel());
         getView().setPlaceLabel(getModel().getPlaceLabel());
         getView().setDateLabel(getModel().getDateLabel());
+        getView().setTextSelectLabel(getModel().getSelectTextLabel());
         getView().setTimeInitLabel(getModel().getTimeInitLabel());
         getView().setTimeFinishLabel(getModel().getTimeFinishLabel());
         getView().setDetailsLabel(getModel().getDetailsLabel());

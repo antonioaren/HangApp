@@ -18,8 +18,6 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     private String placeLabel, dateLabel, timeInitLabel, timeFinishLabel, publishLabel, titleLabel;
     private String nameLabel;
     private String detailsLabel;
-
-
     private String selectPhotoLabel;
     private Integer[] images;
 
@@ -60,6 +58,7 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     public void setTitleLabel(String titleLabel) {
         this.titleLabel = titleLabel;
     }
+
 
     @Override
     public String getNameLabel() {
@@ -122,12 +121,12 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     }
 
     @Override
-    public String getSelectPhotoTextLabel() {
+    public String getSelectTextLabel() {
         return selectPhotoLabel;
     }
 
     @Override
-    public void setSelectPhotoTextlabel(String text) {
+    public void setSelectTextlabel(String text) {
         this.selectPhotoLabel = text;
     }
 
