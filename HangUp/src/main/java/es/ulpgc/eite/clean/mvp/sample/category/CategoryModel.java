@@ -20,6 +20,8 @@ import io.realm.Realm;
 import io.realm.RealmConfiguration;
 import io.realm.RealmResults;
 
+import static android.content.ContentValues.TAG;
+
 
 public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         implements Category.PresenterToModel {

@@ -80,11 +80,7 @@
             android:layout_width="261dp"
             android:layout_height="169dp">
 
-            <LinearLayout
-                android:layout_width="266dp"
-                android:layout_height="78dp"
-                android:orientation="horizontal"
-                android:weightSum="1">
+
 
                 <RadioButton
                     android:id="@+id/r0"
@@ -102,15 +98,8 @@
                     android:background="@drawable/ulpgc"
                     android:text="academic"/>
 
-            </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="1">
-
-                <RadioButton
+            <RadioButton
                     android:id="@+id/r3"
                     android:layout_width="134dp"
                     android:layout_height="match_parent"
@@ -125,7 +114,7 @@
                     android:layout_weight="1.17"
                     android:background="@drawable/cars"
                     android:text="motor racing"/>
-            </LinearLayout>
+
 
         </RadioGroup>
 

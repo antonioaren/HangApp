@@ -21,7 +21,7 @@ public class EspressoTest  {
 
 //    @Test
 //    public void testOnAddClickedFromMainScreen() {
-//        onView(withId(R.id.buttonAdd)).perform(click());
+//        onView(withId(R.id.fButtonAddCategory)).perform(click());
 //        //actualizando test
 //        onView(withId(R.id.textPhoto)).check(matches(isDisplayed()));
 //        onView(withId(R.id.textName)).check(matches(isDisplayed()));
@@ -33,7 +33,7 @@ public class EspressoTest  {
    /* @Test
     public void testOnAddClickeFromAddCategoryScreen() {
         //the test starts at main screen
-        onView(withId(R.id.buttonAdd)).perform(click());
+        onView(withId(R.id.fbuttonAddCategory)).perform(click());
         onView(withId(R.id.buttonAdd2)).check(matches(isDisplayed()));
         onView(withId(R.id.buttonAdd2)).perform(click());
         //actualizando test
@@ -45,7 +45,7 @@ public class EspressoTest  {
     }
 
     @Test
-    public void testOnSearchCliked() throws Exception {
+    public void testOnDeleteCliked() throws Exception {
         onView(withId(R.id.buttonSearch)).perform(click());
         onView(withId(R.id.delete)).check(matches(isDisplayed()));
         onView(withId(R.id.deleteId)).check(matches(isDisplayed()));
@@ -70,7 +70,7 @@ public class EspressoTest  {
     public void insertCategoryFromAddScreen() {
 
 
-        onView(withId(R.id.buttonAdd)).perform(click());
+        onView(withId(R.id.fButtonAdd)).perform(click());
         // Types a message into a EditText element.
         onView(withId(R.id.content_name))
                 .perform(typeText("Fiestas"), closeSoftKeyboard());
