@@ -120,6 +120,7 @@ public interface Add {
         void setTitleLabel(String titleLabel);
 
 
+        int getImageByIdSelected(int id);
     }
 
     /**

@@ -10,6 +10,13 @@ import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 import io.realm.RealmResults;
+
+import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static android.support.test.espresso.matcher.ViewMatchers.withId;
+
 /**
  * Created by eleonora on 24/05/2017.
  */
@@ -19,16 +26,16 @@ public class EspressoTest  {
     @Rule public final ActivityTestRule<CategoryView> presenter= new ActivityTestRule<>(CategoryView.class);
 
 
-//    @Test
-//    public void testOnAddClickedFromMainScreen() {
-//        onView(withId(R.id.fButtonAddCategory)).perform(click());
-//        //actualizando test
-//        onView(withId(R.id.textPhoto)).check(matches(isDisplayed()));
-//        onView(withId(R.id.textName)).check(matches(isDisplayed()));
-//        onView(withId(R.id.radioGroup)).check(matches(isDisplayed()));
-//        onView(withId(R.id.content_name)).check(matches(isDisplayed()));
-//        onView(withId(R.id.buttonAdd2)).check(matches(isDisplayed()));
-//    }
+    @Test
+    public void testOnAddClickedFromMainScreen() {
+        onView(withId(R.id.fButtonAddCategory)).perform(click());
+        //actualizando test
+        onView(withId(R.id.textPhoto)).check(matches(isDisplayed()));
+        onView(withId(R.id.textName)).check(matches(isDisplayed()));
+        onView(withId(R.id.radioGroup)).check(matches(isDisplayed()));
+        onView(withId(R.id.content_name)).check(matches(isDisplayed()));
+        onView(withId(R.id.buttonAdd2)).check(matches(isDisplayed()));
+    }
 
    /* @Test
     public void testOnAddClickeFromAddCategoryScreen() {

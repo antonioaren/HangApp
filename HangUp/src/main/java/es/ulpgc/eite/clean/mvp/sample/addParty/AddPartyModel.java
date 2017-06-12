@@ -142,6 +142,15 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+    @Override
+    public int getImageByIdSelected(int id) {
+        int image = 1;
+        if (id >= 0) {
+            image = images[id];
+        } else {
+            image = images[0];
+        }
+        return image;
+    }
 
 }

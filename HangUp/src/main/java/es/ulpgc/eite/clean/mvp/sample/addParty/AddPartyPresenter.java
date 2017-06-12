@@ -93,9 +93,6 @@ public class AddPartyPresenter
         return product;
     }
 
-
-
-
     private void LoadInitialComponents() {
         getView().setNameLabel(getModel().getNameLabel());
         getView().setPlaceLabel(getModel().getPlaceLabel());
