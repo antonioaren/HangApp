@@ -72,6 +72,8 @@ public interface Add {
         void setTimeFinishLabel(String txt);
 
         void setDetailsLabel(String detailsLabel);
+
+        int getRadioButtonId();
     }
 
     /**

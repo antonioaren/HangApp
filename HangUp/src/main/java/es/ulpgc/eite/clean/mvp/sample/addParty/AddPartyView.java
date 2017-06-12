@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
@@ -32,6 +34,8 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     private EditText EventTimeInit;
     private EditText EventTimeFinish;
     private TextView textSelect;
+    private RadioGroup rg;
+    private RadioButton r0, r1, r2, r3;
     private Button buttonPublish;
     private EditText EventDetails;
 
@@ -73,6 +77,11 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
             }
         });
         textSelect = (TextView) findViewById(R.id.textselect);
+        rg = (RadioGroup) findViewById(R.id.rg);
+        r0 = (RadioButton) findViewById(R.id.r0);
+        r1 = (RadioButton) findViewById(R.id.r1);
+        r2 = (RadioButton) findViewById(R.id.r2);
+        r3 = (RadioButton) findViewById(R.id.r3);
         EventTimeInit = (EditText) findViewById(R.id.timeI);
         //Todo: Añadir TimePicker Parecido al calendar.
 
@@ -162,4 +171,21 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         getPresenter().DataFromAddView(product);
     }
 
+    @Override
+    public int getRadioButtonId() {
+        int identificator = 1;
+        int id = rg.getCheckedRadioButtonId();
+        if (id == R.id.r0) {
+            identificator = 0;
+        } else if (id == R.id.r1) {
+            identificator = 1;
+        } else if (id == R.id.r2) {
+            identificator = 2;
+        } else if (id == R.id.r3) {
+            identificator = 3;
+        } else {
+            identificator = 0;
+        }
+        return identificator;
+    }
 }
