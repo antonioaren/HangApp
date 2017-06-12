@@ -127,6 +127,7 @@ public class EspressoTest  {
     public void insertEventTestBeforeStartingApplication(){
       final CategoryModel c = new CategoryModel();
 
+      c.CreateDatabaseTables();
       RealmConfiguration testConfig =
               new RealmConfiguration.Builder().
                       inMemory().
@@ -137,19 +138,21 @@ public class EspressoTest  {
      testRealm.executeTransaction(new Realm.Transaction() {
          @Override
          public void execute(Realm realm) {
+
+
              c.insertEvent("jkhkih", R.drawable.astro);
              c.insertEvent("jjh", R.drawable.ulpgc);
-
          }
                                   }
      );
 
-      Assert.assertEquals(2, c.getNumberOfCategoriesAdded());
+      Assert.assertEquals(7, c.getNumberOfCategoriesAdded());
   }
 
     @Test
     public void DeleteEventTest()throws Exception{
         final CategoryModel categoryModel = new CategoryModel();
+        categoryModel.CreateDatabaseTables();
         RealmConfiguration testConfig =
                 new RealmConfiguration.Builder().
                         inMemory().
@@ -160,13 +163,14 @@ public class EspressoTest  {
         testRealm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
+
                 categoryModel.deleteItemById("Fiestas");
 
             }
         });
 
         testRealm.close();
-        Assert.assertEquals(5, categoryModel.getNumberOfCategoriesAdded());
+        Assert.assertEquals(4, categoryModel.getNumberOfCategoriesAdded());
     }
 
 

@@ -40,10 +40,6 @@ public class CategoryPresenter
         app.startingCategoryScreen(this);
     }
 
-    public int getCurrentNumberOfCategories() {
-        return getModel().getNumberOfCategoriesAdded();
-    }
-
 
     /**
      * Operation called by VIEW after its reconstruction.
