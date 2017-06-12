@@ -31,7 +31,6 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
         super.onCreate(presenter);
 
         titleLabel = "Publish your own party";
-
         nameLabel = "Name";
         placeLabel = "Place";
         dateLabel = "Date";

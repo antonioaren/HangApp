@@ -24,14 +24,12 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
 
     private String itemId;
 
-
-    private String deleteLabel;
     private RealmResults<ProductData> itemsDatabase;
 
     @Override
     public void onCreate(Product.ModelToPresenter modelToPresenter) {
         addlabel = "Add";
-        deleteLabel = "Delete";
+
         RealmConfiguration setting = new RealmConfiguration.Builder().build();
         Realm.setDefaultConfiguration(setting);
     }
@@ -109,11 +107,6 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     @Override
     public String getAddLabel() {
         return addlabel;
-    }
-
-    @Override
-    public String getDeleteLabel() {
-        return deleteLabel;
     }
 
 

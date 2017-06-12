@@ -1,7 +1,6 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
@@ -11,8 +10,6 @@ import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import io.realm.RealmResults;
-
-import static android.content.Context.MODE_PRIVATE;
 
 public class CategoryPresenter
         extends GenericPresenter<Category.PresenterToView, Category.PresenterToModel,
@@ -43,6 +40,9 @@ public class CategoryPresenter
         app.startingCategoryScreen(this);
     }
 
+    public int getCurrentNumberOfCategories() {
+        return getModel().getNumberOfCategoriesAdded();
+    }
 
 
     /**

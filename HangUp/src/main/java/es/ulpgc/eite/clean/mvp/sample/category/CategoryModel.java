@@ -1,7 +1,5 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -20,8 +18,6 @@ import io.realm.Realm;
 import io.realm.RealmConfiguration;
 import io.realm.RealmResults;
 
-import static android.content.ContentValues.TAG;
-
 
 public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         implements Category.PresenterToModel {
@@ -32,10 +28,11 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     private Realm realmDatabase;
     private int[] participants;
-
+    private int numberOfCategoriesAdded;
     public CategoryModel() {
         participants = new int[]{
                 1, 2, 3, 4, 5};
+        this.numberOfCategoriesAdded = 0;
     }
 
     /**
@@ -60,13 +57,17 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     @Override
     public void CreateDatabaseTables() {
         Log.d(TAG, "CreateDatabaseTables()");
-        //int[] astro = getBitmapFromAssets("astro.jpeg");
 
         insertEvent("Fiestas", R.drawable.disco);
+
         insertEvent("Música", R.drawable.musica);
+
         insertEvent("ULPGC", R.drawable.ulpgc);
+
         insertEvent("Astronomía", R.drawable.astro);
+
         insertEvent("Automovilismo", R.drawable.cars);
+
     }
 
     public int getBitmapFromAssets(String name) {
@@ -132,13 +133,10 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     public RealmResults<CategoryData> getEvents() {
         Log.d(TAG, "getEvent()");
         itemsDatabase = realmDatabase.where(CategoryData.class).findAll();
+
         return itemsDatabase;
     }
 
-    @Override
-    public String getCategoryNameAtIndex(int index) {
-        return null;
-    }
 
     @Override
     public int getNumberOfEvents() {
@@ -151,6 +149,14 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     }
 
     @Override
+    public int getNumberOfCategoriesAdded() {
+        return numberOfCategoriesAdded;
+    }
+
+    public void setNumberOfCategories(int numberOfCategoriesAdded) {
+        this.numberOfCategoriesAdded = numberOfCategoriesAdded;
+    }
+    @Override
     public void insertEvent(final String Categoryname, final int image) {
         realmDatabase = Realm.getDefaultInstance();
         realmDatabase.executeTransaction(new Realm.Transaction() {
@@ -160,9 +166,12 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
                 event.setCategoryName(Categoryname);
                 event.setImage(image);
+
             }
 
+
         });
+        this.numberOfCategoriesAdded++;
 
     }
 
@@ -173,8 +182,10 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
             public void execute(Realm realm) {
                 CategoryData category = realm.where(CategoryData.class).equalTo("id", id).findFirst();
                 category.deleteFromRealm();
+
             }
         });
+        this.numberOfCategoriesAdded--;
     }
 
     public void setSearchLabel(String label) {
