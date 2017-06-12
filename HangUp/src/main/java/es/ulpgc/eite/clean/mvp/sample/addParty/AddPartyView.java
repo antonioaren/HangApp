@@ -1,13 +1,10 @@
 package es.ulpgc.eite.clean.mvp.sample.addParty;
 
 import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
@@ -34,7 +31,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     private TextView EventDate;
     private EditText EventTimeInit;
     private EditText EventTimeFinish;
-
+    private TextView textSelect;
     private Button buttonPublish;
     private EditText EventDetails;
 
@@ -75,6 +72,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
             }
         });
+        textSelect = (TextView) findViewById(R.id.textselect);
         EventTimeInit = (EditText) findViewById(R.id.timeI);
         //Todo: Añadir TimePicker Parecido al calendar.
 
