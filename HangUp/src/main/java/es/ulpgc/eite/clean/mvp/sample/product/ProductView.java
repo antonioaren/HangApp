@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -138,6 +139,7 @@ public class ProductView
         @Override
         public void onBindViewHolder(final ProductViewHolder holder, int position) {
             holder.item = items.get(position);
+            holder.image.setImageResource(items.get(position).getImage());
             holder.title.setText(items.get(position).getProductName());
             holder.Place.setText(items.get(position).getPlace());
             holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -165,10 +167,12 @@ public class ProductView
             public TextView title;
             public TextView Place;
             public ProductData item;
+            public ImageView image;
 
             public ProductViewHolder(View v) {
                 super(v);
                 itemView = v;
+                image = (ImageView) findViewById(R.id.image);
                 title = (TextView) v.findViewById(R.id.title);
                 Place = (TextView) v.findViewById(R.id.place);
             }

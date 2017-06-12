@@ -11,8 +11,6 @@ import io.realm.RealmConfiguration;
 import io.realm.RealmList;
 import io.realm.RealmResults;
 
-import static android.R.attr.id;
-
 /**
  * Created by Pedro Arenas on 25/4/17.
  */
@@ -71,7 +69,7 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
             @Override
             public void execute(Realm realm) {
                 ProductData event = realmDatabase.createObject(ProductData.class, UUID.randomUUID().toString());
-
+                event.setImage(product.getImage());
                 event.setProductName(product.getProductName());
                 event.setPlace(product.getPlace());
                 event.setDate(product.getPlace());
