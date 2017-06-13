@@ -125,8 +125,10 @@ public interface AddCategory {
         void setNameCategory(String name);
 
 
-        void insertEvent(String Categoryname, int image);
+//        void insertEvent(String Categoryname, int image);
 
+
+        void insertEvent(String Categoryname, String image);
 
         Integer[] getImages();
 

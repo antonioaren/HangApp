@@ -66,15 +66,13 @@ public interface Category {
         ///////////////////////////  DATABASE ////////////////////////
         RealmResults<CategoryData> getEvents();
 
+        String getCategoryNameAtIndex(int index);
 
         int getNumberOfEvents();
 
         void setItemsFromDatabase();
 
-
-        int getNumberOfCategoriesAdded();
-
-        void insertEvent(String Categoryname, int image);
+        void insertEvent(String Categoryname, String image);
 
         void deleteItemById(String id);
     }

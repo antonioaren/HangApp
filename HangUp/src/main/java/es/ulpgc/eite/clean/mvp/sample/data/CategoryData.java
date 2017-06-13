@@ -13,7 +13,7 @@ public class CategoryData extends RealmObject {
     private String id;
 
     private String CategoryName;
-    private int image;
+    private String image;
     private int productsAvailables;
     private RealmList<ProductData> ItemInfo;
 
@@ -21,7 +21,7 @@ public class CategoryData extends RealmObject {
 
     }
 
-    public CategoryData(String id, int image, String category, RealmList<ProductData> itemInfo) {
+    public CategoryData(String id, String image, String category, RealmList<ProductData> itemInfo) {
         this.id = id;
         this.image = image;
         this.CategoryName = category;
@@ -42,11 +42,11 @@ public class CategoryData extends RealmObject {
         CategoryName = categoryName;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

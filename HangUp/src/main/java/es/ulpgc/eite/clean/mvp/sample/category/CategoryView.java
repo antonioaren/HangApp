@@ -1,8 +1,10 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -16,6 +18,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
@@ -67,7 +71,6 @@ public class CategoryView
 
         recycler.setAdapter(new CategoryAdapter(realm.where(CategoryData.class).findAllAsync()));
         InitComponentSwipeAndMove();
-        //CheckIfIsFirstTimeRunning();
     }
 
 
@@ -114,9 +117,9 @@ public class CategoryView
         //está creada la base de datos.
         isFirstTime = false;
         if (pref.getBoolean("FirstRunning", true)) {
-            prefEditor.putBoolean("FirstRunning", true);
-            prefEditor.commit();
+            prefEditor.putBoolean("FirstRunning", false);
             isFirstTime = true;
+            prefEditor.commit();
         }
     }
 
@@ -174,7 +177,9 @@ public class CategoryView
         @Override
         public void onBindViewHolder(final CategoryViewHolder holder, final int position) {
             holder.item = items.get(position);
-            holder.image.setImageResource(items.get(position).getImage());
+
+
+            holder.image.setImageBitmap(getBiMapFromAssets(items.get(position).getImage()));
             holder.title.setText(items.get(position).getCategoryName());
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -207,6 +212,26 @@ public class CategoryView
                 title = (TextView) v.findViewById(R.id.title);
             }
         }
+
+        private Bitmap getBiMapFromAssets(String FileName) {
+            AssetManager assetManager = getAssets();
+            InputStream istr = null;
+
+            try {
+                istr = assetManager.open(FileName);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            Bitmap fromAsset = BitmapFactory.decodeStream(istr);
+
+            return fromAsset;
+        }
+
+        private void setBitMapToAssets(String FileName) {
+            //TODO guardar imagenes en assets o como archivos
+        }
+
     }
 }
 

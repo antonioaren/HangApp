@@ -142,7 +142,7 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
 
 
     @Override
-    public void insertEvent(final String Categoryname, final int image) {
+    public void insertEvent(final String Categoryname, final String image) {
         realmDatabase = Realm.getDefaultInstance();
         realmDatabase.executeTransaction(new Realm.Transaction() {
             @Override
@@ -159,7 +159,7 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
         });
     }
 
-    public void readImageFromAssets(String name) {
+    private void readImageFromAssets(String name) {
         String msg = "";
         int im = 1;
         try {

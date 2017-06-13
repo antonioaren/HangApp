@@ -1,7 +1,11 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
@@ -18,6 +22,8 @@ import io.realm.Realm;
 import io.realm.RealmConfiguration;
 import io.realm.RealmResults;
 
+import static android.content.ContentValues.TAG;
+
 
 public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         implements Category.PresenterToModel {
@@ -28,11 +34,10 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     private Realm realmDatabase;
     private int[] participants;
-    private int numberOfCategoriesAdded;
+
     public CategoryModel() {
         participants = new int[]{
                 1, 2, 3, 4, 5};
-        this.numberOfCategoriesAdded = 0;
     }
 
     /**
@@ -57,49 +62,45 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     @Override
     public void CreateDatabaseTables() {
         Log.d(TAG, "CreateDatabaseTables()");
+        //int[] astro = getBitmapFromAssets("astro.jpeg");
 
-        insertEvent("Fiestas", R.drawable.disco);
-
-        insertEvent("Música", R.drawable.musica);
-
-        insertEvent("ULPGC", R.drawable.ulpgc);
-
-        insertEvent("Astronomía", R.drawable.astro);
-
-        insertEvent("Automovilismo", R.drawable.cars);
-
+        insertEvent("Fiestas", "disco.jpg");
+        insertEvent("Música", "musica.png");
+        insertEvent("ULPGC", "ulpgc.png");
+        insertEvent("Astronomía", "astro.jpeg");
+        insertEvent("Automovilismo", "cars.jpeg");
     }
 
-    public int getBitmapFromAssets(String name) {
-
-        int im = 1;
-        int[] array = new int[1000];
-        Drawable drawableImage = null;
-
-        try {
-            //Recoger el archivo desde assets
-
-            InputStream stream = Resources.getSystem().getAssets().open(name);
-            //   Bitmap bm = BitmapFactory.decodeStream(stream);
-            drawableImage = Drawable.createFromStream(stream, null);
-
-
-            // the drawable (Captain Obvious, to the rescue!!!)
-            Bitmap bitmap = ((BitmapDrawable) drawableImage).getBitmap();
-            ByteArrayOutputStream out = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
-            byte[] bitmapdata = out.toByteArray();
-            im = Integer.parseInt(bitmapdata.toString());
-
-
-        } catch (IOException e) {
-            //Captando el mensaje en caso de error al cargar el archivo
-            Log.e(TAG, e.getMessage());
-        }
-
-
-        return im;
-    }
+//    private int getBitmapFromAssets(String name) {
+//
+//        int im = 1;
+//        int[] array = new int[1000];
+//        Drawable drawableImage = null;
+//
+//        try {
+//            //Recoger el archivo desde assets
+//
+//            InputStream stream = Resources.getSystem().getAssets().open(name);
+//            //   Bitmap bm = BitmapFactory.decodeStream(stream);
+//            drawableImage = Drawable.createFromStream(stream, null);
+//
+//
+//            // the drawable (Captain Obvious, to the rescue!!!)
+//            Bitmap bitmap = ((BitmapDrawable) drawableImage).getBitmap();
+//            ByteArrayOutputStream out = new ByteArrayOutputStream();
+//            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
+//            byte[] bitmapdata = out.toByteArray();
+//            im = Integer.parseInt(bitmapdata.toString());
+//
+//
+//        } catch (IOException e) {
+//            //Captando el mensaje en caso de error al cargar el archivo
+//            Log.e(TAG, e.getMessage());
+//        }
+//
+//
+//        return im;
+//    }
 
 
     /**
@@ -133,10 +134,13 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     public RealmResults<CategoryData> getEvents() {
         Log.d(TAG, "getEvent()");
         itemsDatabase = realmDatabase.where(CategoryData.class).findAll();
-
         return itemsDatabase;
     }
 
+    @Override
+    public String getCategoryNameAtIndex(int index) {
+        return null;
+    }
 
     @Override
     public int getNumberOfEvents() {
@@ -148,16 +152,9 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         itemsDatabase = realmDatabase.where(CategoryData.class).findAll();
     }
 
-    @Override
-    public int getNumberOfCategoriesAdded() {
-        return numberOfCategoriesAdded;
-    }
 
-    public void setNumberOfCategories(int numberOfCategoriesAdded) {
-        this.numberOfCategoriesAdded = numberOfCategoriesAdded;
-    }
     @Override
-    public void insertEvent(final String Categoryname, final int image) {
+    public void insertEvent(final String Categoryname, final String image) {
         realmDatabase = Realm.getDefaultInstance();
         realmDatabase.executeTransaction(new Realm.Transaction() {
             @Override
@@ -166,12 +163,9 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
                 event.setCategoryName(Categoryname);
                 event.setImage(image);
-
             }
 
-
         });
-        this.numberOfCategoriesAdded++;
 
     }
 
@@ -182,10 +176,8 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
             public void execute(Realm realm) {
                 CategoryData category = realm.where(CategoryData.class).equalTo("id", id).findFirst();
                 category.deleteFromRealm();
-
             }
         });
-        this.numberOfCategoriesAdded--;
     }
 
     public void setSearchLabel(String label) {

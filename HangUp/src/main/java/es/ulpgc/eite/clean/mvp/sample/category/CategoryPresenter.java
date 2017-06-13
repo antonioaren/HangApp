@@ -32,9 +32,10 @@ public class CategoryPresenter
         super.onCreate(CategoryModel.class, this);
         setView(view);
         Log.d(TAG, "calling onCreate()");
+        getModel().CreateDatabaseTables();
 
-        if (getView().isFirstTime())
-            getModel().CreateDatabaseTables();
+//        if (getView().isFirstTime())
+//            getModel().CreateDatabaseTables();
 
         Mediator app = (Mediator) getView().getApplication();
         app.startingCategoryScreen(this);
