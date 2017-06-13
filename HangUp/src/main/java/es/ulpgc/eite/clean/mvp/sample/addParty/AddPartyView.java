@@ -1,12 +1,14 @@
 package es.ulpgc.eite.clean.mvp.sample.addParty;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
@@ -33,12 +35,13 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     private TextView EventDate;
     private EditText EventTimeInit;
     private EditText EventTimeFinish;
-    private TextView textSelect;
-    private RadioGroup rg;
-    private RadioButton r0, r1, r2, r3;
-    private Button buttonPublish;
     private EditText EventDetails;
+    private ImageButton EventImage;
 
+    private Button buttonPublish;
+
+    private static final int PICK_IMAGE = 100;
+    private Uri imageUri;
     private Date date;
 
 
@@ -76,18 +79,20 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
             }
         });
-        textSelect = (TextView) findViewById(R.id.textselect);
-        rg = (RadioGroup) findViewById(R.id.rg);
-        r0 = (RadioButton) findViewById(R.id.r0);
-        r1 = (RadioButton) findViewById(R.id.r1);
-        r2 = (RadioButton) findViewById(R.id.r2);
-        r3 = (RadioButton) findViewById(R.id.r3);
         EventTimeInit = (EditText) findViewById(R.id.timeI);
         //Todo: Añadir TimePicker Parecido al calendar.
 
         EventTimeFinish = (EditText) findViewById(R.id.TimeF);
 
         EventDetails = (EditText) findViewById(R.id.details);
+
+        EventImage = (ImageButton) findViewById(R.id.imageButton);
+        EventImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openGallery();
+            }
+        });
 
         buttonPublish = (Button) findViewById(R.id.Add);
         buttonPublish.setOnClickListener(new View.OnClickListener() {
@@ -97,6 +102,20 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
                 getPresenter().onPublishButtonClicked();
             }
         });
+    }
+
+    private void openGallery() {
+        Intent gallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+        startActivityForResult(gallery, PICK_IMAGE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK && requestCode == PICK_IMAGE) {
+            imageUri = data.getData();
+            EventImage.setImageURI(imageUri);
+        }
     }
 
     @SuppressLint("MissingSuperCall")
@@ -130,10 +149,6 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         EventDate.setHint(txt);
     }
 
-    @Override
-    public void setTextSelectLabel(String txt) {
-        textSelect.setText(txt);
-    }
     @Override
     public void setTimeInitLabel(String txt) {
         EventTimeInit.setHint(txt);
@@ -175,21 +190,4 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         getPresenter().DataFromAddView(product);
     }
 
-    @Override
-    public int getRadioButtonId() {
-        int identificator = 1;
-        int id = rg.getCheckedRadioButtonId();
-        if (id == R.id.r0) {
-            identificator = 0;
-        } else if (id == R.id.r1) {
-            identificator = 1;
-        } else if (id == R.id.r2) {
-            identificator = 2;
-        } else if (id == R.id.r3) {
-            identificator = 3;
-        } else {
-            identificator = 0;
-        }
-        return identificator;
-    }
 }

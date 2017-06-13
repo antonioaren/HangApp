@@ -134,7 +134,6 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     public void setButtonAddlabel(String buttonAddlabel) {
         this.buttonAddlabel = buttonAddlabel;
     }
-
     @Override
     public void setNameCategory(String name) {
         this.namecategory = name;
@@ -186,6 +185,7 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
         }
 
     }
+
 
     @Override
     public Integer[] getImages() {

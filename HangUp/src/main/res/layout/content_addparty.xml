@@ -1,155 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
 
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <LinearLayout
+    <EditText
+        android:id="@+id/name"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:hint="Request1"/>
 
-        <EditText
-            android:id="@+id/name"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="Request1"/>
-
-        <EditText
-            android:id="@+id/place"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="Request2"/>
-
-        <TextView
-            android:id="@+id/date"
-            style="@style/Widget.AppCompat.EditText"
-            android:layout_width="match_parent"
-            android:layout_height="51dp"
-            android:hint="Request3"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/timeI"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-
-                android:hint="Request4"/>
-
-            <Space
-                android:layout_width="100dp"
-                android:layout_height="match_parent"/>
-
-            <EditText
-                android:id="@+id/TimeF"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:hint="Request5"/>
-        </LinearLayout>
-
-        <EditText
-            android:id="@+id/details"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="Request6"
-            android:inputType="textMultiLine"/>
-
-    </LinearLayout>
-
-    <Space
+    <EditText
+        android:id="@+id/place"
         android:layout_width="match_parent"
-        android:layout_height="10dp" />
+        android:layout_height="wrap_content"
+        android:hint="Request2"/>
 
     <TextView
-        android:id="@+id/textselect"
+        android:id="@+id/date"
+        style="@style/Widget.AppCompat.EditText"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:text="Select a photo " />
+        android:layout_height="wrap_content"
+        android:hint="Request3"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
-
-        <RadioGroup
-            android:id="@+id/rg"
+        <EditText
+            android:id="@+id/timeI"
             android:layout_width="match_parent"
-            android:layout_height="200dp">
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
 
-
-            <RadioButton
-                android:id="@+id/r0"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:background="@drawable/astro"
-                android:text="astro"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                tools:text="@string/HangApp_screen_title" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp" />
-
-            <RadioButton
-                android:id="@+id/r1"
-                android:layout_width="115dp"
-                android:layout_height="35dp"
-                android:background="@drawable/ulpgc"
-                android:text="academic" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp" />
-            <RadioButton
-                android:id="@+id/r3"
-                android:layout_width="119dp"
-                android:layout_height="35dp"
-
-                android:background="@drawable/disco"
-                android:text="party" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp" />
-
-            <RadioButton
-                android:id="@+id/r2"
-                android:layout_width="123dp"
-                android:layout_height="30dp"
-                android:background="@drawable/cars"
-                android:text="motor racing" />
-
-
-        </RadioGroup>
+            android:hint="Request4"/>
 
         <Space
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
+        <EditText
+            android:id="@+id/TimeF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Request5"/>
     </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="369dp"
-        android:layout_height="match_parent">
+    <EditText
+        android:id="@+id/details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Request6"
+        android:inputType="textMultiLine"/>
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="match_parent"
+        android:layout_height="186dp"
+        app:srcCompat="@android:drawable/ic_input_add"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/Add"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button"
-            android:layout_alignParentTop="true" />
-    </RelativeLayout>
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+
+            android:text="publish"/>
+
+    </LinearLayout>
+
+    <!--<LinearLayout-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="horizontal">-->
+
+    <!--<Space-->
+    <!--android:layout_width="70dp"-->
+    <!--android:layout_height="match_parent"/>-->
+
+    <!--<RadioGroup-->
+    <!--android:id="@+id/rg"-->
+    <!--android:layout_width="261dp"-->
+    <!--android:layout_height="169dp">-->
+
+
+    <!--<RadioButton-->
+    <!--android:id="@+id/r0"-->
+    <!--android:layout_width="141dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="@drawable/astro"-->
+    <!--android:text="astro"-->
+    <!--android:textAppearance="@style/TextAppearance.AppCompat.Body1"-->
+    <!--tools:text="@string/HangApp_screen_title"/>-->
+
+    <!--<RadioButton-->
+    <!--android:id="@+id/r1"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="@drawable/ulpgc"-->
+    <!--android:text="academic"/>-->
+
+
+    <!--<RadioButton-->
+    <!--android:id="@+id/r3"-->
+    <!--android:layout_width="134dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="@drawable/disco"-->
+    <!--android:text="party"-->
+    <!--android:layout_weight="0.37"/>-->
+
+    <!--<RadioButton-->
+    <!--android:id="@+id/r2"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_weight="1.17"-->
+    <!--android:background="@drawable/cars"-->
+    <!--android:text="motor racing"/>-->
+
+
+    <!--</RadioGroup>-->
+
+    <!--<Space-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"/>-->
+
+    <!--</LinearLayout>-->
 
 
 </LinearLayout>
