@@ -1,5 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.details;
 
+import android.graphics.Bitmap;
+
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 
@@ -29,6 +31,8 @@ public interface Detail {
         void setTimeInit(String txt);
 
         void setTimeEnd(String txt);
+
+        void setImage(Bitmap image);
     }
 
     public interface ViewToPresenter {
@@ -46,6 +50,9 @@ public interface Detail {
         String getHeaderTimeInitLabel();
 
         String getHeaderTimeEndLabel();
+
+        Bitmap getImage();
+
     }
 
     public interface ModelToPresenter {

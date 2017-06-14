@@ -151,7 +151,6 @@ public class ProductView
         @Override
         public void onBindViewHolder(final ProductViewHolder holder, int position) {
             holder.item = items.get(position);
-            holder.image.setImageResource(items.get(position).getImage());
             holder.title.setText(items.get(position).getProductName());
             holder.Place.setText(items.get(position).getPlace());
             holder.imageCard.setImageBitmap(loadImageFromStorage(items.get(position).getImage()));
@@ -166,10 +165,7 @@ public class ProductView
         private Bitmap loadImageFromStorage(String path) {
             Bitmap b = null;
             try {
-                count = count + 1;
-                String FileName = count.toString() + ".jpg";
-
-                File f = new File(path, FileName);
+                File f = new File(path, "profile.jpg");
                 b = BitmapFactory.decodeStream(new FileInputStream(f));
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
@@ -195,12 +191,10 @@ public class ProductView
             public TextView Place;
             ImageView imageCard;
             public ProductData item;
-            public ImageView image;
 
             public ProductViewHolder(View v) {
                 super(v);
                 itemView = v;
-                image = (ImageView) findViewById(R.id.image);
                 title = (TextView) v.findViewById(R.id.title);
                 Place = (TextView) v.findViewById(R.id.place);
                 imageCard = (ImageView) v.findViewById(R.id.imageProductCard);

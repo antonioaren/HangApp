@@ -1,7 +1,14 @@
 package es.ulpgc.eite.clean.mvp.sample.details;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
@@ -21,6 +28,9 @@ public class DetailView
     private TextView headerDate;
     private TextView headerTimeInit;
     private TextView headerTimeEnd;
+    private ImageView image;
+
+    private Integer count;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +49,8 @@ public class DetailView
         Date = (TextView) findViewById(R.id.date);
         timeInit = (TextView) findViewById(R.id.timeInit);
         timeEnd = (TextView) findViewById(R.id.timeEnd);
+
+        image = (ImageView) findViewById(R.id.detailimageview);
     }
 
     @Override
@@ -97,4 +109,11 @@ public class DetailView
     public void setTimeEnd(String txt) {
         timeEnd.setText(txt);
     }
+
+    @Override
+    public void setImage(Bitmap img) {
+        image.setImageBitmap(img);
+    }
+
+
 }

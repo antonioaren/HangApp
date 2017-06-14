@@ -75,6 +75,7 @@ public class DetailPresenter
         getView().setDate(getModel().getItemSelected().getDate());
         getView().setTimeInit(getModel().getItemSelected().getTimeI());
         getView().setTimeEnd(getModel().getItemSelected().getTimeF());
+        getView().setImage(getModel().getImage());
     }
 
 

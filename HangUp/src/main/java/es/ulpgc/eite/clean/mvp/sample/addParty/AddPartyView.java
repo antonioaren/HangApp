@@ -168,6 +168,11 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     }
 
     @Override
+    public void setTextSelectLabel(String txt) {
+
+    }
+
+    @Override
     public void setTimeInitLabel(String txt) {
         EventTimeInit.setHint(txt);
     }
@@ -182,6 +187,10 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         EventDetails.setHint(txt);
     }
 
+    @Override
+    public int getRadioButtonId() {
+        return 0;
+    }
 
 
     @Override
@@ -212,12 +221,8 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         // path to /data/data/yourapp/app_data/imageDir
         File directory = cw.getDir("imageDir", MODE_PRIVATE);
         // Create imageDir
-        count = count + 1;
-        String countToString = count.toString();
-        String FileName = countToString + ".jpg";
 
-
-        File mypath = new File(directory, FileName);
+        File mypath = new File(directory, "profile.jpg");
 
         FileOutputStream fos = null;
         try {
@@ -229,7 +234,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         } catch (Exception e) {
             e.printStackTrace();
         }
-//        getPresenter().setNameImage(FileName);
+
         return directory.getAbsolutePath();
     }
 }
