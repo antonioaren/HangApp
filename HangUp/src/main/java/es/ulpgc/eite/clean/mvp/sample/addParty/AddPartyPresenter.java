@@ -21,6 +21,7 @@ public class AddPartyPresenter
 
     private Repository.ProductRepository.OnSaveProductCallback callback;
     private ProductData product;
+    private String fileName;
 
     @Override
     public void onCreate(Add.PresenterToView view) {
@@ -89,15 +90,24 @@ public class AddPartyPresenter
     }
 
     @Override
+    public void setNameImage(String fileName) {
+        this.fileName = fileName;
+    }
+
+    @Override
     public ProductData getProductAddedView() {
         return product;
+    }
+
+    @Override
+    public String getFileName() {
+        return fileName;
     }
 
     private void LoadInitialComponents() {
         getView().setNameLabel(getModel().getNameLabel());
         getView().setPlaceLabel(getModel().getPlaceLabel());
         getView().setDateLabel(getModel().getDateLabel());
-        getView().setTextSelectLabel(getModel().getSelectTextLabel());
         getView().setTimeInitLabel(getModel().getTimeInitLabel());
         getView().setTimeFinishLabel(getModel().getTimeFinishLabel());
         getView().setDetailsLabel(getModel().getDetailsLabel());

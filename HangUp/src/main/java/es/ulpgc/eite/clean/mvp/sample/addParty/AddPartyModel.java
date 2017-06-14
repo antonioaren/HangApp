@@ -4,7 +4,6 @@ package es.ulpgc.eite.clean.mvp.sample.addParty;
 import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
-import es.ulpgc.eite.clean.mvp.sample.R;
 
 
 /**

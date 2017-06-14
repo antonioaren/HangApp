@@ -27,6 +27,8 @@ public interface Add {
         void destroyView();
 
         ProductData getProductAddedView();
+
+        String getFileName();
     }
 
 
@@ -44,6 +46,7 @@ public interface Add {
         void DataFromAddView(ProductData product);
 
 
+        void setNameImage(String fileName);
     }
 
     /**

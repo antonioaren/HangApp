@@ -74,6 +74,7 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
                 event.setTimeI(product.getTimeI());
                 event.setTimeF(product.getTimeF());
                 event.setDetailText(product.getDetailText());
+                event.setImage(product.getImage());
 
                 CategoryData category = realm.where(CategoryData.class)
                         .equalTo("id", CategoryId).findFirst();

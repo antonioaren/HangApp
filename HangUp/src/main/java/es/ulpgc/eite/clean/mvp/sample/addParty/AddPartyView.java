@@ -1,7 +1,11 @@
 package es.ulpgc.eite.clean.mvp.sample.addParty;
 
 import android.annotation.SuppressLint;
+import android.content.ContextWrapper;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -13,6 +17,11 @@ import android.widget.TextView;
 
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -41,8 +50,10 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     private Button buttonPublish;
 
     private static final int PICK_IMAGE = 100;
-    private Uri imageUri;
+    private Bitmap imageBitMap;
     private Date date;
+
+    private Integer count = 0;
 
 
     @Override
@@ -113,10 +124,17 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK && requestCode == PICK_IMAGE) {
-            imageUri = data.getData();
-            EventImage.setImageURI(imageUri);
+            Uri imageUri = data.getData();
+            imageBitMap = null;
+            try {
+                imageBitMap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            EventImage.setImageBitmap(imageBitMap);
         }
     }
+
 
     @SuppressLint("MissingSuperCall")
     @Override
@@ -164,10 +182,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         EventDetails.setHint(txt);
     }
 
-//    @Override
-//    public void setTextSelectPhotoLabel(String txt) {
-//        textselect.setText(txt);
-//    }
+
 
     @Override
     public void setPublishBtnLabel(String txt) {
@@ -186,8 +201,35 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         product.setTimeI(EventTimeInit.getText().toString());
         product.setTimeF(EventTimeFinish.getText().toString());
         product.setDetailText(EventDetails.getText().toString());
+        product.setImage(saveToInternalStorage(imageBitMap));
 
         getPresenter().DataFromAddView(product);
     }
 
+    private String saveToInternalStorage(Bitmap bitmapImage) {
+        ContextWrapper cw = new ContextWrapper(getApplicationContext());
+
+        // path to /data/data/yourapp/app_data/imageDir
+        File directory = cw.getDir("imageDir", MODE_PRIVATE);
+        // Create imageDir
+        count = count + 1;
+        String countToString = count.toString();
+        String FileName = countToString + ".jpg";
+
+
+        File mypath = new File(directory, FileName);
+
+        FileOutputStream fos = null;
+        try {
+            fos = new FileOutputStream(mypath);
+            // Use the compress method on the BitMap object to write image to the OutputStream
+            bitmapImage.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+
+            fos.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+//        getPresenter().setNameImage(FileName);
+        return directory.getAbsolutePath();
+    }
 }

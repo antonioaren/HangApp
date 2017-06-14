@@ -208,7 +208,7 @@ public class CategoryView
             public CategoryViewHolder(View v) {
                 super(v);
                 itemView = v;
-                image = (ImageView) v.findViewById(R.id.image);
+                image = (ImageView) v.findViewById(R.id.imageProductCard);
                 title = (TextView) v.findViewById(R.id.title);
             }
         }

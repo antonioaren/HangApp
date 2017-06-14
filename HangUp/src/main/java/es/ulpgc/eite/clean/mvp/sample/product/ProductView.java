@@ -1,5 +1,8 @@
 package es.ulpgc.eite.clean.mvp.sample.product;
 
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -13,6 +16,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.List;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
@@ -59,7 +65,6 @@ public class ProductView
                 getPresenter().onButtonAddClicked();
             }
         });
-
 
         InitComponentSwipeAndMove();
 
@@ -114,10 +119,17 @@ public class ProductView
         }
     }
 
+    @Override
+    public void setImageName(String fileImageName) {
+
+
+    }
+
     public class ProductAdapter extends
             RealmRecyclerViewAdapter<ProductData, ProductAdapter.ProductViewHolder> {
 
         private List<ProductData> items;
+        private Integer count = 0;
 
         public ProductAdapter(OrderedRealmCollection<ProductData> items) {
             super(items, true);
@@ -142,12 +154,27 @@ public class ProductView
             holder.image.setImageResource(items.get(position).getImage());
             holder.title.setText(items.get(position).getProductName());
             holder.Place.setText(items.get(position).getPlace());
+            holder.imageCard.setImageBitmap(loadImageFromStorage(items.get(position).getImage()));
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     getPresenter().onItemClicked(holder.item);
                 }
             });
+        }
+
+        private Bitmap loadImageFromStorage(String path) {
+            Bitmap b = null;
+            try {
+                count = count + 1;
+                String FileName = count.toString() + ".jpg";
+
+                File f = new File(path, FileName);
+                b = BitmapFactory.decodeStream(new FileInputStream(f));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            return b;
         }
 
         @Override
@@ -166,6 +193,7 @@ public class ProductView
             public final View itemView;
             public TextView title;
             public TextView Place;
+            ImageView imageCard;
             public ProductData item;
             public ImageView image;
 
@@ -175,7 +203,12 @@ public class ProductView
                 image = (ImageView) findViewById(R.id.image);
                 title = (TextView) v.findViewById(R.id.title);
                 Place = (TextView) v.findViewById(R.id.place);
+                imageCard = (ImageView) v.findViewById(R.id.imageProductCard);
+
             }
+
         }
+
+
     }
 }

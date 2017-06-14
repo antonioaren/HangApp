@@ -90,6 +90,10 @@ public class ProductPresenter
     }
 
     @Override
+    public void setImageName(String fileImageName) {
+    }
+
+    @Override
     public void onItemClicked(ProductData item) {
         ItemSelected = item;
         Navigator app = (Navigator) getApplication();
@@ -119,6 +123,4 @@ public class ProductPresenter
     public Context getManagedContext() {
         return getActivityContext();
     }
-
-
 }

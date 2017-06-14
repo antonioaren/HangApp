@@ -23,6 +23,8 @@ public interface Product {
         void setDeleteLabel(String msg);
 
         void settingAdapter(RealmList<ProductData> items);
+
+        void setImageName(String fileImageName);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -77,6 +79,8 @@ public interface Product {
         void setItemId(String itemId);
 
         void setProductToAdd(ProductData productToAdd);
+
+        void setImageName(String fileImageName);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
