@@ -58,7 +58,7 @@ public class ProductView
         recycler.setAdapter(
                 new ProductView.ProductAdapter(realm.where(ProductData.class).findAll()));
 
-        FButtonAdd = (FloatingActionButton) findViewById(R.id.fButtonAdd);
+        FButtonAdd = (FloatingActionButton) findViewById(R.id.fButtonAddProduct);
         FButtonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

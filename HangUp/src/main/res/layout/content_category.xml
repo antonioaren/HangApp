@@ -45,17 +45,5 @@
             android:layout_height="match_parent"/>
     </LinearLayout>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fButtonAddCategory"
-        android:layout_width="54dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_weight="0.27"
-        android:clickable="true"
-        app:backgroundTint="@color/mdtp_button_color"
-        app:elevation="0dp"
-        app:fabSize="mini"
-        app:srcCompat="@android:drawable/ic_menu_add" />
-
 
 </LinearLayout>

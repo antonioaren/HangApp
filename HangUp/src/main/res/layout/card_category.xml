@@ -18,7 +18,8 @@
             android:id="@+id/imageProductCard"
             android:layout_width="100dp"
             android:layout_height="150dp"
-            android:scaleType="centerCrop" />
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -39,14 +40,6 @@
 
             android:layout_below="@+id/title"
             android:layout_alignLeft="@+id/title" />
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="1dp"
-            android:background="#ffd5d5d5"
-            android:id="@+id/linea"
-            android:layout_above="@+id/compartir"
-            android:layout_toRightOf="@+id/imageProductCard"></View>
 
         <ImageView
             android:layout_width="wrap_content"
