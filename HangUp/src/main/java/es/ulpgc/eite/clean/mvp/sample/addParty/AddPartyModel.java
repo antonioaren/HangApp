@@ -37,7 +37,7 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
         timeFinishLabel = "Finishes";
         detailsLabel = "Party's Details";
         selectPhotoLabel = "Select a photo : ";
-        publishLabel = "Add";
+        publishLabel = "Publish";
 
     }
 

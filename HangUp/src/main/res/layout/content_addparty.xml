@@ -69,25 +69,26 @@
         android:scaleType="fitCenter"
         app:srcCompat="@android:drawable/ic_input_add"/>
 
+
     <Space
         android:layout_width="match_parent"
-        android:layout_height="57dp"
+        android:layout_height="match_parent"
         />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="100dp"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/addParty"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Publish" />
+    </RelativeLayout>
 
-            android:text="publish" />
-
-    </LinearLayout>
 
     <!--<LinearLayout-->
     <!--android:layout_height="match_parent"-->
