@@ -3,7 +3,6 @@ package es.ulpgc.eite.clean.mvp.sample;
 import android.support.test.espresso.contrib.PickerActions;
 import android.support.test.espresso.contrib.RecyclerViewActions;
 import android.support.test.rule.ActivityTestRule;
-import android.widget.DatePicker;
 import android.widget.TimePicker;
 
 import junit.framework.Assert;
@@ -94,7 +93,7 @@ public class EspressoTest  {
     }
     @Test
     public void testInsertingANewPartyInACategory() throws Exception {
-        //funciona
+        //funciona la primera vez que se inserta un determinado nombre
         int hour = 20;
         int minutes = 20;
         String name = "1";
@@ -109,13 +108,11 @@ public class EspressoTest  {
                 .perform(typeText(name), closeSoftKeyboard());
         onView(withId(R.id.place))
                 .perform(typeText("tokyo"), closeSoftKeyboard());
-        onView(withId(R.id.date)).perform(click()).perform(click());
-        onView(withClassName(Matchers.equalTo(DatePicker.class.getName()))).perform(PickerActions.setDate(345, 89, 96));
-        onView(withText("OK")).perform(click());
+        //  TestHelper.setDate(R.id.date,year,month,day);
 
-        onView(withId(R.id.timeI)).perform(click()).perform(click());
-        onView(withClassName(Matchers.equalTo(TimePicker.class.getName()))).perform(PickerActions.setTime(hour, minutes));
-        onView(withText("OK")).perform(click());
+//        onView(withId(R.id.timeI)).perform(click()).perform(click());
+//        onView(withClassName(Matchers.equalTo(TimePicker.class.getName()))).perform(PickerActions.setTime(hour, minutes));
+//        onView(withText("OK")).perform(click());
 
         onView(withId(R.id.TimeF))
                 .perform(click()).perform(click());
