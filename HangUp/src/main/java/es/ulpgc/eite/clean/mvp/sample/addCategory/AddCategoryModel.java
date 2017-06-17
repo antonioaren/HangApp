@@ -10,7 +10,6 @@ import java.util.UUID;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.Model;
-import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import io.realm.Realm;
@@ -31,13 +30,13 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     private String labelRadio2;
     private String labelRadio3;
 
-    private Integer[] images;
+    private String[] images;
     private CategoryModel category;
 
     public AddCategoryModel() {
 
 
-        this.images = new Integer[]{R.drawable.astro, R.drawable.ulpgc, R.drawable.cars, R.drawable.disco};
+        this.images = new String[]{"astro.jpeg", "cars.jpeg", "disco.jpg", "musica.png"};
     }
 
     @Override
@@ -188,13 +187,13 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
 
 
     @Override
-    public Integer[] getImages() {
+    public String[] getImages() {
         return this.images;
     }
 
     @Override
-    public int getImageByIdSelected(int id) {
-        int image = 1;
+    public String getImageByIdSelected(int id) {
+        String image = "";
         if (id >= 0) {
             image = images[id];
         } else {

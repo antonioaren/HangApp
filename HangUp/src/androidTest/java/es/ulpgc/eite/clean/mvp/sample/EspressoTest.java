@@ -52,7 +52,6 @@ public class EspressoTest  {
         onView(withId(R.id.fButtonAddCategory)).perform(click());
         onView(withId(R.id.buttonAdd2)).check(matches(isDisplayed()));
         onView(withId(R.id.buttonAdd2)).perform(click());
-        //actualizando test
 
         onView(withId(R.id.recycler)).check(matches(isDisplayed()));
 
@@ -145,7 +144,7 @@ public class EspressoTest  {
          }
                                   }
      );
-
+      //comprobacion del test con un metodo
       Assert.assertEquals(7, c.getNumberOfCategories());
   }
 
@@ -170,7 +169,7 @@ public class EspressoTest  {
             }
         });
 
-
+        //comprobacion necesaria
         Assert.assertEquals(4, categoryModel.getNumberOfCategories());
     }
 

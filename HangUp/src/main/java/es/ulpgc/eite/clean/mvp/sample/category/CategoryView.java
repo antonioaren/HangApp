@@ -146,11 +146,6 @@ public class CategoryView
         finish();
     }
 
-    @Override
-    public void setLabelSearch(String txt) {
-        // buttonSearch.setText(txt);
-    }
-
 
     public class CategoryAdapter extends
             RealmRecyclerViewAdapter<CategoryData, CategoryAdapter.CategoryViewHolder> {

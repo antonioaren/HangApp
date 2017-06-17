@@ -130,9 +130,9 @@ public interface AddCategory {
 
         void insertEvent(String Categoryname, String image);
 
-        Integer[] getImages();
+        String[] getImages();
 
-        int getImageByIdSelected(int id);
+        String getImageByIdSelected(int id);
     }
 
     /**

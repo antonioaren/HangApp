@@ -46,8 +46,6 @@ public interface Category {
 
         void finishScreen();
 
-        void setLabelSearch(String txt);
-
 
     }
 
