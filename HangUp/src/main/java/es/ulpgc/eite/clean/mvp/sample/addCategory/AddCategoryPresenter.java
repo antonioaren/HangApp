@@ -105,7 +105,7 @@ public class AddCategoryPresenter
 
 
     @Override
-    public Integer[] getImages() {
+    public String[] getImages() {
         return getModel().getImages();
     }
 }

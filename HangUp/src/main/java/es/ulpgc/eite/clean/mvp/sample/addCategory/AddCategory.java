@@ -51,7 +51,7 @@ public interface AddCategory {
         void onAddClicked();
 
 
-        Integer[] getImages();
+        String[] getImages();
     }
 
     /**
