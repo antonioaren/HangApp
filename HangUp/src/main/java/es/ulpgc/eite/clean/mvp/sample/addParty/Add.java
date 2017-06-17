@@ -47,6 +47,13 @@ public interface Add {
 
 
         void setNameImage(String fileName);
+
+        void ButtonTimeInitClicked();
+
+        void timeFromTimePicker(Integer hour, Integer minutes);
+
+        void ButtonTimeFinishClicked();
+
     }
 
     /**
@@ -54,6 +61,8 @@ public interface Add {
      */
 
     interface PresenterToView extends ContextView {
+
+        void openDialog();
 
         void finishScreen();
 
@@ -68,7 +77,6 @@ public interface Add {
 
         void setDateLabel(String txt);
 
-        void setTextSelectLabel(String txt);
 
         void setTimeInitLabel(String txt);
 
@@ -76,7 +84,7 @@ public interface Add {
 
         void setDetailsLabel(String detailsLabel);
 
-        int getRadioButtonId();
+        void setTimeInitText(String txt);
     }
 
     /**

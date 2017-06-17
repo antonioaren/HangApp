@@ -1,11 +1,10 @@
 package es.ulpgc.eite.clean.mvp.sample.addParty;
 
 import android.annotation.SuppressLint;
+import android.app.TimePickerDialog;
 import android.content.ContextWrapper;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -14,12 +13,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Calendar;
@@ -29,6 +27,8 @@ import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.util.DateFormatter;
+
+import static android.app.TimePickerDialog.*;
 
 
 /**
@@ -42,18 +42,22 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     private EditText EventName;
     private EditText EventPlace;
     private TextView EventDate;
-    private EditText EventTimeInit;
-    private EditText EventTimeFinish;
+    private TextView EventTimeInit;
+    private TextView EventTimeFinish;
     private EditText EventDetails;
     private ImageButton EventImage;
 
     private Button buttonPublish;
 
+    private Integer Hour;
+    private Integer Minutes;
+
+
     private static final int PICK_IMAGE = 100;
+
     private Bitmap imageBitMap;
     private Date date;
 
-    private Integer count = 0;
 
 
     @Override
@@ -64,8 +68,9 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
         EventName = (EditText) findViewById(R.id.name);
         EventName.requestFocus();
+
         EventPlace = (EditText) findViewById(R.id.place);
-        EventPlace.requestFocus();
+
         EventDate = (TextView) findViewById(R.id.date);
         EventDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,15 +90,58 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
                         now.get(Calendar.MONTH),
                         now.get(Calendar.DAY_OF_MONTH)
                 );
-                d.setMaxDate(now);
+
+                d.setMinDate(now);
                 d.show(getFragmentManager(), this.getClass().getName());
 
             }
         });
-        EventTimeInit = (EditText) findViewById(R.id.timeI);
-        //Todo: Añadir TimePicker Parecido al calendar.
+        EventTimeInit = (TextView) findViewById(R.id.timeI);
+        EventTimeInit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar time = Calendar.getInstance();
+                Hour = time.get(Calendar.HOUR_OF_DAY);
+                Minutes = time.get(Calendar.MINUTE);
 
-        EventTimeFinish = (EditText) findViewById(R.id.TimeF);
+                TimePickerDialog timepicker = new TimePickerDialog(getActivityContext(),
+                        new TimePickerDialog.OnTimeSetListener() {
+
+                            @Override
+                            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                                Hour = hourOfDay;
+                                Minutes = minute;
+
+                                EventTimeInit.setText(Hour.toString() + ":" + Minutes.toString());
+                            }
+                        }, Hour, Minutes, true);
+
+                timepicker.show();
+            }
+        });
+
+        EventTimeFinish = (TextView) findViewById(R.id.TimeF);
+        EventTimeFinish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar time = Calendar.getInstance();
+                Hour = time.get(Calendar.HOUR_OF_DAY);
+                Minutes = time.get(Calendar.MINUTE);
+
+                TimePickerDialog timepicker = new TimePickerDialog(getActivityContext(),
+                        new TimePickerDialog.OnTimeSetListener() {
+
+                            @Override
+                            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                                Hour = hourOfDay;
+                                Minutes = minute;
+                                EventTimeFinish.setText(Hour.toString() + ":" + Minutes.toString());
+                            }
+                        }, Hour, Minutes, true);
+
+                timepicker.show();
+            }
+        });
 
         EventDetails = (EditText) findViewById(R.id.details);
 
@@ -115,6 +163,22 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         });
     }
 
+    @SuppressLint("MissingSuperCall")
+    @Override
+    public void onResume() {
+        super.onResume(AddPartyPresenter.class, this);
+    }
+
+    @Override
+    public void finishScreen() {
+        finish();
+    }
+
+    @Override
+    public void openDialog() {
+
+    }
+
     private void openGallery() {
         Intent gallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
         startActivityForResult(gallery, PICK_IMAGE);
@@ -123,6 +187,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
         if (resultCode == RESULT_OK && requestCode == PICK_IMAGE) {
             Uri imageUri = data.getData();
             imageBitMap = null;
@@ -134,20 +199,6 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
             EventImage.setImageBitmap(imageBitMap);
         }
     }
-
-
-    @SuppressLint("MissingSuperCall")
-    @Override
-    public void onResume() {
-        super.onResume(AddPartyPresenter.class, this);
-    }
-
-
-    @Override
-    public void finishScreen() {
-        finish();
-    }
-
 
     /////////////////////////// LABELS /////////////////////////////////////////
 
@@ -168,11 +219,6 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     }
 
     @Override
-    public void setTextSelectLabel(String txt) {
-
-    }
-
-    @Override
     public void setTimeInitLabel(String txt) {
         EventTimeInit.setHint(txt);
     }
@@ -188,10 +234,9 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     }
 
     @Override
-    public int getRadioButtonId() {
-        return 0;
+    public void setTimeInitText(String txt) {
+        EventTimeInit.setText(txt);
     }
-
 
     @Override
     public void setPublishBtnLabel(String txt) {
@@ -237,4 +282,6 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
         return directory.getAbsolutePath();
     }
+
+
 }
