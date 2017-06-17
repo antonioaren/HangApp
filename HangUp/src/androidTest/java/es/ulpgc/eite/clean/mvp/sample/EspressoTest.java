@@ -140,13 +140,13 @@ public class EspressoTest  {
          public void execute(Realm realm) {
 
 
-             c.insertEvent("jkhkih", R.drawable.astro);
-             c.insertEvent("jjh", R.drawable.ulpgc);
+             c.insertEvent("jkhkih", "disco.jpg");
+             c.insertEvent("jjh", "disco.jpg");
          }
                                   }
      );
 
-      Assert.assertEquals(7, c.getNumberOfCategoriesAdded());
+      Assert.assertEquals(7, c.getNumberOfCategories());
   }
 
     @Test

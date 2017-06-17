@@ -61,7 +61,6 @@ public interface Category {
         String getSearchLabel();
 
 
-        int getParticipantsAt(int i);
 
         ///////////////////////////  DATABASE ////////////////////////
         RealmResults<CategoryData> getEvents();

@@ -1,28 +1,14 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.res.AssetManager;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.util.Log;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.UUID;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
-import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 import io.realm.RealmResults;
-
-import static android.content.ContentValues.TAG;
 
 
 public class CategoryModel extends GenericModel<Category.ModelToPresenter>
@@ -33,11 +19,11 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     private RealmResults<CategoryData> itemsDatabase;
 
     private Realm realmDatabase;
-    private int[] participants;
+
+    private int numberOfCategories;
 
     public CategoryModel() {
-        participants = new int[]{
-                1, 2, 3, 4, 5};
+        this.numberOfCategories = 0;
     }
 
     /**
@@ -123,10 +109,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     }
 
 
-    @Override
-    public int getParticipantsAt(int i) {
-        return participants[i];
-    }
+
 
     ///////////////////////////  DATABASE /////////////////////////////////////////////
 
@@ -166,7 +149,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
             }
 
         });
-
+        this.numberOfCategories++;
     }
 
     @Override
@@ -178,6 +161,8 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
                 category.deleteFromRealm();
             }
         });
+
+        this.numberOfCategories--;
     }
 
     public void setSearchLabel(String label) {
@@ -185,6 +170,9 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     }
 
 
+    public int getNumberOfCategories() {
+        return this.numberOfCategories;
+    }
 }
 
 
