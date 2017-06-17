@@ -35,9 +35,9 @@ public class EspressoTest  {
 
     @Test
     public void testOnAddClickedFromMainScreen() {
-        //funciona
+
         onView(withId(R.id.fButtonAddCategory)).perform(click());
-        //actualizando test
+
         onView(withId(R.id.textPhoto)).check(matches(isDisplayed()));
         onView(withId(R.id.textName)).check(matches(isDisplayed()));
         onView(withId(R.id.radioGroup)).check(matches(isDisplayed()));
@@ -66,7 +66,7 @@ public class EspressoTest  {
         onView(withId(R.id.recycler))
                 // Click item at position 3
                 .perform(RecyclerViewActions.actionOnItemAtPosition(3, click()));
-        onView(withId(R.id.fButtonAdd)).check(matches(isDisplayed()));
+        onView(withId(R.id.fButtonAddProduct)).check(matches(isDisplayed()));
 
 
     }
@@ -94,7 +94,7 @@ public class EspressoTest  {
         onView(withId(R.id.recycler))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(3, click()));
 
-        onView(withId(R.id.fButtonAdd)).perform(click());
+        onView(withId(R.id.fButtonAddProduct)).perform(click());
         onView(withId(R.id.name))
                 // Types a message into a EditText element.
                 .perform(typeText("anime"), closeSoftKeyboard());
@@ -170,8 +170,8 @@ public class EspressoTest  {
             }
         });
 
-        testRealm.close();
-        Assert.assertEquals(4, categoryModel.getNumberOfCategoriesAdded());
+
+        Assert.assertEquals(4, categoryModel.getNumberOfCategories());
     }
 
 
