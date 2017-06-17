@@ -1,13 +1,10 @@
 package es.ulpgc.eite.clean.mvp.sample;
 
-import android.support.test.espresso.contrib.PickerActions;
 import android.support.test.espresso.contrib.RecyclerViewActions;
 import android.support.test.rule.ActivityTestRule;
-import android.widget.TimePicker;
 
 import junit.framework.Assert;
 
-import org.hamcrest.Matchers;
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -24,7 +21,6 @@ import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static android.support.test.espresso.matcher.ViewMatchers.withClassName;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
@@ -105,18 +101,19 @@ public class EspressoTest  {
                 .perform(typeText("tokyo"), closeSoftKeyboard());
 //        onView(withId(R.id.date))
 //                .perform(typeText("4 07 2017 "), closeSoftKeyboard());
-        onView(withId(R.id.timeI))
+        onView(withId(R.id.timeI)).perform(click()).perform(click());
+//        onView(withId(R.id.timeI))
+//                .perform(click()).perform(click());
+//        onView(withClassName(Matchers.equalTo(TimePicker.class.getName()))).perform(PickerActions.setTime(8,9));
+//
+      /*  onView(withId(R.id.TimeF))
                 .perform(click()).perform(click());
-        onView(withClassName(Matchers.equalTo(TimePicker.class.getName()))).perform(PickerActions.setTime(8, 9));
-//
-        onView(withId(R.id.TimeF))
-                .perform(click());
-        onView(withClassName(Matchers.equalTo(TimePicker.class.getName()))).perform(PickerActions.setTime(9, 1));
-//
+        onView(withClassName(Matchers.equalTo(TimePicker.class.getName()))).perform(PickerActions.setTime(9,1));
+//*/
 
         // Clicks a button to send the message to another
         // activity through an explicit intent.
-        onView(withId(R.id.Add)).perform(click());
+        onView(withId(R.id.addParty)).check(matches(isDisplayed()));
         onView(withText("anime")).check(matches(isDisplayed()));
 
         // Verifies that the DisplayMessageActivity received an intent

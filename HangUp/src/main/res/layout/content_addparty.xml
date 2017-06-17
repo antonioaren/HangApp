@@ -38,11 +38,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Request4"/>
+            android:hint="Request4" />
 
         <Space
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/TimeF"
@@ -50,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Request5"/>
+            android:hint="Request5" />
 
     </LinearLayout>
 
@@ -80,12 +80,12 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/Add"
+            android:id="@+id/addParty"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="bottom"
 
-            android:text="publish"/>
+            android:text="publish" />
 
     </LinearLayout>
 

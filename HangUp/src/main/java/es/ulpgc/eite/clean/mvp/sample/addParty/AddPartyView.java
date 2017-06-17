@@ -28,8 +28,6 @@ import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.util.DateFormatter;
 
-import static android.app.TimePickerDialog.*;
-
 
 /**
  * Created by eleonora on 23/03/2017.
@@ -153,7 +151,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
             }
         });
 
-        buttonPublish = (Button) findViewById(R.id.Add);
+        buttonPublish = (Button) findViewById(R.id.addParty);
         buttonPublish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
