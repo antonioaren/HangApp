@@ -36,7 +36,7 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     public AddCategoryModel() {
 
 
-        this.images = new String[]{"astro.jpeg", "cars.jpeg", "disco.jpg", "musica.png"};
+        this.images = new String[]{"astro.jpeg", "ulpgc.png", "cars.jpeg", "musica.png"};
     }
 
     @Override

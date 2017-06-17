@@ -48,7 +48,6 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     @Override
     public void CreateDatabaseTables() {
         Log.d(TAG, "CreateDatabaseTables()");
-        //int[] astro = getBitmapFromAssets("astro.jpeg");
 
         insertEvent("Fiestas", "disco.jpg");
         insertEvent("Música", "musica.png");
