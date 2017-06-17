@@ -9,7 +9,6 @@ import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.matcher.ViewMatchers.withClassName;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
-import static android.support.test.espresso.matcher.ViewMatchers.withParent;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
 /**
@@ -17,8 +16,8 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
  */
 
 public class TestHelper {
-    public static void setDate(int year, int monthOfYear, int dayOfMonth) {
-        onView(withParent(withId(R.id.date))).perform(click()).perform(click());
+    public static void setDate(int datePickerLaunchViewId, int year, int monthOfYear, int dayOfMonth) {
+        onView(withId(datePickerLaunchViewId)).perform(click());
         onView(withClassName(Matchers.equalTo(DatePicker.class.getName()))).perform(PickerActions.setDate(year, monthOfYear, dayOfMonth));
         onView(withText("OK")).perform(click());
     }
