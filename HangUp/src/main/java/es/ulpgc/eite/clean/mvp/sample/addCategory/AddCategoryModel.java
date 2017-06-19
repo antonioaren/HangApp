@@ -187,11 +187,6 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
 
 
     @Override
-    public String[] getImages() {
-        return this.images;
-    }
-
-    @Override
     public String getImageByIdSelected(int id) {
         String image = "";
         if (id >= 0) {

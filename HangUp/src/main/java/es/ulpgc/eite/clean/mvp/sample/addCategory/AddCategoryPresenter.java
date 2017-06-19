@@ -92,6 +92,11 @@ public class AddCategoryPresenter
         app.SaveDataAdd(this);
     }
 
+    @Override
+    public String[] getImages() {
+        return new String[0];
+    }
+
 
     @Override
     public String getCategoryName() {
@@ -104,9 +109,5 @@ public class AddCategoryPresenter
     }
 
 
-    @Override
-    public String[] getImages() {
-        return getModel().getImages();
-    }
 }
 

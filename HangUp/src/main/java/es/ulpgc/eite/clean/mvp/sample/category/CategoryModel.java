@@ -14,7 +14,7 @@ import io.realm.RealmResults;
 public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         implements Category.PresenterToModel {
 
-   
+
     private RealmResults<CategoryData> itemsDatabase;
 
     private Realm realmDatabase;
@@ -101,10 +101,6 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     // Presenter To Model ////////////////////////////////////////////////////////////
 
-    @Override
-    public String getSearchLabel() {
-        return HangAppButtonSearchLabel;
-    }
 
 
 
@@ -118,15 +114,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         return itemsDatabase;
     }
 
-    @Override
-    public String getCategoryNameAtIndex(int index) {
-        return null;
-    }
 
-    @Override
-    public int getNumberOfEvents() {
-        return getEvents().size();
-    }
 
     @Override
     public void setItemsFromDatabase() {
@@ -164,7 +152,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     }
 
-
+    //metodo paara comprobar test con espresso
     public int getNumberOfCategories() {
         return this.numberOfCategories;
     }

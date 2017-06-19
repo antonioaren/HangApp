@@ -56,16 +56,13 @@ public interface Category {
 
         void CreateDatabaseTables();
 
-        String getSearchLabel();
+
 
 
 
         ///////////////////////////  DATABASE ////////////////////////
         RealmResults<CategoryData> getEvents();
 
-        String getCategoryNameAtIndex(int index);
-
-        int getNumberOfEvents();
 
         void setItemsFromDatabase();
 

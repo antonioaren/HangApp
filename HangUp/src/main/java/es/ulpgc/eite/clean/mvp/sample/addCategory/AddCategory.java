@@ -51,7 +51,6 @@ public interface AddCategory {
         void onAddClicked();
 
 
-        String[] getImages();
     }
 
     /**
@@ -130,7 +129,6 @@ public interface AddCategory {
 
         void insertEvent(String Categoryname, String image);
 
-        String[] getImages();
 
         String getImageByIdSelected(int id);
     }
