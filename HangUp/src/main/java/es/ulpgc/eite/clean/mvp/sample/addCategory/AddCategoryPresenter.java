@@ -5,7 +5,6 @@ import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
-import es.ulpgc.eite.clean.mvp.sample.data.Repository;
 
 /**
  * Created by eleonora on 17/04/2017.
@@ -15,9 +14,6 @@ public class AddCategoryPresenter
         extends GenericPresenter<AddCategory.PresenterToView, AddCategory.PresenterToModel, AddCategory.ModelToPresenter, AddCategoryModel>
         implements AddCategory.ViewToPresenter, AddCategory.ModelToPresenter, AddCategory.ToAdd, AddCategory.AddTo {
 
-
-    private boolean buttonClicked;
-    private Repository.ProductRepository.OnSaveProductCallback callback;
 
     @Override
     public void onCreate(AddCategory.PresenterToView view) {
@@ -90,11 +86,6 @@ public class AddCategoryPresenter
         getModel().insertEvent(getView().getTextFromEditText(), image);
         Mediator app = (Mediator) getView().getApplication();
         app.SaveDataAdd(this);
-    }
-
-    @Override
-    public String[] getImages() {
-        return new String[0];
     }
 
 

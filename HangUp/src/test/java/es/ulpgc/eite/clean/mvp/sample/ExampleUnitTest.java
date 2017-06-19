@@ -5,7 +5,6 @@ import org.junit.Test;
 import java.io.IOException;
 
 import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategoryModel;
-import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
 import es.ulpgc.eite.clean.mvp.sample.product.ProductModel;
 
 import static org.junit.Assert.assertEquals;
@@ -26,55 +25,21 @@ public class ExampleUnitTest {
 
   // end of TestFor addpartyView3
   //Test for CategoryModel
-  @Test
-  public void testGetParticipantsAtIndex()throws Exception{
-  CategoryModel categoryModel= new CategoryModel();
-   int[]numbers= new int[]{1,2,3,4,5};
-  int content2= numbers[1];
-  assertEquals(content2,categoryModel.getParticipantsAt(1));
-}
-@Test
-  public void testGetSearchLabel(){
-  CategoryModel categoryModel= new CategoryModel();
-  categoryModel.setSearchLabel("search");
-  assertEquals("search",categoryModel.getSearchLabel());
-}
-  @Test
-  public void testGetAddLabel(){
-    CategoryModel categoryModel= new CategoryModel();
-    //categoryModel.setAddLabel("add");
-      //assertEquals("add",categoryModel.getAddLabel());
-  }
-  @Test
-  public void testGetSearchLabelNull(){
-    CategoryModel categoryModel= new CategoryModel();
 
-    assertEquals(null,categoryModel.getSearchLabel());
-  }
-  @Test
-  public void testGetAddLabelNull(){
-    CategoryModel categoryModel= new CategoryModel();
 
-      //assertEquals(null,categoryModel.getAddLabel());
-  }
+
 
 
 //test for addcategoryModel
 @Test
 public void testGetImageByIdSelected()throws Exception{
   AddCategoryModel add= new AddCategoryModel();
- int index= add.getImageByIdSelected(1);
-  assertEquals(R.drawable.disco,add.getImageByIdSelected(1));
+  String index = add.getImageByIdSelected(1);
+  assertEquals("disco.jpg", add.getImageByIdSelected(1));
 
 }
 
-  @Test
-  public void testReadImageFromAssets() throws Exception {
-    AddCategoryModel add = new AddCategoryModel();
-      //int image = add.readImageFromAssets("astro.jpeg");
 
-
-  }
   @Test
   public void testGetCharacterSequenceFromAWord() throws Exception {
     String word = "R.id.r0";
@@ -83,8 +48,8 @@ public void testGetImageByIdSelected()throws Exception{
   @Test
   public void testGetImageByIdSelectedOutOfRange()throws Exception{
     AddCategoryModel add= new AddCategoryModel();
-    int index= add.getImageByIdSelected(-1);
-    assertEquals(R.drawable.astro,index);
+    String index = add.getImageByIdSelected(-1);
+    assertEquals("astro.jpeg", index);
 
   }
 @Test
@@ -146,13 +111,9 @@ public void testGetRadioLabelsWithoutSettingName()throws Exception{
     product.getAddLabel();
     assertEquals(null,product.getAddLabel());
   }
-  //Test for DetailModel
 
 
-  //Test for DetailModel
 
-
-  //test for DeleteModel
 
 
 }
