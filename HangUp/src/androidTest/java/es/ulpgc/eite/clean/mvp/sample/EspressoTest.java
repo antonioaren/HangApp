@@ -3,6 +3,7 @@ package es.ulpgc.eite.clean.mvp.sample;
 import android.support.test.espresso.contrib.PickerActions;
 import android.support.test.espresso.contrib.RecyclerViewActions;
 import android.support.test.rule.ActivityTestRule;
+import android.widget.DatePicker;
 import android.widget.TimePicker;
 
 import junit.framework.Assert;
@@ -13,10 +14,8 @@ import org.junit.Test;
 
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
-import io.realm.RealmResults;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
@@ -110,10 +109,11 @@ public class EspressoTest  {
         onView(withId(R.id.place))
                 .perform(typeText("tokyo"), closeSoftKeyboard());
         //  TestHelper.setDate(R.id.date,year,month,day);
-
-//        onView(withId(R.id.timeI)).perform(click()).perform(click());
-//        onView(withClassName(Matchers.equalTo(TimePicker.class.getName()))).perform(PickerActions.setTime(hour, minutes));
-//        onView(withText("OK")).perform(click());
+        onView(withId(R.id.date));
+        onView(withClassName(Matchers.equalTo(DatePicker.class.getName()))).perform(PickerActions.setDate(year, month, day));
+        onView(withId(R.id.timeI)).perform(click()).perform(click());
+        onView(withClassName(Matchers.equalTo(TimePicker.class.getName()))).perform(PickerActions.setTime(hour, minutes));
+        onView(withText("OK")).perform(click());
 
         onView(withId(R.id.TimeF))
                 .perform(click()).perform(click());
@@ -167,12 +167,15 @@ public class EspressoTest  {
     @Test
     public void testRemoveElementWhenApplicationStarted() throws Exception {
         onView(withId(R.id.recycler)).perform(RecyclerViewActions.actionOnItemAtPosition(0, swipeLeft()));
-        onView(withText("Fiestas")).check(matches(isDisplayed()));
+//        onView(withText("Fiestas")).check(matches(isDisplayed()));
+        onView(withText("Automovilismo")).check(matches(isDisplayed()));
+        onView(withText("Música")).check(matches(isDisplayed()));
+        onView(withText("ULPGC")).check(matches(isDisplayed()));
 
     }
     @Test
     public void DeleteEventTest()throws Exception{
-        //no funciona ,debo corregir
+
         final CategoryModel categoryModel = new CategoryModel();
         categoryModel.CreateDatabaseTables();
         RealmConfiguration testConfig =
@@ -186,7 +189,7 @@ public class EspressoTest  {
             @Override
             public void execute(Realm realm) {
 
-                categoryModel.deleteItemById("Fiestas");
+                categoryModel.deleteItem("Fiestas");
 
             }
         });
@@ -195,30 +198,30 @@ public class EspressoTest  {
     }
 
 
-    @Test
-    public void SearchEventTest() throws Exception {
-        RealmConfiguration testConfig =
-                new RealmConfiguration.Builder().
-                        inMemory().
-                        name("test-realm").build();
-
-        Realm testRealm = Realm.getInstance(testConfig);
-
-        testRealm.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-                RealmResults<CategoryData> pups = realm.where(CategoryData.class)
-                        .equalTo("CategoryName", "Música")
-                        .equalTo("CategoryName", "Fiestas")
-                        .equalTo("CategoryName", "Astronomía")
-                        .equalTo("CategoryName", "ULPGC")
-                        .findAll();
-
-
-            }
-
-        });
-    }
+//    @Test
+//    public void SearchEventTest() throws Exception {
+//        RealmConfiguration testConfig =
+//                new RealmConfiguration.Builder().
+//                        inMemory().
+//                        name("test-realm").build();
+//
+//        Realm testRealm = Realm.getInstance(testConfig);
+//
+//        testRealm.executeTransaction(new Realm.Transaction() {
+//            @Override
+//            public void execute(Realm realm) {
+//                RealmResults<CategoryData> pups = realm.where(CategoryData.class)
+//                        .equalTo("CategoryName", "Música")
+//                        .equalTo("CategoryName", "Fiestas")
+//                        .equalTo("CategoryName", "Astronomía")
+//                        .equalTo("CategoryName", "ULPGC")
+//                        .findAll();
+//
+//
+//            }
+//
+//        });
+//    }
 
 }
 

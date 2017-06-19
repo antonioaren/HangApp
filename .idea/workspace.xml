@@ -11,12 +11,10 @@
   <component name="ChangeListManager">
     <list id="6a18f264-77ba-466d-b7a7-0d52df6a7436" name="Default" comment="Merge remote-tracking branch 'origin/eleonoraBack'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/3.3/taskArtifacts/fileHashes.bin&#10;#&#9;.gradle/3.3/taskArtifacts/fileSnapshots.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.lock&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/App.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Mediator.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangApp.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangAppModel.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/Information.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationPresenter.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchView.java&#10;#&#9;HangUp/src/main/res/layout/activity_procesed_search.xml&#10;#&#9;HangUp/src/main/res/layout/content_hangapp.xml&#10;#&#9;HangUp/src/main/res/layout/content_procesed_search.xml&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Navigator.java&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/hangapp/HangAppView.java&#10;#&#9;HelloApp/src/main/res/layout/activity_filalista.xml&#10;#&#9;HelloApp/src/main/res/layout/activity_procesed_search.xml&#10;" />
     <list id="3d65f56d-93c6-4520-9708-4d2cd763dfec" name="Failed commit: Default" comment="Cambios Merges.&#10;" />
-    <list default="true" id="72c31ec8-3076-4782-a780-40cb8c2c6568" name="Failed commit: Default (2)" comment="falta corregir el testeo de la fecha">
+    <list default="true" id="72c31ec8-3076-4782-a780-40cb8c2c6568" name="Failed commit: Default (2)" comment="adaptando el metodo delete de categoryModel para que pueda ser testeado con espresso  y funcione la accion swipe">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java" afterPath="$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/Category.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/Category.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryPresenter.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryPresenter.java" />
     </list>
     <ignored path="HangApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,12 +62,11 @@
       <file leaf-file-name="EspressoTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="190" column="11" selection-start-line="190" selection-start-column="11" selection-end-line="190" selection-end-column="11" />
+            <state relative-caret-position="232">
+              <caret line="187" column="62" selection-start-line="187" selection-start-column="62" selection-end-line="187" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6674#6851#0" expanded="true" />
-                <element signature="e#6850#6851#0" expanded="true" />
+                <element signature="e#7139#7140#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -101,11 +98,10 @@
       <file leaf-file-name="CategoryModel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="154" column="26" selection-start-line="154" selection-start-column="26" selection-end-line="154" selection-end-column="26" />
+            <state relative-caret-position="210">
+              <caret line="161" column="13" selection-start-line="161" selection-start-column="13" selection-end-line="161" selection-end-column="13" />
               <folding>
-                <element signature="e#4432#4674#0" expanded="true" />
-                <element signature="e#4673#4674#0" expanded="true" />
+                <element signature="e#4432#4711#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2475,10 +2471,10 @@
         <option value="$PROJECT_DIR$/HangUp/src/main/res/layout/content_addparty.xml" />
         <option value="$PROJECT_DIR$/HangUp/build.gradle" />
         <option value="$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/TestHelper.java" />
-        <option value="$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryPresenter.java" />
-        <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/Category.java" />
+        <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java" />
+        <option value="$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java" />
       </list>
     </option>
   </component>
@@ -3092,13 +3088,6 @@
       <option name="presentableId" value="Default" />
       <updated>1490022965325</updated>
     </task>
-    <task id="LOCAL-00068" summary="reformando metodo de publicar">
-      <created>1494251355949</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1494251355949</updated>
-    </task>
     <task id="LOCAL-00069" summary="creando listas de Category e InformationData y los getters">
       <created>1494252336542</created>
       <option name="number" value="00069" />
@@ -3435,22 +3424,17 @@
       <option name="project" value="LOCAL" />
       <updated>1497735564982</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="adaptando el metodo delete de categoryModel para que pueda ser testeado con espresso  y funcione la accion swipe">
+      <created>1497899931705</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1497899931708</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DeleteEventTest() - 2017.06.19 at 19h 38m 08s.xml">
-      <configuration name="DeleteEventTest()" configurationId="AndroidTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="DeleteEventTest() - 2017.06.19 at 19h 41m 39s.xml">
-      <configuration name="DeleteEventTest()" configurationId="AndroidTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="DeleteEventTest() - 2017.06.19 at 19h 44m 21s.xml">
-      <configuration name="DeleteEventTest()" configurationId="AndroidTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="DeleteEventTest() - 2017.06.19 at 19h 46m 30s.xml">
-      <configuration name="DeleteEventTest()" configurationId="AndroidTestRunConfigurationType" />
-    </history-entry>
     <history-entry file="DeleteEventTest() - 2017.06.19 at 19h 59m 13s.xml">
       <configuration name="DeleteEventTest()" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
@@ -3466,7 +3450,19 @@
     <history-entry file="DeleteEventTest() - 2017.06.19 at 20h 03m 54s.xml">
       <configuration name="DeleteEventTest()" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
+    <history-entry file="DeleteEventTest() - 2017.06.19 at 20h 25m 37s.xml">
+      <configuration name="DeleteEventTest()" configurationId="AndroidTestRunConfigurationType" />
+    </history-entry>
     <history-entry file="testRemoveElementW___() - 2017.06.19 at 19h 51m 59s.xml">
+      <configuration name="testRemoveElementW...()" configurationId="AndroidTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="testRemoveElementW___() - 2017.06.19 at 20h 42m 45s.xml">
+      <configuration name="testRemoveElementW...()" configurationId="AndroidTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="testRemoveElementW___() - 2017.06.19 at 20h 45m 04s.xml">
+      <configuration name="testRemoveElementW...()" configurationId="AndroidTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="testRemoveElementW___() - 2017.06.19 at 20h 50m 52s.xml">
       <configuration name="testRemoveElementW...()" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
   </component>
@@ -3531,7 +3527,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Corregido el Añadir ProductByCategoryId. En el ejemplo usan un RealmTable y un Intent.putExtra para poder pasar el valor. No tienen un mediador que pase estados, por tanto esa es la manera en que lo hacen. Nosotros pasamos el id del item a través del mediador y luego lo comparamos." />
     <MESSAGE value="Añadida funcionalidad para pasar los productos de la pantalla add hasta la pantalla producto donde tenemos la Id de la categoría y el producto. Falta por implemetar la descripcion o detalle para que esté completo." />
     <MESSAGE value="Inserta los datos aunque no se ven. Comprobado con la consola a traves de hacerle un pull al adb." />
     <MESSAGE value="Nuevo metodo en el modelo del producto. Ya solo se ven los productos que le pertenezcan a cada categoría." />
@@ -3556,7 +3551,8 @@
     <MESSAGE value="reformando test de  insertar fiesta para que capte la fecha" />
     <MESSAGE value="clase que ayuda a testear el insertar una fecha" />
     <MESSAGE value="falta corregir el testeo de la fecha" />
-    <option name="LAST_COMMIT_MESSAGE" value="falta corregir el testeo de la fecha" />
+    <MESSAGE value="adaptando el metodo delete de categoryModel para que pueda ser testeado con espresso  y funcione la accion swipe" />
+    <option name="LAST_COMMIT_MESSAGE" value="adaptando el metodo delete de categoryModel para que pueda ser testeado con espresso  y funcione la accion swipe" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -3976,14 +3972,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="130" column="57" selection-start-line="130" selection-start-column="57" selection-end-line="130" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryPresenter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
@@ -3992,15 +3980,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java">
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="190" column="11" selection-start-line="190" selection-start-column="11" selection-end-line="190" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6674#6851#0" expanded="true" />
-            <element signature="e#6850#6851#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="93">
+          <caret line="130" column="57" selection-start-line="130" selection-start-column="57" selection-end-line="130" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -4012,13 +3996,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="187" column="62" selection-start-line="187" selection-start-column="62" selection-end-line="187" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#7139#7140#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="154" column="26" selection-start-line="154" selection-start-column="26" selection-end-line="154" selection-end-column="26" />
+        <state relative-caret-position="210">
+          <caret line="161" column="13" selection-start-line="161" selection-start-column="13" selection-end-line="161" selection-end-column="13" />
           <folding>
-            <element signature="e#4432#4674#0" expanded="true" />
-            <element signature="e#4673#4674#0" expanded="true" />
+            <element signature="e#4432#4711#0" expanded="true" />
           </folding>
         </state>
       </provider>
