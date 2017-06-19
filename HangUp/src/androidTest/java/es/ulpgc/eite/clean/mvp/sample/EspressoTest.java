@@ -171,6 +171,31 @@ public class EspressoTest  {
   }
 
     @Test
+    public void deleteEventTestBeforeStartingApplication() {
+        //funciona
+        final CategoryModel c = new CategoryModel();
+        c.CreateDatabaseTables();
+        RealmConfiguration testConfig =
+                new RealmConfiguration.Builder().
+                        inMemory().
+                        name("test-realm1").build();
+
+        Realm testRealm = Realm.getInstance(testConfig);
+
+        testRealm.executeTransaction(new Realm.Transaction() {
+                                         @Override
+                                         public void execute(Realm realm) {
+
+
+                                             c.deleteItem("Fiestas");
+                                         }
+                                     }
+        );
+        //comprobacion del test con un metodo
+        Assert.assertEquals(4, c.getNumberOfCategories());
+    }
+
+    @Test
     public void testRemoveElementWhenApplicationStarted() throws Exception {
         onView(withId(R.id.recycler)).perform(RecyclerViewActions.actionOnItemAtPosition(0, swipeLeft()));
 //        onView(withText("Fiestas")).check(matches(isDisplayed()));

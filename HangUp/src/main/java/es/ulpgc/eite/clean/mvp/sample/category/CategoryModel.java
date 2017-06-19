@@ -14,8 +14,7 @@ import io.realm.RealmResults;
 public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         implements Category.PresenterToModel {
 
-    private String HangAppButtonSearchLabel;
-
+   
     private RealmResults<CategoryData> itemsDatabase;
 
     private Realm realmDatabase;
@@ -162,11 +161,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
             }
         });
 
-        this.numberOfCategories--;
-    }
 
-    public void setSearchLabel(String label) {
-        this.HangAppButtonSearchLabel = label;
     }
 
 
