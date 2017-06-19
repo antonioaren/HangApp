@@ -3,7 +3,6 @@ package es.ulpgc.eite.clean.mvp.sample;
 import android.support.test.espresso.contrib.PickerActions;
 import android.support.test.espresso.contrib.RecyclerViewActions;
 import android.support.test.rule.ActivityTestRule;
-import android.widget.DatePicker;
 import android.widget.TimePicker;
 
 import junit.framework.Assert;
@@ -20,6 +19,7 @@ import io.realm.RealmConfiguration;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
+import static android.support.test.espresso.action.ViewActions.doubleClick;
 import static android.support.test.espresso.action.ViewActions.swipeLeft;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
@@ -93,13 +93,11 @@ public class EspressoTest  {
     }
     @Test
     public void testInsertingANewPartyInACategory() throws Exception {
-        //funciona la primera vez que se inserta un determinado nombre
+        //funciona
         int hour = 20;
         int minutes = 20;
         String name = "1";
-        int year = 2017;
-        int month = 9;
-        int day = 9;
+
         onView(withId(R.id.recycler))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(1, click()));
         onView(withId(R.id.fButtonAddProduct)).perform(click());
@@ -108,9 +106,10 @@ public class EspressoTest  {
                 .perform(typeText(name), closeSoftKeyboard());
         onView(withId(R.id.place))
                 .perform(typeText("tokyo"), closeSoftKeyboard());
-        //  TestHelper.setDate(R.id.date,year,month,day);
-        onView(withId(R.id.date));
-        onView(withClassName(Matchers.equalTo(DatePicker.class.getName()))).perform(PickerActions.setDate(year, month, day));
+
+        onView(withId(R.id.date)).perform(doubleClick());
+        // onView(isAssignableFrom(DatePicker.class)).perform(setDate(2017, 10, 30));
+//        onView(withClassName(Matchers.equalTo(DatePicker.class.getName()))).perform(setDate(year, month, day));
         onView(withText("OK")).perform(click());
         onView(withId(R.id.timeI)).perform(click()).perform(click());
         onView(withClassName(Matchers.equalTo(TimePicker.class.getName()))).perform(PickerActions.setTime(hour, minutes));
@@ -134,7 +133,13 @@ public class EspressoTest  {
 
     }
 
+    @Test
+    public void testGoToDetailScreenOfAParty() throws Exception {
+        testInsertingANewPartyInACategory();
+        onView(withText("1")).perform(click());
+        onView(withId(R.id.EventName)).check(matches(isDisplayed()));
 
+    }
 
 
 
@@ -174,29 +179,7 @@ public class EspressoTest  {
         onView(withText("ULPGC")).check(matches(isDisplayed()));
 
     }
-    @Test
-    public void DeleteEventTest()throws Exception{
 
-        final CategoryModel categoryModel = new CategoryModel();
-        categoryModel.CreateDatabaseTables();
-        RealmConfiguration testConfig =
-                new RealmConfiguration.Builder().
-                        inMemory().
-                        name("test-realm").build();
-
-        Realm testRealm = Realm.getInstance(testConfig);
-
-        testRealm.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-
-                categoryModel.deleteItem("Fiestas");
-
-            }
-        });
-        //comprobacion necesaria
-        Assert.assertEquals(4, categoryModel.getNumberOfCategories());
-    }
 
 
 //    @Test
