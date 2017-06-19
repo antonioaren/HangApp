@@ -111,6 +111,7 @@ public class EspressoTest  {
         //  TestHelper.setDate(R.id.date,year,month,day);
         onView(withId(R.id.date));
         onView(withClassName(Matchers.equalTo(DatePicker.class.getName()))).perform(PickerActions.setDate(year, month, day));
+        onView(withText("OK")).perform(click());
         onView(withId(R.id.timeI)).perform(click()).perform(click());
         onView(withClassName(Matchers.equalTo(TimePicker.class.getName()))).perform(PickerActions.setTime(hour, minutes));
         onView(withText("OK")).perform(click());

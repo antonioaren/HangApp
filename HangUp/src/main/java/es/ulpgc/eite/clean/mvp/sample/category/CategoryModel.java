@@ -156,7 +156,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         realmDatabase.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
-                final CategoryData category = realm.where(CategoryData.class).equalTo("CategoryName", id).findFirst();
+                CategoryData category = realm.where(CategoryData.class).equalTo("id", id).findFirst();
                 category.deleteFromRealm();
 
             }
