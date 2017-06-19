@@ -109,7 +109,7 @@ public class EspressoTest  {
         String name = "1";
 
         onView(withId(R.id.recycler))
-                .perform(RecyclerViewActions.actionOnItemAtPosition(1, click()));
+                .perform(RecyclerViewActions.actionOnItemAtPosition(2, click()));
         onView(withId(R.id.fButtonAddProduct)).perform(click());
         onView(withId(R.id.name))
                 // Types a message into a EditText element.
@@ -148,7 +148,12 @@ public class EspressoTest  {
         testInsertingANewPartyInACategory();
         onView(withText("1")).perform(click());
         onView(withId(R.id.EventName)).check(matches(isDisplayed()));
-
+        onView(withText("1")).check(matches(isDisplayed()));
+        onView(withId(R.id.detail)).check(matches(isDisplayed()));
+        onView(withId(R.id.headerPlace)).check(matches(isDisplayed()));
+        onView(withId(R.id.headerDate)).check(matches(isDisplayed()));
+        onView(withId(R.id.headerTimeInit)).check(matches(isDisplayed()));
+        onView(withId(R.id.headerTimeEnd)).check(matches(isDisplayed()));
     }
 
 
