@@ -21,6 +21,7 @@ import io.realm.RealmResults;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
+import static android.support.test.espresso.action.ViewActions.swipeLeft;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
@@ -164,6 +165,12 @@ public class EspressoTest  {
   }
 
     @Test
+    public void testRemoveElementWhenApplicationStarted() throws Exception {
+        onView(withId(R.id.recycler)).perform(RecyclerViewActions.actionOnItemAtPosition(0, swipeLeft()));
+        onView(withText("Fiestas")).check(matches(isDisplayed()));
+
+    }
+    @Test
     public void DeleteEventTest()throws Exception{
         //no funciona ,debo corregir
         final CategoryModel categoryModel = new CategoryModel();
@@ -183,7 +190,6 @@ public class EspressoTest  {
 
             }
         });
-
         //comprobacion necesaria
         Assert.assertEquals(4, categoryModel.getNumberOfCategories());
     }

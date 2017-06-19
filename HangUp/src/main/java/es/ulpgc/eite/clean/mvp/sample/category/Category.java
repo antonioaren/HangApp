@@ -71,7 +71,9 @@ public interface Category {
 
         void insertEvent(String Categoryname, String image);
 
-        void deleteItemById(String id);
+        void deleteItem(String name);
+
+
     }
 
     /**

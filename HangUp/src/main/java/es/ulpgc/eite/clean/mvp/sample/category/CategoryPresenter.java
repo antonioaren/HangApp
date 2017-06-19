@@ -178,7 +178,7 @@ public class CategoryPresenter
 
     @Override
     public void OnSwipedItem(String id) {
-        getModel().deleteItemById(id);
+        getModel().deleteItem(id);
         SettingItemsAdapter();
     }
 
