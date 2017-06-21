@@ -36,10 +36,8 @@ public class ProductPresenter
         Log.d(TAG, "calling onResume()");
         setView(view);
 
-
         if (configurationChangeOccurred()) {
             getView().setAddLabel(getModel().getAddLabel());
-            // getView().setDeleteLabel(getModel().getDeleteLabel());
 
         }
     }
@@ -57,7 +55,6 @@ public class ProductPresenter
     public void onScreenStarted() {
         if (isViewRunning()) {
             getView().setAddLabel(getModel().getAddLabel());
-
             SettingItemsAdapter();
         }
     }
@@ -90,10 +87,6 @@ public class ProductPresenter
     }
 
     @Override
-    public void setImageName(String fileImageName) {
-    }
-
-    @Override
     public void onItemClicked(ProductData item) {
         ItemSelected = item;
         Navigator app = (Navigator) getApplication();
@@ -117,7 +110,6 @@ public class ProductPresenter
         getModel().deleteItemById(id);
         SettingItemsAdapter();
     }
-
 
     @Override
     public Context getManagedContext() {

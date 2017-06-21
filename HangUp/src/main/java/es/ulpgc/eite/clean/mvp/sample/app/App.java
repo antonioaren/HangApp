@@ -119,7 +119,6 @@ public class App extends Application implements Mediator, Navigator {
     public void goToProductScreenFromAddScreen(Add.AddTo presenter) {
         AddToProduct = new ProductState();
         AddToProduct.ProductToAdd = presenter.getProductAddedView();
-        AddToProduct.fileImageName = presenter.getFileName();
 
         Context view = presenter.getManagedContext();
         if (view != null) {
@@ -208,7 +207,6 @@ public class App extends Application implements Mediator, Navigator {
         CategoryData ItemSelected;
         String ItemId;
         ProductData ProductToAdd;
-        String fileImageName;
     }
 
     private class DetailState {

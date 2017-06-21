@@ -12,25 +12,19 @@ import io.realm.RealmList;
  */
 
 public interface Product {
-    public interface PresenterToView extends ContextView {
-
-
-       // void setText(String details, String StoryDescription, String dateDescription, String hourDescription);
-
+    interface PresenterToView extends ContextView {
 
         void setAddLabel(String msg);
 
-        void setDeleteLabel(String msg);
 
         void settingAdapter(RealmList<ProductData> items);
 
-        void setImageName(String fileImageName);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
     //Screen ///////////////////////////////////////////////////////////////////////////////////////
 
-    public interface ViewToPresenter {
+    interface ViewToPresenter {
         void onItemClicked(ProductData item);
 
         void onButtonAddClicked();
@@ -41,7 +35,7 @@ public interface Product {
 
     }
 
-    public interface PresenterToModel {
+    interface PresenterToModel {
 
         CategoryData getItem();
 
@@ -65,7 +59,7 @@ public interface Product {
         RealmList<ProductData> getAllProductsByCategoryId(String CategoryId);
     }
 
-    public interface ModelToPresenter {
+    interface ModelToPresenter {
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -79,14 +73,12 @@ public interface Product {
         void setItemId(String itemId);
 
         void setProductToAdd(ProductData productToAdd);
-
-        void setImageName(String fileImageName);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
     //DetailTo ///////////////////////////////////////////////////////////////////////////////////////
 
-    public interface ProductTo {
+    interface ProductTo {
         Context getManagedContext();
 
 

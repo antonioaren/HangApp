@@ -18,12 +18,9 @@ public class AddPartyPresenter
         implements Add.ViewToPresenter, Add.ModelToPresenter, Add.ToAdd, Add.AddTo {
 
 
-    private Repository.ProductRepository.OnSaveProductCallback callback;
     private ProductData product;
     private String fileName;
-    private Integer hour;
-    private Integer min;
-    private String time;
+
 
     @Override
     public void onCreate(Add.PresenterToView view) {
@@ -79,6 +76,17 @@ public class AddPartyPresenter
     }
 
     @Override
+    public void ButtonTimeInitClicked() {
+
+    }
+
+    @Override
+    public void ButtonTimeFinishClicked() {
+
+
+    }
+
+    @Override
     public void onPublishButtonClicked() {
         Log.d(TAG, "callingOnPublish");
 
@@ -90,32 +98,6 @@ public class AddPartyPresenter
     public void DataFromAddView(ProductData product) {
         this.product = product;
     }
-
-    @Override
-    public void setNameImage(String fileName) {
-        this.fileName = fileName;
-    }
-
-    @Override
-    public void ButtonTimeInitClicked() {
-
-    }
-
-
-    @Override
-    public void ButtonTimeFinishClicked() {
-
-
-    }
-
-    @Override
-    public void timeFromTimePicker(Integer hour, Integer minutes) {
-        this.hour = hour;
-        this.min = minutes;
-
-        time = hour.toString() + ":" + min.toString();
-    }
-
 
     @Override
     public ProductData getProductAddedView() {
@@ -136,6 +118,4 @@ public class AddPartyPresenter
         getView().setDetailsLabel(getModel().getDetailsLabel());
         getView().setPublishBtnLabel(getModel().getPublishBtnLabel());
     }
-
-
 }

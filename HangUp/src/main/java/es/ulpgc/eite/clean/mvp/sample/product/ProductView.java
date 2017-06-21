@@ -3,6 +3,7 @@ package es.ulpgc.eite.clean.mvp.sample.product;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -28,6 +29,8 @@ import es.ulpgc.eite.clean.mvp.sample.util.RealmRecyclerViewAdapter;
 import io.realm.OrderedRealmCollection;
 import io.realm.Realm;
 import io.realm.RealmList;
+
+import static android.R.attr.bitmap;
 
 /**
  * Created by alumno on 31/03/2017.
@@ -92,7 +95,6 @@ public class ProductView
                 getPresenter().OnSwipedItem(items.get(viewHolder.getAdapterPosition()).getId());
             }
         });
-
         swipeToDismissTouchHelper.attachToRecyclerView(recycler);
     }
 
@@ -101,11 +103,6 @@ public class ProductView
 
     @Override
     public void setAddLabel(String msg) {
-        //buttonAdd.setText(msg);
-    }
-
-    @Override
-    public void setDeleteLabel(String msg) {
 
     }
 
@@ -119,11 +116,6 @@ public class ProductView
         }
     }
 
-    @Override
-    public void setImageName(String fileImageName) {
-
-
-    }
 
     public class ProductAdapter extends
             RealmRecyclerViewAdapter<ProductData, ProductAdapter.ProductViewHolder> {
@@ -153,7 +145,9 @@ public class ProductView
             holder.item = items.get(position);
             holder.title.setText(items.get(position).getProductName());
             holder.Place.setText(items.get(position).getPlace());
-            holder.imageCard.setImageBitmap(loadImageFromStorage(items.get(position).getImage()));
+            //holder.imageCard.setImageBitmap(loadImageFromStorage(items.get(position).getImage()));
+            holder.imageCard.setImageURI(UriloadImageFromStorage(items.get(position).getImage()));
+            //holder.imageCard.setImageBitmap(UriloadImageFromStorage(items.get(position).getImage()));
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -165,12 +159,17 @@ public class ProductView
         private Bitmap loadImageFromStorage(String path) {
             Bitmap b = null;
             try {
-                File f = new File(path, "profile.jpg");
-                b = BitmapFactory.decodeStream(new FileInputStream(f));
+                b = BitmapFactory.decodeStream(new FileInputStream(new File(path, "profile.jpg")));
+
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
             return b;
+        }
+
+        private Uri UriloadImageFromStorage(String path) {
+            Uri ImagenContent = Uri.parse(path);
+            return ImagenContent;
         }
 
         @Override

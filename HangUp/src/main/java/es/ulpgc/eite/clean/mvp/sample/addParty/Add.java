@@ -42,15 +42,10 @@ public interface Add {
     interface ViewToPresenter extends Presenter<PresenterToView> {
         void onPublishButtonClicked();
 
-
         void DataFromAddView(ProductData product);
-
-
-        void setNameImage(String fileName);
 
         void ButtonTimeInitClicked();
 
-        void timeFromTimePicker(Integer hour, Integer minutes);
 
         void ButtonTimeFinishClicked();
 

@@ -53,10 +53,13 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
     private static final int PICK_IMAGE = 100;
 
+    private Uri imageUri;
     private Bitmap imageBitMap;
     private Date date;
 
+    private void privateOnTimeSet(TimePicker view, int hourOfDay, int minute) {
 
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -94,6 +97,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
             }
         });
+
         EventTimeInit = (TextView) findViewById(R.id.timeI);
         EventTimeInit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -178,8 +182,8 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     }
 
     private void openGallery() {
-        Intent gallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-        startActivityForResult(gallery, PICK_IMAGE);
+        startActivityForResult(new Intent
+                (Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI), PICK_IMAGE);
     }
 
     @Override
@@ -187,10 +191,13 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         super.onActivityResult(requestCode, resultCode, data);
 
         if (resultCode == RESULT_OK && requestCode == PICK_IMAGE) {
-            Uri imageUri = data.getData();
+            imageUri = data.getData();
+            //EventImage.setImageURI(imageUri);
+
             imageBitMap = null;
             try {
                 imageBitMap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -253,30 +260,37 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         product.setTimeI(EventTimeInit.getText().toString());
         product.setTimeF(EventTimeFinish.getText().toString());
         product.setDetailText(EventDetails.getText().toString());
-        product.setImage(saveToInternalStorage(imageBitMap));
+        //product.setImage(saveToInternalStorage(imageBitMap));
+        product.setImage(imageUri.toString());
 
         getPresenter().DataFromAddView(product);
     }
 
+
     private String saveToInternalStorage(Bitmap bitmapImage) {
+
         ContextWrapper cw = new ContextWrapper(getApplicationContext());
 
         // path to /data/data/yourapp/app_data/imageDir
         File directory = cw.getDir("imageDir", MODE_PRIVATE);
-        // Create imageDir
 
-        File mypath = new File(directory, "profile.jpg");
+        // Create imageDir
+        File mypath = new File(directory, "profile" + ".jpg");
 
         FileOutputStream fos = null;
         try {
             fos = new FileOutputStream(mypath);
+
             // Use the compress method on the BitMap object to write image to the OutputStream
             bitmapImage.compress(Bitmap.CompressFormat.JPEG, 100, fos);
 
             fos.close();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        //return uri;
 
         return directory.getAbsolutePath();
     }
