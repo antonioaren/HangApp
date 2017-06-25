@@ -145,8 +145,8 @@ public class ProductView
             holder.item = items.get(position);
             holder.title.setText(items.get(position).getProductName());
             holder.Place.setText(items.get(position).getPlace());
-            //holder.imageCard.setImageBitmap(loadImageFromStorage(items.get(position).getImage()));
             holder.imageCard.setImageURI(UriloadImageFromStorage(items.get(position).getImage()));
+            //holder.imageCard.setImageBitmap(loadImageFromStorage(items.get(position).getImage()));
             //holder.imageCard.setImageBitmap(UriloadImageFromStorage(items.get(position).getImage()));
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -160,12 +160,12 @@ public class ProductView
             Bitmap b = null;
             try {
                 b = BitmapFactory.decodeStream(new FileInputStream(new File(path, "profile.jpg")));
-
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
             return b;
         }
+
 
         private Uri UriloadImageFromStorage(String path) {
             Uri ImagenContent = Uri.parse(path);
@@ -199,9 +199,6 @@ public class ProductView
                 imageCard = (ImageView) v.findViewById(R.id.imageProductCard);
 
             }
-
         }
-
-
     }
 }

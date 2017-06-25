@@ -12,24 +12,10 @@
     <list id="6a18f264-77ba-466d-b7a7-0d52df6a7436" name="Default" comment="Merge remote-tracking branch 'origin/eleonoraBack'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/3.3/taskArtifacts/fileHashes.bin&#10;#&#9;.gradle/3.3/taskArtifacts/fileSnapshots.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.lock&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/App.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Mediator.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangApp.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangAppModel.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/Information.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationPresenter.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchView.java&#10;#&#9;HangUp/src/main/res/layout/activity_procesed_search.xml&#10;#&#9;HangUp/src/main/res/layout/content_hangapp.xml&#10;#&#9;HangUp/src/main/res/layout/content_procesed_search.xml&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Navigator.java&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/hangapp/HangAppView.java&#10;#&#9;HelloApp/src/main/res/layout/activity_filalista.xml&#10;#&#9;HelloApp/src/main/res/layout/activity_procesed_search.xml&#10;" />
     <list id="3d65f56d-93c6-4520-9708-4d2cd763dfec" name="Failed commit: Default" comment="Cambios Merges.&#10;" />
     <list default="true" id="72c31ec8-3076-4782-a780-40cb8c2c6568" name="Failed commit: Default (2)" comment="Modificada imagen. Usando Uri como identificador de la imagen.">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/CleanMvpLib_unspecified.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/espresso_core_2_2_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/espresso_idling_resource_2_2_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/exposed_instrumentation_api_publish_0_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/hamcrest_core_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/hamcrest_integration_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/hamcrest_library_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/javawriter_2_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/javax_annotation_api_1_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/javax_inject_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/jsr305_2_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/junit_4_12.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/rules_0_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/runner_0_5.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/HangUp.iml" afterPath="$PROJECT_DIR$/HangUp/HangUp.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddPartyView.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddPartyView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/product/ProductView.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/product/ProductView.java" />
     </list>
     <ignored path="HangApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,11 +50,12 @@
       <file leaf-file-name="AddPartyView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddPartyView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="263" column="8" selection-start-line="263" selection-start-column="8" selection-end-line="263" selection-end-column="8" />
+            <state relative-caret-position="-825">
+              <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
               <folding>
                 <element signature="e#5835#5868#0" expanded="false" />
                 <element signature="method#openDialog#0;class#AddPartyView#0" expanded="false" />
+                <element signature="method#saveToInternalStorage#0;class#AddPartyView#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -77,9 +64,11 @@
       <file leaf-file-name="ProductView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/product/ProductView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="538">
-              <caret line="162" column="0" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="2325">
+              <caret line="201" column="9" selection-start-line="201" selection-start-column="9" selection-end-line="201" selection-end-column="9" />
+              <folding>
+                <element signature="method#loadImageFromStorage#0;class#ProductAdapter#0;class#ProductView#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -2349,8 +2338,8 @@
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/product/ProductPresenter.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/product/Product.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/product/ProductView.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddPartyView.java" />
+        <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/product/ProductView.java" />
       </list>
     </option>
   </component>
@@ -2465,7 +2454,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/DynamicFiles" />
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="device.picker.selection" value="192.168.56.101:5555" />
@@ -2874,13 +2863,6 @@
       <option name="presentableId" value="Default" />
       <updated>1490022965325</updated>
     </task>
-    <task id="LOCAL-00059" summary="probando a pasar datos de una activity a otra">
-      <created>1493587721177</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1493587721181</updated>
-    </task>
     <task id="LOCAL-00060" summary="probando a pasar datos de una activity a otra">
       <created>1493719105712</created>
       <option name="number" value="00060" />
@@ -3217,7 +3199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1498011226719</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="Modificada imagen. Usando Uri como identificador de la imagen.">
+      <created>1498011556776</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1498011556779</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -3247,7 +3236,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1280" height="736" extended-state="6" />
+    <frame x="0" y="22" width="1280" height="736" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32419354" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -3257,7 +3246,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40967742" sideWeight="0.50646204" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" show_stripe_button="true" weight="0.38709676" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="-1601" y="-43" width="1424" height="715" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.38709676" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="0" y="22" width="1280" height="715" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11290322" sideWeight="0.49353796" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43548387" sideWeight="0.3489499" order="10" side_tool="false" content_ui="tabs" />
@@ -3650,6 +3639,7 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="990">
           <caret line="68" column="36" selection-start-line="68" selection-start-column="36" selection-end-line="68" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3715,19 +3705,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/product/ProductView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="162" column="0" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="2325">
+          <caret line="201" column="9" selection-start-line="201" selection-start-column="9" selection-end-line="201" selection-end-column="9" />
+          <folding>
+            <element signature="method#loadImageFromStorage#0;class#ProductAdapter#0;class#ProductView#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddPartyView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="263" column="8" selection-start-line="263" selection-start-column="8" selection-end-line="263" selection-end-column="8" />
+        <state relative-caret-position="-825">
+          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
           <folding>
             <element signature="e#5835#5868#0" expanded="false" />
             <element signature="method#openDialog#0;class#AddPartyView#0" expanded="false" />
+            <element signature="method#saveToInternalStorage#0;class#AddPartyView#0" expanded="false" />
           </folding>
         </state>
       </provider>

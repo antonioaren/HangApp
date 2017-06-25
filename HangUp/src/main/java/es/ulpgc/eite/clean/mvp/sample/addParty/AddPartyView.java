@@ -274,8 +274,12 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         // path to /data/data/yourapp/app_data/imageDir
         File directory = cw.getDir("imageDir", MODE_PRIVATE);
 
+        //recorremos URI para para obtener el nombre del archivo.
+        String filename = imageUri.toString().substring(imageUri.toString().lastIndexOf("/"));
+
+
         // Create imageDir
-        File mypath = new File(directory, "profile" + ".jpg");
+        File mypath = new File(directory, filename + ".jpg");
 
         FileOutputStream fos = null;
         try {
@@ -290,7 +294,6 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
             e.printStackTrace();
         }
 
-        //return uri;
 
         return directory.getAbsolutePath();
     }
