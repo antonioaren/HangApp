@@ -12,7 +12,6 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
-import es.ulpgc.eite.clean.mvp.sample.category.CategoryPresenter;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
@@ -96,19 +95,16 @@ public class EspressoTest {
 
     @Test
     public void testRemoveElementWhenApplicationStarted() throws Exception {
+
         onView(withId(R.id.recycler)).perform(RecyclerViewActions.actionOnItemAtPosition(0, swipeLeft()));
-//        onView(withText("Fiestas")).check(matches(isDisplayed()));
+
         onView(withText("Automovilismo")).check(matches(isDisplayed()));
         onView(withText("Música")).check(matches(isDisplayed()));
         onView(withText("ULPGC")).check(matches(isDisplayed()));
 
+
     }
 
-    @Test
-    public void testRemoveElementWhenSwiping() throws Exception {
-        CategoryPresenter presenter = new CategoryPresenter();
-        presenter.OnSwipedItem("1");
-    }
 
     @Test
     public void testInsertingANewPartyInACategory() throws Exception {
@@ -192,6 +188,36 @@ public class EspressoTest {
     }
 
     @Test
+    public void deleteEvent() {
+        //funciona
+        final CategoryModel c = new CategoryModel();
+        c.CreateDatabaseTables();
+        RealmConfiguration testConfig =
+                new RealmConfiguration.Builder().
+                        inMemory().
+                        name("test-realm1").build();
+
+        Realm testRealm = Realm.getInstance(testConfig);
+
+        testRealm.executeTransaction(new Realm.Transaction() {
+                                         @Override
+                                         public void execute(Realm realm) {
+
+
+                                             c.insertEvent("jkhkih", "disco.jpg");
+                                             String id = c.insertEvent("jjh", "disco.jpg");
+                                             c.deleteItem(id);
+                                         }
+                                     }
+        );
+        //comprobacion del test con un metodo
+        Assert.assertEquals(6, c.getNumberOfCategories());
+
+
+        //comprobacion del test con un metodo
+
+    }
+    @Test
     public void getNumberOfCategories() {
 
         final CategoryModel c = new CategoryModel();
@@ -217,26 +243,6 @@ public class EspressoTest {
 
     }
 
-    @Test
-    public void deleteItem() {
 
-        final CategoryModel c = new CategoryModel();
-
-        RealmConfiguration testConfig =
-                new RealmConfiguration.Builder().
-                        inMemory().
-                        name("test-realmCategories").build();
-
-        Realm testRealm = Realm.getInstance(testConfig);
-
-        c.CreateDatabaseTables();
-        c.deleteItem("1");
-
-
-        //comprobacion del test con un metodo
-        Assert.assertEquals(5, c.getNumberOfCategories());
-
-
-    }
 }
 

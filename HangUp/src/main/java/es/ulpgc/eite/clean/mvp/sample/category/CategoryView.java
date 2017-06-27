@@ -99,6 +99,7 @@ public class CategoryView
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
                 getPresenter().OnSwipedItem(items.get(viewHolder.getAdapterPosition()).getId());
+
             }
         });
 

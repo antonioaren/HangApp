@@ -21,6 +21,9 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     private int numberOfCategories;
 
+
+    private String id;
+
     public CategoryModel() {
         this.numberOfCategories = 0;
     }
@@ -95,10 +98,13 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     @Override
     public void insertEvent(final String Categoryname, final String image) {
         realmDatabase = Realm.getDefaultInstance();
+        this.id = UUID.randomUUID().toString();
         realmDatabase.executeTransaction(new Realm.Transaction() {
+
             @Override
             public void execute(Realm realm) {
-                CategoryData event = realmDatabase.createObject(CategoryData.class, UUID.randomUUID().toString());
+
+                CategoryData event = realmDatabase.createObject(CategoryData.class, id);
 
                 event.setCategoryName(Categoryname);
                 event.setImage(image);
@@ -106,26 +112,29 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
         });
         this.numberOfCategories++;
+
     }
 
     @Override
     public void deleteItem(final String id) {
-        // realmDatabase.executeTransaction(new Realm.Transaction() {
-//            @Override
-//            public void execute(Realm realm) {
-//                CategoryData category = realm.where(CategoryData.class).equalTo("id", id).findFirst();
-//                category.deleteFromRealm();
-//
-//            }
-//        });
-//
-        realmDatabase.beginTransaction();
-        CategoryData category = realmDatabase.where(CategoryData.class).equalTo("id", id).findFirst();
-        category.deleteFromRealm();
-        realmDatabase.commitTransaction();
+        realmDatabase.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                CategoryData category = realm.where(CategoryData.class).equalTo("id", id).findFirst();
+                category.deleteFromRealm();
+
+            }
+        });
+        this.numberOfCategories--;
+
     }
 
-    //metodo paara comprobar test con espresso
+    //metodos paara comprobar test con espresso
+    public String getId() {
+        return id;
+    }
+
+    @Override
     public int getNumberOfCategories() {
         return this.numberOfCategories;
     }

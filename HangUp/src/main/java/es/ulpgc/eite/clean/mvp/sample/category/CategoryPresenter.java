@@ -178,8 +178,11 @@ public class CategoryPresenter
 
     @Override
     public void OnSwipedItem(String id) {
+        int numer = getModel().getNumberOfCategories();
         getModel().deleteItem(id);
+        numer--;
         SettingItemsAdapter();
+
     }
 
     private void SettingItemsAdapter() {

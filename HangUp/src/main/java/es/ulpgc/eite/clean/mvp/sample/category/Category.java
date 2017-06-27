@@ -71,6 +71,8 @@ public interface Category {
         void deleteItem(String name);
 
 
+        //metodo paara comprobar test con espresso
+        int getNumberOfCategories();
     }
 
     /**
