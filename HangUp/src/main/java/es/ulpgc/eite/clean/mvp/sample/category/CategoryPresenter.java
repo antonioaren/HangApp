@@ -128,7 +128,7 @@ public class CategoryPresenter
 
         }
         // el setting adapter va aqui
-        // getView().settingAdapter(getModel().getCategoryEvents());
+        // getView().settingItemsAdapter(getModel().getCategoryEvents());
         SettingItemsAdapter();
 
     }
@@ -194,7 +194,7 @@ public class CategoryPresenter
     }
 
     private void SettingItemsAdapter() {
-        getView().settingAdapter(getModel().getCategoryEvents());
+        getView().settingItemsAdapter(getModel().getCategoryEvents());
     }
 
 

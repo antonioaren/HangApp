@@ -15,8 +15,6 @@ public class AddCategoryPresenter
         extends GenericPresenter<AddCategory.PresenterToView, AddCategory.PresenterToModel, AddCategory.ModelToPresenter, AddCategoryModel>
         implements AddCategory.ViewToPresenter, AddCategory.ModelToPresenter, AddCategory.ToAdd, AddCategory.AddTo {
 
-    private CategoryData categoryData;
-
     @Override
     public void onCreate(AddCategory.PresenterToView view) {
         super.onCreate(AddCategoryModel.class, this);
@@ -85,7 +83,9 @@ public class AddCategoryPresenter
     @Override
     public void onAddClicked() {
         String ImageName = getModel().getImageByIdSelected(getView().getRadioButtonId());
-        getModel().insertEvent(getView().getTextFromEditText(), ImageName);
+        String NewCategoryName = getView().getTextFromEditText();
+
+        getModel().insertEvent(NewCategoryName, ImageName);
 
         Mediator app = (Mediator) getView().getApplication();
         app.KillingAddCategoryScreenAfterInserting(this);

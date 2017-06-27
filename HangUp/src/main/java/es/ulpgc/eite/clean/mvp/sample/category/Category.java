@@ -38,14 +38,9 @@ public interface Category {
     interface PresenterToView extends ContextView {
         void onCreate(Bundle savedInstanceState);
 
-
-        boolean isFirstTime();
-
-        void settingAdapter(RealmResults<CategoryData> items);
+        void settingItemsAdapter(RealmResults<CategoryData> items);
 
         void finishScreen();
-
-
     }
 
     /**
@@ -55,22 +50,15 @@ public interface Category {
 
         void CreateDatabaseTables();
 
-
-
-
-
-        ///////////////////////////  DATABASE ////////////////////////
+        ///////////////////////////  DATABASE  ////////////////////////////////
         RealmResults<CategoryData> getCategoryEvents();
-
-
-//        void setItemsFromDatabase();
 
         void insertEvent(String Categoryname, String image);
 
         void deleteItem(String name);
 
 
-        //metodo paara comprobar test con espresso
+        //metodo para comprobar test con espresso
         int getNumberOfCategories();
     }
 
@@ -79,7 +67,6 @@ public interface Category {
      */
     interface ModelToPresenter {
         Context getAppContext();
-
 
         Context getManagedContext();
     }
@@ -93,7 +80,6 @@ public interface Category {
         Context getManagedContext();
         void destroyView();
         CategoryData getSelectedItem();
-
         String getItemId();
     }
 

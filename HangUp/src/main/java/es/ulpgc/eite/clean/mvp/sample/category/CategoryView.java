@@ -42,9 +42,8 @@ public class CategoryView
     private ImageView image;
     private FloatingActionButton fButtonAddCategory;
     private RecyclerView recycler;
-    private LinearLayoutManager linearmanager;
+    //    private LinearLayoutManager linearmanager;
     private RealmResults<CategoryData> items;
-    private boolean isFirstTime;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,8 +53,8 @@ public class CategoryView
         recycler = (RecyclerView) findViewById(R.id.recycler);
         recycler.setHasFixedSize(true);
 
-        linearmanager = new LinearLayoutManager(this);
-        recycler.setLayoutManager(linearmanager);
+//        linearmanager = new LinearLayoutManager(this);
+//        recycler.setLayoutManager(linearmanager);
 
 
         fButtonAddCategory = (FloatingActionButton) findViewById(R.id.fButtonAddCategory);
@@ -103,37 +102,14 @@ public class CategoryView
         });
 
         swipeToDismissTouchHelper.attachToRecyclerView(recycler);
-        //CheckIfIsFirstTimeRunning();
     }
 
-    private void CheckIfIsFirstTimeRunning() {
-        Log.d(TAG, "CheckIfIsFirstTimeRunning");
-
-
-        SharedPreferences pref = getSharedPreferences("PREF", MODE_PRIVATE);
-        SharedPreferences.Editor prefEditor = pref.edit();
-
-        //Si no está creado "FirstRunning", crear la base de datos, si está creado significa que ya
-        //está creada la base de datos.
-
-        isFirstTime = false;
-        if (pref.getBoolean("FirstRunning", true)) {
-            prefEditor.putBoolean("FirstRunning", false);
-            isFirstTime = true;
-            prefEditor.commit();
-        }
-    }
-
-    @Override
-    public boolean isFirstTime() {
-        return isFirstTime;
-    }
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Presenter To View /////////////////////////////////////////////////////////////
 
     @Override
-    public void settingAdapter(RealmResults<CategoryData> items) {
+    public void settingItemsAdapter(RealmResults<CategoryData> items) {
         if (recycler != null) {
 
             this.items = items;

@@ -99,7 +99,7 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
     public int getRadioButtonId() {
         int identificator;
 
-        //Capta el id  del radio button seleccionado
+        //Capta el id   del radio button seleccionado
         int id = radioGroup.getCheckedRadioButtonId();
 
         if (id == R.id.id0) {
