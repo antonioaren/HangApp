@@ -115,12 +115,12 @@ public class CategoryPresenter
     @Override
     public void onScreenStarted() {
         Log.d(TAG, "calling onScreenStarted()");
-//        if (isViewRunning()) {
-//            //getView().setLabelSearch(getModel().getSearchLabel());
-//
-//        }
-//        // el setting adapter va aqui
-//        // getView().settingAdapter(getModel().getEvents());
+        if (isViewRunning()) {
+            //getView().setLabelSearch(getModel().getSearchLabel());
+
+        }
+        // el setting adapter va aqui
+        // getView().settingAdapter(getModel().getCategoryEvents());
         SettingItemsAdapter();
 
     }
@@ -158,7 +158,7 @@ public class CategoryPresenter
 
     @Override
     public RealmResults<CategoryData> getCategoryList() {
-        return getModel().getEvents();
+        return getModel().getCategoryEvents();
     }
 
     @Override
@@ -186,7 +186,7 @@ public class CategoryPresenter
     }
 
     private void SettingItemsAdapter() {
-        getView().settingAdapter(getModel().getEvents());
+        getView().settingAdapter(getModel().getCategoryEvents());
     }
 
 

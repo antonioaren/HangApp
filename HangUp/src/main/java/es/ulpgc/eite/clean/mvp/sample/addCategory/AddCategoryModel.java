@@ -1,13 +1,16 @@
 package es.ulpgc.eite.clean.mvp.sample.addCategory;
 
 
+import android.content.Context;
 import android.util.Log;
 
-import java.util.UUID;
+import java.io.IOException;
+import java.io.InputStream;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.Model;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
+import es.ulpgc.eite.clean.mvp.sample.realmoperation.RealmOperation;
 import io.realm.Realm;
 
 /**
@@ -18,15 +21,16 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
 
 
     private String titleLabel, nameLabel, photoLabel, buttonPhotoLabel, buttonAddlabel;
-
+    private String namecategory;
     private Realm realmDatabase;
+   
     private String labelRadio0;
     private String labelRadio1;
     private String labelRadio2;
     private String labelRadio3;
 
     private String[] images;
-
+    private CategoryModel category;
 
     public AddCategoryModel() {
 
@@ -128,25 +132,32 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     public void setButtonAddlabel(String buttonAddlabel) {
         this.buttonAddlabel = buttonAddlabel;
     }
+    @Override
+    public void setNameCategory(String name) {
+        this.namecategory = name;
+    }
 
 
     @Override
     public void insertEvent(final String Categoryname, final String image) {
-        realmDatabase = Realm.getDefaultInstance();
-        realmDatabase.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-
-                CategoryData event = realmDatabase.createObject(CategoryData.class, UUID.randomUUID().toString());
-
-
-                event.setCategoryName(Categoryname);
-                event.setImage(image);
-
-
-            }
-        });
+        RealmOperation realmOperation = RealmOperation.getInstances();
+        realmOperation.insertEventCategory(Categoryname, image);
     }
+
+//    private void readImageFromAssets(String name) {
+//        String msg = "";
+//        int im = 1;
+//        try {
+//
+//            Context context = getPresenter().getManagedContext();
+//            InputStream stream = context.getAssets().open(name);
+//
+//        } catch (IOException e) {
+//            //Captando el mensaje en caso de error al cargar el archivo
+//            Log.e(TAG, e.getMessage());
+//        }
+//
+//    }
 
 
     @Override

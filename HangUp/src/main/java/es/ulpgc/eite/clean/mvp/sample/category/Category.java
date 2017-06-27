@@ -61,10 +61,10 @@ public interface Category {
 
 
         ///////////////////////////  DATABASE ////////////////////////
-        RealmResults<CategoryData> getEvents();
+        RealmResults<CategoryData> getCategoryEvents();
 
 
-        void setItemsFromDatabase();
+//        void setItemsFromDatabase();
 
         void insertEvent(String Categoryname, String image);
 

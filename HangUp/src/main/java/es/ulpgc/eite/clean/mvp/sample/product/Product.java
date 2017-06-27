@@ -29,17 +29,12 @@ public interface Product {
 
         void onButtonAddClicked();
 
-        void onButtonDeleteClicked();
-
         void OnSwipedItem(String id);
-
     }
 
     interface PresenterToModel {
 
         CategoryData getItem();
-
-        String getItemId();
 
         void AddProductByCategoryId(ProductData product, String CategoryId);
 
@@ -47,10 +42,7 @@ public interface Product {
 
         void deleteItemById(String id);
 
-        String getAddLabel();
-
-
-
+        String getItemId();
 
         void setItemId(String itemId);
 

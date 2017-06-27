@@ -2,31 +2,18 @@ package es.ulpgc.eite.clean.mvp.sample.category;
 
 import android.util.Log;
 
-import java.util.UUID;
-
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
-import io.realm.Realm;
-import io.realm.RealmConfiguration;
+import es.ulpgc.eite.clean.mvp.sample.realmoperation.RealmOperation;
 import io.realm.RealmResults;
 
 
 public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         implements Category.PresenterToModel {
 
-
     private RealmResults<CategoryData> itemsDatabase;
-
-    private Realm realmDatabase;
-
+    private RealmOperation realmOperation;
     private int numberOfCategories;
-
-
-    private String id;
-
-    public CategoryModel() {
-        this.numberOfCategories = 0;
-    }
 
     /**
      * Method that recovers a reference to the PRESENTER
@@ -35,14 +22,13 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
      * @param presenter Presenter interface
      */
 
+    private String id;
+
     @Override
     public void onCreate(Category.ModelToPresenter presenter) {
         super.onCreate(presenter);
-
-
-        RealmConfiguration setting = new RealmConfiguration.Builder().build();
-        Realm.setDefaultConfiguration(setting);
-
+        realmOperation = RealmOperation.getInstances();
+//      numberOfCategories = 0;
     }
 
     ///////////////////////////////////////////////////////////////////////////////////
@@ -71,61 +57,22 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     }
 
-
-    // Presenter To Model ////////////////////////////////////////////////////////////
-
-
-
-
-
     ///////////////////////////  DATABASE /////////////////////////////////////////////
 
     @Override
-    public RealmResults<CategoryData> getEvents() {
-        Log.d(TAG, "getEvent()");
-        itemsDatabase = realmDatabase.where(CategoryData.class).findAll();
-        return itemsDatabase;
+    public RealmResults<CategoryData> getCategoryEvents() {
+        return realmOperation.getCategoryEvents();
     }
-
-
-    @Override
-    public void setItemsFromDatabase() {
-        itemsDatabase = realmDatabase.where(CategoryData.class).findAll();
-    }
-
 
     @Override
     public void insertEvent(final String Categoryname, final String image) {
-        realmDatabase = Realm.getDefaultInstance();
-        this.id = UUID.randomUUID().toString();
-        realmDatabase.executeTransaction(new Realm.Transaction() {
-
-            @Override
-            public void execute(Realm realm) {
-
-                CategoryData event = realmDatabase.createObject(CategoryData.class, id);
-
-                event.setCategoryName(Categoryname);
-                event.setImage(image);
-            }
-
-        });
+        realmOperation.insertEventCategory(Categoryname, image);
         this.numberOfCategories++;
-
     }
 
     @Override
     public void deleteItem(final String id) {
-        realmDatabase.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-                CategoryData category = realm.where(CategoryData.class).equalTo("id", id).findFirst();
-                category.deleteFromRealm();
-
-            }
-        });
-        this.numberOfCategories--;
-
+        realmOperation.deleteItemCategory(id);
     }
 
     //metodos paara comprobar test con espresso

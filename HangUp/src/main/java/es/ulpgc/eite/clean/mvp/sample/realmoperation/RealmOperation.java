@@ -1,5 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.realmoperation;
 
+import android.util.Log;
+
 import java.util.UUID;
 
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
@@ -7,28 +9,37 @@ import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 import io.realm.RealmList;
+import io.realm.RealmResults;
 
 /**
  * Created by Pedro Arenas on 27/6/17.
  */
 
-public class Singleton {
+public class RealmOperation {
 
-    private static Singleton Instances;
+    private static RealmOperation Instances;
     private Realm realmDatabase;
+    private RealmResults<CategoryData> itemsDatabase;
 
-    public Singleton() {
+
+    private RealmOperation() {
         RealmConfiguration setting = new RealmConfiguration.Builder().build();
         Realm.setDefaultConfiguration(setting);
         realmDatabase = Realm.getDefaultInstance();
-
     }
 
-    public static Singleton getInstances() {
+    //Synchronized: Por si es llamado por otros al mismo tiempo. Este encolaa las peticiones para
+    //que no de errores de punteros a null, dado que se han creado dos objetos.
+    public static synchronized RealmOperation getInstances() {
         if (Instances == null) {
-            Instances = new Singleton();
+            Instances = new RealmOperation();
         }
         return Instances;
+    }
+
+    public RealmResults<CategoryData> getCategoryEvents() {
+        itemsDatabase = realmDatabase.where(CategoryData.class).findAll();
+        return itemsDatabase;
     }
 
     public void insertEventCategory(final String Categoryname, final String image) {

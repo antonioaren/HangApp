@@ -151,7 +151,6 @@ public class CategoryView
     public class CategoryAdapter extends
             RealmRecyclerViewAdapter<CategoryData, CategoryAdapter.CategoryViewHolder> {
         private List<CategoryData> items;
-        // private RealmResults<CategoryData> items;
 
         public CategoryAdapter(OrderedRealmCollection<CategoryData> items) {
             super(items, true);
@@ -224,9 +223,6 @@ public class CategoryView
             return fromAsset;
         }
 
-        private void setBitMapToAssets(String FileName) {
-            //TODO guardar imagenes en assets o como archivos
-        }
 
     }
 }
