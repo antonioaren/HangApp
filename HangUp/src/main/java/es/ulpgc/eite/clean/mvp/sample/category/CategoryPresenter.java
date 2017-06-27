@@ -1,6 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
@@ -33,10 +34,10 @@ public class CategoryPresenter
         setView(view);
         Log.d(TAG, "calling onCreate()");
 
-        getModel().CreateDatabaseTables();
-
 //        if (getView().isFirstTime())
 //            getModel().CreateDatabaseTables();
+
+        CheckIfIsFirstTimeRunning();
 
         Mediator app = (Mediator) getView().getApplication();
         app.startingCategoryScreen(this);
@@ -85,6 +86,23 @@ public class CategoryPresenter
     }
 
     // View To Presenter /////////////////////////////////////////////////////////////
+
+    private void CheckIfIsFirstTimeRunning() {
+        Log.d(TAG, "CheckIfIsFirstTimeRunning");
+
+
+        SharedPreferences pref = getAppContext().getSharedPreferences("PREF", Context.MODE_PRIVATE);
+        SharedPreferences.Editor prefEditor = pref.edit();
+
+        //Si no está creado "FirstRunning", crear la base de datos, si está creado significa que ya
+        //está creada la base de datos.
+
+        if (pref.getBoolean("FirstRunning", true)) {
+            prefEditor.putBoolean("FirstRunning", false);
+            getModel().CreateDatabaseTables();
+            prefEditor.commit();
+        }
+    }
 
 
     @Override

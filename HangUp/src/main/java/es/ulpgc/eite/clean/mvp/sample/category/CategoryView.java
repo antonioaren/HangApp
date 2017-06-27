@@ -66,9 +66,6 @@ public class CategoryView
             }
         });
 
-//TODO Revisar dado que tenemos el singleton.
-//        Realm realm = Realm.getDefaultInstance();
-
         //recycler.setAdapter(new CategoryAdapter(realm.where(CategoryData.class).findAllAsync()));
         RealmOperation realmOperation = RealmOperation.getInstances();
         recycler.setAdapter(new CategoryAdapter(realmOperation.getCategoryEvents()));
@@ -106,7 +103,7 @@ public class CategoryView
         });
 
         swipeToDismissTouchHelper.attachToRecyclerView(recycler);
-        CheckIfIsFirstTimeRunning();
+        //CheckIfIsFirstTimeRunning();
     }
 
     private void CheckIfIsFirstTimeRunning() {
