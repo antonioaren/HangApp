@@ -205,16 +205,15 @@ public class EspressoTest {
 
 
                                              c.insertEvent("jkhkih", "disco.jpg");
-                                             String id = c.insertEvent("jjh", "disco.jpg");
-                                             c.deleteItem(id);
+                                             c.insertEvent("jjh", "disco.jpg");
+                                             String idLastElement = c.getId();
+                                             c.deleteItem(idLastElement);
                                          }
                                      }
         );
         //comprobacion del test con un metodo
         Assert.assertEquals(6, c.getNumberOfCategories());
 
-
-        //comprobacion del test con un metodo
 
     }
     @Test

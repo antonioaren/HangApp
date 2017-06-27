@@ -11,13 +11,9 @@
   <component name="ChangeListManager">
     <list id="6a18f264-77ba-466d-b7a7-0d52df6a7436" name="Default" comment="Merge remote-tracking branch 'origin/eleonoraBack'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/3.3/taskArtifacts/fileHashes.bin&#10;#&#9;.gradle/3.3/taskArtifacts/fileSnapshots.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.lock&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/App.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Mediator.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangApp.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangAppModel.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/Information.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationPresenter.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchView.java&#10;#&#9;HangUp/src/main/res/layout/activity_procesed_search.xml&#10;#&#9;HangUp/src/main/res/layout/content_hangapp.xml&#10;#&#9;HangUp/src/main/res/layout/content_procesed_search.xml&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Navigator.java&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/hangapp/HangAppView.java&#10;#&#9;HelloApp/src/main/res/layout/activity_filalista.xml&#10;#&#9;HelloApp/src/main/res/layout/activity_procesed_search.xml&#10;" />
     <list id="3d65f56d-93c6-4520-9708-4d2cd763dfec" name="Failed commit: Default" comment="Cambios Merges.&#10;" />
-    <list default="true" id="72c31ec8-3076-4782-a780-40cb8c2c6568" name="Failed commit: Default (2)" comment="realizando test para comprobar el numero de categorias con espresso">
+    <list default="true" id="72c31ec8-3076-4782-a780-40cb8c2c6568" name="Failed commit: Default (2)" comment="creando variable id  y realizando getter para comprobar el test de borrado en realm con espresso">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java" afterPath="$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/Category.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/Category.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryPresenter.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryPresenter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryView.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryView.java" />
     </list>
     <ignored path="HangApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -61,18 +57,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EspressoTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EspressoTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="77">
-              <caret line="123" column="47" selection-start-line="123" selection-start-column="47" selection-end-line="123" selection-end-column="47" />
+            <state relative-caret-position="331">
+              <caret line="208" column="70" selection-start-line="208" selection-start-column="70" selection-end-line="208" selection-end-column="70" />
               <folding>
-                <element signature="e#6810#7209#0" expanded="true" />
-                <element signature="e#7208#7209#0" expanded="true" />
-                <element signature="e#7754#8226#0" expanded="true" />
-                <element signature="e#8225#8226#0" expanded="true" />
-                <element signature="e#8788#8951#0" expanded="true" />
-                <element signature="e#8950#8951#0" expanded="true" />
+                <element signature="e#6809#7208#0" expanded="true" />
+                <element signature="e#7207#7208#0" expanded="true" />
+                <element signature="e#7755#8305#0" expanded="true" />
+                <element signature="e#8304#8305#0" expanded="true" />
+                <element signature="e#8822#8985#0" expanded="true" />
+                <element signature="e#8984#8985#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -111,18 +107,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CategoryModel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CategoryModel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+            <state relative-caret-position="114">
+              <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
               <folding>
-                <element signature="e#2648#2951#0" expanded="true" />
-                <element signature="e#2950#2951#0" expanded="true" />
+                <element signature="e#2649#2952#0" expanded="true" />
+                <element signature="e#2951#2952#0" expanded="true" />
                 <element signature="e#3099#3365#0" expanded="true" />
                 <element signature="e#3364#3365#0" expanded="true" />
-                <element signature="e#3479#3480#0" expanded="true" />
-                <element signature="e#3504#3505#0" expanded="true" />
+                <element signature="e#3485#3486#0" expanded="true" />
+                <element signature="e#3510#3511#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -141,8 +137,8 @@
       <file leaf-file-name="CategoryPresenter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryPresenter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="614">
-              <caret line="181" column="34" selection-start-line="181" selection-start-column="34" selection-end-line="181" selection-end-column="34" />
+            <state relative-caret-position="278">
+              <caret line="157" column="0" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -2444,9 +2440,9 @@
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addCategory/AddCategoryModel.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryPresenter.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryView.java" />
-        <option value="$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/Category.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java" />
+        <option value="$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java" />
       </list>
     </option>
   </component>
@@ -3170,13 +3166,6 @@
       <option name="presentableId" value="Default" />
       <updated>1490022965325</updated>
     </task>
-    <task id="LOCAL-00064" summary="procesada la informacion en addPartyModel para que construya la fecha y horario de una fiesta">
-      <created>1493927448916</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1493927448916</updated>
-    </task>
     <task id="LOCAL-00065" summary="borrado el código, no es la tarea que debe hacer este metodo">
       <created>1493927552087</created>
       <option name="number" value="00065" />
@@ -3513,7 +3502,14 @@
       <option name="project" value="LOCAL" />
       <updated>1498572970117</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="creando variable id  y realizando getter para comprobar el test de borrado en realm con espresso">
+      <created>1498577848624</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1498577848624</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -3526,8 +3522,8 @@
     <history-entry file="deleteEvent() - 2017.06.27 at 16h 32m 56s.xml">
       <configuration name="deleteEvent()" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="deleteItem() - 2017.06.27 at 15h 34m 35s.xml">
-      <configuration name="deleteItem()" configurationId="AndroidTestRunConfigurationType" />
+    <history-entry file="deleteEvent() - 2017.06.27 at 16h 40m 55s.xml">
+      <configuration name="deleteEvent()" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
     <history-entry file="deleteItem() - 2017.06.27 at 15h 37m 02s.xml">
       <configuration name="deleteItem()" configurationId="AndroidTestRunConfigurationType" />
@@ -3568,7 +3564,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40967742" sideWeight="0.50646204" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38709676" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="0" y="22" width="1280" height="715" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32764506" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32764506" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11290322" sideWeight="0.49353796" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43548387" sideWeight="0.3489499" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -3609,7 +3605,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Arreglos addCategory. Limpiando Código" />
     <MESSAGE value="Añdadido funcionalidad add category. Pasando estados" />
     <MESSAGE value="Error con el BarAction en el AddParty. Corregido. Cambio en el presenter Error al usar setLabel y no las SetLabel de cada unos de los elementos de los layouts." />
     <MESSAGE value="Arreglado y organizado toda la vista de AddParty. Cambiamos los setText por los SetHint para que muestre un texto background. Eliminado código sucio." />
@@ -3634,7 +3629,8 @@
     <MESSAGE value="haciendo test para borrar el primer elemento de las categorias" />
     <MESSAGE value="limpiando codigo" />
     <MESSAGE value="realizando test para comprobar el numero de categorias con espresso" />
-    <option name="LAST_COMMIT_MESSAGE" value="realizando test para comprobar el numero de categorias con espresso" />
+    <MESSAGE value="creando variable id  y realizando getter para comprobar el test de borrado en realm con espresso" />
+    <option name="LAST_COMMIT_MESSAGE" value="creando variable id  y realizando getter para comprobar el test de borrado en realm con espresso" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -3909,6 +3905,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="343">
           <caret line="256" column="0" selection-start-line="256" selection-start-column="0" selection-end-line="256" selection-end-column="0" />
+          <folding>
+            <element signature="e#5830#5863#0" expanded="false" />
+            <element signature="method#openDialog#0;class#AddPartyView#0" expanded="false" />
+            <element signature="e#6600#6633#0" expanded="false" />
+            <element signature="method#saveToInternalStorage#0;class#AddPartyView#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -4023,29 +4025,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="614">
-          <caret line="181" column="34" selection-start-line="181" selection-start-column="34" selection-end-line="181" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="123" column="47" selection-start-line="123" selection-start-column="47" selection-end-line="123" selection-end-column="47" />
-          <folding>
-            <element signature="e#6810#7209#0" expanded="true" />
-            <element signature="e#7208#7209#0" expanded="true" />
-            <element signature="e#7754#8226#0" expanded="true" />
-            <element signature="e#8225#8226#0" expanded="true" />
-            <element signature="e#8788#8951#0" expanded="true" />
-            <element signature="e#8950#8951#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/Category.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -4056,15 +4035,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+        <state relative-caret-position="114">
+          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
           <folding>
-            <element signature="e#2648#2951#0" expanded="true" />
-            <element signature="e#2950#2951#0" expanded="true" />
+            <element signature="e#2649#2952#0" expanded="true" />
+            <element signature="e#2951#2952#0" expanded="true" />
             <element signature="e#3099#3365#0" expanded="true" />
             <element signature="e#3364#3365#0" expanded="true" />
-            <element signature="e#3479#3480#0" expanded="true" />
-            <element signature="e#3504#3505#0" expanded="true" />
+            <element signature="e#3485#3486#0" expanded="true" />
+            <element signature="e#3510#3511#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="157" column="0" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="208" column="70" selection-start-line="208" selection-start-column="70" selection-end-line="208" selection-end-column="70" />
+          <folding>
+            <element signature="e#6809#7208#0" expanded="true" />
+            <element signature="e#7207#7208#0" expanded="true" />
+            <element signature="e#7755#8305#0" expanded="true" />
+            <element signature="e#8304#8305#0" expanded="true" />
+            <element signature="e#8822#8985#0" expanded="true" />
+            <element signature="e#8984#8985#0" expanded="true" />
           </folding>
         </state>
       </provider>
