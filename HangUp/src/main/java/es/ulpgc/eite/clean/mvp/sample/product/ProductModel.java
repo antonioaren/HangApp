@@ -17,10 +17,8 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
 
     private RealmOperation realmdatabase;
     private CategoryData Item;
-
     private String itemId;
 
-    private RealmResults<ProductData> itemsDatabase;
 
     @Override
     public void onCreate(Product.ModelToPresenter modelToPresenter) {

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.Presenter;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 
 
 public interface AddCategory {
@@ -18,23 +19,11 @@ public interface AddCategory {
 
     interface ToAdd {
         void onScreenStarted();
-
-
     }
 
 
     interface AddTo {
-        Context getManagedContext();
-
-
         void destroyView();
-
-
-        String getCategoryName();
-
-        int getRadioButtonSelected();
-
-
     }
 
 
@@ -88,45 +77,32 @@ public interface AddCategory {
     interface PresenterToModel extends Model<ModelToPresenter> {
 
 
-        String getTitleLabel();
 
-        void setTitleLabel(String titleLabel);
 
         String getNameLabel();
-
         void setNameLabel(String nameLabel);
 
         String getPhotoLabel();
-
         void setPhotoLabel(String photoLabel);
 
 
         String getLabelRadio0();
-
         void setLabelRadio0(String labelRadio0);
 
         String getLabelRadio1();
-
         void setLabelRadio1(String labelRadio1);
 
         String getLabelRadio2();
-
         void setLabelRadio2(String labelRadio2);
 
         String getLabelRadio3();
-
         void setLabelRadio3(String labelRadio3);
 
         String getButtonAddlabel();
 
         void setButtonAddlabel(String buttonAddlabel);
 
-
-//        void insertEvent(String Categoryname, int image);
-
-
         void insertEvent(String Categoryname, String image);
-
 
         String getImageByIdSelected(int id);
     }
@@ -135,7 +111,6 @@ public interface AddCategory {
      * Required PRESENTER methods available to MODEL
      */
     interface ModelToPresenter {
-
 
         Context getManagedContext();
     }

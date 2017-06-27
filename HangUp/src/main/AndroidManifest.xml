@@ -34,7 +34,7 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name="es.ulpgc.eite.clean.mvp.sample.addParty.AddPartyView"
+            android:name="es.ulpgc.eite.clean.mvp.sample.addParty.AddProductView"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
 

@@ -37,7 +37,7 @@ public class ProductPresenter
         setView(view);
 
         if (configurationChangeOccurred()) {
-            getView().setAddLabel(getModel().getAddLabel());
+//            getView().setAddLabel(getModel().getAddLabel());
 
         }
     }
@@ -53,7 +53,7 @@ public class ProductPresenter
     @Override
     public void onScreenStarted() {
         if (isViewRunning()) {
-            getView().setAddLabel(getModel().getAddLabel());
+//            getView().setAddLabel(getModel().getAddLabel());
             SettingItemsAdapter();
         }
     }
@@ -99,10 +99,10 @@ public class ProductPresenter
         app.goToAddPartyScreen(this);
     }
 
-    @Override
-    public void onButtonDeleteClicked() {
-        Log.d(TAG, "calling onButtonDeleteClicked()");
-    }
+//    @Override
+//    public void onButtonDeleteClicked() {
+//        Log.d(TAG, "calling onButtonDeleteClicked()");
+//    }
 
     @Override
     public void OnSwipedItem(String id) {

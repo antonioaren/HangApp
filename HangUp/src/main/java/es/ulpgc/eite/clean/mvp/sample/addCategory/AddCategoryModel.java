@@ -21,19 +21,16 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
 
 
     private String titleLabel, nameLabel, photoLabel, buttonPhotoLabel, buttonAddlabel;
-    private String namecategory;
-    private Realm realmDatabase;
-   
+
     private String labelRadio0;
     private String labelRadio1;
     private String labelRadio2;
     private String labelRadio3;
 
     private String[] images;
-    private CategoryModel category;
+
 
     public AddCategoryModel() {
-
 
         this.images = new String[]{"astro.jpeg", "ulpgc.png", "cars.jpeg", "disco.jpg"};
     }
@@ -42,11 +39,10 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     public void onCreate(AddCategory.ModelToPresenter presenter) {
         super.onCreate(presenter);
 
-        titleLabel = "Publish a category";
         nameLabel = "Name:";
         photoLabel = "Photo:";
         buttonPhotoLabel = "Select...";
-        buttonAddlabel = "Add";
+        buttonAddlabel = "AddProduct";
         labelRadio0 = "astro";
         labelRadio1 = "academic";
         labelRadio2 = "car";
@@ -60,15 +56,6 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    @Override
-    public String getTitleLabel() {
-        return this.titleLabel;
-    }
-
-    @Override
-    public void setTitleLabel(String titleLabel) {
-        this.titleLabel = titleLabel;
-    }
 
     @Override
     public String getNameLabel() {
@@ -132,33 +119,12 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     public void setButtonAddlabel(String buttonAddlabel) {
         this.buttonAddlabel = buttonAddlabel;
     }
-    @Override
-    public void setNameCategory(String name) {
-        this.namecategory = name;
-    }
-
 
     @Override
     public void insertEvent(final String Categoryname, final String image) {
         RealmOperation realmOperation = RealmOperation.getInstances();
         realmOperation.insertEventCategory(Categoryname, image);
     }
-
-//    private void readImageFromAssets(String name) {
-//        String msg = "";
-//        int im = 1;
-//        try {
-//
-//            Context context = getPresenter().getManagedContext();
-//            InputStream stream = context.getAssets().open(name);
-//
-//        } catch (IOException e) {
-//            //Captando el mensaje en caso de error al cargar el archivo
-//            Log.e(TAG, e.getMessage());
-//        }
-//
-//    }
-
 
     @Override
     public String getImageByIdSelected(int id) {

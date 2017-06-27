@@ -47,7 +47,7 @@ public class EspressoTest {
         onView(withId(R.id.textName)).check(matches(isDisplayed()));
         onView(withId(R.id.radioGroup)).check(matches(isDisplayed()));
         onView(withId(R.id.content_name)).check(matches(isDisplayed()));
-        onView(withId(R.id.buttonAdd2)).check(matches(isDisplayed()));
+        onView(withId(R.id.buttonAddCategory)).check(matches(isDisplayed()));
     }
 
     @Test
@@ -55,8 +55,8 @@ public class EspressoTest {
         //funciona
         //the test starts at main screen
         onView(withId(R.id.fButtonAddCategory)).perform(click());
-        onView(withId(R.id.buttonAdd2)).check(matches(isDisplayed()));
-        onView(withId(R.id.buttonAdd2)).perform(click());
+        onView(withId(R.id.buttonAddCategory)).check(matches(isDisplayed()));
+        onView(withId(R.id.buttonAddCategory)).perform(click());
 
         onView(withId(R.id.recycler)).check(matches(isDisplayed()));
 
@@ -86,7 +86,7 @@ public class EspressoTest {
 
         // Clicks a button to send the message to another
         // activity through an explicit intent.
-        onView(withId(R.id.buttonAdd2)).perform(click());
+        onView(withId(R.id.buttonAddCategory)).perform(click());
         onView(withText("Fiestas")).check(matches(isDisplayed()));
         // Verifies that the DisplayMessageActivity received an intent
         // with the correct package name and message.
@@ -220,16 +220,16 @@ public class EspressoTest {
     public void testGetFirstElementName() {
         CategoryModel category = new CategoryModel();
         category.CreateDatabaseTables();
-        category.getEvents().first();
-        Assert.assertEquals("Fiestas", category.getEvents().first().getCategoryName());
+        category.getCategoryEvents().first();
+        Assert.assertEquals("Fiestas", category.getCategoryEvents().first().getCategoryName());
     }
 
     @Test
     public void testGetLastElementName() {
         CategoryModel category = new CategoryModel();
         category.CreateDatabaseTables();
-        category.getEvents().last();
-        Assert.assertEquals("Automovilismo", category.getEvents().last().getCategoryName());
+        category.getCategoryEvents().last();
+        Assert.assertEquals("Automovilismo", category.getCategoryEvents().last().getCategoryName());
     }
     @Test
     public void getNumberOfCategories() {

@@ -25,6 +25,7 @@ import java.util.List;
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.realmoperation.RealmOperation;
 import es.ulpgc.eite.clean.mvp.sample.util.RealmRecyclerViewAdapter;
 import io.realm.OrderedRealmCollection;
 import io.realm.Realm;
@@ -50,8 +51,6 @@ public class CategoryView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
 
-        Realm.init(this);
-
         recycler = (RecyclerView) findViewById(R.id.recycler);
         recycler.setHasFixedSize(true);
 
@@ -67,9 +66,12 @@ public class CategoryView
             }
         });
 
-        Realm realm = Realm.getDefaultInstance();
+//TODO Revisar dado que tenemos el singleton.
+//        Realm realm = Realm.getDefaultInstance();
 
-        recycler.setAdapter(new CategoryAdapter(realm.where(CategoryData.class).findAllAsync()));
+        //recycler.setAdapter(new CategoryAdapter(realm.where(CategoryData.class).findAllAsync()));
+        RealmOperation realmOperation = RealmOperation.getInstances();
+        recycler.setAdapter(new CategoryAdapter(realmOperation.getCategoryEvents()));
         InitComponentSwipeAndMove();
     }
 
@@ -116,6 +118,7 @@ public class CategoryView
 
         //Si no está creado "FirstRunning", crear la base de datos, si está creado significa que ya
         //está creada la base de datos.
+
         isFirstTime = false;
         if (pref.getBoolean("FirstRunning", true)) {
             prefEditor.putBoolean("FirstRunning", false);
@@ -135,9 +138,12 @@ public class CategoryView
     @Override
     public void settingAdapter(RealmResults<CategoryData> items) {
         if (recycler != null) {
+
             this.items = items;
+
             CategoryView.CategoryAdapter recyclerAdapter =
                     (CategoryView.CategoryAdapter) recycler.getAdapter();
+
             recyclerAdapter.setItemList(items);
         }
     }
@@ -150,6 +156,7 @@ public class CategoryView
 
     public class CategoryAdapter extends
             RealmRecyclerViewAdapter<CategoryData, CategoryAdapter.CategoryViewHolder> {
+
         private List<CategoryData> items;
 
         public CategoryAdapter(OrderedRealmCollection<CategoryData> items) {
@@ -174,8 +181,9 @@ public class CategoryView
             holder.item = items.get(position);
 
 
-            holder.image.setImageBitmap(getBiMapFromAssets(items.get(position).getImage()));
             holder.title.setText(items.get(position).getCategoryName());
+            holder.image.setImageBitmap(getBitMapFromAssets(items.get(position).getImage()));
+
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -208,7 +216,7 @@ public class CategoryView
             }
         }
 
-        private Bitmap getBiMapFromAssets(String FileName) {
+        private Bitmap getBitMapFromAssets(String FileName) {
             AssetManager assetManager = getAssets();
             InputStream istr = null;
 
@@ -218,9 +226,9 @@ public class CategoryView
                 e.printStackTrace();
             }
 
-            Bitmap fromAsset = BitmapFactory.decodeStream(istr);
+            Bitmap imagenBitmap = BitmapFactory.decodeStream(istr);
 
-            return fromAsset;
+            return imagenBitmap;
         }
 
 

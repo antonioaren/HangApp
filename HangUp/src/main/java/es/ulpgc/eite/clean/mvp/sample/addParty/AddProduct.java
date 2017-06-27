@@ -9,7 +9,7 @@ import es.ulpgc.eite.clean.mvp.Presenter;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 
 
-public interface Add {
+public interface AddProduct {
 
 
     ///////////////////////////////////////////////////////////////////////////////////
@@ -27,8 +27,6 @@ public interface Add {
         void destroyView();
 
         ProductData getProductAddedView();
-
-        String getFileName();
     }
 
 
@@ -44,11 +42,6 @@ public interface Add {
 
         void DataFromAddView(ProductData product);
 
-        void ButtonTimeInitClicked();
-
-
-        void ButtonTimeFinishClicked();
-
     }
 
     /**
@@ -61,7 +54,6 @@ public interface Add {
 
         void finishScreen();
 
-//        void setTextSelectPhotoLabel(String txt);
 
         void setPublishBtnLabel(String txt);
 
@@ -121,12 +113,6 @@ public interface Add {
 
         void setPublishLabel(String publishLabel);
 
-        String getTitleLabel();
-
-        void setTitleLabel(String titleLabel);
-
-
-        int getImageByIdSelected(int id);
     }
 
     /**

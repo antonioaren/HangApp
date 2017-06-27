@@ -6,8 +6,8 @@ import android.content.Intent;
 
 import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategory;
 import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategoryView;
-import es.ulpgc.eite.clean.mvp.sample.addParty.Add;
-import es.ulpgc.eite.clean.mvp.sample.addParty.AddPartyView;
+import es.ulpgc.eite.clean.mvp.sample.addParty.AddProduct;
+import es.ulpgc.eite.clean.mvp.sample.addParty.AddProductView;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
@@ -27,7 +27,6 @@ public class App extends Application implements Mediator, Navigator {
     private ProductState CategoryToProduct;
     private ProductState AddToProduct;
     private DetailState ProductToDetail;
-    private AddCategoryState toaddCategoryState;
 
     @Override
     public void onCreate() {
@@ -61,12 +60,9 @@ public class App extends Application implements Mediator, Navigator {
 
         if (AddToProduct != null) {
             presenter.setProductToAdd(AddToProduct.ProductToAdd);
-//          presenter.setImageName(AddToProduct.fileImageName);
         }
 
-        //CategoryToProduct = null;
         AddToProduct = null;
-
         presenter.onScreenStarted();
     }
 
@@ -79,21 +75,27 @@ public class App extends Application implements Mediator, Navigator {
     }
 
     @Override
-    public void startingAddScreen(Add.ToAdd presenter) {
-
+    public void startingAddCategoryScreen(AddCategory.ToAdd presenter) {
         presenter.onScreenStarted();
     }
 
     @Override
-    public void startingAddCategoryScreen(AddCategory.ToAdd presenter) {
-        if (toaddCategoryState != null) {
-
-        }
-
+    public void startingAddProductScreen(AddProduct.ToAdd presenter) {
         presenter.onScreenStarted();
     }
 
     /////////////// Navigator /////////////////////////////////////////////////////////////////////
+
+    @Override
+    public void goToCategoryScreen(Product.ProductTo presenter) {
+        //toCategoryState = new CategoryState();
+
+        Context view = presenter.getManagedContext();
+        if (view != null) {
+            view.startActivity(new Intent(view, CategoryView.class));
+        }
+
+    }
 
     @Override
     public void goToProductScreen(Category.CategoryTo presenter) {
@@ -109,7 +111,7 @@ public class App extends Application implements Mediator, Navigator {
     }
 
     @Override
-    public void goToProductScreenFromAddScreen(Add.AddTo presenter) {
+    public void goToProductScreenFromAddScreen(AddProduct.AddTo presenter) {
         AddToProduct = new ProductState();
         AddToProduct.ProductToAdd = presenter.getProductAddedView();
 
@@ -118,7 +120,6 @@ public class App extends Application implements Mediator, Navigator {
             Intent intent = new Intent(view, ProductView.class);
             view.startActivity(intent);
         }
-
     }
 
     @Override
@@ -132,23 +133,8 @@ public class App extends Application implements Mediator, Navigator {
         }
     }
 
-
-    @Override
-    public void goToCategoryScreen(Product.ProductTo presenter) {
-        //toCategoryState = new CategoryState();
-
-        Context view = presenter.getManagedContext();
-        if (view != null) {
-            view.startActivity(new Intent(view, CategoryView.class));
-        }
-
-    }
-
-
-
     @Override
     public void goToAddCategoryScreen(Category.CategoryTo presenter) {
-        toaddCategoryState = new AddCategoryState();
 
         //Añadir los estados que falten para pasarles a la busquedad. Guardar posicion, etc.
 
@@ -161,34 +147,24 @@ public class App extends Application implements Mediator, Navigator {
 
     @Override
     public void goToAddPartyScreen(Product.ProductTo presenter) {
-
-
         Context view = presenter.getManagedContext();
         if (view != null) {
-            view.startActivity(new Intent(view, AddPartyView.class));
+            view.startActivity(new Intent(view, AddProductView.class));
         }
 
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-
     @Override
-    public void SaveDataAdd(AddCategory.AddTo presenter) {
-        toaddCategoryState = new AddCategoryState();
-        toaddCategoryState.CategoryName = presenter.getCategoryName();
-        toaddCategoryState.radioButtonSelected = presenter.getRadioButtonSelected();
-
+    public void KillingAddCategoryScreenAfterInserting(AddCategory.AddTo presenter) {
         presenter.destroyView();
     }
 
     @Override
-    public void SaveDataFromAddParty(Add.AddTo presenter) {
-
-
+    public void SaveDataFromAddParty(AddProduct.AddTo presenter) {
         presenter.destroyView();
     }
-
 
     //////////////// State /////////////////////////////////////////////////////////////////////////
 
@@ -206,14 +182,7 @@ public class App extends Application implements Mediator, Navigator {
         public ProductData ItemSelected;
     }
 
-    private class AddCategoryState {
-        boolean textVisibility;
 
-
-        public int radioButtonSelected;
-        public String CategoryName;
-        public RealmResults<CategoryData> Categories;
-    }
 }
 
 

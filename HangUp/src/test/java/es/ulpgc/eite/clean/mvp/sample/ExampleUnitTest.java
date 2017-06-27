@@ -100,17 +100,17 @@ public void testGetRadioLabelsWithoutSettingName()throws Exception{
   @Test
   public void testgetButtonAddLabelNotNull(){
     AddCategoryModel add= new AddCategoryModel();
-   add.setButtonAddlabel("Add");
-    assertEquals("Add",add.getButtonAddlabel());
+    add.setButtonAddlabel("AddProduct");
+    assertEquals("AddProduct", add.getButtonAddlabel());
   }
 
   //test for product model
-  @Test
-  public void testgetAddLabelWithoutSetting()throws Exception{
-    ProductModel product= new ProductModel();
-    product.getAddLabel();
-    assertEquals(null,product.getAddLabel());
-  }
+//  @Test
+//  public void testgetAddLabelWithoutSetting()throws Exception{
+//    ProductModel product= new ProductModel();
+//    product.getAddLabel();
+//    assertEquals(null,product.getAddLabel());
+//  }
 
 
 

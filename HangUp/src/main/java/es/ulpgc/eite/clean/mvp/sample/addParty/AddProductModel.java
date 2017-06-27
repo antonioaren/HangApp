@@ -10,7 +10,9 @@ import es.ulpgc.eite.clean.mvp.GenericModel;
  * Created by eleonora on 17/04/2017.
  */
 
-public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements Add.PresenterToModel {
+public class AddProductModel
+        extends GenericModel<AddProduct.ModelToPresenter>
+        implements AddProduct.PresenterToModel {
 
 
 
@@ -18,14 +20,9 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     private String nameLabel;
     private String detailsLabel;
     private String selectPhotoLabel;
-    private Integer[] images;
-
-    public AddPartyModel() {
-    }
-
 
     @Override
-    public void onCreate(Add.ModelToPresenter presenter) {
+    public void onCreate(AddProduct.ModelToPresenter presenter) {
         super.onCreate(presenter);
 
         titleLabel = "Publish your own party";
@@ -44,18 +41,6 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     public void onDestroy(boolean b) {
         Log.d(TAG, "calling onDestroy()");
     }
-
-
-    @Override
-    public String getTitleLabel() {
-        return this.titleLabel;
-    }
-
-    @Override
-    public void setTitleLabel(String titleLabel) {
-        this.titleLabel = titleLabel;
-    }
-
 
     @Override
     public String getNameLabel() {
@@ -139,15 +124,15 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    @Override
-    public int getImageByIdSelected(int id) {
-        int image = 1;
-        if (id >= 0) {
-            image = images[id];
-        } else {
-            image = images[0];
-        }
-        return image;
-    }
+//    @Override
+//    public int getImageByIdSelected(int id) {
+//        int image = 1;
+//        if (id >= 0) {
+//            image = images[id];
+//        } else {
+//            image = images[0];
+//        }
+//        return image;
+//    }
 
 }

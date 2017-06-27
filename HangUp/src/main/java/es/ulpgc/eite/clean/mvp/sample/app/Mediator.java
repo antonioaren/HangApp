@@ -3,7 +3,7 @@ package es.ulpgc.eite.clean.mvp.sample.app;
 import android.content.Context;
 
 import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategory;
-import es.ulpgc.eite.clean.mvp.sample.addParty.Add;
+import es.ulpgc.eite.clean.mvp.sample.addParty.AddProduct;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
 
 import es.ulpgc.eite.clean.mvp.sample.details.Detail;
@@ -16,7 +16,7 @@ Mediator {
 
     void startingDetailScreen(Detail.ToDetail presenter);
 
-    void startingAddScreen(Add.ToAdd presenter);
+    void startingAddProductScreen(AddProduct.ToAdd presenter);
 
     Context getAppContext();
 
@@ -28,10 +28,10 @@ Mediator {
     void startingAddCategoryScreen(AddCategory.ToAdd presenter);
 
     //modificado nombre de metodo
-    void SaveDataAdd(AddCategory.AddTo presenter);
+    void KillingAddCategoryScreenAfterInserting(AddCategory.AddTo presenter);
 
 
-    void SaveDataFromAddParty(Add.AddTo presenter);
+    void SaveDataFromAddParty(AddProduct.AddTo presenter);
 
 
 }

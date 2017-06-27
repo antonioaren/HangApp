@@ -12,24 +12,23 @@ import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
  * Created by eleonora on 17/04/2017.
  */
 
-public class AddPartyPresenter
-        extends GenericPresenter<Add.PresenterToView, Add.PresenterToModel, Add.ModelToPresenter, AddPartyModel>
-        implements Add.ViewToPresenter, Add.ModelToPresenter, Add.ToAdd, Add.AddTo {
+public class AddProductPresenter
+        extends GenericPresenter<AddProduct.PresenterToView, AddProduct.PresenterToModel, AddProduct.ModelToPresenter, AddProductModel>
+        implements AddProduct.ViewToPresenter, AddProduct.ModelToPresenter, AddProduct.ToAdd, AddProduct.AddTo {
 
 
     private ProductData product;
-    private String fileName;
 
 
     @Override
-    public void onCreate(Add.PresenterToView view) {
-        super.onCreate(AddPartyModel.class, this);
+    public void onCreate(AddProduct.PresenterToView view) {
+        super.onCreate(AddProductModel.class, this);
         setView(view);
         Log.d(TAG, "calling onCreate()");
 
-        Log.d(TAG, "calling startingAddScreen()");
+        Log.d(TAG, "calling startingAddProductScreen()");
         Mediator app = (Mediator) getView().getApplication();
-        app.startingAddScreen(this);
+        app.startingAddProductScreen(this);
     }
 
     @Override
@@ -39,7 +38,7 @@ public class AddPartyPresenter
     }
 
     @Override
-    public void onResume(Add.PresenterToView view) {
+    public void onResume(AddProduct.PresenterToView view) {
         setView(view);
         Log.d(TAG, "calling onResume()");
         LoadInitialComponents();
@@ -74,16 +73,6 @@ public class AddPartyPresenter
         }
     }
 
-    @Override
-    public void ButtonTimeInitClicked() {
-
-    }
-
-    @Override
-    public void ButtonTimeFinishClicked() {
-
-
-    }
 
     @Override
     public void onPublishButtonClicked() {
@@ -101,11 +90,6 @@ public class AddPartyPresenter
     @Override
     public ProductData getProductAddedView() {
         return product;
-    }
-
-    @Override
-    public String getFileName() {
-        return fileName;
     }
 
     private void LoadInitialComponents() {

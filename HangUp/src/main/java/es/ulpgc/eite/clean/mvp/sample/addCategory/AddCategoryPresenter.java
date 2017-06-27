@@ -5,6 +5,7 @@ import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
+import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 
 /**
  * Created by eleonora on 17/04/2017.
@@ -14,6 +15,7 @@ public class AddCategoryPresenter
         extends GenericPresenter<AddCategory.PresenterToView, AddCategory.PresenterToModel, AddCategory.ModelToPresenter, AddCategoryModel>
         implements AddCategory.ViewToPresenter, AddCategory.ModelToPresenter, AddCategory.ToAdd, AddCategory.AddTo {
 
+    private CategoryData categoryData;
 
     @Override
     public void onCreate(AddCategory.PresenterToView view) {
@@ -82,23 +84,11 @@ public class AddCategoryPresenter
 
     @Override
     public void onAddClicked() {
-        String image = getModel().getImageByIdSelected(getView().getRadioButtonId());
-        getModel().insertEvent(getView().getTextFromEditText(), image);
+        String ImageName = getModel().getImageByIdSelected(getView().getRadioButtonId());
+        getModel().insertEvent(getView().getTextFromEditText(), ImageName);
+
         Mediator app = (Mediator) getView().getApplication();
-        app.SaveDataAdd(this);
+        app.KillingAddCategoryScreenAfterInserting(this);
     }
-
-
-    @Override
-    public String getCategoryName() {
-        return getView().getTextFromEditText();
-    }
-
-    @Override
-    public int getRadioButtonSelected() {
-        return getView().getRadioButtonId();
-    }
-
-
 }
 

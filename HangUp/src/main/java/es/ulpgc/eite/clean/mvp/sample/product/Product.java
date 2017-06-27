@@ -13,12 +13,9 @@ import io.realm.RealmList;
 
 public interface Product {
     interface PresenterToView extends ContextView {
-
         void setAddLabel(String msg);
 
-
         void settingAdapter(RealmList<ProductData> items);
-
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -58,6 +55,7 @@ public interface Product {
     //ToDetail ///////////////////////////////////////////////////////////////////////////////////////
 
     public interface ToProduct {
+
         void onScreenStarted();
 
         void setItemSelected(CategoryData itemSelected);
@@ -73,10 +71,6 @@ public interface Product {
     interface ProductTo {
         Context getManagedContext();
 
-
         ProductData getSelectedItem();
-
-
-
     }
 }

@@ -32,6 +32,7 @@ public class CategoryPresenter
         super.onCreate(CategoryModel.class, this);
         setView(view);
         Log.d(TAG, "calling onCreate()");
+
         getModel().CreateDatabaseTables();
 
 //        if (getView().isFirstTime())
@@ -41,7 +42,6 @@ public class CategoryPresenter
         app.startingCategoryScreen(this);
     }
 
-
     /**
      * Operation called by VIEW after its reconstruction.
      * Always call {@link GenericPresenter#setView(ContextView)}
@@ -49,6 +49,7 @@ public class CategoryPresenter
      *
      * @param view The current VIEW instance
      */
+
     @Override
     public void onResume(Category.PresenterToView view) {
         setView(view);
@@ -85,18 +86,7 @@ public class CategoryPresenter
 
     // View To Presenter /////////////////////////////////////////////////////////////
 
-    @Override
-    public void onButtonSearchClicked() {
-        Log.d(TAG, "calling onButtonSearchClicked()");
-//      if (isViewRunning()) {
-//          getModel().onChangeMsgByBtnClicked();
-//          getView().setText(getModel().getText());
-//          textVisible = true;
-//          buttonClicked = true;
 
-//        Navigator app = (Navigator) getView().getApplication();
-//        app.goToDeleteScreen(this);
-    }
     @Override
     public void onButtonAddClicked() {
         Log.d(TAG, "calling onButtonAddClicked()");

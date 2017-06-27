@@ -19,7 +19,6 @@ import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -33,8 +32,8 @@ import es.ulpgc.eite.clean.mvp.sample.util.DateFormatter;
  * Created by eleonora on 23/03/2017.
  */
 
-public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewToPresenter, AddPartyPresenter>
-        implements Add.PresenterToView {
+public class AddProductView extends GenericActivity<AddProduct.PresenterToView, AddProduct.ViewToPresenter, AddProductPresenter>
+        implements AddProduct.PresenterToView {
 
 
     private EditText EventName;
@@ -163,7 +162,7 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
     @SuppressLint("MissingSuperCall")
     @Override
     public void onResume() {
-        super.onResume(AddPartyPresenter.class, this);
+        super.onResume(AddProductPresenter.class, this);
     }
 
     @Override
@@ -290,6 +289,4 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
         return directory.getAbsolutePath();
     }
-
-
 }
