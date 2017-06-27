@@ -214,7 +214,22 @@ public class EspressoTest {
         //comprobacion del test con un metodo
         Assert.assertEquals(6, c.getNumberOfCategories());
 
+    }
 
+    @Test
+    public void testGetFirstElementName() {
+        CategoryModel category = new CategoryModel();
+        category.CreateDatabaseTables();
+        category.getEvents().first();
+        Assert.assertEquals("Fiestas", category.getEvents().first().getCategoryName());
+    }
+
+    @Test
+    public void testGetLastElementName() {
+        CategoryModel category = new CategoryModel();
+        category.CreateDatabaseTables();
+        category.getEvents().last();
+        Assert.assertEquals("Automovilismo", category.getEvents().last().getCategoryName());
     }
     @Test
     public void getNumberOfCategories() {

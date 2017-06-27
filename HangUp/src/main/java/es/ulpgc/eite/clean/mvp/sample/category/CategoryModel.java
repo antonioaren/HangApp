@@ -88,7 +88,6 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     }
 
 
-
     @Override
     public void setItemsFromDatabase() {
         itemsDatabase = realmDatabase.where(CategoryData.class).findAll();
