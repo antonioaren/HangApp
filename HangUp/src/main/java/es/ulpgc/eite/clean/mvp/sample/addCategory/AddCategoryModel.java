@@ -157,33 +157,20 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
         });
     }
 
-    private void readImageFromAssets(String name) {
-        String msg = "";
-        int im = 1;
-        try {
-            //Recoger el archivo desde assets
-
-//            AssetManager am = Resources.getSystem().getAssets();
-//            InputStream manager = am.open(name);
-            //convierte el archivo de assets en un objeto drawable
-//            Drawable drawableImage = Drawable.createFromStream(manager, null);
+//    private void readImageFromAssets(String name) {
+//        String msg = "";
+//        int im = 1;
+//        try {
 //
-//            Bitmap bm = BitmapFactory.decodeStream(manager);
-//            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-//            bm.compress(Bitmap.CompressFormat.PNG, 100, stream);
-//            byte[] byteArray = stream.toByteArray();
-//            im = Integer.parseInt(byteArray.toString());
-
-            //  image=Integer.parseInt(drawableImage.toString());
-            Context context = getPresenter().getManagedContext();
-            InputStream stream = context.getAssets().open(name);
-
-        } catch (IOException e) {
-            //Captando el mensaje en caso de error al cargar el archivo
-            Log.e(TAG, e.getMessage());
-        }
-
-    }
+//            Context context = getPresenter().getManagedContext();
+//            InputStream stream = context.getAssets().open(name);
+//
+//        } catch (IOException e) {
+//            //Captando el mensaje en caso de error al cargar el archivo
+//            Log.e(TAG, e.getMessage());
+//        }
+//
+//    }
 
 
     @Override

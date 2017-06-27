@@ -109,7 +109,7 @@ public class EspressoTest  {
         String name = "1";
 
         onView(withId(R.id.recycler))
-                .perform(RecyclerViewActions.actionOnItemAtPosition(2, click()));
+                .perform(RecyclerViewActions.actionOnItemAtPosition(4, click()));
         onView(withId(R.id.fButtonAddProduct)).perform(click());
         onView(withId(R.id.name))
                 // Types a message into a EditText element.
@@ -185,6 +185,30 @@ public class EspressoTest  {
       Assert.assertEquals(7, c.getNumberOfCategories());
   }
 
+    @Test
+    public void deleteFirstCategory() {
+        //funciona
+        final CategoryModel c = new CategoryModel();
+        c.CreateDatabaseTables();
+        RealmConfiguration testConfig =
+                new RealmConfiguration.Builder().
+                        inMemory().
+                        name("test-realdelete").build();
+
+        Realm testRealm = Realm.getInstance(testConfig);
+
+        testRealm.executeTransaction(new Realm.Transaction() {
+                                         @Override
+                                         public void execute(Realm realm) {
+
+
+                                             c.getEvents().deleteFirstFromRealm();
+                                         }
+                                     }
+        );
+        //comprobacion del test con un metodo
+        Assert.assertEquals(7, c.getNumberOfCategories());
+    }
 
 
 
