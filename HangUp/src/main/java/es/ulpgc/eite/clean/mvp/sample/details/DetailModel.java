@@ -2,6 +2,7 @@ package es.ulpgc.eite.clean.mvp.sample.details;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -74,10 +75,13 @@ public class DetailModel extends GenericModel<Detail.ModelToPresenter>
     }
 
     @Override
-    public Bitmap getImage() {
-        return loadImageFromStorage(itemSelected.getImage());
+    public Uri getImage() {
+        return UriloadImageFromStorage(itemSelected.getImage());
     }
 
+    private Uri UriloadImageFromStorage(String path) {
+        return Uri.parse(path);
+    }
 
     private Bitmap loadImageFromStorage(String path) {
         Bitmap b = null;

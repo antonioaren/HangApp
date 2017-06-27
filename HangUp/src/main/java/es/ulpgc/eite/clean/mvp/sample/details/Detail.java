@@ -1,6 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.details;
 
 import android.graphics.Bitmap;
+import android.net.Uri;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
@@ -32,7 +33,7 @@ public interface Detail {
 
         void setTimeEnd(String txt);
 
-        void setImage(Bitmap image);
+        void setImage(Uri img);
     }
 
     public interface ViewToPresenter {
@@ -51,7 +52,7 @@ public interface Detail {
 
         String getHeaderTimeEndLabel();
 
-        Bitmap getImage();
+        Uri getImage();
 
     }
 

@@ -40,12 +40,10 @@ public class ProductView
         extends GenericActivity<Product.PresenterToView, Product.ViewToPresenter, ProductPresenter>
         implements Product.PresenterToView {
 
-    public RecyclerView recycler;
-    private Button buttonAdd;
+    private RecyclerView recycler;
     private FloatingActionButton FButtonAdd;
     private LinearLayoutManager linearmanager;
     private RealmList<ProductData> items;
-    private ProductAdapter adapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,7 +68,6 @@ public class ProductView
         });
 
         InitComponentSwipeAndMove();
-
     }
 
     @Override
@@ -146,8 +143,6 @@ public class ProductView
             holder.title.setText(items.get(position).getProductName());
             holder.Place.setText(items.get(position).getPlace());
             holder.imageCard.setImageURI(UriloadImageFromStorage(items.get(position).getImage()));
-            //holder.imageCard.setImageBitmap(loadImageFromStorage(items.get(position).getImage()));
-            //holder.imageCard.setImageBitmap(UriloadImageFromStorage(items.get(position).getImage()));
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

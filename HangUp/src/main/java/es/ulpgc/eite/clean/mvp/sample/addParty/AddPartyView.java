@@ -66,7 +66,6 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addparty);
 
-
         EventName = (EditText) findViewById(R.id.name);
         EventName.requestFocus();
 
@@ -91,10 +90,8 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
                         now.get(Calendar.MONTH),
                         now.get(Calendar.DAY_OF_MONTH)
                 );
-
                 d.setMinDate(now);
                 d.show(getFragmentManager(), this.getClass().getName());
-
             }
         });
 
@@ -117,7 +114,6 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
                                 EventTimeInit.setText(Hour.toString() + ":" + Minutes.toString());
                             }
                         }, Hour, Minutes, true);
-
                 timepicker.show();
             }
         });
@@ -140,7 +136,6 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
                                 EventTimeFinish.setText(Hour.toString() + ":" + Minutes.toString());
                             }
                         }, Hour, Minutes, true);
-
                 timepicker.show();
             }
         });
@@ -192,16 +187,15 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
 
         if (resultCode == RESULT_OK && requestCode == PICK_IMAGE) {
             imageUri = data.getData();
-            //EventImage.setImageURI(imageUri);
-
-            imageBitMap = null;
-            try {
-                imageBitMap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            EventImage.setImageBitmap(imageBitMap);
+            EventImage.setImageURI(imageUri);
+            //            imageBitMap = null;
+//            try {
+//                imageBitMap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
+//
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            EventImage.setImageBitmap(imageBitMap);
         }
     }
 
@@ -260,7 +254,6 @@ public class AddPartyView extends GenericActivity<Add.PresenterToView, Add.ViewT
         product.setTimeI(EventTimeInit.getText().toString());
         product.setTimeF(EventTimeFinish.getText().toString());
         product.setDetailText(EventDetails.getText().toString());
-        //product.setImage(saveToInternalStorage(imageBitMap));
         product.setImage(imageUri.toString());
 
         getPresenter().DataFromAddView(product);

@@ -24,15 +24,10 @@ public class App extends Application implements Mediator, Navigator {
 
 
     private CategoryState toCategoryState;
-
     private ProductState CategoryToProduct;
     private ProductState AddToProduct;
-
     private DetailState ProductToDetail;
-
     private AddCategoryState toaddCategoryState;
-
-
 
     @Override
     public void onCreate() {
@@ -66,7 +61,7 @@ public class App extends Application implements Mediator, Navigator {
 
         if (AddToProduct != null) {
             presenter.setProductToAdd(AddToProduct.ProductToAdd);
-//            presenter.setImageName(AddToProduct.fileImageName);
+//          presenter.setImageName(AddToProduct.fileImageName);
         }
 
         //CategoryToProduct = null;
@@ -80,9 +75,7 @@ public class App extends Application implements Mediator, Navigator {
         if (ProductToDetail != null) {
             presenter.setItemSelected(ProductToDetail.ItemSelected);
         }
-
         presenter.onScreenStarted();
-
     }
 
     @Override
@@ -212,10 +205,6 @@ public class App extends Application implements Mediator, Navigator {
     private class DetailState {
         public ProductData ItemSelected;
     }
-
-
-
-
 
     private class AddCategoryState {
         boolean textVisibility;

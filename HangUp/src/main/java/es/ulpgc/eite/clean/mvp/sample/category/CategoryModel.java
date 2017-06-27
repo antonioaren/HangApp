@@ -55,44 +55,14 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         insertEvent("Automovilismo", "cars.jpeg");
     }
 
-//    private int getBitmapFromAssets(String name) {
-//
-//        int im = 1;
-//        int[] array = new int[1000];
-//        Drawable drawableImage = null;
-//
-//        try {
-//            //Recoger el archivo desde assets
-//
-//            InputStream stream = Resources.getSystem().getAssets().open(name);
-//            //   Bitmap bm = BitmapFactory.decodeStream(stream);
-//            drawableImage = Drawable.createFromStream(stream, null);
-//
-//
-//            // the drawable (Captain Obvious, to the rescue!!!)
-//            Bitmap bitmap = ((BitmapDrawable) drawableImage).getBitmap();
-//            ByteArrayOutputStream out = new ByteArrayOutputStream();
-//            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
-//            byte[] bitmapdata = out.toByteArray();
-//            im = Integer.parseInt(bitmapdata.toString());
-//
-//
-//        } catch (IOException e) {
-//            //Captando el mensaje en caso de error al cargar el archivo
-//            Log.e(TAG, e.getMessage());
-//        }
-//
-//
-//        return im;
-//    }
-
-
     /**
      * Called by layer PRESENTER when VIEW pass for a reconstruction/destruction.
      * Usefull for kill/stop activities that could be running on the background Threads
      *
      * @param isChangingConfiguration Informs that a change is occurring on the configuration
      */
+
+
     @Override
     public void onDestroy(boolean isChangingConfiguration) {
 

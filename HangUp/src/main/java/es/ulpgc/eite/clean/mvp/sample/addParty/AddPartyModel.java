@@ -21,7 +21,6 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
     private Integer[] images;
 
     public AddPartyModel() {
-        //this.images = new Integer[]{R.drawable.astro, R.drawable.ulpgc, R.drawable.cars, R.drawable.disco};
     }
 
 
@@ -35,7 +34,7 @@ public class AddPartyModel extends GenericModel<Add.ModelToPresenter> implements
         dateLabel = "Date";
         timeInitLabel = "Starts";
         timeFinishLabel = "Finishes";
-        detailsLabel = "Party's Details";
+        detailsLabel = "Details";
         selectPhotoLabel = "Select a photo : ";
         publishLabel = "Publish";
 

@@ -1,13 +1,10 @@
 package es.ulpgc.eite.clean.mvp.sample.product;
 
 
-import java.util.UUID;
-
 import es.ulpgc.eite.clean.mvp.GenericModel;
+import es.ulpgc.eite.clean.mvp.sample.realmoperation.Singleton;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
-import io.realm.Realm;
-import io.realm.RealmConfiguration;
 import io.realm.RealmList;
 import io.realm.RealmResults;
 
@@ -18,9 +15,8 @@ import io.realm.RealmResults;
 public class ProductModel extends GenericModel<Product.ModelToPresenter>
         implements Product.PresenterToModel {
 
-    private Realm realmDatabase;
+    private Singleton realmdatabase;
     private CategoryData Item;
-    private String addlabel;
 
     private String itemId;
 
@@ -28,10 +24,7 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
 
     @Override
     public void onCreate(Product.ModelToPresenter modelToPresenter) {
-        addlabel = "Add";
-
-        RealmConfiguration setting = new RealmConfiguration.Builder().build();
-        Realm.setDefaultConfiguration(setting);
+        realmdatabase = Singleton.getInstances();
     }
 
     @Override
@@ -42,6 +35,7 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     public CategoryData getItem() {
         return Item;
     }
+
     @Override
     public void setItem(CategoryData itemSelected) {
         Item = itemSelected;
@@ -51,63 +45,46 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     public String getItemId() {
         return itemId;
     }
+
     @Override
     public void setItemId(String itemId) {
         this.itemId = itemId;
     }
 
     @Override
-    public void setProductToAddFromAddAndInsert(ProductData productToAdd) {
+    public void setProductFromAddAndInsert(ProductData productToAdd) {
         AddProductByCategoryId(productToAdd, itemId);
     }
+
     @Override
     public void AddProductByCategoryId(final ProductData product, final String CategoryId) {
-        realmDatabase = Realm.getDefaultInstance();
-        realmDatabase.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-                ProductData event = realmDatabase.createObject(ProductData.class, UUID.randomUUID().toString());
-                event.setImage(product.getImage());
-                event.setProductName(product.getProductName());
-                event.setPlace(product.getPlace());
-                event.setDate(product.getPlace());
-                event.setTimeI(product.getTimeI());
-                event.setTimeF(product.getTimeF());
-                event.setDetailText(product.getDetailText());
-                event.setImage(product.getImage());
-
-                CategoryData category = realm.where(CategoryData.class)
-                        .equalTo("id", CategoryId).findFirst();
-
-                category.getItemInfo().add(event);
-            }
-        });
+        realmdatabase.AddProductByCategoryId(product, CategoryId);
     }
 
     @Override
     public RealmList<ProductData> getAllProductsByCategoryId(final String CategoryId) {
-        realmDatabase = Realm.getDefaultInstance();
-        CategoryData category = realmDatabase.where(CategoryData.class).
-                equalTo("id", CategoryId).findFirst();
-        RealmList<ProductData> products = category.getItemInfo();
-        return products;
+        return realmdatabase.getAllProductsByCategoryId(CategoryId);
+//        realmDatabase = Realm.getDefaultInstance();
+//        CategoryData category = realmDatabase.where(CategoryData.class).
+//                equalTo("id", CategoryId).findFirst();
+//        RealmList<ProductData> products = category.getItemInfo();
     }
 
     @Override
     public void deleteItemById(final String id) {
-        realmDatabase.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-                ProductData product = realm.where(ProductData.class).equalTo("id", id).findFirst();
-                product.deleteFromRealm();
-            }
-        });
-
+        realmdatabase.deleteProductItemById(id);
+//        realmDatabase.executeTransaction(new Realm.Transaction() {
+//            @Override
+//            public void execute(Realm realm) {
+//                ProductData product = realm.where(ProductData.class).equalTo("id", id).findFirst();
+//                product.deleteFromRealm();
+//            }
+//        });
     }
 
     @Override
     public String getAddLabel() {
-        return addlabel;
+        return null;
     }
 
 

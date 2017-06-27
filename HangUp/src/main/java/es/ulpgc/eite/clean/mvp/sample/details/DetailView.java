@@ -2,6 +2,7 @@ package es.ulpgc.eite.clean.mvp.sample.details;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -111,9 +112,7 @@ public class DetailView
     }
 
     @Override
-    public void setImage(Bitmap img) {
-        image.setImageBitmap(img);
+    public void setImage(Uri img) {
+        image.setImageURI(img);
     }
-
-
 }

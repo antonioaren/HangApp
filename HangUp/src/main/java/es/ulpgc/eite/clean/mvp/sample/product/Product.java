@@ -54,7 +54,7 @@ public interface Product {
 
         void setItemId(String itemId);
 
-        void setProductToAddFromAddAndInsert(ProductData productToAdd);
+        void setProductFromAddAndInsert(ProductData productToAdd);
 
         RealmList<ProductData> getAllProductsByCategoryId(String CategoryId);
     }

@@ -47,8 +47,7 @@ public class ProductPresenter
     }
     @Override
     public void onBackPressed() {
-        //No llama al back del activity. Por eso creo otro llamado OnBackButtonPressed
-        //Que sobreescribe el backpressed del activity.
+
     }
 
     @Override
@@ -83,7 +82,7 @@ public class ProductPresenter
 
     @Override
     public void setProductToAdd(ProductData productToAdd) {
-        getModel().setProductToAddFromAddAndInsert(productToAdd);
+        getModel().setProductFromAddAndInsert(productToAdd);
     }
 
     @Override
