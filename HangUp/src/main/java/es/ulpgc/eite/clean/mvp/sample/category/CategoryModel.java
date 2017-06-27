@@ -110,16 +110,19 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     @Override
     public void deleteItem(final String id) {
-        realmDatabase.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-                CategoryData category = realm.where(CategoryData.class).equalTo("id", id).findFirst();
-                category.deleteFromRealm();
-
-            }
-        });
-
-
+        // realmDatabase.executeTransaction(new Realm.Transaction() {
+//            @Override
+//            public void execute(Realm realm) {
+//                CategoryData category = realm.where(CategoryData.class).equalTo("id", id).findFirst();
+//                category.deleteFromRealm();
+//
+//            }
+//        });
+//
+        realmDatabase.beginTransaction();
+        CategoryData category = realmDatabase.where(CategoryData.class).equalTo("id", id).findFirst();
+        category.deleteFromRealm();
+        realmDatabase.commitTransaction();
     }
 
     //metodo paara comprobar test con espresso

@@ -12,6 +12,7 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
+import es.ulpgc.eite.clean.mvp.sample.category.CategoryPresenter;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
@@ -32,9 +33,10 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
  * Created by eleonora on 24/05/2017.
  */
 
-public class EspressoTest  {
+public class EspressoTest {
 
-    @Rule public final ActivityTestRule<CategoryView> presenter= new ActivityTestRule<>(CategoryView.class);
+    @Rule
+    public final ActivityTestRule<CategoryView> presenter = new ActivityTestRule<>(CategoryView.class);
 
 
     @Test
@@ -101,6 +103,13 @@ public class EspressoTest  {
         onView(withText("ULPGC")).check(matches(isDisplayed()));
 
     }
+
+    @Test
+    public void testRemoveElementWhenSwiping() throws Exception {
+        CategoryPresenter presenter = new CategoryPresenter();
+        presenter.OnSwipedItem("1");
+    }
+
     @Test
     public void testInsertingANewPartyInACategory() throws Exception {
         //funciona
@@ -140,7 +149,6 @@ public class EspressoTest  {
         onView(withText(name)).check(matches(isDisplayed()));
 
 
-
     }
 
     @Test
@@ -157,43 +165,15 @@ public class EspressoTest  {
     }
 
 
-
-
-  @Test
-    public void insertEventTestBeforeStartingApplication(){
-      //funciona
-      final CategoryModel c = new CategoryModel();
-      c.CreateDatabaseTables();
-      RealmConfiguration testConfig =
-              new RealmConfiguration.Builder().
-                      inMemory().
-                      name("test-realm1").build();
-
-      Realm testRealm = Realm.getInstance(testConfig);
-
-     testRealm.executeTransaction(new Realm.Transaction() {
-         @Override
-         public void execute(Realm realm) {
-
-
-             c.insertEvent("jkhkih", "disco.jpg");
-             c.insertEvent("jjh", "disco.jpg");
-         }
-                                  }
-     );
-      //comprobacion del test con un metodo
-      Assert.assertEquals(7, c.getNumberOfCategories());
-  }
-
     @Test
-    public void deleteFirstCategory() {
+    public void insertEventTestBeforeStartingApplication() {
         //funciona
         final CategoryModel c = new CategoryModel();
         c.CreateDatabaseTables();
         RealmConfiguration testConfig =
                 new RealmConfiguration.Builder().
                         inMemory().
-                        name("test-realdelete").build();
+                        name("test-realm1").build();
 
         Realm testRealm = Realm.getInstance(testConfig);
 
@@ -202,7 +182,8 @@ public class EspressoTest  {
                                          public void execute(Realm realm) {
 
 
-                                             c.getEvents().deleteFirstFromRealm();
+                                             c.insertEvent("jkhkih", "disco.jpg");
+                                             c.insertEvent("jjh", "disco.jpg");
                                          }
                                      }
         );
@@ -210,12 +191,52 @@ public class EspressoTest  {
         Assert.assertEquals(7, c.getNumberOfCategories());
     }
 
+    @Test
+    public void getNumberOfCategories() {
+
+        final CategoryModel c = new CategoryModel();
+
+        RealmConfiguration testConfig =
+                new RealmConfiguration.Builder().
+                        inMemory().
+                        name("test-realmCategories").build();
+
+        Realm testRealm = Realm.getInstance(testConfig);
+        testRealm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+
+                c.CreateDatabaseTables();
 
 
+            }
+        });
+        //comprobacion del test con un metodo
+        Assert.assertEquals(5, c.getNumberOfCategories());
 
 
+    }
+
+    @Test
+    public void deleteItem() {
+
+        final CategoryModel c = new CategoryModel();
+
+        RealmConfiguration testConfig =
+                new RealmConfiguration.Builder().
+                        inMemory().
+                        name("test-realmCategories").build();
+
+        Realm testRealm = Realm.getInstance(testConfig);
+
+        c.CreateDatabaseTables();
+        c.deleteItem("1");
 
 
+        //comprobacion del test con un metodo
+        Assert.assertEquals(5, c.getNumberOfCategories());
 
+
+    }
 }
 

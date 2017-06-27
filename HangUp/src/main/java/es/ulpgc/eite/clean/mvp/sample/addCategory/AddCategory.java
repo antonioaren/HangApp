@@ -121,8 +121,6 @@ public interface AddCategory {
 
         void setButtonAddlabel(String buttonAddlabel);
 
-        void setNameCategory(String name);
-
 
 //        void insertEvent(String Categoryname, int image);
 
