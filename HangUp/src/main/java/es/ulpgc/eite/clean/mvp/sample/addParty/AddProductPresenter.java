@@ -120,7 +120,7 @@ public class AddProductPresenter
                 getView().getEventTimeInit().isEmpty() ||
                 getView().getEventTimeFinish().isEmpty() ||
                 getView().getEventDetails().isEmpty() ||
-                getView().getStringImageUri().isEmpty()) {
+                !(getView().getIsImageChosen())) {
 
             setAnyValueNull(true);
 

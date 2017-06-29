@@ -92,6 +92,10 @@ public interface AddProduct {
         String getStringImageUri();
 
         void setToast(String txt);
+
+        boolean getIsImageChosen();
+
+        void setImageChosen(boolean imageChosen);
     }
 
     /**

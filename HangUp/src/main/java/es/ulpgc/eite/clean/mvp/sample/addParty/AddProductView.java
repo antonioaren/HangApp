@@ -49,6 +49,7 @@ public class AddProductView extends GenericActivity<AddProduct.PresenterToView, 
 
     private Integer Hour;
     private Integer Minutes;
+    private boolean isImageChosen;
 
 
     private static final int PICK_IMAGE = 100;
@@ -151,7 +152,6 @@ public class AddProductView extends GenericActivity<AddProduct.PresenterToView, 
         buttonPublish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //SaveData();
                 getPresenter().onButtonAddClicked();
             }
         });
@@ -181,10 +181,11 @@ public class AddProductView extends GenericActivity<AddProduct.PresenterToView, 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         if (resultCode == RESULT_OK && requestCode == PICK_IMAGE) {
             imageUri = data.getData();
             EventImage.setImageURI(imageUri);
+            setImageChosen(true);
+
             //            imageBitMap = null;
 //            try {
 //                imageBitMap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
@@ -282,9 +283,21 @@ public class AddProductView extends GenericActivity<AddProduct.PresenterToView, 
         return imageUri.toString();
     }
 
+    ///////////////////////////////////////////////////////////////////////////////////////
+
     @Override
     public void setToast(String txt) {
         Toast.makeText(this, txt, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public boolean getIsImageChosen() {
+        return isImageChosen;
+    }
+
+    @Override
+    public void setImageChosen(boolean imageChosen) {
+        isImageChosen = imageChosen;
     }
 
     private String saveToInternalStorage(Bitmap bitmapImage) {
