@@ -2,6 +2,7 @@ package es.ulpgc.eite.clean.mvp.sample.addParty;
 
 
 import android.content.Context;
+import android.widget.ImageButton;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
@@ -85,6 +86,8 @@ public interface AddProduct {
         String getEventTimeFinish();
 
         String getEventDetails();
+
+        ImageButton getEventImage();
 
         String getStringImageUri();
 

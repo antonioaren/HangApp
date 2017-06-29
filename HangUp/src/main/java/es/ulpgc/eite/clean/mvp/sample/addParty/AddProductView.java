@@ -273,6 +273,11 @@ public class AddProductView extends GenericActivity<AddProduct.PresenterToView, 
     }
 
     @Override
+    public ImageButton getEventImage() {
+        return EventImage;
+    }
+
+    @Override
     public String getStringImageUri() {
         return imageUri.toString();
     }
@@ -280,10 +285,6 @@ public class AddProductView extends GenericActivity<AddProduct.PresenterToView, 
     @Override
     public void setToast(String txt) {
         Toast.makeText(this, txt, Toast.LENGTH_SHORT).show();
-    }
-
-    private void checkNullGap() {
-
     }
 
     private String saveToInternalStorage(Bitmap bitmapImage) {

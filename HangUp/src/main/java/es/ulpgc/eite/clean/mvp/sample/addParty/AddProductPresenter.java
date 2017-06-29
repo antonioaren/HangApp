@@ -79,9 +79,10 @@ public class AddProductPresenter
     @Override
     public void onButtonAddClicked() {
         Log.d(TAG, "callingOnPublish");
+
         CheckAnyValueIsNull();
 
-        if (isAnyValueNull) {
+        if (getIsAnyValueNull()) {
             getView().setToast(getModel().getWarningEmpty());
         } else {
             getModel().insertProductToDatabase(getDataToSave(), categoryId);
@@ -111,23 +112,29 @@ public class AddProductPresenter
     }
 
     private void CheckAnyValueIsNull() {
-        if (getView().getEventName() == null) {
-            isAnyValueNull = true;
-        } else if (getView().getEventPlace() == null) {
-            isAnyValueNull = true;
-        } else if (getView().getEventDate() == null) {
-            isAnyValueNull = true;
-        } else if (getView().getEventTimeInit() == null) {
-            isAnyValueNull = true;
-        } else if (getView().getEventTimeFinish() == null) {
-            isAnyValueNull = true;
-        } else if (getView().getEventDetails() == null) {
-            isAnyValueNull = true;
-        } else if (getView().getStringImageUri() == null) {
-            isAnyValueNull = true;
+
+
+        if (getView().getEventName().isEmpty() ||
+                getView().getEventPlace().isEmpty() ||
+                getView().getEventDate().isEmpty() ||
+                getView().getEventTimeInit().isEmpty() ||
+                getView().getEventTimeFinish().isEmpty() ||
+                getView().getEventDetails().isEmpty() ||
+                getView().getStringImageUri().isEmpty()) {
+
+            setAnyValueNull(true);
+
         } else {
-            isAnyValueNull = false;
+            setAnyValueNull(false);
         }
+    }
+
+    private boolean getIsAnyValueNull() {
+        return isAnyValueNull;
+    }
+
+    private void setAnyValueNull(boolean anyValueNull) {
+        isAnyValueNull = anyValueNull;
     }
 
     private void LoadInitialComponents() {
