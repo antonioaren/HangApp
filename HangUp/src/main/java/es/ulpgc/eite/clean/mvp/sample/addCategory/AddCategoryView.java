@@ -35,7 +35,7 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
     private EditText editTextName;
     private TextView textPhoto;
     private RadioGroup radioGroup;
-    private ImageView image1;
+    private ImageView image1, image2, image3, image4;
     private Button buttonAdd;
     private RadioButton radioButton0, radioButton1, radioButton2, radioButton3;
 
@@ -103,9 +103,16 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
     }
 
     @Override
-    public void setAssetsImage(String im, String image2, String image3, String image4) {
+    public void setAssetsImage(String im, String im2, String im3, String im4) {
         image1 = (ImageView) findViewById(R.id.image1);
         image1.setImageBitmap(getBitMapFromAssets(im));
+        image2 = (ImageView) findViewById(R.id.image2);
+        image2.setImageBitmap(getBitMapFromAssets(im2));
+        image3 = (ImageView) findViewById(R.id.image3);
+        image3.setImageBitmap(getBitMapFromAssets(im3));
+        image4 = (ImageView) findViewById(R.id.image4);
+        image4.setImageBitmap(getBitMapFromAssets(im4));
+
 
     }
 

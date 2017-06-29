@@ -61,17 +61,30 @@
             android:layout_height="30dp"
             android:text="academic" />
 
+        <ImageView
+            android:layout_width="67dp"
+            android:layout_height="30dp"
+            android:id="@+id/image2" />
         <RadioButton
             android:id="@+id/id2"
             android:layout_width="128dp"
             android:layout_height="36dp"
             android:text="motor racing" />
 
+        <ImageView
+            android:layout_width="67dp"
+            android:layout_height="30dp"
+            android:id="@+id/image3" />
         <RadioButton
             android:id="@+id/id3"
             android:layout_width="match_parent"
             android:layout_height="32dp"
             android:text="party" />
+
+        <ImageView
+            android:layout_width="67dp"
+            android:layout_height="30dp"
+            android:id="@+id/image4" />
     </RadioGroup>
 
     <RelativeLayout
