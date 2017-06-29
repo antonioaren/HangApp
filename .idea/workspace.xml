@@ -15,11 +15,17 @@
   <component name="ChangeListManager">
     <list id="6a18f264-77ba-466d-b7a7-0d52df6a7436" name="Default" comment="Merge remote-tracking branch 'origin/eleonoraBack'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/3.3/taskArtifacts/fileHashes.bin&#10;#&#9;.gradle/3.3/taskArtifacts/fileSnapshots.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.lock&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/App.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Mediator.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangApp.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangAppModel.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/Information.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationPresenter.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchView.java&#10;#&#9;HangUp/src/main/res/layout/activity_procesed_search.xml&#10;#&#9;HangUp/src/main/res/layout/content_hangapp.xml&#10;#&#9;HangUp/src/main/res/layout/content_procesed_search.xml&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Navigator.java&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/hangapp/HangAppView.java&#10;#&#9;HelloApp/src/main/res/layout/activity_filalista.xml&#10;#&#9;HelloApp/src/main/res/layout/activity_procesed_search.xml&#10;" />
     <list id="3d65f56d-93c6-4520-9708-4d2cd763dfec" name="Failed commit: Default" comment="Cambios Merges.&#10;" />
-    <list default="true" id="72c31ec8-3076-4782-a780-40cb8c2c6568" name="Failed commit: Default (2)" comment="Añadido Filtro para que se rellenen todos los apartados del producto. Problema con la Uri al filtrarla para que no quede. Null pointed si no se elige imagen.">
+    <list default="true" id="72c31ec8-3076-4782-a780-40cb8c2c6568" name="Failed commit: Default (2)" comment="Arreglado Problema null al no elegir una imagen. verificamos si se ha elegido imagen ( no antes porque sino, podría elegir la imagen y luego salir, y saltaría el error) una vez verificado, el presentador cuando lo necesite verificará si se ha hecho click o no. en ese caso o enviará un toast informando que no se han completado todos los campos.">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/CleanMvpLib_unspecified.xml" afterPath="$PROJECT_DIR$/.idea/libraries/CleanMvpLib_unspecified.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/espresso_core_2_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/espresso_core_2_2_2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/espresso_idling_resource_2_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/espresso_idling_resource_2_2_2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/exposed_instrumentation_api_publish_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/exposed_instrumentation_api_publish_0_5.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/rules_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/rules_0_5.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/runner_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/runner_0_5.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddProduct.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddProduct.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddProductPresenter.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddProductPresenter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddProductView.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddProductView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/HangUp.iml" afterPath="$PROJECT_DIR$/HangUp/HangUp.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
     </list>
     <ignored path="HangApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,9 +71,9 @@
                 <element signature="method#openDialog#0;class#AddProductView#0" expanded="false" />
                 <element signature="e#6578#6611#0" expanded="false" />
                 <element signature="method#saveToInternalStorage#0;class#AddProductView#0" expanded="false" />
-                <marker date="1498751491000" expanded="false" signature="2155:3042" ph="..." />
-                <marker date="1498751491000" expanded="false" signature="3389:4107" ph="..." />
-                <marker date="1498751491000" expanded="false" signature="4385:5104" ph="..." />
+                <marker date="1498751727000" expanded="false" signature="2155:3042" ph="..." />
+                <marker date="1498751727000" expanded="false" signature="3389:4107" ph="..." />
+                <marker date="1498751727000" expanded="false" signature="4385:5104" ph="..." />
               </folding>
             </state>
           </provider>
@@ -1786,7 +1792,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="5984400346000" />
+        <entry key="$PROJECT_DIR$" value="5984563694000" />
         <entry key="C:\Users\alumno\Documents\HangApp" value="5974903877390" />
         <entry key="C:\Users\eleonora\Desktop\2.34.11\HangApp" value="5989116379051" />
         <entry key="C:\Users\eleonora\Desktop\project1\HangApp" value="5973602353296" />
@@ -2374,8 +2380,8 @@
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddProductModel.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/res/layout-v21/activity_product.xml" />
         <option value="$PROJECT_DIR$/HangUp/src/main/res/layout/activity_product.xml" />
-        <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddProductPresenter.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddProductView.java" />
+        <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddProductPresenter.java" />
       </list>
     </option>
   </component>
@@ -2921,13 +2927,6 @@
       <option name="presentableId" value="Default" />
       <updated>1490022965325</updated>
     </task>
-    <task id="LOCAL-00068" summary="reformando metodo de publicar">
-      <created>1494251355949</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1494251355949</updated>
-    </task>
     <task id="LOCAL-00069" summary="creando listas de Category e InformationData y los getters">
       <created>1494252336542</created>
       <option name="number" value="00069" />
@@ -3264,7 +3263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1498749829673</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="Arreglado Problema null al no elegir una imagen. verificamos si se ha elegido imagen ( no antes porque sino, podría elegir la imagen y luego salir, y saltaría el error) una vez verificado, el presentador cuando lo necesite verificará si se ha hecho click o no. en ese caso o enviará un toast informando que no se han completado todos los campos.">
+      <created>1498751715518</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1498751715518</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -3345,7 +3351,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Corregido el Añadir ProductByCategoryId. En el ejemplo usan un RealmTable y un Intent.putExtra para poder pasar el valor. No tienen un mediador que pase estados, por tanto esa es la manera en que lo hacen. Nosotros pasamos el id del item a través del mediador y luego lo comparamos." />
     <MESSAGE value="Añadida funcionalidad para pasar los productos de la pantalla add hasta la pantalla producto donde tenemos la Id de la categoría y el producto. Falta por implemetar la descripcion o detalle para que esté completo." />
     <MESSAGE value="Inserta los datos aunque no se ven. Comprobado con la consola a traves de hacerle un pull al adb." />
     <MESSAGE value="Nuevo metodo en el modelo del producto. Ya solo se ven los productos que le pertenezcan a cada categoría." />
@@ -3370,7 +3375,8 @@
     <MESSAGE value="Add pequeña variable string para que se entienda más el código." />
     <MESSAGE value="Añadido Filtro para que se rellenen todos los apartados del producto." />
     <MESSAGE value="Añadido Filtro para que se rellenen todos los apartados del producto. Problema con la Uri al filtrarla para que no quede. Null pointed si no se elige imagen." />
-    <option name="LAST_COMMIT_MESSAGE" value="Añadido Filtro para que se rellenen todos los apartados del producto. Problema con la Uri al filtrarla para que no quede. Null pointed si no se elige imagen." />
+    <MESSAGE value="Arreglado Problema null al no elegir una imagen. verificamos si se ha elegido imagen ( no antes porque sino, podría elegir la imagen y luego salir, y saltaría el error) una vez verificado, el presentador cuando lo necesite verificará si se ha hecho click o no. en ese caso o enviará un toast informando que no se han completado todos los campos." />
+    <option name="LAST_COMMIT_MESSAGE" value="Arreglado Problema null al no elegir una imagen. verificamos si se ha elegido imagen ( no antes porque sino, podría elegir la imagen y luego salir, y saltaría el error) una vez verificado, el presentador cuando lo necesite verificará si se ha hecho click o no. en ese caso o enviará un toast informando que no se han completado todos los campos." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -3531,9 +3537,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="66" column="41" selection-start-line="66" selection-start-column="33" selection-end-line="66" selection-end-column="41" />
-          <folding>
-            <element signature="e#1689#1719#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -3720,10 +3724,10 @@
         <state relative-caret-position="157">
           <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
           <folding>
-            <element signature="method#setRadioButtonLabels#0;class#AddCategoryView#0" expanded="false" />
+            <element signature="method#setAssetsImage#0;class#AddCategoryView#0" expanded="false" />
             <element signature="method#getRadioButtonId#0;class#AddCategoryView#0" expanded="false" />
-            <element signature="e#3529#3530#0" expanded="true" />
-            <element signature="e#3597#3598#0" expanded="true" />
+            <element signature="e#4239#4240#0" expanded="true" />
+            <element signature="e#4307#4308#0" expanded="true" />
             <element signature="method#getBitMapFromAssets#0;class#AddCategoryView#0" expanded="false" />
           </folding>
         </state>
@@ -3925,9 +3929,9 @@
             <element signature="method#openDialog#0;class#AddProductView#0" expanded="false" />
             <element signature="e#6578#6611#0" expanded="false" />
             <element signature="method#saveToInternalStorage#0;class#AddProductView#0" expanded="false" />
-            <marker date="1498751491000" expanded="false" signature="2155:3042" ph="..." />
-            <marker date="1498751491000" expanded="false" signature="3389:4107" ph="..." />
-            <marker date="1498751491000" expanded="false" signature="4385:5104" ph="..." />
+            <marker date="1498751727000" expanded="false" signature="2155:3042" ph="..." />
+            <marker date="1498751727000" expanded="false" signature="3389:4107" ph="..." />
+            <marker date="1498751727000" expanded="false" signature="4385:5104" ph="..." />
           </folding>
         </state>
       </provider>
