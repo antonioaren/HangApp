@@ -1,17 +1,11 @@
 package es.ulpgc.eite.clean.mvp.sample.addCategory;
 
 
-import android.content.Context;
 import android.util.Log;
-
-import java.io.IOException;
-import java.io.InputStream;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.Model;
-import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
 import es.ulpgc.eite.clean.mvp.sample.realmoperation.RealmOperation;
-import io.realm.Realm;
 
 /**
  * Created by eleonora on 17/04/2017.
@@ -152,5 +146,10 @@ public class AddCategoryModel
             image = images[0];
         }
         return image;
+    }
+
+    @Override
+    public String getImage(int i) {
+        return this.images[i];
     }
 }

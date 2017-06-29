@@ -66,6 +66,8 @@ public interface AddCategory {
 
         void setRadioButtonLabels(String txt0, String txt1, String txt2, String txt3);
 
+        void setAssetsImage(String image1, String image2, String image3, String image4);
+
         int getRadioButtonId();
 
         void setToast(String txt);
@@ -110,6 +112,8 @@ public interface AddCategory {
         void insertEvent(String Categoryname, String image);
 
         String getImageByIdSelected(int id);
+
+        String getImage(int i);
     }
 
     /**

@@ -33,8 +33,9 @@ public class AddCategoryPresenter
 
         getView().setRadioButtonLabels(getModel().getLabelRadio0(), getModel().getLabelRadio1(),
                 getModel().getLabelRadio2(), getModel().getLabelRadio3());
-
+        getView().setAssetsImage(getModel().getImage(0), getModel().getImage(1), getModel().getImage(2), getModel().getImage(3));
         getView().setAddBtnLabel(getModel().getButtonAddlabel());
+
     }
 
     @Override

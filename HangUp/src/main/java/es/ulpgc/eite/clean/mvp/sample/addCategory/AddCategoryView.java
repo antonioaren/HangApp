@@ -3,10 +3,12 @@ package es.ulpgc.eite.clean.mvp.sample.addCategory;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -26,10 +28,14 @@ import es.ulpgc.eite.clean.mvp.sample.R;
 public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView, AddCategory.ViewToPresenter, AddCategoryPresenter>
         implements AddCategory.PresenterToView {
 
+
+    private Uri imageUri;
+    private Bitmap imageBitMap;
     private TextView textViewName;
     private EditText editTextName;
     private TextView textPhoto;
     private RadioGroup radioGroup;
+    private ImageView image1;
     private Button buttonAdd;
     private RadioButton radioButton0, radioButton1, radioButton2, radioButton3;
 
@@ -50,6 +56,7 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
         radioButton3 = (RadioButton) findViewById(R.id.id3);
 
 
+
         buttonAdd = (Button) findViewById(R.id.buttonAddCategory);
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,8 +73,9 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
 
     @Override
     public void finishScreen() {
-        finish();
+
     }
+
 
     //////////////////////////////////////Labels/////////////////////////////////////////////////
 
@@ -95,11 +103,19 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
     }
 
     @Override
+    public void setAssetsImage(String im, String image2, String image3, String image4) {
+        image1 = (ImageView) findViewById(R.id.image1);
+        image1.setImageBitmap(getBitMapFromAssets(im));
+
+    }
+
+    @Override
     public int getRadioButtonId() {
         int identificator;
 
         //Capta el id   del radio button seleccionado
         int id = radioGroup.getCheckedRadioButtonId();
+
 
         if (id == R.id.id0) {
             identificator = 0;
