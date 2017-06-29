@@ -17,15 +17,19 @@ import io.realm.Realm;
  * Created by eleonora on 17/04/2017.
  */
 
-public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter> implements AddCategory.PresenterToModel, Model<AddCategory.ModelToPresenter> {
+public class AddCategoryModel
+        extends GenericModel<AddCategory.ModelToPresenter>
+        implements AddCategory.PresenterToModel, Model<AddCategory.ModelToPresenter> {
 
 
-    private String titleLabel, nameLabel, photoLabel, buttonPhotoLabel, buttonAddlabel;
+    private String nameLabel, photoLabel, buttonPhotoLabel, buttonAddlabel;
 
     private String labelRadio0;
     private String labelRadio1;
     private String labelRadio2;
     private String labelRadio3;
+
+    private String ValueAdded, ValueDeleted;
 
     private String[] images;
 
@@ -43,10 +47,14 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
         photoLabel = "Photo:";
         buttonPhotoLabel = "Select...";
         buttonAddlabel = "AddProduct";
+
         labelRadio0 = "astro";
         labelRadio1 = "academic";
         labelRadio2 = "car";
         labelRadio3 = "disco";
+
+        ValueAdded = "Added";
+        ValueDeleted = "Deleted";
     }
 
     @Override
@@ -121,11 +129,20 @@ public class AddCategoryModel extends GenericModel<AddCategory.ModelToPresenter>
     }
 
     @Override
+    public String getToastNotifyingAdded() {
+        return ValueAdded;
+    }
+
+    @Override
+    public String getValueDeleted() {
+        return ValueDeleted;
+    }
+
+    @Override
     public void insertEvent(final String Categoryname, final String image) {
         RealmOperation realmOperation = RealmOperation.getInstances();
         realmOperation.insertEventCategory(Categoryname, image);
     }
-
     @Override
     public String getImageByIdSelected(int id) {
         String image = "";

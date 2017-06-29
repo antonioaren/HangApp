@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
@@ -56,9 +57,6 @@ public class AddProductView extends GenericActivity<AddProduct.PresenterToView, 
     private Bitmap imageBitMap;
     private Date date;
 
-    private void privateOnTimeSet(TimePicker view, int hourOfDay, int minute) {
-
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -153,8 +151,8 @@ public class AddProductView extends GenericActivity<AddProduct.PresenterToView, 
         buttonPublish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SaveData();
-                getPresenter().onPublishButtonClicked();
+                //SaveData();
+                getPresenter().onButtonAddClicked();
             }
         });
     }
@@ -242,22 +240,51 @@ public class AddProductView extends GenericActivity<AddProduct.PresenterToView, 
     }
 
 
-    ///////////////////////////// CAPTAR DATOS ///////////////////////////////
+    ///////////////////////////// CAPTAR DATOS ////////////////////////////////
 
-    private void SaveData() {
-        ProductData product = new ProductData();
-
-        product.setProductName(EventName.getText().toString());
-        product.setPlace(EventPlace.getText().toString());
-        product.setDate(EventDate.getText().toString());
-        product.setTimeI(EventTimeInit.getText().toString());
-        product.setTimeF(EventTimeFinish.getText().toString());
-        product.setDetailText(EventDetails.getText().toString());
-        product.setImage(imageUri.toString());
-
-        getPresenter().DataFromAddView(product);
+    @Override
+    public String getEventName() {
+        return EventName.getText().toString();
     }
 
+    @Override
+    public String getEventPlace() {
+        return EventPlace.getText().toString();
+    }
+
+    @Override
+    public String getEventDate() {
+        return EventDate.getText().toString();
+    }
+
+    @Override
+    public String getEventTimeInit() {
+        return EventTimeInit.getText().toString();
+    }
+
+    @Override
+    public String getEventTimeFinish() {
+        return EventTimeFinish.getText().toString();
+    }
+
+    @Override
+    public String getEventDetails() {
+        return EventDetails.getText().toString();
+    }
+
+    @Override
+    public String getStringImageUri() {
+        return imageUri.toString();
+    }
+
+    @Override
+    public void setToast(String txt) {
+        Toast.makeText(this, txt, Toast.LENGTH_SHORT).show();
+    }
+
+    private void checkNullGap() {
+
+    }
 
     private String saveToInternalStorage(Bitmap bitmapImage) {
 

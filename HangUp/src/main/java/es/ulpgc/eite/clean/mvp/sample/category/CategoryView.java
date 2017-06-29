@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -35,14 +36,9 @@ public class CategoryView
         extends GenericActivity<Category.PresenterToView, Category.ViewToPresenter, CategoryPresenter>
         implements Category.PresenterToView {
 
-
-    //    private Button buttonSearch;
-
-
-    private ImageView image;
     private FloatingActionButton fButtonAddCategory;
     private RecyclerView recycler;
-    //    private LinearLayoutManager linearmanager;
+    private LinearLayoutManager linearmanager;
     private RealmResults<CategoryData> items;
 
     @Override
@@ -53,8 +49,8 @@ public class CategoryView
         recycler = (RecyclerView) findViewById(R.id.recycler);
         recycler.setHasFixedSize(true);
 
-//        linearmanager = new LinearLayoutManager(this);
-//        recycler.setLayoutManager(linearmanager);
+        linearmanager = new LinearLayoutManager(this);
+        recycler.setLayoutManager(linearmanager);
 
 
         fButtonAddCategory = (FloatingActionButton) findViewById(R.id.fButtonAddCategory);
@@ -65,12 +61,10 @@ public class CategoryView
             }
         });
 
-        //recycler.setAdapter(new CategoryAdapter(realm.where(CategoryData.class).findAllAsync()));
         RealmOperation realmOperation = RealmOperation.getInstances();
         recycler.setAdapter(new CategoryAdapter(realmOperation.getCategoryEvents()));
         InitComponentSwipeAndMove();
     }
-
 
     /**
      * Method that initialized MVP objects
@@ -90,20 +84,19 @@ public class CategoryView
         ItemTouchHelper swipeToDismissTouchHelper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(
                 ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             @Override
-            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder,
+                                  RecyclerView.ViewHolder target) {
                 return false;
             }
 
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
                 getPresenter().OnSwipedItem(items.get(viewHolder.getAdapterPosition()).getId());
-
             }
         });
 
         swipeToDismissTouchHelper.attachToRecyclerView(recycler);
     }
-
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Presenter To View /////////////////////////////////////////////////////////////
@@ -124,6 +117,11 @@ public class CategoryView
     @Override
     public void finishScreen() {
         finish();
+    }
+
+    @Override
+    public void setToast(String txt) {
+        Toast.makeText(this, txt, Toast.LENGTH_SHORT).show();
     }
 
 

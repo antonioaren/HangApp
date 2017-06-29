@@ -4,6 +4,8 @@ package es.ulpgc.eite.clean.mvp.sample.addParty;
 import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
+import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
+import es.ulpgc.eite.clean.mvp.sample.realmoperation.RealmOperation;
 
 
 /**
@@ -20,6 +22,7 @@ public class AddProductModel
     private String nameLabel;
     private String detailsLabel;
     private String selectPhotoLabel;
+    private String WarningEmpty;
 
     @Override
     public void onCreate(AddProduct.ModelToPresenter presenter) {
@@ -35,6 +38,7 @@ public class AddProductModel
         selectPhotoLabel = "Select a photo : ";
         publishLabel = "Publish";
 
+        WarningEmpty = "All field are required";
     }
 
     @Override
@@ -88,6 +92,11 @@ public class AddProductModel
     }
 
     @Override
+    public String getWarningEmpty() {
+        return WarningEmpty;
+    }
+
+    @Override
     public void setTimeFinishLabel(String timeFinishLabel) {
         this.timeFinishLabel = timeFinishLabel;
     }
@@ -122,17 +131,12 @@ public class AddProductModel
         this.publishLabel = publishLabel;
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////
+    @Override
+    public void insertProductToDatabase(ProductData productData, String categoryId) {
+        RealmOperation realmOperation = RealmOperation.getInstances();
+        realmOperation.AddProductByCategoryId(productData, categoryId);
+    }
 
-//    @Override
-//    public int getImageByIdSelected(int id) {
-//        int image = 1;
-//        if (id >= 0) {
-//            image = images[id];
-//        } else {
-//            image = images[0];
-//        }
-//        return image;
-//    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////
 
 }

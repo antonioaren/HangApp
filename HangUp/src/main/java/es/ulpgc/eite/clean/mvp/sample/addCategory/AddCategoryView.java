@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -30,7 +31,6 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
     private TextView textPhoto;
     private RadioGroup radioGroup;
     private Button buttonAdd;
-
     private RadioButton radioButton0, radioButton1, radioButton2, radioButton3;
 
     @Override
@@ -76,7 +76,6 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
         buttonAdd.setText(txt);
     }
 
-
     @Override
     public void setNameLabel(String txt) {
         textViewName.setText(txt);
@@ -121,6 +120,10 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
         return editTextName.getText().toString();
     }
 
+    @Override
+    public void setToast(String txt) {
+        Toast.makeText(this, txt, Toast.LENGTH_SHORT).show();
+    }
 
     private Bitmap getBitMapFromAssets(String FileName) {
         AssetManager assetManager = getAssets();
@@ -136,9 +139,4 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
 
         return imagenBitmap;
     }
-
-
-
 }
-
-

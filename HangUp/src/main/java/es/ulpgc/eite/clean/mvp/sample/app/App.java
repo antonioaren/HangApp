@@ -17,7 +17,6 @@ import es.ulpgc.eite.clean.mvp.sample.details.DetailView;
 import es.ulpgc.eite.clean.mvp.sample.product.Product;
 import es.ulpgc.eite.clean.mvp.sample.product.ProductView;
 import io.realm.Realm;
-import io.realm.RealmResults;
 
 
 public class App extends Application implements Mediator, Navigator {
@@ -25,8 +24,8 @@ public class App extends Application implements Mediator, Navigator {
 
     private CategoryState toCategoryState;
     private ProductState CategoryToProduct;
-    private ProductState AddToProduct;
     private DetailState ProductToDetail;
+    private ProductAddState ProductToadd;
 
     @Override
     public void onCreate() {
@@ -54,15 +53,10 @@ public class App extends Application implements Mediator, Navigator {
     @Override
     public void startingProductScreen(Product.ToProduct presenter) {
         if (CategoryToProduct != null) {
-            presenter.setItemSelected(CategoryToProduct.ItemSelected);
-            presenter.setItemId(CategoryToProduct.ItemId);
+            presenter.setItemCategorySelected(CategoryToProduct.ItemSelected);
+            presenter.setItemCategoryId(CategoryToProduct.ItemId);
         }
 
-        if (AddToProduct != null) {
-            presenter.setProductToAdd(AddToProduct.ProductToAdd);
-        }
-
-        AddToProduct = null;
         presenter.onScreenStarted();
     }
 
@@ -81,6 +75,9 @@ public class App extends Application implements Mediator, Navigator {
 
     @Override
     public void startingAddProductScreen(AddProduct.ToAdd presenter) {
+        if (ProductToadd != null) {
+            presenter.setCategoryId(ProductToadd.IdCategory);
+        }
         presenter.onScreenStarted();
     }
 
@@ -111,21 +108,9 @@ public class App extends Application implements Mediator, Navigator {
     }
 
     @Override
-    public void goToProductScreenFromAddScreen(AddProduct.AddTo presenter) {
-        AddToProduct = new ProductState();
-        AddToProduct.ProductToAdd = presenter.getProductAddedView();
-
-        Context view = presenter.getManagedContext();
-        if (view != null) {
-            Intent intent = new Intent(view, ProductView.class);
-            view.startActivity(intent);
-        }
-    }
-
-    @Override
     public void goDetailScreen(Product.ProductTo presenter) {
         ProductToDetail = new DetailState();
-        ProductToDetail.ItemSelected = presenter.getSelectedItem();
+        ProductToDetail.ItemSelected = presenter.getItemProductSelected();
 
         Context view = presenter.getManagedContext();
         if (view != null) {
@@ -146,7 +131,11 @@ public class App extends Application implements Mediator, Navigator {
     }
 
     @Override
-    public void goToAddPartyScreen(Product.ProductTo presenter) {
+    public void goToAddProductScreen(Product.ProductTo presenter) {
+        ProductToadd = new ProductAddState();
+        ProductToadd.IdCategory = presenter.getCategoryId();
+
+
         Context view = presenter.getManagedContext();
         if (view != null) {
             view.startActivity(new Intent(view, AddProductView.class));
@@ -154,7 +143,7 @@ public class App extends Application implements Mediator, Navigator {
 
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////
+
 
     @Override
     public void KillingAddCategoryScreenAfterInserting(AddCategory.AddTo presenter) {
@@ -162,9 +151,10 @@ public class App extends Application implements Mediator, Navigator {
     }
 
     @Override
-    public void SaveDataFromAddParty(AddProduct.AddTo presenter) {
+    public void KillingAddProductScreenAfterInserting(AddProduct.AddTo presenter) {
         presenter.destroyView();
     }
+
 
     //////////////// State /////////////////////////////////////////////////////////////////////////
 
@@ -182,6 +172,11 @@ public class App extends Application implements Mediator, Navigator {
         public ProductData ItemSelected;
     }
 
+    //Necesario para poder pasar la id de la categoria que nos encontramos
+    //Para poder añadir el producto
+    private class ProductAddState {
+        String IdCategory;
+    }
 
 }
 

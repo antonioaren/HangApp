@@ -13,9 +13,14 @@ import io.realm.RealmList;
 
 public interface Product {
     interface PresenterToView extends ContextView {
-        void setAddLabel(String msg);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////
+        void setTitleHeader(String txt);
 
         void settingAdapter(RealmList<ProductData> items);
+
+
+        void setToast(String txt);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -31,21 +36,26 @@ public interface Product {
 
     interface PresenterToModel {
 
-        CategoryData getItem();
+        CategoryData getItemCategorySelected();
 
         void AddProductByCategoryId(ProductData product, String CategoryId);
 
-        void setItem(CategoryData itemSelected);
+        void setItemCategorySelected(CategoryData itemSelected);
 
         void deleteItemById(String id);
 
-        String getItemId();
+        //String getItemCategoryId();
 
-        void setItemId(String itemId);
+        //void setItemCategoryId(String itemId);
 
-        void setProductFromAddAndInsert(ProductData productToAdd);
+        String getNotifyAdded();
+
+        String getNotifyDeleted();
+
+//        void setProductFromAddAndInsert(ProductData productToAdd);
 
         RealmList<ProductData> getAllProductsByCategoryId(String CategoryId);
+
     }
 
     interface ModelToPresenter {
@@ -58,19 +68,21 @@ public interface Product {
 
         void onScreenStarted();
 
-        void setItemSelected(CategoryData itemSelected);
+        void setItemCategorySelected(CategoryData itemSelected);
 
-        void setItemId(String itemId);
+        void setItemCategoryId(String itemId);
 
-        void setProductToAdd(ProductData productToAdd);
+//        void setProductFromAdd(ProductData productToAdd);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
     //DetailTo ///////////////////////////////////////////////////////////////////////////////////////
 
     interface ProductTo {
+        String getCategoryId();
+
         Context getManagedContext();
 
-        ProductData getSelectedItem();
+        ProductData getItemProductSelected();
     }
 }

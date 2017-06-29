@@ -5,7 +5,7 @@ import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 
 /**
  * Created by eleonora on 17/04/2017.
@@ -86,8 +86,9 @@ public class AddCategoryPresenter
         String NewCategoryName = getView().getTextFromEditText();
 
         getModel().insertEvent(NewCategoryName, ImageName);
+        getView().setToast(getModel().getToastNotifyingAdded());
 
-        Mediator app = (Mediator) getView().getApplication();
+        Navigator app = (Navigator) getView().getApplication();
         app.KillingAddCategoryScreenAfterInserting(this);
     }
 }

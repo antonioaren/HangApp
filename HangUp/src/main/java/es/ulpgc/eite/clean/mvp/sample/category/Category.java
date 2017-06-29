@@ -41,6 +41,8 @@ public interface Category {
         void settingItemsAdapter(RealmResults<CategoryData> items);
 
         void finishScreen();
+
+        void setToast(String txt);
     }
 
     /**
@@ -60,6 +62,10 @@ public interface Category {
 
         //metodo para comprobar test con espresso
         int getNumberOfCategories();
+
+        String getToastNotifyingAdded();
+
+        String getNotifyDeleted();
     }
 
     /**

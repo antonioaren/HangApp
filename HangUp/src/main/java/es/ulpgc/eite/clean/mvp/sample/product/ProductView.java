@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -25,6 +26,7 @@ import java.util.List;
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
+import es.ulpgc.eite.clean.mvp.sample.realmoperation.RealmOperation;
 import es.ulpgc.eite.clean.mvp.sample.util.RealmRecyclerViewAdapter;
 import io.realm.OrderedRealmCollection;
 import io.realm.Realm;
@@ -44,16 +46,19 @@ public class ProductView
     private FloatingActionButton FButtonAdd;
     private LinearLayoutManager linearmanager;
     private RealmList<ProductData> items;
+    private TextView TitleHeader;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product);
-        Realm.init(this);
+
+        TitleHeader = (TextView) findViewById(R.id.TitleCategory);
         recycler = (RecyclerView) findViewById(R.id.recycler);
         recycler.setHasFixedSize(true);
         linearmanager = new LinearLayoutManager(this);
         recycler.setLayoutManager(linearmanager);
+
         Realm realm = Realm.getDefaultInstance();
 
         recycler.setAdapter(
@@ -69,11 +74,32 @@ public class ProductView
 
         InitComponentSwipeAndMove();
     }
-
     @Override
     protected void onResume() {
         super.onResume(ProductPresenter.class, this);
 
+    }
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    @Override
+    public void setTitleHeader(String txt) {
+        TitleHeader.setText(txt);
+    }
+
+    @Override
+    public void settingAdapter(RealmList<ProductData> items) {
+        if (recycler != null) {
+            this.items = items;
+            ProductView.ProductAdapter recyclerAdapter =
+                    (ProductView.ProductAdapter) recycler.getAdapter();
+            recyclerAdapter.setItemList(items);
+        }
+    }
+
+    @Override
+    public void setToast(String txt) {
+        Toast.makeText(this, txt, Toast.LENGTH_SHORT).show();
     }
 
     private void InitComponentSwipeAndMove() {
@@ -95,26 +121,7 @@ public class ProductView
         swipeToDismissTouchHelper.attachToRecyclerView(recycler);
     }
 
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////
-
-    @Override
-    public void setAddLabel(String msg) {
-
-    }
-
-    @Override
-    public void settingAdapter(RealmList<ProductData> items) {
-        if (recycler != null) {
-            this.items = items;
-            ProductView.ProductAdapter recyclerAdapter =
-                    (ProductView.ProductAdapter) recycler.getAdapter();
-            recyclerAdapter.setItemList(items);
-        }
-    }
-
-
-    public class ProductAdapter extends
+    private class ProductAdapter extends
             RealmRecyclerViewAdapter<ProductData, ProductAdapter.ProductViewHolder> {
 
         private List<ProductData> items;

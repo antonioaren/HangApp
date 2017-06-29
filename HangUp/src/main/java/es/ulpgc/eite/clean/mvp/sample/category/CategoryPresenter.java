@@ -34,10 +34,7 @@ public class CategoryPresenter
         setView(view);
         Log.d(TAG, "calling onCreate()");
 
-//        if (getView().isFirstTime())
-//            getModel().CreateDatabaseTables();
-
-        CheckIfIsFirstTimeRunning();
+        CheckIfIsFirstTimeRunningToCreateDatabaseDefault();
 
         Mediator app = (Mediator) getView().getApplication();
         app.startingCategoryScreen(this);
@@ -83,12 +80,16 @@ public class CategoryPresenter
     public void onDestroy(boolean isChangingConfiguration) {
         super.onDestroy(isChangingConfiguration);
         Log.d(TAG, "calling onDestroy()");
+
+        if (configurationChangeOccurred()) {
+
+        }
     }
 
     // View To Presenter /////////////////////////////////////////////////////////////
 
-    private void CheckIfIsFirstTimeRunning() {
-        Log.d(TAG, "CheckIfIsFirstTimeRunning");
+    private void CheckIfIsFirstTimeRunningToCreateDatabaseDefault() {
+        Log.d(TAG, "CheckIfIsFirstTimeRunningToCreateDatabaseDefault");
 
 
         SharedPreferences pref = getAppContext().getSharedPreferences("PREF", Context.MODE_PRIVATE);
@@ -124,13 +125,8 @@ public class CategoryPresenter
     public void onScreenStarted() {
         Log.d(TAG, "calling onScreenStarted()");
         if (isViewRunning()) {
-            //getView().setLabelSearch(getModel().getSearchLabel());
-
+            SettingItemsAdapter();
         }
-        // el setting adapter va aqui
-        // getView().settingItemsAdapter(getModel().getCategoryEvents());
-        SettingItemsAdapter();
-
     }
 
     // Category To ///////////////////////////////////////////////////////////////////
@@ -188,6 +184,7 @@ public class CategoryPresenter
     public void OnSwipedItem(String id) {
         int numer = getModel().getNumberOfCategories();
         getModel().deleteItem(id);
+        getView().setToast(getModel().getNotifyDeleted());
         numer--;
         SettingItemsAdapter();
 

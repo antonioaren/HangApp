@@ -24,14 +24,9 @@ Mediator {
 
     void startingProductScreen(Product.ToProduct presenter);
 
-
     void startingAddCategoryScreen(AddCategory.ToAdd presenter);
 
-    //modificado nombre de metodo
-    void KillingAddCategoryScreenAfterInserting(AddCategory.AddTo presenter);
 
-
-    void SaveDataFromAddParty(AddProduct.AddTo presenter);
 
 
 }

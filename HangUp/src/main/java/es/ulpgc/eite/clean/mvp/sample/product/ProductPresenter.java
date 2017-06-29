@@ -37,7 +37,6 @@ public class ProductPresenter
         setView(view);
 
         if (configurationChangeOccurred()) {
-//            getView().setAddLabel(getModel().getAddLabel());
 
         }
     }
@@ -49,11 +48,10 @@ public class ProductPresenter
     public void onBackPressed() {
 
     }
-
     @Override
     public void onScreenStarted() {
         if (isViewRunning()) {
-//            getView().setAddLabel(getModel().getAddLabel());
+            getView().setTitleHeader(getModel().getItemCategorySelected().getCategoryName());
             SettingItemsAdapter();
         }
     }
@@ -61,28 +59,28 @@ public class ProductPresenter
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
-    public void setItemSelected(CategoryData itemSelected) {
-        getModel().setItem(itemSelected);
+    public void setItemCategorySelected(CategoryData itemSelected) {
+        getModel().setItemCategorySelected(itemSelected);
     }
 
     @Override
-    public ProductData getSelectedItem() {
+    public ProductData getItemProductSelected() {
         return ItemSelected;
     }
 
     @Override
-    public void setItemId(String itemId) {
-        this.CategoryId = itemId;
-        getModel().setItemId(itemId);
+    public String getCategoryId() {
+        return CategoryId;
+    }
+
+    @Override
+    public void setItemCategoryId(String itemId) {
+        CategoryId = itemId;
+        //getModel().setItemCategoryId(itemId);
     }
 
     private void SettingItemsAdapter() {
         getView().settingAdapter(getModel().getAllProductsByCategoryId(CategoryId));
-    }
-
-    @Override
-    public void setProductToAdd(ProductData productToAdd) {
-        getModel().setProductFromAddAndInsert(productToAdd);
     }
 
     @Override
@@ -96,17 +94,13 @@ public class ProductPresenter
     public void onButtonAddClicked() {
         Log.d(TAG, "calling onButtonAddClicked()");
         Navigator app = (Navigator) getView().getApplication();
-        app.goToAddPartyScreen(this);
+        app.goToAddProductScreen(this);
     }
-
-//    @Override
-//    public void onButtonDeleteClicked() {
-//        Log.d(TAG, "calling onButtonDeleteClicked()");
-//    }
 
     @Override
     public void OnSwipedItem(String id) {
         getModel().deleteItemById(id);
+        getView().setToast(getModel().getNotifyDeleted());
         SettingItemsAdapter();
     }
 

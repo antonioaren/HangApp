@@ -23,11 +23,15 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
      */
 
     private String id;
+    private String NotifyAdded, NotifyDeleted;
+
 
     @Override
     public void onCreate(Category.ModelToPresenter presenter) {
         super.onCreate(presenter);
         realmOperation = RealmOperation.getInstances();
+        NotifyAdded = "Added";
+        NotifyDeleted = "Deleted";
 //      numberOfCategories = 0;
     }
 
@@ -83,6 +87,16 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     @Override
     public int getNumberOfCategories() {
         return this.numberOfCategories;
+    }
+
+    @Override
+    public String getToastNotifyingAdded() {
+        return NotifyAdded;
+    }
+
+    @Override
+    public String getNotifyDeleted() {
+        return NotifyDeleted;
     }
 }
 

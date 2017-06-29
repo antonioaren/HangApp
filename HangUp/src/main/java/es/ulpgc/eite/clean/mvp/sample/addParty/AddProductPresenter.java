@@ -2,6 +2,7 @@ package es.ulpgc.eite.clean.mvp.sample.addParty;
 
 import android.content.Context;
 import android.util.Log;
+import android.view.View;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
@@ -17,8 +18,8 @@ public class AddProductPresenter
         implements AddProduct.ViewToPresenter, AddProduct.ModelToPresenter, AddProduct.ToAdd, AddProduct.AddTo {
 
 
-    private ProductData product;
-
+    private String categoryId;
+    private boolean isAnyValueNull;
 
     @Override
     public void onCreate(AddProduct.PresenterToView view) {
@@ -29,12 +30,6 @@ public class AddProductPresenter
         Log.d(TAG, "calling startingAddProductScreen()");
         Mediator app = (Mediator) getView().getApplication();
         app.startingAddProductScreen(this);
-    }
-
-    @Override
-    public void onScreenStarted() {
-        Log.d(TAG, "calling onScreenStarted()");
-        LoadInitialComponents();
     }
 
     @Override
@@ -73,23 +68,66 @@ public class AddProductPresenter
         }
     }
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
-    public void onPublishButtonClicked() {
+    public void onScreenStarted() {
+        Log.d(TAG, "calling onScreenStarted()");
+        LoadInitialComponents();
+    }
+
+    @Override
+    public void onButtonAddClicked() {
         Log.d(TAG, "callingOnPublish");
+        CheckAnyValueIsNull();
 
-        Navigator app = (Navigator) getView().getApplication();
-        app.goToProductScreenFromAddScreen(this);
+        if (isAnyValueNull) {
+            getView().setToast(getModel().getWarningEmpty());
+        } else {
+            getModel().insertProductToDatabase(getDataToSave(), categoryId);
+            Navigator app = (Navigator) getView().getApplication();
+            app.KillingAddProductScreenAfterInserting(this);
+        }
     }
 
     @Override
-    public void DataFromAddView(ProductData product) {
-        this.product = product;
+    public void setCategoryId(String categoryId) {
+        this.categoryId = categoryId;
     }
 
-    @Override
-    public ProductData getProductAddedView() {
+    private ProductData getDataToSave() {
+
+        ProductData product = new ProductData();
+
+        product.setProductName(getView().getEventName());
+        product.setPlace(getView().getEventPlace());
+        product.setDate(getView().getEventDate());
+        product.setTimeI(getView().getEventTimeInit());
+        product.setTimeF(getView().getEventTimeFinish());
+        product.setDetailText(getView().getEventDetails());
+        product.setImage(getView().getStringImageUri());
+
         return product;
+    }
+
+    private void CheckAnyValueIsNull() {
+        if (getView().getEventName() == null) {
+            isAnyValueNull = true;
+        } else if (getView().getEventPlace() == null) {
+            isAnyValueNull = true;
+        } else if (getView().getEventDate() == null) {
+            isAnyValueNull = true;
+        } else if (getView().getEventTimeInit() == null) {
+            isAnyValueNull = true;
+        } else if (getView().getEventTimeFinish() == null) {
+            isAnyValueNull = true;
+        } else if (getView().getEventDetails() == null) {
+            isAnyValueNull = true;
+        } else if (getView().getStringImageUri() == null) {
+            isAnyValueNull = true;
+        } else {
+            isAnyValueNull = false;
+        }
     }
 
     private void LoadInitialComponents() {

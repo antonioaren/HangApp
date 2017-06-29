@@ -18,6 +18,7 @@ public interface AddProduct {
     interface ToAdd {
         void onScreenStarted();
 
+        void setCategoryId(String categoryId);
     }
 
 
@@ -26,7 +27,7 @@ public interface AddProduct {
 
         void destroyView();
 
-        ProductData getProductAddedView();
+        //ProductData getProductAddedView();
     }
 
 
@@ -38,9 +39,9 @@ public interface AddProduct {
      */
 
     interface ViewToPresenter extends Presenter<PresenterToView> {
-        void onPublishButtonClicked();
+        void onButtonAddClicked();
 
-        void DataFromAddView(ProductData product);
+        //void dataFromAddView(ProductData product);
 
     }
 
@@ -72,6 +73,22 @@ public interface AddProduct {
         void setDetailsLabel(String detailsLabel);
 
         void setTimeInitText(String txt);
+
+        String getEventName();
+
+        String getEventPlace();
+
+        String getEventDate();
+
+        String getEventTimeInit();
+
+        String getEventTimeFinish();
+
+        String getEventDetails();
+
+        String getStringImageUri();
+
+        void setToast(String txt);
     }
 
     /**
@@ -102,6 +119,8 @@ public interface AddProduct {
 
         String getTimeFinishLabel();
 
+        String getWarningEmpty();
+
 
         void setPlaceLabel(String placeLabel);
 
@@ -113,6 +132,7 @@ public interface AddProduct {
 
         void setPublishLabel(String publishLabel);
 
+        void insertProductToDatabase(ProductData productData, String categoryId);
     }
 
     /**

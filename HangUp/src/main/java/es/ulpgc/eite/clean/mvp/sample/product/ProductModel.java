@@ -17,12 +17,15 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
 
     private RealmOperation realmdatabase;
     private CategoryData Item;
-    private String itemId;
+    private String NotifyAdded;
+    private String NotifyDeleted;
 
 
     @Override
     public void onCreate(Product.ModelToPresenter modelToPresenter) {
         realmdatabase = RealmOperation.getInstances();
+        NotifyAdded = "Added";
+        NotifyDeleted = "Deleted";
     }
 
     @Override
@@ -32,26 +35,21 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     //////////////////////////////////////////////////////////////////////////////////////
 
     @Override
-    public CategoryData getItem() {
+    public CategoryData getItemCategorySelected() {
         return Item;
     }
     @Override
-    public void setItem(CategoryData itemSelected) {
+    public void setItemCategorySelected(CategoryData itemSelected) {
         Item = itemSelected;
     }
 
     @Override
-    public String getItemId() {
-        return itemId;
+    public String getNotifyAdded() {
+        return NotifyAdded;
     }
     @Override
-    public void setItemId(String itemId) {
-        this.itemId = itemId;
-    }
-
-    @Override
-    public void setProductFromAddAndInsert(ProductData productToAdd) {
-        AddProductByCategoryId(productToAdd, itemId);
+    public String getNotifyDeleted() {
+        return NotifyDeleted;
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////
@@ -66,7 +64,6 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
     @Override
     public RealmList<ProductData> getAllProductsByCategoryId(final String CategoryId) {
         return realmdatabase.getAllProductsByCategoryId(CategoryId);
-
     }
 
 }

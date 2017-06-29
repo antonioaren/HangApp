@@ -8,7 +8,6 @@ import android.os.Bundle;
 import es.ulpgc.eite.clean.mvp.ContextView;
 import es.ulpgc.eite.clean.mvp.Model;
 import es.ulpgc.eite.clean.mvp.Presenter;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 
 
 public interface AddCategory {
@@ -68,6 +67,8 @@ public interface AddCategory {
         void setRadioButtonLabels(String txt0, String txt1, String txt2, String txt3);
 
         int getRadioButtonId();
+
+        void setToast(String txt);
     }
 
     /**
@@ -101,6 +102,10 @@ public interface AddCategory {
         String getButtonAddlabel();
 
         void setButtonAddlabel(String buttonAddlabel);
+
+        String getToastNotifyingAdded();
+
+        String getValueDeleted();
 
         void insertEvent(String Categoryname, String image);
 
