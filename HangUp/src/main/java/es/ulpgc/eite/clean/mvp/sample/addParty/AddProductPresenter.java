@@ -2,7 +2,6 @@ package es.ulpgc.eite.clean.mvp.sample.addParty;
 
 import android.content.Context;
 import android.util.Log;
-import android.view.View;
 
 import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
@@ -73,6 +72,7 @@ public class AddProductPresenter
     @Override
     public void onScreenStarted() {
         Log.d(TAG, "calling onScreenStarted()");
+
         LoadInitialComponents();
     }
 
@@ -80,7 +80,7 @@ public class AddProductPresenter
     public void onButtonAddClicked() {
         Log.d(TAG, "callingOnPublish");
 
-        CheckAnyValueIsNull();
+        checkNullValues();
 
         if (getIsAnyValueNull()) {
             getView().setToast(getModel().getWarningEmpty());
@@ -95,6 +95,8 @@ public class AddProductPresenter
     public void setCategoryId(String categoryId) {
         this.categoryId = categoryId;
     }
+
+    ////// Private Methods /////////////////////////////////////////////////////////////////////////
 
     private ProductData getDataToSave() {
 
@@ -111,8 +113,7 @@ public class AddProductPresenter
         return product;
     }
 
-    private void CheckAnyValueIsNull() {
-
+    private void checkNullValues() {
 
         if (getView().getEventName().isEmpty() ||
                 getView().getEventPlace().isEmpty() ||
@@ -122,19 +123,19 @@ public class AddProductPresenter
                 getView().getEventDetails().isEmpty() ||
                 !(getView().getIsImageChosen())) {
 
-            setAnyValueNull(true);
+            setIsAnyValueNull(true);
 
         } else {
-            setAnyValueNull(false);
+            setIsAnyValueNull(false);
         }
+    }
+
+    private void setIsAnyValueNull(boolean anyValueNull) {
+        isAnyValueNull = anyValueNull;
     }
 
     private boolean getIsAnyValueNull() {
         return isAnyValueNull;
-    }
-
-    private void setAnyValueNull(boolean anyValueNull) {
-        isAnyValueNull = anyValueNull;
     }
 
     private void LoadInitialComponents() {
