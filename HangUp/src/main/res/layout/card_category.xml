@@ -22,7 +22,7 @@
             android:scaleType="fitXY"/>
 
         <TextView
-            android:id="@+id/categoryTitle"
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"

@@ -182,7 +182,7 @@ public class CategoryView
                 itemView = v;
 
                 image = (ImageView) v.findViewById(R.id.imageProductCard);
-                titleCategory = (TextView) v.findViewById(R.id.categoryTitle);
+                titleCategory = (TextView) v.findViewById(R.id.title);
             }
         }
 

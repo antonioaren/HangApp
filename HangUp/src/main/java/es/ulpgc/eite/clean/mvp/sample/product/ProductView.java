@@ -191,7 +191,7 @@ public class ProductView
             public ProductViewHolder(View v) {
                 super(v);
                 itemView = v;
-                title = (TextView) v.findViewById(R.id.categoryTitle);
+                title = (TextView) v.findViewById(R.id.title);
                 Place = (TextView) v.findViewById(R.id.place);
                 imageCard = (ImageView) v.findViewById(R.id.imageProductCard);
 

@@ -23,7 +23,7 @@
             />
 
         <TextView
-            android:id="@+id/categoryTitle"
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -36,8 +36,8 @@
             android:id="@+id/place"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/categoryTitle"
-            android:layout_below="@+id/categoryTitle"
+            android:layout_alignLeft="@+id/title"
+            android:layout_below="@+id/title"
 
             android:text="Small Text"
             android:textAppearance="?android:attr/textAppearanceSmall"/>
