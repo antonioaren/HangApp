@@ -1,7 +1,6 @@
 package es.ulpgc.eite.clean.mvp.sample.category;
 
 import android.annotation.SuppressLint;
-import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -11,7 +10,6 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,7 +27,6 @@ import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.realmoperation.RealmOperation;
 import es.ulpgc.eite.clean.mvp.sample.util.RealmRecyclerViewAdapter;
 import io.realm.OrderedRealmCollection;
-import io.realm.Realm;
 import io.realm.RealmResults;
 
 public class CategoryView
@@ -152,7 +149,7 @@ public class CategoryView
             holder.item = items.get(position);
 
 
-            holder.title.setText(items.get(position).getCategoryName());
+            holder.titleCategory.setText(items.get(position).getCategoryName());
             holder.image.setImageBitmap(getBitMapFromAssets(items.get(position).getImage()));
 
             holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -168,22 +165,24 @@ public class CategoryView
             super.onAttachedToRecyclerView(recyclerView);
         }
 
-        public void setItemList(List<CategoryData> itemList) {
+        private void setItemList(List<CategoryData> itemList) {
             this.items = itemList;
             notifyDataSetChanged();
         }
 
         public class CategoryViewHolder extends RecyclerView.ViewHolder {
             public final View itemView;
+
             public ImageView image;
-            public TextView title;
+            public TextView titleCategory;
             public CategoryData item;
 
             public CategoryViewHolder(View v) {
                 super(v);
                 itemView = v;
+
                 image = (ImageView) v.findViewById(R.id.imageProductCard);
-                title = (TextView) v.findViewById(R.id.title);
+                titleCategory = (TextView) v.findViewById(R.id.categoryTitle);
             }
         }
 
@@ -201,8 +200,6 @@ public class CategoryView
 
             return imagenBitmap;
         }
-
-
     }
 }
 

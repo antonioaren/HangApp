@@ -15,35 +15,15 @@
   <component name="ChangeListManager">
     <list id="6a18f264-77ba-466d-b7a7-0d52df6a7436" name="Default" comment="Merge remote-tracking branch 'origin/eleonoraBack'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/3.3/taskArtifacts/fileHashes.bin&#10;#&#9;.gradle/3.3/taskArtifacts/fileSnapshots.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.lock&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/App.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Mediator.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangApp.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangAppModel.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/Information.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationPresenter.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchView.java&#10;#&#9;HangUp/src/main/res/layout/activity_procesed_search.xml&#10;#&#9;HangUp/src/main/res/layout/content_hangapp.xml&#10;#&#9;HangUp/src/main/res/layout/content_procesed_search.xml&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Navigator.java&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/hangapp/HangAppView.java&#10;#&#9;HelloApp/src/main/res/layout/activity_filalista.xml&#10;#&#9;HelloApp/src/main/res/layout/activity_procesed_search.xml&#10;" />
     <list id="3d65f56d-93c6-4520-9708-4d2cd763dfec" name="Failed commit: Default" comment="Cambios Merges.&#10;" />
-    <list default="true" id="72c31ec8-3076-4782-a780-40cb8c2c6568" name="Failed commit: Default (2)" comment="Cleaning Code">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/MockitoTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HangUp/src/main/res/drawable/astro.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HangUp/src/main/res/drawable/cars.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HangUp/src/main/res/drawable/disco.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HangUp/src/main/res/drawable/musica.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HangUp/src/main/res/drawable/searchparty.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HangUp/src/main/res/drawable/ulpgc.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/HangUp/src/main/res/layout/item_photos.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/CleanMvpLib_unspecified.xml" afterPath="$PROJECT_DIR$/.idea/libraries/CleanMvpLib_unspecified.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/espresso_core_2_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/espresso_core_2_2_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/espresso_idling_resource_2_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/espresso_idling_resource_2_2_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/exposed_instrumentation_api_publish_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/exposed_instrumentation_api_publish_0_5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/rules_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/rules_0_5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/runner_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/runner_0_5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="72c31ec8-3076-4782-a780-40cb8c2c6568" name="Failed commit: Default (2)" comment="Arreglo filtro para las categorias">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/HangUp.iml" afterPath="$PROJECT_DIR$/HangUp/HangUp.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java" afterPath="$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addCategory/AddCategoryModel.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addCategory/AddCategoryModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addCategory/AddCategoryPresenter.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addCategory/AddCategoryPresenter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addCategory/AddCategoryView.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addCategory/AddCategoryView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddProductPresenter.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddProductPresenter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/util/DateFormatter.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/util/DateFormatter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/res/layout/activity_addcategory.xml" afterPath="$PROJECT_DIR$/HangUp/src/main/res/layout/activity_addcategory.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/res/layout/content_addcategory.xml" afterPath="$PROJECT_DIR$/HangUp/src/main/res/layout/content_addcategory.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/test/java/es/ulpgc/eite/clean/mvp/sample/ExampleUnitTest.java" afterPath="$PROJECT_DIR$/HangUp/src/test/java/es/ulpgc/eite/clean/mvp/sample/ExampleUnitTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/build/generated/source/r/debug/es/ulpgc/eite/clean/mvp/sample/R.java" afterPath="$PROJECT_DIR$/HangUp/build/generated/source/r/debug/es/ulpgc/eite/clean/mvp/sample/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryView.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/product/ProductView.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/product/ProductView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/res/layout/card_category.xml" afterPath="$PROJECT_DIR$/HangUp/src/main/res/layout/card_category.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/res/layout/card_product.xml" afterPath="$PROJECT_DIR$/HangUp/src/main/res/layout/card_product.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/res/layout/content_category.xml" afterPath="$PROJECT_DIR$/HangUp/src/main/res/layout/content_category.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/res/layout/content_product.xml" afterPath="$PROJECT_DIR$/HangUp/src/main/res/layout/content_product.xml" />
     </list>
     <ignored path="HangApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -79,66 +59,7 @@
     <favorites_list name="HangApp" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CategoryView.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="139" column="27" selection-start-line="139" selection-start-column="27" selection-end-line="139" selection-end-column="27" />
-              <folding>
-                <element signature="method#onCreate#0;class#CategoryView#0" expanded="false" />
-                <element signature="docComment;method#onResume#0;class#CategoryView#0" expanded="false" />
-                <element signature="e#2592#2625#0" expanded="false" />
-                <element signature="method#InitComponentSwipeAndMove#0;class#CategoryView#0" expanded="false" />
-                <element signature="e#3604#3687#0" expanded="false" />
-                <element signature="method#settingItemsAdapter#0;class#CategoryView#0" expanded="false" />
-                <element signature="e#4250#4251#0" expanded="true" />
-                <element signature="e#4318#4319#0" expanded="true" />
-                <element signature="method#CategoryAdapter#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
-                <element signature="e#4700#4701#0" expanded="true" />
-                <element signature="e#4743#4744#0" expanded="true" />
-                <element signature="method#onCreateViewHolder#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
-                <element signature="method#onBindViewHolder#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
-                <element signature="method#onAttachedToRecyclerView#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
-                <element signature="method#setItemList#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
-                <element signature="class#CategoryViewHolder#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
-                <element signature="method#CategoryViewHolder#0;class#CategoryViewHolder#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
-                <element signature="method#getBitMapFromAssets#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CategoryPresenter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryPresenter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-40">
-              <caret line="127" column="34" selection-start-line="127" selection-start-column="34" selection-end-line="127" selection-end-column="34" />
-              <folding>
-                <element signature="docComment;method#onCreate#0;class#CategoryPresenter#0" expanded="false" />
-                <element signature="docComment;method#onResume#0;class#CategoryPresenter#0" expanded="false" />
-                <element signature="docComment;method#onBackPressed#0;class#CategoryPresenter#0" expanded="false" />
-                <element signature="method#onBackPressed#0;class#CategoryPresenter#0" expanded="false" />
-                <element signature="docComment;method#onDestroy#0;class#CategoryPresenter#0" expanded="false" />
-                <element signature="method#destroyView#0;class#CategoryPresenter#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CategoryModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
-              <folding>
-                <element signature="docComment;field#id#0;class#CategoryModel#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -2375,12 +2296,10 @@
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/realmoperation/Singleton.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/realmoperation/RealmOperation.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addCategory/AddCategory.java" />
-        <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryView.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/Category.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/res/layout/activity_category.xml" />
         <option value="$PROJECT_DIR$/HangUp/src/main/res/layout/content_product.xml" />
         <option value="$PROJECT_DIR$/HangUp/src/main/res/layout/card_product.xml" />
-        <option value="$PROJECT_DIR$/HangUp/src/main/res/layout/card_category.xml" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/product/Product.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Mediator.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Navigator.java" />
@@ -2406,6 +2325,8 @@
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddProductPresenter.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addCategory/AddCategoryPresenter.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryPresenter.java" />
+        <option value="$PROJECT_DIR$/HangUp/src/main/res/layout/card_category.xml" />
+        <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryView.java" />
       </list>
     </option>
   </component>
@@ -3151,13 +3072,6 @@
       <option name="presentableId" value="Default" />
       <updated>1490022965325</updated>
     </task>
-    <task id="LOCAL-00071" summary="pasando adapter al publishparty">
-      <created>1494255700070</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1494255700070</updated>
-    </task>
     <task id="LOCAL-00072" summary="reformando el metodo">
       <created>1494260620841</created>
       <option name="number" value="00072" />
@@ -3494,7 +3408,14 @@
       <option name="project" value="LOCAL" />
       <updated>1498752099446</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="Arreglo filtro para las categorias">
+      <created>1498829220779</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1498829220780</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -3552,13 +3473,13 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28432956" sideWeight="0.48064515" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28432956" sideWeight="0.48064515" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45806453" sideWeight="0.49394855" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900763" sideWeight="0.5068259" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20355412" sideWeight="0.5129032" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -3585,7 +3506,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Inserta los datos aunque no se ven. Comprobado con la consola a traves de hacerle un pull al adb." />
     <MESSAGE value="Nuevo metodo en el modelo del producto. Ya solo se ven los productos que le pertenezcan a cada categoría." />
     <MESSAGE value="Error con el back de detail. Hago el paso del item seleccionado, solo falta implementar los texto." />
     <MESSAGE value="Arreglado Detalle a lo heavy. Se ha vuelto a rehacer dado que no necesitaba tanta implementación. Ahora el Back Funciona correctamente." />
@@ -3610,7 +3530,8 @@
     <MESSAGE value="Añadido Filtro para que se rellenen todos los apartados del producto. Problema con la Uri al filtrarla para que no quede. Null pointed si no se elige imagen." />
     <MESSAGE value="Arreglado Problema null al no elegir una imagen. verificamos si se ha elegido imagen ( no antes porque sino, podría elegir la imagen y luego salir, y saltaría el error) una vez verificado, el presentador cuando lo necesite verificará si se ha hecho click o no. en ese caso o enviará un toast informando que no se han completado todos los campos." />
     <MESSAGE value="Cleaning Code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaning Code" />
+    <MESSAGE value="Arreglo filtro para las categorias" />
+    <option name="LAST_COMMIT_MESSAGE" value="Arreglo filtro para las categorias" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -3730,17 +3651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/content_category.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Library/Android/sdk/extras/android/m2repository/com/android/support/recyclerview-v7/25.3.1/recyclerview-v7-25.3.1-sources.jar!/android/support/v7/widget/LinearLayoutManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1485">
@@ -3755,28 +3665,6 @@
           <folding>
             <element signature="docComment;class#ModelToPresenter#0;class#Category#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/content_product.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/card_category.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3795,6 +3683,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="28">
           <caret line="44" column="16" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3834,14 +3723,14 @@
           <caret line="67" column="8" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="8" />
           <folding>
             <element signature="docComment;class#ProductView#0" expanded="false" />
-            <element signature="e#2380#2552#0" expanded="true" />
-            <element signature="e#2551#2552#0" expanded="true" />
+            <element signature="e#2201#2373#0" expanded="false" />
+            <element signature="e#2372#2373#0" expanded="false" />
             <element signature="method#onResume#0;class#ProductView#0" expanded="false" />
             <element signature="method#settingAdapter#0;class#ProductView#0" expanded="false" />
             <element signature="method#InitComponentSwipeAndMove#0;class#ProductView#0" expanded="false" />
-            <element signature="class#3552:4120" expanded="false" />
-            <element signature="method#onMove#0;class#3552:4120" expanded="false" />
-            <element signature="method#onSwiped#0;class#3552:4120" expanded="false" />
+            <element signature="class#3373:3941" expanded="false" />
+            <element signature="method#onMove#0;class#3373:3941" expanded="false" />
+            <element signature="method#onSwiped#0;class#3373:3941" expanded="false" />
             <element signature="class#ProductAdapter#0;class#ProductView#0" expanded="false" />
             <element signature="method#ProductAdapter#0;class#ProductAdapter#0;class#ProductView#0" expanded="false" />
             <element signature="method#onCreateViewHolder#0;class#ProductAdapter#0;class#ProductView#0" expanded="false" />
@@ -4093,7 +3982,7 @@
         <state relative-caret-position="928">
           <caret line="149" column="32" selection-start-line="149" selection-start-column="32" selection-end-line="149" selection-end-column="32" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="method#startingCategoryScreen#0;class#App#0" expanded="false" />
             <element signature="method#startingProductScreen#0;class#App#0" expanded="false" />
             <element signature="method#startingDetailScreen#0;class#App#0" expanded="false" />
@@ -4164,8 +4053,8 @@
             <element signature="method#destroyView#0;class#AddProductPresenter#0" expanded="false" />
             <element signature="method#onScreenStarted#0;class#AddProductPresenter#0" expanded="false" />
             <element signature="method#getDataToSave#0;class#AddProductPresenter#0" expanded="false" />
-            <element signature="e#3873#3874#0" expanded="true" />
-            <element signature="e#3918#3919#0" expanded="true" />
+            <element signature="e#3873#3874#0" expanded="false" />
+            <element signature="e#3918#3919#0" expanded="false" />
             <element signature="method#LoadInitialComponents#0;class#AddProductPresenter#0" expanded="false" />
           </folding>
         </state>
@@ -4181,10 +4070,10 @@
             <element signature="method#onDestroy#0;class#AddCategoryPresenter#0" expanded="false" />
             <element signature="method#onBackPressed#0;class#AddCategoryPresenter#0" expanded="false" />
             <element signature="method#destroyView#0;class#AddCategoryPresenter#0" expanded="false" />
-            <element signature="e#3815#3816#0" expanded="true" />
-            <element signature="e#3852#3853#0" expanded="true" />
-            <element signature="e#3910#3911#0" expanded="true" />
-            <element signature="e#3955#3956#0" expanded="true" />
+            <element signature="e#3817#3818#0" expanded="true" />
+            <element signature="e#3854#3855#0" expanded="true" />
+            <element signature="e#3912#3913#0" expanded="true" />
+            <element signature="e#3957#3958#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -4199,12 +4088,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java">
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/content_product.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/content_category.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/res/layout/card_category.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+        <state relative-caret-position="350">
+          <caret line="151" column="32" selection-start-line="151" selection-start-column="32" selection-end-line="151" selection-end-column="32" />
           <folding>
-            <element signature="docComment;field#id#0;class#CategoryModel#0" expanded="false" />
+            <element signature="method#onCreate#0;class#CategoryView#0" expanded="false" />
+            <element signature="docComment;method#onResume#0;class#CategoryView#0" expanded="false" />
+            <element signature="e#2502#2535#0" expanded="false" />
+            <element signature="method#InitComponentSwipeAndMove#0;class#CategoryView#0" expanded="false" />
+            <element signature="class#2831:3433" expanded="false" />
+            <element signature="method#onMove#0;class#2831:3433" expanded="false" />
+            <element signature="method#onSwiped#0;class#2831:3433" expanded="false" />
+            <element signature="e#3514#3597#0" expanded="false" />
+            <element signature="method#settingItemsAdapter#0;class#CategoryView#0" expanded="false" />
+            <element signature="method#CategoryAdapter#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
+            <element signature="method#onCreateViewHolder#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
+            <element signature="method#onAttachedToRecyclerView#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
+            <element signature="method#setItemList#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
+            <element signature="method#getBitMapFromAssets#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -4224,29 +4159,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryView.java">
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="139" column="27" selection-start-line="139" selection-start-column="27" selection-end-line="139" selection-end-column="27" />
+        <state relative-caret-position="223">
+          <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
           <folding>
-            <element signature="method#onCreate#0;class#CategoryView#0" expanded="false" />
-            <element signature="docComment;method#onResume#0;class#CategoryView#0" expanded="false" />
-            <element signature="e#2592#2625#0" expanded="false" />
-            <element signature="method#InitComponentSwipeAndMove#0;class#CategoryView#0" expanded="false" />
-            <element signature="e#3604#3687#0" expanded="false" />
-            <element signature="method#settingItemsAdapter#0;class#CategoryView#0" expanded="false" />
-            <element signature="e#4250#4251#0" expanded="true" />
-            <element signature="e#4318#4319#0" expanded="true" />
-            <element signature="method#CategoryAdapter#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
-            <element signature="e#4700#4701#0" expanded="true" />
-            <element signature="e#4743#4744#0" expanded="true" />
-            <element signature="method#onCreateViewHolder#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
-            <element signature="method#onBindViewHolder#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
-            <element signature="method#onAttachedToRecyclerView#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
-            <element signature="method#setItemList#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
-            <element signature="class#CategoryViewHolder#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
-            <element signature="method#CategoryViewHolder#0;class#CategoryViewHolder#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
-            <element signature="method#getBitMapFromAssets#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
+            <element signature="docComment;field#id#0;class#CategoryModel#0" expanded="false" />
           </folding>
         </state>
       </provider>

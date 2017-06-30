@@ -1,6 +1,5 @@
 package es.ulpgc.eite.clean.mvp.sample.product;
 
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -13,7 +12,6 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,13 +24,10 @@ import java.util.List;
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
-import es.ulpgc.eite.clean.mvp.sample.realmoperation.RealmOperation;
 import es.ulpgc.eite.clean.mvp.sample.util.RealmRecyclerViewAdapter;
 import io.realm.OrderedRealmCollection;
 import io.realm.Realm;
 import io.realm.RealmList;
-
-import static android.R.attr.bitmap;
 
 /**
  * Created by alumno on 31/03/2017.
@@ -196,7 +191,7 @@ public class ProductView
             public ProductViewHolder(View v) {
                 super(v);
                 itemView = v;
-                title = (TextView) v.findViewById(R.id.title);
+                title = (TextView) v.findViewById(R.id.categoryTitle);
                 Place = (TextView) v.findViewById(R.id.place);
                 imageCard = (ImageView) v.findViewById(R.id.imageProductCard);
 

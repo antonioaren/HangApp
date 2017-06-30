@@ -22,7 +22,7 @@
             android:scaleType="fitXY"/>
 
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/categoryTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -30,16 +30,6 @@
             android:layout_toRightOf="@+id/imageProductCard"
             android:text="Large Text"
             android:textAppearance="?android:attr/textAppearanceLarge"/>
-
-        <TextView
-            android:id="@+id/place"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/title"
-            android:layout_below="@+id/title"
-
-            android:text="Small Text"
-            android:textAppearance="?android:attr/textAppearanceSmall"/>
 
         <ImageView
             android:id="@+id/compartir"
