@@ -15,27 +15,12 @@ import static org.junit.Assert.assertEquals;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
-  @Test
-  public void addition_isCorrect() throws Exception {
-    assertEquals(4, 2 + 2);
-  }
-
-  //Test for addPartyModel
-
-
-  // end of TestFor addpartyView3
-  //Test for CategoryModel
-
-
-
-
 
 //test for addcategoryModel
 @Test
 public void testGetImageByIdSelected()throws Exception{
   AddCategoryModel add= new AddCategoryModel();
-  String index = add.getImageByIdSelected(1);
-  assertEquals("disco.jpg", add.getImageByIdSelected(1));
+    assertEquals("disco.jpg", add.getImageByIdSelected(3));
 
 }
 
@@ -88,9 +73,6 @@ public void testGetRadioLabelsWithoutSettingName()throws Exception{
     assertEquals("photo",add.getPhotoLabel());
   }
 
-
-
-
   @Test
   public void testgetButtonAddLabelNull(){
   AddCategoryModel add= new AddCategoryModel();
@@ -104,13 +86,6 @@ public void testGetRadioLabelsWithoutSettingName()throws Exception{
     assertEquals("AddProduct", add.getButtonAddlabel());
   }
 
-  //test for product model
-//  @Test
-//  public void testgetAddLabelWithoutSetting()throws Exception{
-//    ProductModel product= new ProductModel();
-//    product.getAddLabel();
-//    assertEquals(null,product.getAddLabel());
-//  }
 
 
 

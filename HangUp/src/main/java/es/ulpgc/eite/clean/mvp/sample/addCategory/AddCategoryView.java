@@ -50,10 +50,10 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
         textPhoto = (TextView) findViewById(R.id.textPhoto);
 
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
-        radioButton0 = (RadioButton) findViewById(R.id.id0);
-        radioButton1 = (RadioButton) findViewById(R.id.id1);
-        radioButton2 = (RadioButton) findViewById(R.id.id2);
-        radioButton3 = (RadioButton) findViewById(R.id.id3);
+        radioButton0 = (RadioButton) findViewById(R.id.id1);
+        radioButton1 = (RadioButton) findViewById(R.id.id2);
+        radioButton2 = (RadioButton) findViewById(R.id.id3);
+        radioButton3 = (RadioButton) findViewById(R.id.id4);
 
 
 
@@ -104,16 +104,18 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
 
     @Override
     public void setAssetsImage(String im, String im2, String im3, String im4) {
+
         image1 = (ImageView) findViewById(R.id.image1);
         image1.setImageBitmap(getBitMapFromAssets(im));
+
         image2 = (ImageView) findViewById(R.id.image2);
         image2.setImageBitmap(getBitMapFromAssets(im2));
+
         image3 = (ImageView) findViewById(R.id.image3);
         image3.setImageBitmap(getBitMapFromAssets(im3));
+
         image4 = (ImageView) findViewById(R.id.image4);
         image4.setImageBitmap(getBitMapFromAssets(im4));
-
-
     }
 
     @Override
@@ -124,14 +126,14 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
         int id = radioGroup.getCheckedRadioButtonId();
 
 
-        if (id == R.id.id0) {
-            identificator = 0;
-        } else if (id == R.id.id1) {
+        if (id == R.id.id1) {
             identificator = 1;
         } else if (id == R.id.id2) {
             identificator = 2;
         } else if (id == R.id.id3) {
             identificator = 3;
+        } else if (id == R.id.id4) {
+            identificator = 4;
         } else {
             identificator = 0;
         }

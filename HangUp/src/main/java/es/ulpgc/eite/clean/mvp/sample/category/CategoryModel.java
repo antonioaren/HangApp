@@ -71,7 +71,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     @Override
     public void insertEvent(final String Categoryname, final String image) {
         realmOperation.insertEventCategory(Categoryname, image);
-        this.numberOfCategories++;
+        numberOfCategories++;
     }
 
     @Override
@@ -86,7 +86,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     @Override
     public int getNumberOfCategories() {
-        return this.numberOfCategories;
+        return numberOfCategories;
     }
 
     @Override

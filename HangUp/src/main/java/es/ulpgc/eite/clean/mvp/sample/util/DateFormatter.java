@@ -8,6 +8,7 @@ import java.util.Date;
  */
 
 public class DateFormatter {
+
     private static String DATE_PATTERN = "dd/MM/yyyy";
 
     public static String convertDateToString(Date date) {

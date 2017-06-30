@@ -86,6 +86,8 @@ public class AddProductPresenter
             getView().setToast(getModel().getWarningEmpty());
         } else {
             getModel().insertProductToDatabase(getDataToSave(), categoryId);
+            getView().setToast("Added");
+
             Navigator app = (Navigator) getView().getApplication();
             app.KillingAddProductScreenAfterInserting(this);
         }
@@ -125,8 +127,6 @@ public class AddProductPresenter
 
             setIsAnyValueNull(true);
 
-        } else {
-            setIsAnyValueNull(false);
         }
     }
 

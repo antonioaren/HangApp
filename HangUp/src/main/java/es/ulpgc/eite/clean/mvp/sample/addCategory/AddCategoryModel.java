@@ -30,7 +30,7 @@ public class AddCategoryModel
 
     public AddCategoryModel() {
 
-        this.images = new String[]{"astro.jpeg", "ulpgc.png", "cars.jpeg", "disco.jpg"};
+        this.images = new String[]{"", "astro.jpeg", "ulpgc.png", "cars.jpeg", "disco.jpg"};
     }
 
     @Override
@@ -139,13 +139,13 @@ public class AddCategoryModel
     }
     @Override
     public String getImageByIdSelected(int id) {
-        String image = "";
+        String imageName = "";
         if (id >= 0) {
-            image = images[id];
+            imageName = images[id];
         } else {
-            image = images[0];
+            imageName = images[0];
         }
-        return image;
+        return imageName;
     }
 
     @Override

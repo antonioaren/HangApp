@@ -42,7 +42,6 @@ public class EspressoTest {
     public void testOnAddClickedFromMainScreen() {
 
         onView(withId(R.id.fButtonAddCategory)).perform(click());
-
         onView(withId(R.id.textPhoto)).check(matches(isDisplayed()));
         onView(withId(R.id.textName)).check(matches(isDisplayed()));
         onView(withId(R.id.radioGroup)).check(matches(isDisplayed()));
@@ -59,8 +58,6 @@ public class EspressoTest {
         onView(withId(R.id.buttonAddCategory)).perform(click());
 
         onView(withId(R.id.recycler)).check(matches(isDisplayed()));
-
-
     }
 
 
@@ -127,13 +124,16 @@ public class EspressoTest {
 //        onView(withClassName(Matchers.equalTo(DatePicker.class.getName()))).perform(setDate(year, month, day));
         onView(withText("OK")).perform(click());
         onView(withId(R.id.timeI)).perform(click()).perform(click());
-        onView(withClassName(Matchers.equalTo(TimePicker.class.getName()))).perform(PickerActions.setTime(hour, minutes));
+        onView(withClassName(Matchers.equalTo(TimePicker.class.getName()))).perform(PickerActions.
+                setTime(hour, minutes));
+
         onView(withText("OK")).perform(click());
 
         onView(withId(R.id.TimeF))
                 .perform(click()).perform(click());
 
-        onView(withClassName(Matchers.equalTo(TimePicker.class.getName()))).perform(PickerActions.setTime(hour, minutes));
+        onView(withClassName(Matchers.equalTo(TimePicker.class.getName()))).perform(
+                PickerActions.setTime(hour, minutes));
         onView(withText("OK")).perform(click());
 
         // Clicks a button to send the message to another
@@ -192,6 +192,7 @@ public class EspressoTest {
         //funciona
         final CategoryModel c = new CategoryModel();
         c.CreateDatabaseTables();
+
         RealmConfiguration testConfig =
                 new RealmConfiguration.Builder().
                         inMemory().
@@ -220,7 +221,6 @@ public class EspressoTest {
     public void testGetFirstElementName() {
         CategoryModel category = new CategoryModel();
         category.CreateDatabaseTables();
-        category.getCategoryEvents().first();
         Assert.assertEquals("Fiestas", category.getCategoryEvents().first().getCategoryName());
     }
 
@@ -253,10 +253,6 @@ public class EspressoTest {
         });
         //comprobacion del test con un metodo
         Assert.assertEquals(5, c.getNumberOfCategories());
-
-
     }
-
-
 }
 

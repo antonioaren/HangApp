@@ -15,6 +15,9 @@ public class AddCategoryPresenter
         extends GenericPresenter<AddCategory.PresenterToView, AddCategory.PresenterToModel, AddCategory.ModelToPresenter, AddCategoryModel>
         implements AddCategory.ViewToPresenter, AddCategory.ModelToPresenter, AddCategory.ToAdd, AddCategory.AddTo {
 
+    private boolean isAnyValueNull;
+
+
     @Override
     public void onCreate(AddCategory.PresenterToView view) {
         super.onCreate(AddCategoryModel.class, this);
@@ -33,9 +36,11 @@ public class AddCategoryPresenter
 
         getView().setRadioButtonLabels(getModel().getLabelRadio0(), getModel().getLabelRadio1(),
                 getModel().getLabelRadio2(), getModel().getLabelRadio3());
-        getView().setAssetsImage(getModel().getImage(0), getModel().getImage(1), getModel().getImage(2), getModel().getImage(3));
-        getView().setAddBtnLabel(getModel().getButtonAddlabel());
 
+        getView().setAssetsImage(getModel().getImage(1), getModel().getImage(2),
+                getModel().getImage(3), getModel().getImage(4));
+
+        getView().setAddBtnLabel(getModel().getButtonAddlabel());
     }
 
     @Override
@@ -84,14 +89,43 @@ public class AddCategoryPresenter
 
     @Override
     public void onAddClicked() {
-        String ImageName = getModel().getImageByIdSelected(getView().getRadioButtonId());
-        String NewCategoryName = getView().getTextFromEditText();
 
-        getModel().insertEvent(NewCategoryName, ImageName);
-        getView().setToast(getModel().getToastNotifyingAdded());
+        checkIsAnyValueNull();
 
-        Navigator app = (Navigator) getView().getApplication();
-        app.KillingAddCategoryScreenAfterInserting(this);
+        if (isAnyValueNull) {
+            getView().setToast("All field are required");
+
+        } else {
+
+            String ImageName = getModel().getImageByIdSelected(getView().getRadioButtonId());
+            String NewCategoryName = getView().getTextFromEditText();
+
+            getModel().insertEvent(NewCategoryName, ImageName);
+            getView().setToast(getModel().getToastNotifyingAdded());
+
+            Navigator app = (Navigator) getView().getApplication();
+            app.KillingAddCategoryScreenAfterInserting(this);
+        }
+    }
+
+    private void checkIsAnyValueNull() {
+        int value = getView().getRadioButtonId();
+        String textEntrada = getView().getTextFromEditText();
+
+        if (getView().getRadioButtonId() == 0 ||
+                getView().getTextFromEditText().isEmpty()) {
+            setAnyValueNull(true);
+        } else {
+            setAnyValueNull(false);
+        }
+    }
+
+    private boolean getIsAnyValueNull() {
+        return isAnyValueNull;
+    }
+
+    private void setAnyValueNull(boolean anyValueNull) {
+        isAnyValueNull = anyValueNull;
     }
 }
 
