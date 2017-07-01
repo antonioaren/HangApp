@@ -20,7 +20,9 @@ public class RealmOperation {
     private RealmResults<CategoryData> itemsDatabase;
 
 
-    private RealmOperation() {
+    private String id;
+
+    public RealmOperation() {
         RealmConfiguration setting = new RealmConfiguration.Builder().build();
         Realm.setDefaultConfiguration(setting);
         realmDatabase = Realm.getDefaultInstance();
@@ -41,10 +43,12 @@ public class RealmOperation {
     }
 
     public void insertEventCategory(final String Categoryname, final String image) {
+        this.id = UUID.randomUUID().toString();
         realmDatabase.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
-                CategoryData event = realmDatabase.createObject(CategoryData.class, UUID.randomUUID().toString());
+
+                CategoryData event = realmDatabase.createObject(CategoryData.class, id);
 
                 event.setCategoryName(Categoryname);
                 event.setImage(image);
@@ -104,5 +108,9 @@ public class RealmOperation {
         return products;
     }
 
+    //Para realizar test en espresso
+    public String getId() {
+        return id;
+    }
 
 }

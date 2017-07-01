@@ -11,9 +11,8 @@ import org.hamcrest.Matchers;
 import org.junit.Rule;
 import org.junit.Test;
 
-import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategoryModel;
-import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
+import es.ulpgc.eite.clean.mvp.sample.realmoperation.RealmOperation;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
@@ -188,29 +187,28 @@ public class EspressoTest {
     @Test
     public void insertEventTestBeforeStartingApplication() {
         //la unica manera para que funcione es que el acceso a RealmOPeration sea publico, pero viola las caracteristicas del singleton
-        final AddCategoryModel add = new AddCategoryModel();
+
         RealmConfiguration testConfig =
                 new RealmConfiguration.Builder().
                         inMemory().
                         name("test-realm1").build();
 
         Realm testRealm = Realm.getInstance(testConfig);
-        // RealmOperation realm=  new RealmOperation();
+        RealmOperation realm = new RealmOperation();
 
-        //   realm.insertEventCategory("sdfghj","disco.jpg");
-        //  Assert.assertEquals(4,realm.getCategoryEvents().size());
+        realm.insertEventCategory("sdfghj", "disco.jpg");
+        Assert.assertEquals(4, realm.getCategoryEvents().size());
 
                                          }
 
 
-    //comprobacion del test con un metodo
+
 
 
     @Test
     public void deleteEvent() {
         //funciona
-        final CategoryModel c = new CategoryModel();
-        // c.CreateDatabaseTables();
+
 
         RealmConfiguration testConfig =
                 new RealmConfiguration.Builder().
@@ -218,60 +216,37 @@ public class EspressoTest {
                         name("test-realm1").build();
 
         Realm testRealm = Realm.getInstance(testConfig);
-
+        final RealmOperation realmOperation = new RealmOperation();
         testRealm.executeTransaction(new Realm.Transaction() {
                                          @Override
                                          public void execute(Realm realm) {
 
 
-                                             c.insertEvent("jkhkih", "disco.jpg");
-                                             c.insertEvent("jjh", "disco.jpg");
-                                             String idLastElement = c.getId();
-                                             c.deleteItem(idLastElement);
+                                             realmOperation.insertEventCategory("jkhkih", "disco.jpg");
+                                             realmOperation.insertEventCategory("jjh", "disco.jpg");
+                                             String idLastElement = realmOperation.getId();
+                                             realmOperation.deleteItemCategory(idLastElement);
                                          }
                                      }
         );
         //comprobacion del test con un metodo
-        Assert.assertEquals(6, c.getNumberOfCategories());
+        Assert.assertEquals(1, realmOperation.getCategoryEvents().size());
 
     }
 
     @Test
     public void testGetFirstElementName() {
-        CategoryModel category = new CategoryModel();
-        // category.CreateDatabaseTables();
-        Assert.assertEquals("Fiestas", category.getCategoryEvents().first().getCategoryName());
+        RealmOperation realm = new RealmOperation();
+        Assert.assertEquals("Fiestas", realm.getCategoryEvents().first().getCategoryName());
     }
 
     @Test
     public void testGetLastElementName() {
-        CategoryModel category = new CategoryModel();
-        // category.CreateDatabaseTables();
+        RealmOperation realm = new RealmOperation();
 
-        Assert.assertEquals("Automovilismo", category.getCategoryEvents().last().getCategoryName());
+
+        Assert.assertEquals("Automovilismo", realm.getCategoryEvents().last().getCategoryName());
     }
-    @Test
-    public void getNumberOfCategories() {
 
-        final CategoryModel c = new CategoryModel();
-
-        RealmConfiguration testConfig =
-                new RealmConfiguration.Builder().
-                        inMemory().
-                        name("test-realmCategories").build();
-
-        Realm testRealm = Realm.getInstance(testConfig);
-        testRealm.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-
-                // c.CreateDatabaseTables();
-
-
-            }
-        });
-        //comprobacion del test con un metodo
-        Assert.assertEquals(5, c.getCategoryEvents().size());
-    }
 }
 
