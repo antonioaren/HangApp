@@ -35,6 +35,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
 public class EspressoTest {
 
+
     @Rule
     public final ActivityTestRule<CategoryView> presenter = new ActivityTestRule<>(CategoryView.class);
 
@@ -112,7 +113,7 @@ public class EspressoTest {
         String name = "1";
 
         onView(withId(R.id.recycler))
-                .perform(RecyclerViewActions.actionOnItemAtPosition(4, click()));
+                .perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
         onView(withId(R.id.fButtonAddProduct)).perform(click());
         onView(withId(R.id.name))
                 // Types a message into a EditText element.
@@ -136,6 +137,28 @@ public class EspressoTest {
         onView(withClassName(Matchers.equalTo(TimePicker.class.getName()))).perform(
                 PickerActions.setTime(hour, minutes));
         onView(withText("OK")).perform(click());
+
+        onView(withId(R.id.imageButton)).perform(click());
+        // Create a bitmap we can use for our simulated camera image
+        // Create a bitmap we can use for our simulated camera image
+      /*  Bitmap icon = BitmapFactory.decodeResource(
+                InstrumentationRegistry.getTargetContext().getResources(),
+                R.mipmap.ic_launcher);
+
+        // Build a result to return from the Camera app
+        Intent resultData = new Intent();
+        resultData.putExtra("data", icon);
+        Instrumentation.ActivityResult result = new Instrumentation.ActivityResult(Activity.RESULT_OK, resultData);
+
+        // Stub out the Camera. When an intent is sent to the Camera, this tells Espresso to respond
+        // with the ActivityResult we just created*/
+
+
+        // Now that we have the stub in place, click on the button in our app that launches into the Camera
+        onView(withId(R.id.imageButton)).perform(click());
+
+        // We can also validate that an intent resolving to the "camera" activity has been sent out by our app
+
 
         // Clicks a button to send the message to another
         // activity through an explicit intent.
