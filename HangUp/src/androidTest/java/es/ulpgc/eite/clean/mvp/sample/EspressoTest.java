@@ -96,6 +96,7 @@ public class EspressoTest {
 
         onView(withId(R.id.recycler)).perform(RecyclerViewActions.actionOnItemAtPosition(0, swipeLeft()));
 
+        onView(withText("Astronomía")).check(matches(isDisplayed()));
         onView(withText("Automovilismo")).check(matches(isDisplayed()));
         onView(withText("Música")).check(matches(isDisplayed()));
         onView(withText("ULPGC")).check(matches(isDisplayed()));
@@ -197,7 +198,8 @@ public class EspressoTest {
         RealmOperation realm = new RealmOperation();
 
         realm.insertEventCategory("sdfghj", "disco.jpg");
-        Assert.assertEquals(4, realm.getCategoryEvents().size());
+       //probando el test con todas las categorias
+        Assert.assertEquals(6, realm.getCategoryEvents().size());
 
                                          }
 
@@ -217,6 +219,7 @@ public class EspressoTest {
 
         Realm testRealm = Realm.getInstance(testConfig);
         final RealmOperation realmOperation = new RealmOperation();
+
         testRealm.executeTransaction(new Realm.Transaction() {
                                          @Override
                                          public void execute(Realm realm) {
@@ -230,21 +233,22 @@ public class EspressoTest {
                                      }
         );
         //comprobacion del test con un metodo
-        Assert.assertEquals(1, realmOperation.getCategoryEvents().size());
+        //probando el test con todas las categorias
+        Assert.assertEquals(6, realmOperation.getCategoryEvents().size());
 
     }
 
     @Test
     public void testGetFirstElementName() {
+      //probando el test cuando existen todas las categorias de la bd
         RealmOperation realm = new RealmOperation();
         Assert.assertEquals("Fiestas", realm.getCategoryEvents().first().getCategoryName());
     }
 
     @Test
     public void testGetLastElementName() {
+        //probando el test cuando existen todas las categorias de la bd
         RealmOperation realm = new RealmOperation();
-
-
         Assert.assertEquals("Automovilismo", realm.getCategoryEvents().last().getCategoryName());
     }
 

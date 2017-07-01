@@ -77,7 +77,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
         realmOperation.insertEventCategory(Categoryname, image);
 
-        numberOfCategories++;
+
     }
 
     @Override
@@ -90,10 +90,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         return id;
     }
 
-    @Override
-    public int getNumberOfCategories() {
-        return numberOfCategories;
-    }
+
 
     @Override
     public String getToastNotifyingAdded() {

@@ -61,7 +61,7 @@ public interface Category {
 
 
         //metodo para comprobar test con espresso
-        int getNumberOfCategories();
+
 
         String getToastNotifyingAdded();
 

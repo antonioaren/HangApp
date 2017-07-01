@@ -15,10 +15,11 @@
   <component name="ChangeListManager">
     <list id="6a18f264-77ba-466d-b7a7-0d52df6a7436" name="Default" comment="Merge remote-tracking branch 'origin/eleonoraBack'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/3.3/taskArtifacts/fileHashes.bin&#10;#&#9;.gradle/3.3/taskArtifacts/fileSnapshots.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.lock&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/App.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Mediator.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangApp.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangAppModel.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/Information.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationPresenter.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchView.java&#10;#&#9;HangUp/src/main/res/layout/activity_procesed_search.xml&#10;#&#9;HangUp/src/main/res/layout/content_hangapp.xml&#10;#&#9;HangUp/src/main/res/layout/content_procesed_search.xml&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Navigator.java&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/hangapp/HangAppView.java&#10;#&#9;HelloApp/src/main/res/layout/activity_filalista.xml&#10;#&#9;HelloApp/src/main/res/layout/activity_procesed_search.xml&#10;" />
     <list id="3d65f56d-93c6-4520-9708-4d2cd763dfec" name="Failed commit: Default" comment="Cambios Merges.&#10;" />
-    <list default="true" id="72c31ec8-3076-4782-a780-40cb8c2c6568" name="Failed commit: Default (2)" comment="poniendo dependencia a buil.gradle para realizar el testeo de seleccion de imagen en la galeria">
+    <list default="true" id="72c31ec8-3076-4782-a780-40cb8c2c6568" name="Failed commit: Default (2)" comment="modificando test con espresso para adaptar al patron de diseño existente">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java" afterPath="$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/realmoperation/RealmOperation.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/realmoperation/RealmOperation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/Category.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/Category.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java" />
     </list>
     <ignored path="HangApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,16 +56,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AddProductPresenter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addProduct/AddProductPresenter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="69" column="21" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AddProductView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addProduct/AddProductView.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -84,8 +75,8 @@
       <file leaf-file-name="CategoryModel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+            <state relative-caret-position="86">
+              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;field#id#0;class#CategoryModel#0" expanded="false" />
@@ -94,16 +85,26 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Category.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/Category.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="RealmOperation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/realmoperation/RealmOperation.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="349">
-              <caret line="110" column="35" selection-start-line="110" selection-start-column="35" selection-end-line="110" selection-end-column="35" />
+              <caret line="110" column="36" selection-start-line="110" selection-start-column="36" selection-end-line="110" selection-end-column="36" />
               <folding>
-                <element signature="e#1471#1773#0" expanded="true" />
-                <element signature="e#1772#1773#0" expanded="true" />
-                <element signature="e#3950#3951#0" expanded="true" />
-                <element signature="e#3975#3976#0" expanded="true" />
+                <element signature="e#1472#1774#0" expanded="true" />
+                <element signature="e#1773#1774#0" expanded="true" />
+                <element signature="e#3953#3954#0" expanded="true" />
+                <element signature="e#3978#3979#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -132,12 +133,12 @@
       <file leaf-file-name="EspressoTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="173" column="64" selection-start-line="173" selection-start-column="64" selection-end-line="173" selection-end-column="64" />
+            <state relative-caret-position="427">
+              <caret line="250" column="52" selection-start-line="250" selection-start-column="52" selection-end-line="250" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#8561#9189#0" expanded="true" />
-                <element signature="e#9188#9189#0" expanded="true" />
+                <element signature="e#8685#9313#0" expanded="true" />
+                <element signature="e#9312#9313#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2415,7 +2416,6 @@
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addParty/AddPartyView.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/realmoperation/Singleton.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addCategory/AddCategory.java" />
-        <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/Category.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/res/layout/activity_category.xml" />
         <option value="$PROJECT_DIR$/HangUp/src/main/res/layout/content_product.xml" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/product/Product.java" />
@@ -2446,10 +2446,11 @@
         <option value="$PROJECT_DIR$/HangUp/src/main/res/layout/card_product.xml" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addProduct/AddProductPresenter.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryPresenter.java" />
-        <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addCategory/AddCategoryModel.java" />
         <option value="$PROJECT_DIR$/HangUp/build.gradle" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/realmoperation/RealmOperation.java" />
+        <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/Category.java" />
+        <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java" />
         <option value="$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java" />
       </list>
     </option>
@@ -2837,83 +2838,7 @@
       <recent name="C:\Users\eleonora\Desktop\projects\HangApp\HangUp\src\main\res\drawable" />
     </key>
   </component>
-  <component name="RunManager" selected="Android Instrumented Tests.testInsertingANewP...()">
-    <configuration default="false" name="ExampleUnitTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="es.ulpgc.eite.clean.mvp.sample.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="HangUp" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="es.ulpgc.eite.clean.mvp.sample" />
-      <option name="MAIN_CLASS_NAME" value="es.ulpgc.eite.clean.mvp.sample.ExampleUnitTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="getNumberOfCategor...()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
-      <module name="HangUp" />
-      <option name="TESTING_TYPE" value="3" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="android.support.test.runner.AndroidJUnitRunner" />
-      <option name="METHOD_NAME" value="getNumberOfCategories" />
-      <option name="CLASS_NAME" value="es.ulpgc.eite.clean.mvp.sample.EspressoTest" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="EXTRA_OPTIONS" value="" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Java />
-      <Profilers>
-        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
-        <option name="SUPPORT_LIB_ENABLED" value="true" />
-        <option name="INSTRUMENTATION_ENABLED" value="true" />
-      </Profilers>
-      <method />
-    </configuration>
-    <configuration default="false" name="testGetLastElement...()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
-      <module name="HangUp" />
-      <option name="TESTING_TYPE" value="3" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="android.support.test.runner.AndroidJUnitRunner" />
-      <option name="METHOD_NAME" value="testGetLastElementName" />
-      <option name="CLASS_NAME" value="es.ulpgc.eite.clean.mvp.sample.EspressoTest" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="EXTRA_OPTIONS" value="" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Java />
-      <Profilers>
-        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
-        <option name="SUPPORT_LIB_ENABLED" value="true" />
-        <option name="INSTRUMENTATION_ENABLED" value="true" />
-      </Profilers>
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Android Instrumented Tests.testGetLastElement...()">
     <configuration default="false" name="insertEventTestBef...()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
       <module name="HangUp" />
       <option name="TESTING_TYPE" value="3" />
@@ -2939,11 +2864,86 @@
       </Profilers>
       <method />
     </configuration>
-    <configuration default="false" name="testInsertingANewP...()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="deleteEvent()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
       <module name="HangUp" />
       <option name="TESTING_TYPE" value="3" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="android.support.test.runner.AndroidJUnitRunner" />
-      <option name="METHOD_NAME" value="testInsertingANewPartyInACategory" />
+      <option name="METHOD_NAME" value="deleteEvent" />
+      <option name="CLASS_NAME" value="es.ulpgc.eite.clean.mvp.sample.EspressoTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <method />
+    </configuration>
+    <configuration default="false" name="testRemoveElementW...()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+      <module name="HangUp" />
+      <option name="TESTING_TYPE" value="3" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="android.support.test.runner.AndroidJUnitRunner" />
+      <option name="METHOD_NAME" value="testRemoveElementWhenApplicationStarted" />
+      <option name="CLASS_NAME" value="es.ulpgc.eite.clean.mvp.sample.EspressoTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <method />
+    </configuration>
+    <configuration default="false" name="testGetFirstElemen...()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+      <module name="HangUp" />
+      <option name="TESTING_TYPE" value="3" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="android.support.test.runner.AndroidJUnitRunner" />
+      <option name="METHOD_NAME" value="testGetFirstElementName" />
+      <option name="CLASS_NAME" value="es.ulpgc.eite.clean.mvp.sample.EspressoTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <method />
+    </configuration>
+    <configuration default="false" name="testGetLastElement...()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+      <module name="HangUp" />
+      <option name="TESTING_TYPE" value="3" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="android.support.test.runner.AndroidJUnitRunner" />
+      <option name="METHOD_NAME" value="testGetLastElementName" />
       <option name="CLASS_NAME" value="es.ulpgc.eite.clean.mvp.sample.EspressoTest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="EXTRA_OPTIONS" value="" />
@@ -3183,19 +3183,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Android App.HangApp" />
-      <item index="1" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest" />
-      <item index="2" class="java.lang.String" itemvalue="Android Instrumented Tests.getNumberOfCategor...()" />
-      <item index="3" class="java.lang.String" itemvalue="Android Instrumented Tests.testGetLastElement...()" />
-      <item index="4" class="java.lang.String" itemvalue="Android Instrumented Tests.insertEventTestBef...()" />
-      <item index="5" class="java.lang.String" itemvalue="Android Instrumented Tests.testInsertingANewP...()" />
+      <item index="1" class="java.lang.String" itemvalue="Android Instrumented Tests.insertEventTestBef...()" />
+      <item index="2" class="java.lang.String" itemvalue="Android Instrumented Tests.deleteEvent()" />
+      <item index="3" class="java.lang.String" itemvalue="Android Instrumented Tests.testRemoveElementW...()" />
+      <item index="4" class="java.lang.String" itemvalue="Android Instrumented Tests.testGetFirstElemen...()" />
+      <item index="5" class="java.lang.String" itemvalue="Android Instrumented Tests.testGetLastElement...()" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Android Instrumented Tests.testInsertingANewP...()" />
-        <item index="1" class="java.lang.String" itemvalue="Android Instrumented Tests.insertEventTestBef...()" />
-        <item index="2" class="java.lang.String" itemvalue="Android Instrumented Tests.testGetLastElement...()" />
-        <item index="3" class="java.lang.String" itemvalue="Android Instrumented Tests.getNumberOfCategor...()" />
-        <item index="4" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest" />
+        <item index="0" class="java.lang.String" itemvalue="Android Instrumented Tests.testGetLastElement...()" />
+        <item index="1" class="java.lang.String" itemvalue="Android Instrumented Tests.testGetFirstElemen...()" />
+        <item index="2" class="java.lang.String" itemvalue="Android Instrumented Tests.testRemoveElementW...()" />
+        <item index="3" class="java.lang.String" itemvalue="Android Instrumented Tests.insertEventTestBef...()" />
+        <item index="4" class="java.lang.String" itemvalue="Android Instrumented Tests.deleteEvent()" />
       </list>
     </recent_temporary>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -3268,13 +3268,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1490022965325</updated>
-    </task>
-    <task id="LOCAL-00075" summary="Cargando productos">
-      <created>1495879559097</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1495879559099</updated>
     </task>
     <task id="LOCAL-00076" summary="Añadido nuevo layout para add. Modificado y más ordenado.">
       <created>1495896661362</created>
@@ -3612,39 +3605,46 @@
       <option name="project" value="LOCAL" />
       <updated>1498917147716</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="modificando test con espresso para adaptar al patron de diseño existente">
+      <created>1498936011753</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1498936011753</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="insertEventTestBef___() - 2017.07.01 at 14h 26m 52s.xml">
+    <history-entry file="deleteEvent() - 2017.07.01 at 20h 17m 24s.xml">
+      <configuration name="deleteEvent()" configurationId="AndroidTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="deleteEvent() - 2017.07.01 at 20h 21m 32s.xml">
+      <configuration name="deleteEvent()" configurationId="AndroidTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="deleteEvent() - 2017.07.01 at 20h 29m 15s.xml">
+      <configuration name="deleteEvent()" configurationId="AndroidTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="deleteEvent() - 2017.07.01 at 20h 31m 06s.xml">
+      <configuration name="deleteEvent()" configurationId="AndroidTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="deleteEvent() - 2017.07.01 at 20h 32m 50s.xml">
+      <configuration name="deleteEvent()" configurationId="AndroidTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="insertEventTestBef___() - 2017.07.01 at 20h 35m 17s.xml">
       <configuration name="insertEventTestBef...()" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="insertEventTestBef___() - 2017.07.01 at 14h 28m 29s.xml">
-      <configuration name="insertEventTestBef...()" configurationId="AndroidTestRunConfigurationType" />
+    <history-entry file="testGetFirstElemen___() - 2017.07.01 at 20h 47m 42s.xml">
+      <configuration name="testGetFirstElemen...()" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="insertEventTestBef___() - 2017.07.01 at 14h 33m 43s.xml">
-      <configuration name="insertEventTestBef...()" configurationId="AndroidTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="insertEventTestBef___() - 2017.07.01 at 14h 38m 16s.xml">
-      <configuration name="insertEventTestBef...()" configurationId="AndroidTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="insertEventTestBef___() - 2017.07.01 at 14h 40m 59s.xml">
-      <configuration name="insertEventTestBef...()" configurationId="AndroidTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="insertEventTestBef___() - 2017.07.01 at 14h 42m 59s.xml">
-      <configuration name="insertEventTestBef...()" configurationId="AndroidTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="insertEventTestBef___() - 2017.07.01 at 14h 47m 23s.xml">
-      <configuration name="insertEventTestBef...()" configurationId="AndroidTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="testInsertingANewP___() - 2017.07.01 at 15h 32m 03s.xml">
-      <configuration name="testInsertingANewP...()" configurationId="AndroidTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="testInsertingANewP___() - 2017.07.01 at 15h 34m 17s.xml">
-      <configuration name="testInsertingANewP...()" configurationId="AndroidTestRunConfigurationType" />
+    <history-entry file="testGetLastElement___() - 2017.07.01 at 20h 49m 04s.xml">
+      <configuration name="testGetLastElement...()" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
     <history-entry file="testInsertingANewP___() - 2017.07.01 at 15h 42m 30s.xml">
       <configuration name="testInsertingANewP...()" configurationId="AndroidTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="testRemoveElementW___() - 2017.07.01 at 20h 40m 35s.xml">
+      <configuration name="testRemoveElementW...()" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
   </component>
   <component name="TodoView" selected-index="3">
@@ -3666,10 +3666,10 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46587032" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38709676" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="0" y="22" width="1280" height="715" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38566554" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="0" y="22" width="1280" height="715" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32829046" sideWeight="0.49317408" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46587032" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.051194537" sideWeight="0.49353796" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46587032" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.051194537" sideWeight="0.49353796" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43548387" sideWeight="0.3489499" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -3709,7 +3709,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Arreglado Detalle a lo heavy. Se ha vuelto a rehacer dado que no necesitaba tanta implementación. Ahora el Back Funciona correctamente." />
     <MESSAGE value="Complementado el detalle. Paso de estado del producto al detalle. Con lo cual podemos poner los datos que han sido elegidos por el cliente." />
     <MESSAGE value="Actualizadon y limpiando código. Aladiendo nueva fucnionalidad imagen." />
     <MESSAGE value="Arreglo Layout para imagenes" />
@@ -3734,7 +3733,8 @@
     <MESSAGE value="Arreglo filtro para las categorias" />
     <MESSAGE value="Dejamos subtexto fuera por ahora." />
     <MESSAGE value="Corrigiendo test con espresso porque ahora todas las transacciones sobre las bases de datos se realizan atraves del singleton" />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrigiendo test con espresso porque ahora todas las transacciones sobre las bases de datos se realizan atraves del singleton" />
+    <MESSAGE value="modificando test con espresso para adaptar al patron de diseño existente" />
+    <option name="LAST_COMMIT_MESSAGE" value="modificando test con espresso para adaptar al patron de diseño existente" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -3762,13 +3762,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$USER_HOME$/Library/Android/sdk/extras/android/m2repository/com/android/support/recyclerview-v7/25.3.1/recyclerview-v7-25.3.1-sources.jar!/android/support/v7/widget/LinearLayoutManager.java" />
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/Category.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="66" column="8" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/product/Product.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -3855,6 +3848,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="37" column="71" selection-start-line="37" selection-start-column="71" selection-end-line="37" selection-end-column="71" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3866,6 +3860,7 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="389">
           <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3876,6 +3871,7 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="-10">
           <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3886,6 +3882,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="45" column="29" selection-start-line="45" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3929,6 +3926,7 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -4017,6 +4015,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -4024,6 +4023,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2346">
           <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;method#onCreate#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="docComment;method#onResume#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="docComment;method#onBackPressed#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="method#onBackPressed#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="docComment;method#onDestroy#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="method#destroyView#0;class#CategoryPresenter#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -4032,17 +4039,6 @@
         <state relative-caret-position="90">
           <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;field#id#0;class#CategoryModel#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4076,12 +4072,12 @@
     <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/realmoperation/RealmOperation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
-          <caret line="110" column="35" selection-start-line="110" selection-start-column="35" selection-end-line="110" selection-end-column="35" />
+          <caret line="110" column="36" selection-start-line="110" selection-start-column="36" selection-end-line="110" selection-end-column="36" />
           <folding>
-            <element signature="e#1471#1773#0" expanded="true" />
-            <element signature="e#1772#1773#0" expanded="true" />
-            <element signature="e#3950#3951#0" expanded="true" />
-            <element signature="e#3975#3976#0" expanded="true" />
+            <element signature="e#1472#1774#0" expanded="true" />
+            <element signature="e#1773#1774#0" expanded="true" />
+            <element signature="e#3953#3954#0" expanded="true" />
+            <element signature="e#3978#3979#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -4105,14 +4101,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java">
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/Category.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="173" column="64" selection-start-line="173" selection-start-column="64" selection-end-line="173" selection-end-column="64" />
+        <state relative-caret-position="95">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8561#9189#0" expanded="true" />
-            <element signature="e#9188#9189#0" expanded="true" />
+            <element signature="docComment;field#id#0;class#CategoryModel#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="250" column="52" selection-start-line="250" selection-start-column="52" selection-end-line="250" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#8685#9313#0" expanded="true" />
+            <element signature="e#9312#9313#0" expanded="true" />
           </folding>
         </state>
       </provider>
