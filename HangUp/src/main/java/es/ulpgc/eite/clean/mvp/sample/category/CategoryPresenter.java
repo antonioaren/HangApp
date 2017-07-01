@@ -182,10 +182,10 @@ public class CategoryPresenter
 
     @Override
     public void OnSwipedItem(String id) {
-        int numer = getModel().getNumberOfCategories();
+
         getModel().deleteItem(id);
         getView().setToast(getModel().getNotifyDeleted());
-        numer--;
+
         SettingItemsAdapter();
 
     }

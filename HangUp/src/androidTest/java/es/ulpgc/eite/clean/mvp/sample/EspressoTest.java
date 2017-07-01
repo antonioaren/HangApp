@@ -11,6 +11,7 @@ import org.hamcrest.Matchers;
 import org.junit.Rule;
 import org.junit.Test;
 
+import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategoryModel;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryModel;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 import io.realm.Realm;
@@ -163,35 +164,30 @@ public class EspressoTest {
 
     @Test
     public void insertEventTestBeforeStartingApplication() {
-        //funciona
-        final CategoryModel c = new CategoryModel();
-        c.CreateDatabaseTables();
+        //la unica manera para que funcione es que el acceso a RealmOPeration sea publico, pero viola las caracteristicas del singleton
+        final AddCategoryModel add = new AddCategoryModel();
         RealmConfiguration testConfig =
                 new RealmConfiguration.Builder().
                         inMemory().
                         name("test-realm1").build();
 
         Realm testRealm = Realm.getInstance(testConfig);
+        // RealmOperation realm=  new RealmOperation();
 
-        testRealm.executeTransaction(new Realm.Transaction() {
-                                         @Override
-                                         public void execute(Realm realm) {
+        //   realm.insertEventCategory("sdfghj","disco.jpg");
+        //  Assert.assertEquals(4,realm.getCategoryEvents().size());
 
-
-                                             c.insertEvent("jkhkih", "disco.jpg");
-                                             c.insertEvent("jjh", "disco.jpg");
                                          }
-                                     }
-        );
-        //comprobacion del test con un metodo
-        Assert.assertEquals(7, c.getNumberOfCategories());
-    }
+
+
+    //comprobacion del test con un metodo
+
 
     @Test
     public void deleteEvent() {
         //funciona
         final CategoryModel c = new CategoryModel();
-        c.CreateDatabaseTables();
+        // c.CreateDatabaseTables();
 
         RealmConfiguration testConfig =
                 new RealmConfiguration.Builder().
@@ -220,15 +216,15 @@ public class EspressoTest {
     @Test
     public void testGetFirstElementName() {
         CategoryModel category = new CategoryModel();
-        category.CreateDatabaseTables();
+        // category.CreateDatabaseTables();
         Assert.assertEquals("Fiestas", category.getCategoryEvents().first().getCategoryName());
     }
 
     @Test
     public void testGetLastElementName() {
         CategoryModel category = new CategoryModel();
-        category.CreateDatabaseTables();
-        category.getCategoryEvents().last();
+        // category.CreateDatabaseTables();
+
         Assert.assertEquals("Automovilismo", category.getCategoryEvents().last().getCategoryName());
     }
     @Test
@@ -246,13 +242,13 @@ public class EspressoTest {
             @Override
             public void execute(Realm realm) {
 
-                c.CreateDatabaseTables();
+                // c.CreateDatabaseTables();
 
 
             }
         });
         //comprobacion del test con un metodo
-        Assert.assertEquals(5, c.getNumberOfCategories());
+        Assert.assertEquals(5, c.getCategoryEvents().size());
     }
 }
 

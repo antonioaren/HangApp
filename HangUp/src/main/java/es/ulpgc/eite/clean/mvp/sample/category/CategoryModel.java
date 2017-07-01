@@ -13,6 +13,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     private RealmResults<CategoryData> itemsDatabase;
     private RealmOperation realmOperation;
+
     private int numberOfCategories;
 
     /**
@@ -25,11 +26,14 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     private String id;
     private String NotifyAdded, NotifyDeleted;
 
+    public CategoryModel() {
 
+    }
     @Override
     public void onCreate(Category.ModelToPresenter presenter) {
         super.onCreate(presenter);
         realmOperation = RealmOperation.getInstances();
+
         NotifyAdded = "Added";
         NotifyDeleted = "Deleted";
 //      numberOfCategories = 0;
@@ -70,7 +74,9 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     @Override
     public void insertEvent(final String Categoryname, final String image) {
+
         realmOperation.insertEventCategory(Categoryname, image);
+
         numberOfCategories++;
     }
 

@@ -1,7 +1,5 @@
 package es.ulpgc.eite.clean.mvp.sample.realmoperation;
 
-import android.util.Log;
-
 import java.util.UUID;
 
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
