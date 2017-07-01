@@ -1,4 +1,4 @@
-package es.ulpgc.eite.clean.mvp.sample.addParty;
+package es.ulpgc.eite.clean.mvp.sample.addProduct;
 
 
 import android.content.Context;

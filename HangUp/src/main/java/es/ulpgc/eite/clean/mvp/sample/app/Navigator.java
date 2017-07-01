@@ -1,7 +1,7 @@
 package es.ulpgc.eite.clean.mvp.sample.app;
 
 import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategory;
-import es.ulpgc.eite.clean.mvp.sample.addParty.AddProduct;
+import es.ulpgc.eite.clean.mvp.sample.addProduct.AddProduct;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
 import es.ulpgc.eite.clean.mvp.sample.product.Product;
 

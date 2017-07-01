@@ -6,8 +6,8 @@ import android.content.Intent;
 
 import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategory;
 import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategoryView;
-import es.ulpgc.eite.clean.mvp.sample.addParty.AddProduct;
-import es.ulpgc.eite.clean.mvp.sample.addParty.AddProductView;
+import es.ulpgc.eite.clean.mvp.sample.addProduct.AddProduct;
+import es.ulpgc.eite.clean.mvp.sample.addProduct.AddProductView;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;

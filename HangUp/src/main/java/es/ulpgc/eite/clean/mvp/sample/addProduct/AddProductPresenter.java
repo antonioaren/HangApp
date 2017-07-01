@@ -1,4 +1,4 @@
-package es.ulpgc.eite.clean.mvp.sample.addParty;
+package es.ulpgc.eite.clean.mvp.sample.addProduct;
 
 import android.content.Context;
 import android.util.Log;
@@ -127,6 +127,8 @@ public class AddProductPresenter
 
             setIsAnyValueNull(true);
 
+        } else {
+            setIsAnyValueNull(false);
         }
     }
 

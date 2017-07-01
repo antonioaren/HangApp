@@ -1,4 +1,4 @@
-package es.ulpgc.eite.clean.mvp.sample.addParty;
+package es.ulpgc.eite.clean.mvp.sample.addProduct;
 
 import android.annotation.SuppressLint;
 import android.app.TimePickerDialog;
@@ -25,7 +25,6 @@ import java.util.Date;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
-import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.util.DateFormatter;
 
 
