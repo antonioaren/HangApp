@@ -1,7 +1,12 @@
 package es.ulpgc.eite.clean.mvp.sample;
 
+import android.app.Activity;
+import android.app.Instrumentation;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.test.espresso.contrib.PickerActions;
 import android.support.test.espresso.contrib.RecyclerViewActions;
+import android.support.test.espresso.intent.Intents;
 import android.support.test.rule.ActivityTestRule;
 import android.widget.TimePicker;
 
@@ -23,6 +28,9 @@ import static android.support.test.espresso.action.ViewActions.doubleClick;
 import static android.support.test.espresso.action.ViewActions.swipeLeft;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.intent.Intents.intended;
+import static android.support.test.espresso.intent.Intents.intending;
+import static android.support.test.espresso.intent.matcher.IntentMatchers.toPackage;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withClassName;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
@@ -122,8 +130,29 @@ public class EspressoTest {
                 .perform(typeText("tokyo"), closeSoftKeyboard());
 
         onView(withId(R.id.date)).perform(doubleClick());
-        // onView(isAssignableFrom(DatePicker.class)).perform(setDate(2017, 10, 30));
-//        onView(withClassName(Matchers.equalTo(DatePicker.class.getName()))).perform(setDate(year, month, day));
+        // Stub the Uri returned by the gallery intent.
+        Uri uri = Uri.parse("Piratas.jpg");
+
+        // Build a result to return when the activity is launched.
+        Intent resultData = new Intent();
+        resultData.setData(uri);
+        Instrumentation.ActivityResult result =
+                new Instrumentation.ActivityResult(Activity.RESULT_OK, resultData);
+
+        // Set up result stubbing when an intent sent to "choose photo" is seen.
+        intending(toPackage("com.android.gallery")).respondWith(result);
+
+        onView(withId(R.id.imageButton)).check(matches(withText("Gallery")));
+        onView(withId(R.id.imageButton)).perform(click());
+
+        // Check image processor is reset.
+        // verify(imageProcessor).resetOriginalImage();
+
+        // New activity should be launched
+        //intended(hasComponent(ImageEditingActivity.class.getName()));
+
+        intended(toPackage("com.android.gallery"));
+        Intents.assertNoUnverifiedIntents();
         onView(withText("OK")).perform(click());
         onView(withId(R.id.timeI)).perform(click()).perform(click());
         onView(withClassName(Matchers.equalTo(TimePicker.class.getName()))).perform(PickerActions.
