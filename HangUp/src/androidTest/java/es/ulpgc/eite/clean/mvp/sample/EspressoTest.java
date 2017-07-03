@@ -187,7 +187,6 @@ public class EspressoTest {
 
     @Test
     public void insertEventTestBeforeStartingApplication() {
-        //la unica manera para que funcione es que el acceso a RealmOPeration sea publico, pero viola las caracteristicas del singleton
 
         RealmConfiguration testConfig =
                 new RealmConfiguration.Builder().
@@ -209,7 +208,6 @@ public class EspressoTest {
 
     @Test
     public void deleteEvent() {
-        //funciona
 
 
         RealmConfiguration testConfig =
