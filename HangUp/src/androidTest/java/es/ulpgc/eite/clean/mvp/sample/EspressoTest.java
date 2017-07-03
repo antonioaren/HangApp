@@ -1,18 +1,10 @@
 package es.ulpgc.eite.clean.mvp.sample;
 
-import android.app.Activity;
-import android.app.Instrumentation;
-import android.content.Intent;
-import android.net.Uri;
-import android.support.test.espresso.contrib.PickerActions;
 import android.support.test.espresso.contrib.RecyclerViewActions;
-import android.support.test.espresso.intent.Intents;
 import android.support.test.rule.ActivityTestRule;
-import android.widget.TimePicker;
 
 import junit.framework.Assert;
 
-import org.hamcrest.Matchers;
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -23,16 +15,9 @@ import io.realm.RealmConfiguration;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
-import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
-import static android.support.test.espresso.action.ViewActions.doubleClick;
 import static android.support.test.espresso.action.ViewActions.swipeLeft;
-import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
-import static android.support.test.espresso.intent.Intents.intended;
-import static android.support.test.espresso.intent.Intents.intending;
-import static android.support.test.espresso.intent.matcher.IntentMatchers.toPackage;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static android.support.test.espresso.matcher.ViewMatchers.withClassName;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
@@ -58,46 +43,35 @@ public class EspressoTest {
         onView(withId(R.id.buttonAddCategory)).check(matches(isDisplayed()));
     }
 
-    @Test
-    public void testOnAddClickeFromAddCategoryScreen() {
-        //funciona
-        //the test starts at main screen
-        onView(withId(R.id.fButtonAddCategory)).perform(click());
-        onView(withId(R.id.buttonAddCategory)).check(matches(isDisplayed()));
-        onView(withId(R.id.buttonAddCategory)).perform(click());
 
-        onView(withId(R.id.recycler)).check(matches(isDisplayed()));
-    }
 
 
     @Test
     public void testClickingAnItemAtSpecificPositionInRecyclerView() throws Exception {
-        //funciona
+
         onView(withId(R.id.recycler))
-                // Click item at position 3
-                .perform(RecyclerViewActions.actionOnItemAtPosition(3, click()));
+                // Click item at position 0
+                .perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
         onView(withId(R.id.fButtonAddProduct)).check(matches(isDisplayed()));
 
 
     }
 
     @Test
-    public void insertCategoryFromAddScreen() {
-        //funciona
-
-        onView(withId(R.id.fButtonAddCategory)).perform(click());
-        // Types a message into a EditText element.
-        onView(withId(R.id.content_name))
-                .perform(typeText("Fiestas"), closeSoftKeyboard());
-
-        // Clicks a button to send the message to another
-        // activity through an explicit intent.
-        onView(withId(R.id.buttonAddCategory)).perform(click());
-        onView(withText("Fiestas")).check(matches(isDisplayed()));
-        // Verifies that the DisplayMessageActivity received an intent
-        // with the correct package name and message.
+    public void testGoToDetailScreenFromAParty() throws Exception {
+        //test realizado en base a una fiesta creada personalmente desde mi dispositivo
+        testClickingAnItemAtSpecificPositionInRecyclerView();
+        onView(withText("fiesta")).check(matches(isDisplayed()));
+        onView(withText("fiesta")).perform(click());
+        onView(withText("fiesta")).check(matches(isDisplayed()));
+        onView(withText("vispera del 4 julio"));
+        onView(withId(R.id.headerPlace)).check(matches(isDisplayed()));
+        onView(withId(R.id.headerDate)).check(matches(isDisplayed()));
+        onView(withId(R.id.headerTimeInit)).check(matches(isDisplayed()));
+        onView(withId(R.id.headerTimeEnd)).check(matches(isDisplayed()));
 
     }
+
 
     @Test
     public void testRemoveElementWhenApplicationStarted() throws Exception {
@@ -113,105 +87,7 @@ public class EspressoTest {
     }
 
 
-    @Test
-    public void testInsertingANewPartyInACategory() throws Exception {
-        //funciona
-        int hour = 20;
-        int minutes = 20;
-        String name = "1";
 
-        onView(withId(R.id.recycler))
-                .perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
-        onView(withId(R.id.fButtonAddProduct)).perform(click());
-        onView(withId(R.id.name))
-                // Types a message into a EditText element.
-                .perform(typeText(name), closeSoftKeyboard());
-        onView(withId(R.id.place))
-                .perform(typeText("tokyo"), closeSoftKeyboard());
-
-        onView(withId(R.id.date)).perform(doubleClick());
-        // Stub the Uri returned by the gallery intent.
-        Uri uri = Uri.parse("Piratas.jpg");
-
-        // Build a result to return when the activity is launched.
-        Intent resultData = new Intent();
-        resultData.setData(uri);
-        Instrumentation.ActivityResult result =
-                new Instrumentation.ActivityResult(Activity.RESULT_OK, resultData);
-
-        // Set up result stubbing when an intent sent to "choose photo" is seen.
-        intending(toPackage("com.android.gallery")).respondWith(result);
-
-        onView(withId(R.id.imageButton)).check(matches(withText("Gallery")));
-        onView(withId(R.id.imageButton)).perform(click());
-
-        // Check image processor is reset.
-        // verify(imageProcessor).resetOriginalImage();
-
-        // New activity should be launched
-        //intended(hasComponent(ImageEditingActivity.class.getName()));
-
-        intended(toPackage("com.android.gallery"));
-        Intents.assertNoUnverifiedIntents();
-        onView(withText("OK")).perform(click());
-        onView(withId(R.id.timeI)).perform(click()).perform(click());
-        onView(withClassName(Matchers.equalTo(TimePicker.class.getName()))).perform(PickerActions.
-                setTime(hour, minutes));
-
-        onView(withText("OK")).perform(click());
-
-        onView(withId(R.id.TimeF))
-                .perform(click()).perform(click());
-
-        onView(withClassName(Matchers.equalTo(TimePicker.class.getName()))).perform(
-                PickerActions.setTime(hour, minutes));
-        onView(withText("OK")).perform(click());
-
-        onView(withId(R.id.imageButton)).perform(click());
-        // Create a bitmap we can use for our simulated camera image
-        // Create a bitmap we can use for our simulated camera image
-      /*  Bitmap icon = BitmapFactory.decodeResource(
-                InstrumentationRegistry.getTargetContext().getResources(),
-                R.mipmap.ic_launcher);
-
-        // Build a result to return from the Camera app
-        Intent resultData = new Intent();
-        resultData.putExtra("data", icon);
-        Instrumentation.ActivityResult result = new Instrumentation.ActivityResult(Activity.RESULT_OK, resultData);
-
-        // Stub out the Camera. When an intent is sent to the Camera, this tells Espresso to respond
-        // with the ActivityResult we just created*/
-
-
-        // Now that we have the stub in place, click on the button in our app that launches into the Camera
-        onView(withId(R.id.imageButton)).perform(click());
-
-        // We can also validate that an intent resolving to the "camera" activity has been sent out by our app
-
-
-        // Clicks a button to send the message to another
-        // activity through an explicit intent.
-        onView(withId(R.id.addParty)).perform(click());
-        // Verifies that the DisplayMessageActivity received an intent
-        // with the correct package name and message.
-
-        onView(withText(name)).check(matches(isDisplayed()));
-
-
-    }
-
-    @Test
-    public void testGoToDetailScreenOfAParty() throws Exception {
-        testInsertingANewPartyInACategory();
-        onView(withText("1")).perform(click());
-        onView(withId(R.id.EventName)).check(matches(isDisplayed()));
-        onView(withText("1")).check(matches(isDisplayed()));
-        onView(withId(R.id.detail)).check(matches(isDisplayed()));
-        onView(withId(R.id.headerPlace)).check(matches(isDisplayed()));
-        onView(withId(R.id.headerDate)).check(matches(isDisplayed()));
-        onView(withId(R.id.headerTimeInit)).check(matches(isDisplayed()));
-        onView(withId(R.id.headerTimeEnd)).check(matches(isDisplayed()));
-    }
 
 
     @Test
