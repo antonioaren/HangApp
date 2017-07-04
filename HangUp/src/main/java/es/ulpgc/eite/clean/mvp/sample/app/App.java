@@ -23,9 +23,9 @@ public class App extends Application implements Mediator, Navigator {
 
 
     private CategoryState toCategoryState;
-    private ProductState CategoryToProduct;
-    private DetailState ProductToDetail;
-    private ProductAddState ProductToadd;
+    private ProductState categoryToProduct;
+    private DetailState productToDetail;
+    private ProductAddState productToadd;
 
     @Override
     public void onCreate() {
@@ -52,9 +52,9 @@ public class App extends Application implements Mediator, Navigator {
 
     @Override
     public void startingProductScreen(Product.ToProduct presenter) {
-        if (CategoryToProduct != null) {
-            presenter.setItemCategorySelected(CategoryToProduct.ItemSelected);
-            presenter.setItemCategoryId(CategoryToProduct.ItemId);
+        if (categoryToProduct != null) {
+            presenter.setItemCategorySelected(categoryToProduct.itemSelected);
+            presenter.setItemCategoryId(categoryToProduct.itemId);
         }
 
         presenter.onScreenStarted();
@@ -62,8 +62,8 @@ public class App extends Application implements Mediator, Navigator {
 
     @Override
     public void startingDetailScreen(Detail.ToDetail presenter) {
-        if (ProductToDetail != null) {
-            presenter.setItemSelected(ProductToDetail.ItemSelected);
+        if (productToDetail != null) {
+            presenter.setItemSelected(productToDetail.itemSelected);
         }
         presenter.onScreenStarted();
     }
@@ -75,8 +75,8 @@ public class App extends Application implements Mediator, Navigator {
 
     @Override
     public void startingAddProductScreen(AddProduct.ToAdd presenter) {
-        if (ProductToadd != null) {
-            presenter.setCategoryId(ProductToadd.IdCategory);
+        if (productToadd != null) {
+            presenter.setCategoryId(productToadd.idCategory);
         }
         presenter.onScreenStarted();
     }
@@ -96,9 +96,9 @@ public class App extends Application implements Mediator, Navigator {
 
     @Override
     public void goToProductScreen(Category.CategoryTo presenter) {
-        CategoryToProduct = new ProductState();
-        CategoryToProduct.ItemSelected = presenter.getSelectedItem();
-        CategoryToProduct.ItemId = presenter.getItemId();
+        categoryToProduct = new ProductState();
+        categoryToProduct.itemSelected = presenter.getSelectedItem();
+        categoryToProduct.itemId = presenter.getItemId();
 
         Context view = presenter.getManagedContext();
         if (view != null) {
@@ -109,8 +109,8 @@ public class App extends Application implements Mediator, Navigator {
 
     @Override
     public void goDetailScreen(Product.ProductTo presenter) {
-        ProductToDetail = new DetailState();
-        ProductToDetail.ItemSelected = presenter.getItemProductSelected();
+        productToDetail = new DetailState();
+        productToDetail.itemSelected = presenter.getItemProductSelected();
 
         Context view = presenter.getManagedContext();
         if (view != null) {
@@ -132,8 +132,8 @@ public class App extends Application implements Mediator, Navigator {
 
     @Override
     public void goToAddProductScreen(Product.ProductTo presenter) {
-        ProductToadd = new ProductAddState();
-        ProductToadd.IdCategory = presenter.getCategoryId();
+        productToadd = new ProductAddState();
+        productToadd.idCategory = presenter.getCategoryId();
 
 
         Context view = presenter.getManagedContext();
@@ -146,12 +146,12 @@ public class App extends Application implements Mediator, Navigator {
 
 
     @Override
-    public void KillingAddCategoryScreenAfterInserting(AddCategory.AddTo presenter) {
+    public void killingAddCategoryScreenAfterInserting(AddCategory.AddTo presenter) {
         presenter.destroyView();
     }
 
     @Override
-    public void KillingAddProductScreenAfterInserting(AddProduct.AddTo presenter) {
+    public void killingAddProductScreenAfterInserting(AddProduct.AddTo presenter) {
         presenter.destroyView();
     }
 
@@ -163,19 +163,21 @@ public class App extends Application implements Mediator, Navigator {
     }
 
     private class ProductState {
-        CategoryData ItemSelected;
-        String ItemId;
-        ProductData ProductToAdd;
+        CategoryData itemSelected;
+        String itemId;
     }
 
     private class DetailState {
-        public ProductData ItemSelected;
+        public ProductData itemSelected;
+    }
+
+    private class CategoryAddState {
     }
 
     //Necesario para poder pasar la id de la categoria que nos encontramos
     //Para poder añadir el producto
     private class ProductAddState {
-        String IdCategory;
+        String idCategory;
     }
 
 }

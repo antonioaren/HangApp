@@ -8,6 +8,7 @@ import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
+import io.realm.RealmList;
 
 /**
  * Created by alumno on 31/03/2017.
@@ -19,8 +20,8 @@ public class ProductPresenter
         implements Product.ViewToPresenter, Product.ModelToPresenter, Product.ToProduct
         , Product.ProductTo {
 
-    private ProductData ItemSelected;
-    private String CategoryId;
+    private ProductData itemSelected;
+    private String categoryId;
 
 
     @Override
@@ -52,7 +53,7 @@ public class ProductPresenter
     public void onScreenStarted() {
         if (isViewRunning()) {
             getView().setTitleHeader(getModel().getItemCategorySelected().getCategoryName());
-            SettingItemsAdapter();
+            settingItemsAdapter();
         }
     }
 
@@ -65,27 +66,31 @@ public class ProductPresenter
 
     @Override
     public ProductData getItemProductSelected() {
-        return ItemSelected;
+        return itemSelected;
     }
 
     @Override
     public String getCategoryId() {
-        return CategoryId;
+        return categoryId;
     }
 
     @Override
     public void setItemCategoryId(String itemId) {
-        CategoryId = itemId;
-        //getModel().setItemCategoryId(itemId);
+        categoryId = itemId;
     }
 
-    private void SettingItemsAdapter() {
-        getView().settingAdapter(getModel().getAllProductsByCategoryId(CategoryId));
+    @Override
+    public RealmList<ProductData> getProductList() {
+        return getModel().getAllProductsByCategoryId(categoryId);
+    }
+
+    private void settingItemsAdapter() {
+        getView().settingAdapter(getModel().getAllProductsByCategoryId(categoryId));
     }
 
     @Override
     public void onItemClicked(ProductData item) {
-        ItemSelected = item;
+        itemSelected = item;
         Navigator app = (Navigator) getApplication();
         app.goDetailScreen(this);
     }
@@ -101,7 +106,7 @@ public class ProductPresenter
     public void OnSwipedItem(String id) {
         getModel().deleteItemById(id);
         getView().setToast(getModel().getNotifyDeleted());
-        SettingItemsAdapter();
+        settingItemsAdapter();
     }
 
     @Override

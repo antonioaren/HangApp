@@ -29,7 +29,7 @@ public interface Category {
 
         void onItemClicked(CategoryData item, String id);
 
-        void OnSwipedItem(String id);
+        void onSwipedItem(String id);
     }
 
     /**
@@ -50,7 +50,7 @@ public interface Category {
      */
     interface PresenterToModel extends Model<ModelToPresenter> {
 
-        void CreateDatabaseTables();
+        void createDatabaseTables();
 
         ///////////////////////////  DATABASE  ////////////////////////////////
         RealmResults<CategoryData> getCategoryEvents();
@@ -63,7 +63,7 @@ public interface Category {
         //metodo para comprobar test con espresso
 
 
-        String getToastNotifyingAdded();
+        //String getToastNotifyingAdded();
 
         String getNotifyDeleted();
     }

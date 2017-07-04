@@ -5,7 +5,6 @@ import org.junit.Test;
 import java.io.IOException;
 
 import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategoryModel;
-import es.ulpgc.eite.clean.mvp.sample.product.ProductModel;
 
 import static org.junit.Assert.assertEquals;
 
@@ -48,10 +47,10 @@ public void testGetRadioLabelsWithoutSettingName()throws Exception{
   @Test
   public void testGetRadioLabelsBeforeSettingName()throws Exception{
     AddCategoryModel add= new AddCategoryModel();
-    add.setLabelRadio0("radio");
-    add.setLabelRadio1("radio");
-    add.setLabelRadio2("radio");
-    add.setLabelRadio3("radio");
+    add.setLabelRadio0();
+    add.setLabelRadio1();
+    add.setLabelRadio2();
+    add.setLabelRadio3();
     assertEquals("radio",add.getLabelRadio0());
     assertEquals("radio",add.getLabelRadio1());
     assertEquals("radio",add.getLabelRadio2());
@@ -69,7 +68,7 @@ public void testGetRadioLabelsWithoutSettingName()throws Exception{
   @Test
   public void testgetPhotoLabelNotNull() throws IOException {
     AddCategoryModel add= new AddCategoryModel();
-    add.setPhotoLabel("photo");
+    add.setPhotoLabel();
     assertEquals("photo",add.getPhotoLabel());
   }
 
@@ -82,7 +81,7 @@ public void testGetRadioLabelsWithoutSettingName()throws Exception{
   @Test
   public void testgetButtonAddLabelNotNull(){
     AddCategoryModel add= new AddCategoryModel();
-    add.setButtonAddlabel("AddProduct");
+    add.setButtonAddlabel();
     assertEquals("AddProduct", add.getButtonAddlabel());
   }
 

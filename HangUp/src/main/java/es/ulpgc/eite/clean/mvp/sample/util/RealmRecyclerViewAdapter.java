@@ -84,12 +84,12 @@ public abstract class RealmRecyclerViewAdapter
         } : null;
     }
 
-    public RealmRecyclerViewAdapter(@Nullable OrderedRealmCollection<T> data, boolean autoUpdate) {
+    public RealmRecyclerViewAdapter(@Nullable OrderedRealmCollection<T> data) {
         if (data != null && !data.isManaged())
             throw new IllegalStateException("Only use this adapter with managed RealmCollection, " +
                     "for un-managed lists you can just use the BaseRecyclerViewAdapter");
         this.adapterData = data;
-        this.hasAutoUpdates = autoUpdate;
+        this.hasAutoUpdates = true;
 
         // Right now don't use generics, since we need maintain two different
         // types of listeners until RealmList is properly supported.
@@ -189,7 +189,6 @@ public abstract class RealmRecyclerViewAdapter
             //noinspection unchecked
             realmResults.addChangeListener(listener);
         } else if (data instanceof RealmList) {
-            RealmList realmList = (RealmList) data;
             //noinspection unchecked
             //realmList.realm.handlerController.addChangeListenerAsWeakReference(listener);
         } else {
@@ -202,7 +201,6 @@ public abstract class RealmRecyclerViewAdapter
             RealmResults realmResults = (RealmResults) data;
             realmResults.removeChangeListener(listener);
         } else if (data instanceof RealmList) {
-            RealmList realmList = (RealmList) data;
             //noinspection unchecked
             //realmList.realm.handlerController.removeWeakChangeListener(listener);
         } else {

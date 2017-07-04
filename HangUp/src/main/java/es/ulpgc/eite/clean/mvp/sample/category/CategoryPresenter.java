@@ -18,7 +18,7 @@ public class CategoryPresenter
         implements Category.ViewToPresenter, Category.ModelToPresenter, Category.ToCategory, Category.CategoryTo {
 
     private CategoryData selectedItem;
-    private String ItemId;
+    private String itemId;
 
     /**
      * Operation called during VIEW creation in {@link GenericActivity#onResume(Class, Object)}
@@ -52,7 +52,7 @@ public class CategoryPresenter
     public void onResume(Category.PresenterToView view) {
         setView(view);
         Log.d(TAG, "calling onResume()");
-        SettingItemsAdapter();
+        settingItemsAdapter();
 
         if (configurationChangeOccurred()) {
 
@@ -100,7 +100,7 @@ public class CategoryPresenter
 
         if (pref.getBoolean("FirstRunning", true)) {
             prefEditor.putBoolean("FirstRunning", false);
-            getModel().CreateDatabaseTables();
+            getModel().createDatabaseTables();
             prefEditor.commit();
         }
     }
@@ -125,7 +125,7 @@ public class CategoryPresenter
     public void onScreenStarted() {
         Log.d(TAG, "calling onScreenStarted()");
         if (isViewRunning()) {
-            SettingItemsAdapter();
+            settingItemsAdapter();
         }
     }
 
@@ -155,7 +155,7 @@ public class CategoryPresenter
 
     @Override
     public String getItemId() {
-        return ItemId;
+        return itemId;
     }
 
     ///////////////////////////////////////////////////////////////////////////////////
@@ -168,7 +168,7 @@ public class CategoryPresenter
     @Override
     public void onItemClicked(CategoryData item, String id) {
         selectedItem = item;
-        ItemId = id;
+        itemId = id;
         Log.d(TAG, "calling goToDetailScreen()");
 
         // Al haber hecho click en uno de los elementos de la lista del maestro es necesario
@@ -181,16 +181,15 @@ public class CategoryPresenter
     }
 
     @Override
-    public void OnSwipedItem(String id) {
+    public void onSwipedItem(String id) {
 
         getModel().deleteItem(id);
         getView().setToast(getModel().getNotifyDeleted());
-
-        SettingItemsAdapter();
+        settingItemsAdapter();
 
     }
 
-    private void SettingItemsAdapter() {
+    private void settingItemsAdapter() {
         getView().settingItemsAdapter(getModel().getCategoryEvents());
     }
 

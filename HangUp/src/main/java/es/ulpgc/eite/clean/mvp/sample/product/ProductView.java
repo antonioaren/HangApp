@@ -38,36 +38,36 @@ public class ProductView
         implements Product.PresenterToView {
 
     private RecyclerView recycler;
-    private FloatingActionButton FButtonAdd;
-    private LinearLayoutManager linearmanager;
-    private RealmList<ProductData> items;
-    private TextView TitleHeader;
+    private TextView titleHeader;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product);
 
-        TitleHeader = (TextView) findViewById(R.id.TitleCategory);
+        titleHeader = (TextView) findViewById(R.id.TitleCategory);
         recycler = (RecyclerView) findViewById(R.id.recycler);
         recycler.setHasFixedSize(true);
-        linearmanager = new LinearLayoutManager(this);
-        recycler.setLayoutManager(linearmanager);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recycler.setLayoutManager(layoutManager);
+
+//      // Realm realm = Realm.getDefaultInstance();
+        //RealmOperation realmOperation = RealmOperation.getInstances();
+        //recycler.setAdapter(new ProductAdapter(realmOperation.getAllProductsByCategoryId()));
 
         Realm realm = Realm.getDefaultInstance();
+        recycler.setAdapter(new ProductAdapter(
+                realm.where(ProductData.class).findAll()));
 
-        recycler.setAdapter(
-                new ProductView.ProductAdapter(realm.where(ProductData.class).findAll()));
-
-        FButtonAdd = (FloatingActionButton) findViewById(R.id.fButtonAddProduct);
-        FButtonAdd.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton fButtonAdd = (FloatingActionButton) findViewById(R.id.fButtonAddProduct);
+        fButtonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 getPresenter().onButtonAddClicked();
             }
         });
 
-        InitComponentSwipeAndMove();
+        initComponentSwipeAndMove();
     }
     @Override
     protected void onResume() {
@@ -79,15 +79,22 @@ public class ProductView
     ////////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     public void setTitleHeader(String txt) {
-        TitleHeader.setText(txt);
+        titleHeader.setText(txt);
     }
 
     @Override
     public void settingAdapter(RealmList<ProductData> items) {
         if (recycler != null) {
-            this.items = items;
+
+            //recycler.setAdapter(new ProductAdapter(getPresenter().getProductList()));
+            //OrderedRealmCollection<ProductData>
+
+//            recycler.setAdapter(new ProductAdapter((OrderedRealmCollection<ProductData>)
+//                    getPresenter().getProductList()));
+
             ProductView.ProductAdapter recyclerAdapter =
                     (ProductView.ProductAdapter) recycler.getAdapter();
+
             recyclerAdapter.setItemList(items);
         }
     }
@@ -97,7 +104,7 @@ public class ProductView
         Toast.makeText(this, txt, Toast.LENGTH_SHORT).show();
     }
 
-    private void InitComponentSwipeAndMove() {
+    private void initComponentSwipeAndMove() {
 
         recycler.setItemAnimator(new DefaultItemAnimator());
 
@@ -110,7 +117,8 @@ public class ProductView
 
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
-                getPresenter().OnSwipedItem(items.get(viewHolder.getAdapterPosition()).getId());
+                getPresenter().OnSwipedItem(getPresenter().getProductList().
+                        get(viewHolder.getAdapterPosition()).getId());
             }
         });
         swipeToDismissTouchHelper.attachToRecyclerView(recycler);
@@ -123,7 +131,7 @@ public class ProductView
         private Integer count = 0;
 
         public ProductAdapter(OrderedRealmCollection<ProductData> items) {
-            super(items, true);
+            super(items);
             this.items = items;
         }
 
@@ -144,7 +152,7 @@ public class ProductView
             holder.item = items.get(position);
             holder.title.setText(items.get(position).getProductName());
             holder.Place.setText(items.get(position).getPlace());
-            holder.imageCard.setImageURI(UriloadImageFromStorage(items.get(position).getImage()));
+            holder.imageCard.setImageURI(uriloadImageFromStorage(items.get(position).getImage()));
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -164,9 +172,8 @@ public class ProductView
         }
 
 
-        private Uri UriloadImageFromStorage(String path) {
-            Uri ImagenContent = Uri.parse(path);
-            return ImagenContent;
+        private Uri uriloadImageFromStorage(String path) {
+            return Uri.parse(path);
         }
 
         @Override
@@ -183,9 +190,9 @@ public class ProductView
         public class ProductViewHolder extends RecyclerView.ViewHolder {
 
             public final View itemView;
-            public TextView title;
-            public TextView Place;
-            ImageView imageCard;
+            public final TextView title;
+            public final TextView Place;
+            final ImageView imageCard;
             public ProductData item;
 
             public ProductViewHolder(View v) {

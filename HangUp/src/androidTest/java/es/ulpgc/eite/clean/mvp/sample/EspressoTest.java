@@ -98,7 +98,6 @@ public class EspressoTest {
                         inMemory().
                         name("test-realm1").build();
 
-        Realm testRealm = Realm.getInstance(testConfig);
         RealmOperation realm = new RealmOperation();
 
         realm.insertEventCategory("sdfghj", "disco.jpg");

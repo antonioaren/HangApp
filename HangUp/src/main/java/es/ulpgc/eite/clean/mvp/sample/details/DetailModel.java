@@ -1,12 +1,6 @@
 package es.ulpgc.eite.clean.mvp.sample.details;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
@@ -24,8 +18,6 @@ public class DetailModel extends GenericModel<Detail.ModelToPresenter>
     private String headerTimeEnd;
 
     private ProductData itemSelected;
-
-    private Integer count = 0;
 
 
     @Override
@@ -76,21 +68,22 @@ public class DetailModel extends GenericModel<Detail.ModelToPresenter>
 
     @Override
     public Uri getImage() {
-        return UriloadImageFromStorage(itemSelected.getImage());
+        return uriloadImageFromStorage(itemSelected.getImage());
     }
 
-    private Uri UriloadImageFromStorage(String path) {
+    private Uri uriloadImageFromStorage(String path) {
         return Uri.parse(path);
     }
 
-    private Bitmap loadImageFromStorage(String path) {
-        Bitmap b = null;
-        try {
-            File f = new File(path, "profile.jpg");
-            b = BitmapFactory.decodeStream(new FileInputStream(f));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        return b;
-    }
+//    private Bitmap loadImageFromStorage(String path) {
+//        Bitmap b = null;
+//        try {
+//            File f = new File(path, "profile.jpg");
+//            b = BitmapFactory.decodeStream(new FileInputStream(f));
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//        return b;
+//    }
+
 }

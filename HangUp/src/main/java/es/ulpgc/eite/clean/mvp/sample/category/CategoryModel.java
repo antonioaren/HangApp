@@ -14,17 +14,11 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     private RealmResults<CategoryData> itemsDatabase;
     private RealmOperation realmOperation;
 
-    private int numberOfCategories;
 
-    /**
-     * Method that recovers a reference to the PRESENTER
-     * You must ALWAYS call {@link super#onCreate(Object)} here
-     *
-     * @param presenter Presenter interface
-     */
 
     private String id;
-    private String NotifyAdded, NotifyDeleted;
+    //private static final String NOTIFY_ADDED = "Added";
+    private static final String NOTIFY_DELETED = "Deleted";
 
     public CategoryModel() {
 
@@ -33,17 +27,13 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     public void onCreate(Category.ModelToPresenter presenter) {
         super.onCreate(presenter);
         realmOperation = RealmOperation.getInstances();
-
-        NotifyAdded = "Added";
-        NotifyDeleted = "Deleted";
-//      numberOfCategories = 0;
     }
 
     ///////////////////////////////////////////////////////////////////////////////////
 
     @Override
-    public void CreateDatabaseTables() {
-        Log.d(TAG, "CreateDatabaseTables()");
+    public void createDatabaseTables() {
+        Log.d(TAG, "createDatabaseTables()");
 
         insertEvent("Fiestas", "disco.jpg");
         insertEvent("Música", "musica.png");
@@ -90,16 +80,14 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         return id;
     }
 
-
-
-    @Override
-    public String getToastNotifyingAdded() {
-        return NotifyAdded;
-    }
+//    @Override
+//    public String getToastNotifyingAdded() {
+//        return NOTIFY_ADDED;
+//    }
 
     @Override
     public String getNotifyDeleted() {
-        return NotifyDeleted;
+        return NOTIFY_DELETED;
     }
 }
 

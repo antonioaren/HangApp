@@ -1,15 +1,9 @@
 package es.ulpgc.eite.clean.mvp.sample.details;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
@@ -22,7 +16,7 @@ public class DetailView
         extends GenericActivity<Detail.PresenterToView, Detail.ViewToPresenter, DetailPresenter>
         implements Detail.PresenterToView {
 
-    private TextView EventName, detail, Place, Date, timeInit, timeEnd;
+    private TextView eventName, detail, place, date, timeInit, timeEnd;
 
 
     private TextView headerPlace;
@@ -31,7 +25,6 @@ public class DetailView
     private TextView headerTimeEnd;
     private ImageView image;
 
-    private Integer count;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,11 +36,11 @@ public class DetailView
         headerTimeInit = (TextView) findViewById(R.id.headerTimeInit);
         headerTimeEnd = (TextView) findViewById(R.id.headerTimeEnd);
 
-        EventName = (TextView) findViewById(R.id.EventName);
+        eventName = (TextView) findViewById(R.id.EventName);
         detail = (TextView) findViewById(R.id.detail);
 
-        Place = (TextView) findViewById(R.id.place);
-        Date = (TextView) findViewById(R.id.date);
+        place = (TextView) findViewById(R.id.place);
+        date = (TextView) findViewById(R.id.date);
         timeInit = (TextView) findViewById(R.id.timeInit);
         timeEnd = (TextView) findViewById(R.id.timeEnd);
 
@@ -83,7 +76,7 @@ public class DetailView
 
     @Override
     public void setEventName(String txt) {
-        EventName.setText(txt);
+        eventName.setText(txt);
     }
 
     @Override
@@ -93,12 +86,12 @@ public class DetailView
 
     @Override
     public void setPlace(String txt) {
-        Place.setText(txt);
+        place.setText(txt);
     }
 
     @Override
     public void setDate(String txt) {
-        Date.setText(txt);
+        date.setText(txt);
     }
 
     @Override

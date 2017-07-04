@@ -14,7 +14,7 @@ public interface Navigator {
     void goToProductScreen(Category.CategoryTo presenter);
     void goToCategoryScreen(Product.ProductTo presenter);
 
-    void KillingAddCategoryScreenAfterInserting(AddCategory.AddTo presenter);
+    void killingAddCategoryScreenAfterInserting(AddCategory.AddTo presenter);
 
-    void KillingAddProductScreenAfterInserting(AddProduct.AddTo presenter);
+    void killingAddProductScreenAfterInserting(AddProduct.AddTo presenter);
 }

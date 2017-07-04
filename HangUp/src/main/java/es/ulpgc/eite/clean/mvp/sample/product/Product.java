@@ -27,6 +27,8 @@ public interface Product {
     //Screen ///////////////////////////////////////////////////////////////////////////////////////
 
     interface ViewToPresenter {
+        RealmList<ProductData> getProductList();
+
         void onItemClicked(ProductData item);
 
         void onButtonAddClicked();
@@ -38,7 +40,13 @@ public interface Product {
 
         CategoryData getItemCategorySelected();
 
-        void AddProductByCategoryId(ProductData product, String CategoryId);
+        //    @Override
+        //    public String getNotifyAdded() {
+        //        return NOTIFY_ADDED;
+        //    }
+        String getNotifyDeleted();
+
+        void addProductByCategoryId(ProductData product, String CategoryId);
 
         void setItemCategorySelected(CategoryData itemSelected);
 
@@ -48,9 +56,9 @@ public interface Product {
 
         //void setItemCategoryId(String itemId);
 
-        String getNotifyAdded();
+        //String getNotifyAdded();
 
-        String getNotifyDeleted();
+        //String getNotifyDeleted();
 
 //        void setProductFromAddAndInsert(ProductData productToAdd);
 
@@ -64,7 +72,7 @@ public interface Product {
     ////////////////////////////////////////////////////////////////////////////////////////////////
     //ToDetail ///////////////////////////////////////////////////////////////////////////////////////
 
-    public interface ToProduct {
+    interface ToProduct {
 
         void onScreenStarted();
 

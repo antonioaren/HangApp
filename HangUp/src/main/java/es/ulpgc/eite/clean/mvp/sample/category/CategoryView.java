@@ -24,7 +24,6 @@ import java.util.List;
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
-import es.ulpgc.eite.clean.mvp.sample.realmoperation.RealmOperation;
 import es.ulpgc.eite.clean.mvp.sample.util.RealmRecyclerViewAdapter;
 import io.realm.OrderedRealmCollection;
 import io.realm.RealmResults;
@@ -33,10 +32,7 @@ public class CategoryView
         extends GenericActivity<Category.PresenterToView, Category.ViewToPresenter, CategoryPresenter>
         implements Category.PresenterToView {
 
-    private FloatingActionButton fButtonAddCategory;
     private RecyclerView recycler;
-    private LinearLayoutManager linearmanager;
-    private RealmResults<CategoryData> items;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,11 +42,11 @@ public class CategoryView
         recycler = (RecyclerView) findViewById(R.id.recycler);
         recycler.setHasFixedSize(true);
 
-        linearmanager = new LinearLayoutManager(this);
+        LinearLayoutManager linearmanager = new LinearLayoutManager(this);
         recycler.setLayoutManager(linearmanager);
 
 
-        fButtonAddCategory = (FloatingActionButton) findViewById(R.id.fButtonAddCategory);
+        FloatingActionButton fButtonAddCategory = (FloatingActionButton) findViewById(R.id.fButtonAddCategory);
         fButtonAddCategory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,9 +54,8 @@ public class CategoryView
             }
         });
 
-        RealmOperation realmOperation = RealmOperation.getInstances();
-        recycler.setAdapter(new CategoryAdapter(realmOperation.getCategoryEvents()));
-        InitComponentSwipeAndMove();
+
+        initComponentSwipeAndMove();
     }
 
     /**
@@ -71,10 +66,11 @@ public class CategoryView
     @Override
     protected void onResume() {
         super.onResume(CategoryPresenter.class, this);
+
     }
 
 
-    private void InitComponentSwipeAndMove() {
+    private void initComponentSwipeAndMove() {
 
         recycler.setItemAnimator(new DefaultItemAnimator());
 
@@ -88,13 +84,13 @@ public class CategoryView
 
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
-                getPresenter().OnSwipedItem(items.get(viewHolder.getAdapterPosition()).getId());
+                getPresenter().onSwipedItem(getPresenter().getCategoryList()
+                        .get(viewHolder.getAdapterPosition()).getId());
             }
         });
 
         swipeToDismissTouchHelper.attachToRecyclerView(recycler);
     }
-
     ///////////////////////////////////////////////////////////////////////////////////
     // Presenter To View /////////////////////////////////////////////////////////////
 
@@ -102,10 +98,13 @@ public class CategoryView
     public void settingItemsAdapter(RealmResults<CategoryData> items) {
         if (recycler != null) {
 
-            this.items = items;
+            recycler.setAdapter(new CategoryAdapter((OrderedRealmCollection<CategoryData>)
+                    getPresenter().getCategoryList()));
 
-            CategoryView.CategoryAdapter recyclerAdapter =
-                    (CategoryView.CategoryAdapter) recycler.getAdapter();
+//TODO que hace realmente esto.
+
+            CategoryView.CategoryAdapter recyclerAdapter = (CategoryView.CategoryAdapter)
+                    recycler.getAdapter();
 
             recyclerAdapter.setItemList(items);
         }
@@ -128,7 +127,7 @@ public class CategoryView
         private List<CategoryData> items;
 
         public CategoryAdapter(OrderedRealmCollection<CategoryData> items) {
-            super(items, true);
+            super(items);
             this.items = items;
         }
 
@@ -147,11 +146,8 @@ public class CategoryView
         @Override
         public void onBindViewHolder(final CategoryViewHolder holder, final int position) {
             holder.item = items.get(position);
-
-
             holder.titleCategory.setText(items.get(position).getCategoryName());
             holder.image.setImageBitmap(getBitMapFromAssets(items.get(position).getImage()));
-
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -173,8 +169,8 @@ public class CategoryView
         public class CategoryViewHolder extends RecyclerView.ViewHolder {
             public final View itemView;
 
-            public ImageView image;
-            public TextView titleCategory;
+            public final ImageView image;
+            public final TextView titleCategory;
             public CategoryData item;
 
             public CategoryViewHolder(View v) {
@@ -196,9 +192,7 @@ public class CategoryView
                 e.printStackTrace();
             }
 
-            Bitmap imagenBitmap = BitmapFactory.decodeStream(istr);
-
-            return imagenBitmap;
+            return BitmapFactory.decodeStream(istr);
         }
     }
 }

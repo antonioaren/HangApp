@@ -14,8 +14,8 @@ public class ProductData extends RealmObject {
     private String productName;
     private String place;
     private String date;
-    private String TimeI;
-    private String TimeF;
+    private String timeI;
+    private String timeF;
     private String detailText;
     private String image;
 
@@ -23,17 +23,16 @@ public class ProductData extends RealmObject {
     public ProductData() {
     }
 
-    //TODO Falta implementar la imagen.
     public ProductData(String id, String productName, String place, String date, String timeI,
-                       String timeF, String detailText, String Image) {
+                       String timeF, String detailText, String image) {
         this.id = id;
         this.productName = productName;
         this.place = place;
         this.date = date;
-        this.TimeI = timeI;
-        this.TimeF = timeF;
+        this.timeI = timeI;
+        this.timeF = timeF;
         this.detailText = detailText;
-        this.image = Image;
+        this.image = image;
     }
 
     public String getId() {
@@ -65,17 +64,17 @@ public class ProductData extends RealmObject {
     }
 
     public String getTimeI() {
-        return TimeI;
+        return timeI;
     }
     public void setTimeI(String timeI) {
-        TimeI = timeI;
+        this.timeI = timeI;
     }
 
     public String getTimeF() {
-        return TimeF;
+        return timeF;
     }
     public void setTimeF(String timeF) {
-        TimeF = timeF;
+        this.timeF = timeF;
     }
 
     public String getDetailText() {
@@ -88,7 +87,6 @@ public class ProductData extends RealmObject {
     public String getImage() {
         return image;
     }
-
     public void setImage(String image) {
         this.image = image;
     }

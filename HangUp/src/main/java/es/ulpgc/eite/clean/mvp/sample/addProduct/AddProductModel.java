@@ -17,8 +17,11 @@ public class AddProductModel
         implements AddProduct.PresenterToModel {
 
 
-
-    private String placeLabel, dateLabel, timeInitLabel, timeFinishLabel, publishLabel, titleLabel;
+    private String placeLabel;
+    private String dateLabel;
+    private String timeInitLabel;
+    private String timeFinishLabel;
+    private String publishLabel;
     private String nameLabel;
     private String detailsLabel;
     private String selectPhotoLabel;
@@ -28,7 +31,6 @@ public class AddProductModel
     public void onCreate(AddProduct.ModelToPresenter presenter) {
         super.onCreate(presenter);
 
-        titleLabel = "Publish your own party";
         nameLabel = "Name";
         placeLabel = "Place";
         dateLabel = "Date";
@@ -134,7 +136,7 @@ public class AddProductModel
     @Override
     public void insertProductToDatabase(ProductData productData, String categoryId) {
         RealmOperation realmOperation = RealmOperation.getInstances();
-        realmOperation.AddProductByCategoryId(productData, categoryId);
+        realmOperation.addProductByCategoryId(productData, categoryId);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////

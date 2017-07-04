@@ -1,6 +1,5 @@
 package es.ulpgc.eite.clean.mvp.sample.details;
 
-import android.graphics.Bitmap;
 import android.net.Uri;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
@@ -11,7 +10,7 @@ import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
  */
 
 public interface Detail {
-    public interface PresenterToView extends ContextView {
+    interface PresenterToView extends ContextView {
 
         void setHeaderPlace(String txt);
 
@@ -36,10 +35,10 @@ public interface Detail {
         void setImage(Uri img);
     }
 
-    public interface ViewToPresenter {
+    interface ViewToPresenter {
     }
 
-    public interface PresenterToModel {
+    interface PresenterToModel {
         void setItemSelected(ProductData itemSelected);
 
         ProductData getItemSelected();
@@ -56,15 +55,15 @@ public interface Detail {
 
     }
 
-    public interface ModelToPresenter {
+    interface ModelToPresenter {
     }
 
-    public interface ToDetail {
+    interface ToDetail {
         void setItemSelected(ProductData itemSelected);
 
         void onScreenStarted();
     }
 
-    public interface DetailTo {
+    interface DetailTo {
     }
 }

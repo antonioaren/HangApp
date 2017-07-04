@@ -35,10 +35,10 @@ public class AddProductPresenter
     public void onResume(AddProduct.PresenterToView view) {
         setView(view);
         Log.d(TAG, "calling onResume()");
-        LoadInitialComponents();
+        loadInitialComponents();
 
         if (configurationChangeOccurred()) {
-            LoadInitialComponents();
+            loadInitialComponents();
         }
     }
 
@@ -66,14 +66,13 @@ public class AddProductPresenter
             getView().finishScreen();
         }
     }
-
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
     public void onScreenStarted() {
         Log.d(TAG, "calling onScreenStarted()");
 
-        LoadInitialComponents();
+        loadInitialComponents();
     }
 
     @Override
@@ -89,7 +88,7 @@ public class AddProductPresenter
             getView().setToast("Added");
 
             Navigator app = (Navigator) getView().getApplication();
-            app.KillingAddProductScreenAfterInserting(this);
+            app.killingAddProductScreenAfterInserting(this);
         }
     }
 
@@ -140,7 +139,7 @@ public class AddProductPresenter
         return isAnyValueNull;
     }
 
-    private void LoadInitialComponents() {
+    private void loadInitialComponents() {
         getView().setNameLabel(getModel().getNameLabel());
         getView().setPlaceLabel(getModel().getPlaceLabel());
         getView().setDateLabel(getModel().getDateLabel());

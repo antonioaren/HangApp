@@ -86,28 +86,33 @@ public interface AddCategory {
         void setNameLabel(String nameLabel);
 
         String getPhotoLabel();
-        void setPhotoLabel(String photoLabel);
+
+        void setPhotoLabel();
 
 
         String getLabelRadio0();
-        void setLabelRadio0(String labelRadio0);
+
+        void setLabelRadio0();
 
         String getLabelRadio1();
-        void setLabelRadio1(String labelRadio1);
+
+        void setLabelRadio1();
 
         String getLabelRadio2();
-        void setLabelRadio2(String labelRadio2);
+
+        void setLabelRadio2();
 
         String getLabelRadio3();
-        void setLabelRadio3(String labelRadio3);
+
+        void setLabelRadio3();
 
         String getButtonAddlabel();
 
-        void setButtonAddlabel(String buttonAddlabel);
+        void setButtonAddlabel();
 
         String getToastNotifyingAdded();
 
-        String getValueDeleted();
+        String getNotifyDeleted();
 
         void insertEvent(String Categoryname, String image);
 

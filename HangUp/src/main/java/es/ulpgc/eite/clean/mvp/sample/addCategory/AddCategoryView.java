@@ -3,7 +3,6 @@ package es.ulpgc.eite.clean.mvp.sample.addCategory;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,13 +28,10 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
         implements AddCategory.PresenterToView {
 
 
-    private Uri imageUri;
-    private Bitmap imageBitMap;
     private TextView textViewName;
     private EditText editTextName;
     private TextView textPhoto;
     private RadioGroup radioGroup;
-    private ImageView image1, image2, image3, image4;
     private Button buttonAdd;
     private RadioButton radioButton0, radioButton1, radioButton2, radioButton3;
 
@@ -73,7 +69,7 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
 
     @Override
     public void finishScreen() {
-
+        finish();
     }
 
 
@@ -105,16 +101,16 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
     @Override
     public void setAssetsImage(String im, String im2, String im3, String im4) {
 
-        image1 = (ImageView) findViewById(R.id.image1);
+        ImageView image1 = (ImageView) findViewById(R.id.image1);
         image1.setImageBitmap(getBitMapFromAssets(im));
 
-        image2 = (ImageView) findViewById(R.id.image2);
+        ImageView image2 = (ImageView) findViewById(R.id.image2);
         image2.setImageBitmap(getBitMapFromAssets(im2));
 
-        image3 = (ImageView) findViewById(R.id.image3);
+        ImageView image3 = (ImageView) findViewById(R.id.image3);
         image3.setImageBitmap(getBitMapFromAssets(im3));
 
-        image4 = (ImageView) findViewById(R.id.image4);
+        ImageView image4 = (ImageView) findViewById(R.id.image4);
         image4.setImageBitmap(getBitMapFromAssets(im4));
     }
 
@@ -160,8 +156,6 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
             e.printStackTrace();
         }
 
-        Bitmap imagenBitmap = BitmapFactory.decodeStream(istr);
-
-        return imagenBitmap;
+        return BitmapFactory.decodeStream(istr);
     }
 }

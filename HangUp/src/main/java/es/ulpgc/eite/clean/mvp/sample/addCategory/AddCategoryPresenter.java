@@ -104,13 +104,11 @@ public class AddCategoryPresenter
             getView().setToast(getModel().getToastNotifyingAdded());
 
             Navigator app = (Navigator) getView().getApplication();
-            app.KillingAddCategoryScreenAfterInserting(this);
+            app.killingAddCategoryScreenAfterInserting(this);
         }
     }
 
     private void checkIsAnyValueNull() {
-        int value = getView().getRadioButtonId();
-        String textEntrada = getView().getTextFromEditText();
 
         if (getView().getRadioButtonId() == 0 ||
                 getView().getTextFromEditText().isEmpty()) {

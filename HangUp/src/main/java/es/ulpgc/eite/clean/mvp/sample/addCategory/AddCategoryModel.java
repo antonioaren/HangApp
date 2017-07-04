@@ -16,16 +16,18 @@ public class AddCategoryModel
         implements AddCategory.PresenterToModel, Model<AddCategory.ModelToPresenter> {
 
 
-    private String nameLabel, photoLabel, buttonPhotoLabel, buttonAddlabel;
+    private String nameLabel;
+    private String photoLabel;
+    private String buttonAddlabel;
 
     private String labelRadio0;
     private String labelRadio1;
     private String labelRadio2;
     private String labelRadio3;
 
-    private String ValueAdded, ValueDeleted;
+    private String notifyAdded, notifyDeleted;
 
-    private String[] images;
+    private final String[] images;
 
 
     public AddCategoryModel() {
@@ -39,16 +41,15 @@ public class AddCategoryModel
 
         nameLabel = "Name:";
         photoLabel = "Photo:";
-        buttonPhotoLabel = "Select...";
         buttonAddlabel = "AddProduct";
 
-        labelRadio0 = "astro";
-        labelRadio1 = "academic";
-        labelRadio2 = "car";
-        labelRadio3 = "disco";
+        labelRadio0 = "Astro";
+        labelRadio1 = "Academic";
+        labelRadio2 = "Car";
+        labelRadio3 = "Disco";
 
-        ValueAdded = "Added";
-        ValueDeleted = "Deleted";
+        notifyAdded = "Added";
+        notifyDeleted = "Deleted";
     }
 
     @Override
@@ -73,7 +74,7 @@ public class AddCategoryModel
         return photoLabel;
     }
     @Override
-    public void setPhotoLabel(String photoLabel) {
+    public void setPhotoLabel() {
         this.photoLabel = photoLabel;
     }
 
@@ -82,7 +83,7 @@ public class AddCategoryModel
         return labelRadio0;
     }
     @Override
-    public void setLabelRadio0(String labelRadio0) {
+    public void setLabelRadio0() {
         this.labelRadio0 = labelRadio0;
     }
 
@@ -91,7 +92,7 @@ public class AddCategoryModel
         return labelRadio1;
     }
     @Override
-    public void setLabelRadio1(String labelRadio1) {
+    public void setLabelRadio1() {
         this.labelRadio1 = labelRadio1;
     }
 
@@ -100,7 +101,7 @@ public class AddCategoryModel
         return labelRadio2;
     }
     @Override
-    public void setLabelRadio2(String labelRadio2) {
+    public void setLabelRadio2() {
         this.labelRadio2 = labelRadio2;
     }
 
@@ -109,7 +110,7 @@ public class AddCategoryModel
         return labelRadio3;
     }
     @Override
-    public void setLabelRadio3(String labelRadio3) {
+    public void setLabelRadio3() {
         this.labelRadio3 = labelRadio3;
     }
 
@@ -118,28 +119,27 @@ public class AddCategoryModel
         return buttonAddlabel;
     }
     @Override
-    public void setButtonAddlabel(String buttonAddlabel) {
+    public void setButtonAddlabel() {
         this.buttonAddlabel = buttonAddlabel;
     }
 
     @Override
     public String getToastNotifyingAdded() {
-        return ValueAdded;
+        return notifyAdded;
+    }
+
+    public String getNotifyDeleted() {
+        return notifyDeleted;
     }
 
     @Override
-    public String getValueDeleted() {
-        return ValueDeleted;
-    }
-
-    @Override
-    public void insertEvent(final String Categoryname, final String image) {
+    public void insertEvent(final String categoryName, final String image) {
         RealmOperation realmOperation = RealmOperation.getInstances();
-        realmOperation.insertEventCategory(Categoryname, image);
+        realmOperation.insertEventCategory(categoryName, image);
     }
     @Override
     public String getImageByIdSelected(int id) {
-        String imageName = "";
+        String imageName;
         if (id >= 0) {
             imageName = images[id];
         } else {

@@ -15,9 +15,8 @@ import io.realm.RealmResults;
 
 public class RealmOperation {
 
-    private static RealmOperation Instances;
+    private static RealmOperation instances;
     private Realm realmDatabase;
-    private RealmResults<CategoryData> itemsDatabase;
 
 
     private String id;
@@ -31,18 +30,18 @@ public class RealmOperation {
     //Synchronized: Por si es llamado por otros al mismo tiempo. Este encolaa las peticiones para
     //que no de errores de punteros a null, dado que se han creado dos objetos.
     public static synchronized RealmOperation getInstances() {
-        if (Instances == null) {
-            Instances = new RealmOperation();
+        if (instances == null) {
+            instances = new RealmOperation();
         }
-        return Instances;
+        return instances;
     }
 
     public RealmResults<CategoryData> getCategoryEvents() {
-        itemsDatabase = realmDatabase.where(CategoryData.class).findAll();
+        RealmResults<CategoryData> itemsDatabase = realmDatabase.where(CategoryData.class).findAll();
         return itemsDatabase;
     }
 
-    public void insertEventCategory(final String Categoryname, final String image) {
+    public void insertEventCategory(final String categoryName, final String image) {
         this.id = UUID.randomUUID().toString();
         realmDatabase.executeTransaction(new Realm.Transaction() {
             @Override
@@ -50,7 +49,7 @@ public class RealmOperation {
 
                 CategoryData event = realmDatabase.createObject(CategoryData.class, id);
 
-                event.setCategoryName(Categoryname);
+                event.setCategoryName(categoryName);
                 event.setImage(image);
             }
 
@@ -67,7 +66,7 @@ public class RealmOperation {
         });
     }
 
-    public void AddProductByCategoryId(final ProductData product, final String CategoryId) {
+    public void addProductByCategoryId(final ProductData product, final String categoryId) {
         realmDatabase.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
@@ -82,7 +81,7 @@ public class RealmOperation {
                 event.setImage(product.getImage());
 
                 CategoryData category = realm.where(CategoryData.class)
-                        .equalTo("id", CategoryId).findFirst();
+                        .equalTo("id", categoryId).findFirst();
 
                 category.getItemInfo().add(event);
             }
@@ -104,8 +103,7 @@ public class RealmOperation {
         realmDatabase = Realm.getDefaultInstance();
         CategoryData category = realmDatabase.where(CategoryData.class).
                 equalTo("id", CategoryId).findFirst();
-        RealmList<ProductData> products = category.getItemInfo();
-        return products;
+        return category.getItemInfo();
     }
 
     //Para realizar test en espresso

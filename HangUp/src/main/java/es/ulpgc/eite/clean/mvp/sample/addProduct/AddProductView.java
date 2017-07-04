@@ -36,25 +36,24 @@ public class AddProductView extends GenericActivity<AddProduct.PresenterToView, 
         implements AddProduct.PresenterToView {
 
 
-    private EditText EventName;
-    private EditText EventPlace;
-    private TextView EventDate;
-    private TextView EventTimeInit;
-    private TextView EventTimeFinish;
-    private EditText EventDetails;
-    private ImageButton EventImage;
+    private EditText eventName;
+    private EditText eventPlace;
+    private TextView eventDate;
+    private TextView eventTimeInit;
+    private TextView eventTimeFinish;
+    private EditText eventDetails;
+    private ImageButton eventImage;
 
     private Button buttonPublish;
 
-    private Integer Hour;
-    private Integer Minutes;
+    private Integer hour;
+    private Integer minutes;
     private boolean isImageChosen;
 
 
     private static final int PICK_IMAGE = 100;
 
     private Uri imageUri;
-    private Bitmap imageBitMap;
     private Date date;
 
 
@@ -63,13 +62,13 @@ public class AddProductView extends GenericActivity<AddProduct.PresenterToView, 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addparty);
 
-        EventName = (EditText) findViewById(R.id.name);
-        EventName.requestFocus();
+        eventName = (EditText) findViewById(R.id.name);
+        eventName.requestFocus();
 
-        EventPlace = (EditText) findViewById(R.id.place);
+        eventPlace = (EditText) findViewById(R.id.place);
 
-        EventDate = (TextView) findViewById(R.id.date);
-        EventDate.setOnClickListener(new View.OnClickListener() {
+        eventDate = (TextView) findViewById(R.id.date);
+        eventDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Calendar now = Calendar.getInstance();
@@ -80,7 +79,7 @@ public class AddProductView extends GenericActivity<AddProduct.PresenterToView, 
                                 Calendar checkedCalendar = Calendar.getInstance();
                                 checkedCalendar.set(year, monthOfYear, dayOfMonth);
                                 date = checkedCalendar.getTime();
-                                EventDate.setText(DateFormatter.convertDateToString(date));
+                                eventDate.setText(DateFormatter.convertDateToString(date));
                             }
                         },
                         now.get(Calendar.YEAR),
@@ -92,55 +91,55 @@ public class AddProductView extends GenericActivity<AddProduct.PresenterToView, 
             }
         });
 
-        EventTimeInit = (TextView) findViewById(R.id.timeI);
-        EventTimeInit.setOnClickListener(new View.OnClickListener() {
+        eventTimeInit = (TextView) findViewById(R.id.timeI);
+        eventTimeInit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Calendar time = Calendar.getInstance();
-                Hour = time.get(Calendar.HOUR_OF_DAY);
-                Minutes = time.get(Calendar.MINUTE);
+                hour = time.get(Calendar.HOUR_OF_DAY);
+                minutes = time.get(Calendar.MINUTE);
 
                 TimePickerDialog timepicker = new TimePickerDialog(getActivityContext(),
                         new TimePickerDialog.OnTimeSetListener() {
 
                             @Override
                             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                                Hour = hourOfDay;
-                                Minutes = minute;
+                                hour = hourOfDay;
+                                minutes = minute;
 
-                                EventTimeInit.setText(Hour.toString() + ":" + Minutes.toString());
+                                eventTimeInit.setText(hour.toString() + ":" + minutes.toString());
                             }
-                        }, Hour, Minutes, true);
+                        }, hour, minutes, true);
                 timepicker.show();
             }
         });
 
-        EventTimeFinish = (TextView) findViewById(R.id.TimeF);
-        EventTimeFinish.setOnClickListener(new View.OnClickListener() {
+        eventTimeFinish = (TextView) findViewById(R.id.TimeF);
+        eventTimeFinish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Calendar time = Calendar.getInstance();
-                Hour = time.get(Calendar.HOUR_OF_DAY);
-                Minutes = time.get(Calendar.MINUTE);
+                hour = time.get(Calendar.HOUR_OF_DAY);
+                minutes = time.get(Calendar.MINUTE);
 
                 TimePickerDialog timepicker = new TimePickerDialog(getActivityContext(),
                         new TimePickerDialog.OnTimeSetListener() {
 
                             @Override
                             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                                Hour = hourOfDay;
-                                Minutes = minute;
-                                EventTimeFinish.setText(Hour.toString() + ":" + Minutes.toString());
+                                hour = hourOfDay;
+                                minutes = minute;
+                                eventTimeFinish.setText(hour.toString() + ":" + minutes.toString());
                             }
-                        }, Hour, Minutes, true);
+                        }, hour, minutes, true);
                 timepicker.show();
             }
         });
 
-        EventDetails = (EditText) findViewById(R.id.details);
+        eventDetails = (EditText) findViewById(R.id.details);
 
-        EventImage = (ImageButton) findViewById(R.id.imageButton);
-        EventImage.setOnClickListener(new View.OnClickListener() {
+        eventImage = (ImageButton) findViewById(R.id.imageButton);
+        eventImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openGallery();
@@ -182,7 +181,7 @@ public class AddProductView extends GenericActivity<AddProduct.PresenterToView, 
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK && requestCode == PICK_IMAGE) {
             imageUri = data.getData();
-            EventImage.setImageURI(imageUri);
+            eventImage.setImageURI(imageUri);
             setImageChosen(true);
 
             //            imageBitMap = null;
@@ -192,7 +191,7 @@ public class AddProductView extends GenericActivity<AddProduct.PresenterToView, 
 //            } catch (IOException e) {
 //                e.printStackTrace();
 //            }
-//            EventImage.setImageBitmap(imageBitMap);
+//            eventImage.setImageBitmap(imageBitMap);
         }
     }
 
@@ -201,37 +200,37 @@ public class AddProductView extends GenericActivity<AddProduct.PresenterToView, 
 
     @Override
     public void setNameLabel(String txt) {
-        EventName.setHint(txt);
+        eventName.setHint(txt);
     }
 
     @Override
     public void setPlaceLabel(String txt) {
-        EventPlace.setHint(txt);
+        eventPlace.setHint(txt);
     }
 
     @Override
     public void setDateLabel(String txt) {
-        EventDate.setHint(txt);
+        eventDate.setHint(txt);
     }
 
     @Override
     public void setTimeInitLabel(String txt) {
-        EventTimeInit.setHint(txt);
+        eventTimeInit.setHint(txt);
     }
 
     @Override
     public void setTimeFinishLabel(String txt) {
-        EventTimeFinish.setHint(txt);
+        eventTimeFinish.setHint(txt);
     }
 
     @Override
     public void setDetailsLabel(String txt) {
-        EventDetails.setHint(txt);
+        eventDetails.setHint(txt);
     }
 
     @Override
     public void setTimeInitText(String txt) {
-        EventTimeInit.setText(txt);
+        eventTimeInit.setText(txt);
     }
 
     @Override
@@ -244,37 +243,37 @@ public class AddProductView extends GenericActivity<AddProduct.PresenterToView, 
 
     @Override
     public String getEventName() {
-        return EventName.getText().toString();
+        return eventName.getText().toString();
     }
 
     @Override
     public String getEventPlace() {
-        return EventPlace.getText().toString();
+        return eventPlace.getText().toString();
     }
 
     @Override
     public String getEventDate() {
-        return EventDate.getText().toString();
+        return eventDate.getText().toString();
     }
 
     @Override
     public String getEventTimeInit() {
-        return EventTimeInit.getText().toString();
+        return eventTimeInit.getText().toString();
     }
 
     @Override
     public String getEventTimeFinish() {
-        return EventTimeFinish.getText().toString();
+        return eventTimeFinish.getText().toString();
     }
 
     @Override
     public String getEventDetails() {
-        return EventDetails.getText().toString();
+        return eventDetails.getText().toString();
     }
 
     @Override
     public ImageButton getEventImage() {
-        return EventImage;
+        return eventImage;
     }
 
     @Override
@@ -296,7 +295,7 @@ public class AddProductView extends GenericActivity<AddProduct.PresenterToView, 
 
     @Override
     public void setImageChosen(boolean imageChosen) {
-        isImageChosen = imageChosen;
+        this.isImageChosen = imageChosen;
     }
 
     private String saveToInternalStorage(Bitmap bitmapImage) {
@@ -313,7 +312,7 @@ public class AddProductView extends GenericActivity<AddProduct.PresenterToView, 
         // Create imageDir
         File mypath = new File(directory, filename + ".jpg");
 
-        FileOutputStream fos = null;
+        FileOutputStream fos;
         try {
             fos = new FileOutputStream(mypath);
 
