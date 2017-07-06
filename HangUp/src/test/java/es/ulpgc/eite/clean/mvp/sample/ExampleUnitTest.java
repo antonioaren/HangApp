@@ -60,7 +60,7 @@ public void testGetImageByIdSelected()throws Exception{
 
 
     @Test
-    public void testgetButtonAddLabel() {
+    public void testgetButtonAddLabel() throws Exception {
   AddCategoryModel add= new AddCategoryModel();
 
         assertEquals("ADD", add.getButtonAddlabel());

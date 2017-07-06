@@ -94,39 +94,24 @@ public class EspressoTest {
     public void insertEventTestBeforeStartingApplication() {
 
         RealmConfiguration testConfig =
-                new RealmConfiguration.Builder().
-                        inMemory().
-                        name("test-realm1").build();
+                new RealmConfiguration.Builder().inMemory().name("test-realm1").build();
+
 
         RealmOperation realm = new RealmOperation();
-
         realm.insertEventCategory("sdfghj", "disco.jpg");
-       //probando el test con todas las categorias
+        //probando el test con todas las categorias
         Assert.assertEquals(6, realm.getCategoryEvents().size());
-
-                                         }
-
-
-
-
+    }
 
     @Test
     public void deleteEvent() {
-
-
         RealmConfiguration testConfig =
-                new RealmConfiguration.Builder().
-                        inMemory().
-                        name("test-realm1").build();
-
+                new RealmConfiguration.Builder().inMemory().name("test-realm1").build();
         Realm testRealm = Realm.getInstance(testConfig);
         final RealmOperation realmOperation = new RealmOperation();
-
         testRealm.executeTransaction(new Realm.Transaction() {
                                          @Override
                                          public void execute(Realm realm) {
-
-
                                              realmOperation.insertEventCategory("jkhkih", "disco.jpg");
                                              realmOperation.insertEventCategory("jjh", "disco.jpg");
                                              String idLastElement = realmOperation.getId();
@@ -142,7 +127,7 @@ public class EspressoTest {
 
     @Test
     public void testGetFirstElementName() {
-      //probando el test cuando existen todas las categorias de la bd
+        //probando el test cuando existen todas las categorias de la bd
         RealmOperation realm = new RealmOperation();
         Assert.assertEquals("Fiestas", realm.getCategoryEvents().first().getCategoryName());
     }
