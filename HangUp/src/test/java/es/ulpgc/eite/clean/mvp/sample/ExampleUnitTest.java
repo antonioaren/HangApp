@@ -25,11 +25,6 @@ public void testGetImageByIdSelected()throws Exception{
 
 
   @Test
-  public void testGetCharacterSequenceFromAWord() throws Exception {
-    String word = "R.id.r0";
-    assertEquals("0", word.substring(6));
-  }
-  @Test
   public void testGetImageByIdSelectedOutOfRange()throws Exception{
     AddCategoryModel add= new AddCategoryModel();
     String index = add.getImageByIdSelected(-1);

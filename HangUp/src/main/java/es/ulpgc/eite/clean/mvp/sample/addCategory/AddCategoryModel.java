@@ -16,16 +16,18 @@ public class AddCategoryModel
         implements AddCategory.PresenterToModel, Model<AddCategory.ModelToPresenter> {
 
 
-    private String nameLabel;
-    private String photoLabel;
-    private String buttonAddlabel;
+    private static final String NAME_LABEL = "Name:";
+    private static final String PHOTO_LABEL = "Photo:";
+    private static final String BUTTON_ADD_LABEL = "ADD";
 
-    private String labelRadio0;
-    private String labelRadio1;
-    private String labelRadio2;
-    private String labelRadio3;
+    private static final String LABEL_RADIO_0 = "Astro";
+    private static final String LABEL_RADIO_1 = "Academic";
+    private static final String LABEL_RADIO_2 = "Car";
 
-    private String notifyAdded, notifyDeleted;
+    private static final String LABEL_RADIO_3 = "Disco";
+
+    private static final String NOTIFY_ADDED = "Added";
+    private static final String NOTIFY_DELETED = "Deleted";
 
     private final String[] images;
 
@@ -39,17 +41,7 @@ public class AddCategoryModel
     public void onCreate(AddCategory.ModelToPresenter presenter) {
         super.onCreate(presenter);
 
-        nameLabel = "Name:";
-        photoLabel = "Photo:";
-        buttonAddlabel = "AddProduct";
 
-        labelRadio0 = "Astro";
-        labelRadio1 = "Academic";
-        labelRadio2 = "Car";
-        labelRadio3 = "Disco";
-
-        notifyAdded = "Added";
-        notifyDeleted = "Deleted";
     }
 
     @Override
@@ -62,74 +54,53 @@ public class AddCategoryModel
 
     @Override
     public String getNameLabel() {
-        return nameLabel;
+        return NAME_LABEL;
     }
-    @Override
-    public void setNameLabel(String nameLabel) {
-        this.nameLabel = nameLabel;
-    }
+
 
     @Override
     public String getPhotoLabel() {
-        return photoLabel;
+        return PHOTO_LABEL;
     }
-    @Override
-    public void setPhotoLabel() {
-        this.photoLabel = photoLabel;
-    }
+
 
     @Override
     public String getLabelRadio0() {
-        return labelRadio0;
+        return LABEL_RADIO_0;
     }
-    @Override
-    public void setLabelRadio0() {
-        this.labelRadio0 = labelRadio0;
-    }
+
 
     @Override
     public String getLabelRadio1() {
-        return labelRadio1;
+        return LABEL_RADIO_1;
     }
-    @Override
-    public void setLabelRadio1() {
-        this.labelRadio1 = labelRadio1;
-    }
+
 
     @Override
     public String getLabelRadio2() {
-        return labelRadio2;
+        return LABEL_RADIO_2;
     }
-    @Override
-    public void setLabelRadio2() {
-        this.labelRadio2 = labelRadio2;
-    }
+
 
     @Override
     public String getLabelRadio3() {
-        return labelRadio3;
+        return LABEL_RADIO_3;
     }
-    @Override
-    public void setLabelRadio3() {
-        this.labelRadio3 = labelRadio3;
-    }
+
 
     @Override
     public String getButtonAddlabel() {
-        return buttonAddlabel;
+        return BUTTON_ADD_LABEL;
     }
-    @Override
-    public void setButtonAddlabel() {
-        this.buttonAddlabel = buttonAddlabel;
-    }
+
 
     @Override
     public String getToastNotifyingAdded() {
-        return notifyAdded;
+        return NOTIFY_ADDED;
     }
 
     public String getNotifyDeleted() {
-        return notifyDeleted;
+        return NOTIFY_DELETED;
     }
 
     @Override
