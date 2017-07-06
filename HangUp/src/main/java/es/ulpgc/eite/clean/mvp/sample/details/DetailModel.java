@@ -12,10 +12,10 @@ import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 public class DetailModel extends GenericModel<Detail.ModelToPresenter>
         implements Detail.PresenterToModel {
 
-    private String headerPlace;
-    private String headerDate;
-    private String headerTimeInit;
-    private String headerTimeEnd;
+    private static final String HEADER_PLACE = "Place";
+    private static final String HEADER_DATE = "Date";
+    private static final String HEADER_TIME_INIT = "Start";
+    private static final String HEADER_TIME_END = "Finish";
 
     private ProductData itemSelected;
 
@@ -24,10 +24,7 @@ public class DetailModel extends GenericModel<Detail.ModelToPresenter>
     public void onCreate(Detail.ModelToPresenter presenter) {
         super.onCreate(presenter);
 
-        headerPlace = "Place";
-        headerDate = "Date";
-        headerTimeInit = "Start";
-        headerTimeEnd = "Finish";
+
 
     }
 
@@ -48,22 +45,22 @@ public class DetailModel extends GenericModel<Detail.ModelToPresenter>
 
     @Override
     public String getHeaderPlaceLabel() {
-        return headerPlace;
+        return HEADER_PLACE;
     }
 
     @Override
     public String getHeaderDateLabel() {
-        return headerDate;
+        return HEADER_DATE;
     }
 
     @Override
     public String getHeaderTimeInitLabel() {
-        return headerTimeInit;
+        return HEADER_TIME_INIT;
     }
 
     @Override
     public String getHeaderTimeEndLabel() {
-        return headerTimeEnd;
+        return HEADER_TIME_END;
     }
 
     @Override

@@ -19,13 +19,9 @@
   <component name="ChangeListManager">
     <list id="6a18f264-77ba-466d-b7a7-0d52df6a7436" name="Default" comment="Merge remote-tracking branch 'origin/eleonoraBack'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/3.3/taskArtifacts/fileHashes.bin&#10;#&#9;.gradle/3.3/taskArtifacts/fileSnapshots.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.bin&#10;#&#9;.gradle/3.3/taskArtifacts/taskArtifacts.lock&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/add/AddPartyView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/App.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Mediator.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangApp.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/HangAppModel.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/Information.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationPresenter.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/information/InformationView.java&#10;#&#9;HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/search/SearchView.java&#10;#&#9;HangUp/src/main/res/layout/activity_procesed_search.xml&#10;#&#9;HangUp/src/main/res/layout/content_hangapp.xml&#10;#&#9;HangUp/src/main/res/layout/content_procesed_search.xml&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/Navigator.java&#10;#&#9;HelloApp/src/main/java/es/ulpgc/eite/clean/mvp/sample/hangapp/HangAppView.java&#10;#&#9;HelloApp/src/main/res/layout/activity_filalista.xml&#10;#&#9;HelloApp/src/main/res/layout/activity_procesed_search.xml&#10;" />
     <list id="3d65f56d-93c6-4520-9708-4d2cd763dfec" name="Failed commit: Default" comment="Cambios Merges.&#10;" />
-    <list default="true" id="72c31ec8-3076-4782-a780-40cb8c2c6568" name="Failed commit: Default (2)" comment="cambiando variables fijas a static final en addcategoryModel">
+    <list default="true" id="72c31ec8-3076-4782-a780-40cb8c2c6568" name="Failed commit: Default (2)" comment="cambiando variables fijas a static final en addcategoryModel y en addProductModel">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/HangUp.iml" afterPath="$PROJECT_DIR$/HangUp/HangUp.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addCategory/AddCategoryModel.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addCategory/AddCategoryModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addProduct/AddProduct.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addProduct/AddProduct.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addProduct/AddProductModel.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addProduct/AddProductModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/test/java/es/ulpgc/eite/clean/mvp/sample/ExampleUnitTest.java" afterPath="$PROJECT_DIR$/HangUp/src/test/java/es/ulpgc/eite/clean/mvp/sample/ExampleUnitTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/details/DetailModel.java" afterPath="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/details/DetailModel.java" />
     </list>
     <ignored path="HangApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,88 +58,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ExampleUnitTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HangUp/src/test/java/es/ulpgc/eite/clean/mvp/sample/ExampleUnitTest.java">
+      <file leaf-file-name="AddProductView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addProduct/AddProductView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="66" column="1" selection-start-line="61" selection-start-column="1" selection-end-line="66" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddProduct.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addProduct/AddProduct.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DetailModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/details/DetailModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-331">
-              <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+            <state relative-caret-position="204">
+              <caret line="167" column="0" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
               <folding>
-                <element signature="e#1649#1650#0" expanded="true" />
-                <element signature="e#1687#1688#0" expanded="true" />
-                <element signature="e#1690#1746#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DetailPresenter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/details/DetailPresenter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
-              <folding>
-                <element signature="docComment;class#DetailPresenter#0" expanded="false" />
-                <element signature="method#onCreate#0;class#DetailPresenter#0" expanded="false" />
-                <element signature="method#onResume#0;class#DetailPresenter#0" expanded="false" />
-                <element signature="method#onDestroy#0;class#DetailPresenter#0" expanded="false" />
-                <element signature="method#onBackPressed#0;class#DetailPresenter#0" expanded="false" />
-                <element signature="method#onScreenStarted#0;class#DetailPresenter#0" expanded="false" />
-                <element signature="method#setItemSelected#0;class#DetailPresenter#0" expanded="false" />
-                <element signature="method#setHeaders#0;class#DetailPresenter#0" expanded="false" />
-                <element signature="method#setDataInTheScreen#0;class#DetailPresenter#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddCategoryModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addCategory/AddCategoryModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-              <folding>
-                <element signature="method#insertEvent#0;class#AddCategoryModel#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddProductModel.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addProduct/AddProductModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="97" column="29" selection-start-line="97" selection-start-column="29" selection-end-line="97" selection-end-column="29" />
-              <folding>
-                <element signature="docComment;class#AddProductModel#0" expanded="false" />
-                <element signature="e#1253#1254#0" expanded="true" />
-                <element signature="e#1286#1287#0" expanded="true" />
-                <element signature="e#1703#1704#0" expanded="true" />
-                <element signature="e#1739#1740#0" expanded="true" />
-                <element signature="e#1888#1889#0" expanded="true" />
-                <element signature="e#1929#1930#0" expanded="true" />
-                <element signature="e#1987#1988#0" expanded="true" />
-                <element signature="e#2023#2024#0" expanded="true" />
-                <element signature="method#insertProductToDatabase#0;class#AddProductModel#0" expanded="false" />
+                <element signature="docComment;class#AddProductView#0" expanded="false" />
+                <element signature="method#onCreate#0;class#AddProductView#0" expanded="false" />
+                <element signature="e#2205#2784#0" expanded="true" />
+                <element signature="e#2783#2784#0" expanded="true" />
+                <element signature="e#5686#5719#0" expanded="false" />
+                <element signature="method#openDialog#0;class#AddProductView#0" expanded="false" />
+                <element signature="method#openGallery#0;class#AddProductView#0" expanded="false" />
+                <element signature="e#6492#6525#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -152,8 +80,8 @@
       <file leaf-file-name="CategoryModel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-428">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="183">
+              <caret line="82" column="7" selection-start-line="82" selection-start-column="7" selection-end-line="82" selection-end-column="7" />
               <folding>
                 <element signature="method#CategoryModel#0;class#CategoryModel#0" expanded="false" />
                 <element signature="method#createDatabaseTables#0;class#CategoryModel#0" expanded="false" />
@@ -161,7 +89,6 @@
                 <element signature="method#onDestroy#0;class#CategoryModel#0" expanded="false" />
                 <element signature="method#getCategoryEvents#0;class#CategoryModel#0" expanded="false" />
                 <element signature="method#insertEvent#0;class#CategoryModel#0" expanded="false" />
-                <element signature="e#2262#2277#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -170,7 +97,7 @@
       <file leaf-file-name="CategoryPresenter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryPresenter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
+            <state relative-caret-position="-654">
               <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
               <folding>
                 <element signature="docComment;method#onCreate#0;class#CategoryPresenter#0" expanded="false" />
@@ -196,37 +123,116 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddCategoryPresenter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addCategory/AddCategoryPresenter.java">
+      <file leaf-file-name="CategoryView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-85">
-              <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+            <state relative-caret-position="114">
+              <caret line="184" column="60" selection-start-line="184" selection-start-column="60" selection-end-line="184" selection-end-column="60" />
               <folding>
-                <element signature="docComment;class#AddCategoryPresenter#0" expanded="false" />
-                <element signature="method#onCreate#0;class#AddCategoryPresenter#0" expanded="false" />
-                <element signature="method#onScreenStarted#0;class#AddCategoryPresenter#0" expanded="false" />
-                <element signature="method#onDestroy#0;class#AddCategoryPresenter#0" expanded="false" />
-                <element signature="method#onBackPressed#0;class#AddCategoryPresenter#0" expanded="false" />
-                <element signature="method#destroyView#0;class#AddCategoryPresenter#0" expanded="false" />
-                <element signature="method#onAddClicked#0;class#AddCategoryPresenter#0" expanded="false" />
-                <element signature="method#checkIsAnyValueNull#0;class#AddCategoryPresenter#0" expanded="false" />
+                <element signature="docComment;method#onResume#0;class#CategoryView#0" expanded="false" />
+                <element signature="e#2172#2205#0" expanded="false" />
+                <element signature="method#onResume#0;class#CategoryView#0" expanded="false" />
+                <element signature="method#initComponentSwipeAndMove#0;class#CategoryView#0" expanded="false" />
+                <element signature="class#2502:3156" expanded="false" />
+                <element signature="method#onMove#0;class#2502:3156" expanded="false" />
+                <element signature="method#onSwiped#0;class#2502:3156" expanded="false" />
+                <element signature="e#3236#3319#0" expanded="false" />
+                <element signature="method#onCreateViewHolder#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
+                <element signature="method#onBindViewHolder#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
+                <element signature="method#onAttachedToRecyclerView#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
+                <element signature="method#setItemList#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
+                <element signature="class#CategoryViewHolder#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
+                <element signature="method#CategoryViewHolder#0;class#CategoryViewHolder#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddCategoryView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addCategory/AddCategoryView.java">
+      <file leaf-file-name="CategoryData.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/data/CategoryData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="28">
-              <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+            <state relative-caret-position="-402">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductData.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/data/ProductData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="684">
+              <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
               <folding>
-                <element signature="docComment;class#AddCategoryView#0" expanded="false" />
-                <element signature="method#onCreate#0;class#AddCategoryView#0" expanded="false" />
-                <element signature="method#setRadioButtonLabels#0;class#AddCategoryView#0" expanded="false" />
-                <element signature="method#setAssetsImage#0;class#AddCategoryView#0" expanded="false" />
-                <element signature="method#getRadioButtonId#0;class#AddCategoryView#0" expanded="false" />
-                <element signature="method#getBitMapFromAssets#0;class#AddCategoryView#0" expanded="false" />
+                <element signature="e#1933#1934#0" expanded="true" />
+                <element signature="e#1961#1962#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DetailModel.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/details/DetailModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-538">
+              <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+              <folding>
+                <element signature="e#1410#1411#0" expanded="true" />
+                <element signature="e#1448#1449#0" expanded="true" />
+                <element signature="e#1659#1715#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddProduct.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addProduct/AddProduct.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddProductModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addProduct/AddProductModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+              <folding>
+                <element signature="docComment;class#AddProductModel#0" expanded="false" />
+                <element signature="e#1268#1269#0" expanded="true" />
+                <element signature="e#1301#1302#0" expanded="true" />
+                <element signature="e#1718#1719#0" expanded="true" />
+                <element signature="e#1754#1755#0" expanded="true" />
+                <element signature="e#1901#1902#0" expanded="true" />
+                <element signature="e#1942#1943#0" expanded="true" />
+                <element signature="e#1999#2000#0" expanded="true" />
+                <element signature="e#2035#2036#0" expanded="true" />
+                <element signature="method#insertProductToDatabase#0;class#AddProductModel#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddProductPresenter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addProduct/AddProductPresenter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="206">
+              <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+              <folding>
+                <element signature="docComment;class#AddProductPresenter#0" expanded="false" />
+                <element signature="method#onCreate#0;class#AddProductPresenter#0" expanded="false" />
+                <element signature="method#onResume#0;class#AddProductPresenter#0" expanded="false" />
+                <element signature="method#onDestroy#0;class#AddProductPresenter#0" expanded="false" />
+                <element signature="method#onBackPressed#0;class#AddProductPresenter#0" expanded="false" />
+                <element signature="method#destroyView#0;class#AddProductPresenter#0" expanded="false" />
+                <element signature="method#onScreenStarted#0;class#AddProductPresenter#0" expanded="false" />
+                <element signature="method#onButtonAddClicked#0;class#AddProductPresenter#0" expanded="false" />
+                <element signature="method#getDataToSave#0;class#AddProductPresenter#0" expanded="false" />
+                <element signature="method#checkNullValues#0;class#AddProductPresenter#0" expanded="false" />
+                <element signature="method#loadInitialComponents#0;class#AddProductPresenter#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -2506,7 +2512,6 @@
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/app/App.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/data/CategoryData.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/data/ProductData.java" />
-        <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/details/DetailModel.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/details/DetailView.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java" />
         <option value="$PROJECT_DIR$/HangUp/src/androidTest/java/es/ulpgc/eite/clean/mvp/sample/EspressoTest.java" />
@@ -2520,6 +2525,7 @@
         <option value="$PROJECT_DIR$/HangUp/src/test/java/es/ulpgc/eite/clean/mvp/sample/ExampleUnitTest.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addProduct/AddProduct.java" />
         <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addProduct/AddProductModel.java" />
+        <option value="$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/details/DetailModel.java" />
       </list>
     </option>
   </component>
@@ -2670,6 +2676,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="details" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HangApp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HangUp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sample" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -3234,13 +3262,6 @@
       <option name="presentableId" value="Default" />
       <updated>1490022965325</updated>
     </task>
-    <task id="LOCAL-00076" summary="Añadido nuevo layout para add. Modificado y más ordenado.">
-      <created>1495896661362</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1495896661362</updated>
-    </task>
     <task id="LOCAL-00077" summary="Añadido timePicker Correcto">
       <created>1495896739802</created>
       <option name="number" value="00077" />
@@ -3577,7 +3598,14 @@
       <option name="project" value="LOCAL" />
       <updated>1499348239820</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="cambiando variables fijas a static final en addcategoryModel y en addProductModel">
+      <created>1499350748971</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1499350748971</updated>
+    </task>
+    <option name="localTasksCounter" value="126" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -3711,7 +3739,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Complementado el detalle. Paso de estado del producto al detalle. Con lo cual podemos poner los datos que han sido elegidos por el cliente." />
     <MESSAGE value="Actualizadon y limpiando código. Aladiendo nueva fucnionalidad imagen." />
     <MESSAGE value="Arreglo Layout para imagenes" />
     <MESSAGE value="Añadida funcionalidad, borrar al hacer Swipe." />
@@ -3736,7 +3763,8 @@
     <MESSAGE value="Dejamos subtexto fuera por ahora." />
     <MESSAGE value="Arreglado problema no añade fiestas. Actualización para ser revisada." />
     <MESSAGE value="cambiando variables fijas a static final en addcategoryModel" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambiando variables fijas a static final en addcategoryModel" />
+    <MESSAGE value="cambiando variables fijas a static final en addcategoryModel y en addProductModel" />
+    <option name="LAST_COMMIT_MESSAGE" value="cambiando variables fijas a static final en addcategoryModel y en addProductModel" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -3789,6 +3817,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="45" column="29" selection-start-line="45" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -3832,6 +3861,7 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer2">
@@ -3873,34 +3903,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="74" column="42" selection-start-line="74" selection-start-column="42" selection-end-line="74" selection-end-column="42" />
-          <folding>
-            <element signature="docComment;method#onResume#0;class#CategoryView#0" expanded="false" />
-            <element signature="e#2172#2205#0" expanded="false" />
-            <element signature="method#onResume#0;class#CategoryView#0" expanded="false" />
-            <element signature="method#initComponentSwipeAndMove#0;class#CategoryView#0" expanded="false" />
-            <element signature="class#2502:3156" expanded="false" />
-            <element signature="method#onMove#0;class#2502:3156" expanded="false" />
-            <element signature="method#onSwiped#0;class#2502:3156" expanded="false" />
-            <element signature="e#3236#3319#0" expanded="false" />
-            <element signature="method#onCreateViewHolder#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
-            <element signature="method#onBindViewHolder#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
-            <element signature="method#onAttachedToRecyclerView#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
-            <element signature="method#setItemList#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
-            <element signature="class#CategoryViewHolder#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
-            <element signature="method#CategoryViewHolder#0;class#CategoryViewHolder#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
-            <element signature="method#getBitMapFromAssets#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/realmoperation/RealmOperation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="825">
           <caret line="69" column="38" selection-start-line="69" selection-start-column="38" selection-end-line="69" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3975,33 +3982,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addProduct/AddProductPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="141" column="38" selection-start-line="141" selection-start-column="38" selection-end-line="141" selection-end-column="38" />
-          <folding>
-            <element signature="docComment;class#AddProductPresenter#0" expanded="false" />
-            <element signature="method#onCreate#0;class#AddProductPresenter#0" expanded="false" />
-            <element signature="method#onResume#0;class#AddProductPresenter#0" expanded="false" />
-            <element signature="method#onDestroy#0;class#AddProductPresenter#0" expanded="false" />
-            <element signature="method#onBackPressed#0;class#AddProductPresenter#0" expanded="false" />
-            <element signature="method#destroyView#0;class#AddProductPresenter#0" expanded="false" />
-            <element signature="method#onScreenStarted#0;class#AddProductPresenter#0" expanded="false" />
-            <element signature="method#onButtonAddClicked#0;class#AddProductPresenter#0" expanded="false" />
-            <element signature="method#getDataToSave#0;class#AddProductPresenter#0" expanded="false" />
-            <element signature="method#checkNullValues#0;class#AddProductPresenter#0" expanded="false" />
-            <element signature="method#loadInitialComponents#0;class#AddProductPresenter#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/data/ProductData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/details/DetailView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -4024,6 +4004,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="12">
           <caret line="203" column="0" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -4048,13 +4029,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/data/CategoryData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/util/DateFormatter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
@@ -4063,83 +4037,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addProduct/AddProductView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="164" column="25" selection-start-line="164" selection-start-column="25" selection-end-line="164" selection-end-column="25" />
-          <folding>
-            <element signature="docComment;class#AddProductView#0" expanded="false" />
-            <element signature="method#onCreate#0;class#AddProductView#0" expanded="false" />
-            <element signature="e#2205#2784#0" expanded="true" />
-            <element signature="e#2783#2784#0" expanded="true" />
-            <element signature="e#5686#5719#0" expanded="false" />
-            <element signature="method#openDialog#0;class#AddProductView#0" expanded="false" />
-            <element signature="method#openGallery#0;class#AddProductView#0" expanded="false" />
-            <element signature="e#6492#6525#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addCategory/AddCategory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
           <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-428">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="method#CategoryModel#0;class#CategoryModel#0" expanded="false" />
-            <element signature="method#createDatabaseTables#0;class#CategoryModel#0" expanded="false" />
-            <element signature="docComment;method#onDestroy#0;class#CategoryModel#0" expanded="false" />
-            <element signature="method#onDestroy#0;class#CategoryModel#0" expanded="false" />
-            <element signature="method#getCategoryEvents#0;class#CategoryModel#0" expanded="false" />
-            <element signature="method#insertEvent#0;class#CategoryModel#0" expanded="false" />
-            <element signature="e#2262#2277#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
-          <folding>
-            <element signature="docComment;method#onCreate#0;class#CategoryPresenter#0" expanded="false" />
-            <element signature="method#onCreate#0;class#CategoryPresenter#0" expanded="false" />
-            <element signature="docComment;method#onResume#0;class#CategoryPresenter#0" expanded="false" />
-            <element signature="method#onResume#0;class#CategoryPresenter#0" expanded="false" />
-            <element signature="docComment;method#onBackPressed#0;class#CategoryPresenter#0" expanded="false" />
-            <element signature="method#onBackPressed#0;class#CategoryPresenter#0" expanded="false" />
-            <element signature="docComment;method#onDestroy#0;class#CategoryPresenter#0" expanded="false" />
-            <element signature="method#onDestroy#0;class#CategoryPresenter#0" expanded="false" />
-            <element signature="method#CheckIfIsFirstTimeRunningToCreateDatabaseDefault#0;class#CategoryPresenter#0" expanded="false" />
-            <element signature="e#3279#3370#0" expanded="false" />
-            <element signature="method#onButtonAddClicked#0;class#CategoryPresenter#0" expanded="false" />
-            <element signature="method#onListItemClicked#0;class#CategoryPresenter#0" expanded="false" />
-            <element signature="method#onScreenStarted#0;class#CategoryPresenter#0" expanded="false" />
-            <element signature="method#destroyView#0;class#CategoryPresenter#0" expanded="false" />
-            <element signature="method#onItemClicked#0;class#CategoryPresenter#0" expanded="false" />
-            <element signature="e#5285#5369#0" expanded="false" />
-            <element signature="method#onSwipedItem#0;class#CategoryPresenter#0" expanded="false" />
-            <element signature="method#settingItemsAdapter#0;class#CategoryPresenter#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/details/DetailModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-331">
-          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-          <folding>
-            <element signature="e#1649#1650#0" expanded="true" />
-            <element signature="e#1687#1688#0" expanded="true" />
-            <element signature="e#1690#1746#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4174,7 +4076,7 @@
     <entry file="file://$PROJECT_DIR$/HangUp/src/test/java/es/ulpgc/eite/clean/mvp/sample/ExampleUnitTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
-          <caret line="66" column="1" selection-start-line="61" selection-start-column="1" selection-end-line="66" selection-end-column="1" />
+          <caret line="66" column="1" selection-start-line="61" selection-start-column="3" selection-end-line="66" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -4214,26 +4116,159 @@
     <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addProduct/AddProduct.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
-          <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addProduct/AddProductModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="97" column="29" selection-start-line="97" selection-start-column="29" selection-end-line="97" selection-end-column="29" />
+        <state relative-caret-position="198">
+          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#AddProductModel#0" expanded="false" />
-            <element signature="e#1253#1254#0" expanded="true" />
-            <element signature="e#1286#1287#0" expanded="true" />
-            <element signature="e#1703#1704#0" expanded="true" />
-            <element signature="e#1739#1740#0" expanded="true" />
-            <element signature="e#1888#1889#0" expanded="true" />
-            <element signature="e#1929#1930#0" expanded="true" />
-            <element signature="e#1987#1988#0" expanded="true" />
-            <element signature="e#2023#2024#0" expanded="true" />
+            <element signature="e#1268#1269#0" expanded="true" />
+            <element signature="e#1301#1302#0" expanded="true" />
+            <element signature="e#1718#1719#0" expanded="true" />
+            <element signature="e#1754#1755#0" expanded="true" />
+            <element signature="e#1901#1902#0" expanded="true" />
+            <element signature="e#1942#1943#0" expanded="true" />
+            <element signature="e#1999#2000#0" expanded="true" />
+            <element signature="e#2035#2036#0" expanded="true" />
             <element signature="method#insertProductToDatabase#0;class#AddProductModel#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addProduct/AddProductPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+          <folding>
+            <element signature="docComment;class#AddProductPresenter#0" expanded="false" />
+            <element signature="method#onCreate#0;class#AddProductPresenter#0" expanded="false" />
+            <element signature="method#onResume#0;class#AddProductPresenter#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#AddProductPresenter#0" expanded="false" />
+            <element signature="method#onBackPressed#0;class#AddProductPresenter#0" expanded="false" />
+            <element signature="method#destroyView#0;class#AddProductPresenter#0" expanded="false" />
+            <element signature="method#onScreenStarted#0;class#AddProductPresenter#0" expanded="false" />
+            <element signature="method#onButtonAddClicked#0;class#AddProductPresenter#0" expanded="false" />
+            <element signature="method#getDataToSave#0;class#AddProductPresenter#0" expanded="false" />
+            <element signature="method#checkNullValues#0;class#AddProductPresenter#0" expanded="false" />
+            <element signature="method#loadInitialComponents#0;class#AddProductPresenter#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/addProduct/AddProductView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="167" column="0" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#AddProductView#0" expanded="false" />
+            <element signature="method#onCreate#0;class#AddProductView#0" expanded="false" />
+            <element signature="e#2205#2784#0" expanded="true" />
+            <element signature="e#2783#2784#0" expanded="true" />
+            <element signature="e#5686#5719#0" expanded="false" />
+            <element signature="method#openDialog#0;class#AddProductView#0" expanded="false" />
+            <element signature="method#openGallery#0;class#AddProductView#0" expanded="false" />
+            <element signature="e#6492#6525#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="82" column="7" selection-start-line="82" selection-start-column="7" selection-end-line="82" selection-end-column="7" />
+          <folding>
+            <element signature="method#CategoryModel#0;class#CategoryModel#0" expanded="false" />
+            <element signature="method#createDatabaseTables#0;class#CategoryModel#0" expanded="false" />
+            <element signature="docComment;method#onDestroy#0;class#CategoryModel#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#CategoryModel#0" expanded="false" />
+            <element signature="method#getCategoryEvents#0;class#CategoryModel#0" expanded="false" />
+            <element signature="method#insertEvent#0;class#CategoryModel#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/data/ProductData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
+          <folding>
+            <element signature="e#1933#1934#0" expanded="true" />
+            <element signature="e#1961#1962#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-654">
+          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+          <folding>
+            <element signature="docComment;method#onCreate#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="method#onCreate#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="docComment;method#onResume#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="method#onResume#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="docComment;method#onBackPressed#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="method#onBackPressed#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="docComment;method#onDestroy#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="method#CheckIfIsFirstTimeRunningToCreateDatabaseDefault#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="e#3279#3370#0" expanded="false" />
+            <element signature="method#onButtonAddClicked#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="method#onListItemClicked#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="method#onScreenStarted#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="method#destroyView#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="method#onItemClicked#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="e#5285#5369#0" expanded="false" />
+            <element signature="method#onSwipedItem#0;class#CategoryPresenter#0" expanded="false" />
+            <element signature="method#settingItemsAdapter#0;class#CategoryPresenter#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/category/CategoryView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="184" column="60" selection-start-line="184" selection-start-column="60" selection-end-line="184" selection-end-column="60" />
+          <folding>
+            <element signature="docComment;method#onResume#0;class#CategoryView#0" expanded="false" />
+            <element signature="e#2172#2205#0" expanded="false" />
+            <element signature="method#onResume#0;class#CategoryView#0" expanded="false" />
+            <element signature="method#initComponentSwipeAndMove#0;class#CategoryView#0" expanded="false" />
+            <element signature="class#2502:3156" expanded="false" />
+            <element signature="method#onMove#0;class#2502:3156" expanded="false" />
+            <element signature="method#onSwiped#0;class#2502:3156" expanded="false" />
+            <element signature="e#3236#3319#0" expanded="false" />
+            <element signature="method#onCreateViewHolder#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
+            <element signature="method#onBindViewHolder#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
+            <element signature="method#onAttachedToRecyclerView#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
+            <element signature="method#setItemList#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
+            <element signature="class#CategoryViewHolder#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
+            <element signature="method#CategoryViewHolder#0;class#CategoryViewHolder#0;class#CategoryAdapter#0;class#CategoryView#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/data/CategoryData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-402">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangUp/src/main/java/es/ulpgc/eite/clean/mvp/sample/details/DetailModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-538">
+          <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+          <folding>
+            <element signature="e#1410#1411#0" expanded="true" />
+            <element signature="e#1448#1449#0" expanded="true" />
+            <element signature="e#1659#1715#0" expanded="false" />
           </folding>
         </state>
       </provider>
