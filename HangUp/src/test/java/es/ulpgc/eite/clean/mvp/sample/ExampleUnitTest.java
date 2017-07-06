@@ -28,57 +28,43 @@ public void testGetImageByIdSelected()throws Exception{
   public void testGetImageByIdSelectedOutOfRange()throws Exception{
     AddCategoryModel add= new AddCategoryModel();
     String index = add.getImageByIdSelected(-1);
-    assertEquals("astro.jpeg", index);
+      assertEquals(null, index);
 
   }
-@Test
-public void testGetRadioLabelsWithoutSettingName()throws Exception{
-  AddCategoryModel add= new AddCategoryModel();
-  assertEquals(null,add.getLabelRadio0());
-  assertEquals(null,add.getLabelRadio1());
-  assertEquals(null,add.getLabelRadio2());
-  assertEquals(null,add.getLabelRadio3());
-}
+
   @Test
-  public void testGetRadioLabelsBeforeSettingName()throws Exception{
+  public void secondTestGetImageByIdSelectedOutOfRange() throws Exception {
     AddCategoryModel add= new AddCategoryModel();
-    add.setLabelRadio0();
-    add.setLabelRadio1();
-    add.setLabelRadio2();
-    add.setLabelRadio3();
-    assertEquals("radio",add.getLabelRadio0());
-    assertEquals("radio",add.getLabelRadio1());
-    assertEquals("radio",add.getLabelRadio2());
-    assertEquals("radio",add.getLabelRadio3());
+      String index = add.getImageByIdSelected(5);
+      assertEquals(null, index);
+
   }
+
+    @Test
+    public void testGetRadioLabels() throws Exception {
+        AddCategoryModel add = new AddCategoryModel();
+        assertEquals("Astro", add.getLabelRadio0());
+        assertEquals("Academic", add.getLabelRadio1());
+        assertEquals("Car", add.getLabelRadio2());
+        assertEquals("Disco", add.getLabelRadio3());
+    }
+
 
 
   @Test
-  public void testgetPhotoLabelNull() throws IOException {
+  public void testgetPhotoLabel() throws IOException {
     AddCategoryModel add= new AddCategoryModel();
 
-    assertEquals(null,add.getPhotoLabel());
+      assertEquals("Photo:", add.getPhotoLabel());
   }
 
-  @Test
-  public void testgetPhotoLabelNotNull() throws IOException {
-    AddCategoryModel add= new AddCategoryModel();
-    add.setPhotoLabel();
-    assertEquals("photo",add.getPhotoLabel());
-  }
 
-  @Test
-  public void testgetButtonAddLabelNull(){
+    @Test
+    public void testgetButtonAddLabel() {
   AddCategoryModel add= new AddCategoryModel();
 
-  assertEquals(null,add.getButtonAddlabel());
+        assertEquals("ADD", add.getButtonAddlabel());
 }
-  @Test
-  public void testgetButtonAddLabelNotNull(){
-    AddCategoryModel add= new AddCategoryModel();
-    add.setButtonAddlabel();
-    assertEquals("AddProduct", add.getButtonAddlabel());
-  }
 
 
 

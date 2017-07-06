@@ -106,17 +106,14 @@ public interface AddProduct {
 
         String getNameLabel();
 
-        void setNameLabel(String nameLabel);
 
         String getPlaceLabel();
 
         String getDetailsLabel();
 
-        void setDetailsLabel(String detailsLabel);
 
         String getSelectTextLabel();
 
-        void setSelectTextlabel(String text);
 
         String getPublishBtnLabel();
 
@@ -129,15 +126,9 @@ public interface AddProduct {
         String getWarningEmpty();
 
 
-        void setPlaceLabel(String placeLabel);
 
-        void setDateLabel(String dateLabel);
 
-        void setTimeInitLabel(String timeInitLabel);
 
-        void setTimeFinishLabel(String timeFinishLabel);
-
-        void setPublishLabel(String publishLabel);
 
         void insertProductToDatabase(ProductData productData, String categoryId);
     }

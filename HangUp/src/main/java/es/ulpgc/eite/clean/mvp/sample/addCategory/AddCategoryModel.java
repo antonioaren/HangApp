@@ -111,10 +111,10 @@ public class AddCategoryModel
     @Override
     public String getImageByIdSelected(int id) {
         String imageName;
-        if (id >= 0) {
+        if (id >= 0 && id < 5) {
             imageName = images[id];
         } else {
-            imageName = images[0];
+            imageName = null;
         }
         return imageName;
     }
