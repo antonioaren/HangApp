@@ -64,6 +64,6 @@ public interface Detail {
         void onScreenStarted();
     }
 
-    interface DetailTo {
-    }
+    /*interface DetailTo {
+    }*/
 }

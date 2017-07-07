@@ -12,7 +12,7 @@ import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 
 public class DetailPresenter
         extends GenericPresenter<Detail.PresenterToView, Detail.PresenterToModel, Detail.ModelToPresenter, DetailModel>
-        implements Detail.ViewToPresenter, Detail.ModelToPresenter, Detail.ToDetail, Detail.DetailTo {
+        implements Detail.ViewToPresenter, Detail.ModelToPresenter, Detail.ToDetail {
 
 
     @Override

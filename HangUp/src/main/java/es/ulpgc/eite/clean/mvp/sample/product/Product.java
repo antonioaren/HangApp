@@ -40,10 +40,6 @@ public interface Product {
 
         CategoryData getItemCategorySelected();
 
-        //    @Override
-        //    public String getNotifyAdded() {
-        //        return NOTIFY_ADDED;
-        //    }
         String getNotifyDeleted();
 
         void addProductByCategoryId(ProductData product, String CategoryId);
@@ -52,15 +48,7 @@ public interface Product {
 
         void deleteItemById(String id);
 
-        //String getItemCategoryId();
 
-        //void setItemCategoryId(String itemId);
-
-        //String getNotifyAdded();
-
-        //String getNotifyDeleted();
-
-//        void setProductFromAddAndInsert(ProductData productToAdd);
 
         RealmList<ProductData> getAllProductsByCategoryId(String CategoryId);
 
@@ -80,7 +68,7 @@ public interface Product {
 
         void setItemCategoryId(String itemId);
 
-//        void setProductFromAdd(ProductData productToAdd);
+
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////

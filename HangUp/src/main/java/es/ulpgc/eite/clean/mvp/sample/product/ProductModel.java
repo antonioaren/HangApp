@@ -41,10 +41,7 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
         item = itemSelected;
     }
 
-    //    @Override
-//    public String getNotifyAdded() {
-//        return NOTIFY_ADDED;
-//    }
+
     @Override
     public String getNotifyDeleted() {
         return NOTIFY_DELETED;
