@@ -121,7 +121,8 @@ public class AddCategoryView extends GenericActivity<AddCategory.PresenterToView
         //Capta el id   del radio button seleccionado
         int id = radioGroup.getCheckedRadioButtonId();
 
-
+//el metodo está implementado de esta manera porque a la hora de captar el id del boton seleccionado el cual es R.id.x,
+        //al pasarlo al modelo quisimos captar el ultimo caracter del id y devolver una imagen en función de tal, pero resultó complicado que funcionase
         if (id == R.id.id1) {
             identificator = 1;
         } else if (id == R.id.id2) {

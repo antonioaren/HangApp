@@ -111,6 +111,7 @@ public interface AddCategory {
 
         String getImageByIdSelected(int id);
 
+
         String getImage(int i);
     }
 

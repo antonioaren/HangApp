@@ -28,7 +28,7 @@ public interface AddProduct {
 
         void destroyView();
 
-        //ProductData getProductAddedView();
+
     }
 
 
@@ -42,7 +42,6 @@ public interface AddProduct {
     interface ViewToPresenter extends Presenter<PresenterToView> {
         void onButtonAddClicked();
 
-        //void dataFromAddView(ProductData product);
 
     }
 
