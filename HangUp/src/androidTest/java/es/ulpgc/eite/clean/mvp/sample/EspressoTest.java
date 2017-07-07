@@ -44,8 +44,6 @@ public class EspressoTest {
     }
 
 
-
-
     @Test
     public void testClickingAnItemAtSpecificPositionInRecyclerView() throws Exception {
 
@@ -89,7 +87,7 @@ public class EspressoTest {
 
     @Test
     public void insertEventTestBeforeStartingApplication() {
-        //creamos un test con un nombre ypara que se almacene en la memoria de nustro computador
+        //creamos un test con un nombre  y establecemos  que se almacene en la memoria de nustro computador
         RealmConfiguration testConfig =
                 new RealmConfiguration.Builder().inMemory().name("test-realm").build();
 
@@ -102,7 +100,7 @@ public class EspressoTest {
 
             }
         });
-        //probando el test con todas las categorias
+        //probando el test con todas las categorias por defecto
         Assert.assertEquals(6, realmOperation.getCategoryEvents().size());
     }
 
@@ -123,21 +121,21 @@ public class EspressoTest {
                                      }
         );
         //comprobacion del test con un metodo
-        //probando el test con todas las categorias
+        //probando el test con todas las categorias por defecto
         Assert.assertEquals(6, realmOperation.getCategoryEvents().size());
 
     }
 
     @Test
     public void testGetFirstElementName() {
-        //probando el test cuando existen todas las categorias de la bd
+        //probando el test cuando existen todas las categorias de la bd por defecto
         RealmOperation realm = new RealmOperation();
         Assert.assertEquals("Fiestas", realm.getCategoryEvents().first().getCategoryName());
     }
 
     @Test
     public void testGetLastElementName() {
-        //probando el test cuando existen todas las categorias de la bd
+        //probando el test cuando existen todas las categorias de la bd por defecto
         RealmOperation realm = new RealmOperation();
         Assert.assertEquals("Automovilismo", realm.getCategoryEvents().last().getCategoryName());
     }
