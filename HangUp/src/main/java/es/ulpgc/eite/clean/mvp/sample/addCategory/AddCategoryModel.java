@@ -99,9 +99,6 @@ public class AddCategoryModel
         return NOTIFY_ADDED;
     }
 
-//    public String getNotifyDeleted() {
-//        return NOTIFY_DELETED;
-//    }
 
     @Override
     public void insertEvent(final String categoryName, final String image) {

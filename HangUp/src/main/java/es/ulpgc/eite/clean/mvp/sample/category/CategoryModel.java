@@ -15,8 +15,6 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     private RealmOperation realmOperation;
 
 
-    //private String id;
-
     private static final String NOTIFY_DELETED = "Deleted";
 
 
@@ -71,11 +69,6 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     public void deleteItem(final String id) {
         realmOperation.deleteItemCategory(id);
     }
-
-    //metodo paara comprobar test con espresso
-//    public String getId() {
-//        return id;
-//    }
 
 
     @Override

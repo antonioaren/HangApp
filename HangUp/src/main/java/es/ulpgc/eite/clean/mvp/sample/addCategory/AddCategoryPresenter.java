@@ -118,9 +118,6 @@ public class AddCategoryPresenter
         }
     }
 
-//    private boolean getIsAnyValueNull() {
-//        return isAnyValueNull;
-//    }
 
     private void setAnyValueNull(boolean anyValueNull) {
         isAnyValueNull = anyValueNull;

@@ -152,15 +152,6 @@ public class ProductView
             });
         }
 
-//        private Bitmap loadImageFromStorage(String path) {
-//            Bitmap b = null;
-//            try {
-//                b = BitmapFactory.decodeStream(new FileInputStream(new File(path, "profile.jpg")));
-//            } catch (FileNotFoundException e) {
-//                e.printStackTrace();
-//            }
-//            return b;
-//        }
 
 
         private Uri uriloadImageFromStorage(String path) {
