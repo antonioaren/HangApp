@@ -19,7 +19,7 @@ public class ExampleUnitTest {
 @Test
 public void testGetImageByIdSelected()throws Exception{
   AddCategoryModel add= new AddCategoryModel();
-    assertEquals("disco.jpg", add.getImageByIdSelected(3));
+    assertEquals("cars.jpeg", add.getImageByIdSelected(3));
 
 }
 
