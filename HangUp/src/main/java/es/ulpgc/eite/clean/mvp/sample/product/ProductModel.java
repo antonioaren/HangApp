@@ -16,7 +16,7 @@ public class ProductModel extends GenericModel<Product.ModelToPresenter>
 
     private RealmOperation realmDatabase;
     private CategoryData item;
-    //private static final String NOTIFY_ADDED = "Added";
+
     private static final String NOTIFY_DELETED = "Deleted";
 
 

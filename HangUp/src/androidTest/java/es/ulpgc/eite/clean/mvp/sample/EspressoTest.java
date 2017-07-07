@@ -87,20 +87,23 @@ public class EspressoTest {
     }
 
 
-
-
-
     @Test
     public void insertEventTestBeforeStartingApplication() {
-
+        //creamos un test con un nombre ypara que se almacene en la memoria de nustro computador
         RealmConfiguration testConfig =
-                new RealmConfiguration.Builder().inMemory().name("test-realm1").build();
+                new RealmConfiguration.Builder().inMemory().name("test-realm").build();
 
+        Realm testRealm = Realm.getInstance(testConfig);
+        final RealmOperation realmOperation = new RealmOperation();
+        testRealm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                realmOperation.insertEventCategory("jkhkih", "disco.jpg");
 
-        RealmOperation realm = new RealmOperation();
-        realm.insertEventCategory("sdfghj", "disco.jpg");
+            }
+        });
         //probando el test con todas las categorias
-        Assert.assertEquals(6, realm.getCategoryEvents().size());
+        Assert.assertEquals(6, realmOperation.getCategoryEvents().size());
     }
 
     @Test

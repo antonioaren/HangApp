@@ -52,7 +52,5 @@ public class CategoryData extends RealmObject {
     public RealmList<ProductData> getItemInfo() {
         return itemInfo;
     }
-    //  public void setItemInfo(RealmList<ProductData> itemInfo) {
-    // this.itemInfo = itemInfo;
-    // }
+
 }

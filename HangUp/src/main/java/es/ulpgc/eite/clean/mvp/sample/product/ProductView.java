@@ -1,7 +1,5 @@
 package es.ulpgc.eite.clean.mvp.sample.product;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -16,9 +14,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.List;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
@@ -86,11 +81,7 @@ public class ProductView
     public void settingAdapter(RealmList<ProductData> items) {
         if (recycler != null) {
 
-            //recycler.setAdapter(new ProductAdapter(getPresenter().getProductList()));
-            //OrderedRealmCollection<ProductData>
 
-//            recycler.setAdapter(new ProductAdapter((OrderedRealmCollection<ProductData>)
-//                    getPresenter().getProductList()));
 
             ProductView.ProductAdapter recyclerAdapter =
                     (ProductView.ProductAdapter) recycler.getAdapter();
@@ -128,7 +119,7 @@ public class ProductView
             RealmRecyclerViewAdapter<ProductData, ProductAdapter.ProductViewHolder> {
 
         private List<ProductData> items;
-        private Integer count = 0;
+
 
         public ProductAdapter(OrderedRealmCollection<ProductData> items) {
             super(items);
@@ -161,15 +152,15 @@ public class ProductView
             });
         }
 
-        private Bitmap loadImageFromStorage(String path) {
-            Bitmap b = null;
-            try {
-                b = BitmapFactory.decodeStream(new FileInputStream(new File(path, "profile.jpg")));
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-            return b;
-        }
+//        private Bitmap loadImageFromStorage(String path) {
+//            Bitmap b = null;
+//            try {
+//                b = BitmapFactory.decodeStream(new FileInputStream(new File(path, "profile.jpg")));
+//            } catch (FileNotFoundException e) {
+//                e.printStackTrace();
+//            }
+//            return b;
+//        }
 
 
         private Uri uriloadImageFromStorage(String path) {

@@ -57,13 +57,8 @@ public interface Category {
 
         void insertEvent(String Categoryname, String image);
 
-        void deleteItem(String name);
+        void deleteItem(String id);
 
-
-        //metodo para comprobar test con espresso
-
-
-        //String getToastNotifyingAdded();
 
         String getNotifyDeleted();
     }

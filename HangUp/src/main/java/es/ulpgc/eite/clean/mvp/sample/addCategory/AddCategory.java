@@ -105,7 +105,6 @@ public interface AddCategory {
 
         String getToastNotifyingAdded();
 
-        String getNotifyDeleted();
 
         void insertEvent(String Categoryname, String image);
 

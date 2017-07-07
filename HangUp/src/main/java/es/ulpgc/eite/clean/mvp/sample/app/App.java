@@ -22,7 +22,6 @@ import io.realm.Realm;
 public class App extends Application implements Mediator, Navigator {
 
 
-    private CategoryState toCategoryState;
     private ProductState categoryToProduct;
     private DetailState productToDetail;
     private ProductAddState productToadd;
@@ -31,7 +30,7 @@ public class App extends Application implements Mediator, Navigator {
     public void onCreate() {
         super.onCreate();
         Realm.init(this);
-        toCategoryState = new CategoryState();
+
     }
 
     @Override
@@ -44,9 +43,7 @@ public class App extends Application implements Mediator, Navigator {
 
     @Override
     public void startingCategoryScreen(Category.ToCategory presenter) {
-        if (toCategoryState != null) {
 
-        }
         presenter.onScreenStarted();
     }
 
@@ -85,7 +82,7 @@ public class App extends Application implements Mediator, Navigator {
 
     @Override
     public void goToCategoryScreen(Product.ProductTo presenter) {
-        //toCategoryState = new CategoryState();
+
 
         Context view = presenter.getManagedContext();
         if (view != null) {
@@ -121,7 +118,6 @@ public class App extends Application implements Mediator, Navigator {
     @Override
     public void goToAddCategoryScreen(Category.CategoryTo presenter) {
 
-        //Añadir los estados que falten para pasarles a la busquedad. Guardar posicion, etc.
 
         Context view = presenter.getManagedContext();
         if (view != null) {
@@ -158,9 +154,7 @@ public class App extends Application implements Mediator, Navigator {
 
     //////////////// State /////////////////////////////////////////////////////////////////////////
 
-    private class CategoryState {
 
-    }
 
     private class ProductState {
         CategoryData itemSelected;
@@ -171,8 +165,6 @@ public class App extends Application implements Mediator, Navigator {
         public ProductData itemSelected;
     }
 
-    private class CategoryAddState {
-    }
 
     //Necesario para poder pasar la id de la categoria que nos encontramos
     //Para poder añadir el producto

@@ -27,7 +27,7 @@ public class AddCategoryModel
     private static final String LABEL_RADIO_3 = "Disco";
 
     private static final String NOTIFY_ADDED = "Added";
-    private static final String NOTIFY_DELETED = "Deleted";
+
 
     private final String[] images;
 
@@ -99,9 +99,9 @@ public class AddCategoryModel
         return NOTIFY_ADDED;
     }
 
-    public String getNotifyDeleted() {
-        return NOTIFY_DELETED;
-    }
+//    public String getNotifyDeleted() {
+//        return NOTIFY_DELETED;
+//    }
 
     @Override
     public void insertEvent(final String categoryName, final String image) {
