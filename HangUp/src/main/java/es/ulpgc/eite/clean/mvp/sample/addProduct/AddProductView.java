@@ -184,14 +184,7 @@ public class AddProductView extends GenericActivity<AddProduct.PresenterToView, 
             eventImage.setImageURI(imageUri);
             setImageChosen(true);
 
-            //            imageBitMap = null;
-//            try {
-//                imageBitMap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
-//
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//            eventImage.setImageBitmap(imageBitMap);
+
         }
     }
 
