@@ -101,7 +101,6 @@ public class CategoryView
             recycler.setAdapter(new CategoryAdapter((OrderedRealmCollection<CategoryData>)
                     getPresenter().getCategoryList()));
 
-//TODO que hace realmente esto.
 
             CategoryView.CategoryAdapter recyclerAdapter = (CategoryView.CategoryAdapter)
                     recycler.getAdapter();

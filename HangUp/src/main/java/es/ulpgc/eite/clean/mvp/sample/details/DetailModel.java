@@ -72,15 +72,5 @@ public class DetailModel extends GenericModel<Detail.ModelToPresenter>
         return Uri.parse(path);
     }
 
-//    private Bitmap loadImageFromStorage(String path) {
-//        Bitmap b = null;
-//        try {
-//            File f = new File(path, "profile.jpg");
-//            b = BitmapFactory.decodeStream(new FileInputStream(f));
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//        return b;
-//    }
 
 }

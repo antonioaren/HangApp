@@ -78,10 +78,6 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
         return id;
     }
 
-//    @Override
-//    public String getToastNotifyingAdded() {
-//        return NOTIFY_ADDED;
-//    }
 
     @Override
     public String getNotifyDeleted() {
