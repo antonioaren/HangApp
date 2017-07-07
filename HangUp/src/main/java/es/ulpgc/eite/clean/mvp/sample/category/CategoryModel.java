@@ -17,12 +17,10 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
 
     private String id;
-    //private static final String NOTIFY_ADDED = "Added";
+
     private static final String NOTIFY_DELETED = "Deleted";
 
-    public CategoryModel() {
 
-    }
     @Override
     public void onCreate(Category.ModelToPresenter presenter) {
         super.onCreate(presenter);
