@@ -34,7 +34,7 @@ public class EspressoTest {
 
     @Test
     public void testOnAddClickedFromMainScreen() {
-
+        //test funciona con android studio actualizado;
         onView(withId(R.id.fButtonAddCategory)).perform(click());
         onView(withId(R.id.textPhoto)).check(matches(isDisplayed()));
         onView(withId(R.id.textName)).check(matches(isDisplayed()));
@@ -46,7 +46,7 @@ public class EspressoTest {
 
     @Test
     public void testClickingAnItemAtSpecificPositionInRecyclerView() throws Exception {
-
+//test funciona con android studio actualizado;
         onView(withId(R.id.recycler))
                 // Click item at position 0
                 .perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
@@ -57,7 +57,7 @@ public class EspressoTest {
 
     @Test
     public void testGoToDetailScreenFromAParty() throws Exception {
-        //test realizado en base a una fiesta creada personalmente desde mi dispositivo
+        //test realizado en base a una fiesta creada personalmente desde mi dispositivo,funciona con android studio actualizado;
         testClickingAnItemAtSpecificPositionInRecyclerView();
         onView(withText("fiesta")).check(matches(isDisplayed()));
         onView(withText("fiesta")).perform(click());
@@ -73,7 +73,7 @@ public class EspressoTest {
 
     @Test
     public void testRemoveElementWhenApplicationStarted() throws Exception {
-
+        //test funciona con android studio actualizado
         onView(withId(R.id.recycler)).perform(RecyclerViewActions.actionOnItemAtPosition(0, swipeLeft()));
 
         onView(withText("Astronomía")).check(matches(isDisplayed()));
@@ -88,6 +88,7 @@ public class EspressoTest {
     @Test
     public void insertEventTestBeforeStartingApplication() {
         //creamos un test con un nombre  y establecemos  que se almacene en la memoria de nustro computador
+        //funciona con android studio actualizado
         RealmConfiguration testConfig =
                 new RealmConfiguration.Builder().inMemory().name("test-realm").build();
 
@@ -106,6 +107,7 @@ public class EspressoTest {
 
     @Test
     public void deleteEvent() {
+        //funciona con android studio actualizado
         RealmConfiguration testConfig =
                 new RealmConfiguration.Builder().inMemory().name("test-realm1").build();
         Realm testRealm = Realm.getInstance(testConfig);
@@ -129,6 +131,7 @@ public class EspressoTest {
     @Test
     public void testGetFirstElementName() {
         //probando el test cuando existen todas las categorias de la bd por defecto
+        //funciona con android studio actualizado
         RealmOperation realm = new RealmOperation();
         Assert.assertEquals("Fiestas", realm.getCategoryEvents().first().getCategoryName());
     }
@@ -136,6 +139,7 @@ public class EspressoTest {
     @Test
     public void testGetLastElementName() {
         //probando el test cuando existen todas las categorias de la bd por defecto
+        //funciona con android studio actualizado;
         RealmOperation realm = new RealmOperation();
         Assert.assertEquals("Automovilismo", realm.getCategoryEvents().last().getCategoryName());
     }
