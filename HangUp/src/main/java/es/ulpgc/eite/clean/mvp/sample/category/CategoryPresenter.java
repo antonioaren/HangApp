@@ -10,6 +10,7 @@ import es.ulpgc.eite.clean.mvp.GenericPresenter;
 import es.ulpgc.eite.clean.mvp.sample.app.Mediator;
 import es.ulpgc.eite.clean.mvp.sample.app.Navigator;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import io.realm.RealmResults;
 
 public class CategoryPresenter
@@ -187,6 +188,19 @@ public class CategoryPresenter
         getView().setToast(getModel().getNotifyDeleted());
         settingItemsAdapter();
 
+    }
+
+    @Override
+    public void deletedAllCategories() {
+        getModel().deleteAllCategory();
+        settingItemsAdapter();
+    }
+
+    @Override
+    public void addDefaultDb() {
+        getModel().deleteAllCategory();
+        getModel().createDatabaseTables();
+        settingItemsAdapter();
     }
 
     private void settingItemsAdapter() {

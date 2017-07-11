@@ -16,9 +16,8 @@ import io.realm.RealmResults;
 public class RealmOperation {
 
     private static RealmOperation instances;
+
     private Realm realmDatabase;
-
-
     private String id;
 
     public RealmOperation() {
@@ -29,6 +28,7 @@ public class RealmOperation {
 
     //Synchronized: Por si es llamado por otros al mismo tiempo. Este encolaa las peticiones para
     //que no de errores de punteros a null, dado que se han creado dos objetos.
+
     public static synchronized RealmOperation getInstances() {
         if (instances == null) {
             instances = new RealmOperation();
@@ -36,9 +36,30 @@ public class RealmOperation {
         return instances;
     }
 
+    public void createDatabaseDefault() {
+        insertEventCategory("Fiestas", "disco.jpg");
+        insertEventCategory("Musica", "musica.png");
+        insertEventCategory("ULPGC", "ulpgc.png");
+        insertEventCategory("Astronomia", "astro.jpeg");
+        insertEventCategory("Automovilismo", "cars.jpeg");
+    }
+
     public RealmResults<CategoryData> getCategoryEvents() {
         RealmResults<CategoryData> itemsDatabase = realmDatabase.where(CategoryData.class).findAll();
         return itemsDatabase;
+    }
+
+    public void insertEventCategoryByCategoryData(final CategoryData categoryData) {
+        this.id = UUID.randomUUID().toString();
+        realmDatabase.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                CategoryData event = realmDatabase.createObject(CategoryData.class, id);
+                event.setCategoryName(categoryData.getCategoryName());
+                event.setImage(categoryData.getImage());
+            }
+
+        });
     }
 
     public void insertEventCategory(final String categoryName, final String image) {
@@ -46,15 +67,14 @@ public class RealmOperation {
         realmDatabase.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
-
                 CategoryData event = realmDatabase.createObject(CategoryData.class, id);
-
                 event.setCategoryName(categoryName);
                 event.setImage(image);
             }
 
         });
     }
+
 
     public void deleteItemCategory(final String id) {
         realmDatabase.executeTransaction(new Realm.Transaction() {
@@ -64,6 +84,12 @@ public class RealmOperation {
                 category.deleteFromRealm();
             }
         });
+    }
+
+    public void deleteAllDatabase() {
+        for (CategoryData item : getCategoryEvents()) {
+            deleteItemCategory(item.getId());
+        }
     }
 
     public void addProductByCategoryId(final ProductData product, final String categoryId) {
@@ -106,9 +132,11 @@ public class RealmOperation {
         return category.getItemInfo();
     }
 
+
     //Para realizar test en espresso
     public String getId() {
         return id;
     }
+
 
 }

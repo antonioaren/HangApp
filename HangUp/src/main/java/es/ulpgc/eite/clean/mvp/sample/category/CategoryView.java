@@ -13,6 +13,7 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,6 +34,8 @@ public class CategoryView
         implements Category.PresenterToView {
 
     private RecyclerView recycler;
+    private Button deletedAll;
+    private Button dbDefault;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -45,6 +48,23 @@ public class CategoryView
         LinearLayoutManager linearmanager = new LinearLayoutManager(this);
         recycler.setLayoutManager(linearmanager);
 
+        deletedAll = (Button) findViewById(R.id.deleteAll);
+        deletedAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getPresenter().deletedAllCategories();
+            }
+        });
+
+        dbDefault = (Button) findViewById(R.id.dbDefault);
+        dbDefault.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getPresenter().addDefaultDb();
+            }
+        });
+
+        hideButtomsToResetDataBaseApp();
 
         FloatingActionButton fButtonAddCategory = (FloatingActionButton) findViewById(R.id.fButtonAddCategory);
         fButtonAddCategory.setOnClickListener(new View.OnClickListener() {
@@ -64,9 +84,8 @@ public class CategoryView
      */
     @SuppressLint("MissingSuperCall")
     @Override
-    protected void onResume() {
+    public void onResume() {
         super.onResume(CategoryPresenter.class, this);
-
     }
 
 
@@ -90,6 +109,7 @@ public class CategoryView
         });
 
         swipeToDismissTouchHelper.attachToRecyclerView(recycler);
+
     }
     ///////////////////////////////////////////////////////////////////////////////////
     // Presenter To View /////////////////////////////////////////////////////////////
@@ -117,6 +137,14 @@ public class CategoryView
     @Override
     public void setToast(String txt) {
         Toast.makeText(this, txt, Toast.LENGTH_SHORT).show();
+    }
+
+    //Hay dos botones escondidos para poner en el action bar. Con ello podemos hacer reset de los
+    //datos y borrar toda la base de datos
+
+    private void hideButtomsToResetDataBaseApp() {
+        deletedAll.setVisibility(View.GONE);
+        dbDefault.setVisibility(View.GONE);
     }
 
 

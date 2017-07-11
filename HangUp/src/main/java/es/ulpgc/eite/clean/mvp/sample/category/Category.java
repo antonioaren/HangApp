@@ -30,6 +30,11 @@ public interface Category {
         void onItemClicked(CategoryData item, String id);
 
         void onSwipedItem(String id);
+
+        void deletedAllCategories();
+
+        void addDefaultDb();
+
     }
 
     /**
@@ -61,6 +66,10 @@ public interface Category {
 
 
         String getNotifyDeleted();
+
+        void deleteAllCategory();
+
+        void createDefaultProductInANewCategory();
     }
 
     /**

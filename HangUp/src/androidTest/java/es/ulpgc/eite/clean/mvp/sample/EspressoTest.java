@@ -1,17 +1,19 @@
 package es.ulpgc.eite.clean.mvp.sample;
 
 import android.support.test.espresso.contrib.RecyclerViewActions;
+import android.support.test.espresso.core.deps.guava.eventbus.AsyncEventBus;
 import android.support.test.rule.ActivityTestRule;
 
 import junit.framework.Assert;
+
+import org.junit.Before;
 
 import org.junit.Rule;
 import org.junit.Test;
 
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 import es.ulpgc.eite.clean.mvp.sample.realmoperation.RealmOperation;
-import io.realm.Realm;
-import io.realm.RealmConfiguration;
+
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
@@ -26,11 +28,20 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
  */
 
 public class EspressoTest {
-
+    private RealmOperation realmOperation;
 
     @Rule
     public final ActivityTestRule<CategoryView> presenter = new ActivityTestRule<>(CategoryView.class);
 
+    public EspressoTest() {
+        realmOperation = new RealmOperation();
+    }
+
+    @Before
+    public void setUp() throws Exception {
+        realmOperation.deleteAllDatabase();
+        realmOperation.createDatabaseDefault();
+    }
 
     @Test
     public void testOnAddClickedFromMainScreen() {
@@ -42,107 +53,29 @@ public class EspressoTest {
         onView(withId(R.id.content_name)).check(matches(isDisplayed()));
         onView(withId(R.id.buttonAddCategory)).check(matches(isDisplayed()));
     }
-
-
     @Test
     public void testClickingAnItemAtSpecificPositionInRecyclerView() throws Exception {
-//test funciona con android studio actualizado;
-        onView(withId(R.id.recycler))
-                // Click item at position 0
-                .perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
+        onView(withId(R.id.recycler))                // Click item at position 0
+                .perform(RecyclerViewActions.actionOnItemAtPosition(4, click()));
         onView(withId(R.id.fButtonAddProduct)).check(matches(isDisplayed()));
-
-
     }
-
-    @Test
-    public void testGoToDetailScreenFromAParty() throws Exception {
-        //test realizado en base a una fiesta creada personalmente desde mi dispositivo,funciona con android studio actualizado;
-        testClickingAnItemAtSpecificPositionInRecyclerView();
-        onView(withText("fiesta")).check(matches(isDisplayed()));
-        onView(withText("fiesta")).perform(click());
-        onView(withText("fiesta")).check(matches(isDisplayed()));
-        onView(withText("vispera del 4 julio"));
-        onView(withId(R.id.headerPlace)).check(matches(isDisplayed()));
-        onView(withId(R.id.headerDate)).check(matches(isDisplayed()));
-        onView(withId(R.id.headerTimeInit)).check(matches(isDisplayed()));
-        onView(withId(R.id.headerTimeEnd)).check(matches(isDisplayed()));
-
-    }
-
 
     @Test
     public void testRemoveElementWhenApplicationStarted() throws Exception {
-        //test funciona con android studio actualizado
-        onView(withId(R.id.recycler)).perform(RecyclerViewActions.actionOnItemAtPosition(0, swipeLeft()));
-
-        onView(withText("Astronomía")).check(matches(isDisplayed()));
-        onView(withText("Automovilismo")).check(matches(isDisplayed()));
-        onView(withText("Música")).check(matches(isDisplayed()));
-        onView(withText("ULPGC")).check(matches(isDisplayed()));
-
-
+        onView(withId(R.id.recycler)).perform(RecyclerViewActions.actionOnItemAtPosition(1, swipeLeft()));
+        Assert.assertEquals(4, realmOperation.getCategoryEvents().size() - 1);
     }
 
-
-    @Test
-    public void insertEventTestBeforeStartingApplication() {
-        //creamos un test con un nombre  y establecemos  que se almacene en la memoria de nustro computador
-        //funciona con android studio actualizado
-        RealmConfiguration testConfig =
-                new RealmConfiguration.Builder().inMemory().name("test-realm").build();
-
-        Realm testRealm = Realm.getInstance(testConfig);
-        final RealmOperation realmOperation = new RealmOperation();
-        testRealm.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-                realmOperation.insertEventCategory("jkhkih", "disco.jpg");
-
-            }
-        });
-        //probando el test con todas las categorias por defecto
-        Assert.assertEquals(6, realmOperation.getCategoryEvents().size());
-    }
-
-    @Test
-    public void deleteEvent() {
-        //funciona con android studio actualizado
-        RealmConfiguration testConfig =
-                new RealmConfiguration.Builder().inMemory().name("test-realm1").build();
-        Realm testRealm = Realm.getInstance(testConfig);
-        final RealmOperation realmOperation = new RealmOperation();
-        testRealm.executeTransaction(new Realm.Transaction() {
-                                         @Override
-                                         public void execute(Realm realm) {
-                                             realmOperation.insertEventCategory("jkhkih", "disco.jpg");
-                                             realmOperation.insertEventCategory("jjh", "disco.jpg");
-                                             String idLastElement = realmOperation.getId();
-                                             realmOperation.deleteItemCategory(idLastElement);
-                                         }
-                                     }
-        );
-        //comprobacion del test con un metodo
-        //probando el test con todas las categorias por defecto
-        Assert.assertEquals(6, realmOperation.getCategoryEvents().size());
-
-    }
+    ///////////////////////////////////DATABASE/////////////////////////////////////////////////////
 
     @Test
     public void testGetFirstElementName() {
-        //probando el test cuando existen todas las categorias de la bd por defecto
-        //funciona con android studio actualizado
-        RealmOperation realm = new RealmOperation();
-        Assert.assertEquals("Fiestas", realm.getCategoryEvents().first().getCategoryName());
+        Assert.assertEquals("Fiestas", realmOperation.getCategoryEvents().first().getCategoryName());
     }
 
     @Test
     public void testGetLastElementName() {
-        //probando el test cuando existen todas las categorias de la bd por defecto
-        //funciona con android studio actualizado;
-        RealmOperation realm = new RealmOperation();
-        Assert.assertEquals("Automovilismo", realm.getCategoryEvents().last().getCategoryName());
+        Assert.assertEquals("Automovilismo", realmOperation.getCategoryEvents().last().getCategoryName());
     }
-
 }
 

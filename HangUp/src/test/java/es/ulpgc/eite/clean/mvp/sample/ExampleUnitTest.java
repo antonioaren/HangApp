@@ -15,8 +15,8 @@ import static org.junit.Assert.assertEquals;
  */
 public class ExampleUnitTest {
 
-//test for addcategoryModel
-@Test
+
+  @Test
 public void testGetImageByIdSelected() throws Exception {
   AddCategoryModel add = new AddCategoryModel();
   assertEquals("cars.jpeg", add.getImageByIdSelected(3));

@@ -4,6 +4,7 @@ import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.realmoperation.RealmOperation;
 import io.realm.RealmResults;
 
@@ -29,12 +30,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     @Override
     public void createDatabaseTables() {
         Log.d(TAG, "createDatabaseTables()");
-
-        insertEvent("Fiestas", "disco.jpg");
-        insertEvent("Música", "musica.png");
-        insertEvent("ULPGC", "ulpgc.png");
-        insertEvent("Astronomía", "astro.jpeg");
-        insertEvent("Automovilismo", "cars.jpeg");
+        realmOperation.createDatabaseDefault();
     }
 
     /**
@@ -59,10 +55,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
 
     @Override
     public void insertEvent(final String Categoryname, final String image) {
-
         realmOperation.insertEventCategory(Categoryname, image);
-
-
     }
 
     @Override
@@ -75,6 +68,18 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     public String getNotifyDeleted() {
         return NOTIFY_DELETED;
     }
+
+    @Override
+    public void deleteAllCategory() {
+        realmOperation.deleteAllDatabase();
+    }
+
+    @Override
+    public void createDefaultProductInANewCategory() {
+
+    }
+
+
 }
 
 
