@@ -17,15 +17,12 @@ public interface ExamenScreen2 {
     }
 
     interface PresenterToModel {
-
-
     }
 
     interface ModelToPresenter {
     }
 
     interface ToDetail {
-
         void onScreenStarted();
     }
 

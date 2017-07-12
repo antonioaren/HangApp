@@ -8,23 +8,18 @@ import es.ulpgc.eite.clean.mvp.ContextView;
 
 public interface ExamenScreen1 {
     interface PresenterToView extends ContextView {
-
-
     }
 
     interface ViewToPresenter {
     }
 
     interface PresenterToModel {
-
-
     }
 
     interface ModelToPresenter {
     }
 
     interface ToDetail {
-
         void onScreenStarted();
     }
 

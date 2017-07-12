@@ -8,11 +8,17 @@
         android:id="@+id/registerlabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Numero de registros:"/>
+        android:text="Numero de registros:"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/numberRegistersDB"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="0"/>
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="70sp"/>
 </LinearLayout>

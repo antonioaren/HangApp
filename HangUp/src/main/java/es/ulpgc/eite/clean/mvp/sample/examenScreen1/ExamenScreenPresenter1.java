@@ -17,9 +17,6 @@ public class ExamenScreenPresenter1
     public void onCreate(ExamenScreen1.PresenterToView View) {
         super.onCreate(ExamenScreenModel1.class, this);
         setView(View);
-
-        //Mediator app = (Mediator) getApplication();
-        //app.startingDetailScreen(this);
     }
 
     @Override
@@ -47,10 +44,7 @@ public class ExamenScreenPresenter1
 
     @Override
     public void onScreenStarted() {
-        if (isViewRunning()) {
-//            setHeaders();
-//            setDataInTheScreen();
-        }
+
     }
 
 
