@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.io.IOException;
 
 import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategoryModel;
+import es.ulpgc.eite.clean.mvp.sample.authors.AuthorsModel;
 
 import static org.junit.Assert.assertEquals;
 
@@ -65,5 +66,26 @@ public void testGetImageByIdSelected() throws Exception {
     assertEquals("ADD", add.getButtonAddlabel());
   }
 
+//Test examen
 
+  public void testGetImage() throws Exception {
+    AuthorsModel authors = new AuthorsModel();
+    assertEquals(0, authors.getImage());
+  }
+//  public void testSetImage()throws Exception{
+//    AuthorsModel authors= new AuthorsModel();
+//    authors.setImage(R.drawable.wellcome);
+//    assertEquals(R.drawable.wellcome,authors.getImage());
+//  }
+
+  public void testGetText() throws Exception {
+    AuthorsModel authors = new AuthorsModel();
+    assertEquals(null, authors.getTxt());
+  }
+
+  public void testSetTxt() throws Exception {
+    AuthorsModel authors = new AuthorsModel();
+    authors.setTxt("autores");
+    assertEquals("autores", authors.getTxt());
+  }
 }

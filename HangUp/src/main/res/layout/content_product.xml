@@ -33,13 +33,13 @@
 
         <Space
             android:layout_height="20dp"
-            android:layout_weigth="match_parent" />
+            android:layout_weight="match_parent" />
 
         <Button
             android:id="@+id/AutoresBTn"
-            android:layout_heigth="100dp"
-            android:layout_weigth="100dp"
-            android:text="see authors" />
+            android:layout_height="20dp"
+            android:text="see authors"
+            android:layout_width="20dp" />
 
         <TextView
             android:id="@+id/title"
@@ -52,8 +52,7 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler"
             android:layout_width="match_parent"
-            android:layout_height="369dp"
-            />
+            android:layout_height="match_parent" />
     </LinearLayout>
 
 </LinearLayout>

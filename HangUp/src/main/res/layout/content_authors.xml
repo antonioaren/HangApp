@@ -6,7 +6,7 @@
     android:weightSum="1">
 
     <Space
-        android:layout_heigth="50dp"
+        android:layout_height="50dp"
         android:layout_width="match_parent" />
 
     <TextView
