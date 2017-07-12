@@ -37,9 +37,9 @@
 
         <Button
             android:id="@+id/AutoresBTn"
-            android:layout_height="20dp"
+            android:layout_height="60dp"
             android:text="see authors"
-            android:layout_width="20dp" />
+            android:layout_width="60dp" />
 
         <TextView
             android:id="@+id/title"
