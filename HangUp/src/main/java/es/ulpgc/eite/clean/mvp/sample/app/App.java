@@ -9,11 +9,15 @@ import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategoryView;
 import es.ulpgc.eite.clean.mvp.sample.addProduct.AddProduct;
 import es.ulpgc.eite.clean.mvp.sample.addProduct.AddProductView;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
+import es.ulpgc.eite.clean.mvp.sample.category.CategoryPresenter;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
 import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.details.Detail;
 import es.ulpgc.eite.clean.mvp.sample.details.DetailView;
+import es.ulpgc.eite.clean.mvp.sample.examenScreen1.ExamenScreenView1;
+import es.ulpgc.eite.clean.mvp.sample.examenScreen2.ExamenScreenPresenter2;
+import es.ulpgc.eite.clean.mvp.sample.examenScreen2.ExamenScreenView2;
 import es.ulpgc.eite.clean.mvp.sample.product.Product;
 import es.ulpgc.eite.clean.mvp.sample.product.ProductView;
 import io.realm.Realm;
@@ -67,6 +71,11 @@ public class App extends Application implements Mediator, Navigator {
 
     @Override
     public void startingAddCategoryScreen(AddCategory.ToAdd presenter) {
+        presenter.onScreenStarted();
+    }
+
+    @Override
+    public void startingExamenScreen2(ExamenScreenPresenter2 presenter) {
         presenter.onScreenStarted();
     }
 
@@ -150,6 +159,23 @@ public class App extends Application implements Mediator, Navigator {
     public void killingAddProductScreenAfterInserting(AddProduct.AddTo presenter) {
         presenter.destroyView();
     }
+
+    @Override
+    public void goToFirstClickScreen(CategoryPresenter presenter) {
+        Context view = presenter.getManagedContext();
+        if (view != null) {
+            view.startActivity(new Intent(view, ExamenScreenView1.class));
+        }
+    }
+
+    @Override
+    public void goToSecondClickScreen(CategoryPresenter presenter) {
+        Context view = presenter.getManagedContext();
+        if (view != null) {
+            view.startActivity(new Intent(view, ExamenScreenView2.class));
+        }
+    }
+
 
 
     //////////////// State /////////////////////////////////////////////////////////////////////////

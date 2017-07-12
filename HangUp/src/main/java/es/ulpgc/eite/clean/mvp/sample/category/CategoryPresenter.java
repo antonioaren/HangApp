@@ -20,6 +20,7 @@ public class CategoryPresenter
 
     private CategoryData selectedItem;
     private String itemId;
+    private boolean isFirstTime;
 
     /**
      * Operation called during VIEW creation in {@link GenericActivity#onResume(Class, Object)}
@@ -54,9 +55,10 @@ public class CategoryPresenter
         setView(view);
         Log.d(TAG, "calling onResume()");
         settingItemsAdapter();
+        CheckIfIsFirstTimeRunningToCreateDatabaseDefault();
 
         if (configurationChangeOccurred()) {
-
+            CheckIfIsFirstTimeRunningToCreateDatabaseDefault();
         }
     }
 
@@ -98,10 +100,11 @@ public class CategoryPresenter
 
         //Si no está creado "FirstRunning", crear la base de datos, si está creado significa que ya
         //está creada la base de datos.
-
+        setFirstTime(false);
         if (pref.getBoolean("FirstRunning", true)) {
             prefEditor.putBoolean("FirstRunning", false);
             getModel().createDatabaseTables();
+            setFirstTime(true);
             prefEditor.commit();
         }
     }
@@ -203,10 +206,35 @@ public class CategoryPresenter
         settingItemsAdapter();
     }
 
+    public boolean getIsFirstTime() {
+        return isFirstTime;
+    }
+
+    public void setFirstTime(boolean firstTime) {
+        isFirstTime = firstTime;
+    }
+
+    @Override
+    public void examenButtonClicked() {
+        if (getIsFirstTime()) {
+            clickedFirstTime();
+        } else {
+            clickedNextTime();
+        }
+    }
+
     private void settingItemsAdapter() {
         getView().settingItemsAdapter(getModel().getCategoryEvents());
     }
 
+    private void clickedFirstTime() {
+        Navigator app = (Navigator) getView().getApplication();
+        app.goToFirstClickScreen(this);
+    }
 
+    private void clickedNextTime() {
+        Navigator app = (Navigator) getView().getApplication();
+        app.goToSecondClickScreen(this);
+    }
 }
 

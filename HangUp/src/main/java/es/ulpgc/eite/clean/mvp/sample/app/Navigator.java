@@ -3,6 +3,7 @@ package es.ulpgc.eite.clean.mvp.sample.app;
 import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategory;
 import es.ulpgc.eite.clean.mvp.sample.addProduct.AddProduct;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
+import es.ulpgc.eite.clean.mvp.sample.category.CategoryPresenter;
 import es.ulpgc.eite.clean.mvp.sample.product.Product;
 
 public interface Navigator {
@@ -17,4 +18,9 @@ public interface Navigator {
     void killingAddCategoryScreenAfterInserting(AddCategory.AddTo presenter);
 
     void killingAddProductScreenAfterInserting(AddProduct.AddTo presenter);
+
+    void goToFirstClickScreen(CategoryPresenter presenter);
+
+    void goToSecondClickScreen(CategoryPresenter presenter);
+
 }

@@ -20,7 +20,6 @@ import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.List;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
@@ -36,7 +35,7 @@ public class CategoryView
 
     private RecyclerView recycler;
     private Button deletedAll;
-    private Button dbDefault;
+    private Button examenButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,11 +56,11 @@ public class CategoryView
             }
         });
 
-        dbDefault = (Button) findViewById(R.id.dbDefault);
-        dbDefault.setOnClickListener(new View.OnClickListener() {
+        examenButton = (Button) findViewById(R.id.examen);
+        examenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getPresenter().addDefaultDb();
+                getPresenter().examenButtonClicked();
             }
         });
 
@@ -144,8 +143,8 @@ public class CategoryView
     //datos y borrar toda la base de datos
 
     private void hideButtomsToResetDataBaseApp() {
-        deletedAll.setVisibility(View.GONE);
-        dbDefault.setVisibility(View.GONE);
+        deletedAll.setVisibility(View.INVISIBLE);
+        //examenButton.setVisibility(View.GONE);
     }
 
 

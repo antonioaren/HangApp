@@ -58,6 +58,18 @@
 
         </activity>
 
+        <activity
+            android:name=".examenScreen1.ExamenScreenView1"
+            android:label="Examen"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:name=".examenScreen2.ExamenScreenView2"
+            android:label="Examen2"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+
     </application>
+
 
 </manifest>

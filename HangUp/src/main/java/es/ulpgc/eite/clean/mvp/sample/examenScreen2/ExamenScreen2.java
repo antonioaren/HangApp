@@ -1,0 +1,33 @@
+package es.ulpgc.eite.clean.mvp.sample.examenScreen2;
+
+import es.ulpgc.eite.clean.mvp.ContextView;
+
+/**
+ * Created by Pedro Arenas on 31/5/17.
+ */
+
+public interface ExamenScreen2 {
+    interface PresenterToView extends ContextView {
+
+
+        void setSizeDbOnScreen(String txt);
+    }
+
+    interface ViewToPresenter {
+    }
+
+    interface PresenterToModel {
+
+
+    }
+
+    interface ModelToPresenter {
+    }
+
+    interface ToDetail {
+
+        void onScreenStarted();
+    }
+
+
+}

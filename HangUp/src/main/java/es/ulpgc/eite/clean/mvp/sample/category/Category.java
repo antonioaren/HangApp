@@ -35,6 +35,7 @@ public interface Category {
 
         void addDefaultDb();
 
+        void examenButtonClicked();
     }
 
     /**

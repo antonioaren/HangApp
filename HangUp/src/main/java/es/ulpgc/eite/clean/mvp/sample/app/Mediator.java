@@ -7,6 +7,7 @@ import es.ulpgc.eite.clean.mvp.sample.addProduct.AddProduct;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
 
 import es.ulpgc.eite.clean.mvp.sample.details.Detail;
+import es.ulpgc.eite.clean.mvp.sample.examenScreen2.ExamenScreenPresenter2;
 import es.ulpgc.eite.clean.mvp.sample.product.Product;
 
 
@@ -26,7 +27,5 @@ Mediator {
 
     void startingAddCategoryScreen(AddCategory.ToAdd presenter);
 
-
-
-
+    void startingExamenScreen2(ExamenScreenPresenter2 presenter);
 }
