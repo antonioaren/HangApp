@@ -56,6 +56,8 @@ public class AddProductView extends GenericActivity<AddProduct.PresenterToView, 
     private Uri imageUri;
     private Date date;
 
+    //Pedro
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

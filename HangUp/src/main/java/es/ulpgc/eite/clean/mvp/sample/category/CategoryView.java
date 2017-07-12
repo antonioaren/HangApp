@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
@@ -152,6 +153,7 @@ public class CategoryView
             RealmRecyclerViewAdapter<CategoryData, CategoryAdapter.CategoryViewHolder> {
 
         private List<CategoryData> items;
+        private List<CategoryData> itemChanged;
 
         public CategoryAdapter(OrderedRealmCollection<CategoryData> items) {
             super(items);
@@ -189,6 +191,7 @@ public class CategoryView
         }
 
         private void setItemList(List<CategoryData> itemList) {
+
             this.items = itemList;
             notifyDataSetChanged();
         }

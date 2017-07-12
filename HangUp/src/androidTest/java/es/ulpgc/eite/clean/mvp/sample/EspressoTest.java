@@ -77,5 +77,6 @@ public class EspressoTest {
     public void testGetLastElementName() {
         Assert.assertEquals("Automovilismo", realmOperation.getCategoryEvents().last().getCategoryName());
     }
+
 }
 
