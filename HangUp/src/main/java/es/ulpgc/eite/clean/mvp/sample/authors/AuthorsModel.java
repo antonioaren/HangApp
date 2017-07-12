@@ -3,7 +3,9 @@ package es.ulpgc.eite.clean.mvp.sample.authors;
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.R;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
+import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.realmoperation.RealmOperation;
+import io.realm.RealmList;
 import io.realm.RealmResults;
 
 /**
@@ -31,6 +33,11 @@ public class AuthorsModel extends GenericModel<Authors.ModelToPresenter>
         return txt;
     }
 
+    @Override
+    public RealmResults<CategoryData> getCategoryEvents() {
+        return null;
+    }
+
     public void setTxt(String txt) {
         this.txt = txt;
     }
@@ -52,8 +59,8 @@ public class AuthorsModel extends GenericModel<Authors.ModelToPresenter>
     //para obtener los registros
 
     @Override
-    public RealmResults<CategoryData> getCategoryEvents() {
-        return realm.getCategoryEvents();
+    public RealmList<ProductData> getProducts() {
+        return realm.getAllProductsByCategoryId("Fiestas");
     }
 
 

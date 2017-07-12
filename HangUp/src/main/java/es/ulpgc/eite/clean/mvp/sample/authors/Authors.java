@@ -1,8 +1,8 @@
 package es.ulpgc.eite.clean.mvp.sample.authors;
 
 import es.ulpgc.eite.clean.mvp.ContextView;
-import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
-import io.realm.RealmResults;
+import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
+import io.realm.RealmList;
 
 /**
  * Created by eleonora on 12/07/2017.
@@ -28,7 +28,8 @@ public interface Authors {
 
         String getTxt();
 
-        RealmResults<CategoryData> getCategoryEvents();
+
+        RealmList<ProductData> getProducts();
     }
 
     public interface ToAuthors {

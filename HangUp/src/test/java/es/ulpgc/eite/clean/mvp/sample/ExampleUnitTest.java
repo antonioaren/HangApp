@@ -67,22 +67,26 @@ public void testGetImageByIdSelected() throws Exception {
   }
 
 //Test examen
-
+@Test
   public void testGetImage() throws Exception {
     AuthorsModel authors = new AuthorsModel();
     assertEquals(0, authors.getImage());
   }
-//  public void testSetImage()throws Exception{
-//    AuthorsModel authors= new AuthorsModel();
-//    authors.setImage(R.drawable.wellcome);
-//    assertEquals(R.drawable.wellcome,authors.getImage());
-//  }
 
+    @Test
+    public void testSetImage() throws Exception {
+        AuthorsModel authors = new AuthorsModel();
+        authors.setImage(R.drawable.wellcome);
+        assertEquals(R.drawable.wellcome, authors.getImage());
+    }
+
+    @Test
   public void testGetText() throws Exception {
     AuthorsModel authors = new AuthorsModel();
     assertEquals(null, authors.getTxt());
   }
 
+    @Test
   public void testSetTxt() throws Exception {
     AuthorsModel authors = new AuthorsModel();
     authors.setTxt("autores");

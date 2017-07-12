@@ -34,14 +34,16 @@ public class AuthorsPresenter extends GenericPresenter<Authors.PresenterToView, 
         setView(View);
 
         if (configurationChangeOccurred()) {
-
+            getView().setText(getModel().getTxt());
+            getView().setImage(getModel().getImage());
         }
     }
 
     @Override
     public void onBackPressed() {
 
-        getModel().getCategoryEvents();
+        getModel().getProducts();
+
     }
 
 //    @Override

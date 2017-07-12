@@ -83,8 +83,12 @@ public class EspressoTest {
         onView(withId(R.id.textAuthors)).check(matches(isDisplayed()));
         onView(withId(R.id.imageAuthors)).check(matches(isDisplayed()));
         onView(withText("Authors: Eleonora de ferra chermaz y pedro Antonio Arenas Lara")).check(matches(isDisplayed()));
-        
+
     }
 
+    @Test
+    public void testGetRecords() throws Exception {
+        Assert.assertEquals(null, realmOperation.getAllProductsByCategoryId("Fiestas"));
+    }
 }
 

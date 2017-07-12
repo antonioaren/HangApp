@@ -33,7 +33,7 @@
 
         <Space
             android:layout_height="20dp"
-            android:layout_weight="match_parent" />
+            android:layout_weight="50dp" />
 
         <Button
             android:id="@+id/AutoresBTn"
