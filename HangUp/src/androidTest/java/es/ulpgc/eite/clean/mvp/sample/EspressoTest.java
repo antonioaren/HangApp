@@ -18,6 +18,7 @@ import static android.support.test.espresso.action.ViewActions.swipeLeft;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
+import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
 /**
  * Created by eleonora on 24/05/2017.
@@ -74,6 +75,16 @@ public class EspressoTest {
         Assert.assertEquals("Automovilismo", realmOperation.getCategoryEvents().last().getCategoryName());
     }
 
+    //Examen test
+    @Test
+    public void goToAuthorScreen() throws Exception {
+        onView(withId(R.id.fButtonAddCategory)).perform(click());
+        onView(withId(R.id.AutoresBTn)).perform(click());
+        onView(withId(R.id.textAuthors)).check(matches(isDisplayed()));
+        onView(withId(R.id.imageAuthors)).check(matches(isDisplayed()));
+        onView(withText("Authors: Eleonora de ferra chermaz y pedro Antonio Arenas Lara")).check(matches(isDisplayed()));
+        
+    }
 
 }
 
