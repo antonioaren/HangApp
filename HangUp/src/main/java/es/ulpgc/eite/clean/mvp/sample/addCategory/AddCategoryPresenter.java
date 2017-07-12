@@ -55,17 +55,36 @@ public class AddCategoryPresenter
             getView().setPhotoLabel(getModel().getPhotoLabel());
             getView().setRadioButtonLabels(getModel().getLabelRadio0(), getModel().getLabelRadio1(), getModel().getLabelRadio2(), getModel().getLabelRadio3());
             getView().setAssetsImage(getModel().getImage(0), getModel().getImage(1), getModel().getImage(2), getModel().getImage(3));
-            getView().setAddBtnLabel(getModel().getButtonAddlabel());
-
 
         }
 
-    }
+        }
+//    @Override
+//    public void onConfigurationChanged(Configuration newConfig) {
+//        super.onConfigurationChanged(newConfig);
+//
+//        // Checks the orientation of the screen
+//        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+//            Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show();
+//        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+//            Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show();
+//        }
+//    }
 
     @Override
     public void onDestroy(boolean isChangingConfiguration) {
         Log.d(TAG, "calling onDestroy()");
         super.onDestroy(isChangingConfiguration);
+//        @Override
+//        public void onDestroy(boolean isChangingConfiguration) {
+//            super.onDestroy(isChangingConfiguration);
+//
+//            if(isChangingConfiguration){ // giro de pantalla
+//                Navigator app = (Navigator) getView().getApplication();
+//              //para cambiar pantalla tras rotal el movil
+//  app.goToStandardScreen(this); ---->metodo dispuesto en la carpeta app
+//            }
+//        }
 
     }
 

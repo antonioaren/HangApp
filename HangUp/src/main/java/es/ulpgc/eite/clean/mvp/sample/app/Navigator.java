@@ -17,4 +17,6 @@ public interface Navigator {
     void killingAddCategoryScreenAfterInserting(AddCategory.AddTo presenter);
 
     void killingAddProductScreenAfterInserting(AddProduct.AddTo presenter);
+
+    void goToAuthorsScreen(Product.ProductTo presenter);
 }

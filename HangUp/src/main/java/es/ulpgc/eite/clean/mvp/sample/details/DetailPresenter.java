@@ -32,6 +32,7 @@ public class DetailPresenter
         if (configurationChangeOccurred()) {
             setHeaders();
             setDataInTheScreen();
+            //intent para cargar un nuevo activity(si me piden que cuando rota la pantalla cambie el layout)
         }
 
     }

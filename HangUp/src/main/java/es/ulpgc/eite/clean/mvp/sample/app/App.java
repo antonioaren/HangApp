@@ -8,6 +8,9 @@ import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategory;
 import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategoryView;
 import es.ulpgc.eite.clean.mvp.sample.addProduct.AddProduct;
 import es.ulpgc.eite.clean.mvp.sample.addProduct.AddProductView;
+import es.ulpgc.eite.clean.mvp.sample.authors.Authors;
+import es.ulpgc.eite.clean.mvp.sample.authors.AuthorsPresenter;
+import es.ulpgc.eite.clean.mvp.sample.authors.AuthorsView;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
@@ -68,6 +71,11 @@ public class App extends Application implements Mediator, Navigator {
     @Override
     public void startingAddCategoryScreen(AddCategory.ToAdd presenter) {
         presenter.onScreenStarted();
+    }
+
+    @Override
+    public void startingAuthorsScreen(AuthorsPresenter authorsPresenter) {
+
     }
 
     @Override
@@ -141,6 +149,7 @@ public class App extends Application implements Mediator, Navigator {
 
 
 
+
     @Override
     public void killingAddCategoryScreenAfterInserting(AddCategory.AddTo presenter) {
         presenter.destroyView();
@@ -151,6 +160,27 @@ public class App extends Application implements Mediator, Navigator {
         presenter.destroyView();
     }
 
+
+    //Examen
+
+    @Override
+    public void startingAuthorsScreen(Authors.AuthorsTo presenter) {
+
+
+        presenter.onScreenStarted();
+    }
+
+
+    @Override
+    public void goToAuthorsScreen(Product.ProductTo presenter) {
+
+
+        Context view = presenter.getManagedContext();
+        if (view != null) {
+            view.startActivity(new Intent(view, AuthorsView.class));
+        }
+
+    }
 
     //////////////// State /////////////////////////////////////////////////////////////////////////
 
@@ -172,6 +202,10 @@ public class App extends Application implements Mediator, Navigator {
         String idCategory;
     }
 
+    private class productToAuthorsState {
+        String text;
+
+    }
 }
 
 

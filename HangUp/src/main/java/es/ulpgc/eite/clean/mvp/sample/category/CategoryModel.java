@@ -4,7 +4,6 @@ import android.util.Log;
 
 import es.ulpgc.eite.clean.mvp.GenericModel;
 import es.ulpgc.eite.clean.mvp.sample.data.CategoryData;
-import es.ulpgc.eite.clean.mvp.sample.data.ProductData;
 import es.ulpgc.eite.clean.mvp.sample.realmoperation.RealmOperation;
 import io.realm.RealmResults;
 
@@ -52,6 +51,7 @@ public class CategoryModel extends GenericModel<Category.ModelToPresenter>
     public RealmResults<CategoryData> getCategoryEvents() {
         return realmOperation.getCategoryEvents();
     }
+
 
     @Override
     public void insertEvent(final String Categoryname, final String image) {

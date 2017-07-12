@@ -110,6 +110,13 @@ public class ProductPresenter
     }
 
     @Override
+    public void onButtonAuthorsClicked() {
+        Log.d(TAG, "calling on Button Authors clicked");
+        Navigator app = (Navigator) getView().getApplication();
+        app.goToAuthorsScreen(this);
+    }
+
+    @Override
     public Context getManagedContext() {
         return getActivityContext();
     }

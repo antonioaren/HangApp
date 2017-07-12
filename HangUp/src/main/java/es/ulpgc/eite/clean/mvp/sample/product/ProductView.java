@@ -10,6 +10,7 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,12 +35,18 @@ public class ProductView
 
     private RecyclerView recycler;
     private TextView titleHeader;
-
+    private Button buttonAuthors;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product);
-
+        buttonAuthors = (Button) findViewById(R.id.AutoresBTn);
+        buttonAuthors.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getPresenter().onButtonAuthorsClicked();
+            }
+        });
         titleHeader = (TextView) findViewById(R.id.TitleCategory);
         recycler = (RecyclerView) findViewById(R.id.recycler);
         recycler.setHasFixedSize(true);

@@ -1,19 +1,16 @@
 package es.ulpgc.eite.clean.mvp.sample;
 
 import android.support.test.espresso.contrib.RecyclerViewActions;
-import android.support.test.espresso.core.deps.guava.eventbus.AsyncEventBus;
 import android.support.test.rule.ActivityTestRule;
 
 import junit.framework.Assert;
 
 import org.junit.Before;
-
 import org.junit.Rule;
 import org.junit.Test;
 
 import es.ulpgc.eite.clean.mvp.sample.category.CategoryView;
 import es.ulpgc.eite.clean.mvp.sample.realmoperation.RealmOperation;
-
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
@@ -21,7 +18,6 @@ import static android.support.test.espresso.action.ViewActions.swipeLeft;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
-import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
 /**
  * Created by eleonora on 24/05/2017.
@@ -55,7 +51,7 @@ public class EspressoTest {
     }
     @Test
     public void testClickingAnItemAtSpecificPositionInRecyclerView() throws Exception {
-        onView(withId(R.id.recycler))                // Click item at position 0
+        onView(withId(R.id.recycler))                // Click item at position 4
                 .perform(RecyclerViewActions.actionOnItemAtPosition(4, click()));
         onView(withId(R.id.fButtonAddProduct)).check(matches(isDisplayed()));
     }

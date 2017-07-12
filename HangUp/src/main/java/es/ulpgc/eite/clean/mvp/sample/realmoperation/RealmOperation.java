@@ -49,18 +49,18 @@ public class RealmOperation {
         return itemsDatabase;
     }
 
-    public void insertEventCategoryByCategoryData(final CategoryData categoryData) {
-        this.id = UUID.randomUUID().toString();
-        realmDatabase.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-                CategoryData event = realmDatabase.createObject(CategoryData.class, id);
-                event.setCategoryName(categoryData.getCategoryName());
-                event.setImage(categoryData.getImage());
-            }
-
-        });
-    }
+//    public void insertEventCategoryByCategoryData(final CategoryData categoryData) {
+//        this.id = UUID.randomUUID().toString();
+//        realmDatabase.executeTransaction(new Realm.Transaction() {
+//            @Override
+//            public void execute(Realm realm) {
+//                CategoryData event = realmDatabase.createObject(CategoryData.class, id);
+//                event.setCategoryName(categoryData.getCategoryName());
+//                event.setImage(categoryData.getImage());
+//            }
+//
+//        });
+//    }
 
     public void insertEventCategory(final String categoryName, final String image) {
         this.id = UUID.randomUUID().toString();

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <Space
+        android:layout_heigth="50dp"
+        android:layout_width="match_parent" />
+
+    <TextView
+        android:id="@+id/textAuthors"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="TextView"
+        android:layout_weight="0.59" />
+
+    <ImageView
+        android:id="@+id/imageAuthors"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_weight="0.38" />
+
+</LinearLayout>

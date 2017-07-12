@@ -34,6 +34,8 @@ public interface Product {
         void onButtonAddClicked();
 
         void OnSwipedItem(String id);
+
+        void onButtonAuthorsClicked();
     }
 
     interface PresenterToModel {

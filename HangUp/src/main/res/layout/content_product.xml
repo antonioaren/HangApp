@@ -31,6 +31,15 @@
         android:orientation="vertical"
         android:weightSum="1">
 
+        <Space
+            android:layout_height="20dp"
+            android:layout_weigth="match_parent" />
+
+        <Button
+            android:id="@+id/AutoresBTn"
+            android:layout_heigth="100dp"
+            android:layout_weigth="100dp"
+            android:text="see authors" />
 
         <TextView
             android:id="@+id/title"

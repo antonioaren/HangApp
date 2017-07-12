@@ -39,7 +39,12 @@
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
+        <activity
+            android:name="es.ulpgc.eite.clean.mvp.sample.authors.AuthorsView"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
 
+        <category android:name="android.intent.category.LAUNCHER" />
         <activity
             android:name="es.ulpgc.eite.clean.mvp.sample.details.DetailView"
             android:label="Detail"

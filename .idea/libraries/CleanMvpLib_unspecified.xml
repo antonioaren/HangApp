@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="CleanMvpLib-unspecified">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.android/build-cache/143418f00be79c9c3ecb97305aed8fdc4ff4533c/output/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.android/build-cache/143418f00be79c9c3ecb97305aed8fdc4ff4533c/output/res" />
+      <root url="file://$USER_HOME$/.android/build-cache/162d70c541c1313b4bdd5dba4b625b86f1118f42/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/162d70c541c1313b4bdd5dba4b625b86f1118f42/output/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -4,8 +4,8 @@ import android.content.Context;
 
 import es.ulpgc.eite.clean.mvp.sample.addCategory.AddCategory;
 import es.ulpgc.eite.clean.mvp.sample.addProduct.AddProduct;
+import es.ulpgc.eite.clean.mvp.sample.authors.Authors;
 import es.ulpgc.eite.clean.mvp.sample.category.Category;
-
 import es.ulpgc.eite.clean.mvp.sample.details.Detail;
 import es.ulpgc.eite.clean.mvp.sample.product.Product;
 
@@ -27,6 +27,5 @@ Mediator {
     void startingAddCategoryScreen(AddCategory.ToAdd presenter);
 
 
-
-
+    void startingAuthorsScreen(Authors.AuthorsTo presenter);
 }
